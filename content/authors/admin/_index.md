@@ -49,8 +49,11 @@ profiles:
 interests:
   - plasma astrophysics
   - HD/MHD turbulence and dynamos
+  - magnetic reconnection
   - computational astrophysics
-  - supersonic plasmas
+  - supersonic plasmas and shocks
+  - numerical methods
+  - high-performance computing
   - interdisciplinary research
 
 education:
