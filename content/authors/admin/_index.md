@@ -26,7 +26,7 @@ role: Postdoctoral Research Fellow at Princeton / CITA
 organizations:
   - name: Princeton Department of Astrophysical Sciences
     url: https://web.astro.princeton.edu
-  - name: CITA
+  - name: Canadian Institute for Theoretical Astrophysics
     url: https://www.cita.utoronto.ca
 
 # Social network links
@@ -48,16 +48,18 @@ profiles:
 
 interests:
   - plasma astrophysics
-  - turbulence and dynamos
+  - HD/MHD turbulence and dynamos
   - computational astrophysics
+  - supersonic plasmas
+  - interdisciplinary research
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: PhD Theoretical Astrophysics
+    institution: Australian National University
+    date_start: 2020-01-20
+    date_end: 2024-01-02
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+      
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
