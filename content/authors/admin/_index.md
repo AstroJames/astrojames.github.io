@@ -59,6 +59,9 @@ education:
     date_start: 2020-01-20
     date_end: 2024-01-02
     summary: |
+
+    - thesis title: The Statistics of Magnetized Interstellar Turbulence
+    - thesis advisor: Prof. Christoph Federrath
     - six first author papers, 23 total publications
     - 2022-23 Fulbright Fellow at the University of California, Santa Cruz, United States
     - Joan Duffield Research Excellence Scholarship
@@ -66,12 +69,14 @@ education:
     - Dean's Merit (theoretical physics) HDR Supplementary Scholarship
     button:
       text: 'Read Thesis'
-      url: 'https://openresearch-repository.anu.edu.au/items/e68f1b2c-d29c-4590-b3b9-77d1de2c4eb9/full'
+       url: 'https://openresearch-repository.anu.edu.au/items/e68f1b2c-d29c-4590-b3b9-77d1de2c4eb9/full'
   - area: Honours Astrophysics
     institution: Australian National University
     date_start: 2019-01-20
     date_end: 2019-11-20
     summary: |
+      - thesis title: Supersonic Turbulent Molecular Clouds: Filaments and Anisotropies
+      - thesis advisor: Prof. Christoph Federrath
       - GPA: 7.0/7.0
       - Bok Honours Astrophysics Scholarship
       - University Medal 
