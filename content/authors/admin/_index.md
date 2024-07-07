@@ -68,9 +68,6 @@ education:
       - Joan Duffield Research Excellence Scholarship
       - Deakin PhD Scholarship
       - Dean's Merit (theoretical physics) HDR Supplementary Scholarship
-    button:
-      text: 'Read Thesis'
-       url: 'https://openresearch-repository.anu.edu.au/items/e68f1b2c-d29c-4590-b3b9-77d1de2c4eb9/full'
   - area: Honours Astrophysics
     institution: Australian National University
     date_start: 2019-01-20
