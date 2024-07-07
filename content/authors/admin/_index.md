@@ -1,6 +1,6 @@
 ---
 # Display name
-title: James Beattie
+title: James R. Beattie
 
 # Name pronunciation (optional)
 name_pronunciation: 
