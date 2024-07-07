@@ -54,7 +54,7 @@ interests:
   - interdisciplinary research
 
 education:
-  - area: PhD Theoretical Astrophysics
+  - area: PhD (Theoretical Astrophysics)
     institution: Australian National University
     date_start: 2020-01-20
     date_end: 2024-01-02
@@ -68,7 +68,7 @@ education:
       - Joan Duffield Research Excellence Scholarship
       - Deakin PhD Scholarship
       - Dean's Merit (theoretical physics) HDR Supplementary Scholarship
-  - area: Honours Astrophysics
+  - area: Honours (Astrophysics)
     institution: Australian National University
     date_start: 2019-01-20
     date_end: 2019-11-20
@@ -82,22 +82,16 @@ education:
       - University Medal 
       - Chancellor’s Commendations 
       - Australian Astronomical Society Bok Prize
-  - area: BSc Physics
+  - area: BSc (Physics)
     institution: Queensland University of Technology
     date_start: 2014-01-01
     date_end: 2018-12-31
     summary: 
-  - area: BMath Applied and Computational Mathematics
+  - area: BMath (Applied and Comp. Mathematics)
     institution: Queensland University of Technology
     date_start: 2014-01-01
     date_end: 2018-12-31
     summary: 
-  - area: BEd (secondary education)
-    institution: Queensland University of Technology
-    date_start: 2009-01-01
-    date_end: 2013-12-31
-    summary: |
-      - double major: biology and computing
 
 work:
   - position: Director of Cloud Infrastructure
