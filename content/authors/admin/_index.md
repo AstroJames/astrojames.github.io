@@ -1,17 +1,17 @@
 ---
 # Display name
-title: 吳健雄
+title: James Beattie
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: 
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: James 
+last_name: Beattie
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: 
 
 # Is this the primary user of the site?
 superuser: true
@@ -20,36 +20,36 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Postdoctoral Research Fellow at Princeton / CITA
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: Princeton Department of Astrophysical Sciences
+    url: https://web.astro.princeton.edu
+  - name: CITA
+    url: https://www.cita.utoronto.ca
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:james.beattie@princeton.edu'
     label: E-mail Me
   - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
+    url: https://twitter.com/astro_magnetism
   - icon: brands/github
-    url: https://github.com/gcushen
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/
+    url: https://github.com/AstroJames
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
+    url: https://scholar.google.com/citations?user=ZIgumjQAAAAJ&hl=en
   - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://orcid.org/0000-0001-9199-7771
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/James-Beattie-4
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - plasma astrophysics
+  - turbulence and dynamos
+  - computational astrophysics
 
 education:
   - area: PhD Artificial Intelligence
@@ -182,5 +182,6 @@ awards:
 ---
 
 ## About Me
+My name is James Beattie and I'm interested magnetized turbulence and dynamo processes across multiple scales in the Universe, from Earth's magnetosheath and the interstellar medium, to the intracluster medium and the plasma environments around compact objects. I graduated my PhD in Jan. 2024, and am currently a postdoctoral research associate and fellow at Princeton University and the Canadian Institute for Theoretical Astrophysics.
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+<!-- This includes steady state turbulence in a continuously driven state, where models such as dynamical alignment and critical balance may be relevant, to time dependent turbulent systems like fluctuation dynamos which are described with Kazantsev theory and decaying turbulence which are described in the language of rugged invariants (and invariants in general, e.g., the Hosking invariant). I like to apply these ideas to many types of astrophysical plasmas, and most recently, to merging neutron star systems, where Kelvin Helmholtz instabilities excite a diffusion-free-type dynamo that is able to grow the magnetic field by orders of magnitude within millisecond, which is potentially important for the Blandford–Znajek process. -->
