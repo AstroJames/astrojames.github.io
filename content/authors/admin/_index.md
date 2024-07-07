@@ -59,32 +59,41 @@ education:
     date_start: 2020-01-20
     date_end: 2024-01-02
     summary: |
-      
+    - six first author papers, 23 total publications
+    - 2022-23 Fulbright Fellow at the University of California, Santa Cruz, United States
+    - Joan Duffield Research Excellence Scholarship
+    - Deakin PhD Scholarship
+    - Dean's Merit (theoretical physics) HDR Supplementary Scholarship
     button:
       text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+      url: 'https://openresearch-repository.anu.edu.au/items/e68f1b2c-d29c-4590-b3b9-77d1de2c4eb9/full'
+  - area: Honours Astrophysics
+    institution: Australian National University
+    date_start: 2019-01-20
+    date_end: 2019-11-20
     summary: |
-      GPA: 3.8/4.0
+      - GPA: 7.0/7.0
+      - Bok Honours Astrophysics Scholarship
+      - University Medal 
+      - Chancellor’s Commendations 
+      - Australian Astronomical Society Bok Prize
+  - area: BSc Physics
+    institution: Queensland University of Technology
+    date_start: 2014-01-01
+    date_end: 2018-12-31
+    summary: 
+  - area: BMath Applied and Computational Mathematics
+    institution: Queensland University of Technology
+    date_start: 2014-01-01
+    date_end: 2018-12-31
+    summary: 
+  - area: BEd (secondary education)
+    institution: Queensland University of Technology
+    date_start: 2009-01-01
+    date_end: 2013-12-31
+    summary: |
+      - double major: biology and computing
 
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
   - position: Director of Cloud Infrastructure
     company_name: GenCoin
