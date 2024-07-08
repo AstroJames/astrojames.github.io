@@ -78,7 +78,7 @@ sections:
       view: date-title-summary
       # Reduce spacing
       spacing:
-        padding: [-10.0, 0, 0, 0]
+        padding: [0, 0, 0, 0]
 
   - block: markdown
     id: collabs
@@ -87,24 +87,24 @@ sections:
       subtitle: ''
       text: |-
       
-        - Amitava Bhattacharjee (Princeton)
-        - Christoph Federrath (Australian National University)
-        - Neco Kriel (Australian National University)
-        - Anne Noer Kolborg (University of California, Santa Cruz)
-        - Bart Ripperda (CITA)
-        - Elias Most (Caltech)
-        - Sasha Philippov (University of Maryland)
+        - <a href="https://amitava.scholar.princeton.edu">Amitava Bhattacharjee</a> (Princeton)
+        - <a href="https://www.mso.anu.edu.au/~chfeder/">Christoph Federrath</a>  (Australian National University)
+        - <a href="https://astrokriel.github.io">Neco Kriel</a>  (Australian National University)
+        - <a href="">Anne Noer Kolborg</a>  (University of California, Santa Cruz)
+        - <a href="https://bartripperda.com">Bart Ripperda</a>  (CITA)
+        - <a href="https://comp-relastro.caltech.edu">Elias Most</a>  (Caltech)
+        - <a href="https://umdphysics.umd.edu/people/faculty/current/item/1893-sashaph.html">Sasha Philippov</a>  (University of Maryland)
         - Shashvat Varma (Univeristy of Toronto)
-        - Matt Sampson (Princeton)
-        - Romain Teyssier (Princeton)
-        - Mark Krumholz (Australian National University)
-        - Ralf Klessen (Heidelberg University)
-        - Salvatore Cielo (Leibniz Supercomputing Centre)
-        - Justin Kin Jun Hew (Australian National University)
-        - Michael Grehan (University of Toronto)
-        - Tanisha Ghosal (University of Toronto)
-        - Philip Mocz (CCA, Flatiron)
-        - Raphael Skalidis (Caltech)
+        - <a href="https://msampson.net">Matt Sampson</a>  (Princeton)
+        - <a href="https://www.astro.princeton.edu/~rt3504/">Romain Teyssier</a>  (Princeton)
+        - <a href="https://www.mso.anu.edu.au/~krumholz/">Mark Krumholz</a>  (Australian National University)
+        - <a href="https://klessen.org">Ralf Klessen</a>  (Heidelberg University)
+        - <a href="https://www.researchgate.net/profile/Salvo-Cielo">Salvatore Cielo</a> (Leibniz Supercomputing Centre)
+        - <a href="https://rsaa.anu.edu.au/people/justinkinjun-hew">Justin Kin Jun Hew</a>  (Australian National University)
+        - Michael Grehan</a>  (University of Toronto)
+        - Tanisha Ghosal</a>  (University of Toronto)
+        - <a href="https://pmocz.github.io">Philip Mocz</a>  (CCA, Flatiron)
+        - <a href="https://www.researchgate.net/profile/Raphael-Skalidis">Raphael Skalidis</a>  (Caltech)
         
     design:
       columns: '1'

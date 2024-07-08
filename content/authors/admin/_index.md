@@ -65,7 +65,7 @@ education:
       Highlights:
 
       - thesis title: The Statistics of Magnetized Interstellar Turbulence
-      - thesis advisor: Prof. Christoph Federrath
+      - thesis advisor: Prof. <a href="https://www.mso.anu.edu.au/~chfeder/">Christoph Federrath</a> 
       - six first author papers, 23 total publications
       - 2022-23 Fulbright Fellow at the University of California, Santa Cruz, United States
       - Joan Duffield Research Excellence Scholarship
@@ -79,7 +79,7 @@ education:
       Highlights:
 
       - thesis title: Supersonic Turbulent Molecular Clouds: Filaments and Anisotropies
-      - thesis advisor: Prof. Christoph Federrath
+      - thesis advisor: Prof. <a href="https://www.mso.anu.edu.au/~chfeder/">Christoph Federrath</a> 
       - GPA: 7.0/7.0
       - Bok Honours Astrophysics Scholarship
       - University Medal 
@@ -104,12 +104,19 @@ education:
 
 
 work:
-  - position: Joint postdoctoral research associate / fellow
-    company_name: Princeton University and CITA
+  - position: Postdoctoral research associate (Bhattacharjee group)
+    company_name: Princeton University
     company_url: ''
     company_logo: ''
     date_start: 2023-01-09
     date_end: ''
+  - position: Postdoctoral research fellow
+    company_name: Canadian Institute for Theoretical Astrophysics
+    company_url: ''
+    company_logo: ''
+    date_start: 2023-01-09
+    date_end: ''
+
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
