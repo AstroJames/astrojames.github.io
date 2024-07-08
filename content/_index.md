@@ -32,12 +32,10 @@ sections:
           parallax: false
   - block: markdown
     content:
-      title: '📚 My Research'
+      title: '📚 My Research 📚'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a theoretical astrophysicist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
-
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        I'm a theoretical astrophysicist that likes to think about problems in the framework of stochastic, fluctuating fluids and plasmas, e.g., turbulence, the phenomena that glues the different scales of the Universe together and one of the so-called oustanding problems in classical mechanics (even though quantum mechanical turbulence is a well-established field of research). A lot of my published work pertains to the interstellar medium turbulence, and still now a significant portion of my time I dedicate to better understanding the galactic turbulence cascade through fundamental plasma physics, but an even larger portion of my time is dedicated to expanding across the Universe, from the meter scales of the plasma environment between two merging neutron stars, to the kpc scales of the intracluster medium. I work with a number of students and collaborators on theory and local numerical fluid plasma simulations, and I am keenly trying to engage with more collaborators on global and particle-in-cell simulations (please reach out!)! I very much enjoy working on the turbulent dynamo problems, and recently ran the largest turbulent dynamo simulation in the world, reaching Reynolds number of over a million (grids of 10,080^3). I am always look for a new context to apply my understanding of turbulence and dynamos, even in quite abstract ways where the fluctuating field of interest is actually just clouds interfering with ground-based optical communication networks, or the illumination of Van Gogh's Starry Night. I like to work in teams, big or small, where ideas can be exchanged freely and problems can be explored in detail through multiple contributions of ideas and calculations. 
         
     design:
       columns: '1'
@@ -53,27 +51,6 @@ sections:
       view: article-grid
       columns: 2
   - block: collection
-    content:
-      title: Recent Publications
-      text: ""
-      filters:
-        folders:
-          - publication
-        exclude_featured: false
-    design:
-      view: citation
-  - block: collection
-    id: talks
-    content:
-      title: Recent & Upcoming Talks
-      filters:
-        folders:
-          - event
-    design:
-      view: article-grid
-      columns: 1
-  - block: collection
-    id: news
     content:
       title: Recent News
       subtitle: ''
