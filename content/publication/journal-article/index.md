@@ -1,40 +1,43 @@
 ---
-title: "An example journal article"
+title: "Taking control of compressible modes: bulk viscosity and the turbulent dynamo"
 authors:
-- admin
-- Robert Ford
-author_notes:
-- "Equal contribution"
-- "Equal contribution"
+  - admin
+  - Christoph Federrath
+  -  Neco Kriel
+  - Justin Kin Jun Hew
+  - Amitava Bhattacharjee
 date: "2015-09-01T00:00:00Z"
-doi: ""
+doi: "https://doi.org/10.48550/arXiv.2312.0398"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2017-01-01T00:00:00Z"
+publishDate: ""
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article-journal"]
+publication_types: ["article"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Journal of Source Themes, 1*(1)"
+publication: ""
 publication_short: ""
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: Many polyatomic astrophysical plasmas are compressible and out of chemical and thermal equilibrium, and yet, due to Stokes' hypothesis, a means to carefully control the decay of compressible modes in these systems has largely been neglected. This is especially important for small-scale, turbulent dynamo processes, which are known to be sensitive to the effects of compression. To control the viscous properties of the compressible modes, we perform supersonic, visco-resistive dynamo simulations with additional bulk viscosity νbulk, deriving a new νbulk Reynolds number Rebulk, and viscous Prandtl number Pν≡Rebulk/Reshear, where Reshear is the shear viscosity Reynolds number. For 10−3≤Pν≤∞, we explore a broad range of statistics critical to the dynamo problem, including the integral and spectral energy ratios, growth rates, and the magnetic  Emag(k) and kinetic Ekin(k)  energy spectrum. We derive a general framework for decomposing Emag growth rates into incompressible and compressible terms via orthogonal tensor decompositions of ∇⊗v, where v is the fluid velocity. We find that compressible modes play a dual role, growing and decaying Emag, and that field-line stretching is the main driver of growth, even in supersonic dynamos. In the absence of νbulk, compressible modes pile up on small-scales, creating an apparent spectral bottleneck, which disappears for Pν≈1. As  Pν decreases, compressible modes are dissipated at increasingly larger scales, in turn suppressing incompressible modes through a coupling between viscosity operators. We emphasise the importance of further understanding the role of νbulk in compressible astrophysical plasmas.
 
 # Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: 
 
 tags:
-- Source Themes
+- turbulent dynamo
+- bulk viscosity
+- polyatomic plasmas
+- compressible modes
 featured: false
 
 # links:
 # - name: ""
 #   url: ""
-url_pdf: http://arxiv.org/pdf/1512.04133v1
-url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
+url_pdf: https://arxiv.org/abs/2312.03984
+url_code:
 url_dataset: ''
 url_poster: ''
 url_project: ''
@@ -45,7 +48,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  caption:
   focal_point: ""
   preview_only: false
 
