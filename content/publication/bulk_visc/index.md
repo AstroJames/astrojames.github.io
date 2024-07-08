@@ -6,7 +6,7 @@ authors:
   - Neco Kriel
   - Justin Kin Jun Hew
   - Amitava Bhattacharjee
-date: "2015-09-01T00:00:00Z"
+date: "2024-01-01"
 doi: "https://doi.org/10.48550/arXiv.2312.0398"
 
 # Schedule page publish date (NOT publication's date).
@@ -48,7 +48,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+  caption: "Spectra theories for the velocity spectrum in the presence of bulk and shear viscosity"
   focal_point: ""
   preview_only: false
 

@@ -6,11 +6,11 @@ authors:
 - Ralf Klessen
 - Salvatore Cielo
 - Amitava Bhattacharjee
-date: "2019-04-07T00:00:00Z"
-doi: ""
+date: "2024-05-29"
+doi: "https://doi.org/10.48550/arXiv.2405.16626"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2017-01-01T00:00:00Z"
+publishDate: ""
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
@@ -49,7 +49,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: ''
+  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
   focal_point: ""
   preview_only: false
 
