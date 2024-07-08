@@ -8,7 +8,7 @@ main:
     url: /
     weight: 10
   - name: Featured Science
-    url: /#papers
+    url: /#featured
     weight: 11
   - name: News
     url: /#news

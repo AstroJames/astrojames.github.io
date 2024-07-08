@@ -40,7 +40,7 @@ sections:
     design:
       columns: '1'
   - block: collection
-    id: papers
+    id: featured
     content:
       title: Featured Science
       filters:
@@ -51,6 +51,7 @@ sections:
       view: article-grid
       columns: 2
   - block: collection
+    id: news
     content:
       title: Recent News
       subtitle: ''
@@ -80,6 +81,7 @@ sections:
         padding: [-10.0, 0, 0, 0]
 
   - block: markdown
+    id: collabs
     content:
       title: 'Frequent and current collaborators '
       subtitle: ''
