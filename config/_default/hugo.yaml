@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Website name
-title: James Beattie
+title: James R. Beattie
 # Website URL
 baseURL: 'https://astrojames.github.io'
 
