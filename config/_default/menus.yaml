@@ -22,7 +22,7 @@ main:
   - name: Papers
     url: publication/
     weight: 15
-  - name: Projects
+  - name: Student Projects
     url: projects/
     weight: 30
   - name: Notes

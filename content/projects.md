@@ -11,8 +11,8 @@ design:
 sections:
   - block: collection
     content:
-      title: Selected Projects
-      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
+      title: Potential Student Projects
+      text: Here are a selection of possible student projects that I would be more than happy to guide any keen student on!
       filters:
         folders:
           - project
