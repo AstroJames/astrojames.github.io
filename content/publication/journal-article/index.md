@@ -3,7 +3,7 @@ title: "Taking control of compressible modes: bulk viscosity and the turbulent d
 authors:
   - admin
   - Christoph Federrath
-  -  Neco Kriel
+  - Neco Kriel
   - Justin Kin Jun Hew
   - Amitava Bhattacharjee
 date: "2015-09-01T00:00:00Z"

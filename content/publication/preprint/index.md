@@ -1,7 +1,11 @@
 ---
-title: "An example preprint / working paper"
+title: "Magnetized compressible turbulence with a fluctuation dynamo and Reynolds numbers over a million"
 authors:
 - admin
+- Christoph Federrath
+- Ralf Klessen
+- Salvatore Cielo
+- Amitava Bhattacharjee
 date: "2019-04-07T00:00:00Z"
 doi: ""
 
@@ -17,32 +21,35 @@ publication_types: ["article"]
 publication: ""
 publication_short: ""
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state for many astrophysical plasmas. However, even the basic statistics for this type of turbulence remains uncertain. We present results from supersonic MHD turbulence simulations at unparalleled resolutions, with plasma Reynolds numbers of over a million. In the kinetic energy spectrum we find a break between the scales that are dominated by kinetic energy, with spectral index −2, and those that become strongly magnetized, with spectral index −3/2. By analyzing the Helmholtz decomposed kinetic energy spectrum, we find that the compressible modes are not passively mixed through the cascade of the incompressible modes. At high magnetic Reynolds number, above 105, we find a power law in the magnetic energy spectrum with spectral index −9/5. On the strongly magnetized, subsonic scales the plasma tends to self-organize into locally relaxed regions, where there is strong alignment between the current density, magnetic field, velocity field and vorticity field, depleting both the nonlinearities and magnetic terms in the MHD equations, which we attribute to plasma relaxation on scales where the magnetic fluctuations evolve on shorter timescales than the velocity fluctuations. This process constrains the cascade to inhomogenous, volume-poor, fractal surfaces between relaxed regions, which has significant repercussions for understanding the nature of magnetized turbulence in astrophysical plasmas and the saturation of the fluctuation dynamo.
 
 # Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: "The results from the world's largest MHD turbulence simulation are on the arXiv!"
 
 tags:
-- Large Language Models
+- MHD turbulence
+- turbulent dynamo
+- numerical simulations
+- supersonic plasma dynamics
 
 featured: true
 
 links:
 - name: Custom Link
-  url: http://example.org
-url_pdf: http://arxiv.org/pdf/1512.04133v1
-url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
-url_dataset: '#'
-url_poster: '#'
+  url: https://arxiv.org/abs/2405.16626
+url_pdf: https://arxiv.org/pdf/2405.16626
+url_code: ''
+url_dataset: ''
+url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: '#'
-url_video: '#'
+url_source: ''
+url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/s9CC2SKySJM)'
+  caption: ''
   focal_point: ""
   preview_only: false
 
