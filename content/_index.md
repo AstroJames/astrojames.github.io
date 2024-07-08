@@ -99,7 +99,7 @@ sections:
         - Shashvat Varma (Univeristy of Toronto)
         - <a href="https://fr.linkedin.com/in/louis-burnaz-569b7a254">Louis Burnaz</a> (École normale supérieure de Lyon)
         - <a href="https://inspirehep.net/authors/1947312"> Michael Grehan</a> (University of Toronto)
-        - Tanisha Ghosal (University of Toronto)
+        - <a href=" https://orcid.org/0009-0009-4853-4670">Tanisha Ghosal</a> (University of Toronto)
         - <a href="https://msampson.net">Matt Sampson</a>  (Princeton)
         - <a href="https://www.astro.princeton.edu/~rt3504/">Romain Teyssier</a>  (Princeton)
         - <a href="https://www.mso.anu.edu.au/~krumholz/">Mark Krumholz</a>  (Australian National University)

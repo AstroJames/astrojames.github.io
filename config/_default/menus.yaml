@@ -28,3 +28,6 @@ main:
   - name: Notes
     url: notes/
     weight: 40
+  - name: Data
+    url: https://www.cita.utoronto.ca/~jbeattie/
+    weight: 50
