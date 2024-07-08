@@ -31,7 +31,7 @@ tags:
 - bulk viscosity
 - polyatomic plasmas
 - compressible modes
-featured: false
+featured: true
 
 # links:
 # - name: ""
