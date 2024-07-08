@@ -104,9 +104,8 @@ sections:
         - Michael Grehan</a>  (University of Toronto)
         - Tanisha Ghosal</a>  (University of Toronto)
         - <a href="https://pmocz.github.io">Philip Mocz</a>  (CCA, Flatiron)
-        - <a href="https://www.researchgate.net/profile/Raphael-Skalidis">Raphael Skalidis</a>  (Caltech)
-        
+        - <a href="https://www.researchgate.net/profile/Raphael-Skalidis">Raphael Skalidis</a>  (Caltech)  
     design:
-      columns: '1'
+      columns: '2'
 
 ---
