@@ -51,7 +51,7 @@ sections:
         featured_only: true
     design:
       view: article-grid
-      columns: 3
+      columns: 2
   - block: collection
     id: news
     content:
