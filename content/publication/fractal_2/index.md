@@ -31,7 +31,7 @@ tags:
 - column mass density
 - supersonic fluid dynamics
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link

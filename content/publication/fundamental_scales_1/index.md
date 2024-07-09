@@ -23,13 +23,13 @@ publication_short: ""
 abstract: The turbulent dynamo is a powerful mechanism that converts turbulent kinetic energy to magnetic energy. A key question regarding the magnetic field amplification by turbulence, is, on what scale, kp, do magnetic fields become most concentrated? There has been some disagreement about whether kp is controlled by the viscous scale, kν (where turbulent kinetic energy dissipates), or the resistive scale, kη (where magnetic fields dissipate). Here, we use direct numerical simulations of magnetohydrodynamic turbulence to measure characteristic scales in the kinematic phase of the turbulent dynamo. We run 104-simulations with hydrodynamic Reynolds numbers of 10 ≤ Re ≤ 3600, and magnetic Reynolds numbers of 270 ≤ Rm ≤ 4000, to explore the dependence of kp on kν and kη. Using physically motivated models for the kinetic and magnetic energy spectra, we measure kν, kη, and kp, making sure that the obtained scales are numerically converged. We determine the overall dissipation scale relations kν=(0.025+0.005−0.006)kturbRe3/4 and kη=(0.88+0.21−0.23)kνPm1/2 , where kturb is the turbulence driving wavenumber and Pm = Rm/Re is the magnetic Prandtl number. We demonstrate that the principle dependence of kp is on kη. For plasmas, where Re ≳ 100, we find that  kp=(1.2+0.2−0.2)kη , with the proportionality constant related to the power-law 'Kazantsev' exponent of the magnetic power spectrum. Throughout this study, we find a dichotomy in the fundamental properties of the dynamo where Re > 100, compared to Re < 100. We report a minimum critical hydrodynamic Reynolds number, Recrit = 100 for bonafide turbulent dynamo action.
 
 # Summary. An optional shortened abstract.
-summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
+summary: ""
 
 tags:
 - turbulent dynamo
 - numerical simulations
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link
