@@ -50,7 +50,8 @@ interests:
   - plasma astrophysics
   - HD/MHD turbulence and dynamos
   - magnetic reconnection
-  - computational astrophysics
+  - cosmic ray propagation
+  - binary neutron star mergers
   - supersonic plasmas and shocks
   - numerical methods
   - high-performance computing
