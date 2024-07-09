@@ -30,7 +30,7 @@ sections:
           size: cover
           position: center
           parallax: false
-          
+
   - block: collection
     id: news
     content:
@@ -57,9 +57,9 @@ sections:
     design:
       # Choose a layout view
       view: date-title-summary
-      # Reduce spacing
-      spacing:
-        padding: [0, 0, 0, 0]
+      # # Reduce spacing
+      # spacing:
+      #   padding: [0, 0, 0, 0]
 
   - block: markdown
     content:
