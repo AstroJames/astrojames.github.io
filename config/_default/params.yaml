@@ -14,7 +14,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'James R. Beattie's personal website. Take a look around!'
+    description: "James R. Beattie's personal website. Take a look around!"
     twitter: 'GetResearchDev'
   analytics:
     google_analytics: ''
