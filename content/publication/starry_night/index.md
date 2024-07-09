@@ -18,16 +18,17 @@ publication_types: ["article"]
 publication: ""
 publication_short: ""
 
-abstract: Vincent van Gogh's painting, The Starry Night, is an iconic piece of art and cultural history. The painting portrays a night sky full of stars, with eddies (spirals) both large and small. Kolmogorov's description of subsonic, incompressible turbulence gives a model for turbulence that involves eddies interacting on many length scales, and so the question has been asked -- is The Starry Night turbulent? To answer this question, we calculate the azimuthally averaged power spectrum of a square region ( 1165×1165  pixels) of night sky in The Starry Night. We find a power spectrum,  P(k) , where  k  is the wavevector, that shares the same features as supersonic turbulence. It has a power-law P(k)∝k−2.1±0.3  in the scaling range,  34≤k≤80 . We identify a driving scale,  kD=3 , dissipation scale,  kν=220  and a bottleneck. This leads us to believe that van Gogh's depiction of the starry night closely resembles the turbulence found in real molecular clouds, the birthplace of stars in the Universe.
+abstract: Vincent van Gogh's painting, The Starry Night, is an iconic piece of art and cultural history. The painting portrays a night sky full of stars, with eddies (spirals) both large and small. Kolmogorov's description of subsonic, incompressible turbulence gives a model for turbulence that involves eddies interacting on many length scales, and so the question has been asked -- is The Starry Night turbulent? To answer this question, we calculate the azimuthally averaged power spectrum of a square region ( 1165×1165 pixels) of night sky in The Starry Night. We find a power spectrum,  P(k) , where k is the wavevector, that shares the same features as supersonic turbulence. It has a power-law P(k)∝k−2.1±0.3  in the scaling range,  34≤k≤80 . We identify a driving scale,  kD=3 , dissipation scale,  kν=220  and a bottleneck. This leads us to believe that van Gogh's depiction of the starry night closely resembles the turbulence found in real molecular clouds, the birthplace of stars in the Universe.
 
 # Summary. An optional shortened abstract.
-summary: ""
+summary: "We know that the starry night is turbulent, and that the turbulence is in someway responsible for regulating how the mass density of a star forming cloud gets turned into stars. But did you know that The Starry Night is also turbulent, in that Vincent van Gogh's The Starry Night exhibits some features in k space that are oddly consistent with features of a true turbulent spectrum."
 
 tags:
-- Vincent van Gogh
-- Starry Night
+- A turbulent analysis of The Starry Night
+- Vincent van Gogh's Starry Night
+- pop culture
 
-featured: False
+featured: true
 
 links:
 - name: Custom Link
