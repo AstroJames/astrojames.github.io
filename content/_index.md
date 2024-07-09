@@ -70,8 +70,8 @@ sections:
         
     design:
       columns: '1'
-      spacing:
-        padding: [0, 0, 0, 0]
+      # spacing:
+      #   padding: [0, 0, 0, 0]
   - block: collection
     id: featured
     content:
