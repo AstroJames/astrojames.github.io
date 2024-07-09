@@ -1,13 +1,16 @@
 ---
-title: "Magnetized compressible turbulence with a fluctuation dynamo and Reynolds numbers over a million"
+title: "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field"
 authors:
 - admin
+- Mark R. Krumholz
+- Raphael Skalidis
 - Christoph Federrath
-- Ralf Klessen
-- Salvatore Cielo
-- Amitava Bhattacharjee
-date: "2024-05-29"
-doi: "https://doi.org/10.48550/arXiv.2405.16626"
+- Amit Seta
+- Roland M. Crocker
+- Philip Mocz
+- Neco Kriel
+date: "2022-10-01"
+doi: "10.1093/mnras/stac2099"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: ""
@@ -15,29 +18,28 @@ publishDate: ""
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article"]
+publication_types: ["journal_article"]
 
 # Publication name and optional abbreviated publication name.
 publication: ""
 publication_short: ""
 
-abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state for many astrophysical plasmas. However, even the basic statistics for this type of turbulence remains uncertain. We present results from supersonic MHD turbulence simulations at unparalleled resolutions, with plasma Reynolds numbers of over a million. In the kinetic energy spectrum we find a break between the scales that are dominated by kinetic energy, with spectral index −2, and those that become strongly magnetized, with spectral index −3/2. By analyzing the Helmholtz decomposed kinetic energy spectrum, we find that the compressible modes are not passively mixed through the cascade of the incompressible modes. At high magnetic Reynolds number, above 105, we find a power law in the magnetic energy spectrum with spectral index −9/5. On the strongly magnetized, subsonic scales the plasma tends to self-organize into locally relaxed regions, where there is strong alignment between the current density, magnetic field, velocity field and vorticity field, depleting both the nonlinearities and magnetic terms in the MHD equations, which we attribute to plasma relaxation on scales where the magnetic fluctuations evolve on shorter timescales than the velocity fluctuations. This process constrains the cascade to inhomogenous, volume-poor, fractal surfaces between relaxed regions, which has significant repercussions for understanding the nature of magnetized turbulence in astrophysical plasmas and the saturation of the fluctuation dynamo.
+abstract: Energy equipartition is a powerful theoretical tool for understanding astrophysical plasmas. It is invoked, for example, to measure magnetic fields in the interstellar medium (ISM), as evidence for small-scale turbulent dynamo action, and, in general, to estimate the energy budget of star-forming molecular clouds. In this study, we motivate and explore the role of the volume-averaged root-mean-squared (rms) magnetic coupling term between the turbulent,  δB  , and large-scale,  B0 , fields,  ⟨(δB⋅B0)2⟩1/2V . By considering the second moments of the energy balance equations we show that the rms coupling term is in energy equipartition with the volume-averaged turbulent kinetic energy for turbulence with a sub-Alfvénic large-scale field. Under the assumption of exact energy equipartition between these terms, we derive relations for the magnetic and coupling term fluctuations, which provide excellent, parameter-free agreement with time-averaged data from 280 numerical simulations of compressible magnetohydrodynamic (MHD) turbulence. Furthermore, we explore the relation between the turbulent mean field and total Alfvén Mach numbers, and demonstrate that sub-Alfvénic turbulence can only be developed through a strong, large-scale magnetic field, which supports an extremely super-Alfvénic turbulent magnetic field. This means that the magnetic field fluctuations are significantly subdominant to the velocity fluctuations in the sub-Alfvénic large-scale field regime. Throughout our study, we broadly discuss the implications for observations of magnetic fields and understanding the dynamics in the magnetized ISM.
 
 # Summary. An optional shortened abstract.
-summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
+summary: ""
 
 tags:
-- supersonic MHD turbulence cascade at 10k^3
-- turbulent dynamo
+- DCF methods for polarisation
 - numerical simulations
 - supersonic plasma dynamics
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link
-  url: https://arxiv.org/abs/2405.16626
-url_pdf: https://arxiv.org/pdf/2405.16626
+  url: https://arxiv.org/abs/2202.13020
+url_pdf: https://arxiv.org/pdf/2202.13020
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -48,10 +50,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-  focal_point: ""
-  preview_only: false
+# image:
+#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+#   focal_point: ""
+#   preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.

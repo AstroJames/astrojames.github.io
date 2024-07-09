@@ -1,13 +1,10 @@
 ---
-title: "Magnetized compressible turbulence with a fluctuation dynamo and Reynolds numbers over a million"
+title: "Is The Starry Night Turbulent?"
 authors:
 - admin
-- Christoph Federrath
-- Ralf Klessen
-- Salvatore Cielo
-- Amitava Bhattacharjee
-date: "2024-05-29"
-doi: "https://doi.org/10.48550/arXiv.2405.16626"
+- Neco Kriel
+date: "2019-02-01"
+doi: "10.48550/arXiv.1902.03381"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: ""
@@ -21,23 +18,21 @@ publication_types: ["article"]
 publication: ""
 publication_short: ""
 
-abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state for many astrophysical plasmas. However, even the basic statistics for this type of turbulence remains uncertain. We present results from supersonic MHD turbulence simulations at unparalleled resolutions, with plasma Reynolds numbers of over a million. In the kinetic energy spectrum we find a break between the scales that are dominated by kinetic energy, with spectral index −2, and those that become strongly magnetized, with spectral index −3/2. By analyzing the Helmholtz decomposed kinetic energy spectrum, we find that the compressible modes are not passively mixed through the cascade of the incompressible modes. At high magnetic Reynolds number, above 105, we find a power law in the magnetic energy spectrum with spectral index −9/5. On the strongly magnetized, subsonic scales the plasma tends to self-organize into locally relaxed regions, where there is strong alignment between the current density, magnetic field, velocity field and vorticity field, depleting both the nonlinearities and magnetic terms in the MHD equations, which we attribute to plasma relaxation on scales where the magnetic fluctuations evolve on shorter timescales than the velocity fluctuations. This process constrains the cascade to inhomogenous, volume-poor, fractal surfaces between relaxed regions, which has significant repercussions for understanding the nature of magnetized turbulence in astrophysical plasmas and the saturation of the fluctuation dynamo.
+abstract: Vincent van Gogh's painting, The Starry Night, is an iconic piece of art and cultural history. The painting portrays a night sky full of stars, with eddies (spirals) both large and small. Kolmogorov's description of subsonic, incompressible turbulence gives a model for turbulence that involves eddies interacting on many length scales, and so the question has been asked -- is The Starry Night turbulent? To answer this question, we calculate the azimuthally averaged power spectrum of a square region ( 1165×1165  pixels) of night sky in The Starry Night. We find a power spectrum,  P(k) , where  k  is the wavevector, that shares the same features as supersonic turbulence. It has a power-law P(k)∝k−2.1±0.3  in the scaling range,  34≤k≤80 . We identify a driving scale,  kD=3 , dissipation scale,  kν=220  and a bottleneck. This leads us to believe that van Gogh's depiction of the starry night closely resembles the turbulence found in real molecular clouds, the birthplace of stars in the Universe.
 
 # Summary. An optional shortened abstract.
-summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
+summary: ""
 
 tags:
-- supersonic MHD turbulence cascade at 10k^3
-- turbulent dynamo
-- numerical simulations
-- supersonic plasma dynamics
+- Vincent van Gogh
+- Starry Night
 
-featured: true
+featured: False
 
 links:
 - name: Custom Link
-  url: https://arxiv.org/abs/2405.16626
-url_pdf: https://arxiv.org/pdf/2405.16626
+  url: https://arxiv.org/abs/1902.03381
+url_pdf: https://arxiv.org/pdf/1902.03381
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -48,10 +43,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-  focal_point: ""
-  preview_only: false
+# image:
+#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+#   focal_point: ""
+#   preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.

@@ -1,13 +1,11 @@
 ---
-title: "Magnetized compressible turbulence with a fluctuation dynamo and Reynolds numbers over a million"
+title: "Magnetic field fluctuations in anisotropic, supersonic turbulence"
 authors:
 - admin
 - Christoph Federrath
-- Ralf Klessen
-- Salvatore Cielo
-- Amitava Bhattacharjee
-date: "2024-05-29"
-doi: "https://doi.org/10.48550/arXiv.2405.16626"
+- Amit Seta
+date: "2020-10-01"
+doi: "10.1093/mnras/staa2257"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: ""
@@ -15,29 +13,28 @@ publishDate: ""
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article"]
+publication_types: ["journal_article"]
 
 # Publication name and optional abbreviated publication name.
 publication: ""
 publication_short: ""
 
-abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state for many astrophysical plasmas. However, even the basic statistics for this type of turbulence remains uncertain. We present results from supersonic MHD turbulence simulations at unparalleled resolutions, with plasma Reynolds numbers of over a million. In the kinetic energy spectrum we find a break between the scales that are dominated by kinetic energy, with spectral index −2, and those that become strongly magnetized, with spectral index −3/2. By analyzing the Helmholtz decomposed kinetic energy spectrum, we find that the compressible modes are not passively mixed through the cascade of the incompressible modes. At high magnetic Reynolds number, above 105, we find a power law in the magnetic energy spectrum with spectral index −9/5. On the strongly magnetized, subsonic scales the plasma tends to self-organize into locally relaxed regions, where there is strong alignment between the current density, magnetic field, velocity field and vorticity field, depleting both the nonlinearities and magnetic terms in the MHD equations, which we attribute to plasma relaxation on scales where the magnetic fluctuations evolve on shorter timescales than the velocity fluctuations. This process constrains the cascade to inhomogenous, volume-poor, fractal surfaces between relaxed regions, which has significant repercussions for understanding the nature of magnetized turbulence in astrophysical plasmas and the saturation of the fluctuation dynamo.
+abstract: The rich structure that we observe in molecular clouds is due to the interplay between strong magnetic fields and supersonic (turbulent) velocity fluctuations. The velocity fluctuations interact with the magnetic field, causing it too to fluctuate. Using numerical simulations, we explore the nature of such magnetic field fluctuations, δB, over a wide range of turbulent Mach numbers, M=2−20 (i.e. from weak to strong compressibility), and Alfvén Mach numbers,  MA0=0.1−100 (i.e. from strong to weak magnetic mean fields, B0). We derive a compressible quasi-static fluctuation model from the magnetohydrodynamical (MHD) equations and show that velocity gradients parallel to the mean magnetic field give rise to compressible modes in sub-Alfvénic flows, which prevents the flow from becoming two dimensional, as is the case in incompressible MHD turbulence. We then generalize an analytical model for the magnitude of the magnetic fluctuations to include M, and find |δB|=δB=csπρ0√MMA0, where cs is the sound speed and ρ0 is the mean density of gas. This new relation fits well in the strong B-field regime. We go on to study the anisotropy between the perpendicular (B⊥) and parallel (B∥) fluctuations and the mean-normalized fluctuations, which we find follow universal scaling relations, invariant of  M  . We provide a detailed analysis of the morphology for the δB⊥ and δB∥ probability density functions and find that eddies aligned with B0 cause parallel fluctuations that reduce B∥ in the most anisotropic simulations. We discuss broadly the implications of our fluctuation models for magnetized gases in the interstellar medium.
 
 # Summary. An optional shortened abstract.
-summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
+summary: ""
 
 tags:
-- supersonic MHD turbulence cascade at 10k^3
-- turbulent dynamo
+- magnetic field fluctuations
 - numerical simulations
 - supersonic plasma dynamics
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link
-  url: https://arxiv.org/abs/2405.16626
-url_pdf: https://arxiv.org/pdf/2405.16626
+  url: https://arxiv.org/abs/2007.13937
+url_pdf: https://arxiv.org/pdf/2007.13937
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -48,10 +45,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-  focal_point: ""
-  preview_only: false
+# image:
+#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+#   focal_point: ""
+#   preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.

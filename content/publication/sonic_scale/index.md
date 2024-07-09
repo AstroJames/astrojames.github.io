@@ -1,13 +1,12 @@
 ---
-title: "Magnetized compressible turbulence with a fluctuation dynamo and Reynolds numbers over a million"
+title: "The sonic scale of interstellar turbulence"
 authors:
-- admin
 - Christoph Federrath
 - Ralf Klessen
-- Salvatore Cielo
-- Amitava Bhattacharjee
-date: "2024-05-29"
-doi: "https://doi.org/10.48550/arXiv.2405.16626"
+- Luigi Iapichino
+- admin
+date: "2021-01-01"
+doi: "10.1038/s41550-020-01282-z"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: ""
@@ -21,23 +20,22 @@ publication_types: ["article"]
 publication: ""
 publication_short: ""
 
-abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state for many astrophysical plasmas. However, even the basic statistics for this type of turbulence remains uncertain. We present results from supersonic MHD turbulence simulations at unparalleled resolutions, with plasma Reynolds numbers of over a million. In the kinetic energy spectrum we find a break between the scales that are dominated by kinetic energy, with spectral index −2, and those that become strongly magnetized, with spectral index −3/2. By analyzing the Helmholtz decomposed kinetic energy spectrum, we find that the compressible modes are not passively mixed through the cascade of the incompressible modes. At high magnetic Reynolds number, above 105, we find a power law in the magnetic energy spectrum with spectral index −9/5. On the strongly magnetized, subsonic scales the plasma tends to self-organize into locally relaxed regions, where there is strong alignment between the current density, magnetic field, velocity field and vorticity field, depleting both the nonlinearities and magnetic terms in the MHD equations, which we attribute to plasma relaxation on scales where the magnetic fluctuations evolve on shorter timescales than the velocity fluctuations. This process constrains the cascade to inhomogenous, volume-poor, fractal surfaces between relaxed regions, which has significant repercussions for understanding the nature of magnetized turbulence in astrophysical plasmas and the saturation of the fluctuation dynamo.
+abstract: Understanding the physics of turbulence is crucial for many applications, including weather, industry and astrophysics. In the interstellar medium1,2, supersonic turbulence plays a crucial role in controlling the gas density and velocity structure, and ultimately the birth of stars3-8. Here we present a simulation of interstellar turbulence with a grid resolution of 10,0483 cells that allows us to determine the position and width of the sonic scale (ℓs)—the transition from supersonic to subsonic turbulence. The simulation simultaneously resolves the supersonic and subsonic cascade, with the velocity as a function of scale, v(ℓ) ∝ ℓp, where we measure psup = 0.49 ± 0.01 and psub = 0.39 ± 0.02, respectively. We find that ℓs agrees with the relation ℓs=ϕsL M−1 /psup , where M is the three-dimensional Mach number, L is either the driving scale of the turbulence or the diameter of a molecular cloud, and ϕs is a dimensionless factor of order unity. If L is the driving scale, we measure ϕs=0.4 2−0.09+0.12 , primarily because of the separation between the driving scale and the start of the supersonic cascade. For a supersonic cascade extending beyond the cloud scale, we get ϕs=0.9 1−0.20+0.25 . In both cases, ϕs ≲ 1, because we find that the supersonic cascade transitions smoothly to the subsonic cascade over a factor of 3 in scale, instead of a sharp transition. Our measurements provide quantitative input for turbulence-regulated models of filament structure and star formation in molecular clouds.
 
 # Summary. An optional shortened abstract.
-summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
+summary: ""
 
 tags:
-- supersonic MHD turbulence cascade at 10k^3
-- turbulent dynamo
+- supersonic HD turbulence cascade at 10k^3
 - numerical simulations
-- supersonic plasma dynamics
+- supersonic fluid dynamics
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link
-  url: https://arxiv.org/abs/2405.16626
-url_pdf: https://arxiv.org/pdf/2405.16626
+  url: https://arxiv.org/abs/2011.06238
+url_pdf: https://arxiv.org/pdf/2011.06238
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -48,10 +46,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-  focal_point: ""
-  preview_only: false
+# image:
+#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+#   focal_point: ""
+#   preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.

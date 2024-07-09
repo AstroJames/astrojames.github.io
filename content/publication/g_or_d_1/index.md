@@ -1,13 +1,13 @@
 ---
-title: "Magnetized compressible turbulence with a fluctuation dynamo and Reynolds numbers over a million"
+title: "Growth or Decay - I: universality of the turbulent dynamo saturation"
 authors:
 - admin
 - Christoph Federrath
-- Ralf Klessen
-- Salvatore Cielo
-- Amitava Bhattacharjee
-date: "2024-05-29"
-doi: "https://doi.org/10.48550/arXiv.2405.16626"
+- Neco Kriel
+- Philip Mocz
+- Amit Seta
+date: "2023-09-01"
+doi: "10.1093/mnras/stad1863"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: ""
@@ -15,29 +15,27 @@ publishDate: ""
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article"]
+publication_types: ["journal_article"]
 
 # Publication name and optional abbreviated publication name.
 publication: ""
 publication_short: ""
 
-abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state for many astrophysical plasmas. However, even the basic statistics for this type of turbulence remains uncertain. We present results from supersonic MHD turbulence simulations at unparalleled resolutions, with plasma Reynolds numbers of over a million. In the kinetic energy spectrum we find a break between the scales that are dominated by kinetic energy, with spectral index −2, and those that become strongly magnetized, with spectral index −3/2. By analyzing the Helmholtz decomposed kinetic energy spectrum, we find that the compressible modes are not passively mixed through the cascade of the incompressible modes. At high magnetic Reynolds number, above 105, we find a power law in the magnetic energy spectrum with spectral index −9/5. On the strongly magnetized, subsonic scales the plasma tends to self-organize into locally relaxed regions, where there is strong alignment between the current density, magnetic field, velocity field and vorticity field, depleting both the nonlinearities and magnetic terms in the MHD equations, which we attribute to plasma relaxation on scales where the magnetic fluctuations evolve on shorter timescales than the velocity fluctuations. This process constrains the cascade to inhomogenous, volume-poor, fractal surfaces between relaxed regions, which has significant repercussions for understanding the nature of magnetized turbulence in astrophysical plasmas and the saturation of the fluctuation dynamo.
+abstract: The turbulent small-scale dynamo (SSD) is likely to be responsible for the magnetization of the interstellar medium (ISM) that we observe in the Universe today. The SSD efficiently converts kinetic energy Ekin into magnetic energy Emag and is often used to explain how an initially weak magnetic field with Emag ≪ Ekin is amplified, and then maintained at a level Emag ≲ Ekin. Usually, this process is studied by initializing a weak seed magnetic field and letting the turbulence grow it to saturation. However, in this Part I of the Growth or Decay series, using three-dimensional, visco-resistive magnetohydrodynamical turbulence simulations up to magnetic Reynolds numbers of 2000, we show that the same final state in the integral quantities, energy spectra, and characteristic scales of the magnetic field can also be achieved if initially Emag ~ Ekin or even if initially Emag ≫ Ekin. This suggests that the final saturated state of the turbulent dynamo is set by the turbulence and the material properties of the plasma, independent of the initial structure or amplitude of the magnetic field. We discuss the implications this has for the maintenance of magnetic fields in turbulent plasmas and future studies exploring the dynamo saturation.
 
 # Summary. An optional shortened abstract.
 summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
 
 tags:
-- supersonic MHD turbulence cascade at 10k^3
-- turbulent dynamo
+- turbulent dynamo 
 - numerical simulations
-- supersonic plasma dynamics
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link
-  url: https://arxiv.org/abs/2405.16626
-url_pdf: https://arxiv.org/pdf/2405.16626
+  url: https://arxiv.org/abs/2209.10749
+url_pdf: https://arxiv.org/pdf/2209.10749
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -48,10 +46,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-  focal_point: ""
-  preview_only: false
+# image:
+#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+#   focal_point: ""
+#   preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.

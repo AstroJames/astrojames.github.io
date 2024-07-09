@@ -1,13 +1,12 @@
 ---
-title: "Magnetized compressible turbulence with a fluctuation dynamo and Reynolds numbers over a million"
+title: "Fundamental scales in the kinematic phase of the turbulent dynamo"
 authors:
+- Neco Kriel
 - admin
+- Amit Seta
 - Christoph Federrath
-- Ralf Klessen
-- Salvatore Cielo
-- Amitava Bhattacharjee
-date: "2024-05-29"
-doi: "https://doi.org/10.48550/arXiv.2405.16626"
+date: "2022-07-01"
+doi: "10.1093/mnras/stac969"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: ""
@@ -15,29 +14,27 @@ publishDate: ""
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article"]
+publication_types: ["journal_article"]
 
 # Publication name and optional abbreviated publication name.
 publication: ""
 publication_short: ""
 
-abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state for many astrophysical plasmas. However, even the basic statistics for this type of turbulence remains uncertain. We present results from supersonic MHD turbulence simulations at unparalleled resolutions, with plasma Reynolds numbers of over a million. In the kinetic energy spectrum we find a break between the scales that are dominated by kinetic energy, with spectral index −2, and those that become strongly magnetized, with spectral index −3/2. By analyzing the Helmholtz decomposed kinetic energy spectrum, we find that the compressible modes are not passively mixed through the cascade of the incompressible modes. At high magnetic Reynolds number, above 105, we find a power law in the magnetic energy spectrum with spectral index −9/5. On the strongly magnetized, subsonic scales the plasma tends to self-organize into locally relaxed regions, where there is strong alignment between the current density, magnetic field, velocity field and vorticity field, depleting both the nonlinearities and magnetic terms in the MHD equations, which we attribute to plasma relaxation on scales where the magnetic fluctuations evolve on shorter timescales than the velocity fluctuations. This process constrains the cascade to inhomogenous, volume-poor, fractal surfaces between relaxed regions, which has significant repercussions for understanding the nature of magnetized turbulence in astrophysical plasmas and the saturation of the fluctuation dynamo.
+abstract: The turbulent dynamo is a powerful mechanism that converts turbulent kinetic energy to magnetic energy. A key question regarding the magnetic field amplification by turbulence, is, on what scale, kp, do magnetic fields become most concentrated? There has been some disagreement about whether kp is controlled by the viscous scale, kν (where turbulent kinetic energy dissipates), or the resistive scale, kη (where magnetic fields dissipate). Here, we use direct numerical simulations of magnetohydrodynamic turbulence to measure characteristic scales in the kinematic phase of the turbulent dynamo. We run 104-simulations with hydrodynamic Reynolds numbers of 10 ≤ Re ≤ 3600, and magnetic Reynolds numbers of 270 ≤ Rm ≤ 4000, to explore the dependence of kp on kν and kη. Using physically motivated models for the kinetic and magnetic energy spectra, we measure kν, kη, and kp, making sure that the obtained scales are numerically converged. We determine the overall dissipation scale relations kν=(0.025+0.005−0.006)kturbRe3/4 and kη=(0.88+0.21−0.23)kνPm1/2 , where kturb is the turbulence driving wavenumber and Pm = Rm/Re is the magnetic Prandtl number. We demonstrate that the principle dependence of kp is on kη. For plasmas, where Re ≳ 100, we find that  kp=(1.2+0.2−0.2)kη , with the proportionality constant related to the power-law 'Kazantsev' exponent of the magnetic power spectrum. Throughout this study, we find a dichotomy in the fundamental properties of the dynamo where Re > 100, compared to Re < 100. We report a minimum critical hydrodynamic Reynolds number, Recrit = 100 for bonafide turbulent dynamo action.
 
 # Summary. An optional shortened abstract.
 summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
 
 tags:
-- supersonic MHD turbulence cascade at 10k^3
 - turbulent dynamo
 - numerical simulations
-- supersonic plasma dynamics
 
 featured: true
 
 links:
 - name: Custom Link
-  url: https://arxiv.org/abs/2405.16626
-url_pdf: https://arxiv.org/pdf/2405.16626
+  url: https://arxiv.org/abs/2204.00828
+url_pdf: https://arxiv.org/pdf/2204.00828
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -48,10 +45,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-  focal_point: ""
-  preview_only: false
+# image:
+#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+#   focal_point: ""
+#   preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.

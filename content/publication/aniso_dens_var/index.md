@@ -29,7 +29,7 @@ tags:
 - supersonic plasma dynamics
 - mass density statistics
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link

@@ -1,13 +1,13 @@
 ---
-title: "Magnetized compressible turbulence with a fluctuation dynamo and Reynolds numbers over a million"
+title: "Fundamental MHD scales -- II: the kinematic phase of the supersonic small-scale dynamo"
 authors:
+- Neco Kriel
 - admin
 - Christoph Federrath
-- Ralf Klessen
-- Salvatore Cielo
-- Amitava Bhattacharjee
-date: "2024-05-29"
-doi: "https://doi.org/10.48550/arXiv.2405.16626"
+- Mark R. Krumholz
+- Justin Kin Jun Hew
+date: "2023-10-01"
+doi: "10.48550/arXiv.2310.17036"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: ""
@@ -15,29 +15,28 @@ publishDate: ""
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article"]
+publication_types: ["journal_article"]
 
 # Publication name and optional abbreviated publication name.
 publication: ""
 publication_short: ""
 
-abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state for many astrophysical plasmas. However, even the basic statistics for this type of turbulence remains uncertain. We present results from supersonic MHD turbulence simulations at unparalleled resolutions, with plasma Reynolds numbers of over a million. In the kinetic energy spectrum we find a break between the scales that are dominated by kinetic energy, with spectral index −2, and those that become strongly magnetized, with spectral index −3/2. By analyzing the Helmholtz decomposed kinetic energy spectrum, we find that the compressible modes are not passively mixed through the cascade of the incompressible modes. At high magnetic Reynolds number, above 105, we find a power law in the magnetic energy spectrum with spectral index −9/5. On the strongly magnetized, subsonic scales the plasma tends to self-organize into locally relaxed regions, where there is strong alignment between the current density, magnetic field, velocity field and vorticity field, depleting both the nonlinearities and magnetic terms in the MHD equations, which we attribute to plasma relaxation on scales where the magnetic fluctuations evolve on shorter timescales than the velocity fluctuations. This process constrains the cascade to inhomogenous, volume-poor, fractal surfaces between relaxed regions, which has significant repercussions for understanding the nature of magnetized turbulence in astrophysical plasmas and the saturation of the fluctuation dynamo.
+abstract: The small-scale dynamo (SSD) amplifies weak magnetic fields exponentially fast via kinetic motions. While there exist well-established theories for SSDs in incompressible flows, many astrophysical SSDs operate in supersonic turbulence. To understand the impact of compressibility on amplified magnetic fields, we perform an extensive set of visco-resistive SSD simulations, covering a wide range of sonic Mach number  M , hydrodynamic Reynolds number Re, and magnetic Prandtl number Pm. We develop robust methods for measuring kinetic and magnetic energy dissipation scales  ℓν  and  ℓη , as well as the scale at which magnetic fields are strongest  ℓp  during the kinematic phase of these simulations. We show that  ℓν/ℓη∼  Pm 1/2  is a universal feature in the kinematic phase of Pm  ≥1  SSDs, regardless of M  or Re, and we confirm earlier predictions that SSDs operating in incompressible plasmas (either M≤1  or Re  <  Re crit≈100 ) concentrate magnetic energy at the smallest scales allowed by magnetic dissipation,  ℓp∼ℓη , and produce fields organised with field strength and field-line curvature inversely correlated. However, we show that these predictions fail for compressible SSDs ( M>1  and Re  >  Re crit ), where shocks concentrate magnetic energy in large-scale, over-dense, coherent structures, with size  ℓp∼(ℓturb/ℓshock)1/3ℓη≫ℓη , where  ℓshock∼M2/[ Re  (M−1)2]  is shock width, and  ℓturb  is the turbulent outer scale; magnetic field-line curvature becomes almost independent of the field strength. We discuss the implications for galaxy mergers and for cosmic-ray transport models in the interstellar medium that are sensitive to field-line curvature statistics.
 
 # Summary. An optional shortened abstract.
-summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
+summary: ""
 
 tags:
-- supersonic MHD turbulence cascade at 10k^3
 - turbulent dynamo
 - numerical simulations
 - supersonic plasma dynamics
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link
-  url: https://arxiv.org/abs/2405.16626
-url_pdf: https://arxiv.org/pdf/2405.16626
+  url: https://arxiv.org/abs/2310.17036
+url_pdf: https://arxiv.org/pdf/2310.17036
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -48,10 +47,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-  focal_point: ""
-  preview_only: false
+# image:
+#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+#   focal_point: ""
+#   preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.

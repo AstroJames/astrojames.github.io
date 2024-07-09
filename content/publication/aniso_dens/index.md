@@ -28,7 +28,7 @@ tags:
 - numerical simulations
 - supersonic plasma dynamics
 
-featured: true
+featured: false
 
 links:
 - name: Custom Link
