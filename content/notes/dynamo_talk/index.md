@@ -32,7 +32,7 @@ image:
 #    url: https://twitter.com/georgecushen
 url_code: ''
 url_pdf: ''
-url_slides: ''
+url_slides: '/static/A-team-Group-talk-2024_Aug.pdf'
 url_video: ''
 
 # Markdown Slides (optional).
