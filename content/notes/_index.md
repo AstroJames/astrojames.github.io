@@ -1,5 +1,5 @@
 ---
-title: Notes
+title: Lecture Notes & Talks
 cms_exclude: true
 
 # View.
@@ -10,3 +10,5 @@ banner:
   caption: ''
   image: ''
 ---
+
+
