@@ -3,7 +3,7 @@ title: Potential Student Projects
 cms_exclude: true
 
 # View.
-view: project
+view: notes
 
 # Optional header image (relative to `static/media/` folder).
 banner:
