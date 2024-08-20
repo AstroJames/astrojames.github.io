@@ -1,7 +1,7 @@
 ---
 title: Reconstructing three-dimensional moments from anisotropic two-dimensional fields
 summary: Dr. James Beattie and Prof. Christoph Federrath (Australian National University)
-abstract: Many astrophysical observations are intrinsically two-dimensional in position-position space (PP; e.g., a column density map). However, astrophysical plasma models are usually constructed in three-dimensions, position-position-position (PPP), so an important step to compare theory to observations is therefore being able to reconstruct the statistics of the three dimensional field from two dimensional observations. Important work from Brunt et al. (2010) showed that one could, under the assumption of isotropy, reconstruct the three-dimensional variance of a turbulent (or generally stochastic) field by using a rotational transformation of the 2D power spectrum. But in the presence of strong magnetic fields, which we find on many scales in a galaxy, isotropy is strongly violated. Hence, this project aims to utilise analytical means to generalise the Brunt et al. (2010) method to include the ability to reconstruct anisotropic fields. Furthermore, we will validate our new method on a suite of high resolution magnetohydrodynamical turbulence simulations followed by applying them dust continuum emission observations of quiescent molecular clouds.
+abstract: 
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -49,3 +49,5 @@ slides: ""
 projects:
   - MHD
 ---
+
+Many astrophysical observations are intrinsically two-dimensional in position-position space (PP; e.g., a column density map). However, astrophysical plasma models are usually constructed in three-dimensions, position-position-position (PPP), so an important step to compare theory to observations is therefore being able to reconstruct the statistics of the three dimensional field from two dimensional observations. Important work from Brunt et al. (2010) showed that one could, under the assumption of isotropy, reconstruct the three-dimensional variance of a turbulent (or generally stochastic) field by using a rotational transformation of the 2D power spectrum. But in the presence of strong magnetic fields, which we find on many scales in a galaxy, isotropy is strongly violated. Hence, this project aims to utilise analytical means to generalise the Brunt et al. (2010) method to include the ability to reconstruct anisotropic fields. Furthermore, we will validate our new method on a suite of high resolution magnetohydrodynamical turbulence simulations followed by applying them dust continuum emission observations of quiescent molecular clouds.

@@ -2,7 +2,7 @@
 title: The transport and flux of magnetic helicity fluctuations
 
 summary: Dr. James Beattie and Prof. Amitava Bhattacharjee (Princeton University)
-abstract: Magnetic helicity describes the topological knottedness of a magnetic field, and in ideal magnetohydrodynamics, it is an invariant. It plays an important role in large-scale dynamos, and the decay of primordial magnetic fields in the early Universe, due in part to net-helicity being associated with symmetry breaking, and the helicity directly changing the decay timescale. Recent works have shown that not only is magnetic helicity an invariant, but so is the magnetic helicity correlation function, making it an even more robust invariant than previously thought. In this project we will explore the nature of the magnetic helicity flux in MHD turbulence through the use of helicity flux transfer functions. We will derive the transfer functions from the helicity evolution equation, and apply them to high resolution MHD turbulence simulation, unravelling what mechanisms give rise to the well-known inverse helicity cascade, and in turn better understanding the role of MHD turbulence in transporting helicity where it can be utilised by large-scale dynamos.
+abstract:
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -50,3 +50,5 @@ slides: ""
 projects:
   - MHD
 ---
+
+Magnetic helicity describes the topological knottedness of a magnetic field, and in ideal magnetohydrodynamics, it is an invariant. It plays an important role in large-scale dynamos, and the decay of primordial magnetic fields in the early Universe, due in part to net-helicity being associated with symmetry breaking, and the helicity directly changing the decay timescale. Recent works have shown that not only is magnetic helicity an invariant, but so is the magnetic helicity correlation function, making it an even more robust invariant than previously thought. In this project we will explore the nature of the magnetic helicity flux in MHD turbulence through the use of helicity flux transfer functions. We will derive the transfer functions from the helicity evolution equation, and apply them to high resolution MHD turbulence simulation, unravelling what mechanisms give rise to the well-known inverse helicity cascade, and in turn better understanding the role of MHD turbulence in transporting helicity where it can be utilised by large-scale dynamos.
