@@ -1,7 +1,7 @@
 ---
 title: Student Projects
 summary: 
-cms_exclude: true
+#cms_exclude: true
 
 # View.
 view: projects
