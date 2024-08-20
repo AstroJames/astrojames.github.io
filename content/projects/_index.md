@@ -1,5 +1,5 @@
 ---
-title: Potential Student Projects
+title: Student Projects
 cms_exclude: true
 
 # View.
