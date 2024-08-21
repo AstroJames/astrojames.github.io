@@ -1,7 +1,7 @@
 ---
 title: Investigating compressible and incompressible mode coupling in supersonic turbulent dynamos relevant to the interstellar medium
 
-summary: Dr. James Beattie and Dr. Amitava Bhattacharjee (Princeton University)
+summary: Dr. James Beattie and Prof. Amitava Bhattacharjee (Princeton University)
 abstract:
 
 # Talk start and end times.

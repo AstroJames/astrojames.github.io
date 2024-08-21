@@ -1,6 +1,5 @@
 ---
 title: Student Projects
-summary: 
 #cms_exclude: true
 
 # View.
@@ -19,6 +18,8 @@ sections:
       button:
         text: CV
         url: uploads/resume.pdf
+    design:
+      columns: '1'
 ---
 
 
