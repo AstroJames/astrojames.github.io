@@ -1,7 +1,7 @@
 ---
 title: 🎉 I was a commentator in a CNN article on the Starry Night
 summary: CNN reached out and  
-date: 2024-07-08
+date: 2024-09-18
 
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
