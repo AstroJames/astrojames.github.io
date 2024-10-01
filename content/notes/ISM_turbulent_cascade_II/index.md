@@ -6,7 +6,7 @@ abstract: a story of compressible and solenoidal modes
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2024-09-06'
+date: '2024-09-25'
 date_end: 
 all_day: false
 
