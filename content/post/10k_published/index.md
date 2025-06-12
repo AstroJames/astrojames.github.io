@@ -1,5 +1,5 @@
 ---
-title: 🎉Nature Astronomy publishes The spectrum of magnetized turbulence in the interstellar medium!
+title: 🎉Published in Nature Astronomy🎉 -- The spectrum of magnetized turbulence in the interstellar medium!
 summary: The key spectral results from the 10k simulation is published in Nature Astronomy!
 date: 2025-05-13
 
