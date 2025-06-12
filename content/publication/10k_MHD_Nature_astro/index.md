@@ -24,7 +24,7 @@ publication_short: ""
 abstract: The interstellar medium (ISM) of our Galaxy is magnetized, compressible and turbulent, influencing many key ISM properties, such as star formation, cosmic-ray transport, and metal and phase mixing. Yet, basic statistics describing compressible, magnetized turbulence remain uncertain. Utilizing grid resolutions up to 10,080^3 cells, we simulated highly compressible, magnetized ISM-style turbulence with a magnetic field maintained by a small-scale dynamo. We measured two coexisting kinetic energy cascades, Ekin(k ) ∝k^−n, in the turbulence, separating the plasma into scales that are non-locally interacting, supersonic and weakly magnetized (n = 2.01 ± 0.03 ≈ 2) and locally interacting, subsonic and highly magnetized (n = 1.465 ± 0.002 ≈ 3/2), where k is the wavenumber. We show that the 3/2 spectrum can be explained with scale-dependent kinetic energy fluxes and velocity-magnetic field alignment. On the highly magnetized modes, the magnetic energy spectrum forms a local cascade (n = 1.798 ± 0.001 ≈ 9/5), deviating from any known ab initio theory. With a new generation of radio telescopes coming online, these results provide a means to directly test if the ISM in our Galaxy is maintained by the compressible turbulent motions from within it.
 
 # Summary. An optional shortened abstract.
-summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
+summary: "The energy spectrum and key turbulence statistics from ISM-style turbulence."
 
 tags:
 - interstellar medium
