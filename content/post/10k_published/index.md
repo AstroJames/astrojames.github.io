@@ -9,5 +9,5 @@ authors:
 tags:
   - publication
   - mhd turbulence
-  - the world's largest simulation
+  - the world's largest turbulence simulation
 ---
