@@ -27,7 +27,7 @@ abstract: Many astrophysical small-scale dynamos (SSDs) amplify weak magnetic fi
 summary: ""
 
 tags:
-- turbulent dynamo
+- kinematic supersonic turbulent dynamo
 - numerical simulations
 - supersonic plasma dynamics
 - interstellar medium
