@@ -27,7 +27,7 @@ abstract: Supersonic magnetohydrodynamic (MHD) turbulence is a ubiquitous state 
 summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
 
 tags:
-- supersonic MHD turbulence cascade at the world's highest resolutions
+- supersonic MHD turbulence at the world's highest resolutions
 - turbulent dynamo
 - numerical simulations
 - supersonic plasma dynamics
