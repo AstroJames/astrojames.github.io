@@ -27,7 +27,7 @@ abstract: The interstellar medium (ISM) of our Galaxy is magnetized, compressibl
 summary: "The energy spectrum and key turbulence statistics from ISM-style turbulence."
 
 tags:
-- interstellar medium
+- the interstellar medium cascade
 - turbulent dynamo
 - numerical simulations
 - supersonic plasma dynamics
