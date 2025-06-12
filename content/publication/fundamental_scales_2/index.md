@@ -30,8 +30,9 @@ tags:
 - turbulent dynamo
 - numerical simulations
 - supersonic plasma dynamics
+- interstellar medium
 
-featured: false
+featured: true
 
 links:
 - name: Custom Link
@@ -47,10 +48,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-# image:
-#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-#   focal_point: ""
-#   preview_only: false
+image:
+  caption: "A new model for how the magnetic field spectrum changes during the kinematic stage of the small-scale dynamo."
+  focal_point: ""
+  preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
