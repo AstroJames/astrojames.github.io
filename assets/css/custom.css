@@ -11,6 +11,10 @@
 } 
 */
 
+.prose.pt-2 {
+  padding-top: 0 !important;
+}
+
 .opacity-box {
   position: relative;
   background: rgba(0, 0, 0, 0.1);
