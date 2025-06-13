@@ -120,11 +120,10 @@ work:
 
 ---
 
-<div class="opacity-box-feathered">
-
 ## About Me
-My name is James Beattie and I'm a joint postdoctoral research associate and fellow at [Princeton University](https://web.astro.princeton.edu/people/james-beattie) ([Bhattacharjee Group](https://amitava.scholar.princeton.edu)) and the [Canadian Institute for Theoretical Astrophysics](https://www.cita.utoronto.ca/people/senior-research-associates-post-doctoral-fellows/). I'm interested in magnetized turbulence and dynamo processes across multiple scales across the Universe, from Earth's magnetosheath and the interstellar medium, to the intracluster medium and the plasma environments around compact objects. I was awarded my Ph.D. on Jan. 2024 at the [Australian National University](https://www.anu.edu.au) ([advisor: Christoph Federrath](https://www.mso.anu.edu.au/~chfeder/)), and now live between Toronto in Canada and Princeton in the United States.
+<div class="opacity-box-feathered">
+<p> My name is James Beattie and I'm a joint postdoctoral research associate and fellow at [Princeton University](https://web.astro.princeton.edu/people/james-beattie) ([Bhattacharjee Group](https://amitava.scholar.princeton.edu)) and the [Canadian Institute for Theoretical Astrophysics](https://www.cita.utoronto.ca/people/senior-research-associates-post-doctoral-fellows/). I'm interested in magnetized turbulence and dynamo processes across multiple scales across the Universe, from Earth's magnetosheath and the interstellar medium, to the intracluster medium and the plasma environments around compact objects. I was awarded my Ph.D. on Jan. 2024 at the [Australian National University](https://www.anu.edu.au) ([advisor: Christoph Federrath](https://www.mso.anu.edu.au/~chfeder/)), and now live between Toronto in Canada and Princeton in the United States.
 
 📬 Please reach out to ~james dot beattie at princeton dot edu~ to collaborate 😃
-
+</p>
 </div>
