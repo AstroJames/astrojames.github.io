@@ -118,6 +118,8 @@ work:
     date_start: 2023-01-09
     date_end: ''
 
+---
+
 <div class="opacity-box">
 
 ## About Me
