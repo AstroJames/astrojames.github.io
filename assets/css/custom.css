@@ -9,29 +9,36 @@
   text-align: justify;
 }
 
-/* Reduce vertical space between news items */
+/* Tighter spacing still works */
 #news article {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-/* Reduce heading font size inside news items */
-#news article h2 {
-  font-size: 1.1rem;
-  line-height: 1.3;
-  margin-bottom: 0.2rem;
+/* Make title smaller with high specificity */
+#news article h2 span {
+  font-size: 1.05rem !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0.2rem !important;
 }
 
-/* Shrink summary text */
+/* Shrink the summary text */
 #news article p {
-  font-size: 0.9rem;
-  margin: 0.2rem 0;
-  line-height: 1.4;
+  font-size: 0.9rem !important;
+  margin: 0.2rem 0 !important;
+  line-height: 1.4 !important;
 }
 
-/* Shrink date text */
+/* Shrink the date text */
 #news article time {
-  font-size: 0.75rem;
-  color: #888;
+  font-size: 0.75rem !important;
+  color: #888 !important;
+}
+
+/* Make the news section full width */
+#news .max-w-3xl {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 2rem;
 }
