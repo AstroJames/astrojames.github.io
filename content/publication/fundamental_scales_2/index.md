@@ -6,7 +6,7 @@ authors:
 - Christoph Federrath
 - Mark R. Krumholz
 - Justin Kin Jun Hew
-date: "2023-10-01"
+date: "2025-01-31"
 doi: "10.48550/arXiv.2310.17036"
 
 # Schedule page publish date (NOT publication's date).
