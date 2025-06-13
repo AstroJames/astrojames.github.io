@@ -41,18 +41,18 @@
 }
 
 .opacity-box-feathered {
-  padding: 1.2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 12px;
+  padding: 0.1rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  border-radius: 0.1px;
   background: radial-gradient(
     circle at center,
     rgba(0, 0, 0, 0.4) 0%,
     rgba(0, 0, 0, 0.3) 70%,
     rgba(0, 0, 0, 0) 100%
   );
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0.1px 0.1px rgba(0, 0, 0, 0.1);
   text-align: justify;
 }
 
