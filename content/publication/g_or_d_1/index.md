@@ -24,13 +24,14 @@ publication_short: ""
 abstract: The turbulent small-scale dynamo (SSD) is likely to be responsible for the magnetization of the interstellar medium (ISM) that we observe in the Universe today. The SSD efficiently converts kinetic energy Ekin into magnetic energy Emag and is often used to explain how an initially weak magnetic field with Emag ≪ Ekin is amplified, and then maintained at a level Emag ≲ Ekin. Usually, this process is studied by initializing a weak seed magnetic field and letting the turbulence grow it to saturation. However, in this Part I of the Growth or Decay series, using three-dimensional, visco-resistive magnetohydrodynamical turbulence simulations up to magnetic Reynolds numbers of 2000, we show that the same final state in the integral quantities, energy spectra, and characteristic scales of the magnetic field can also be achieved if initially Emag ~ Ekin or even if initially Emag ≫ Ekin. This suggests that the final saturated state of the turbulent dynamo is set by the turbulence and the material properties of the plasma, independent of the initial structure or amplitude of the magnetic field. We discuss the implications this has for the maintenance of magnetic fields in turbulent plasmas and future studies exploring the dynamo saturation.
 
 # Summary. An optional shortened abstract.
-summary: "The results from the world's largest MHD turbulence simulation are on the arXiv -- everything from cascades, scale-dependent alignment, to anisotropy and plasmoid instabilities."
+summary: "The saturation of the turbulent dynamo is universal to the initial seed magnetic field!"
 
 tags:
+- interstellar dynamo theory
 - turbulent dynamo 
 - numerical simulations
 
-featured: false
+featured: true
 
 links:
 - name: Custom Link
@@ -46,10 +47,10 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-# image:
-#   caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
-#   focal_point: ""
-#   preview_only: false
+image:
+  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+  focal_point: ""
+  preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
