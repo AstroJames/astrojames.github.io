@@ -26,7 +26,7 @@ abstract: The probability density function (PDF) of the logarithmic density cont
 summary: "The mass density distribution function of supersonic turbulence is approximately lognormal. Here we review some of the most popular nonlognormal models."
 
 tags:
-- A review of non-lognormal mass density distributions
+- A review of non-lognormal mass density distributions for applications in star formation
 - mass density pdf
 - statistical methods
 - numerical simulations

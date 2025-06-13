@@ -50,6 +50,12 @@
   padding: 0 2rem;
 }
 
+.full-justify .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 2rem;
+}
+
 .full-justify {
   text-align: justify;
 }
