@@ -77,6 +77,7 @@ sections:
     id: featured
     content:
       title: Featured Science Highlights
+      count: 0
       filters:
         folders:
           - publication
