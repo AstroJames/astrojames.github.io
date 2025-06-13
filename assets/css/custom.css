@@ -87,6 +87,13 @@
   padding: 0 2rem;
 }
 
+#section-markdown .max-w-prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .full-justify {
   text-align: justify;
 }
