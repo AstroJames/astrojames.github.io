@@ -9,7 +9,29 @@
   text-align: justify;
 }
 
-/* Optional: Add a subtle background tint for debugging */
+/* Reduce vertical space between news items */
 #news article {
-  background: rgba(255, 255, 0, 0.5);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Reduce heading font size inside news items */
+#news article h2 {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+
+/* Shrink summary text */
+#news article p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+  line-height: 1.4;
+}
+
+/* Shrink date text */
+#news article time {
+  font-size: 0.75rem;
+  color: #888;
 }
