@@ -9,6 +9,10 @@
   text-align: justify;
 }
 
+body {
+  border: 5px solid red;
+}
+
 /* Tighten spacing for full post layout (date-title-summary) */
 #news .post-entry {
   margin-bottom: 0.75rem;
