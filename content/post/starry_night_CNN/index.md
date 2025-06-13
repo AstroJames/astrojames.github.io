@@ -1,6 +1,6 @@
 ---
 title: 🎉 I was a commentator in a CNN article on the Starry Night
-summary: CNN reached out and  
+summary: CNN reached for commentary on a newly released Starry Night paper. I'm officially the Starry Night expert, at this point, haha.
 date: 2024-09-18
 
 # Featured image

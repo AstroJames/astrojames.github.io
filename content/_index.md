@@ -92,10 +92,10 @@ sections:
         In order of roughly who I slack, hassle or email the most.
       
         - <a href="https://amitava.scholar.princeton.edu">Amitava Bhattacharjee</a> (Princeton)
+        - <a href="https://bartripperda.com">Bart Ripperda</a>  (CITA)
         - <a href="https://www.mso.anu.edu.au/~chfeder/">Christoph Federrath</a>  (Australian National University)
         - <a href="https://astrokriel.github.io">Neco Kriel</a>  (Australian National University)
         - <a href="https://www.astro.ucsc.edu/about/staff-directory-page.php?uid=akolborg">Anne Noer Kolborg</a>  (University of California, Santa Cruz)
-        - <a href="https://bartripperda.com">Bart Ripperda</a>  (CITA)
         - <a href="https://comp-relastro.caltech.edu">Elias Most</a>  (Caltech)
         - <a href="https://umdphysics.umd.edu/people/faculty/current/item/1893-sashaph.html">Sasha Philippov</a>  (University of Maryland)
         - Shashvat Varma (Univeristy of Toronto)
