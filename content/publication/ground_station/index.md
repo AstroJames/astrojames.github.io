@@ -31,8 +31,8 @@ abstract: Network capacity and reliability for free space optical communication 
 summary: "We develop an optimal Australasian free space optical communication network and probe the statistics of the network using simulated satellite links."
 
 tags:
+- Australasian ground station network for optical communications
 - laser communications
-- Australian ground station network
 - interdisciplinary research
 - statistical modelling
 
