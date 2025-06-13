@@ -118,13 +118,11 @@ work:
     date_start: 2023-01-09
     date_end: ''
 
-{{% alert note style="opacity-box" %}}
+<div class="opacity-box">
 
 ## About Me
 My name is James Beattie and I'm a joint postdoctoral research associate and fellow at [Princeton University](https://web.astro.princeton.edu/people/james-beattie) ([Bhattacharjee Group](https://amitava.scholar.princeton.edu)) and the [Canadian Institute for Theoretical Astrophysics](https://www.cita.utoronto.ca/people/senior-research-associates-post-doctoral-fellows/). I'm interested in magnetized turbulence and dynamo processes across multiple scales across the Universe, from Earth's magnetosheath and the interstellar medium, to the intracluster medium and the plasma environments around compact objects. I was awarded my Ph.D. on Jan. 2024 at the [Australian National University](https://www.anu.edu.au) ([advisor: Christoph Federrath](https://www.mso.anu.edu.au/~chfeder/)), and now live between Toronto in Canada and Princeton in the United States.
 
-Please reach out to ~james dot beattie at princeton dot edu~ to collaborate 😃
+📬 Please reach out to ~james dot beattie at princeton dot edu~ to collaborate 😃
 
-{{% /alert %}}
-
-<!-- This includes steady state turbulence in a continuously driven state, where models such as dynamical alignment and critical balance may be relevant, to time dependent turbulent systems like fluctuation dynamos which are described with Kazantsev theory and decaying turbulence which are described in the language of rugged invariants (and invariants in general, e.g., the Hosking invariant). I like to apply these ideas to many types of astrophysical plasmas, and most recently, to merging neutron star systems, where Kelvin Helmholtz instabilities excite a diffusion-free-type dynamo that is able to grow the magnetic field by orders of magnitude within millisecond, which is potentially important for the Blandford–Znajek process. -->
+</div>
