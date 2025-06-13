@@ -13,27 +13,31 @@
 
 .opacity-box {
   position: relative;
-  background: rgba(0, 0, 0, 0.25); /* slightly darker for contrast */
+  background: rgba(0, 0, 0, 0.1);
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(4px);
   font-size: 1rem;
   line-height: 1.6;
   text-align: justify;
-  color: white; /* ensure readable */
+  color: white;
   overflow: hidden;
-}
 
-/* Gradient fade on the edges */
-.opacity-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%);
-  mix-blend-mode: lighten;
-  opacity: 0.15;  /* adjust this to soften more/less */
-  pointer-events: none;
+  /* This is the magic */
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 0, 0, 0.4) 85%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-composite: destination-in;
+  mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 0, 0, 0.4) 85%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-composite: exclude;
 }
 
 /* Tighter spacing still works */
