@@ -87,14 +87,14 @@
 #news .max-w-3xl {
   max-width: 100% !important;
   width: 100% !important;
-  padding: 0 2rem;
+  padding: 0 0.1rem !important;
 }
 
 /* Make markdown sections span wider and justify text */
 .full-justify .container {
   max-width: 100% !important;
   width: 100% !important;
-  padding: 0 2rem;
+  padding: 0 0.1rem !important;
 }
 
 .full-justify .prose {
