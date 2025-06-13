@@ -8,26 +8,21 @@
   line-height: 1.6;
 }
 
-/* Tighter spacing for compact post view */
-.post-entry {
-  padding: 0.3rem 0;
+/* Optional compactness polish for the News section */
+#news .post-entry {
+  padding: 0.25rem 0;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.post-title {
+#news .post-title {
   font-size: 1.05rem;
   margin-bottom: 0.15rem;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
-.post-meta {
-  font-size: 0.8rem;
-  color: #555;
+#news .post-meta {
+  font-size: 0.75rem;
+  color: #777;
   margin-bottom: 0;
-}
-
-/* Reduce section title spacing */
-.section-heading {
-  margin-bottom: 0.8rem;
 }

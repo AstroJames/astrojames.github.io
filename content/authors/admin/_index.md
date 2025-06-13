@@ -78,7 +78,7 @@ education:
     date_end: 2019-11-20
     summary: |
       Highlights:
-
+      
       - thesis title: Supersonic Turbulent Molecular Clouds: Filaments and Anisotropies
       - thesis advisor: Prof. <a href="https://www.mso.anu.edu.au/~chfeder/">Christoph Federrath</a> 
       - GPA: 7.0/7.0
