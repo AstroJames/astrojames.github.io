@@ -30,3 +30,9 @@
 #news .article-style {
   margin: 0;  /* kills excess top/bottom margin on summaries */
 }
+
+#news .container {
+  max-width: 100% !important;
+  width: 100%;
+  padding: 0 2rem;
+}
