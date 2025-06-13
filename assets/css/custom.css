@@ -36,3 +36,7 @@
   font-size: 0.9rem;
   line-height: 1.45;
 }
+
+.view-compact {
+  background: rgba(255, 255, 0, 0.5);  /* subtle yellow tint */
+}
