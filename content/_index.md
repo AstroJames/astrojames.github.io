@@ -30,7 +30,18 @@ sections:
           size: cover
           position: center
           parallax: false
-
+  - block: collection
+    id: featured
+    content:
+      title: Featured Science Highlights
+      count: 0
+      filters:
+        folders:
+          - publication
+        featured_only: true
+    design:
+      view: article-grid
+      columns: 3
   - block: collection
     id: news
     content:
@@ -73,18 +84,6 @@ sections:
       columns: '1'
       # spacing:
       #   padding: [0, 0, 0, 0]
-  - block: collection
-    id: featured
-    content:
-      title: Featured Science Highlights
-      count: 0
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 3
   - block: markdown
     id: collabs
     content:
