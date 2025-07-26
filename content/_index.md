@@ -82,10 +82,12 @@ sections:
         }
         .collaborator-item a {
           font-weight: 500;
+          display: block;
         }
         .collaborator-affiliation {
           color: #666;
           font-size: 0.85em;
+          display: block;
         }
         @media (min-width: 768px) {
           .collaborators-grid {
