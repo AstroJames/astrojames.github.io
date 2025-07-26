@@ -8,17 +8,17 @@ section[id="news"] {
   min-height: 150px;
 }
 
-/* Only hide items when carousel is initialized */
-section[id="news"].carousel-initialized > div > *:not(.news-active),
-section[id="news"].carousel-initialized .grid > *:not(.news-active),
-section[id="news"].carousel-initialized [class*="grid"] > *:not(.news-active) {
+/* Temporarily disable hiding to debug - items will be visible until we fix detection */
+section[id="news"].carousel-initialized.carousel-working > div > *:not(.news-active),
+section[id="news"].carousel-initialized.carousel-working .grid > *:not(.news-active),
+section[id="news"].carousel-initialized.carousel-working [class*="grid"] > *:not(.news-active) {
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Show only the active news item when carousel is active */
-section[id="news"].carousel-initialized .news-active {
+/* Show only the active news item when carousel is working */
+section[id="news"].carousel-initialized.carousel-working .news-active {
   display: block !important;
   opacity: 1 !important;
 }
@@ -426,8 +426,12 @@ document.addEventListener('DOMContentLoaded', function() {
     newsSection.addEventListener('mouseenter', stopAutoRotate);
     newsSection.addEventListener('mouseleave', startAutoRotate);
     
-    // Mark section as initialized (this triggers the CSS hiding)
+    // Mark section as initialized but don't hide items yet
     newsSection.classList.add('carousel-initialized');
+    
+    // Only add carousel-working class if we successfully found items
+    console.log('Successfully found items, activating carousel');
+    newsSection.classList.add('carousel-working');
     
     // Initialize - show first item and start auto-rotate
     showItem(0);
