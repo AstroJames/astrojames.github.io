@@ -1,0 +1,56 @@
+{{/* Simple Hit Counter using CountAPI */}}
+<style>
+  .visitor-counter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
+  
+  .visitor-counter:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .visitor-counter {
+      bottom: 10px;
+      right: 10px;
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
+</style>
+
+<div id="visitor-counter" class="visitor-counter">
+  <span id="counter-text">👁️ <span id="visit-count">...</span> visits</span>
+</div>
+
+<script>
+  // Simple visitor counter using CountAPI (free, no signup required)
+  document.addEventListener('DOMContentLoaded', function() {
+    // Use CountAPI to track visits
+    fetch('https://api.countapi.xyz/hit/astrojames.github.io/visits')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('visit-count').textContent = data.value.toLocaleString();
+      })
+      .catch(error => {
+        // Fallback to localStorage counter if API fails
+        let visits = localStorage.getItem('visit-count') || 0;
+        visits = parseInt(visits) + 1;
+        localStorage.setItem('visit-count', visits);
+        document.getElementById('visit-count').textContent = visits.toLocaleString() + '+';
+      });
+  });
+</script>
+
+{{/* Alternative: Web Analytics Respect (privacy-focused, GDPR compliant) */}}
+{{/* Uncomment the line below to use Web Analytics instead */}}
+{{/* <script defer src="https://api.pirsch.io/pirsch.js" id="pirschjs" data-code="YOUR_SITE_CODE"></script> */}}
