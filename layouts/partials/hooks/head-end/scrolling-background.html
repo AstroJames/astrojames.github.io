@@ -3,7 +3,7 @@
 /* Force animation on any element with background image */
 [style*="background-image"],
 section[style*="background-image"] {
-  background-size: auto 150% !important;
+  background-size: auto 120% !important; /* Reduced zoom from 150% to 120% */
   background-repeat: repeat-x !important;
   animation: scroll-horizontal 60s linear infinite !important;
 }
@@ -14,7 +14,7 @@ section.dark,
 .dark,
 body.dark section:first-child,
 .landing-page section:first-child {
-  background-size: auto 150% !important; /* Auto width, 150% height for zoom */
+  background-size: auto 120% !important; /* Reduced zoom from 150% to 120% */
   background-repeat: repeat-x !important; /* Repeat horizontally */
   background-position: 0 center !important;
   animation: scroll-horizontal 60s linear infinite !important; /* 60 second loop */
