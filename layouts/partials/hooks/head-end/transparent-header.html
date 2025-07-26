@@ -5,15 +5,34 @@
 section[data-block="resume-biography-3"],
 .landing-page > section:first-of-type,
 body.landing .section:first-child {
-  margin-top: -80px !important; /* Adjust based on header height */
-  padding-top: 80px !important; /* Maintain content spacing */
+  margin-top: -100px !important; /* Larger negative margin to pull content higher */
+  padding-top: 100px !important; /* Maintain content spacing */
 }
 
-/* Ensure background extends to top */
+/* Ensure background extends to top and behind header */
 .landing-page,
 body.landing {
   padding-top: 0 !important;
   margin-top: 0 !important;
+}
+
+/* Force background to extend behind header */
+section[data-block="resume-biography-3"],
+.resume-biography-3 {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure header is above content but allows background through */
+header, 
+.navbar,
+nav[role="navigation"],
+.site-header,
+.hb-docs-nav,
+.docs-navbar,
+.fixed-top {
+  position: relative;
+  z-index: 1000;
 }
 /* Header transparency effect */
 header, 
