@@ -1,18 +1,37 @@
-{{/* Debug News Section - Carousel Disabled */}}
+{{/* Step 2: Manual Navigation - Hide items by default */}}
 <style>
-/* Just basic styling for debug */
+/* Basic debug styling */
 section[id="news"] {
   border: 2px solid red;
   padding: 10px;
   margin: 10px 0;
+  position: relative;
 }
 
 section[id="news"]::before {
-  content: "DEBUG: News section found";
+  content: "DEBUG: News section with navigation";
   display: block;
   background: yellow;
   padding: 5px;
   font-weight: bold;
+}
+
+/* Hide all potential news items by default to prevent flash */
+section[id="news"] div > div,
+section[id="news"] article,
+section[id="news"] .post,
+section[id="news"] .card,
+section[id="news"] [class*="grid"] > *,
+section[id="news"] [class*="flex"] > * {
+  display: none !important;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Only show items when explicitly marked as visible by JavaScript */
+section[id="news"] .carousel-item-visible {
+  display: block !important;
+  opacity: 1 !important;
 }
 </style>
 
@@ -76,12 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
       newsItems.forEach((item, i) => {
         if (i === index) {
           console.log(`✅ Showing item ${i}`);
-          item.style.display = 'block';
-          item.style.opacity = '1';
+          item.classList.add('carousel-item-visible');
         } else {
           console.log(`🙈 Hiding item ${i}`);
-          item.style.display = 'none';
-          item.style.opacity = '0';
+          item.classList.remove('carousel-item-visible');
         }
       });
       
