@@ -175,10 +175,11 @@
   color: #ffffff;
   text-decoration: none;
   text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Thin black outline */
+  transition: color 0.2s;
 }
 
 .organization a:hover {
-  color: #cccccc;
+  color: #ff0000; /* Red hover color */
 }
 
 .profile-social {
@@ -194,7 +195,7 @@
 }
 
 .social-link:hover {
-  color: #cccccc;
+  color: #ff0000; /* Red hover color */
 }
 
 .cv-button {
@@ -205,18 +206,21 @@
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
+  border: 2px solid transparent;
 }
 
 .cv-button:hover {
-  background: #555555;
+  background: transparent;
+  border-color: #ff0000;
+  color: #ff0000; /* Red hover theme */
 }
 
 .about-section {
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.4); /* More transparent background */
   padding: 1rem; /* Tighter padding */
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   margin-bottom: 2rem;
   max-width: 90%; /* Tighter horizontal width */
@@ -240,10 +244,11 @@
 .about-content a {
   color: #ffffff;
   text-decoration: underline;
+  transition: color 0.2s;
 }
 
 .about-content a:hover {
-  color: #cccccc;
+  color: #ff0000; /* Red hover color */
 }
 
 
@@ -254,10 +259,10 @@
 }
 
 .sidebar-section {
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.4); /* More transparent background */
   padding: 1rem; /* Smaller padding */
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle light border */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle light border */
   backdrop-filter: blur(10px); /* Add blur effect */
 }
 
