@@ -73,23 +73,26 @@
       </div>
       
       {{/* Research Questions Section */}}
-      <div class="research-questions-section">
-        <h3 class="research-questions-title">Research Questions that Drive My Enquiry</h3>
-        <div class="research-questions-content">
-          {{ with $block.content.research_questions }}
-            {{ . | markdownify }}
-          {{ end }}
-        </div>
-      </div>
+      {{ with $block.content.text }}
+        {{ if (strings.Contains . "RESEARCH_QUESTIONS_START") }}
+          {{ $parts := split . "RESEARCH_QUESTIONS_START" }}
+          {{ $afterStart := index $parts 1 }}
+          {{ $questionsParts := split $afterStart "RESEARCH_QUESTIONS_END" }}
+          {{ $questionsText := index $questionsParts 0 }}
+          <div class="research-questions-section">
+            <h3 class="research-questions-title">Research Questions that Drive My Enquiry</h3>
+            <div class="research-questions-content">
+              {{ $questionsText | markdownify }}
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
       
       {{/* About Me Text */}}
       <div class="about-section">
         <h3 class="about-title">About Me</h3>
         <div class="about-content">
           {{ $author.Content }}
-          {{ with $block.content.text }}
-            {{ . | markdownify }}
-          {{ end }}
         </div>
       </div>
     </div>
