@@ -3,9 +3,9 @@
 section[id="news"] {
   position: relative;
   overflow: hidden;
-  height: 200px; /* Fixed height window */
+  height: 300px; /* Increased height to show more content */
   border: 2px solid purple;
-  padding: 0;
+  padding: 10px; /* Add some padding */
   margin: 20px 0;
 }
 
@@ -77,39 +77,63 @@ document.addEventListener('DOMContentLoaded', function() {
     // Try to find ANY container with content
     let newsItems = [];
     
-    // Method 1: Direct children of news section
-    console.log('--- Method 1: Direct children ---');
-    const directChildren = Array.from(newsSection.children).filter(child => {
-      const hasText = child.textContent.trim().length > 10;
-      const notScript = child.tagName !== 'SCRIPT';
-      console.log(`Child: ${child.tagName}, hasText: ${hasText}, notScript: ${notScript}`);
-      return hasText && notScript;
+    // Look specifically for post/ directory links since each directory = news item
+    console.log('--- Looking for /post/ directory links ---');
+    
+    // Find all links that point to /post/ directories
+    const postLinks = newsSection.querySelectorAll('a[href*="/post/"]');
+    console.log(`Found ${postLinks.length} links to /post/ directories`);
+    
+    let foundItems = [];
+    
+    postLinks.forEach((link, i) => {
+      console.log(`Post link ${i}:`, link.href, link.textContent.trim().substring(0, 50));
+      
+      // Find the container that holds this entire news item
+      // Start from the link and go up until we find a container with substantial content
+      let container = link;
+      let bestContainer = link;
+      
+      while (container && container !== newsSection) {
+        container = container.parentElement;
+        
+        // Look for a container that:
+        // 1. Has reasonable amount of content
+        // 2. Contains this link
+        // 3. Doesn't contain other post links (to avoid getting a container of multiple items)
+        const content = container.textContent.trim();
+        const hasContent = content.length > 50 && content.length < 2000; // Not too small, not too big
+        const otherPostLinks = container.querySelectorAll('a[href*="/post/"]').length;
+        const isGoodContainer = hasContent && otherPostLinks === 1; // Only contains this one post link
+        
+        console.log(`  Checking container ${container.tagName}.${container.className}: content=${content.length}chars, postLinks=${otherPostLinks}, good=${isGoodContainer}`);
+        
+        if (isGoodContainer) {
+          bestContainer = container;
+          break;
+        }
+      }
+      
+      // Add the best container we found for this post
+      if (bestContainer && !foundItems.includes(bestContainer)) {
+        foundItems.push(bestContainer);
+        console.log(`✅ Added news item ${foundItems.length}:`, bestContainer.tagName, bestContainer.className, bestContainer.textContent.trim().substring(0, 60));
+      }
     });
     
-    if (directChildren.length > 0) {
-      console.log(`✅ Found ${directChildren.length} direct children with content`);
-      newsItems = directChildren;
+    console.log(`Found ${foundItems.length} news item containers`);
+    
+    if (foundItems.length > 0) {
+      newsItems = foundItems;
     } else {
-      // Method 2: Look deeper
-      console.log('--- Method 2: Looking deeper ---');
-      const allDescendants = newsSection.querySelectorAll('*');
-      console.log(`Found ${allDescendants.length} total descendants`);
-      
-      // Look for elements that seem like news articles
-      const candidates = Array.from(allDescendants).filter(el => {
-        const hasSignificantText = el.textContent.trim().length > 50;
-        const hasLinks = el.querySelector('a[href]');
-        const notContainer = !el.querySelector('article, .post, .card');
-        
-        console.log(`Candidate: ${el.tagName}.${el.className}, text: ${hasSignificantText}, links: ${!!hasLinks}, notContainer: ${notContainer}`);
-        
-        return hasSignificantText && hasLinks && notContainer;
-      });
-      
-      if (candidates.length > 0) {
-        console.log(`✅ Found ${candidates.length} candidate elements`);
-        newsItems = candidates.slice(0, 8); // Limit to reasonable number
-      }
+      console.log('❌ No post links found, trying fallback...');
+      // Fallback: look for any elements with substantial content
+      newsItems = Array.from(newsSection.querySelectorAll('*')).filter(el => {
+        const hasContent = el.textContent.trim().length > 100;
+        const hasLink = el.querySelector('a');
+        const notTooNested = el.querySelectorAll('*').length < 20; // Not too complex
+        return hasContent && hasLink && notTooNested;
+      }).slice(0, 10); // Limit to 10 items
     }
     
     console.log(`Final result: ${newsItems.length} items to work with`);
@@ -124,6 +148,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const itemPositions = newsItems.map(item => item.offsetTop);
     console.log('Item positions:', itemPositions);
     
+    // Also log what content each item has
+    newsItems.forEach((item, i) => {
+      console.log(`Item ${i} content:`, item.textContent.trim().substring(0, 100));
+    });
+    
     let currentItemIndex = 0;
     
     function scrollToItem(itemIndex) {
@@ -132,9 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
       if (firstChild) {
         firstChild.style.transform = `translateY(-${position}px)`;
         console.log(`Scrolled to item ${itemIndex}, position: -${position}px`);
+        console.log(`Showing content: ${newsItems[itemIndex].textContent.trim().substring(0, 80)}...`);
       }
       currentItemIndex = itemIndex;
     }
+    
+    // Initialize by showing the first item
+    scrollToItem(0);
     
     function nextItem() {
       const next = (currentItemIndex + 1) % newsItems.length;
