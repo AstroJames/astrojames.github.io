@@ -24,7 +24,13 @@
     <div class="carousel-wrapper">
       {{ range $index, $post := $posts }}
         <div class="news-item" data-index="{{ $index }}">
-          <div class="news-content">
+          {{ $image := $post.Resources.GetMatch "featured.*" }}
+          {{ if $image }}
+            <div class="news-image">
+              <img src="{{ $image.RelPermalink }}" alt="{{ $post.Title }}" loading="lazy">
+            </div>
+          {{ end }}
+          <div class="news-content{{ if not $image }} full-width{{ end }}">
             <h3 class="news-title">
               <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
             </h3>
@@ -58,8 +64,9 @@
 
 <style>
 .custom-news-carousel {
-  margin: 2rem 0;
+  margin: 2rem auto;
   padding: 0;
+  max-width: 1200px; /* Match website content width */
 }
 
 .section-header {
@@ -70,25 +77,26 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0 0 0.5rem 0;
-  color: #1f2937;
+  color: #1f2937 !important; /* Dark text to ensure visibility */
 }
 
 .section-subtitle {
-  color: #6b7280;
+  color: #9ca3af; /* Muted light text */
   margin: 0;
 }
 
 .carousel-container {
   position: relative;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  background: #1f2937; /* Dark background */
+  border: 1px solid #374151; /* Dark border */
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-wrapper {
   position: relative;
-  height: 200px;
+  height: 240px; /* Slightly taller for images */
   overflow: hidden;
 }
 
@@ -102,7 +110,9 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  background: white;
+  background: #1f2937; /* Dark item background */
+  display: flex;
+  gap: 1rem;
 }
 
 .news-item.active {
@@ -110,10 +120,29 @@
   visibility: visible;
 }
 
-.news-content {
+.news-image {
+  flex-shrink: 0;
+  width: 120px;
   height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  min-width: 0; /* Allow text truncation */
+}
+
+.news-content.full-width {
+  width: 100%;
 }
 
 .news-title {
@@ -124,17 +153,17 @@
 }
 
 .news-title a {
-  color: #1f2937;
+  color: #e5e7eb; /* Light text */
   text-decoration: none;
 }
 
 .news-title a:hover {
-  color: #3b82f6;
+  color: #60a5fa; /* Light blue hover */
 }
 
 .news-date {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #9ca3af; /* Muted light text */
   margin-bottom: 0.75rem;
 }
 
@@ -142,7 +171,7 @@
   flex: 1;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #374151;
+  color: #d1d5db; /* Light gray text */
   margin: 0 0 0.75rem 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -158,8 +187,8 @@
 
 .tag {
   display: inline-block;
-  background: #e5e7eb;
-  color: #374151;
+  background: #374151; /* Dark tag background */
+  color: #d1d5db; /* Light tag text */
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -171,12 +200,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.5rem;
-  background: #f3f4f6;
-  border-top: 1px solid #e5e7eb;
+  background: #111827; /* Darker nav background */
+  border-top: 1px solid #374151; /* Dark border */
 }
 
 .nav-btn {
-  background: #3b82f6;
+  background: #3b82f6; /* Blue button */
   color: white;
   border: none;
   border-radius: 4px;
@@ -192,28 +221,39 @@
 }
 
 .nav-btn:hover {
-  background: #2563eb;
+  background: #2563eb; /* Darker blue hover */
 }
 
 .nav-btn:disabled {
-  background: #9ca3af;
+  background: #4b5563; /* Dark gray disabled */
   cursor: not-allowed;
 }
 
 .nav-counter {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #9ca3af; /* Muted light text */
   font-weight: 500;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .custom-news-carousel {
+    margin: 2rem 1rem; /* Add side margins on mobile */
+  }
+  
   .carousel-wrapper {
-    height: 220px;
+    height: 260px; /* Taller on mobile */
   }
   
   .news-item {
     padding: 1rem;
+    flex-direction: column; /* Stack image above content */
+    gap: 0.75rem;
+  }
+  
+  .news-image {
+    width: 100%;
+    height: 80px; /* Fixed height for mobile */
   }
   
   .section-title {
@@ -222,6 +262,16 @@
   
   .news-title {
     font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-item {
+    padding: 0.75rem;
+  }
+  
+  .carousel-nav {
+    padding: 0.5rem 1rem;
   }
 }
 </style>
