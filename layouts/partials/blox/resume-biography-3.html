@@ -68,23 +68,11 @@
           {{ end }}
         </div>
       </div>
-      
-      {{/* Interests under About Me */}}
-      {{ with $author.Params.interests }}
-        <div class="interests-section">
-          <h3 class="interests-title">Research Interests</h3>
-          <div class="interests-grid">
-            {{ range . }}
-              <span class="interest-item">{{ . }}</span>
-            {{ end }}
-          </div>
-        </div>
-      {{ end }}
     </div>
     
     {{/* Sidebar */}}
     <div class="sidebar">
-      {{/* Education only */}}
+      {{/* Education */}}
       {{ with $author.Params.education }}
         <div class="sidebar-section">
           <h3 class="sidebar-title">Education</h3>
@@ -97,6 +85,18 @@
                   <div class="education-date">{{ .date_end | time.Format "2006" }}</div>
                 {{ end }}
               </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+      
+      {{/* Research Interests */}}
+      {{ with $author.Params.interests }}
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Research Interests</h3>
+          <div class="interests-list">
+            {{ range . }}
+              <span class="interest-tag">{{ . }}</span>
             {{ end }}
           </div>
         </div>
@@ -151,12 +151,14 @@
   font-weight: 700;
   margin: 0 0 0.5rem 0;
   color: #ffffff;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Thin black outline */
 }
 
 .profile-role {
   font-size: 1.25rem;
   color: #ffffff; /* White instead of grey */
   margin: 0 0 1rem 0;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Thin black outline */
 }
 
 .profile-organizations {
@@ -165,12 +167,14 @@
 
 .organization {
   margin: 0.25rem 0;
-  color: #cccccc;
+  color: #ffffff; /* Changed to white for consistency */
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Thin black outline */
 }
 
 .organization a {
   color: #ffffff;
   text-decoration: none;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Thin black outline */
 }
 
 .organization a:hover {
@@ -242,40 +246,6 @@
   color: #cccccc;
 }
 
-/* New interests section under About Me */
-.interests-section {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-}
-
-.interests-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0 0 1rem 0;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 0.5rem;
-}
-
-.interests-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-}
-
-.interest-item {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  backdrop-filter: blur(5px);
-  text-align: center;
-}
 
 .sidebar {
   display: flex;
@@ -362,10 +332,6 @@
     height: 150px;
     margin: 0 auto;
   }
-  
-  .interests-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
@@ -405,15 +371,6 @@
   .education-date {
     font-size: 0.7rem;
   }
-  
-  .interests-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .interest-item {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.6rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -430,22 +387,9 @@
     font-size: 1.75rem;
   }
   
-  .interests-grid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  
-  .interests-title {
-    font-size: 1.1rem;
-  }
-  
   .about-section {
     padding: 1rem;
     font-size: 1rem;
-  }
-  
-  .interests-section {
-    padding: 1rem;
   }
 }
 </style>
