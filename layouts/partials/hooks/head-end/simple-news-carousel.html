@@ -1,37 +1,47 @@
-{{/* Step 2: Manual Navigation - Hide items by default */}}
+{{/* NEW SIMPLE APPROACH: Just scroll the entire content */}}
 <style>
-/* Basic debug styling */
 section[id="news"] {
-  border: 2px solid red;
-  padding: 10px;
-  margin: 10px 0;
   position: relative;
+  overflow: hidden;
+  height: 200px; /* Fixed height to show one item */
+  border: 2px solid blue; /* Debug border */
 }
 
 section[id="news"]::before {
-  content: "DEBUG: News section with navigation";
+  content: "SIMPLE CAROUSEL";
   display: block;
-  background: yellow;
+  background: lightblue;
   padding: 5px;
-  font-weight: bold;
+  font-size: 12px;
 }
 
-/* Only hide items after carousel is initialized to prevent flash */
-section[id="news"].carousel-ready > div > div:not(.carousel-item-visible),
-section[id="news"].carousel-ready article:not(.carousel-item-visible),
-section[id="news"].carousel-ready .post:not(.carousel-item-visible),
-section[id="news"].carousel-ready .card:not(.carousel-item-visible),
-section[id="news"].carousel-ready [class*="grid"] > *:not(.carousel-item-visible),
-section[id="news"].carousel-ready [class*="flex"] > *:not(.carousel-item-visible) {
-  display: none !important;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+/* Make the content scrollable */
+section[id="news"] > div {
+  transition: transform 0.5s ease;
 }
 
-/* Ensure visible items are shown */
-section[id="news"] .carousel-item-visible {
-  display: block !important;
-  opacity: 1 !important;
+/* Simple navigation buttons */
+.simple-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 100;
+}
+
+.simple-prev {
+  left: 10px;
+}
+
+.simple-next {
+  right: 10px;
 }
 </style>
 
@@ -69,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         });
         
-        // If this looks like news items (children have substantial content)
-        const hasSubstantialContent = children.some(child => child.textContent.trim().length > 50);
+        // If this looks like news items (children have some content)
+        const hasSubstantialContent = children.some(child => child.textContent.trim().length > 20);
         if (hasSubstantialContent && !targetContainer) {
           targetContainer = container;
           newsItems = children;
@@ -80,8 +90,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     if (!targetContainer || newsItems.length === 0) {
-      console.log('❌ Could not find news items container');
-      return;
+      console.log('❌ Could not find news items container with main logic');
+      console.log('🔄 Trying fallback: using all direct children of news section');
+      
+      // Fallback: try all direct children of news section that have some content
+      const directChildren = Array.from(newsSection.children).filter(child => {
+        const hasContent = child.textContent.trim().length > 10;
+        const notButton = !child.textContent.includes('Next') && !child.textContent.includes('Previous');
+        const notDebug = !child.textContent.includes('DEBUG');
+        return hasContent && notButton && notDebug;
+      });
+      
+      if (directChildren.length > 0) {
+        console.log(`📰 Fallback found ${directChildren.length} potential items`);
+        targetContainer = newsSection;
+        newsItems = directChildren;
+      } else {
+        console.log('❌ Even fallback failed - leaving items in original state');
+        return;
+      }
     }
     
     console.log(`✅ Found ${newsItems.length} news items`);
