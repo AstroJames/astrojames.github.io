@@ -67,20 +67,86 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log(`✅ Found ${newsItems.length} news items`);
     
-    // Hide all items except the first one
-    newsItems.forEach((item, index) => {
-      if (index === 0) {
-        console.log(`✅ Keeping item ${index} visible`);
-        item.style.display = 'block';
-        item.style.opacity = '1';
-      } else {
-        console.log(`🙈 Hiding item ${index}`);
-        item.style.display = 'none';
-        item.style.opacity = '0';
-      }
-    });
+    let currentIndex = 0;
     
-    console.log('🎉 Step 1 complete: Only first news item should be visible');
+    // Function to show specific item
+    function showItem(index) {
+      console.log(`📍 Switching to item ${index}`);
+      
+      newsItems.forEach((item, i) => {
+        if (i === index) {
+          console.log(`✅ Showing item ${i}`);
+          item.style.display = 'block';
+          item.style.opacity = '1';
+        } else {
+          console.log(`🙈 Hiding item ${i}`);
+          item.style.display = 'none';
+          item.style.opacity = '0';
+        }
+      });
+      
+      currentIndex = index;
+    }
+    
+    // Function to go to next item
+    function nextItem() {
+      const nextIndex = (currentIndex + 1) % newsItems.length;
+      console.log(`➡️ Next: from ${currentIndex} to ${nextIndex}`);
+      showItem(nextIndex);
+    }
+    
+    // Function to go to previous item
+    function prevItem() {
+      const prevIndex = (currentIndex - 1 + newsItems.length) % newsItems.length;
+      console.log(`⬅️ Previous: from ${currentIndex} to ${prevIndex}`);
+      showItem(prevIndex);
+    }
+    
+    // Add navigation buttons
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = 'Next →';
+    nextBtn.style.cssText = `
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 100;
+    `;
+    nextBtn.onclick = nextItem;
+    
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = '← Previous';
+    prevBtn.style.cssText = `
+      position: absolute;
+      top: 10px;
+      right: 100px;
+      background: #666;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 100;
+    `;
+    prevBtn.onclick = prevItem;
+    
+    // Add buttons to news section
+    newsSection.style.position = 'relative';
+    newsSection.appendChild(nextBtn);
+    newsSection.appendChild(prevBtn);
+    
+    // Initialize - show first item
+    showItem(0);
+    
+    console.log('🎉 Step 2 complete: Navigation buttons added');
+    console.log('🔥 Click "Next →" or "← Previous" to test navigation');
     
   }, 2000);
 });
