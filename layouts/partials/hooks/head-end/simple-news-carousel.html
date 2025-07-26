@@ -8,28 +8,17 @@ section[id="news"] {
   min-height: 150px;
 }
 
-/* Hide all news items by default */
-section[id="news"] article,
-section[id="news"] .post,
-section[id="news"] .card,
-section[id="news"] [class*="post"],
-section[id="news"] [class*="article"] {
+/* Only hide items when carousel is initialized */
+section[id="news"].carousel-initialized > div > *:not(.news-active),
+section[id="news"].carousel-initialized .grid > *:not(.news-active),
+section[id="news"].carousel-initialized [class*="grid"] > *:not(.news-active) {
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Also hide direct children that might be news items */
-section[id="news"] .grid > *,
-section[id="news"] [class*="grid"] > *,
-section[id="news"] > div > div {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* Show only the active news item */
-section[id="news"] .news-active {
+/* Show only the active news item when carousel is active */
+section[id="news"].carousel-initialized .news-active {
   display: block !important;
   opacity: 1 !important;
 }
@@ -231,36 +220,58 @@ document.addEventListener('DOMContentLoaded', function() {
       container = newsSection;
     }
     
-    // Get all news items - try multiple selectors for article containers
+    // First, let's see what we have in the container
+    console.log('Container found:', container);
+    console.log('Container children:', container.children);
+    
+    // Get all news items - try multiple approaches
     let items = Array.from(container.querySelectorAll('article, .post, .card, [class*="post"], [class*="article"]'));
     
-    // If no articles found, try direct children that look like content containers
+    // If no articles found, try direct children
     if (items.length === 0) {
-      items = Array.from(container.children).filter(child => {
-        // Filter out navigation, titles, and other non-content elements
+      console.log('No semantic articles found, trying direct children');
+      items = Array.from(container.children);
+      
+      // Filter out obvious non-content elements
+      items = items.filter(child => {
         const tagName = child.tagName.toLowerCase();
         const className = child.className.toLowerCase();
+        const textContent = child.textContent.trim();
         
-        // Skip common non-content elements
-        if (tagName === 'h1' || tagName === 'h2' || tagName === 'h3' || 
-            className.includes('title') || className.includes('heading') ||
-            className.includes('nav') || className.includes('button')) {
+        // Skip empty elements, scripts, styles
+        if (!textContent || tagName === 'script' || tagName === 'style') {
           return false;
         }
         
-        // Include elements that have both text content and aren't just single fields
-        const textContent = child.textContent.trim();
-        const hasMultipleElements = child.children.length > 1;
-        const hasSubstantialContent = textContent.length > 50;
+        // Skip very short content (likely just dates or titles)
+        if (textContent.length < 20) {
+          return false;
+        }
         
-        return hasMultipleElements && hasSubstantialContent;
+        return true;
+      });
+    }
+    
+    // If still no items, try an even broader approach
+    if (items.length === 0) {
+      console.log('No direct children suitable, trying all descendant elements');
+      const allElements = container.querySelectorAll('*');
+      items = Array.from(allElements).filter(el => {
+        const text = el.textContent.trim();
+        const hasChildren = el.children.length > 0;
+        const hasSignificantText = text.length > 100;
+        
+        // Look for elements that seem like complete news items
+        return hasChildren && hasSignificantText && 
+               !el.querySelector('article, .post, .card'); // Not a container of other items
       });
     }
     
     if (items.length === 0) {
-      console.log('No news items found with any selector');
+      console.log('No news items found with any approach');
       console.log('Container HTML:', container.innerHTML);
-      return;
+      // Don't return - let's at least try to show something
+      items = [container]; // Use the container itself as fallback
     }
     
     console.log(`Found ${items.length} news items, setting up single-item carousel`);
@@ -365,6 +376,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Pause auto-rotate on hover
     newsSection.addEventListener('mouseenter', stopAutoRotate);
     newsSection.addEventListener('mouseleave', startAutoRotate);
+    
+    // Mark section as initialized (this triggers the CSS hiding)
+    newsSection.classList.add('carousel-initialized');
     
     // Initialize - show first item and start auto-rotate
     showItem(0);
