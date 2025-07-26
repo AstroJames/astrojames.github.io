@@ -1,16 +1,18 @@
-{{/* NEW SIMPLE APPROACH: Just scroll the entire content */}}
+{{/* FIXED APPROACH: Scroll between actual news items */}}
 <style>
 section[id="news"] {
   position: relative;
   overflow: hidden;
-  height: 200px; /* Fixed height to show one item */
-  border: 2px solid blue; /* Debug border */
+  height: 200px; /* Fixed height window */
+  border: 2px solid purple;
+  padding: 0;
+  margin: 20px 0;
 }
 
 section[id="news"]::before {
-  content: "SIMPLE CAROUSEL";
+  content: "ITEM-BASED CAROUSEL";
   display: block;
-  background: lightblue;
+  background: lavender;
   padding: 5px;
   font-size: 12px;
 }
@@ -58,53 +60,64 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Found news section, adding simple scroll navigation');
     
-    // Just measure the height of each "news item" by looking at the content height
-    const contentHeight = newsSection.scrollHeight;
-    const visibleHeight = 200; // Our fixed height from CSS
-    
-    console.log(`Content height: ${contentHeight}px, Visible: ${visibleHeight}px`);
-    
-    if (contentHeight <= visibleHeight) {
-      console.log('Content fits in one view, no carousel needed');
+    // Find individual news items to scroll between them
+    const newsContainer = newsSection.querySelector('div, article, section');
+    if (!newsContainer) {
+      console.log('No container found');
       return;
     }
     
-    // Calculate how many "screens" we can scroll through
-    const totalScreens = Math.ceil(contentHeight / visibleHeight);
-    let currentScreen = 0;
+    // Get all child elements that look like news items
+    const allChildren = Array.from(newsContainer.children);
+    const newsItems = allChildren.filter(child => {
+      const hasContent = child.textContent.trim().length > 20;
+      const notScript = child.tagName !== 'SCRIPT';
+      return hasContent && notScript;
+    });
     
-    console.log(`Can scroll through ${totalScreens} screens`);
+    console.log(`Found ${newsItems.length} potential news items`);
     
-    function scrollToScreen(screenIndex) {
-      const scrollPosition = screenIndex * visibleHeight;
+    if (newsItems.length === 0) {
+      console.log('No news items found');
+      return;
+    }
+    
+    // Get the position of each news item
+    const itemPositions = newsItems.map(item => item.offsetTop);
+    console.log('Item positions:', itemPositions);
+    
+    let currentItemIndex = 0;
+    
+    function scrollToItem(itemIndex) {
+      const position = itemPositions[itemIndex] || 0;
       const firstChild = newsSection.firstElementChild;
       if (firstChild) {
-        firstChild.style.transform = `translateY(-${scrollPosition}px)`;
-        console.log(`Scrolled to screen ${screenIndex}, position: -${scrollPosition}px`);
+        firstChild.style.transform = `translateY(-${position}px)`;
+        console.log(`Scrolled to item ${itemIndex}, position: -${position}px`);
       }
-      currentScreen = screenIndex;
+      currentItemIndex = itemIndex;
     }
     
-    function nextScreen() {
-      const next = (currentScreen + 1) % totalScreens;
-      scrollToScreen(next);
+    function nextItem() {
+      const next = (currentItemIndex + 1) % newsItems.length;
+      scrollToItem(next);
     }
     
-    function prevScreen() {
-      const prev = (currentScreen - 1 + totalScreens) % totalScreens;
-      scrollToScreen(prev);
+    function prevItem() {
+      const prev = (currentItemIndex - 1 + newsItems.length) % newsItems.length;
+      scrollToItem(prev);
     }
     
     // Add simple navigation buttons
     const nextBtn = document.createElement('button');
     nextBtn.innerHTML = '▼';
     nextBtn.className = 'simple-nav simple-next';
-    nextBtn.onclick = nextScreen;
+    nextBtn.onclick = nextItem;
     
     const prevBtn = document.createElement('button');
     prevBtn.innerHTML = '▲';
     prevBtn.className = 'simple-nav simple-prev';
-    prevBtn.onclick = prevScreen;
+    prevBtn.onclick = prevItem;
     
     newsSection.appendChild(nextBtn);
     newsSection.appendChild(prevBtn);
