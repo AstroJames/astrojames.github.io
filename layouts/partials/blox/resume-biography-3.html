@@ -44,7 +44,7 @@
               {{ range . }}
                 <a href="{{ .url }}" target="_blank" aria-label="{{ .label | default .icon }}" class="social-link">
                   {{ if eq .icon "at-symbol" }}
-                    <i class="fas fa-at"></i>
+                    <i class="fas fa-envelope"></i>
                   {{ else if eq .icon "brands/x" }}
                     <span class="x-icon">𝕏</span>
                   {{ else if eq .icon "brands/github" }}
@@ -370,17 +370,37 @@
   .biography-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+    text-align: center; /* Center everything in mobile */
+  }
+  
+  .main-content {
+    align-items: center; /* Center the main content */
   }
   
   .profile-section {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
   
   .profile-avatar {
     width: 150px;
     height: 150px;
     margin: 0 auto;
+  }
+  
+  .about-section {
+    max-width: 100%; /* Full width on mobile */
+    margin: 0 auto 2rem auto; /* Center the about section */
+    text-align: left; /* Keep text left-aligned for readability */
+  }
+  
+  .about-title {
+    text-align: center; /* Center the About Me title */
+  }
+  
+  .profile-social {
+    justify-content: center; /* Center the social icons */
   }
 }
 
