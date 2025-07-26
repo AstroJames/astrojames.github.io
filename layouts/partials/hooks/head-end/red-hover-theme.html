@@ -1,5 +1,14 @@
 {{/* Red Hover Theme Across Website */}}
 <style>
+/* James R Beattie header brand - red underline */
+.navbar-brand::after {
+  background: #ff0000 !important;
+  background-image: none !important;
+}
+
+.navbar-brand:hover {
+  color: #ff0000 !important;
+}
 /* Header Navigation Links - Red hover underline */
 header .nav-link:hover,
 header .navbar-nav .nav-link:hover,
@@ -54,9 +63,9 @@ nav .nav-link.active {
   color: #ff0000 !important;
 }
 
-/* All website links */
+/* All website links - smooth color transition */
 a {
-  transition: color 0.2s;
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -90,9 +99,37 @@ button:hover {
   color: #ffffff !important;
 }
 
-/* Featured/highlight sections */
+/* Featured Science sections - remove green effects */
 .featured-content a:hover,
-.highlight a:hover {
+.highlight a:hover,
+.article-grid a:hover,
+.featured a:hover {
+  color: #ff0000 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Remove any green underlines/shadows from featured items */
+.article-grid .article-title a,
+.featured .article-title a,
+.article-title a {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Featured science titles - make them red instead of green */
+.article-grid .article-title,
+.featured .article-title,
+h3.article-title {
+  color: #ff0000 !important;
+}
+
+.article-grid .article-title a,
+.featured .article-title a {
   color: #ff0000 !important;
 }
 
@@ -144,9 +181,28 @@ footer a:hover {
   color: #ff0000 !important;
 }
 
-/* Collaborator links hover */
+/* Collaborator links hover - remove green background */
+.collaborator-item:hover {
+  background: none !important;
+  background-color: transparent !important;
+}
+
 .collaborator-item a:hover {
   color: #ff0000 !important;
+  background: none !important;
+  background-color: transparent !important;
+}
+
+/* Ensure no green background on collaborator items */
+.collaborators-grid .collaborator-item {
+  background: none !important;
+  transition: none !important;
+}
+
+.collaborators-grid .collaborator-item:hover {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Override any blue hover states */

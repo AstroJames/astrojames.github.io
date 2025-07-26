@@ -43,14 +43,20 @@
             <div class="profile-social">
               {{ range . }}
                 <a href="{{ .url }}" target="_blank" aria-label="{{ .label | default .icon }}" class="social-link">
-                  {{ if hasPrefix .icon "brands/" }}
-                    <i class="fab fa-{{ strings.TrimPrefix "brands/" .icon }}"></i>
-                  {{ else if hasPrefix .icon "academicons/" }}
-                    <i class="ai ai-{{ strings.TrimPrefix "academicons/" .icon }}"></i>
-                  {{ else if eq .icon "at-symbol" }}
-                    <i class="fas fa-at"></i>
+                  {{ if eq .icon "at-symbol" }}
+                    <span class="icon-text">@</span>
+                  {{ else if eq .icon "brands/x" }}
+                    <span class="icon-text">𝕏</span>
+                  {{ else if eq .icon "brands/github" }}
+                    <span class="icon-text">GH</span>
+                  {{ else if eq .icon "academicons/google-scholar" }}
+                    <span class="icon-text">GS</span>
+                  {{ else if eq .icon "academicons/orcid" }}
+                    <span class="icon-text">ID</span>
+                  {{ else if eq .icon "academicons/researchgate" }}
+                    <span class="icon-text">RG</span>
                   {{ else }}
-                    <i class="fas fa-{{ .icon }}"></i>
+                    <span class="icon-text">{{ substr .icon 0 2 | upper }}</span>
                   {{ end }}
                 </a>
               {{ end }}
@@ -219,6 +225,12 @@
 
 .social-link i {
   font-size: 1.25rem;
+}
+
+.icon-text {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .cv-button {
