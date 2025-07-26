@@ -134,3 +134,160 @@
 .full-justify {
   text-align: justify;
 }
+
+/* ===== HOVER ANIMATIONS ===== */
+
+/* Publication cards hover effects */
+#featured article,
+[id*="publication"] article,
+.card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#featured article:hover,
+[id*="publication"] article:hover,
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Featured image hover effects */
+#featured article img,
+[id*="publication"] article img {
+  transition: transform 0.3s ease;
+}
+
+#featured article:hover img,
+[id*="publication"] article:hover img {
+  transform: scale(1.05);
+}
+
+/* Navigation links hover effects */
+nav a,
+.navbar a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after,
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Social media links hover effects */
+.social-links a,
+[class*="social"] a,
+.profiles a {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-links a:hover,
+[class*="social"] a:hover,
+.profiles a:hover {
+  transform: translateY(-3px) scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Project cards hover effects */
+#projects article,
+.project-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+#projects article:hover,
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* News articles hover effects */
+#news article {
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+#news article:hover {
+  background: rgba(255, 255, 255, 0.02);
+  transform: translateX(5px);
+  border-left: 3px solid #10b981;
+}
+
+/* CV button hover effect */
+.button,
+.btn,
+a[href*="resume.pdf"] {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover,
+.btn:hover,
+a[href*="resume.pdf"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.button::before,
+.btn::before,
+a[href*="resume.pdf"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.button:hover::before,
+.btn:hover::before,
+a[href*="resume.pdf"]:hover::before {
+  left: 100%;
+}
+
+/* Collaborator links hover effects */
+#collabs a {
+  transition: all 0.3s ease;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+#collabs a:hover {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  transform: translateX(3px);
+}
+
+/* General link hover improvements */
+a:not(.no-hover) {
+  transition: color 0.3s ease;
+}
+
+a:not(.no-hover):hover {
+  color: #10b981;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
