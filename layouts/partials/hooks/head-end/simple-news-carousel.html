@@ -58,27 +58,65 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
-    console.log('Found news section, adding simple scroll navigation');
+    console.log('=== DETAILED DEBUGGING ===');
+    console.log('News section HTML:', newsSection.outerHTML);
+    console.log('News section children:', newsSection.children.length);
     
-    // Find individual news items to scroll between them
-    const newsContainer = newsSection.querySelector('div, article, section');
-    if (!newsContainer) {
-      console.log('No container found');
-      return;
-    }
-    
-    // Get all child elements that look like news items
-    const allChildren = Array.from(newsContainer.children);
-    const newsItems = allChildren.filter(child => {
-      const hasContent = child.textContent.trim().length > 20;
-      const notScript = child.tagName !== 'SCRIPT';
-      return hasContent && notScript;
+    // Log all direct children of news section
+    Array.from(newsSection.children).forEach((child, i) => {
+      console.log(`Direct child ${i}:`, {
+        tag: child.tagName,
+        classes: child.className,
+        id: child.id,
+        textLength: child.textContent.trim().length,
+        textPreview: child.textContent.trim().substring(0, 100),
+        element: child
+      });
     });
     
-    console.log(`Found ${newsItems.length} potential news items`);
+    // Try to find ANY container with content
+    let newsItems = [];
+    
+    // Method 1: Direct children of news section
+    console.log('--- Method 1: Direct children ---');
+    const directChildren = Array.from(newsSection.children).filter(child => {
+      const hasText = child.textContent.trim().length > 10;
+      const notScript = child.tagName !== 'SCRIPT';
+      console.log(`Child: ${child.tagName}, hasText: ${hasText}, notScript: ${notScript}`);
+      return hasText && notScript;
+    });
+    
+    if (directChildren.length > 0) {
+      console.log(`✅ Found ${directChildren.length} direct children with content`);
+      newsItems = directChildren;
+    } else {
+      // Method 2: Look deeper
+      console.log('--- Method 2: Looking deeper ---');
+      const allDescendants = newsSection.querySelectorAll('*');
+      console.log(`Found ${allDescendants.length} total descendants`);
+      
+      // Look for elements that seem like news articles
+      const candidates = Array.from(allDescendants).filter(el => {
+        const hasSignificantText = el.textContent.trim().length > 50;
+        const hasLinks = el.querySelector('a[href]');
+        const notContainer = !el.querySelector('article, .post, .card');
+        
+        console.log(`Candidate: ${el.tagName}.${el.className}, text: ${hasSignificantText}, links: ${!!hasLinks}, notContainer: ${notContainer}`);
+        
+        return hasSignificantText && hasLinks && notContainer;
+      });
+      
+      if (candidates.length > 0) {
+        console.log(`✅ Found ${candidates.length} candidate elements`);
+        newsItems = candidates.slice(0, 8); // Limit to reasonable number
+      }
+    }
+    
+    console.log(`Final result: ${newsItems.length} items to work with`);
     
     if (newsItems.length === 0) {
-      console.log('No news items found');
+      console.log('❌ No news items found with any method');
+      console.log('🔍 Check the HTML structure above');
       return;
     }
     
