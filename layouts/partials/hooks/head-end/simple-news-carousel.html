@@ -5,7 +5,8 @@ section[id="news"] {
   border: 2px solid green;
   padding: 20px;
   margin: 20px 0;
-  min-height: 200px;
+  height: 250px; /* Fixed height */
+  overflow: hidden; /* Hide content that doesn't fit */
 }
 
 section[id="news"]::before {
@@ -21,9 +22,20 @@ section[id="news"].carousel-active article {
   display: none;
 }
 
-/* Show only the current article */
+/* Show only the current article with constrained sizing */
 section[id="news"].carousel-active article.current-item {
   display: block;
+  max-height: 200px; /* Constrain article height */
+  overflow: hidden; /* Hide overflow content */
+}
+
+/* Make sure text doesn't get cut off awkwardly */
+section[id="news"].carousel-active article.current-item p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Simple navigation buttons */
