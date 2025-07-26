@@ -275,7 +275,7 @@
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px); /* Reduced blur */
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* Reduced space between sections */
   max-width: 90%; /* Tighter horizontal width */
 }
 
@@ -312,7 +312,8 @@
 .research-questions-content {
   font-size: 1rem; /* Same size as About Me heading */
   line-height: 1.6;
-  color: #cccccc;
+  color: #ffffff; /* Changed to white */
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .research-questions-content ul {
@@ -323,13 +324,20 @@
 
 .research-questions-content li {
   margin-bottom: 0.5rem;
-  color: #cccccc;
+  color: #ffffff; /* Changed to white */
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
+  transition: color 0.2s ease;
+}
+
+.research-questions-content li:hover {
+  color: #ff0000; /* Red hover color to match site theme */
 }
 
 .research-questions-content a {
   color: #ffffff;
   text-decoration: underline;
   transition: color 0.2s;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .research-questions-content a:hover {
@@ -339,13 +347,15 @@
 .about-content {
   font-size: 1rem; /* Same size as About Me heading */
   line-height: 1.6;
-  color: #cccccc;
+  color: #ffffff; /* Changed to white */
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .about-content a {
   color: #ffffff;
   text-decoration: underline;
   transition: color 0.2s;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .about-content a:hover {
@@ -391,6 +401,7 @@
   font-size: 0.75rem; /* Smaller font */
   font-weight: 500;
   backdrop-filter: blur(5px);
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .education-list {
@@ -409,17 +420,20 @@
   color: #ffffff;
   margin-bottom: 0.2rem;
   font-size: 0.9rem; /* Smaller font */
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .education-institution {
-  color: #cccccc;
+  color: #ffffff; /* Changed to white */
   font-size: 0.8rem; /* Smaller font */
   margin-bottom: 0.2rem;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .education-date {
-  color: #999999;
+  color: #ffffff; /* Changed to white */
   font-size: 0.75rem; /* Smaller font */
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 /* Responsive Design */

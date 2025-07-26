@@ -121,9 +121,9 @@ work:
     date_end: ''
 
 research_questions: |-
-  - How do magnetic fields amplify and sustain themselves in turbulent astrophysical plasmas?
-  - What role does turbulence play in our galaxy, and can can we use our galaxy as a turbulence laboratory?
-  - How do multiscale plasma processes connect microscopic physics to macroscopic astrophysical phenomena?
+  - How do magnetic fields amplify and sustain themselves in astrophysical systems?
+  - What role does turbulence play in our Galaxy, and can can we use our Galaxy as a turbulence laboratory?
+  - How do multiscale and nonideal plasma processes connect microscopic physics to macroscopic astrophysical phenomena?
   - Can we predict magnetic field evolution in extreme environments like neutron star mergers?
   - What universal principles govern turbulence across vastly different scales?
 
