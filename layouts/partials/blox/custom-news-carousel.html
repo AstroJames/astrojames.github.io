@@ -12,9 +12,7 @@
 
 <section id="{{ $block.id | default "news" }}" class="custom-news-carousel">
   <div class="section-header">
-    {{ with $block.content.title }}
-      <h2 class="section-title">{{ . | markdownify }}</h2>
-    {{ end }}
+    <h2 class="section-title">{{ $block.content.title | default "Recent News" }}</h2>
     {{ with $block.content.subtitle }}
       <p class="section-subtitle">{{ . | markdownify }}</p>
     {{ end }}
@@ -24,12 +22,6 @@
     <div class="carousel-wrapper">
       {{ range $index, $post := $posts }}
         <div class="news-item" data-index="{{ $index }}">
-          {{ $image := $post.Resources.GetMatch "featured.*" }}
-          {{ if $image }}
-            <div class="news-image">
-              <img src="{{ $image.RelPermalink }}" alt="{{ $post.Title }}" loading="lazy">
-            </div>
-          {{ end }}
           <div class="news-content{{ if not $image }} full-width{{ end }}">
             <h3 class="news-title">
               <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
@@ -46,6 +38,12 @@
               </div>
             {{ end }}
           </div>
+          {{ $image := $post.Resources.GetMatch "featured.*" }}
+          {{ if $image }}
+            <div class="news-image">
+              <img src="{{ $image.RelPermalink }}" alt="{{ $post.Title }}" loading="lazy">
+            </div>
+          {{ end }}
         </div>
       {{ end }}
     </div>
@@ -76,22 +74,23 @@
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 0.5rem 0;
-  color: #1f2937 !important; /* Dark text to ensure visibility */
+  margin: 0 0 1.5rem 0;
+  color: #ffffff !important; /* White text for visibility on dark backgrounds */
+  text-align: left;
 }
 
 .section-subtitle {
-  color: #9ca3af; /* Muted light text */
+  color: #cccccc; /* Light gray text */
   margin: 0;
 }
 
 .carousel-container {
   position: relative;
-  background: #1f2937; /* Dark background */
-  border: 1px solid #374151; /* Dark border */
+  background: #000000; /* Pure black background */
+  border: 1px solid #333333; /* Dark gray border */
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-wrapper {
@@ -110,9 +109,9 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  background: #1f2937; /* Dark item background */
+  background: #000000; /* Pure black item background */
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .news-item.active {
@@ -122,10 +121,11 @@
 
 .news-image {
   flex-shrink: 0;
-  width: 120px;
+  width: 180px; /* Wider images */
   height: 100%;
   border-radius: 6px;
   overflow: hidden;
+  order: 2; /* Move image to right side */
 }
 
 .news-image img {
@@ -139,6 +139,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0; /* Allow text truncation */
+  order: 1; /* Content on left side */
 }
 
 .news-content.full-width {
@@ -153,17 +154,17 @@
 }
 
 .news-title a {
-  color: #e5e7eb; /* Light text */
+  color: #ffffff; /* White text */
   text-decoration: none;
 }
 
 .news-title a:hover {
-  color: #60a5fa; /* Light blue hover */
+  color: #cccccc; /* Light gray hover */
 }
 
 .news-date {
   font-size: 0.875rem;
-  color: #9ca3af; /* Muted light text */
+  color: #999999; /* Medium gray text */
   margin-bottom: 0.75rem;
 }
 
@@ -171,7 +172,7 @@
   flex: 1;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #d1d5db; /* Light gray text */
+  color: #cccccc; /* Light gray text */
   margin: 0 0 0.75rem 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -187,8 +188,8 @@
 
 .tag {
   display: inline-block;
-  background: #374151; /* Dark tag background */
-  color: #d1d5db; /* Light tag text */
+  background: #333333; /* Dark gray tag background */
+  color: #cccccc; /* Light gray tag text */
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -200,12 +201,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.5rem;
-  background: #111827; /* Darker nav background */
-  border-top: 1px solid #374151; /* Dark border */
+  background: #1a1a1a; /* Very dark gray nav background */
+  border-top: 1px solid #333333; /* Dark gray border */
 }
 
 .nav-btn {
-  background: #3b82f6; /* Blue button */
+  background: #666666; /* Medium gray button */
   color: white;
   border: none;
   border-radius: 4px;
@@ -221,17 +222,17 @@
 }
 
 .nav-btn:hover {
-  background: #2563eb; /* Darker blue hover */
+  background: #888888; /* Lighter gray hover */
 }
 
 .nav-btn:disabled {
-  background: #4b5563; /* Dark gray disabled */
+  background: #444444; /* Dark gray disabled */
   cursor: not-allowed;
 }
 
 .nav-counter {
   font-size: 0.875rem;
-  color: #9ca3af; /* Muted light text */
+  color: #999999; /* Medium gray text */
   font-weight: 500;
 }
 
@@ -254,6 +255,11 @@
   .news-image {
     width: 100%;
     height: 80px; /* Fixed height for mobile */
+    order: 1; /* Image back on top for mobile */
+  }
+  
+  .news-content {
+    order: 2; /* Content below image on mobile */
   }
   
   .section-title {
