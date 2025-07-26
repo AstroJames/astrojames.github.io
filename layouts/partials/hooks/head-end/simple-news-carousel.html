@@ -220,58 +220,107 @@ document.addEventListener('DOMContentLoaded', function() {
       container = newsSection;
     }
     
-    // First, let's see what we have in the container
-    console.log('Container found:', container);
-    console.log('Container children:', container.children);
+    // Debug: Let's see the exact structure
+    console.log('=== NEWS SECTION DEBUG ===');
+    console.log('News section:', newsSection);
+    console.log('Container:', container);
+    console.log('Container tag:', container.tagName);
+    console.log('Container classes:', container.className);
+    console.log('Container children count:', container.children.length);
     
-    // Get all news items - try multiple approaches
-    let items = Array.from(container.querySelectorAll('article, .post, .card, [class*="post"], [class*="article"]'));
+    // Log each child with details
+    Array.from(container.children).forEach((child, index) => {
+      console.log(`Child ${index}:`, {
+        tag: child.tagName,
+        classes: child.className,
+        textLength: child.textContent.trim().length,
+        textPreview: child.textContent.trim().substring(0, 100),
+        childrenCount: child.children.length,
+        element: child
+      });
+    });
     
-    // If no articles found, try direct children
+    // Try Hugo Blox specific patterns first
+    let items = [];
+    
+    // Pattern 1: Look for date-title-summary structure
+    const dateElements = container.querySelectorAll('[class*="date"], .article-metadata, time');
+    if (dateElements.length > 0) {
+      console.log('Found date elements, looking for their parent containers');
+      dateElements.forEach(dateEl => {
+        // Find the parent that contains the full article
+        let parent = dateEl.parentElement;
+        while (parent && parent !== container) {
+          const hasTitle = parent.querySelector('h1, h2, h3, h4, .title, [class*="title"]');
+          const hasContent = parent.textContent.trim().length > 100;
+          if (hasTitle && hasContent && !items.includes(parent)) {
+            items.push(parent);
+            break;
+          }
+          parent = parent.parentElement;
+        }
+      });
+    }
+    
+    // Pattern 2: Look for title elements and find their containers
     if (items.length === 0) {
-      console.log('No semantic articles found, trying direct children');
-      items = Array.from(container.children);
-      
-      // Filter out obvious non-content elements
-      items = items.filter(child => {
-        const tagName = child.tagName.toLowerCase();
-        const className = child.className.toLowerCase();
+      const titleElements = container.querySelectorAll('h1, h2, h3, h4, .title, [class*="title"]');
+      console.log('Found title elements:', titleElements.length);
+      titleElements.forEach(titleEl => {
+        let parent = titleEl.parentElement;
+        while (parent && parent !== container) {
+          const hasContent = parent.textContent.trim().length > 50;
+          const hasSiblings = parent.children.length > 1;
+          if (hasContent && hasSiblings && !items.includes(parent)) {
+            items.push(parent);
+            break;
+          }
+          parent = parent.parentElement;
+        }
+      });
+    }
+    
+    // Pattern 3: Look for link elements (article titles are often links)
+    if (items.length === 0) {
+      const linkElements = container.querySelectorAll('a[href*="/post/"], a[href*="/blog/"], a[href*="/news/"]');
+      console.log('Found post links:', linkElements.length);
+      linkElements.forEach(linkEl => {
+        let parent = linkEl.parentElement;
+        while (parent && parent !== container) {
+          const hasContent = parent.textContent.trim().length > 50;
+          if (hasContent && !items.includes(parent)) {
+            items.push(parent);
+            break;
+          }
+          parent = parent.parentElement;
+        }
+      });
+    }
+    
+    // Pattern 4: Direct children with substantial content
+    if (items.length === 0) {
+      console.log('Trying direct children approach');
+      items = Array.from(container.children).filter(child => {
         const textContent = child.textContent.trim();
+        const hasContent = textContent.length > 30;
+        const hasMultipleElements = child.children.length > 0;
         
-        // Skip empty elements, scripts, styles
-        if (!textContent || tagName === 'script' || tagName === 'style') {
-          return false;
-        }
+        console.log(`Child analysis:`, {
+          tag: child.tagName,
+          hasContent,
+          hasMultipleElements,
+          textLength: textContent.length,
+          childrenCount: child.children.length
+        });
         
-        // Skip very short content (likely just dates or titles)
-        if (textContent.length < 20) {
-          return false;
-        }
-        
-        return true;
+        return hasContent && hasMultipleElements;
       });
     }
     
-    // If still no items, try an even broader approach
+    console.log(`Final items found: ${items.length}`);
     if (items.length === 0) {
-      console.log('No direct children suitable, trying all descendant elements');
-      const allElements = container.querySelectorAll('*');
-      items = Array.from(allElements).filter(el => {
-        const text = el.textContent.trim();
-        const hasChildren = el.children.length > 0;
-        const hasSignificantText = text.length > 100;
-        
-        // Look for elements that seem like complete news items
-        return hasChildren && hasSignificantText && 
-               !el.querySelector('article, .post, .card'); // Not a container of other items
-      });
-    }
-    
-    if (items.length === 0) {
-      console.log('No news items found with any approach');
-      console.log('Container HTML:', container.innerHTML);
-      // Don't return - let's at least try to show something
-      items = [container]; // Use the container itself as fallback
+      console.log('No suitable items found - carousel will not activate');
+      return; // Exit gracefully without hiding anything
     }
     
     console.log(`Found ${items.length} news items, setting up single-item carousel`);
