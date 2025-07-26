@@ -1,0 +1,187 @@
+{{/* Simple News Carousel - Applied after page load */}}
+<style>
+/* Target the news section specifically */
+section[id="news"] {
+  position: relative;
+  overflow: hidden;
+  padding: 0 50px;
+}
+
+/* Transform the news grid into a horizontal scrolling carousel */
+section[id="news"] .grid,
+section[id="news"] [class*="grid"] {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Style individual news items */
+section[id="news"] article,
+section[id="news"] .card,
+section[id="news"] > div > div > div {
+  flex: 0 0 300px;
+  min-height: 200px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+section[id="news"] article:hover,
+section[id="news"] .card:hover,
+section[id="news"] > div > div > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* Hide scrollbar but keep functionality */
+section[id="news"] .grid::-webkit-scrollbar,
+section[id="news"] [class*="grid"]::-webkit-scrollbar {
+  height: 6px;
+}
+
+section[id="news"] .grid::-webkit-scrollbar-track,
+section[id="news"] [class*="grid"]::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+section[id="news"] .grid::-webkit-scrollbar-thumb,
+section[id="news"] [class*="grid"]::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+section[id="news"] .grid::-webkit-scrollbar-thumb:hover,
+section[id="news"] [class*="grid"]::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Navigation arrows */
+.news-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section[id="news"]:hover .news-nav-btn {
+  opacity: 1;
+}
+
+.news-nav-prev {
+  left: 10px;
+}
+
+.news-nav-next {
+  right: 10px;
+}
+
+.news-nav-btn:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+/* Dark mode support */
+.dark section[id="news"] article,
+.dark section[id="news"] .card,
+.dark section[id="news"] > div > div > div {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  section[id="news"] {
+    padding: 0 20px;
+  }
+  
+  section[id="news"] article,
+  section[id="news"] .card,
+  section[id="news"] > div > div > div {
+    flex: 0 0 250px;
+  }
+  
+  .news-nav-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait a bit for Hugo Blox to render content
+  setTimeout(function() {
+    const newsSection = document.querySelector('section[id="news"]');
+    if (!newsSection) return;
+    
+    // Find the scrollable container
+    const scrollContainer = newsSection.querySelector('.grid, [class*="grid"]');
+    if (!scrollContainer) return;
+    
+    // Add navigation buttons
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'news-nav-btn news-nav-prev';
+    prevBtn.innerHTML = '‹';
+    prevBtn.onclick = () => {
+      scrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
+    };
+    
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'news-nav-btn news-nav-next';
+    nextBtn.innerHTML = '›';
+    nextBtn.onclick = () => {
+      scrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
+    };
+    
+    newsSection.appendChild(prevBtn);
+    newsSection.appendChild(nextBtn);
+    
+    // Optional: Auto-scroll functionality
+    let autoScrollInterval;
+    
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        if (scrollContainer.scrollLeft >= maxScroll) {
+          scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
+        }
+      }, 4000);
+    }
+    
+    function stopAutoScroll() {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+      }
+    }
+    
+    // Start auto-scroll
+    startAutoScroll();
+    
+    // Pause auto-scroll on hover
+    newsSection.addEventListener('mouseenter', stopAutoScroll);
+    newsSection.addEventListener('mouseleave', startAutoScroll);
+    
+  }, 1000); // Wait 1 second for content to load
+});
+</script>
