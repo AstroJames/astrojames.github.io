@@ -1,9 +1,19 @@
 {{/* Horizontal Scrolling Background Animation */}}
 <style>
+/* Force animation on any element with background image */
+[style*="background-image"],
+section[style*="background-image"] {
+  background-size: auto 150% !important;
+  background-repeat: repeat-x !important;
+  animation: scroll-horizontal 60s linear infinite !important;
+}
 /* Apply horizontal scrolling animation to the biography section background */
 .resume-biography-3,
 section[data-block="resume-biography-3"],
-section.dark {
+section.dark,
+.dark,
+body.dark section:first-child,
+.landing-page section:first-child {
   background-size: auto 150% !important; /* Auto width, 150% height for zoom */
   background-repeat: repeat-x !important; /* Repeat horizontally */
   background-position: 0 center !important;
@@ -13,17 +23,20 @@ section.dark {
 /* Keyframe animation for horizontal scrolling */
 @keyframes scroll-horizontal {
   0% {
-    background-position: 0 center;
+    background-position: 0% center;
   }
   100% {
-    background-position: 100% center; /* Move one full image width */
+    background-position: -100% center; /* Move one full image width to the left */
   }
 }
 
 /* Pause animation on hover (optional) */
 .resume-biography-3:hover,
 section[data-block="resume-biography-3"]:hover,
-section.dark:hover {
+section.dark:hover,
+.dark:hover,
+body.dark section:first-child:hover,
+.landing-page section:first-child:hover {
   animation-play-state: paused;
 }
 
