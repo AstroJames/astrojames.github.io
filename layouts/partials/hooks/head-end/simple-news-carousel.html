@@ -19,23 +19,69 @@ section[id="news"]::before {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
-    console.log('=== SIMPLE DEBUG - NO CAROUSEL ===');
+    console.log('=== STEP 1: SHOW ONLY FIRST NEWS ITEM ===');
     
     const newsSection = document.querySelector('section[id="news"]');
-    if (newsSection) {
-      console.log('✅ Found news section');
-      console.log('News section HTML:', newsSection.outerHTML);
-    } else {
+    if (!newsSection) {
       console.log('❌ No news section found');
-      
-      // Check if there are any sections
-      const allSections = document.querySelectorAll('section');
-      console.log('All sections found:', allSections.length);
-      allSections.forEach((section, i) => {
-        console.log(`Section ${i}:`, section.id, section.className);
-      });
+      return;
     }
     
-  }, 2000); // Wait longer to ensure everything is loaded
+    console.log('✅ Found news section');
+    
+    // Find all possible containers and their children
+    const possibleContainers = newsSection.querySelectorAll('div, article, section');
+    console.log(`Found ${possibleContainers.length} possible containers`);
+    
+    // Look for containers with multiple direct children (likely news items)
+    let targetContainer = null;
+    let newsItems = [];
+    
+    possibleContainers.forEach((container, i) => {
+      const children = Array.from(container.children);
+      if (children.length > 1) {
+        console.log(`Container ${i} has ${children.length} children:`, container);
+        children.forEach((child, j) => {
+          console.log(`  Child ${j}:`, {
+            tag: child.tagName,
+            classes: child.className,
+            textLength: child.textContent.trim().length,
+            textPreview: child.textContent.trim().substring(0, 50) + '...'
+          });
+        });
+        
+        // If this looks like news items (children have substantial content)
+        const hasSubstantialContent = children.some(child => child.textContent.trim().length > 50);
+        if (hasSubstantialContent && !targetContainer) {
+          targetContainer = container;
+          newsItems = children;
+          console.log('📰 Selected this as news items container');
+        }
+      }
+    });
+    
+    if (!targetContainer || newsItems.length === 0) {
+      console.log('❌ Could not find news items container');
+      return;
+    }
+    
+    console.log(`✅ Found ${newsItems.length} news items`);
+    
+    // Hide all items except the first one
+    newsItems.forEach((item, index) => {
+      if (index === 0) {
+        console.log(`✅ Keeping item ${index} visible`);
+        item.style.display = 'block';
+        item.style.opacity = '1';
+      } else {
+        console.log(`🙈 Hiding item ${index}`);
+        item.style.display = 'none';
+        item.style.opacity = '0';
+      }
+    });
+    
+    console.log('🎉 Step 1 complete: Only first news item should be visible');
+    
+  }, 2000);
 });
 </script>
