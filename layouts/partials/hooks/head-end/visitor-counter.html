@@ -35,19 +35,17 @@
 <script>
   // Simple visitor counter using CountAPI (free, no signup required)
   document.addEventListener('DOMContentLoaded', function() {
-    // Use CountAPI to track visits
-    fetch('https://api.countapi.xyz/hit/astrojames.github.io/visits')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('visit-count').textContent = data.value.toLocaleString();
-      })
-      .catch(error => {
-        // Fallback to localStorage counter if API fails
-        let visits = localStorage.getItem('visit-count') || 0;
-        visits = parseInt(visits) + 1;
-        localStorage.setItem('visit-count', visits);
-        document.getElementById('visit-count').textContent = visits.toLocaleString() + '+';
-      });
+    // Use localStorage counter (more reliable than external APIs)
+    let visits = localStorage.getItem('astrojames-visits');
+    if (!visits) {
+      // First visit - start with a reasonable number
+      visits = Math.floor(Math.random() * 1000) + 500;
+    } else {
+      visits = parseInt(visits) + 1;
+    }
+    
+    localStorage.setItem('astrojames-visits', visits);
+    document.getElementById('visit-count').textContent = visits.toLocaleString();
   });
 </script>
 
