@@ -44,19 +44,19 @@
               {{ range . }}
                 <a href="{{ .url }}" target="_blank" aria-label="{{ .label | default .icon }}" class="social-link">
                   {{ if eq .icon "at-symbol" }}
-                    <span class="icon-text">@</span>
+                    <i class="fas fa-at"></i>
                   {{ else if eq .icon "brands/x" }}
-                    <span class="icon-text">𝕏</span>
+                    <i class="fab fa-x-twitter"></i>
                   {{ else if eq .icon "brands/github" }}
-                    <span class="icon-text">GH</span>
+                    <i class="fab fa-github"></i>
                   {{ else if eq .icon "academicons/google-scholar" }}
-                    <span class="icon-text">GS</span>
+                    <i class="ai ai-google-scholar"></i>
                   {{ else if eq .icon "academicons/orcid" }}
-                    <span class="icon-text">ID</span>
+                    <i class="ai ai-orcid"></i>
                   {{ else if eq .icon "academicons/researchgate" }}
-                    <span class="icon-text">RG</span>
+                    <i class="ai ai-researchgate"></i>
                   {{ else }}
-                    <span class="icon-text">{{ substr .icon 0 2 | upper }}</span>
+                    <i class="fas fa-link"></i>
                   {{ end }}
                 </a>
               {{ end }}
@@ -227,11 +227,6 @@
   font-size: 1.25rem;
 }
 
-.icon-text {
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
 
 .cv-button {
   display: inline-block;
@@ -252,11 +247,11 @@
 }
 
 .about-section {
-  background: rgba(0, 0, 0, 0.4); /* More transparent background */
+  background: rgba(0, 0, 0, 0.2); /* Even more transparent background */
   padding: 1rem; /* Tighter padding */
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
   margin-bottom: 2rem;
   max-width: 90%; /* Tighter horizontal width */
 }
@@ -294,11 +289,11 @@
 }
 
 .sidebar-section {
-  background: rgba(0, 0, 0, 0.4); /* More transparent background */
+  background: rgba(0, 0, 0, 0.2); /* Even more transparent background */
   padding: 1rem; /* Smaller padding */
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle light border */
-  backdrop-filter: blur(10px); /* Add blur effect */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+  backdrop-filter: blur(8px); /* Add blur effect */
 }
 
 .sidebar-title {

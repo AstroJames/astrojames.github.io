@@ -1,29 +1,51 @@
 {{/* Transparent Header that becomes black on scroll */}}
 <style>
-/* Push content up behind transparent header */
+/* Extend first section background to top of viewport */
 .resume-biography-3,
 section[data-block="resume-biography-3"],
 .landing-page > section:first-of-type,
-body.landing .section:first-child {
-  margin-top: -100px !important; /* Larger negative margin to pull content higher */
-  padding-top: 100px !important; /* Maintain content spacing */
+body.landing .section:first-child,
+section.dark:first-of-type {
+  margin-top: -80px !important; /* Pull up to cover header area */
+  padding-top: 80px !important; /* Maintain content position */
+  min-height: 100vh !important; /* Ensure full height */
 }
 
-/* Ensure background extends to top and behind header */
+/* Make the background extend before the section */
+.resume-biography-3::before,
+section[data-block="resume-biography-3"]::before,
+section.dark:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: inherit;
+  z-index: -1;
+}
+
+/* Ensure background image covers everything */
+.resume-biography-3,
+section[data-block="resume-biography-3"],
+section.dark:first-of-type {
+  position: relative;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* Remove any top margins/padding from body and containers */
+body,
+body.landing,
 .landing-page,
-body.landing {
+main,
+.main-content {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
-/* Force background to extend behind header */
-section[data-block="resume-biography-3"],
-.resume-biography-3 {
-  position: relative;
-  z-index: 1;
-}
-
-/* Ensure header is above content but allows background through */
+/* Ensure header stays on top but transparent */
 header, 
 .navbar,
 nav[role="navigation"],
@@ -31,8 +53,11 @@ nav[role="navigation"],
 .hb-docs-nav,
 .docs-navbar,
 .fixed-top {
-  position: relative;
-  z-index: 1000;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
 }
 /* Header transparency effect */
 header, 
