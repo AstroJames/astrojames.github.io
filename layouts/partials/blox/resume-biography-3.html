@@ -72,6 +72,16 @@
         </div>
       </div>
       
+      {{/* Research Questions Section */}}
+      <div class="research-questions-section">
+        <h3 class="research-questions-title">Research Questions that Drive Me</h3>
+        <div class="research-questions-content">
+          {{ with $block.content.research_questions }}
+            {{ . | markdownify }}
+          {{ end }}
+        </div>
+      </div>
+      
       {{/* About Me Text */}}
       <div class="about-section">
         <h3 class="about-title">About Me</h3>
@@ -262,6 +272,16 @@
   color: #ff0000; /* Red hover theme */
 }
 
+.research-questions-section {
+  background: rgba(0, 0, 0, 0.2); /* Even more transparent background */
+  padding: 1rem; /* Tighter padding */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px); /* Reduced blur */
+  margin-bottom: 2rem;
+  max-width: 90%; /* Tighter horizontal width */
+}
+
 .about-section {
   background: rgba(0, 0, 0, 0.2); /* Even more transparent background */
   padding: 1rem; /* Tighter padding */
@@ -272,6 +292,15 @@
   max-width: 90%; /* Tighter horizontal width */
 }
 
+.research-questions-title {
+  font-size: 1rem; /* Same size as sidebar titles */
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: #ffffff; /* White font like Education title */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Horizontal line */
+  padding-bottom: 0.4rem;
+}
+
 .about-title {
   font-size: 1rem; /* Same size as sidebar titles */
   font-weight: 600;
@@ -279,6 +308,22 @@
   color: #ffffff; /* White font like Education title */
   border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Horizontal line */
   padding-bottom: 0.4rem;
+}
+
+.research-questions-content {
+  font-size: 1rem; /* Same size as About Me heading */
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.research-questions-content a {
+  color: #ffffff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.research-questions-content a:hover {
+  color: #ff0000; /* Red hover color */
 }
 
 .about-content {

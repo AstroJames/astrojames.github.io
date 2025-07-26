@@ -53,6 +53,8 @@ interests:
   - cosmic ray propagation
   - binary neutron star mergers
   - magnetic reconnection
+  - interstellar medium physics
+  - space physics
   - numerical methods
   - high-performance computing
   - interdisciplinary research
