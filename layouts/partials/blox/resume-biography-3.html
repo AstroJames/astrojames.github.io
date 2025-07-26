@@ -74,10 +74,13 @@
       
       {{/* Research Questions Section */}}
       <div class="research-questions-section">
-        <h3 class="research-questions-title">Research Questions that Drive Me</h3>
+        <h3 class="research-questions-title">Research Questions that Drive My Enquiry</h3>
         <div class="research-questions-content">
           {{ with $block.content.research_questions }}
             {{ . | markdownify }}
+          {{ else }}
+            <!-- Debug: research_questions not found -->
+            <p>Debug: No research questions found in $block.content.research_questions</p>
           {{ end }}
         </div>
       </div>
@@ -299,6 +302,7 @@
   color: #ffffff; /* White font like Education title */
   border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Horizontal line */
   padding-bottom: 0.4rem;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .about-title {
@@ -308,6 +312,7 @@
   color: #ffffff; /* White font like Education title */
   border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Horizontal line */
   padding-bottom: 0.4rem;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .research-questions-content {
@@ -364,6 +369,7 @@
   color: #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 0.4rem;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
 .interests-list {

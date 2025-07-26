@@ -14,7 +14,7 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: ""
-      research_questions: |-
+      research_questions: |
         - How do magnetic fields amplify and sustain themselves in turbulent astrophysical plasmas?
         - What role does turbulence play in our galaxy, and can can we use our galaxy as a turbulence laboratory?
         - How do multiscale plasma processes connect microscopic physics to macroscopic astrophysical phenomena?
