@@ -60,10 +60,13 @@
       
       {{/* About Me Text */}}
       <div class="about-section">
-        {{ $author.Content }}
-        {{ with $block.content.text }}
-          {{ . | markdownify }}
-        {{ end }}
+        <h3 class="about-title">About Me</h3>
+        <div class="about-content">
+          {{ $author.Content }}
+          {{ with $block.content.text }}
+            {{ . | markdownify }}
+          {{ end }}
+        </div>
       </div>
       
       {{/* Interests under About Me */}}
@@ -206,23 +209,36 @@
 }
 
 .about-section {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #cccccc;
   background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  padding: 1.5rem;
+  padding: 1rem; /* Tighter padding */
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   margin-bottom: 2rem;
+  max-width: 90%; /* Tighter horizontal width */
 }
 
-.about-section a {
+.about-title {
+  font-size: 1rem; /* Same size as sidebar titles */
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: #ffffff; /* White font like Education title */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Horizontal line */
+  padding-bottom: 0.4rem;
+}
+
+.about-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.about-content a {
   color: #ffffff;
   text-decoration: underline;
 }
 
-.about-section a:hover {
+.about-content a:hover {
   color: #cccccc;
 }
 
