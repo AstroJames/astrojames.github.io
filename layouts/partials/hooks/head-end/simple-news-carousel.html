@@ -9,18 +9,29 @@ section[id="news"] {
 }
 
 /* Hide all news items by default */
+section[id="news"] article,
+section[id="news"] .post,
+section[id="news"] .card,
+section[id="news"] [class*="post"],
+section[id="news"] [class*="article"] {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Also hide direct children that might be news items */
 section[id="news"] .grid > *,
-section[id="news"] [class*="grid"] > * {
+section[id="news"] [class*="grid"] > *,
+section[id="news"] > div > div {
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
 /* Show only the active news item */
-section[id="news"] .grid > .news-active,
-section[id="news"] [class*="grid"] > .news-active {
-  display: block;
-  opacity: 1;
+section[id="news"] .news-active {
+  display: block !important;
+  opacity: 1 !important;
 }
 
 /* Style the active news item */
@@ -209,21 +220,54 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
-    // Find the container with news items
-    const container = newsSection.querySelector('.grid, [class*="grid"]');
+    // Find the container with news items - try multiple selectors
+    let container = newsSection.querySelector('.grid, [class*="grid"]');
     if (!container) {
-      console.log('No grid container found in news section');
-      return;
+      // Try other common Hugo Blox selectors
+      container = newsSection.querySelector('.flex, [class*="flex"], .collection-content, .posts, .articles');
+    }
+    if (!container) {
+      console.log('No container found, using newsSection directly');
+      container = newsSection;
     }
     
-    // Get all news items
-    const items = Array.from(container.children);
+    // Get all news items - try multiple selectors for article containers
+    let items = Array.from(container.querySelectorAll('article, .post, .card, [class*="post"], [class*="article"]'));
+    
+    // If no articles found, try direct children that look like content containers
     if (items.length === 0) {
-      console.log('No news items found');
+      items = Array.from(container.children).filter(child => {
+        // Filter out navigation, titles, and other non-content elements
+        const tagName = child.tagName.toLowerCase();
+        const className = child.className.toLowerCase();
+        
+        // Skip common non-content elements
+        if (tagName === 'h1' || tagName === 'h2' || tagName === 'h3' || 
+            className.includes('title') || className.includes('heading') ||
+            className.includes('nav') || className.includes('button')) {
+          return false;
+        }
+        
+        // Include elements that have both text content and aren't just single fields
+        const textContent = child.textContent.trim();
+        const hasMultipleElements = child.children.length > 1;
+        const hasSubstantialContent = textContent.length > 50;
+        
+        return hasMultipleElements && hasSubstantialContent;
+      });
+    }
+    
+    if (items.length === 0) {
+      console.log('No news items found with any selector');
+      console.log('Container HTML:', container.innerHTML);
       return;
     }
     
     console.log(`Found ${items.length} news items, setting up single-item carousel`);
+    console.log('Items found:', items);
+    items.forEach((item, index) => {
+      console.log(`Item ${index}:`, item.tagName, item.className, item.textContent.substring(0, 100));
+    });
     
     let currentIndex = 0;
     let autoRotateInterval;
