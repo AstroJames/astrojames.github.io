@@ -1,5 +1,20 @@
 {{/* Transparent Header that becomes black on scroll */}}
 <style>
+/* Push content up behind transparent header */
+.resume-biography-3,
+section[data-block="resume-biography-3"],
+.landing-page > section:first-of-type,
+body.landing .section:first-child {
+  margin-top: -80px !important; /* Adjust based on header height */
+  padding-top: 80px !important; /* Maintain content spacing */
+}
+
+/* Ensure background extends to top */
+.landing-page,
+body.landing {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
 /* Header transparency effect */
 header, 
 .navbar,
