@@ -1,0 +1,339 @@
+{{/* Custom Biography Block with Two-Column Layout */}}
+{{ $block := .block }}
+{{ $page := .page }}
+
+{{/* Get the user */}}
+{{ $username := $block.content.username | default "admin" }}
+{{ $author := site.GetPage (printf "/authors/%s" $username) }}
+
+<section id="{{ $block.id | default "about" }}" class="resume-biography-3">
+  <div class="biography-container">
+    <div class="main-content">
+      <div class="profile-section">
+        {{/* Profile Image */}}
+        {{ $avatar := $author.Resources.GetMatch "avatar*" }}
+        {{ if $avatar }}
+          <img src="{{ $avatar.RelPermalink }}" alt="{{ $author.Title }}" class="profile-avatar">
+        {{ end }}
+        
+        {{/* Name and Title */}}
+        <div class="profile-info">
+          <h1 class="profile-name">{{ $author.Title }}</h1>
+          {{ with $author.Params.role }}
+            <p class="profile-role">{{ . }}</p>
+          {{ end }}
+          
+          {{/* Organizations */}}
+          {{ with $author.Params.organizations }}
+            <div class="profile-organizations">
+              {{ range . }}
+                <p class="organization">
+                  {{ if .url }}
+                    <a href="{{ .url }}" target="_blank">{{ .name }}</a>
+                  {{ else }}
+                    {{ .name }}
+                  {{ end }}
+                </p>
+              {{ end }}
+            </div>
+          {{ end }}
+          
+          {{/* Social Links */}}
+          {{ with $author.Params.profiles }}
+            <div class="profile-social">
+              {{ range . }}
+                <a href="{{ .url }}" target="_blank" aria-label="{{ .label | default .icon }}" class="social-link">
+                  <i class="{{ .icon }}"></i>
+                </a>
+              {{ end }}
+            </div>
+          {{ end }}
+          
+          {{/* CV Button */}}
+          {{ with $block.content.button }}
+            <div class="profile-button">
+              <a href="{{ .url }}" class="cv-button">{{ .text }}</a>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+      
+      {{/* About Me Text */}}
+      <div class="about-section">
+        {{ $author.Content }}
+        {{ with $block.content.text }}
+          {{ . | markdownify }}
+        {{ end }}
+      </div>
+    </div>
+    
+    {{/* Sidebar */}}
+    <div class="sidebar">
+      {{/* Interests */}}
+      {{ with $author.Params.interests }}
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Research Interests</h3>
+          <div class="interests-list">
+            {{ range . }}
+              <span class="interest-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+      
+      {{/* Education */}}
+      {{ with $author.Params.education }}
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Education</h3>
+          <div class="education-list">
+            {{ range . }}
+              <div class="education-item">
+                <div class="education-degree">{{ .area }}</div>
+                <div class="education-institution">{{ .institution }}</div>
+                {{ if .date_end }}
+                  <div class="education-date">{{ .date_end | time.Format "2006" }}</div>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.resume-biography-3 {
+  padding: 4rem 0;
+  background: var(--bg-color, #000000);
+  color: var(--text-color, #ffffff);
+}
+
+.biography-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-section {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.profile-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+}
+
+.profile-role {
+  font-size: 1.25rem;
+  color: #cccccc;
+  margin: 0 0 1rem 0;
+}
+
+.profile-organizations {
+  margin-bottom: 1.5rem;
+}
+
+.organization {
+  margin: 0.25rem 0;
+  color: #cccccc;
+}
+
+.organization a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.organization a:hover {
+  color: #cccccc;
+}
+
+.profile-social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-link {
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: #cccccc;
+}
+
+.cv-button {
+  display: inline-block;
+  background: #333333;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.cv-button:hover {
+  background: #555555;
+}
+
+.about-section {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.about-section a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.about-section a:hover {
+  color: #cccccc;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-section {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #333333;
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  border-bottom: 2px solid #333333;
+  padding-bottom: 0.5rem;
+}
+
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.interest-tag {
+  background: #333333;
+  color: #cccccc;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.education-item {
+  border-left: 3px solid #333333;
+  padding-left: 1rem;
+}
+
+.education-degree {
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.education-institution {
+  color: #cccccc;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.education-date {
+  color: #999999;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .biography-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .biography-container {
+    padding: 0 1rem;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+  }
+  
+  .profile-role {
+    font-size: 1.1rem;
+  }
+  
+  .sidebar-section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-biography-3 {
+    padding: 2rem 0;
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-name {
+    font-size: 1.75rem;
+  }
+}
+</style>
