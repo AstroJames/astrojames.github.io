@@ -52,40 +52,72 @@
     
     async function updateCounter() {
       try {
-        // Fetch the SVG from Hits Counter
-        const response = await fetch('https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fastrojames.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false');
+        // Add cache-busting parameter to ensure fresh requests
+        const timestamp = new Date().getTime();
+        const response = await fetch(`https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fastrojames.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false&_=${timestamp}`);
         
         if (response.ok) {
           const svgText = await response.text();
+          console.log('SVG Response:', svgText); // Debug log
           
-          // Parse the SVG to extract the count
-          // The count is in a text element after the "hits" label
-          const parser = new DOMParser();
-          const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
-          
-          // Find all text elements
-          const textElements = svgDoc.getElementsByTagName('text');
-          
-          // The count is typically the last text element
+          // Multiple parsing strategies
           let count = null;
-          for (let i = 0; i < textElements.length; i++) {
-            const text = textElements[i].textContent.trim();
-            // Skip the "hits" label and look for numeric values
-            if (text && !isNaN(text) && text !== 'hits') {
-              count = text;
+          
+          // Strategy 1: Parse as DOM
+          try {
+            const parser = new DOMParser();
+            const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+            const textElements = svgDoc.getElementsByTagName('text');
+            
+            console.log('Found text elements:', textElements.length); // Debug log
+            
+            for (let i = 0; i < textElements.length; i++) {
+              const text = textElements[i].textContent.trim();
+              console.log(`Text element ${i}:`, text); // Debug log
+              
+              // Look for numeric values (allowing commas and spaces)
+              if (text && /^\d[\d,\s]*$/.test(text) && text !== 'hits') {
+                count = text.replace(/[,\s]/g, ''); // Remove commas and spaces
+                console.log('Found count via DOM:', count); // Debug log
+                break;
+              }
+            }
+          } catch (e) {
+            console.log('DOM parsing failed:', e);
+          }
+          
+          // Strategy 2: Regex parsing as fallback
+          if (!count) {
+            // Look for patterns like >123< or >1,234< in the SVG
+            const regex = />(\d[\d,\s]*)</g;
+            let match;
+            while ((match = regex.exec(svgText)) !== null) {
+              const text = match[1].trim();
+              if (text && /^\d[\d,\s]*$/.test(text)) {
+                count = text.replace(/[,\s]/g, '');
+                console.log('Found count via regex:', count); // Debug log
+                break;
+              }
             }
           }
           
-          if (count) {
-            countElement.textContent = parseInt(count).toLocaleString();
+          if (count && !isNaN(count)) {
+            const numericCount = parseInt(count);
+            countElement.textContent = numericCount.toLocaleString();
+            console.log('Successfully updated counter to:', numericCount); // Debug log
             return;
+          } else {
+            console.log('No valid count found in SVG');
           }
+        } else {
+          console.log('Response not OK:', response.status);
         }
       } catch (e) {
         console.error('Hits Counter failed:', e);
       }
       
       // Fallback to localStorage if parsing fails
+      console.log('Falling back to localStorage');
       fallbackToLocalStorage();
     }
     
