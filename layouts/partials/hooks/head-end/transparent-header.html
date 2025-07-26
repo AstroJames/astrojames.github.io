@@ -1,0 +1,110 @@
+{{/* Transparent Header that becomes black on scroll */}}
+<style>
+/* Header transparency effect */
+header, 
+.navbar,
+nav[role="navigation"],
+.site-header {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* When scrolled, make header black */
+header.scrolled,
+.navbar.scrolled,
+nav[role="navigation"].scrolled,
+.site-header.scrolled {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure text stays visible */
+header .navbar-brand,
+header .nav-link,
+header .navbar-nav .nav-link,
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-nav .nav-link {
+  color: white !important;
+  transition: color 0.3s ease !important;
+}
+
+header .navbar-brand:hover,
+header .nav-link:hover,
+header .navbar-nav .nav-link:hover,
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover,
+.navbar .navbar-nav .nav-link:hover {
+  color: #cccccc !important;
+}
+
+/* Mobile menu button */
+.navbar-toggler,
+.navbar-toggler-icon {
+  border-color: white !important;
+  color: white !important;
+}
+
+/* Hugo Blox specific selectors */
+.hb-docs-nav,
+.docs-navbar,
+.fixed-top {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+.hb-docs-nav.scrolled,
+.docs-navbar.scrolled,
+.fixed-top.scrolled {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find the header element
+  const header = document.querySelector('header') || 
+                 document.querySelector('.navbar') || 
+                 document.querySelector('nav[role="navigation"]') ||
+                 document.querySelector('.site-header') ||
+                 document.querySelector('.hb-docs-nav') ||
+                 document.querySelector('.docs-navbar') ||
+                 document.querySelector('.fixed-top');
+  
+  if (!header) {
+    console.log('Header element not found for transparency effect');
+    return;
+  }
+  
+  console.log('Transparent header effect initialized on:', header.tagName, header.className);
+  
+  // Scroll threshold - header becomes black after scrolling this many pixels
+  const scrollThreshold = 50;
+  
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > scrollThreshold) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  
+  // Initial check in case page is already scrolled
+  handleScroll();
+  
+  // Listen for scroll events
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  
+  // Also listen for resize events in case scroll position changes
+  window.addEventListener('resize', handleScroll, { passive: true });
+});
+</script>
