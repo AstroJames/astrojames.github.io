@@ -6,8 +6,8 @@ section[data-block="resume-biography-3"],
 .landing-page > section:first-of-type,
 body.landing .section:first-child,
 section.dark:first-of-type {
-  margin-top: -80px !important; /* Pull up to cover header area */
-  padding-top: 80px !important; /* Maintain content position */
+  margin-top: 0 !important; /* No negative margin */
+  padding-top: 100px !important; /* Add space for fixed header */
   min-height: 100vh !important; /* Ensure full height */
 }
 
@@ -17,10 +17,10 @@ section[data-block="resume-biography-3"]::before,
 section.dark:first-of-type::before {
   content: '';
   position: absolute;
-  top: -80px;
+  top: -100px;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 100px;
   background: inherit;
   z-index: -1;
 }

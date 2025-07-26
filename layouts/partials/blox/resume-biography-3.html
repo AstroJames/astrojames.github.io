@@ -46,7 +46,7 @@
                   {{ if eq .icon "at-symbol" }}
                     <i class="fas fa-at"></i>
                   {{ else if eq .icon "brands/x" }}
-                    <i class="fab fa-x-twitter"></i>
+                    <i class="fab fa-twitter"></i>
                   {{ else if eq .icon "brands/github" }}
                     <i class="fab fa-github"></i>
                   {{ else if eq .icon "academicons/google-scholar" }}
@@ -205,14 +205,13 @@
 
 .social-link {
   color: #ffffff;
-  font-size: 1.5rem;
-  transition: color 0.2s;
+  transition: all 0.2s;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline for visibility */
@@ -221,10 +220,12 @@
 .social-link:hover {
   color: #ff0000; /* Red hover color */
   background: rgba(255, 0, 0, 0.2);
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 .social-link i {
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Larger icons */
+  line-height: 1;
 }
 
 
@@ -251,7 +252,7 @@
   padding: 1rem; /* Tighter padding */
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(3px); /* Reduced blur */
   margin-bottom: 2rem;
   max-width: 90%; /* Tighter horizontal width */
 }
@@ -293,7 +294,7 @@
   padding: 1rem; /* Smaller padding */
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
-  backdrop-filter: blur(8px); /* Add blur effect */
+  backdrop-filter: blur(3px); /* Reduced blur effect */
 }
 
 .sidebar-title {
