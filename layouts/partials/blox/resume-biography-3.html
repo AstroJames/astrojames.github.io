@@ -46,7 +46,7 @@
                   {{ if eq .icon "at-symbol" }}
                     <i class="fas fa-at"></i>
                   {{ else if eq .icon "brands/x" }}
-                    <i class="fab fa-twitter"></i>
+                    <span class="x-icon">𝕏</span>
                   {{ else if eq .icon "brands/github" }}
                     <i class="fab fa-github"></i>
                   {{ else if eq .icon "academicons/google-scholar" }}
@@ -207,7 +207,7 @@
   color: #ffffff;
   transition: all 0.2s;
   text-decoration: none;
-  display: inline-flex;
+  display: flex; /* Changed from inline-flex to flex */
   align-items: center;
   justify-content: center;
   width: 3rem;
@@ -215,6 +215,7 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline for visibility */
+  position: relative; /* Add position relative for better control */
 }
 
 .social-link:hover {
@@ -223,9 +224,22 @@
   transform: scale(1.1); /* Slight zoom on hover */
 }
 
-.social-link i {
+.social-link i,
+.social-link .x-icon {
   font-size: 1.5rem; /* Larger icons */
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+}
+
+.x-icon {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 400;
 }
 
 
