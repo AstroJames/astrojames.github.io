@@ -113,7 +113,27 @@ button:hover {
 /* Remove any green underlines/shadows from featured items */
 .article-grid .article-title a,
 .featured .article-title a,
-.article-title a {
+.article-title a,
+#featured a,
+.featured-content a,
+section#featured a,
+.article-grid a,
+.article-style a {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Remove underlines on hover for all featured section links */
+#featured a:hover,
+.featured-content a:hover,
+section#featured a:hover,
+.article-grid a:hover,
+.article-style a:hover,
+.article-grid .article-title a:hover,
+.featured .article-title a:hover {
   box-shadow: none !important;
   text-shadow: none !important;
   background-image: none !important;
@@ -124,12 +144,41 @@ button:hover {
 /* Featured science titles - make them red instead of green */
 .article-grid .article-title,
 .featured .article-title,
-h3.article-title {
+h3.article-title,
+#featured .article-title,
+.featured-content .article-title,
+section#featured .article-title {
   color: #ff0000 !important;
 }
 
 .article-grid .article-title a,
-.featured .article-title a {
+.featured .article-title a,
+#featured .article-title a,
+.featured-content .article-title a,
+section#featured .article-title a {
+  color: #ff0000 !important;
+}
+
+/* Student Projects and Notes titles - red instead of green */
+.projects .article-title,
+.notes .article-title,
+#projects .article-title,
+#notes .article-title,
+.project-title,
+.note-title,
+.portfolio-item .article-title,
+.compact .article-title {
+  color: #ff0000 !important;
+}
+
+.projects .article-title a,
+.notes .article-title a,
+#projects .article-title a,
+#notes .article-title a,
+.project-title a,
+.note-title a,
+.portfolio-item .article-title a,
+.compact .article-title a {
   color: #ff0000 !important;
 }
 
@@ -170,6 +219,24 @@ footer a:hover {
 /* Publication links */
 .publication-links a:hover {
   color: #ff0000 !important;
+}
+
+/* Publication buttons - PDF, CITE, DOI, CUSTOM LINK */
+.btn-outline-primary,
+.publication-links .btn-outline-primary,
+.btn-links .btn,
+.btn-links .btn-outline-primary {
+  color: #ff0000 !important;
+  border-color: #ff0000 !important;
+}
+
+.btn-outline-primary:hover,
+.publication-links .btn-outline-primary:hover,
+.btn-links .btn:hover,
+.btn-links .btn-outline-primary:hover {
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  color: #ffffff !important;
 }
 
 /* Featured publication cards */
