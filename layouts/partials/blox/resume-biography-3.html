@@ -76,7 +76,7 @@
       <div class="research-questions-section">
         <h3 class="research-questions-title">Research Questions that Drive My Enquiry</h3>
         <div class="research-questions-content">
-          {{ with $block.content.research_text }}
+          {{ with $block.content.text }}
             {{ . | markdownify }}
           {{ end }}
         </div>
@@ -87,9 +87,6 @@
         <h3 class="about-title">About Me</h3>
         <div class="about-content">
           {{ $author.Content }}
-          {{ with $block.content.text }}
-            {{ . | markdownify }}
-          {{ end }}
         </div>
       </div>
     </div>
