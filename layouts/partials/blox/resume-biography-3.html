@@ -76,7 +76,7 @@
       <div class="research-questions-section">
         <h3 class="research-questions-title">Research Questions that Drive My Enquiry</h3>
         <div class="research-questions-content">
-          {{ with $block.content.text }}
+          {{ with $author.Params.research_questions }}
             {{ . | markdownify }}
           {{ end }}
         </div>

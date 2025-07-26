@@ -120,6 +120,13 @@ work:
     date_start: 2023-01-09
     date_end: ''
 
+research_questions: |-
+  - How do magnetic fields amplify and sustain themselves in turbulent astrophysical plasmas?
+  - What role does turbulence play in our galaxy, and can can we use our galaxy as a turbulence laboratory?
+  - How do multiscale plasma processes connect microscopic physics to macroscopic astrophysical phenomena?
+  - Can we predict magnetic field evolution in extreme environments like neutron star mergers?
+  - What universal principles govern turbulence across vastly different scales?
+
 ---
 
 My name is James Beattie and I'm a joint postdoctoral research associate and fellow at <a href="https://web.astro.princeton.edu/people/james-beattie">Princeton University</a> <a href="https://amitava.scholar.princeton.edu">(Bhattacharjee group)</a> and the <a href="https://www.cita.utoronto.ca/people/senior-research-associates-post-doctoral-fellows/">Canadian Institute for Theoretical Astrophysics</a> <a href=https://bartripperda.com>(Ripperda plasma-astro group)</a>. I'm interested in magnetized turbulence and dynamo processes across multiple scales across the Universe, from Earth's magnetosheath and the interstellar medium, to the intracluster medium and the plasma environments around compact objects. I was awarded my Ph.D. on Jan. 2024 at the <a href="https://www.anu.edu.au">Australian National University</a> <a href="https://www.mso.anu.edu.au/~chfeder/">(advisor: Christoph Federrath)</a>, and now live between Toronto in Canada and Princeton in the United States.
