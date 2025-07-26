@@ -48,153 +48,69 @@ section[id="news"] > div {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
-    console.log('=== STEP 1: SHOW ONLY FIRST NEWS ITEM ===');
+    console.log('=== NEW SIMPLE APPROACH ===');
     
     const newsSection = document.querySelector('section[id="news"]');
     if (!newsSection) {
-      console.log('❌ No news section found');
+      console.log('No news section found');
       return;
     }
     
-    console.log('✅ Found news section');
+    console.log('Found news section, adding simple scroll navigation');
     
-    // Find all possible containers and their children
-    const possibleContainers = newsSection.querySelectorAll('div, article, section');
-    console.log(`Found ${possibleContainers.length} possible containers`);
+    // Just measure the height of each "news item" by looking at the content height
+    const contentHeight = newsSection.scrollHeight;
+    const visibleHeight = 200; // Our fixed height from CSS
     
-    // Look for containers with multiple direct children (likely news items)
-    let targetContainer = null;
-    let newsItems = [];
+    console.log(`Content height: ${contentHeight}px, Visible: ${visibleHeight}px`);
     
-    possibleContainers.forEach((container, i) => {
-      const children = Array.from(container.children);
-      if (children.length > 1) {
-        console.log(`Container ${i} has ${children.length} children:`, container);
-        children.forEach((child, j) => {
-          console.log(`  Child ${j}:`, {
-            tag: child.tagName,
-            classes: child.className,
-            textLength: child.textContent.trim().length,
-            textPreview: child.textContent.trim().substring(0, 50) + '...'
-          });
-        });
-        
-        // If this looks like news items (children have some content)
-        const hasSubstantialContent = children.some(child => child.textContent.trim().length > 20);
-        if (hasSubstantialContent && !targetContainer) {
-          targetContainer = container;
-          newsItems = children;
-          console.log('📰 Selected this as news items container');
-        }
+    if (contentHeight <= visibleHeight) {
+      console.log('Content fits in one view, no carousel needed');
+      return;
+    }
+    
+    // Calculate how many "screens" we can scroll through
+    const totalScreens = Math.ceil(contentHeight / visibleHeight);
+    let currentScreen = 0;
+    
+    console.log(`Can scroll through ${totalScreens} screens`);
+    
+    function scrollToScreen(screenIndex) {
+      const scrollPosition = screenIndex * visibleHeight;
+      const firstChild = newsSection.firstElementChild;
+      if (firstChild) {
+        firstChild.style.transform = `translateY(-${scrollPosition}px)`;
+        console.log(`Scrolled to screen ${screenIndex}, position: -${scrollPosition}px`);
       }
-    });
-    
-    if (!targetContainer || newsItems.length === 0) {
-      console.log('❌ Could not find news items container with main logic');
-      console.log('🔄 Trying fallback: using all direct children of news section');
-      
-      // Fallback: try all direct children of news section that have some content
-      const directChildren = Array.from(newsSection.children).filter(child => {
-        const hasContent = child.textContent.trim().length > 10;
-        const notButton = !child.textContent.includes('Next') && !child.textContent.includes('Previous');
-        const notDebug = !child.textContent.includes('DEBUG');
-        return hasContent && notButton && notDebug;
-      });
-      
-      if (directChildren.length > 0) {
-        console.log(`📰 Fallback found ${directChildren.length} potential items`);
-        targetContainer = newsSection;
-        newsItems = directChildren;
-      } else {
-        console.log('❌ Even fallback failed - leaving items in original state');
-        return;
-      }
+      currentScreen = screenIndex;
     }
     
-    console.log(`✅ Found ${newsItems.length} news items`);
-    
-    let currentIndex = 0;
-    
-    // Function to show specific item
-    function showItem(index) {
-      console.log(`📍 Switching to item ${index}`);
-      
-      newsItems.forEach((item, i) => {
-        if (i === index) {
-          console.log(`✅ Showing item ${i}`);
-          item.classList.add('carousel-item-visible');
-        } else {
-          console.log(`🙈 Hiding item ${i}`);
-          item.classList.remove('carousel-item-visible');
-        }
-      });
-      
-      currentIndex = index;
+    function nextScreen() {
+      const next = (currentScreen + 1) % totalScreens;
+      scrollToScreen(next);
     }
     
-    // Function to go to next item
-    function nextItem() {
-      const nextIndex = (currentIndex + 1) % newsItems.length;
-      console.log(`➡️ Next: from ${currentIndex} to ${nextIndex}`);
-      showItem(nextIndex);
+    function prevScreen() {
+      const prev = (currentScreen - 1 + totalScreens) % totalScreens;
+      scrollToScreen(prev);
     }
     
-    // Function to go to previous item
-    function prevItem() {
-      const prevIndex = (currentIndex - 1 + newsItems.length) % newsItems.length;
-      console.log(`⬅️ Previous: from ${currentIndex} to ${prevIndex}`);
-      showItem(prevIndex);
-    }
-    
-    // Add navigation buttons
+    // Add simple navigation buttons
     const nextBtn = document.createElement('button');
-    nextBtn.textContent = 'Next →';
-    nextBtn.style.cssText = `
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #0066cc;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      z-index: 100;
-    `;
-    nextBtn.onclick = nextItem;
+    nextBtn.innerHTML = '▼';
+    nextBtn.className = 'simple-nav simple-next';
+    nextBtn.onclick = nextScreen;
     
     const prevBtn = document.createElement('button');
-    prevBtn.textContent = '← Previous';
-    prevBtn.style.cssText = `
-      position: absolute;
-      top: 10px;
-      right: 100px;
-      background: #666;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      z-index: 100;
-    `;
-    prevBtn.onclick = prevItem;
+    prevBtn.innerHTML = '▲';
+    prevBtn.className = 'simple-nav simple-prev';
+    prevBtn.onclick = prevScreen;
     
-    // Add buttons to news section
-    newsSection.style.position = 'relative';
     newsSection.appendChild(nextBtn);
     newsSection.appendChild(prevBtn);
     
-    // Initialize - show first item
-    showItem(0);
+    console.log('Simple carousel ready!');
     
-    // Mark carousel as ready (this triggers CSS hiding of other items)
-    newsSection.classList.add('carousel-ready');
-    
-    console.log('🎉 Step 2 complete: Navigation buttons added');
-    console.log('🔥 Click "Next →" or "← Previous" to test navigation');
-    
-  }, 2000);
+  }, 1000);
 });
 </script>
