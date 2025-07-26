@@ -5,7 +5,7 @@
 section[style*="background-image"] {
   background-size: auto 120% !important; /* Reduced zoom from 150% to 120% */
   background-repeat: repeat-x !important;
-  animation: scroll-horizontal 60s linear infinite !important;
+  animation: scroll-horizontal 45s linear infinite !important; /* Faster: 45 second loop */
 }
 /* Apply horizontal scrolling animation to the biography section background */
 .resume-biography-3,
@@ -17,16 +17,16 @@ body.dark section:first-child,
   background-size: auto 120% !important; /* Reduced zoom from 150% to 120% */
   background-repeat: repeat-x !important; /* Repeat horizontally */
   background-position: 0 center !important;
-  animation: scroll-horizontal 60s linear infinite !important; /* 60 second loop */
+  animation: scroll-horizontal 45s linear infinite !important; /* Faster: 45 second loop */
 }
 
 /* Keyframe animation for horizontal scrolling */
 @keyframes scroll-horizontal {
-  0% {
-    background-position: 0% center;
+  from {
+    background-position: 0 center;
   }
-  100% {
-    background-position: -100% center; /* Move one full image width to the left */
+  to {
+    background-position: -2000px center; /* Fixed pixel amount for smoother looping */
   }
 }
 
@@ -54,8 +54,10 @@ body.dark section:first-child:hover,
 @media (max-width: 768px) {
   .resume-biography-3,
   section[data-block="resume-biography-3"],
-  section.dark {
-    animation-duration: 90s; /* Slower on mobile for better performance */
+  section.dark,
+  [style*="background-image"],
+  section[style*="background-image"] {
+    animation-duration: 60s; /* Adjusted mobile speed */
   }
 }
 </style>
