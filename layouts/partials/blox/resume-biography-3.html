@@ -78,9 +78,6 @@
         <div class="research-questions-content">
           {{ with $block.content.research_questions }}
             {{ . | markdownify }}
-          {{ else }}
-            <!-- Debug: research_questions not found -->
-            <p>Debug: No research questions found in $block.content.research_questions</p>
           {{ end }}
         </div>
       </div>
