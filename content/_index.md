@@ -81,10 +81,11 @@ sections:
       order: desc
     design:
       # Choose a layout view
-      view: news-carousel
+      view: date-title-summary
       # # Reduce spacing
       # spacing:
       #   padding: [0, 0, 0, 0]
+      css_class: "news-carousel-container"
     
   - block: markdown
     id: collabs
