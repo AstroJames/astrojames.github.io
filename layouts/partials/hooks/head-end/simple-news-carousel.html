@@ -16,19 +16,19 @@ section[id="news"]::before {
   font-weight: bold;
 }
 
-/* Hide all potential news items by default to prevent flash */
-section[id="news"] div > div,
-section[id="news"] article,
-section[id="news"] .post,
-section[id="news"] .card,
-section[id="news"] [class*="grid"] > *,
-section[id="news"] [class*="flex"] > * {
+/* Only hide items after carousel is initialized to prevent flash */
+section[id="news"].carousel-ready > div > div:not(.carousel-item-visible),
+section[id="news"].carousel-ready article:not(.carousel-item-visible),
+section[id="news"].carousel-ready .post:not(.carousel-item-visible),
+section[id="news"].carousel-ready .card:not(.carousel-item-visible),
+section[id="news"].carousel-ready [class*="grid"] > *:not(.carousel-item-visible),
+section[id="news"].carousel-ready [class*="flex"] > *:not(.carousel-item-visible) {
   display: none !important;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-/* Only show items when explicitly marked as visible by JavaScript */
+/* Ensure visible items are shown */
 section[id="news"] .carousel-item-visible {
   display: block !important;
   opacity: 1 !important;
@@ -161,6 +161,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize - show first item
     showItem(0);
+    
+    // Mark carousel as ready (this triggers CSS hiding of other items)
+    newsSection.classList.add('carousel-ready');
     
     console.log('🎉 Step 2 complete: Navigation buttons added');
     console.log('🔥 Click "Next →" or "← Previous" to test navigation');
