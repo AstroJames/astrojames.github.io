@@ -1,40 +1,54 @@
-{{/* News Carousel Block Template */}}
-{{ $st := .page }}
-{{ $block := .block }}
+{{/* News Carousel View */}}
+{{ $items_offset := $.Params.offset | default 0 }}
+{{ $items_count := $.Params.count }}
+{{ if eq $items_count 0 }}
+  {{ $items_count = 65535 }}
+{{ else }}
+  {{ $items_count = $items_count | default 5 }}
+{{ end }}
 
-{{ with $block.content }}
+{{/* Query */}}
+{{ $query := where $.Pages "Type" "!=" "widget_page" }}
+{{ $count := len $query }}
+
+{{ $items := $query }}
+
+{{/* Apply offset */}}
+{{ if gt $items_offset 0 }}
+  {{ $items = first $items_count (after $items_offset $items) }}
+{{ else }}
+  {{ $items = first $items_count $items }}
+{{ end }}
+
 <div class="news-carousel-section">
-  <h2 class="section-title">{{ .title | markdownify | emojify }}</h2>
-  
   <div class="carousel-container">
     <div class="carousel-track" id="news-carousel">
-      {{/* Get recent posts */}}
-      {{ $posts := where site.RegularPages "Type" "post" }}
-      {{ $posts = $posts | sort "Date" "desc" }}
-      {{ $posts = first 8 $posts }}
-      
-      {{/* Duplicate posts for seamless loop */}}
-      {{ range $posts }}
+      {{/* Display items twice for seamless scrolling */}}
+      {{ range $items }}
       <div class="carousel-item">
         <div class="news-date">{{ .Date.Format "Jan 2, 2006" }}</div>
         <h3 class="news-title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h3>
-        {{ with .Params.summary }}
-        <p class="news-summary">{{ . | truncate 100 }}</p>
+        {{ if .Params.summary }}
+          <p class="news-summary">{{ .Params.summary | truncate 100 }}</p>
+        {{ else }}
+          <p class="news-summary">{{ .Summary | truncate 100 }}</p>
         {{ end }}
       </div>
       {{ end }}
       
       {{/* Duplicate for seamless scrolling */}}
-      {{ range $posts }}
+      {{ range $items }}
       <div class="carousel-item">
         <div class="news-date">{{ .Date.Format "Jan 2, 2006" }}</div>
         <h3 class="news-title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h3>
-        {{ with .Params.summary }}
-        <p class="news-summary">{{ . | truncate 100 }}</p>
+        {{ if .Params.summary }}
+          <p class="news-summary">{{ .Params.summary | truncate 100 }}</p>
+        {{ else }}
+          <p class="news-summary">{{ .Summary | truncate 100 }}</p>
         {{ end }}
       </div>
       {{ end }}
@@ -49,23 +63,21 @@
 .news-carousel-section {
   margin: 2rem 0;
   overflow: hidden;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .carousel-container {
   position: relative;
   overflow: hidden;
   padding: 0 50px;
+  width: 100%;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
   animation: scroll 40s linear infinite;
+  width: max-content;
 }
 
 .carousel-track:hover {
@@ -80,6 +92,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  height: auto;
 }
 
 .carousel-item:hover {
@@ -208,6 +221,8 @@ let currentPosition = 0;
 
 function moveCarousel(direction) {
   const track = document.getElementById('news-carousel');
+  if (!track) return;
+  
   const itemWidth = 320; // 300px + 20px margin
   
   // Pause auto-scroll
@@ -239,15 +254,16 @@ document.addEventListener('DOMContentLoaded', function() {
   const track = document.getElementById('news-carousel');
   const container = document.querySelector('.carousel-container');
   
-  container.addEventListener('mouseenter', () => {
-    track.style.animationPlayState = 'paused';
-  });
-  
-  container.addEventListener('mouseleave', () => {
-    if (!isPaused) {
-      track.style.animationPlayState = 'running';
-    }
-  });
+  if (track && container) {
+    container.addEventListener('mouseenter', () => {
+      track.style.animationPlayState = 'paused';
+    });
+    
+    container.addEventListener('mouseleave', () => {
+      if (!isPaused) {
+        track.style.animationPlayState = 'running';
+      }
+    });
+  }
 });
 </script>
-{{ end }}

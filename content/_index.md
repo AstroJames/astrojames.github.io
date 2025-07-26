@@ -56,7 +56,7 @@ sections:
       # spacing:
       #   padding: [0, 0, 0, 0]
 
-  - block: collection-news-carousel
+  - block: collection
     id: news
     content:
       title: Recent News
@@ -81,7 +81,7 @@ sections:
       order: desc
     design:
       # Choose a layout view
-      view: carousel
+      view: news-carousel
       # # Reduce spacing
       # spacing:
       #   padding: [0, 0, 0, 0]
