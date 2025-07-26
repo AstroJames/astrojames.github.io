@@ -24,7 +24,7 @@ sections:
         color: black
         image:
           # Add your image background to `assets/media/`.
-          filename: dark_background.svg
+          filename: KHI.WebP
           filters:
             brightness: 1.0
           size: cover

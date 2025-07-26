@@ -1,0 +1,48 @@
+{{/* Horizontal Scrolling Background Animation */}}
+<style>
+/* Apply horizontal scrolling animation to the biography section background */
+.resume-biography-3,
+section[data-block="resume-biography-3"],
+section.dark {
+  background-size: auto 150% !important; /* Auto width, 150% height for zoom */
+  background-repeat: repeat-x !important; /* Repeat horizontally */
+  background-position: 0 center !important;
+  animation: scroll-horizontal 60s linear infinite !important; /* 60 second loop */
+}
+
+/* Keyframe animation for horizontal scrolling */
+@keyframes scroll-horizontal {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: 100% center; /* Move one full image width */
+  }
+}
+
+/* Pause animation on hover (optional) */
+.resume-biography-3:hover,
+section[data-block="resume-biography-3"]:hover,
+section.dark:hover {
+  animation-play-state: paused;
+}
+
+/* Ensure smooth animation on all devices */
+@media (prefers-reduced-motion: reduce) {
+  .resume-biography-3,
+  section[data-block="resume-biography-3"],
+  section.dark {
+    animation: none !important;
+    background-position: 0 center !important;
+  }
+}
+
+/* Alternative slower speed for mobile */
+@media (max-width: 768px) {
+  .resume-biography-3,
+  section[data-block="resume-biography-3"],
+  section.dark {
+    animation-duration: 90s; /* Slower on mobile for better performance */
+  }
+}
+</style>
