@@ -22,6 +22,7 @@
     <div class="carousel-wrapper">
       {{ range $index, $post := $posts }}
         <div class="news-item" data-index="{{ $index }}">
+          {{ $image := $post.Resources.GetMatch "featured.*" }}
           <div class="news-content{{ if not $image }} full-width{{ end }}">
             <h3 class="news-title">
               <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
