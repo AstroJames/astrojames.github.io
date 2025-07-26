@@ -1,0 +1,281 @@
+{{/* Custom News Carousel Block */}}
+{{ $block := .block }}
+{{ $page := .page }}
+
+{{/* Get all posts sorted by date */}}
+{{ $posts := where site.RegularPages "Type" "post" }}
+{{ $posts = sort $posts "Date" "desc" }}
+
+{{/* Limit to specified count or default to 8 */}}
+{{ $count := $block.content.count | default 8 }}
+{{ $posts = first $count $posts }}
+
+<section id="{{ $block.id | default "news" }}" class="custom-news-carousel">
+  <div class="section-header">
+    {{ with $block.content.title }}
+      <h2 class="section-title">{{ . | markdownify }}</h2>
+    {{ end }}
+    {{ with $block.content.subtitle }}
+      <p class="section-subtitle">{{ . | markdownify }}</p>
+    {{ end }}
+  </div>
+  
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      {{ range $index, $post := $posts }}
+        <div class="news-item" data-index="{{ $index }}">
+          <div class="news-content">
+            <h3 class="news-title">
+              <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+            </h3>
+            <div class="news-date">{{ $post.Date.Format "January 2, 2006" }}</div>
+            {{ with $post.Summary }}
+              <p class="news-summary">{{ . | truncate 200 }}</p>
+            {{ end }}
+            {{ with $post.Params.tags }}
+              <div class="news-tags">
+                {{ range first 3 . }}
+                  <span class="tag">{{ . }}</span>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    
+    {{ if gt (len $posts) 1 }}
+      <div class="carousel-nav">
+        <button class="nav-btn nav-prev" aria-label="Previous news item">‹</button>
+        <span class="nav-counter">
+          <span class="current-item">1</span> / <span class="total-items">{{ len $posts }}</span>
+        </span>
+        <button class="nav-btn nav-next" aria-label="Next news item">›</button>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+<style>
+.custom-news-carousel {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.section-subtitle {
+  color: #6b7280;
+  margin: 0;
+}
+
+.carousel-container {
+  position: relative;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.news-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  background: white;
+}
+
+.news-item.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.news-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.news-title a {
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.news-title a:hover {
+  color: #3b82f6;
+}
+
+.news-date {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.news-summary {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #374151;
+  margin: 0 0 0.75rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  background: #e5e7eb;
+  color: #374151;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: #f3f4f6;
+  border-top: 1px solid #e5e7eb;
+}
+
+.nav-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+  background: #2563eb;
+}
+
+.nav-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.nav-counter {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    height: 220px;
+  }
+  
+  .news-item {
+    padding: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .news-title {
+    font-size: 1.125rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.custom-news-carousel');
+  if (!carousel) return;
+  
+  const items = carousel.querySelectorAll('.news-item');
+  const prevBtn = carousel.querySelector('.nav-prev');
+  const nextBtn = carousel.querySelector('.nav-next');
+  const currentSpan = carousel.querySelector('.current-item');
+  const totalSpan = carousel.querySelector('.total-items');
+  
+  if (items.length === 0) return;
+  
+  let currentIndex = 0;
+  
+  function showItem(index) {
+    // Hide all items
+    items.forEach(item => item.classList.remove('active'));
+    
+    // Show current item
+    if (items[index]) {
+      items[index].classList.add('active');
+    }
+    
+    // Update counter
+    if (currentSpan) {
+      currentSpan.textContent = index + 1;
+    }
+    
+    currentIndex = index;
+  }
+  
+  function nextItem() {
+    const next = (currentIndex + 1) % items.length;
+    showItem(next);
+  }
+  
+  function prevItem() {
+    const prev = (currentIndex - 1 + items.length) % items.length;
+    showItem(prev);
+  }
+  
+  // Set up navigation
+  if (nextBtn) nextBtn.addEventListener('click', nextItem);
+  if (prevBtn) prevBtn.addEventListener('click', prevItem);
+  
+  // Initialize
+  showItem(0);
+  
+  // Auto-advance every 5 seconds
+  setInterval(nextItem, 5000);
+});
+</script>
