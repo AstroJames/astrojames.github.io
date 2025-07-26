@@ -89,31 +89,113 @@ sections:
   - block: markdown
     id: collabs
     content:
-      title: 'Frequent and Current Collaborators '
-      subtitle: ''
+      title: 'Frequent and Current Collaborators'
+      subtitle: 'In order of roughly who I slack, hassle or email the most.'
       text: |-
-        In order of roughly who I slack, hassle or email the most.
-      
-        - <a href="https://amitava.scholar.princeton.edu">Amitava Bhattacharjee</a> (Princeton)
-        - <a href="https://bartripperda.com">Bart Ripperda</a>  (CITA)
-        - <a href="https://www.mso.anu.edu.au/~chfeder/">Christoph Federrath</a>  (Australian National University)
-        - <a href="https://astrokriel.github.io">Neco Kriel</a>  (Australian National University)
-        - <a href="https://www.astro.ucsc.edu/about/staff-directory-page.php?uid=akolborg">Anne Noer Kolborg</a>  (University of California, Santa Cruz)
-        - <a href="https://comp-relastro.caltech.edu">Elias Most</a>  (Caltech)
-        - <a href="https://umdphysics.umd.edu/people/faculty/current/item/1893-sashaph.html">Sasha Philippov</a>  (University of Maryland)
-        - Shashvat Varma (Univeristy of Toronto)
-        - <a href="https://fr.linkedin.com/in/louis-burnaz-569b7a254">Louis Burnaz</a> (École normale supérieure de Lyon)
-        - <a href="https://klessen.org">Ralf Klessen</a>  (Heidelberg University)
-        - <a href="https://inspirehep.net/authors/1947312"> Michael Grehan</a> (University of Toronto)
-        - <a href=" https://orcid.org/0009-0009-4853-4670">Tanisha Ghosal</a> (University of Toronto)
-        - <a href="https://msampson.net">Matt Sampson</a>  (Princeton)
-        - <a href="https://www.astro.princeton.edu/~rt3504/">Romain Teyssier</a>  (Princeton)
-        - <a href="https://www.mso.anu.edu.au/~krumholz/">Mark Krumholz</a>  (Australian National University)
-        - <a href="https://www.researchgate.net/profile/Salvo-Cielo">Salvatore Cielo</a> (Leibniz Supercomputing Centre)        
-        - <a href="https://rsaa.anu.edu.au/people/justinkinjun-hew">Justin Kin Jun Hew</a>  (Australian National University)
-        - <a href="https://pmocz.github.io">Philip Mocz</a>  (CCA, Flatiron)
-        - <a href="https://www.researchgate.net/profile/Raphael-Skalidis">Raphael Skalidis</a>  (Caltech)  
+        <style>
+        .collaborators-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 10px 20px;
+          margin-top: 20px;
+        }
+        .collaborator-item {
+          font-size: 0.9em;
+          line-height: 1.4;
+        }
+        .collaborator-item a {
+          font-weight: 500;
+        }
+        .collaborator-affiliation {
+          color: #666;
+          font-size: 0.85em;
+        }
+        @media (min-width: 768px) {
+          .collaborators-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        </style>
+        
+        <div class="collaborators-grid">
+          <div class="collaborator-item">
+            <a href="https://amitava.scholar.princeton.edu">Amitava Bhattacharjee</a>
+            <span class="collaborator-affiliation">(Princeton)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://bartripperda.com">Bart Ripperda</a>
+            <span class="collaborator-affiliation">(CITA)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://www.mso.anu.edu.au/~chfeder/">Christoph Federrath</a>
+            <span class="collaborator-affiliation">(ANU)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://astrokriel.github.io">Neco Kriel</a>
+            <span class="collaborator-affiliation">(ANU)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://www.astro.ucsc.edu/about/staff-directory-page.php?uid=akolborg">Anne Noer Kolborg</a>
+            <span class="collaborator-affiliation">(UC Santa Cruz)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://comp-relastro.caltech.edu">Elias Most</a>
+            <span class="collaborator-affiliation">(Caltech)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://umdphysics.umd.edu/people/faculty/current/item/1893-sashaph.html">Sasha Philippov</a>
+            <span class="collaborator-affiliation">(U Maryland)</span>
+          </div>
+          <div class="collaborator-item">
+            Shashvat Varma
+            <span class="collaborator-affiliation">(U Toronto)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://fr.linkedin.com/in/louis-burnaz-569b7a254">Louis Burnaz</a>
+            <span class="collaborator-affiliation">(ENS Lyon)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://klessen.org">Ralf Klessen</a>
+            <span class="collaborator-affiliation">(Heidelberg)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://inspirehep.net/authors/1947312">Michael Grehan</a>
+            <span class="collaborator-affiliation">(U Toronto)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://orcid.org/0009-0009-4853-4670">Tanisha Ghosal</a>
+            <span class="collaborator-affiliation">(U Toronto)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://msampson.net">Matt Sampson</a>
+            <span class="collaborator-affiliation">(Princeton)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://www.astro.princeton.edu/~rt3504/">Romain Teyssier</a>
+            <span class="collaborator-affiliation">(Princeton)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://www.mso.anu.edu.au/~krumholz/">Mark Krumholz</a>
+            <span class="collaborator-affiliation">(ANU)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://www.researchgate.net/profile/Salvo-Cielo">Salvatore Cielo</a>
+            <span class="collaborator-affiliation">(LRZ)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://rsaa.anu.edu.au/people/justinkinjun-hew">Justin Kin Jun Hew</a>
+            <span class="collaborator-affiliation">(ANU)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://pmocz.github.io">Philip Mocz</a>
+            <span class="collaborator-affiliation">(CCA, Flatiron)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://www.researchgate.net/profile/Raphael-Skalidis">Raphael Skalidis</a>
+            <span class="collaborator-affiliation">(Caltech)</span>
+          </div>
+        </div>
     design:
-      columns: '2'
+      columns: '1'
 
 ---
