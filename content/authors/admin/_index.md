@@ -60,8 +60,9 @@ interests:
   - interdisciplinary research
 
 education:
-  - area: PhD (Theoretical Astrophysics)
+  - area: Ph.D. (theoretical astrophysics)
     institution: Australian National University
+    location: Canberra, Australia
     date_start: ''
     date_end: 2024-01-02
     summary: |
@@ -88,18 +89,21 @@ education:
       - University Medal 
       - Chancellor’s Commendations 
       - Australian Astronomical Society Bok Prize
-  - area: BSc (Physics)
+  - area: B.Sc. (physics)
     institution: Queensland University of Technology
+    location: Brisbane, Australia
     date_start: ''
     date_end: 2018-12-31
     summary: 
-  - area: BMath (Applied and Comp. Mathematics)
+  - area: B.Math. (applied and computational)
     institution: Queensland University of Technology
+    location: Brisbane, Australia
     date_start: ''
     date_end: 2018-12-31
     summary: 
-  - area: BEd (secondary education)
+  - area: B.Ed. (secondary education)
     institution: Queensland University of Technology
+    location: Brisbane, Australia
     date_start: ''
     date_end: 2013-01-01
     summary: | 

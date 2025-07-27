@@ -102,6 +102,9 @@
               <div class="education-item">
                 <div class="education-degree">{{ .area }}</div>
                 <div class="education-institution">{{ .institution }}</div>
+                {{ if .location }}
+                  <div class="education-location">{{ .location }}</div>
+                {{ end }}
                 {{ if .date_end }}
                   <div class="education-date">{{ .date_end | time.Format "2006" }}</div>
                 {{ end }}
@@ -427,6 +430,14 @@
   color: #ffffff; /* Changed to white */
   font-size: 0.8rem; /* Smaller font */
   margin-bottom: 0.2rem;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
+}
+
+.education-location {
+  color: #ffffff; /* White location text */
+  font-size: 0.75rem; /* Small font for location */
+  margin-bottom: 0.2rem;
+  font-style: italic; /* Italicize location */
   text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 
