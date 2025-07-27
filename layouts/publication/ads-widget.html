@@ -17,86 +17,74 @@
     <!-- Publications loaded via ADS API -->
     <div style="margin-top: 2rem;">
       {{ with .Site.Data.publications }}
-        <div style="margin-bottom: 1rem; padding: 1rem; background-color: #e8f4fd; border-left: 4px solid #007acc; border-radius: 4px;">
+        <div style="margin-bottom: 1rem; padding: 1rem; background-color: rgba(0, 122, 204, 0.1); border-left: 4px solid #007acc; border-radius: 4px;">
           <p><strong>📚 {{ .total_publications }} publications automatically updated from NASA-ADS</strong></p>
           <p><small>Last updated: {{ dateFormat "January 2, 2006 at 3:04 PM" (time .last_updated) }} | ORCID: {{ .orcid }}</small></p>
         </div>
         
-        <div class="publications-list">
-          {{ range $index, $pub := .publications }}
-            <div class="publication-item" style="margin-bottom: 2rem; padding: 1.5rem; background-color: #ffffff; border: 1px solid #e1e5e9; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-              
-              <!-- Title -->
-              <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: #1a1a1a; line-height: 1.3;">
-                {{ if $pub.ads_url }}
-                  <a href="{{ $pub.ads_url }}" target="_blank" style="color: #007acc; text-decoration: none;">{{ $pub.title }}</a>
-                {{ else }}
-                  {{ $pub.title }}
-                {{ end }}
-              </h3>
-              
-              <!-- Authors -->
-              <p style="margin-bottom: 0.5rem; color: #666; line-height: 1.4;">
-                {{ $pub.authors_highlighted | safeHTML }}
-              </p>
-              
-              <!-- Journal and Year -->
-              <p style="margin-bottom: 0.5rem; font-style: italic; color: #888;">
-                {{ $pub.journal }}{{ if $pub.year }} ({{ $pub.year }}){{ end }}
-                {{ if $pub.is_refereed }}<span style="background-color: #28a745; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; margin-left: 0.5rem;">REFEREED</span>{{ end }}
-              </p>
-              
-              <!-- Stats and Links -->
-              <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-                <!-- Citation count -->
-                {{ if gt $pub.citation_count 0 }}
-                  <span style="background-color: #f8f9fa; padding: 4px 8px; border-radius: 4px; font-size: 0.9em;">
-                    📚 {{ $pub.citation_count }} citations
-                  </span>
-                {{ end }}
-                
-                <!-- Read count -->
-                {{ if gt $pub.read_count 0 }}
-                  <span style="background-color: #f8f9fa; padding: 4px 8px; border-radius: 4px; font-size: 0.9em;">
-                    👁️ {{ $pub.read_count }} reads
-                  </span>
-                {{ end }}
-                
-                <!-- Links -->
-                <div style="margin-left: auto;">
-                  {{ if $pub.ads_url }}
-                    <a href="{{ $pub.ads_url }}" target="_blank" style="margin-right: 0.5rem; color: #007acc; text-decoration: none; font-size: 0.9em;">ADS</a>
-                  {{ end }}
-                  {{ if $pub.doi_url }}
-                    <a href="{{ $pub.doi_url }}" target="_blank" style="margin-right: 0.5rem; color: #007acc; text-decoration: none; font-size: 0.9em;">DOI</a>
-                  {{ end }}
-                </div>
-              </div>
-              
-              <!-- Abstract (truncated) -->
-              {{ if $pub.abstract }}
-                <details style="margin-top: 1rem;">
-                  <summary style="cursor: pointer; color: #007acc; font-size: 0.9em;">Show abstract</summary>
-                  <p style="margin-top: 0.5rem; font-size: 0.9em; line-height: 1.5; color: #555;">{{ $pub.abstract }}</p>
-                </details>
-              {{ end }}
-            </div>
+        <!-- Organize publications by authorship -->
+        {{ $firstAuthor := slice }}
+        {{ $secondAuthor := slice }}
+        {{ $otherAuthor := slice }}
+        
+        {{ range .publications }}
+          {{ if eq .authorship_position "first" }}
+            {{ $firstAuthor = $firstAuthor | append . }}
+          {{ else if eq .authorship_position "second" }}
+            {{ $secondAuthor = $secondAuthor | append . }}
+          {{ else }}
+            {{ $otherAuthor = $otherAuthor | append . }}
           {{ end }}
-        </div>
+        {{ end }}
+        
+        <!-- First Author Publications -->
+        {{ if $firstAuthor }}
+          <div style="margin-bottom: 3rem;">
+            <h2 style="color: #007acc; border-bottom: 2px solid #007acc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+              📝 First Author Publications ({{ len $firstAuthor }})
+            </h2>
+            {{ range $firstAuthor }}
+              {{ partial "publication-item.html" . }}
+            {{ end }}
+          </div>
+        {{ end }}
+        
+        <!-- Second Author Publications -->
+        {{ if $secondAuthor }}
+          <div style="margin-bottom: 3rem;">
+            <h2 style="color: #007acc; border-bottom: 2px solid #007acc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+              🥈 Second Author Publications ({{ len $secondAuthor }})
+            </h2>
+            {{ range $secondAuthor }}
+              {{ partial "publication-item.html" . }}
+            {{ end }}
+          </div>
+        {{ end }}
+        
+        <!-- Co-author Publications -->
+        {{ if $otherAuthor }}
+          <div style="margin-bottom: 3rem;">
+            <h2 style="color: #007acc; border-bottom: 2px solid #007acc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+              🤝 Co-author Publications ({{ len $otherAuthor }})
+            </h2>
+            {{ range $otherAuthor }}
+              {{ partial "publication-item.html" . }}
+            {{ end }}
+          </div>
+        {{ end }}
         
       {{ else }}
-        <div style="padding: 2rem; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; text-align: center;">
+        <div style="padding: 2rem; background-color: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 4px; text-align: center;">
           <p><strong>Publications will appear here once the GitHub Action runs.</strong></p>
           <p>The system will automatically fetch your publications from NASA-ADS daily.</p>
-          <p><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc" target="_blank">View your publications directly on ADS →</a></p>
+          <p><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc" target="_blank" style="color: #4dabf7;">View your publications directly on ADS →</a></p>
         </div>
       {{ end }}
     </div>
     
-    <div style="margin-top: 1rem; padding: 1rem; background-color: #f8f9fa; border-radius: 4px;">
-      <p><small><strong>Note:</strong> This page embeds your live ADS search results using your ORCID (0000-0001-9199-7771). 
-      The list updates automatically as new papers are indexed in ADS. 
-      <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc" target="_blank">View in full ADS interface →</a></small></p>
+    <div style="margin-top: 1rem; padding: 1rem; background-color: rgba(255,255,255,0.05); border-radius: 4px;">
+      <p><small><strong>Note:</strong> Publications are automatically organized by authorship position and updated daily from NASA-ADS using your ORCID (0000-0001-9199-7771). 
+      <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc" target="_blank" style="color: #4dabf7;">View in full ADS interface →</a></small></p>
     </div>
   </div>
 </div>

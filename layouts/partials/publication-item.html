@@ -1,0 +1,66 @@
+<div class="publication-item" style="margin-bottom: 2rem; padding: 1.5rem; background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+  
+  <!-- Authorship Badge -->
+  {{ if eq .authorship_position "first" }}
+    <span style="background-color: #28a745; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.75em; margin-bottom: 0.5rem; display: inline-block;">1st AUTHOR</span>
+  {{ else if eq .authorship_position "second" }}
+    <span style="background-color: #fd7e14; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.75em; margin-bottom: 0.5rem; display: inline-block;">2nd AUTHOR</span>
+  {{ else }}
+    <span style="background-color: #6c757d; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.75em; margin-bottom: 0.5rem; display: inline-block;">CO-AUTHOR</span>
+  {{ end }}
+  
+  <!-- Title -->
+  <h3 style="margin-top: 0.5rem; margin-bottom: 0.5rem; color: inherit; line-height: 1.3;">
+    {{ if .ads_url }}
+      <a href="{{ .ads_url }}" target="_blank" style="color: #4dabf7; text-decoration: none;">{{ .title }}</a>
+    {{ else }}
+      {{ .title }}
+    {{ end }}
+  </h3>
+  
+  <!-- Authors -->
+  <p style="margin-bottom: 0.5rem; color: rgba(255,255,255,0.7); line-height: 1.4;">
+    {{ .authors_highlighted | safeHTML }}
+  </p>
+  
+  <!-- Journal and Year -->
+  <p style="margin-bottom: 0.5rem; font-style: italic; color: rgba(255,255,255,0.6);">
+    {{ .journal }}{{ if .year }} ({{ .year }}){{ end }}
+    {{ if .is_refereed }}<span style="background-color: #28a745; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; margin-left: 0.5rem;">REFEREED</span>{{ end }}
+  </p>
+  
+  <!-- Stats and Links -->
+  <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+    <!-- Citation count -->
+    {{ if gt .citation_count 0 }}
+      <span style="background-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); padding: 4px 8px; border-radius: 4px; font-size: 0.9em;">
+        📚 {{ .citation_count }} citations
+      </span>
+    {{ end }}
+    
+    <!-- Read count -->
+    {{ if gt .read_count 0 }}
+      <span style="background-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); padding: 4px 8px; border-radius: 4px; font-size: 0.9em;">
+        👁️ {{ .read_count }} reads
+      </span>
+    {{ end }}
+    
+    <!-- Links -->
+    <div style="margin-left: auto;">
+      {{ if .ads_url }}
+        <a href="{{ .ads_url }}" target="_blank" style="margin-right: 0.5rem; color: #4dabf7; text-decoration: none; font-size: 0.9em;">ADS</a>
+      {{ end }}
+      {{ if .doi_url }}
+        <a href="{{ .doi_url }}" target="_blank" style="margin-right: 0.5rem; color: #4dabf7; text-decoration: none; font-size: 0.9em;">DOI</a>
+      {{ end }}
+    </div>
+  </div>
+  
+  <!-- Abstract (truncated) -->
+  {{ if .abstract }}
+    <details style="margin-top: 1rem;">
+      <summary style="cursor: pointer; color: #4dabf7; font-size: 0.9em;">Show abstract</summary>
+      <p style="margin-top: 0.5rem; font-size: 0.9em; line-height: 1.5; color: rgba(255,255,255,0.7);">{{ .abstract }}</p>
+    </details>
+  {{ end }}
+</div>

@@ -16,7 +16,7 @@ def fetch_ads_publications(token, orcid):
     # Query parameters
     params = {
         'q': f'orcid:{orcid}',
-        'fl': 'bibcode,title,author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property',
+        'fl': 'bibcode,title,author,first_author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property',
         'sort': 'date desc',
         'rows': 100  # Adjust as needed
     }
@@ -46,9 +46,24 @@ def process_publication(pub):
     if pubdate:
         year = pubdate.split('-')[0]
     
-    # Get first author for highlighting
+    # Get authors and determine authorship position
     authors = pub.get('author', [])
     author_string = '; '.join(authors) if authors else 'Unknown'
+    
+    # Determine authorship position for James Beattie
+    authorship_position = "other"
+    beattie_position = None
+    
+    for i, author in enumerate(authors):
+        if 'Beattie, James' in author or 'Beattie, J.' in author:
+            beattie_position = i + 1
+            if i == 0:
+                authorship_position = "first"
+            elif i == 1:
+                authorship_position = "second"
+            else:
+                authorship_position = "other"
+            break
     
     # Highlight James Beattie
     author_string_highlighted = author_string.replace(
@@ -73,6 +88,8 @@ def process_publication(pub):
         'title': pub.get('title', ['Untitled'])[0] if pub.get('title') else 'Untitled',
         'authors': author_string,
         'authors_highlighted': author_string_highlighted,
+        'authorship_position': authorship_position,
+        'beattie_position': beattie_position,
         'journal': pub.get('pub', 'Unknown Journal'),
         'year': year,
         'pubdate': pubdate,
