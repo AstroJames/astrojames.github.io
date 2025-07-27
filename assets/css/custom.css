@@ -301,34 +301,38 @@ header,
   background: #000000 !important;
 }
 
-/* Hide Hugo Blox attribution only */
-.powered-by,
-.footer-powered-by,
-[href*="hugoblox"],
-[href*="hugo-blox"],
-a[href*="blox"] {
+/* Hide Hugo Blox attribution only - more specific targeting */
+footer a[href*="blox"],
+footer a[href*="hugoblox"],
+footer .powered-by,
+.footer-powered-by {
   display: none !important;
 }
 
-/* Keep copyright visible */
-.copyright,
-.footer .copyright {
+/* Ensure footer and copyright are visible */
+footer {
   display: block !important;
 }
 
-/* Helvetica Neue font family */
-* {
+footer .copyright,
+.copyright {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Helvetica Neue font family - with higher specificity */
+html, body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-body, html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-
-p, span, div, a, li, td, th {
+html *, body *, 
+.navbar *, .nav *, 
+.card *, .content *, 
+.biography *, .sidebar *,
+h1, h2, h3, h4, h5, h6,
+p, span, div, a, li, td, th, 
+.profile-name, .profile-role,
+.education-degree, .education-institution, .education-location,
+.interest-tag, .about-content, .research-questions-content {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
