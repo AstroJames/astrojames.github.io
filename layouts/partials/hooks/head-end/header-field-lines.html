@@ -109,12 +109,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const isTopLine = Math.abs(baseY - topLineY) < Math.abs(baseY - bottomLineY);
         const direction = isTopLine ? -1 : 1;
         
-        // Calculate wave distortion
-        const distanceFromWave = Math.abs(x - this.wavePosition);
-        const waveInfluence = Math.max(0, 1 - (distanceFromWave / 50));
-        const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.2);
+        // Only apply wave if particle is near the wave position
+        if (x <= this.wavePosition + 75 && x >= this.wavePosition - 75) {
+          const distanceFromWave = x - this.wavePosition;
+          // Gaussian envelope for smooth decay on both sides
+          const waveInfluence = Math.exp(-(distanceFromWave * distanceFromWave) / (2 * 25 * 25));
+          const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.2);
+          
+          return baseY + waveAmplitude * direction;
+        }
         
-        return baseY + waveAmplitude * direction;
+        return baseY;
       }
       
       // Then check for button hover distortion
@@ -176,12 +181,16 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 1; i <= segments; i++) {
       const x = i * segmentWidth;
       
-      // Calculate wave distortion based on distance from wave position
-      const distanceFromWave = Math.abs(x - wavePosition);
-      const waveInfluence = Math.max(0, 1 - (distanceFromWave / 50)); // 50px wave width - much more localized
-      const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.2); // Higher frequency for tighter wave packet
-      
-      const waveY = y + waveAmplitude * direction;
+      // Only show wave if it has reached this position
+      let waveY = y;
+      if (x <= wavePosition + 75 && x >= wavePosition - 75) { // Only within 3 sigma of wave center
+        const distanceFromWave = x - wavePosition;
+        // Gaussian envelope for smooth decay on both sides
+        const waveInfluence = Math.exp(-(distanceFromWave * distanceFromWave) / (2 * 25 * 25)); // Gaussian with sigma=25px
+        const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.2); // Wave packet with Gaussian envelope
+        
+        waveY = y + waveAmplitude * direction;
+      }
       
       if (i === 1) {
         path += ` Q ${x/2} ${waveY} ${x} ${waveY}`;
