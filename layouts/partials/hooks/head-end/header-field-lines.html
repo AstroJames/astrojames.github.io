@@ -95,7 +95,29 @@ document.addEventListener('DOMContentLoaded', function() {
     isDistorted: false,
     nameX: 0,
     nameY: 0,
+    waveActive: false,
+    wavePosition: 0,
     getFieldLineY: function(x, baseY) {
+      // First check for wave distortion
+      if (this.waveActive) {
+        const headerHeight = header ? header.offsetHeight : 80;
+        const centerY = headerHeight / 2;
+        const topLineY = (0 + (centerY - 15)) / 2;
+        const bottomLineY = ((centerY + 15) + headerHeight) / 2;
+        
+        // Determine which field line and direction
+        const isTopLine = Math.abs(baseY - topLineY) < Math.abs(baseY - bottomLineY);
+        const direction = isTopLine ? -1 : 1;
+        
+        // Calculate wave distortion
+        const distanceFromWave = Math.abs(x - this.wavePosition);
+        const waveInfluence = Math.max(0, 1 - (distanceFromWave / 200));
+        const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.05);
+        
+        return baseY + waveAmplitude * direction;
+      }
+      
+      // Then check for button hover distortion
       if (!this.isDistorted) return baseY;
       
       const distanceToName = Math.sqrt((x - this.nameX) * (x - this.nameX) + (baseY - this.nameY) * (baseY - this.nameY));
@@ -157,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Calculate wave distortion based on distance from wave position
       const distanceFromWave = Math.abs(x - wavePosition);
       const waveInfluence = Math.max(0, 1 - (distanceFromWave / 200)); // 200px wave width
-      const waveAmplitude = waveInfluence * 15 * Math.sin(distanceFromWave * 0.05); // Wave shape
+      const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.05); // Much smaller wave
       
       const waveY = y + waveAmplitude * direction;
       
@@ -180,9 +202,15 @@ document.addEventListener('DOMContentLoaded', function() {
       const waveSpeed = 0.5; // pixels per millisecond
       const wavePosition = nameX + (elapsed * waveSpeed);
       
+      // Update global state for particles
+      window.magneticFieldState.waveActive = true;
+      window.magneticFieldState.wavePosition = wavePosition;
+      
       // Stop animation when wave reaches edge
       if (wavePosition > window.innerWidth + 200) {
         waveAnimationId = null;
+        window.magneticFieldState.waveActive = false;
+        window.magneticFieldState.wavePosition = 0;
         createFieldLines(false, 0, 0); // Return to normal
         return;
       }
