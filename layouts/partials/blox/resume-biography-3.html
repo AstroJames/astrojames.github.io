@@ -72,6 +72,14 @@
         </div>
       </div>
       
+      {{/* About Me Text */}}
+      <div class="about-section">
+        <h3 class="about-title">About Me</h3>
+        <div class="about-content">
+          {{ $author.Content }}
+        </div>
+      </div>
+      
       {{/* Research Questions Section */}}
       <div class="research-questions-section">
         <h3 class="research-questions-title">Research Questions</h3>
@@ -79,14 +87,6 @@
           {{ with $author.Params.research_questions }}
             {{ . | markdownify }}
           {{ end }}
-        </div>
-      </div>
-      
-      {{/* About Me Text */}}
-      <div class="about-section">
-        <h3 class="about-title">About Me</h3>
-        <div class="about-content">
-          {{ $author.Content }}
         </div>
       </div>
     </div>
