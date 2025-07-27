@@ -17,6 +17,36 @@
   fill: none;
 }
 
+/* Pulse effect for field lines */
+.field-pulse {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 30%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes pulse-move {
+  0% {
+    opacity: 0;
+    transform: translateX(0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(var(--pulse-distance)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(var(--pulse-distance)) scale(0.5);
+  }
+}
+
 @keyframes field-flow {
   0% {
     stroke-dashoffset: 0;
@@ -137,6 +167,47 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Get all header buttons/links for hover detection
   const headerButtons = header.querySelectorAll('.nav-link, .navbar-nav a, .btn, button');
+  const nameElement = document.querySelector('.navbar-brand') || document.querySelector('header h1') || document.querySelector('.site-title');
+  
+  // Function to create and animate pulse
+  function createPulse(startX, startY, fieldLineY) {
+    const pulse = document.createElement('div');
+    pulse.className = 'field-pulse';
+    pulse.style.left = startX + 'px';
+    pulse.style.top = fieldLineY + 'px';
+    
+    // Calculate distance to travel
+    const distance = window.innerWidth - startX;
+    pulse.style.setProperty('--pulse-distance', distance + 'px');
+    
+    // Add animation
+    pulse.style.animation = 'pulse-move 2s ease-out forwards';
+    
+    svgContainer.appendChild(pulse);
+    
+    // Remove pulse after animation
+    setTimeout(() => {
+      pulse.remove();
+    }, 2000);
+  }
+  
+  // Add hover listener to name element for pulse effect
+  if (nameElement) {
+    nameElement.addEventListener('mouseenter', function() {
+      const rect = nameElement.getBoundingClientRect();
+      const nameX = rect.left + rect.width / 2;
+      
+      // Get field line Y positions
+      const headerHeight = header.offsetHeight;
+      const centerY = headerHeight / 2;
+      const topLineY = (0 + (centerY - 15)) / 2;
+      const bottomLineY = ((centerY + 15) + headerHeight) / 2;
+      
+      // Create pulses on both field lines
+      createPulse(nameX, 0, topLineY);
+      createPulse(nameX, 0, bottomLineY);
+    });
+  }
   
   // Add hover listeners to header buttons for field line distortion
   headerButtons.forEach(button => {
