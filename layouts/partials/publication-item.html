@@ -1,7 +1,7 @@
 <div class="publication-item" {{ if ge .citation_count 25 }}data-citations-high{{ end }} style="margin-bottom: 1rem; padding: 1rem; background-color: rgba(255,255,255,0.03); border-left: 3px solid {{ if eq .authorship_position "first" }}#28a745{{ else if eq .authorship_position "second" }}#fd7e14{{ else }}#6c757d{{ end }}; border-radius: 4px; transition: all 0.3s ease; cursor: pointer;" 
   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'; this.style.backgroundColor='rgba(255,255,255,0.06)'; this.style.borderLeftWidth='4px';"
   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.backgroundColor='rgba(255,255,255,0.03)'; this.style.borderLeftWidth='3px';"
-  onclick="if(this.querySelector('a[href*=\"ui.adsabs.harvard.edu\"]')) { window.open(this.querySelector('a[href*=\"ui.adsabs.harvard.edu\"]').href, '_blank'); }">
+  onclick="if(this.querySelector('a[href*=&quot;ui.adsabs.harvard.edu&quot;]')) { window.open(this.querySelector('a[href*=&quot;ui.adsabs.harvard.edu&quot;]').href, '_blank'); }">
   
   <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
     <!-- Authorship Badge -->
