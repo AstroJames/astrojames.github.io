@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    {{ if .Title }}
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ end }}
+    {{ if .Params.subtitle }}
+    <p class="page-subtitle">{{ .Params.subtitle }}</p>
+    {{ end }}
+  </div>
+</div>
+
+<div class="page-body">
+  <div class="container">
+    {{ .Content }}
+    
+    <!-- NASA-ADS Widget Integration -->
+    <div id="ads_query_importer_widget" style="width:100%; margin-top: 2rem;"></div>
+  </div>
+</div>
+
+<!-- ADS Widget CSS -->
+<link rel="stylesheet" href="{{ `/ads_query_importer_widget.css` | relURL }}" type="text/css" />
+
+<!-- jQuery (required for ADS widget) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- ADS Widget Configuration -->
+<script type="text/javascript">
+// Mandatory parameters - Using legacy ADS format that the widget expects
+var ads_query_url = 'http://adsabs.harvard.edu/cgi-bin/basic_connect?qsearch=author:"Beattie, James"';
+
+// Optional parameters for customization
+var ads_query_title = "James R. Beattie - Publications";
+var ads_query_highlight_author = 'Beattie, James';
+var ads_query_max_num_authors = 10;
+var ads_query_max_records_to_print = 100;
+var ads_query_omit_bibcode = false;
+var ads_query_omit_link_to_ads = false;
+var ads_query_link_on_field = 'title';
+var ads_query_print_order = 'title|authors|journal|date';
+</script>
+
+<!-- ADS Widget JavaScript -->
+<script type="text/javascript" src="{{ `/ads_query_importer_widget.js` | relURL }}"></script>
+
+{{ end }}
