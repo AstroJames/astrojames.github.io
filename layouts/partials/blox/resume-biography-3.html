@@ -42,7 +42,7 @@
           {{ with $author.Params.profiles }}
             <div class="profile-social">
               {{ range . }}
-                <a href="{{ .url }}" target="_blank" aria-label="{{ .label | default .icon }}" class="social-link">
+                <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .label | default .icon }}" class="social-link">
                   {{ if eq .icon "at-symbol" }}
                     <i class="fas fa-envelope"></i>
                   {{ else if eq .icon "brands/x" }}
@@ -55,6 +55,8 @@
                     <i class="ai ai-orcid"></i>
                   {{ else if eq .icon "academicons/researchgate" }}
                     <i class="ai ai-researchgate"></i>
+                  {{ else if eq .icon "academicons/cv" }}
+                    <i class="ai ai-cv"></i>
                   {{ else }}
                     <i class="fas fa-link"></i>
                   {{ end }}

@@ -32,6 +32,9 @@ organizations:
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
+  - icon: academicons/cv
+    url: /uploads/resume.pdf
+    label: Download CV
   - icon: at-symbol
     url: 'mailto:james.beattie@princeton.edu'
     label: E-mail Me
