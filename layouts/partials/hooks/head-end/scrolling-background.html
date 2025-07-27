@@ -50,7 +50,7 @@ body.dark section:first-child:hover,
   }
 }
 
-/* Alternative slower speed for mobile */
+/* Alternative slower speed and zoom for mobile */
 @media (max-width: 768px) {
   .resume-biography-3,
   section[data-block="resume-biography-3"],
@@ -58,6 +58,7 @@ body.dark section:first-child:hover,
   [style*="background-image"],
   section[style*="background-image"] {
     animation-duration: 60s; /* Adjusted mobile speed */
+    background-size: 2000px 100% !important; /* Less zoomed in on mobile */
   }
 }
 </style>
