@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize drift properties
     particle.driftDirection = Math.random() > 0.5 ? 1 : -1; // Random initial drift direction
-    particle.driftSpeed = 0.15 + Math.random() * 0.2; // 0.15-0.35 drift speed (50% slower)
+    particle.driftSpeed = 0.135 + Math.random() * 0.18; // 0.135-0.315 drift speed (10% slower)
     
     // Randomize the twinkling animation timing
     const randomDelay = Math.random() * 2; // 0-2 second delay
@@ -173,15 +173,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerHeight = header ? header.offsetHeight : 80;
     const centerY = headerHeight / 2;
     
-    // Define the two field lines (same as in header-field-lines.html)
+    // Define the two field lines (same positions as in header-field-lines.html)
+    const topLineY = (0 + (centerY - 15)) / 2; // Halfway between top and text
+    const bottomLineY = ((centerY + 15) + headerHeight) / 2; // Halfway between text and bottom
+    
     const topLine = {
-      y: centerY - 15,
+      y: topLineY,
       amplitude: 15,
       direction: -1
     };
     
     const bottomLine = {
-      y: centerY + 15,
+      y: bottomLineY,
       amplitude: 15,
       direction: 1
     };
@@ -276,6 +279,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetY = fieldLineY + Math.sin(particle.gyrationAngle) * gyrationRadius;
         particle.vy += (targetY - particle.currentY) * 0.05;
         
+        // Stronger damping when tracking cursor
+        particle.vx *= 0.85; // Increased damping from 0.92
+        particle.vy *= 0.85;
+        
       } else {
         // Normal gyration around field lines
         const { line, distance: fieldDistance } = getClosestFieldLine(particle.currentX, particle.currentY);
@@ -305,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
           particle.vy += pullForce;
         }
         
-        // Damping
+        // Damping (normal when not tracking cursor)
         particle.vx *= 0.95;
         particle.vy *= 0.95;
       }

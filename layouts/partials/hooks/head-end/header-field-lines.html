@@ -67,16 +67,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerHeight = header.offsetHeight;
     const centerY = headerHeight / 2;
     
-    // Line above the text
+    // Line above the text - halfway between top boundary and text
+    const topLineY = (0 + (centerY - 15)) / 2; // Halfway between top (0) and text top
     const topLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     topLine.classList.add('header-field-line');
-    topLine.setAttribute('d', createFieldLinePath(centerY - 15, -1, 15, 0));
+    topLine.setAttribute('d', createFieldLinePath(topLineY, -1, 15, 0));
     svg.appendChild(topLine);
     
-    // Line below the text
+    // Line below the text - halfway between text and bottom boundary  
+    const bottomLineY = ((centerY + 15) + headerHeight) / 2; // Halfway between text bottom and header bottom
     const bottomLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     bottomLine.classList.add('header-field-line');
-    bottomLine.setAttribute('d', createFieldLinePath(centerY + 15, 1, 15, 1));
+    bottomLine.setAttribute('d', createFieldLinePath(bottomLineY, 1, 15, 1));
     svg.appendChild(bottomLine);
   }
   
