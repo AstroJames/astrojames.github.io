@@ -339,12 +339,20 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add hover listeners to header buttons for field line distortion
   headerButtons.forEach(button => {
     button.addEventListener('mouseenter', function() {
+      // Cancel any existing relaxation animation when entering a new button
+      if (relaxationAnimationId) {
+        cancelAnimationFrame(relaxationAnimationId);
+        relaxationAnimationId = null;
+      }
+      
       const rect = button.getBoundingClientRect();
       const buttonCenterX = rect.left + rect.width / 2;
       const buttonCenterY = rect.top + rect.height / 2;
       
       // Distortion when hovering buttons
       window.magneticFieldState.isDistorted = true;
+      window.magneticFieldState.isRelaxing = false;
+      window.magneticFieldState.relaxationProgress = 0;
       window.magneticFieldState.nameX = buttonCenterX;
       window.magneticFieldState.nameY = buttonCenterY;
       
