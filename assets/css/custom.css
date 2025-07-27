@@ -301,23 +301,28 @@ header,
   background: #000000 !important;
 }
 
-/* Hide Hugo Blox attribution only - more specific targeting */
-footer a[href*="blox"],
-footer a[href*="hugoblox"],
+/* Hide Hugo Blox attribution only - very specific targeting */
+footer a[href*="blox"]:not(.copyright),
+footer a[href*="hugoblox"]:not(.copyright),
 footer .powered-by,
-.footer-powered-by {
+.footer-powered-by,
+footer p:has(a[href*="blox"]) {
   display: none !important;
 }
 
-/* Ensure footer and copyright are visible */
+/* Ensure footer and copyright are always visible */
 footer {
   display: block !important;
+  visibility: visible !important;
 }
 
 footer .copyright,
-.copyright {
+footer .copyright *,
+.copyright,
+.site-footer .copyright {
   display: block !important;
   visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Helvetica Neue font family - with higher specificity */

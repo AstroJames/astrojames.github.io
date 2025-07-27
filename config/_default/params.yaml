@@ -44,7 +44,6 @@ footer:
     notice: '© {year} James R. Beattie.'
     license:
       enable: false
-  block: minimal
 
 # Localization
 locale:
