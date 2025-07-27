@@ -11,15 +11,18 @@
 </div>
 
 <div class="page-body">
-  <div class="container">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
     {{ .Content }}
     
     <!-- Publications loaded via ADS API -->
     <div style="margin-top: 2rem;">
       {{ with .Site.Data.publications }}
-        <div style="margin-bottom: 1rem; padding: 1rem; background-color: rgba(0, 122, 204, 0.1); border-left: 4px solid #007acc; border-radius: 4px;">
-          <p><strong>📚 {{ .total_publications }} publications automatically updated from NASA-ADS</strong></p>
-          <p><small>Last updated: {{ dateFormat "January 2, 2006 at 3:04 PM" (time .last_updated) }} | ORCID: {{ .orcid }}</small></p>
+        <div style="margin-bottom: 2rem;">
+          <h2 style="color: #007acc; margin-bottom: 0.5rem;">Publications</h2>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.9em;">
+            {{ .total_publications }} publications • Last updated: {{ dateFormat "January 2, 2006" (time .last_updated) }} • 
+            <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A{{ .orcid }}&sort=date%20desc" target="_blank" style="color: #4dabf7; text-decoration: none;">View on NASA-ADS</a>
+          </p>
         </div>
         
         <!-- Organize publications by authorship -->
@@ -77,15 +80,10 @@
         <div style="padding: 2rem; background-color: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 4px; text-align: center;">
           <p><strong>Publications will appear here once the GitHub Action runs.</strong></p>
           <p>The system will automatically fetch your publications from NASA-ADS daily.</p>
-          <p><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc" target="_blank" style="color: #4dabf7;">View your publications directly on ADS →</a></p>
         </div>
       {{ end }}
     </div>
     
-    <div style="margin-top: 1rem; padding: 1rem; background-color: rgba(255,255,255,0.05); border-radius: 4px;">
-      <p><small><strong>Note:</strong> Publications are automatically organized by authorship position and updated daily from NASA-ADS using your ORCID (0000-0001-9199-7771). 
-      <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc" target="_blank" style="color: #4dabf7;">View in full ADS interface →</a></small></p>
-    </div>
   </div>
 </div>
 
