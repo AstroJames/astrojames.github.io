@@ -1,0 +1,102 @@
+{{/* Magnetic Field Lines Around Header Name */}}
+<style>
+#header-field-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 998; /* Behind particles but above background */
+  overflow: hidden;
+}
+
+.header-field-line {
+  stroke: rgba(255, 0, 0, 0.4);
+  stroke-width: 1.5;
+  fill: none;
+  filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.5));
+}
+
+/* Animated flowing effect */
+.header-field-line {
+  stroke-dasharray: 8, 12;
+  animation: field-flow 4s linear infinite;
+}
+
+@keyframes field-flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 20;
+  }
+}
+
+/* Make header position relative to contain the absolute SVG */
+header, .navbar {
+  position: relative;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header') || document.querySelector('.navbar');
+  
+  if (!header) return;
+  
+  // Create SVG container
+  const svgContainer = document.createElement('div');
+  svgContainer.id = 'header-field-container';
+  
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.style.width = '100%';
+  svg.style.height = '100%';
+  
+  // Create curved path for magnetic field line
+  function createFieldLinePath(y, direction = 1, amplitude = 20) {
+    const width = header.offsetWidth;
+    const startX = width * 0.1;
+    const endX = width * 0.9;
+    const midX = width * 0.5;
+    
+    // Create a smooth curve
+    const cp1X = startX + (midX - startX) * 0.3;
+    const cp1Y = y + amplitude * direction * 0.5;
+    const cp2X = midX + (endX - midX) * 0.7;
+    const cp2Y = y + amplitude * direction * 0.5;
+    
+    return `M ${startX} ${y} C ${cp1X} ${cp1Y}, ${cp2X} ${cp2Y}, ${endX} ${y}`;
+  }
+  
+  function createFieldLines() {
+    // Clear existing lines
+    svg.innerHTML = '';
+    
+    const headerHeight = header.offsetHeight;
+    const centerY = headerHeight / 2;
+    
+    // Line above the text
+    const topLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    topLine.classList.add('header-field-line');
+    topLine.setAttribute('d', createFieldLinePath(centerY - 15, -1, 15));
+    svg.appendChild(topLine);
+    
+    // Line below the text
+    const bottomLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    bottomLine.classList.add('header-field-line');
+    bottomLine.setAttribute('d', createFieldLinePath(centerY + 15, 1, 15));
+    svg.appendChild(bottomLine);
+  }
+  
+  // Add SVG to header
+  svgContainer.appendChild(svg);
+  header.appendChild(svgContainer);
+  
+  // Initialize
+  createFieldLines();
+  
+  // Update on resize
+  window.addEventListener('resize', createFieldLines);
+});
+</script>
