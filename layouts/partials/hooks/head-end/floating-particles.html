@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Create photon emission when particle loses energy
   function emitPhoton(x, y, vx, vy, energyLoss) {
     if (energyLoss < 0.01) return; // Original threshold for emission
-    if (Math.random() > 0.2) return; // Only 20% chance of emission
+    if (Math.random() > 0.1) return; // Only 10% chance of emission
     
     const photon = document.createElement('div');
     photon.className = 'photon';
