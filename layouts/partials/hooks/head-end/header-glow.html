@@ -1,0 +1,56 @@
+{{/* Red Glow Effect for Header Name */}}
+<style>
+/* Target the header brand/name */
+.navbar-brand,
+header .navbar-brand,
+.navbar-brand h1,
+.navbar-brand a,
+header h1,
+header .site-title,
+.site-title {
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 
+               0 0 20px rgba(255, 0, 0, 0.4), 
+               0 0 30px rgba(255, 0, 0, 0.2) !important;
+  transition: text-shadow 0.3s ease;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Enhanced glow on hover */
+.navbar-brand:hover,
+header .navbar-brand:hover,
+.navbar-brand h1:hover,
+.navbar-brand a:hover,
+header h1:hover,
+header .site-title:hover,
+.site-title:hover {
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 
+               0 0 25px rgba(255, 0, 0, 0.6), 
+               0 0 35px rgba(255, 0, 0, 0.4),
+               0 0 45px rgba(255, 0, 0, 0.2) !important;
+}
+
+/* Ensure the text color remains white */
+.navbar-brand,
+header .navbar-brand,
+.navbar-brand h1,
+.navbar-brand a,
+header h1,
+header .site-title,
+.site-title {
+  color: #ffffff !important;
+}
+
+/* Pulsing glow animation */
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.4), 
+                 0 0 16px rgba(255, 0, 0, 0.3), 
+                 0 0 24px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 
+                 0 0 25px rgba(255, 0, 0, 0.6), 
+                 0 0 35px rgba(255, 0, 0, 0.4);
+  }
+}
+</style>
