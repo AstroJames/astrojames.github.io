@@ -105,6 +105,53 @@ def process_publication(pub):
     
     return processed
 
+def get_manual_publications():
+    """Return a list of manually specified publications (bibcodes) that should be included."""
+    
+    manual_bibcodes = [
+        # Add bibcodes here for papers not yet linked to ORCID in ADS
+        "2025arXiv250415538B",  # Scale-dependent alignment in compressible MHD turbulence
+        "2025arXiv250320013G",  # Second paper to add
+        "2025arXiv250603768S",  # Cosmic ray and plasma coupling for isothermal supersonic turbulence
+        "2025arXiv250109855B",  # Fourth paper to add
+    ]
+    
+    return manual_bibcodes
+
+def fetch_manual_publications(token, bibcodes):
+    """Fetch specific publications by bibcode."""
+    
+    if not bibcodes:
+        return []
+    
+    base_url = "https://api.adsabs.harvard.edu/v1/search/query"
+    
+    # Create query for specific bibcodes
+    bibcode_query = ' OR '.join([f'bibcode:{bc}' for bc in bibcodes])
+    
+    params = {
+        'q': bibcode_query,
+        'fl': 'bibcode,title,author,first_author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property,metrics',
+        'sort': 'date desc',
+        'rows': len(bibcodes)
+    }
+    
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json'
+    }
+    
+    try:
+        response = requests.get(base_url, params=params, headers=headers)
+        response.raise_for_status()
+        
+        data = response.json()
+        return data.get('response', {}).get('docs', [])
+        
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching manual publications: {e}")
+        return []
+
 def main():
     """Main function to fetch and save publications."""
     
@@ -122,17 +169,36 @@ def main():
     
     print(f"Fetching publications for ORCID: {orcid}")
     
-    # Fetch publications
-    publications = fetch_ads_publications(token, orcid)
+    # Fetch ORCID-linked publications
+    orcid_publications = fetch_ads_publications(token, orcid)
+    print(f"Found {len(orcid_publications)} ORCID-linked publications")
     
-    if not publications:
+    # Fetch manual publications
+    manual_bibcodes = get_manual_publications()
+    manual_publications = []
+    if manual_bibcodes:
+        manual_publications = fetch_manual_publications(token, manual_bibcodes)
+        print(f"Found {len(manual_publications)} manual publications")
+    
+    # Combine and deduplicate
+    all_publications = orcid_publications + manual_publications
+    seen_bibcodes = set()
+    unique_publications = []
+    
+    for pub in all_publications:
+        bibcode = pub.get('bibcode', '')
+        if bibcode and bibcode not in seen_bibcodes:
+            seen_bibcodes.add(bibcode)
+            unique_publications.append(pub)
+    
+    if not unique_publications:
         print("No publications found or error occurred")
         return
     
-    print(f"Found {len(publications)} publications")
+    print(f"Total unique publications: {len(unique_publications)}")
     
     # Process publications
-    processed_pubs = [process_publication(pub) for pub in publications]
+    processed_pubs = [process_publication(pub) for pub in unique_publications]
     
     # Create output data
     output_data = {
