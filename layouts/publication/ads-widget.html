@@ -14,18 +14,58 @@
   <div class="container">
     {{ .Content }}
     
-    <!-- Modern ADS Integration via iframe -->
+    <!-- Debug: Check if iframe loads -->
     <div style="margin-top: 2rem;">
       <p><strong>Publications automatically loaded from NASA-ADS:</strong></p>
       <iframe 
+        id="ads-iframe"
         src="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc&p_=0" 
         width="100%" 
         height="800" 
         frameborder="0" 
-        style="border: 1px solid #ddd; border-radius: 4px;">
+        style="border: 1px solid #ddd; border-radius: 4px;"
+        onload="console.log('ADS iframe loaded successfully')"
+        onerror="console.log('ADS iframe failed to load')">
         <p>Your browser does not support iframes. <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc" target="_blank">View publications directly on ADS</a></p>
       </iframe>
+      
+      <!-- Debug info -->
+      <div id="debug-info" style="margin-top: 1rem; padding: 1rem; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px;">
+        <p><strong>Debug Information:</strong></p>
+        <p>If the iframe appears empty, ADS may be blocking iframe embedding.</p>
+        <p>Check browser console (F12) for error messages.</p>
+        <button onclick="testADSAccess()" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #007acc; color: white; border: none; border-radius: 3px; cursor: pointer;">Test Direct ADS Access</button>
+      </div>
     </div>
+    
+    <script>
+    function testADSAccess() {
+      const adsUrl = 'https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc';
+      window.open(adsUrl, '_blank');
+    }
+    
+    // Check if iframe content loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      const iframe = document.getElementById('ads-iframe');
+      
+      iframe.onload = function() {
+        console.log('ADS iframe onload event fired');
+        try {
+          // Try to access iframe content (will fail due to CORS if that's the issue)
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+          console.log('Iframe content accessible');
+        } catch (e) {
+          console.log('Cannot access iframe content (likely CORS restriction):', e.message);
+          document.getElementById('debug-info').innerHTML += '<p style="color: orange;"><strong>Status:</strong> Iframe loaded but content may be blocked by CORS policy.</p>';
+        }
+      };
+      
+      iframe.onerror = function() {
+        console.log('ADS iframe error event fired');
+        document.getElementById('debug-info').innerHTML += '<p style="color: red;"><strong>Status:</strong> Iframe failed to load.</p>';
+      };
+    });
+    </script>
     
     <div style="margin-top: 1rem; padding: 1rem; background-color: #f8f9fa; border-radius: 4px;">
       <p><small><strong>Note:</strong> This page embeds your live ADS search results using your ORCID (0000-0001-9199-7771). 
