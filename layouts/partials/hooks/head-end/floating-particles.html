@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize drift properties
     particle.driftDirection = Math.random() > 0.5 ? 1 : -1; // Random initial drift direction
-    particle.driftSpeed = 0.3 + Math.random() * 0.4; // 0.3-0.7 drift speed
+    particle.driftSpeed = 0.15 + Math.random() * 0.2; // 0.15-0.35 drift speed (50% slower)
     
     // Randomize the twinkling animation timing
     const randomDelay = Math.random() * 2; // 0-2 second delay
@@ -189,30 +189,10 @@ document.addEventListener('DOMContentLoaded', function() {
     return [topLine, bottomLine];
   }
   
-  // Calculate field line Y position at given X (now matches complex field lines)
+  // Calculate field line Y position at given X (now simple straight lines)
   function getFieldLineY(x, fieldLine) {
-    const screenWidth = window.innerWidth;
-    
-    // Normalize x to 0-1 range
-    const t = x / screenWidth;
-    
-    // Match the complex field line calculation from header-field-lines.html
-    const amplitude = fieldLine.amplitude;
-    const direction = fieldLine.direction;
-    const fieldIndex = fieldLine === getMagneticFieldPaths()[0] ? 0 : 1;
-    
-    // Multiple harmonic components for complex structure
-    const wave1 = Math.sin(t * Math.PI * 2) * amplitude * 0.4; // Primary wave
-    const wave2 = Math.sin(t * Math.PI * 4 + fieldIndex) * amplitude * 0.2; // Secondary harmonics
-    const wave3 = Math.sin(t * Math.PI * 8 + fieldIndex * 2) * amplitude * 0.1; // Tertiary structure
-    
-    // Magnetic mirror-like structure (field lines closer at ends)
-    const mirrorEffect = Math.sin(t * Math.PI) * amplitude * 0.3;
-    
-    // Combine all wave components
-    const totalOffset = (wave1 + wave2 + wave3 + mirrorEffect) * direction;
-    
-    return fieldLine.y + totalOffset;
+    // Simple straight field lines - Y position is constant
+    return fieldLine.y;
   }
   
   // Find closest field line to particle

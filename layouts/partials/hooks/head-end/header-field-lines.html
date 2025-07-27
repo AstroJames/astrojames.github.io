@@ -53,41 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
   svg.style.width = '100%';
   svg.style.height = '100%';
   
-  // Create complex magnetic field line path inspired by plasma physics
+  // Create simple straight magnetic field line
   function createFieldLinePath(y, direction = 1, amplitude = 20, fieldIndex = 0) {
     const width = window.innerWidth;
-    const segments = 8; // Number of curve segments for complexity
-    let path = `M 0 ${y}`;
-    
-    for (let i = 0; i <= segments; i++) {
-      const t = i / segments;
-      const x = t * width;
-      
-      // Multiple harmonic components for complex structure
-      const wave1 = Math.sin(t * Math.PI * 2) * amplitude * 0.4; // Primary wave
-      const wave2 = Math.sin(t * Math.PI * 4 + fieldIndex) * amplitude * 0.2; // Secondary harmonics
-      const wave3 = Math.sin(t * Math.PI * 8 + fieldIndex * 2) * amplitude * 0.1; // Tertiary structure
-      
-      // Magnetic mirror-like structure (field lines closer at ends)
-      const mirrorEffect = Math.sin(t * Math.PI) * amplitude * 0.3;
-      
-      // Combine all wave components
-      const totalOffset = (wave1 + wave2 + wave3 + mirrorEffect) * direction;
-      const yPos = y + totalOffset;
-      
-      if (i === 0) {
-        path += ` L ${x} ${yPos}`;
-      } else {
-        // Create smooth curves between points
-        const prevT = (i - 1) / segments;
-        const prevX = prevT * width;
-        const controlDistance = (x - prevX) * 0.3;
-        
-        path += ` Q ${prevX + controlDistance} ${yPos} ${x} ${yPos}`;
-      }
-    }
-    
-    return path;
+    // Simple straight line from left to right
+    return `M 0 ${y} L ${width} ${y}`;
   }
   
   function createFieldLines() {
