@@ -91,6 +91,58 @@
   </div>
 </div>
 
+<!-- Publication Hover Animation Styles -->
+<style>
+.publication-item {
+  position: relative;
+  transform-origin: center;
+}
+
+.publication-item:hover .citation-sparkline {
+  opacity: 1 !important;
+  filter: brightness(1.2);
+}
+
+.publication-item:hover .publication-links a {
+  color: #66d9ff !important;
+  text-shadow: 0 0 8px rgba(102, 217, 255, 0.3);
+}
+
+.publication-item:hover .authorship-badge {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Smooth transitions for all interactive elements */
+.publication-item a, 
+.publication-item .citation-sparkline,
+.publication-item span {
+  transition: all 0.3s ease;
+}
+
+/* Subtle pulse animation for highly cited papers */
+.publication-item[data-citations-high]:hover {
+  animation: citationPulse 2s ease-in-out infinite;
+}
+
+@keyframes citationPulse {
+  0%, 100% { box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+  50% { box-shadow: 0 8px 35px rgba(77, 171, 247, 0.2); }
+}
+
+/* Loading shimmer effect for new data */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.publication-loading {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+</style>
+
 <!-- Citation Sparkline JavaScript -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -159,39 +211,27 @@ function drawSparkline(canvas, data) {
   const min = Math.min(...data);
   const range = max - min || 1;
   
-  // Chart area (leaving space for axes)
-  const chartLeft = 8;
-  const chartTop = 2;
-  const chartWidth = width - 12;
-  const chartHeight = height - 8;
+  // Ultra-compact chart area - use almost full canvas
+  const margin = 2;
+  const chartLeft = margin;
+  const chartTop = margin;
+  const chartWidth = width - (margin * 2);
+  const chartHeight = height - (margin * 2);
   
-  // Draw subtle axes
-  ctx.strokeStyle = 'rgba(255,255,255,0.2)';
-  ctx.lineWidth = 0.5;
-  
-  // Y-axis
-  ctx.beginPath();
-  ctx.moveTo(chartLeft, chartTop);
-  ctx.lineTo(chartLeft, chartTop + chartHeight);
-  ctx.stroke();
-  
-  // X-axis
-  ctx.beginPath();
-  ctx.moveTo(chartLeft, chartTop + chartHeight);
-  ctx.lineTo(chartLeft + chartWidth, chartTop + chartHeight);
-  ctx.stroke();
-  
-  // Draw citation trend line
+  // Draw citation trend line (no axes for cleaner look)
   ctx.strokeStyle = '#4dabf7';
-  ctx.lineWidth = 1.5;
+  ctx.lineWidth = 1.2;
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
-  ctx.shadowColor = 'transparent';
+  
+  // Add subtle background
+  ctx.fillStyle = 'rgba(77, 171, 247, 0.05)';
+  ctx.fillRect(0, 0, width, height);
   
   ctx.beginPath();
   
   data.forEach((value, index) => {
-    const x = chartLeft + (index / (data.length - 1)) * chartWidth;
+    const x = chartLeft + (index / Math.max(data.length - 1, 1)) * chartWidth;
     const y = chartTop + chartHeight - ((value - min) / range) * chartHeight;
     
     if (index === 0) {
@@ -203,52 +243,45 @@ function drawSparkline(canvas, data) {
   
   ctx.stroke();
   
-  // Add subtle glow effect
-  ctx.shadowColor = '#4dabf7';
-  ctx.shadowBlur = 1;
-  ctx.stroke();
+  // Fill area under curve for better visibility
+  if (data.length > 1) {
+    ctx.globalAlpha = 0.15;
+    ctx.fillStyle = '#4dabf7';
+    ctx.beginPath();
+    
+    // Start from bottom left
+    ctx.moveTo(chartLeft, chartTop + chartHeight);
+    
+    // Follow the data line
+    data.forEach((value, index) => {
+      const x = chartLeft + (index / Math.max(data.length - 1, 1)) * chartWidth;
+      const y = chartTop + chartHeight - ((value - min) / range) * chartHeight;
+      ctx.lineTo(x, y);
+    });
+    
+    // Close to bottom right
+    ctx.lineTo(chartLeft + chartWidth, chartTop + chartHeight);
+    ctx.closePath();
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
   
   // Draw end point
-  if (data.length > 1) {
-    const lastX = chartLeft + chartWidth;
-    const lastY = chartTop + chartHeight - ((data[data.length - 1] - min) / range) * chartHeight;
+  if (data.length > 0) {
+    const lastIndex = data.length - 1;
+    const lastX = chartLeft + (lastIndex / Math.max(data.length - 1, 1)) * chartWidth;
+    const lastY = chartTop + chartHeight - ((data[lastIndex] - min) / range) * chartHeight;
     
-    ctx.shadowColor = 'transparent';
     ctx.fillStyle = '#4dabf7';
     ctx.beginPath();
     ctx.arc(lastX, lastY, 1.5, 0, 2 * Math.PI);
     ctx.fill();
-  }
-  
-  // Add axis labels
-  ctx.fillStyle = 'rgba(255,255,255,0.4)';
-  ctx.font = '6px sans-serif';
-  ctx.textAlign = 'center';
-  
-  // X-axis label (years)
-  ctx.fillText('years', chartLeft + chartWidth/2, height - 1);
-  
-  // Y-axis label (citations) - rotated
-  ctx.save();
-  ctx.translate(2, chartTop + chartHeight/2);
-  ctx.rotate(-Math.PI/2);
-  ctx.fillText('cites', 0, 0);
-  ctx.restore();
-  
-  // Add value labels at corners
-  ctx.font = '5px sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.3)';
-  
-  // Min value (bottom left)
-  if (min > 0) {
-    ctx.textAlign = 'left';
-    ctx.fillText(min.toString(), chartLeft + 1, chartTop + chartHeight - 1);
-  }
-  
-  // Max value (top right)
-  if (max !== min) {
-    ctx.textAlign = 'right';
-    ctx.fillText(max.toString(), chartLeft + chartWidth - 1, chartTop + 6);
+    
+    // Add white center for contrast
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 0.5, 0, 2 * Math.PI);
+    ctx.fill();
   }
 }
 
@@ -270,8 +303,9 @@ function addHoverInteraction(canvas, data, startYear) {
   `;
   document.body.appendChild(tooltip);
   
-  const chartLeft = 8;
-  const chartWidth = canvas.width - 12;
+  const margin = 2;
+  const chartLeft = margin;
+  const chartWidth = canvas.width - (margin * 2);
   
   canvas.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
@@ -279,7 +313,7 @@ function addHoverInteraction(canvas, data, startYear) {
     const y = e.clientY - rect.top;
     
     // Check if mouse is within chart area
-    if (x >= chartLeft && x <= chartLeft + chartWidth && y >= 2 && y <= canvas.height - 6) {
+    if (x >= chartLeft && x <= chartLeft + chartWidth && y >= 2 && y <= canvas.height - 2) {
       // Calculate which data point we're closest to
       const relativeX = (x - chartLeft) / chartWidth;
       const dataIndex = Math.round(relativeX * (data.length - 1));
