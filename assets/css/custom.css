@@ -301,10 +301,17 @@ header,
   background: #000000 !important;
 }
 
-/* Hide Hugo Blox attribution */
+/* Hide Hugo Blox attribution only */
 .powered-by,
-[class*="powered"],
-[class*="hugo-blox"],
-.footer-powered-by {
+.footer-powered-by,
+[href*="hugoblox"],
+[href*="hugo-blox"],
+a[href*="blox"] {
   display: none !important;
+}
+
+/* Keep copyright visible */
+.copyright,
+.footer .copyright {
+  display: block !important;
 }
