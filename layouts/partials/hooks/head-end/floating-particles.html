@@ -164,10 +164,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Get magnetic field line paths
+  // Get magnetic field line paths (now extended across full site)
   function getMagneticFieldPaths() {
     const headerHeight = header ? header.offsetHeight : 80;
-    const headerWidth = window.innerWidth;
     const centerY = headerHeight / 2;
     
     // Define the two field lines (same as in header-field-lines.html)
@@ -186,21 +185,15 @@ document.addEventListener('DOMContentLoaded', function() {
     return [topLine, bottomLine];
   }
   
-  // Calculate field line Y position at given X
+  // Calculate field line Y position at given X (now extends full width)
   function getFieldLineY(x, fieldLine) {
-    const headerWidth = window.innerWidth;
-    const startX = headerWidth * 0.1;
-    const endX = headerWidth * 0.9;
-    const midX = headerWidth * 0.5;
-    
-    if (x < startX || x > endX) return fieldLine.y;
+    const screenWidth = window.innerWidth;
+    const startX = 0;
+    const endX = screenWidth;
+    const midX = screenWidth * 0.5;
     
     // Normalize x to 0-1 range
-    const t = (x - startX) / (endX - startX);
-    
-    // Cubic bezier curve calculation
-    const cp1X = startX + (midX - startX) * 0.3;
-    const cp2X = midX + (endX - midX) * 0.7;
+    const t = x / screenWidth;
     
     // For our simple curve, approximate with sine wave
     const curveOffset = Math.sin(t * Math.PI) * fieldLine.amplitude * fieldLine.direction * 0.5;
@@ -225,8 +218,37 @@ document.addEventListener('DOMContentLoaded', function() {
     return { line: closest, distance: minDistance };
   }
   
+  // Calculate repulsive forces between particles (Coulomb-like)
+  function applyParticleRepulsion() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const p1 = particles[i];
+        const p2 = particles[j];
+        
+        const dx = p1.currentX - p2.currentX;
+        const dy = p1.currentY - p2.currentY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 50 && distance > 0) { // Repulsion range
+          const force = 0.5 / (distance * distance); // Inverse square law
+          const fx = (dx / distance) * force;
+          const fy = (dy / distance) * force;
+          
+          // Apply force to both particles
+          p1.vx += fx;
+          p1.vy += fy;
+          p2.vx -= fx;
+          p2.vy -= fy;
+        }
+      }
+    }
+  }
+  
   // Animation loop
   function animateParticles() {
+    // Apply particle-particle repulsion first
+    applyParticleRepulsion();
+    
     particles.forEach(particle => {
       if (isMouseInHeader) {
         // When mouse is in header, particles still gyrate but are attracted
