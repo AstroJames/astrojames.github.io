@@ -32,23 +32,11 @@
     {{ if .is_refereed }}<span style="background-color: #28a745; color: white; padding: 1px 4px; border-radius: 2px; font-size: 0.7em;">REF</span>{{ end }}
   </div>
   
-  <!-- Stats and Links - compact -->
+  <!-- Stats and Links with sparkline on right -->
   <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; font-size: 0.8em;">
-    <!-- Citation count with sparkline -->
+    <!-- Citation count -->
     {{ if gt .citation_count 0 }}
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span style="color: rgba(255,255,255,0.8);">citations: {{ .citation_count }}</span>
-        <!-- Citation sparkline placeholder -->
-        <canvas 
-          class="citation-sparkline" 
-          data-citations="{{ .citation_count }}"
-          data-year="{{ .year }}"
-          data-bibcode="{{ .bibcode }}"
-          width="60" 
-          height="20" 
-          style="opacity: 0.7;">
-        </canvas>
-      </div>
+      <span style="color: rgba(255,255,255,0.8);">citations: {{ .citation_count }}</span>
     {{ end }}
     
     <!-- Read count with note - commented out due to API caching issues -->
@@ -57,12 +45,33 @@
     {{ end }} -->
     
     <!-- Links -->
-    <div style="margin-left: auto;">
-      {{ if .ads_url }}
-        <a href="{{ .ads_url }}" target="_blank" style="margin-right: 0.5rem; color: #4dabf7; text-decoration: none;">ADS</a>
-      {{ end }}
-      {{ if .doi_url }}
-        <a href="{{ .doi_url }}" target="_blank" style="color: #4dabf7; text-decoration: none;">DOI</a>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+      <div style="display: flex; gap: 0.5rem;">
+        {{ if .ads_url }}
+          <a href="{{ .ads_url }}" target="_blank" style="color: #4dabf7; text-decoration: none;">ADS</a>
+        {{ end }}
+        {{ if .doi_url }}
+          <a href="{{ .doi_url }}" target="_blank" style="color: #4dabf7; text-decoration: none;">DOI</a>
+        {{ end }}
+      </div>
+      
+      <!-- Citation sparkline chart on the right -->
+      {{ if gt .citation_count 0 }}
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <canvas 
+            class="citation-sparkline" 
+            data-citations="{{ .citation_count }}"
+            data-year="{{ .year }}"
+            data-bibcode="{{ .bibcode }}"
+            width="80" 
+            height="30" 
+            style="opacity: 0.8;">
+          </canvas>
+          <div style="display: flex; justify-content: space-between; width: 80px; font-size: 0.6em; color: rgba(255,255,255,0.5); margin-top: 1px;">
+            <span>years</span>
+            <span style="writing-mode: vertical-rl; text-orientation: mixed; margin-left: -8px;">citations</span>
+          </div>
+        </div>
       {{ end }}
     </div>
   </div>
