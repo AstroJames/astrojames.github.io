@@ -315,3 +315,20 @@ a[href*="blox"] {
 .footer .copyright {
   display: block !important;
 }
+
+/* Helvetica Neue font family */
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+body, html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+p, span, div, a, li, td, th {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
