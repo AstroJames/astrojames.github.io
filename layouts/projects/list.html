@@ -1,27 +1,30 @@
-{{/* Custom Projects List View */}}
+{{ define "main" }}
 
-<div class="projects-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-  
-  <!-- Projects Header -->
-  <div class="projects-header" style="margin-bottom: 3rem; text-align: center;">
+<div class="page-header">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    {{ if .Title }}
     <h1 style="font-size: 2.5rem; font-weight: bold; color: inherit; margin-bottom: 1rem;">{{ .Title }}</h1>
+    {{ end }}
     {{ if .Params.subtitle }}
-      <p class="page-subtitle" style="font-size: 1.2rem; color: rgba(255,255,255,0.7);">{{ .Params.subtitle }}</p>
+    <p class="page-subtitle">{{ .Params.subtitle }}</p>
     {{ end }}
   </div>
+</div>
 
-  <!-- Projects Description -->
-  {{ with .Content }}
-    <div style="margin-bottom: 3rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
-      {{ . }}
-    </div>
-  {{ end }}
-
-  <!-- Projects Grid -->
-  <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 2rem;">
+<div class="page-body">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
     
-    {{ range where site.RegularPages "Type" "projects" }}
-      {{ if ne .Title "_index" }}
+    <!-- Projects Description -->
+    {{ with .Content }}
+      <div style="margin-bottom: 3rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
+        {{ . }}
+      </div>
+    {{ end }}
+
+    <!-- Projects Grid -->
+    <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      
+      {{ range .Pages }}
         <div class="project-card" style="
           background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
           border: 1px solid rgba(255,255,255,0.1);
@@ -108,10 +111,10 @@
           
         </div>
       {{ end }}
-    {{ end }}
+      
+    </div>
     
   </div>
-  
 </div>
 
 <!-- Project Card Hover Animation Styles -->
@@ -133,3 +136,5 @@
   }
 }
 </style>
+
+{{ end }}
