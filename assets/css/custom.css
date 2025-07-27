@@ -1,5 +1,3 @@
-/* Import Helvetica-like font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* 
 .opacity-box {
@@ -322,22 +320,6 @@ footer .copyright {
   font-size: 1rem;
 }
 
-/* Nuclear option - force font on everything */
-* {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-}
-
-/* Specifically target common elements */
-html, body, 
-h1, h2, h3, h4, h5, h6,
-p, span, div, a, li, ul, ol, td, th,
-.navbar, .nav-link, .navbar-brand,
-.profile-name, .profile-role, .organization,
-.about-content, .research-questions-content,
-.education-degree, .education-institution, .education-location,
-.interest-tag, .sidebar-title {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-}
 
 /* Completely reset icon fonts */
 i.fa, i.fab, i.fas, i.far, i.fal, i.fad,
@@ -360,21 +342,3 @@ i[class^="fa-"], i[class*=" fa-"] {
   font-weight: 900 !important;
 }
 
-/* Ensure CV button is visible */
-.profile-button, .cv-button {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.cv-button {
-  display: inline-block !important;
-  background: #333333 !important;
-  color: #ffffff !important;
-  padding: 0.75rem 1.5rem !important;
-  border-radius: 6px !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  transition: all 0.2s !important;
-  border: 2px solid transparent !important;
-}
