@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function updateRelaxation() {
       const elapsed = Date.now() - relaxationStartTime;
-      const relaxationDuration = 1000; // 1 second relaxation
+      const relaxationDuration = 667; // 0.67 second relaxation (50% faster)
       const progress = Math.min(elapsed / relaxationDuration, 1);
       
       // Use easeOut cubic for natural relaxation
