@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
   svg.style.height = '100%';
   
   // Create magnetic field line path (straight or curved toward name)
-  function createFieldLinePath(y, direction = 1, amplitude = 20, fieldIndex = 0, isDistorted = false, nameX = 0, nameY = 0) {
+  function createFieldLinePath(y, direction = 1, amplitude = 20, fieldIndex = 0, isDistorted = false, nameX = 0, nameY = 0, relaxationProgress = 0) {
     const width = window.innerWidth;
     
     if (!isDistorted) {
@@ -61,6 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const segmentWidth = width / segments;
     let path = `M 0 ${y}`;
     
+    // Calculate distortion multiplier for relaxation
+    const distortionMultiplier = window.magneticFieldState.isRelaxing ? 
+      (1 - window.magneticFieldState.relaxationProgress) : 1;
+    
     for (let i = 1; i <= segments; i++) {
       const x = i * segmentWidth;
       const distanceToName = Math.sqrt((x - nameX) * (x - nameX) + (y - nameY) * (y - nameY));
@@ -68,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Calculate curvature - stronger when closer to name
       const curvatureStrength = Math.max(0, 1 - (distanceToName / (maxDistance * 0.5)));
-      const pullTowardName = curvatureStrength * 8; // Max 8px deflection (much less extreme)
+      const pullTowardName = curvatureStrength * 8 * distortionMultiplier; // Apply relaxation multiplier
       
       // Calculate deflection toward name position
       const deflectionY = (nameY - y) * (pullTowardName / Math.abs(nameY - y || 1));
@@ -89,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Track hover state and name position
   let isNameHovered = false;
   let namePosition = { x: 0, y: 0 };
+  let relaxationAnimationId = null;
+  let relaxationStartTime = null;
+  let relaxationStartState = { nameX: 0, nameY: 0 };
   
   // Expose field line state to other scripts
   window.magneticFieldState = {
@@ -97,6 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
     nameY: 0,
     waveActive: false,
     wavePosition: 0,
+    isRelaxing: false,
+    relaxationProgress: 0,
     getFieldLineY: function(x, baseY) {
       // First check for wave distortion
       if (this.waveActive) {
@@ -122,40 +131,61 @@ document.addEventListener('DOMContentLoaded', function() {
         return baseY;
       }
       
-      // Then check for button hover distortion
-      if (!this.isDistorted) return baseY;
+      // Then check for button hover distortion or relaxation
+      if (!this.isDistorted && !this.isRelaxing) return baseY;
       
-      const distanceToName = Math.sqrt((x - this.nameX) * (x - this.nameX) + (baseY - this.nameY) * (baseY - this.nameY));
+      // Calculate distortion strength based on relaxation progress
+      let effectiveNameX = this.nameX;
+      let effectiveNameY = this.nameY;
+      let distortionMultiplier = 1;
+      
+      if (this.isRelaxing) {
+        // During relaxation, gradually reduce the distortion effect
+        distortionMultiplier = 1 - this.relaxationProgress;
+        effectiveNameX = this.nameX;
+        effectiveNameY = this.nameY;
+      }
+      
+      const distanceToName = Math.sqrt((x - effectiveNameX) * (x - effectiveNameX) + (baseY - effectiveNameY) * (baseY - effectiveNameY));
       const maxDistance = Math.sqrt(window.innerWidth * window.innerWidth + 100 * 100);
       const curvatureStrength = Math.max(0, 1 - (distanceToName / (maxDistance * 0.5)));
-      const pullTowardName = curvatureStrength * 8;
-      const deflectionY = (this.nameY - baseY) * (pullTowardName / Math.abs(this.nameY - baseY || 1));
+      const pullTowardName = curvatureStrength * 8 * distortionMultiplier;
+      const deflectionY = (effectiveNameY - baseY) * (pullTowardName / Math.abs(effectiveNameY - baseY || 1));
       
       return baseY + deflectionY;
     }
   };
   
-  function createFieldLines(distorted = false, nameX = 0, nameY = 0) {
+  function createFieldLines(distorted = false, nameX = 0, nameY = 0, relaxationProgress = 0) {
     // Clear existing lines
     svg.innerHTML = '';
     
     const headerHeight = header.offsetHeight;
     const centerY = headerHeight / 2;
     
+    // If relaxing, interpolate between distorted and straight
+    let effectiveDistorted = distorted;
+    let effectiveNameX = nameX;
+    let effectiveNameY = nameY;
+    
+    if (window.magneticFieldState.isRelaxing && relaxationProgress > 0) {
+      effectiveDistorted = true; // Still use curved calculation
+      effectiveNameX = nameX;
+      effectiveNameY = nameY;
+    }
+    
     // Line above the text - halfway between top boundary and text
-    const topLineY = (0 + (centerY - 15)) / 2; // Halfway between top (0) and text top
+    const topLineY = (0 + (centerY - 15)) / 2;
     const topLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     topLine.classList.add('header-field-line');
-    topLine.style.transition = 'd 0.3s ease-out';
-    topLine.setAttribute('d', createFieldLinePath(topLineY, -1, 15, 0, distorted, nameX, nameY));
+    topLine.setAttribute('d', createFieldLinePath(topLineY, -1, 15, 0, effectiveDistorted, effectiveNameX, effectiveNameY, relaxationProgress));
     svg.appendChild(topLine);
     
     // Line below the text - halfway between text and bottom boundary  
-    const bottomLineY = ((centerY + 15) + headerHeight) / 2; // Halfway between text bottom and header bottom
+    const bottomLineY = ((centerY + 15) + headerHeight) / 2;
     const bottomLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     bottomLine.classList.add('header-field-line');
-    bottomLine.style.transition = 'd 0.3s ease-out';
-    bottomLine.setAttribute('d', createFieldLinePath(bottomLineY, 1, 15, 1, distorted, nameX, nameY));
+    bottomLine.setAttribute('d', createFieldLinePath(bottomLineY, 1, 15, 1, effectiveDistorted, effectiveNameX, effectiveNameY, relaxationProgress));
     svg.appendChild(bottomLine);
   }
   
@@ -250,6 +280,46 @@ document.addEventListener('DOMContentLoaded', function() {
     updateWave();
   }
   
+  // Animate relaxation back to straight field lines
+  function animateRelaxation(fromNameX, fromNameY) {
+    relaxationStartTime = Date.now();
+    relaxationStartState = { nameX: fromNameX, nameY: fromNameY };
+    
+    function updateRelaxation() {
+      const elapsed = Date.now() - relaxationStartTime;
+      const relaxationDuration = 1000; // 1 second relaxation
+      const progress = Math.min(elapsed / relaxationDuration, 1);
+      
+      // Use easeOut cubic for natural relaxation
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      
+      // Update global state for particles
+      window.magneticFieldState.isRelaxing = true;
+      window.magneticFieldState.relaxationProgress = easedProgress;
+      window.magneticFieldState.nameX = relaxationStartState.nameX;
+      window.magneticFieldState.nameY = relaxationStartState.nameY;
+      
+      // Update field lines
+      createFieldLines(true, relaxationStartState.nameX, relaxationStartState.nameY, easedProgress);
+      
+      // Continue animation or finish
+      if (progress < 1) {
+        relaxationAnimationId = requestAnimationFrame(updateRelaxation);
+      } else {
+        // Relaxation complete
+        relaxationAnimationId = null;
+        window.magneticFieldState.isRelaxing = false;
+        window.magneticFieldState.relaxationProgress = 0;
+        window.magneticFieldState.isDistorted = false;
+        window.magneticFieldState.nameX = 0;
+        window.magneticFieldState.nameY = 0;
+        createFieldLines(false, 0, 0); // Final straight lines
+      }
+    }
+    
+    updateRelaxation();
+  }
+  
   // Add hover listener to name element for wave effect
   if (nameElement) {
     nameElement.addEventListener('mouseenter', function() {
@@ -282,12 +352,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     button.addEventListener('mouseleave', function() {
-      // Return to straight field lines when leaving button
-      window.magneticFieldState.isDistorted = false;
-      window.magneticFieldState.nameX = 0;
-      window.magneticFieldState.nameY = 0;
+      // Cancel any existing relaxation animation
+      if (relaxationAnimationId) {
+        cancelAnimationFrame(relaxationAnimationId);
+        relaxationAnimationId = null;
+      }
       
-      createFieldLines(false, 0, 0);
+      // Start relaxation animation from current position
+      const currentNameX = window.magneticFieldState.nameX;
+      const currentNameY = window.magneticFieldState.nameY;
+      
+      animateRelaxation(currentNameX, currentNameY);
     });
   });
   
