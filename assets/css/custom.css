@@ -1,3 +1,6 @@
+/* Import Helvetica-like font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* 
 .opacity-box {
   background: rgba(0, 0, 0, 0.1);
@@ -319,19 +322,24 @@ footer .copyright {
   font-size: 1rem;
 }
 
-/* Helvetica Neue font family - exclude icons completely */
-html, body,
+/* Helvetica Neue font family - use Inter as fallback */
+html {
+  font-family: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif !important;
+}
+
+body {
+  font-family: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif !important;
+}
+
+/* Override theme fonts with very high specificity */
+.resume-biography-3,
+.resume-biography-3 *:not(i):not([class*="fa"]):not([class*="ai"]),
+.navbar, .navbar *:not(i):not([class*="fa"]):not([class*="ai"]),
+.main-content, .main-content *:not(i):not([class*="fa"]):not([class*="ai"]),
+.sidebar, .sidebar *:not(i):not([class*="fa"]):not([class*="ai"]),
 h1, h2, h3, h4, h5, h6,
-p:not([class*="fa"]):not([class*="ai"]), 
-span:not([class*="fa"]):not([class*="ai"]), 
-div:not([class*="fa"]):not([class*="ai"]), 
-a:not([class*="fa"]):not([class*="ai"]), 
-li:not([class*="fa"]):not([class*="ai"]), 
-td, th,
-.profile-name, .profile-role,
-.education-degree, .education-institution, .education-location,
-.interest-tag, .about-content, .research-questions-content {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+p, span, div, a, li, td, th {
+  font-family: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif !important;
 }
 
 /* Completely reset icon fonts */
