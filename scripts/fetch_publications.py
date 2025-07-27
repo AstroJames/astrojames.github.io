@@ -16,7 +16,7 @@ def fetch_ads_publications(token, orcid):
     # Query parameters
     params = {
         'q': f'orcid:{orcid}',
-        'fl': 'bibcode,title,author,first_author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property',
+        'fl': 'bibcode,title,author,first_author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property,metrics',
         'sort': 'date desc',
         'rows': 100  # Adjust as needed
     }
