@@ -217,8 +217,13 @@ document.addEventListener('DOMContentLoaded', function() {
     return [topLine, bottomLine];
   }
   
-  // Calculate field line Y position at given X (now simple straight lines)
+  // Calculate field line Y position at given X (straight or curved)
   function getFieldLineY(x, fieldLine) {
+    // Check if field lines are distorted by name hover
+    if (window.magneticFieldState && window.magneticFieldState.isDistorted) {
+      return window.magneticFieldState.getFieldLineY(x, fieldLine.y);
+    }
+    
     // Simple straight field lines - Y position is constant
     return fieldLine.y;
   }

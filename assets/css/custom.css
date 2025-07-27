@@ -291,3 +291,12 @@ a:not(.no-hover):hover {
 html {
   scroll-behavior: smooth;
 }
+
+/* Black header background */
+header,
+.navbar,
+.navbar-dark,
+.navbar-light {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
