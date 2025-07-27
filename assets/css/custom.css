@@ -301,44 +301,56 @@ header,
   background: #000000 !important;
 }
 
-/* Only hide specific Hugo Blox text, not the whole footer */
-footer a[href*="hugoblox.com"] {
+/* Hide Hugo Blox attribution text */
+footer a[href*="hugoblox.com"],
+footer a[href*="hugoblox"],
+footer span:contains("Published with"),
+footer p:contains("Published with"),
+footer *:contains("empowers creators") {
   display: none !important;
 }
 
-/* Helvetica Neue font family - with higher specificity */
-html, body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+/* Hide text nodes containing Hugo Blox attribution */
+footer {
+  font-size: 0;
 }
 
-html *, body *, 
-.navbar *, .nav *, 
-.card *, .content *, 
-.biography *, .sidebar *,
+footer .copyright {
+  font-size: 1rem;
+}
+
+/* Helvetica Neue font family - exclude icons completely */
+html, body,
 h1, h2, h3, h4, h5, h6,
-p, span, div, a, li, td, th, 
+p:not([class*="fa"]):not([class*="ai"]), 
+span:not([class*="fa"]):not([class*="ai"]), 
+div:not([class*="fa"]):not([class*="ai"]), 
+a:not([class*="fa"]):not([class*="ai"]), 
+li:not([class*="fa"]):not([class*="ai"]), 
+td, th,
 .profile-name, .profile-role,
 .education-degree, .education-institution, .education-location,
 .interest-tag, .about-content, .research-questions-content {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-/* Exclude icon fonts from Helvetica override */
-i[class*="fa"], i[class*="ai"], 
-.fa, .fab, .fas, .far, .fal, .fad,
-.ai, .academicons,
-[class^="ai-"], [class*=" ai-"],
-[class^="fa-"], [class*=" fa-"] {
+/* Completely reset icon fonts */
+i.fa, i.fab, i.fas, i.far, i.fal, i.fad,
+i.ai, i[class^="ai-"], i[class*=" ai-"],
+i[class^="fa-"], i[class*=" fa-"],
+.social-link i {
   font-family: inherit !important;
+  font-style: normal !important;
 }
 
-/* Ensure academic icons use proper font */
-.ai, [class^="ai-"], [class*=" ai-"] {
+/* Force correct icon fonts */
+i.ai, i[class^="ai-"], i[class*=" ai-"] {
   font-family: "Academicons" !important;
+  font-weight: normal !important;
 }
 
-/* Ensure Font Awesome icons use proper font */
-.fa, .fas, .far, .fab, .fal, .fad,
-[class^="fa-"], [class*=" fa-"] {
-  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+i.fa, i.fas, i.far, i.fab, i.fal, i.fad,
+i[class^="fa-"], i[class*=" fa-"] {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "FontAwesome" !important;
+  font-weight: 900 !important;
 }
