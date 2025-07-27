@@ -359,3 +359,22 @@ i[class^="fa-"], i[class*=" fa-"] {
   font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "FontAwesome" !important;
   font-weight: 900 !important;
 }
+
+/* Ensure CV button is visible */
+.profile-button, .cv-button {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.cv-button {
+  display: inline-block !important;
+  background: #333333 !important;
+  color: #ffffff !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.2s !important;
+  border: 2px solid transparent !important;
+}
