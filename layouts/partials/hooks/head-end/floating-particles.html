@@ -164,47 +164,134 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  // Get magnetic field line paths
+  function getMagneticFieldPaths() {
+    const headerHeight = header ? header.offsetHeight : 80;
+    const headerWidth = window.innerWidth;
+    const centerY = headerHeight / 2;
+    
+    // Define the two field lines (same as in header-field-lines.html)
+    const topLine = {
+      y: centerY - 15,
+      amplitude: 15,
+      direction: -1
+    };
+    
+    const bottomLine = {
+      y: centerY + 15,
+      amplitude: 15,
+      direction: 1
+    };
+    
+    return [topLine, bottomLine];
+  }
+  
+  // Calculate field line Y position at given X
+  function getFieldLineY(x, fieldLine) {
+    const headerWidth = window.innerWidth;
+    const startX = headerWidth * 0.1;
+    const endX = headerWidth * 0.9;
+    const midX = headerWidth * 0.5;
+    
+    if (x < startX || x > endX) return fieldLine.y;
+    
+    // Normalize x to 0-1 range
+    const t = (x - startX) / (endX - startX);
+    
+    // Cubic bezier curve calculation
+    const cp1X = startX + (midX - startX) * 0.3;
+    const cp2X = midX + (endX - midX) * 0.7;
+    
+    // For our simple curve, approximate with sine wave
+    const curveOffset = Math.sin(t * Math.PI) * fieldLine.amplitude * fieldLine.direction * 0.5;
+    return fieldLine.y + curveOffset;
+  }
+  
+  // Find closest field line to particle
+  function getClosestFieldLine(x, y) {
+    const fieldLines = getMagneticFieldPaths();
+    let closest = fieldLines[0];
+    let minDistance = Math.abs(y - getFieldLineY(x, fieldLines[0]));
+    
+    for (let line of fieldLines) {
+      const lineY = getFieldLineY(x, line);
+      const distance = Math.abs(y - lineY);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closest = line;
+      }
+    }
+    
+    return { line: closest, distance: minDistance };
+  }
+  
   // Animation loop
   function animateParticles() {
     particles.forEach(particle => {
       if (isMouseInHeader) {
-        // Converge toward mouse
+        // When mouse is in header, particles still gyrate but are attracted
         const dx = mouseX - particle.currentX;
         const dy = mouseY - particle.currentY;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance > 5) {
-          // Apply magnetic force (reduced for slower convergence)
-          const force = 0.008; // Reduced from 0.02 to 0.008
+        if (distance > 30) {
+          // Apply gentle magnetic force toward mouse
+          const force = 0.003;
           particle.vx += dx * force;
           particle.vy += dy * force;
-          
-          // Damping (increased for slower movement)
-          particle.vx *= 0.92; // Reduced from 0.95 to 0.92
-          particle.vy *= 0.92;
-        } else {
-          // Orbit around mouse when very close
-          const angle = Math.atan2(dy, dx) + 0.1;
-          const radius = 20;
-          particle.currentX = mouseX + Math.cos(angle) * radius;
-          particle.currentY = mouseY + Math.sin(angle) * radius;
         }
+        
+        // But still constrain to gyration around field lines
+        const { line, distance: fieldDistance } = getClosestFieldLine(particle.currentX, particle.currentY);
+        const fieldLineY = getFieldLineY(particle.currentX, line);
+        
+        if (fieldDistance > 8) { // 8px radius from field line
+          // Apply force toward the field line
+          const fieldForce = (particle.currentY - fieldLineY) * -0.02;
+          particle.vy += fieldForce;
+        }
+        
+        // Gyration around field line
+        if (!particle.gyrationAngle) particle.gyrationAngle = Math.random() * Math.PI * 2;
+        particle.gyrationAngle += 0.15; // Gyration speed
+        
+        const gyrationRadius = 6;
+        const targetY = fieldLineY + Math.sin(particle.gyrationAngle) * gyrationRadius;
+        particle.vy += (targetY - particle.currentY) * 0.05;
+        
       } else {
-        // Return to floating behavior with more random motion
-        const dx = particle.originalX - particle.currentX;
-        const dy = particle.originalY - particle.currentY;
+        // Normal gyration around field lines
+        const { line, distance: fieldDistance } = getClosestFieldLine(particle.currentX, particle.currentY);
+        const fieldLineY = getFieldLineY(particle.currentX, line);
         
-        // Apply gentle force back to original position (reduced influence)
-        particle.vx += dx * 0.0002; // Further reduced
-        particle.vy += dy * 0.0002;
+        // Initialize gyration angle if not set
+        if (!particle.gyrationAngle) {
+          particle.gyrationAngle = Math.random() * Math.PI * 2;
+        }
         
-        // Add stronger random floating motion
-        particle.vx += (Math.random() - 0.5) * 0.04; // Increased from 0.01 to 0.04
-        particle.vy += (Math.random() - 0.5) * 0.04;
+        // Gyration physics
+        particle.gyrationAngle += 0.08; // Gyration frequency
+        const gyrationRadius = 4 + Math.random() * 3; // 4-7px radius
         
-        // Less damping for more lively movement
-        particle.vx *= 0.98; // Increased from 0.96 to 0.98
-        particle.vy *= 0.98;
+        // Calculate target position on circular gyration
+        const targetY = fieldLineY + Math.sin(particle.gyrationAngle) * gyrationRadius;
+        
+        // Apply forces to maintain gyration
+        particle.vy += (targetY - particle.currentY) * 0.03;
+        
+        // Drift along field line (parallel motion)
+        const driftSpeed = 0.3;
+        particle.vx += (Math.random() - 0.5) * 0.02 + driftSpeed * (Math.random() > 0.5 ? 1 : -1) * 0.1;
+        
+        // Keep particle near field line
+        if (fieldDistance > 12) {
+          const pullForce = (particle.currentY - fieldLineY) * -0.05;
+          particle.vy += pullForce;
+        }
+        
+        // Damping
+        particle.vx *= 0.95;
+        particle.vy *= 0.95;
       }
       
       // Update position
