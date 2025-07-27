@@ -127,6 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
     particle.vx = (Math.random() - 0.5) * 0.2; // Reduced from 0.5 to 0.2
     particle.vy = (Math.random() - 0.5) * 0.2; // Reduced from 0.5 to 0.2
     
+    // Initialize drift properties
+    particle.driftDirection = Math.random() > 0.5 ? 1 : -1; // Random initial drift direction
+    particle.driftSpeed = 0.3 + Math.random() * 0.4; // 0.3-0.7 drift speed
+    
     // Randomize the twinkling animation timing
     const randomDelay = Math.random() * 2; // 0-2 second delay
     const randomDuration = 1.5 + Math.random() * 1; // 1.5-2.5 second duration
@@ -241,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         if (distance < 50 && distance > 0) { // Repulsion range
-          const force = 0.5 / (distance * distance); // Inverse square law
+          const force = 2.0 / (distance * distance); // Stronger inverse square law
           const fx = (dx / distance) * force;
           const fy = (dy / distance) * force;
           
@@ -312,9 +316,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Apply forces to maintain gyration
         particle.vy += (targetY - particle.currentY) * 0.03;
         
-        // Drift along field line (parallel motion)
-        const driftSpeed = 0.3;
-        particle.vx += (Math.random() - 0.5) * 0.02 + driftSpeed * (Math.random() > 0.5 ? 1 : -1) * 0.1;
+        // Drift along field line (parallel motion) with boundary reflection
+        particle.vx += particle.driftDirection * particle.driftSpeed;
         
         // Keep particle near field line
         if (fieldDistance > 12) {
@@ -336,15 +339,23 @@ document.addEventListener('DOMContentLoaded', function() {
       const bottomBuffer = 8; // 8px buffer from bottom
       const sideBuffer = 5; // 5px buffer from sides
       
+      // Check for boundary collisions and reflect drift direction
+      if (particle.currentX <= sideBuffer && particle.driftDirection < 0) {
+        particle.driftDirection = 1; // Reverse drift direction when hitting left boundary
+        particle.vx = Math.abs(particle.vx); // Ensure velocity is positive
+      }
+      if (particle.currentX >= window.innerWidth - sideBuffer && particle.driftDirection > 0) {
+        particle.driftDirection = -1; // Reverse drift direction when hitting right boundary
+        particle.vx = -Math.abs(particle.vx); // Ensure velocity is negative
+      }
+      
+      // Apply boundary constraints
       particle.currentX = Math.max(sideBuffer, Math.min(window.innerWidth - sideBuffer, particle.currentX));
       particle.currentY = Math.max(5, Math.min(headerHeight - bottomBuffer, particle.currentY));
       
-      // If particle hits boundaries, reverse velocity to bounce
-      if (particle.currentX <= sideBuffer || particle.currentX >= window.innerWidth - sideBuffer) {
-        particle.vx *= -0.3; // Reverse and dampen
-      }
+      // Vertical boundary bouncing (for gyration motion)
       if (particle.currentY <= 5 || particle.currentY >= headerHeight - bottomBuffer) {
-        particle.vy *= -0.3; // Reverse and dampen
+        particle.vy *= -0.3; // Reverse and dampen vertical velocity
       }
       
       // Apply position
