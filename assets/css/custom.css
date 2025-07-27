@@ -336,3 +336,19 @@ p, span, div, a, li, td, th,
 .interest-tag, .about-content, .research-questions-content {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
+
+/* Restore icon fonts */
+i, .fa, .fab, .fas, .far, .ai, .academicons,
+[class*="fa-"], [class*="ai-"],
+.social-link i, .social-link .x-icon {
+  font-family: inherit !important;
+}
+
+/* Specific icon font families */
+.fa, .fas, .far, .fab {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+}
+
+.ai, .academicons, [class*="ai-"] {
+  font-family: "Academicons" !important;
+}
