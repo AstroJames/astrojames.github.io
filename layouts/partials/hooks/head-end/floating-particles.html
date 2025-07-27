@@ -53,23 +53,55 @@ document.addEventListener('DOMContentLoaded', function() {
     const particle = document.createElement('div');
     particle.className = 'particle';
     
-    // Get actual header height
+    // Get actual header height and text areas to avoid
     const headerHeight = header ? header.offsetHeight : 80;
+    const navLinks = header ? header.querySelectorAll('a, .navbar-brand, .nav-link') : [];
     
-    // Random position within header bounds
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * headerHeight;
+    let x, y, attempts = 0;
+    let validPosition = false;
+    
+    // Try to find a position that doesn't overlap with text
+    while (!validPosition && attempts < 50) {
+      x = Math.random() * window.innerWidth;
+      y = Math.random() * headerHeight;
+      
+      validPosition = true;
+      
+      // Check if this position overlaps with any navigation text
+      for (let link of navLinks) {
+        const rect = link.getBoundingClientRect();
+        const buffer = 30; // 30px buffer around text
+        
+        if (x >= rect.left - buffer && x <= rect.right + buffer &&
+            y >= rect.top - buffer && y <= rect.bottom + buffer) {
+          validPosition = false;
+          break;
+        }
+      }
+      
+      attempts++;
+    }
+    
+    // If we can't find a good position, place it in safe zones (edges)
+    if (!validPosition) {
+      if (Math.random() > 0.5) {
+        x = Math.random() * 100; // Left edge
+      } else {
+        x = window.innerWidth - Math.random() * 100; // Right edge
+      }
+      y = Math.random() * headerHeight;
+    }
     
     particle.style.left = x + 'px';
     particle.style.top = y + 'px';
     
-    // Store original position and current velocity
+    // Store original position and current velocity (slower initial movement)
     particle.originalX = x;
     particle.originalY = y;
     particle.currentX = x;
     particle.currentY = y;
-    particle.vx = (Math.random() - 0.5) * 0.5;
-    particle.vy = (Math.random() - 0.5) * 0.5;
+    particle.vx = (Math.random() - 0.5) * 0.2; // Reduced from 0.5 to 0.2
+    particle.vy = (Math.random() - 0.5) * 0.2; // Reduced from 0.5 to 0.2
     
     particleContainer.appendChild(particle);
     particles.push(particle);
@@ -112,14 +144,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         if (distance > 5) {
-          // Apply magnetic force
-          const force = 0.02;
+          // Apply magnetic force (reduced for slower convergence)
+          const force = 0.008; // Reduced from 0.02 to 0.008
           particle.vx += dx * force;
           particle.vy += dy * force;
           
-          // Damping
-          particle.vx *= 0.95;
-          particle.vy *= 0.95;
+          // Damping (increased for slower movement)
+          particle.vx *= 0.92; // Reduced from 0.95 to 0.92
+          particle.vy *= 0.92;
         } else {
           // Orbit around mouse when very close
           const angle = Math.atan2(dy, dx) + 0.1;
@@ -128,20 +160,20 @@ document.addEventListener('DOMContentLoaded', function() {
           particle.currentY = mouseY + Math.sin(angle) * radius;
         }
       } else {
-        // Return to floating behavior
+        // Return to floating behavior with more random motion
         const dx = particle.originalX - particle.currentX;
         const dy = particle.originalY - particle.currentY;
         
-        // Apply gentle force back to original position
-        particle.vx += dx * 0.001;
-        particle.vy += dy * 0.001;
+        // Apply gentle force back to original position (reduced influence)
+        particle.vx += dx * 0.0002; // Further reduced
+        particle.vy += dy * 0.0002;
         
-        // Add random floating motion
-        particle.vx += (Math.random() - 0.5) * 0.02;
-        particle.vy += (Math.random() - 0.5) * 0.02;
+        // Add stronger random floating motion
+        particle.vx += (Math.random() - 0.5) * 0.04; // Increased from 0.01 to 0.04
+        particle.vy += (Math.random() - 0.5) * 0.04;
         
-        // Damping
-        particle.vx *= 0.98;
+        // Less damping for more lively movement
+        particle.vx *= 0.98; // Increased from 0.96 to 0.98
         particle.vy *= 0.98;
       }
       
@@ -149,10 +181,21 @@ document.addEventListener('DOMContentLoaded', function() {
       particle.currentX += particle.vx;
       particle.currentY += particle.vy;
       
-      // Boundary constraints - keep within header
+      // Boundary constraints - keep within header with buffer from bottom
       const headerHeight = header ? header.offsetHeight : 80;
-      particle.currentX = Math.max(0, Math.min(window.innerWidth, particle.currentX));
-      particle.currentY = Math.max(0, Math.min(headerHeight, particle.currentY));
+      const bottomBuffer = 8; // 8px buffer from bottom
+      const sideBuffer = 5; // 5px buffer from sides
+      
+      particle.currentX = Math.max(sideBuffer, Math.min(window.innerWidth - sideBuffer, particle.currentX));
+      particle.currentY = Math.max(5, Math.min(headerHeight - bottomBuffer, particle.currentY));
+      
+      // If particle hits boundaries, reverse velocity to bounce
+      if (particle.currentX <= sideBuffer || particle.currentX >= window.innerWidth - sideBuffer) {
+        particle.vx *= -0.3; // Reverse and dampen
+      }
+      if (particle.currentY <= 5 || particle.currentY >= headerHeight - bottomBuffer) {
+        particle.vy *= -0.3; // Reverse and dampen
+      }
       
       // Apply position
       particle.style.left = particle.currentX + 'px';
