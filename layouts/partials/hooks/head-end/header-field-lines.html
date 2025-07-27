@@ -1,11 +1,11 @@
 {{/* Magnetic Field Lines Around Header Name */}}
 <style>
 #header-field-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 998; /* Behind particles but above background */
   overflow: hidden;
@@ -53,20 +53,41 @@ document.addEventListener('DOMContentLoaded', function() {
   svg.style.width = '100%';
   svg.style.height = '100%';
   
-  // Create curved path for magnetic field line
-  function createFieldLinePath(y, direction = 1, amplitude = 20) {
-    const width = header.offsetWidth;
-    const startX = width * 0.1;
-    const endX = width * 0.9;
-    const midX = width * 0.5;
+  // Create complex magnetic field line path inspired by plasma physics
+  function createFieldLinePath(y, direction = 1, amplitude = 20, fieldIndex = 0) {
+    const width = window.innerWidth;
+    const segments = 8; // Number of curve segments for complexity
+    let path = `M 0 ${y}`;
     
-    // Create a smooth curve
-    const cp1X = startX + (midX - startX) * 0.3;
-    const cp1Y = y + amplitude * direction * 0.5;
-    const cp2X = midX + (endX - midX) * 0.7;
-    const cp2Y = y + amplitude * direction * 0.5;
+    for (let i = 0; i <= segments; i++) {
+      const t = i / segments;
+      const x = t * width;
+      
+      // Multiple harmonic components for complex structure
+      const wave1 = Math.sin(t * Math.PI * 2) * amplitude * 0.4; // Primary wave
+      const wave2 = Math.sin(t * Math.PI * 4 + fieldIndex) * amplitude * 0.2; // Secondary harmonics
+      const wave3 = Math.sin(t * Math.PI * 8 + fieldIndex * 2) * amplitude * 0.1; // Tertiary structure
+      
+      // Magnetic mirror-like structure (field lines closer at ends)
+      const mirrorEffect = Math.sin(t * Math.PI) * amplitude * 0.3;
+      
+      // Combine all wave components
+      const totalOffset = (wave1 + wave2 + wave3 + mirrorEffect) * direction;
+      const yPos = y + totalOffset;
+      
+      if (i === 0) {
+        path += ` L ${x} ${yPos}`;
+      } else {
+        // Create smooth curves between points
+        const prevT = (i - 1) / segments;
+        const prevX = prevT * width;
+        const controlDistance = (x - prevX) * 0.3;
+        
+        path += ` Q ${prevX + controlDistance} ${yPos} ${x} ${yPos}`;
+      }
+    }
     
-    return `M ${startX} ${y} C ${cp1X} ${cp1Y}, ${cp2X} ${cp2Y}, ${endX} ${y}`;
+    return path;
   }
   
   function createFieldLines() {
@@ -79,19 +100,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Line above the text
     const topLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     topLine.classList.add('header-field-line');
-    topLine.setAttribute('d', createFieldLinePath(centerY - 15, -1, 15));
+    topLine.setAttribute('d', createFieldLinePath(centerY - 15, -1, 15, 0));
     svg.appendChild(topLine);
     
     // Line below the text
     const bottomLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     bottomLine.classList.add('header-field-line');
-    bottomLine.setAttribute('d', createFieldLinePath(centerY + 15, 1, 15));
+    bottomLine.setAttribute('d', createFieldLinePath(centerY + 15, 1, 15, 1));
     svg.appendChild(bottomLine);
   }
   
-  // Add SVG to header
+  // Add SVG to body (not just header) for full-site coverage
   svgContainer.appendChild(svg);
-  header.appendChild(svgContainer);
+  document.body.appendChild(svgContainer);
   
   // Initialize
   createFieldLines();

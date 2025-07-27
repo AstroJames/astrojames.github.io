@@ -185,19 +185,30 @@ document.addEventListener('DOMContentLoaded', function() {
     return [topLine, bottomLine];
   }
   
-  // Calculate field line Y position at given X (now extends full width)
+  // Calculate field line Y position at given X (now matches complex field lines)
   function getFieldLineY(x, fieldLine) {
     const screenWidth = window.innerWidth;
-    const startX = 0;
-    const endX = screenWidth;
-    const midX = screenWidth * 0.5;
     
     // Normalize x to 0-1 range
     const t = x / screenWidth;
     
-    // For our simple curve, approximate with sine wave
-    const curveOffset = Math.sin(t * Math.PI) * fieldLine.amplitude * fieldLine.direction * 0.5;
-    return fieldLine.y + curveOffset;
+    // Match the complex field line calculation from header-field-lines.html
+    const amplitude = fieldLine.amplitude;
+    const direction = fieldLine.direction;
+    const fieldIndex = fieldLine === getMagneticFieldPaths()[0] ? 0 : 1;
+    
+    // Multiple harmonic components for complex structure
+    const wave1 = Math.sin(t * Math.PI * 2) * amplitude * 0.4; // Primary wave
+    const wave2 = Math.sin(t * Math.PI * 4 + fieldIndex) * amplitude * 0.2; // Secondary harmonics
+    const wave3 = Math.sin(t * Math.PI * 8 + fieldIndex * 2) * amplitude * 0.1; // Tertiary structure
+    
+    // Magnetic mirror-like structure (field lines closer at ends)
+    const mirrorEffect = Math.sin(t * Math.PI) * amplitude * 0.3;
+    
+    // Combine all wave components
+    const totalOffset = (wave1 + wave2 + wave3 + mirrorEffect) * direction;
+    
+    return fieldLine.y + totalOffset;
   }
   
   // Find closest field line to particle
