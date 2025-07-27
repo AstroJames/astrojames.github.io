@@ -322,24 +322,21 @@ footer .copyright {
   font-size: 1rem;
 }
 
-/* Helvetica Neue font family - use Inter as fallback */
-html {
-  font-family: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif !important;
+/* Nuclear option - force font on everything */
+* {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
-body {
-  font-family: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif !important;
-}
-
-/* Override theme fonts with very high specificity */
-.resume-biography-3,
-.resume-biography-3 *:not(i):not([class*="fa"]):not([class*="ai"]),
-.navbar, .navbar *:not(i):not([class*="fa"]):not([class*="ai"]),
-.main-content, .main-content *:not(i):not([class*="fa"]):not([class*="ai"]),
-.sidebar, .sidebar *:not(i):not([class*="fa"]):not([class*="ai"]),
+/* Specifically target common elements */
+html, body, 
 h1, h2, h3, h4, h5, h6,
-p, span, div, a, li, td, th {
-  font-family: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif !important;
+p, span, div, a, li, ul, ol, td, th,
+.navbar, .nav-link, .navbar-brand,
+.profile-name, .profile-role, .organization,
+.about-content, .research-questions-content,
+.education-degree, .education-institution, .education-location,
+.interest-tag, .sidebar-title {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
 /* Completely reset icon fonts */
