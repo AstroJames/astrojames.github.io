@@ -38,7 +38,7 @@
   border-radius: 50%;
   pointer-events: none;
   box-shadow: 0 0 4px rgba(255, 255, 0, 0.8);
-  animation: photon-fade 1s ease-out forwards;
+  animation: photon-fade 0.6s ease-out forwards;
 }
 
 @keyframes photon-fade {
@@ -243,7 +243,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Create photon emission when particle loses energy
   function emitPhoton(x, y, vx, vy, energyLoss) {
-    if (energyLoss < 0.01) return; // Only emit for significant energy loss
+    if (energyLoss < 0.01) return; // Original threshold for emission
+    if (Math.random() > 0.2) return; // Only 20% chance of emission
     
     const photon = document.createElement('div');
     photon.className = 'photon';
@@ -266,14 +267,14 @@ document.addEventListener('DOMContentLoaded', function() {
     particleContainer.appendChild(photon);
     photons.push(photon);
     
-    // Remove photon after animation
+    // Remove photon after shorter animation
     setTimeout(() => {
       if (photon.parentNode) {
         photon.parentNode.removeChild(photon);
       }
       const index = photons.indexOf(photon);
       if (index > -1) photons.splice(index, 1);
-    }, 1000);
+    }, 600); // Shorter lifetime to reduce active photons
   }
   
   // Update photon positions
@@ -366,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const energyAfter = particle.vx * particle.vx + particle.vy * particle.vy;
         const energyLoss = energyBefore - energyAfter;
         
-        if (energyLoss > 0.005) { // Threshold for photon emission
+        if (energyLoss > 0.02) { // Higher threshold for photon emission
           emitPhoton(particle.currentX, particle.currentY, particle.vx, particle.vy, energyLoss);
         }
         
