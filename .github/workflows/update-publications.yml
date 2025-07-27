@@ -10,6 +10,9 @@ on:
       - '.github/workflows/update-publications.yml'
       - 'scripts/fetch_publications.py'
 
+permissions:
+  contents: write
+
 jobs:
   update-publications:
     runs-on: ubuntu-latest
