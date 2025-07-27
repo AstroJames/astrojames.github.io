@@ -1,0 +1,135 @@
+{{/* Custom Projects List View */}}
+
+<div class="projects-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+  
+  <!-- Projects Header -->
+  <div class="projects-header" style="margin-bottom: 3rem; text-align: center;">
+    <h1 style="font-size: 2.5rem; font-weight: bold; color: inherit; margin-bottom: 1rem;">{{ .Title }}</h1>
+    {{ if .Params.subtitle }}
+      <p class="page-subtitle" style="font-size: 1.2rem; color: rgba(255,255,255,0.7);">{{ .Params.subtitle }}</p>
+    {{ end }}
+  </div>
+
+  <!-- Projects Description -->
+  {{ with .Content }}
+    <div style="margin-bottom: 3rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  <!-- Projects Grid -->
+  <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 2rem;">
+    
+    {{ range where site.RegularPages "Type" "projects" }}
+      {{ if ne .Title "_index" }}
+        <div class="project-card" style="
+          background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: 12px;
+          padding: 2rem;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+        " 
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.2)'; this.style.borderColor='rgba(77, 171, 247, 0.3)';"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255,255,255,0.1)';"
+        onclick="window.location.href='{{ .RelPermalink }}'">
+          
+          <!-- Project Title -->
+          <h3 style="
+            color: #4dabf7;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+          ">
+            <a href="{{ .RelPermalink }}" style="color: inherit; text-decoration: none;">{{ .Title }}</a>
+          </h3>
+          
+          <!-- Project Summary/Collaborator -->
+          {{ if .Params.summary }}
+            <p style="
+              color: rgba(255,255,255,0.6);
+              font-size: 0.9rem;
+              margin-bottom: 1rem;
+              font-style: italic;
+            ">{{ .Params.summary }}</p>
+          {{ end }}
+          
+          <!-- Project Date -->
+          {{ if .Date }}
+            <div style="
+              color: rgba(255,255,255,0.5);
+              font-size: 0.8rem;
+              margin-bottom: 1rem;
+            ">{{ .Date.Format "January 2006" }}</div>
+          {{ end }}
+          
+          <!-- Project Description (truncated) -->
+          <div style="
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+            font-size: 0.95rem;
+          ">
+            {{ $content := .Content | plainify | truncate 200 }}
+            {{ $content }}
+            {{ if gt (len (.Content | plainify)) 200 }}
+              <span style="color: #4dabf7; font-weight: 500;">... Read more</span>
+            {{ end }}
+          </div>
+          
+          <!-- Tags (if any) -->
+          {{ if .Params.tags }}
+            <div style="margin-top: 1.5rem;">
+              {{ range .Params.tags }}
+                <span style="
+                  background: rgba(77, 171, 247, 0.15);
+                  color: #4dabf7;
+                  padding: 4px 8px;
+                  border-radius: 16px;
+                  font-size: 0.75rem;
+                  margin-right: 0.5rem;
+                  display: inline-block;
+                ">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+          
+          <!-- Hover Arrow -->
+          <div style="
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            color: rgba(255,255,255,0.3);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+          " class="project-arrow">→</div>
+          
+        </div>
+      {{ end }}
+    {{ end }}
+    
+  </div>
+  
+</div>
+
+<!-- Project Card Hover Animation Styles -->
+<style>
+.project-card:hover .project-arrow {
+  color: #4dabf7 !important;
+  transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .project-card {
+    padding: 1.5rem !important;
+  }
+}
+</style>

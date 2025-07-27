@@ -1,5 +1,5 @@
 ---
-title: Student Projects
+title: Projects
 #cms_exclude: true
 
 # View.
