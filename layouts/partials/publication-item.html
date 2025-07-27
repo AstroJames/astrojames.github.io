@@ -34,9 +34,21 @@
   
   <!-- Stats and Links - compact -->
   <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; font-size: 0.8em;">
-    <!-- Citation count -->
+    <!-- Citation count with sparkline -->
     {{ if gt .citation_count 0 }}
-      <span style="color: rgba(255,255,255,0.8);">citations: {{ .citation_count }}</span>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="color: rgba(255,255,255,0.8);">citations: {{ .citation_count }}</span>
+        <!-- Citation sparkline placeholder -->
+        <canvas 
+          class="citation-sparkline" 
+          data-citations="{{ .citation_count }}"
+          data-year="{{ .year }}"
+          data-bibcode="{{ .bibcode }}"
+          width="60" 
+          height="20" 
+          style="opacity: 0.7;">
+        </canvas>
+      </div>
     {{ end }}
     
     <!-- Read count with note - commented out due to API caching issues -->

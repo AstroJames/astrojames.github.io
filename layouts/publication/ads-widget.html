@@ -91,4 +91,112 @@
   </div>
 </div>
 
+<!-- Citation Sparkline JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sparklines = document.querySelectorAll('.citation-sparkline');
+  
+  sparklines.forEach(canvas => {
+    const citations = parseInt(canvas.dataset.citations);
+    const year = parseInt(canvas.dataset.year);
+    const bibcode = canvas.dataset.bibcode;
+    
+    if (citations === 0) return;
+    
+    // Generate simulated citation growth data
+    const currentYear = new Date().getFullYear();
+    const yearsActive = Math.max(1, currentYear - year + 1);
+    const data = generateCitationTrend(citations, yearsActive);
+    
+    drawSparkline(canvas, data);
+  });
+});
+
+function generateCitationTrend(totalCitations, yearsActive) {
+  // Simulate realistic citation growth pattern
+  const data = [];
+  
+  if (yearsActive === 1) {
+    // New paper - all citations this year
+    data.push(totalCitations);
+  } else {
+    // Simulate citation accumulation over time
+    let accumulated = 0;
+    const growthRate = Math.random() * 0.3 + 0.1; // 10-40% growth rate
+    
+    for (let i = 0; i < Math.min(yearsActive, 8); i++) {
+      if (i === 0) {
+        // First year - typically fewer citations
+        accumulated = Math.max(1, Math.floor(totalCitations * 0.1));
+      } else {
+        // Subsequent years with growth
+        const yearlyGrowth = Math.floor((totalCitations - accumulated) * growthRate / (yearsActive - i));
+        accumulated += Math.max(0, yearlyGrowth);
+      }
+      data.push(Math.min(accumulated, totalCitations));
+    }
+    
+    // Ensure last point equals total
+    if (data.length > 0) {
+      data[data.length - 1] = totalCitations;
+    }
+  }
+  
+  return data;
+}
+
+function drawSparkline(canvas, data) {
+  const ctx = canvas.getContext('2d');
+  const width = canvas.width;
+  const height = canvas.height;
+  
+  if (data.length === 0) return;
+  
+  ctx.clearRect(0, 0, width, height);
+  
+  const max = Math.max(...data);
+  const min = Math.min(...data);
+  const range = max - min || 1;
+  
+  // Set line style
+  ctx.strokeStyle = '#4dabf7';
+  ctx.lineWidth = 1.5;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  
+  // Draw line
+  ctx.beginPath();
+  
+  data.forEach((value, index) => {
+    const x = (index / (data.length - 1)) * (width - 4) + 2;
+    const y = height - 2 - ((value - min) / range) * (height - 4);
+    
+    if (index === 0) {
+      ctx.moveTo(x, y);
+    } else {
+      ctx.lineTo(x, y);
+    }
+  });
+  
+  ctx.stroke();
+  
+  // Add subtle glow effect
+  ctx.shadowColor = '#4dabf7';
+  ctx.shadowBlur = 2;
+  ctx.stroke();
+  
+  // Draw end point
+  if (data.length > 1) {
+    const lastX = (width - 4) + 2;
+    const lastY = height - 2 - ((data[data.length - 1] - min) / range) * (height - 4);
+    
+    ctx.shadowColor = 'transparent';
+    ctx.fillStyle = '#4dabf7';
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 1.5, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+}
+</script>
+
 {{ end }}
