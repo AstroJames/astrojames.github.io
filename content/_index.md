@@ -114,6 +114,18 @@ sections:
             <span class="collaborator-affiliation">(ANU)</span>
           </div>
           <div class="collaborator-item">
+            <a href="https://en.wikipedia.org/wiki/Isabelle_Connor">Isabelle Connor</a>
+            <span class="collaborator-affiliation">(UC Santa Cruz)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://www.astro.ucsc.edu/faculty/index.php?uid=raruiz">Enrico Ramirez‑Ruiz</a>
+            <span class="collaborator-affiliation">(UC Santa Cruz)</span>
+          </div>
+          <div class="collaborator-item">
+            <a href="https://www.researchgate.net/profile/Stefano-Merlini">Stefano Merlini</a>
+            <span class="collaborator-affiliation">(Imperial College)</span>
+          </div>
+          <div class="collaborator-item">
             <a href="https://www.astro.ucsc.edu/about/staff-directory-page.php?uid=akolborg">Anne Noer Kolborg</a>
             <span class="collaborator-affiliation">(UC Santa Cruz)</span>
           </div>
