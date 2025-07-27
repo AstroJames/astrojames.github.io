@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Calculate wave distortion
         const distanceFromWave = Math.abs(x - this.wavePosition);
-        const waveInfluence = Math.max(0, 1 - (distanceFromWave / 200));
-        const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.05);
+        const waveInfluence = Math.max(0, 1 - (distanceFromWave / 50));
+        const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.2);
         
         return baseY + waveAmplitude * direction;
       }
@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Calculate wave distortion based on distance from wave position
       const distanceFromWave = Math.abs(x - wavePosition);
-      const waveInfluence = Math.max(0, 1 - (distanceFromWave / 200)); // 200px wave width
-      const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.05); // Much smaller wave
+      const waveInfluence = Math.max(0, 1 - (distanceFromWave / 50)); // 50px wave width - much more localized
+      const waveAmplitude = waveInfluence * 3 * Math.sin(distanceFromWave * 0.2); // Higher frequency for tighter wave packet
       
       const waveY = y + waveAmplitude * direction;
       
