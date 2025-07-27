@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const particleContainer = document.getElementById('particle-container');
   const header = document.querySelector('header') || document.querySelector('.navbar');
   const particles = [];
-  const numParticles = 25;
+  const numParticles = 50;
   
   // Create particles
   for (let i = 0; i < numParticles; i++) {
@@ -53,9 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const particle = document.createElement('div');
     particle.className = 'particle';
     
-    // Random position in header area
+    // Get actual header height
+    const headerHeight = header ? header.offsetHeight : 80;
+    
+    // Random position within header bounds
     const x = Math.random() * window.innerWidth;
-    const y = Math.random() * 150; // Roughly header height area
+    const y = Math.random() * headerHeight;
     
     particle.style.left = x + 'px';
     particle.style.top = y + 'px';
@@ -146,9 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
       particle.currentX += particle.vx;
       particle.currentY += particle.vy;
       
-      // Boundary constraints
+      // Boundary constraints - keep within header
+      const headerHeight = header ? header.offsetHeight : 80;
       particle.currentX = Math.max(0, Math.min(window.innerWidth, particle.currentX));
-      particle.currentY = Math.max(0, Math.min(200, particle.currentY));
+      particle.currentY = Math.max(0, Math.min(headerHeight, particle.currentY));
       
       // Apply position
       particle.style.left = particle.currentX + 'px';
@@ -163,9 +167,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Handle window resize
   window.addEventListener('resize', function() {
+    const headerHeight = header ? header.offsetHeight : 80;
     particles.forEach((particle, index) => {
       particle.originalX = Math.random() * window.innerWidth;
+      particle.originalY = Math.random() * headerHeight;
       particle.currentX = particle.originalX;
+      particle.currentY = particle.originalY;
     });
   });
 });
