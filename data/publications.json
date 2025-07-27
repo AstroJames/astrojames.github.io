@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-07-27T20:15:16.857678+00:00",
-  "total_publications": 27,
+  "last_updated": "2025-07-27T20:23:01.740073+00:00",
+  "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
     {
@@ -545,6 +545,27 @@
       "arxiv_class": []
     },
     {
+      "title": "Cosmic ray and plasma coupling for isothermal supersonic turbulence in the magnetized interstellar medium",
+      "authors": "Sampson, Matt L.; Beattie, James R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoît; Dubois, Yohan; Rosdahl, Joakim",
+      "authors_highlighted": "Sampson, Matt L.; <strong>Beattie, James</strong> R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoît; Dubois, Yohan; Rosdahl, Joakim",
+      "authorship_position": "second",
+      "beattie_position": 2,
+      "journal": "arXiv e-prints",
+      "year": "2025",
+      "pubdate": "2025-06-00",
+      "abstract": "Cosmic rays (CRs) are an integral part of the non-thermal pressure budget in the interstellar medium (ISM) and are the leading-order ionization mechanism in cold molecular clouds. We study the impacts that different microphysical CR diffusion coefficients and streaming speeds have on the evolution of isothermal, magnetized, turbulent plasmas, relevant to the cold ISM. We utilized a two-moment CR magnetohydrodynamic (CRMHD) model, allowing us to dynamically evolve both CR energy and flux densities with contributions from Alfvénic streaming and anisotropic diffusion. We identify $\\textit{coupled}$ and $\\textit{decoupled}$ regimes, and define dimensionless Prandtl numbers $\\rm{Pm_c}$ and $\\rm{Pm_s}$, which quantify whether the plasma falls within these two regimes. In the coupled regime -- characteristic of slow streaming ($\\rm{Pm_s} &lt; 1$) and low diffusion ($\\rm{Pm_c} &lt; 1$) -- the CR fluid imprints upon the plasma a mixed equation of state between $P_{\\rm{c}} \\propto ρ^{4/3}$ (relativistic fluid) and $P_{\\rm{c}} \\propto ρ^{2/3}$ (streaming), where $P_{\\rm{c}}$ is the CR pressure, and $ρ$ is the plasma density. By modifying the sound speed, the coupling reduces the turbulent Mach number, and hence the amplitude of the density fluctuations, whilst supporting secular heating of the CR fluid. In contrast, in the decoupled regime ($\\rm{Pm_s} &gt; 1$ or $\\rm{Pm_c} &gt; 1$) the CR fluid and the plasma have negligible interactions. We further show that CR heating is enabled by coherent structures within the compressible velocity field, with no impact on the turbulence spectrum of incompressible modes.",
+      "bibcode": "2025arXiv250603768S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
+      "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
+      "citation_count": 0,
+      "read_count": 447,
+      "is_refereed": false,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.HE"
+      ]
+    },
+    {
       "title": "Scale-dependent alignment in compressible magnetohydrodynamic turbulence",
       "authors": "Beattie, James R.; Bhattacharjee, Amitava",
       "authors_highlighted": "<strong>Beattie, James</strong> R.; Bhattacharjee, Amitava",
@@ -565,6 +586,47 @@
         "astro-ph.GA",
         "nlin.CD",
         "physics.flu-dyn"
+      ]
+    },
+    {
+      "title": "Comparison of magnetic diffusion and reconnection in ideal and resistive relativistic magnetohydrodynamics, ideal magnetodynamics and resistive force-free electrodynamics",
+      "authors": "Grehan, Michael P.; Ghosal, Tanisha; Beattie, James R.; Ripperda, Bart; Porth, Oliver; Bacchini, Fabio",
+      "authors_highlighted": "Grehan, Michael P.; Ghosal, Tanisha; <strong>Beattie, James</strong> R.; Ripperda, Bart; Porth, Oliver; Bacchini, Fabio",
+      "authorship_position": "other",
+      "beattie_position": 3,
+      "journal": "arXiv e-prints",
+      "year": "2025",
+      "pubdate": "2025-03-00",
+      "abstract": "High-energy astrophysical systems and compact objects are frequently modeled using ideal relativistic magnetohydrodynamic (MHD) or force-free electrodynamic (FFE) simulations, with the underlying assumption that the discretisation from the numerical scheme introduces an effective (numerical) magnetic resistivity that adequately resembles an explicit resistivity. However, it is crucial to note that numerical resistivity can fail to replicate essential features of explicit resistivity. In this study, we compare the 1D resistive decay and 2D reconnection properties of four commonly used physical models. We demonstrate that the 1D Ohmic decay of current sheets via numerical dissipation in both ideal MHD and magnetodynamics (MD) is subdiffusive (i.e., sub-linear in time), whereas explicit resistive FFE and resistive MHD simulations match the predictions of resistive theory adequately. For low-resolution, reconnecting current sheets in 2D, we show that ideal MHD and MD have an analogue to the Sweet--Parker regime where the scaling of the reconnection rate depends directly on the resolution. At high resolutions, ideal MHD and MD have an asymptotic reconnection rate similar to resistive MHD. Furthermore, we find that guide field-balanced current sheets in ideal MHD and MD have a qualitative structure similar to that of one in resistive MHD. Similarly, a pressure-balanced current sheet in ideal MHD is found to have a qualitative structure similar to that of one in resistive MHD. For a guide field-balanced sheet, resistive FFE is found to have a nearly identical Sweet--Parker regime compared to resistive MHD and a similar asymptotic reconnection rate for large enough Lundquist numbers, but differs in the timescale for reconnection onset in the asymptotic regime. We discuss the implications of our findings for global simulations.",
+      "bibcode": "2025arXiv250320013G",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250320013G/abstract",
+      "doi_url": "https://doi.org/10.48550/arXiv.2503.20013",
+      "citation_count": 1,
+      "read_count": 233,
+      "is_refereed": false,
+      "arxiv_class": [
+        "astro-ph.HE"
+      ]
+    },
+    {
+      "title": "So long Kolmogorov: the forward and backward turbulence cascades in a supernovae-driven, multiphase interstellar medium",
+      "authors": "Beattie, James R.; Noer Kolborg, Anne; Ramirez-Ruiz, Enrico; Federrath, Christoph",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Noer Kolborg, Anne; Ramirez-Ruiz, Enrico; Federrath, Christoph",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "arXiv e-prints",
+      "year": "2025",
+      "pubdate": "2025-01-00",
+      "abstract": "The interstellar medium (ISM) of disk galaxies is turbulent, and yet the fundamental nature of ISM turbulence, the energy cascade, is not understood in detail. In this study, we use high-resolution simulations of a hydrodynamical, gravitationally stratified, supernova (SNe)-driven, multiphase ISM to probe the nature of a galactic turbulence cascade. Through the use of kinetic energy flux transfer functions split into interactions between compressible $\\mathbf{u}_c$ and incompressible $\\mathbf{u}_s$ modes, we show that there exists a large-to-small-scale cascade in both $\\mathbf{u}_c$ and $\\mathbf{u}_s$ when mediated by an additional $\\mathbf{u}_s$ mode. But the $\\mathbf{u}_s$ cascade is highly non-local. Moreover, there is a $\\mathbf{u}_c$ mediated component of the $\\mathbf{u}_s$ cascade that proceeds in the opposite direction -- an inverse cascade from small-to-large scales. The cascade feeds flux into scales well beyond the scale height, energizing the winds and fueling the direct cascades. Both the strongly non-local and the inverse $\\mathbf{u}_s$ cascades happen on scales that have a power law $\\mathbf{u}_s$ energy spectrum, highlighting how degenerate the spectrum is to the true underlying physical processes. We directly show that the inverse cascade comes from $\\mathbf{u}_s$ modes interacting with expanding SNe remnants (SNRs) and that $\\mathbf{u}_s$ modes are generated to leading order via baroclinic, highly corrugated cooling layers between warm $(T\\lesssim 10^4\\,\\rm{K})$ and hot $(T\\gg10^4\\,\\rm{K})$ gas in these SNRs. Finally, we outline a complete phenomenology for SNe-driven turbulence in a galactic disk, estimate a $10^{-16}\\,\\rm{G}$ Biermann field generated from SNR cooling layers, and highlight the strong deviations that SNe-driven turbulence has from the conventional Kolmogorov model.",
+      "bibcode": "2025arXiv250109855B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250109855B/abstract",
+      "doi_url": "https://doi.org/10.48550/arXiv.2501.09855",
+      "citation_count": 4,
+      "read_count": 207,
+      "is_refereed": false,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.HE"
       ]
     }
   ]
