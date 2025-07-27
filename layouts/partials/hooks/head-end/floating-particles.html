@@ -30,6 +30,30 @@
   animation: twinkle-red 1.5s ease-in-out infinite;
 }
 
+.photon {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 0, 0.9);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 4px rgba(255, 255, 0, 0.8);
+  animation: photon-fade 1s ease-out forwards;
+}
+
+@keyframes photon-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(255, 255, 0, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+    box-shadow: 0 0 2px rgba(255, 255, 0, 0.3);
+  }
+}
+
 @keyframes twinkle {
   0%, 100% { 
     opacity: 0.3;
@@ -70,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const particleContainer = document.getElementById('particle-container');
   const header = document.querySelector('header') || document.querySelector('.navbar');
   const particles = [];
+  const photons = [];
   const numParticles = 75;
   
   // Create particles
@@ -216,6 +241,54 @@ document.addEventListener('DOMContentLoaded', function() {
     return { line: closest, distance: minDistance };
   }
   
+  // Create photon emission when particle loses energy
+  function emitPhoton(x, y, vx, vy, energyLoss) {
+    if (energyLoss < 0.01) return; // Only emit for significant energy loss
+    
+    const photon = document.createElement('div');
+    photon.className = 'photon';
+    
+    // Position photon at particle location
+    photon.style.left = x + 'px';
+    photon.style.top = y + 'px';
+    
+    // Store photon properties
+    photon.currentX = x;
+    photon.currentY = y;
+    
+    // Photon velocity proportional to energy loss (like synchrotron radiation)
+    const photonSpeed = energyLoss * 50; // Scale factor for visibility
+    const angle = Math.atan2(vy, vx) + (Math.random() - 0.5) * 0.5; // Slight random deviation
+    
+    photon.vx = Math.cos(angle) * photonSpeed;
+    photon.vy = Math.sin(angle) * photonSpeed;
+    
+    particleContainer.appendChild(photon);
+    photons.push(photon);
+    
+    // Remove photon after animation
+    setTimeout(() => {
+      if (photon.parentNode) {
+        photon.parentNode.removeChild(photon);
+      }
+      const index = photons.indexOf(photon);
+      if (index > -1) photons.splice(index, 1);
+    }, 1000);
+  }
+  
+  // Update photon positions
+  function updatePhotons() {
+    photons.forEach(photon => {
+      photon.currentX += photon.vx;
+      photon.currentY += photon.vy;
+      
+      photon.style.left = photon.currentX + 'px';
+      photon.style.top = photon.currentY + 'px';
+      
+      // Photons travel at constant speed (no damping)
+    });
+  }
+  
   // Calculate repulsive forces between particles (Coulomb-like)
   function applyParticleRepulsion() {
     for (let i = 0; i < particles.length; i++) {
@@ -246,6 +319,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function animateParticles() {
     // Apply particle-particle repulsion first
     applyParticleRepulsion();
+    
+    // Update photons
+    updatePhotons();
     
     particles.forEach(particle => {
       if (isMouseInHeader) {
@@ -279,9 +355,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetY = fieldLineY + Math.sin(particle.gyrationAngle) * gyrationRadius;
         particle.vy += (targetY - particle.currentY) * 0.05;
         
+        // Calculate energy before damping
+        const energyBefore = particle.vx * particle.vx + particle.vy * particle.vy;
+        
         // Stronger damping when tracking cursor
         particle.vx *= 0.85; // Increased damping from 0.92
         particle.vy *= 0.85;
+        
+        // Calculate energy loss and emit photons (synchrotron radiation)
+        const energyAfter = particle.vx * particle.vx + particle.vy * particle.vy;
+        const energyLoss = energyBefore - energyAfter;
+        
+        if (energyLoss > 0.005) { // Threshold for photon emission
+          emitPhoton(particle.currentX, particle.currentY, particle.vx, particle.vy, energyLoss);
+        }
         
       } else {
         // Normal gyration around field lines
