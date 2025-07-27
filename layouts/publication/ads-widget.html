@@ -1,8 +1,8 @@
 {{ define "main" }}
 <div class="page-header">
-  <div class="container">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
     {{ if .Title }}
-    <h1 class="page-title">{{ .Title }}</h1>
+    <h1 style="font-size: 2.5rem; font-weight: bold; color: inherit; margin-bottom: 1rem;">{{ .Title }}</h1>
     {{ end }}
     {{ if .Params.subtitle }}
     <p class="page-subtitle">{{ .Params.subtitle }}</p>
@@ -18,14 +18,13 @@
     <div style="margin-top: 2rem;">
       {{ with .Site.Data.publications }}
         <div style="margin-bottom: 2rem;">
-          <h2 style="color: #007acc; margin-bottom: 0.5rem;">Publications</h2>
           <p style="color: rgba(255,255,255,0.7); font-size: 0.9em;">
             {{ .total_publications }} publications • Last updated: {{ dateFormat "January 2, 2006" (time .last_updated) }} • 
             <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A{{ .orcid }}&sort=date%20desc" target="_blank" style="color: #4dabf7; text-decoration: none;">View on NASA-ADS</a>
           </p>
         </div>
         
-        <!-- Organize publications by authorship -->
+        <!-- Organize publications by authorship and sort by year (newest first) -->
         {{ $firstAuthor := slice }}
         {{ $secondAuthor := slice }}
         {{ $otherAuthor := slice }}
@@ -39,6 +38,11 @@
             {{ $otherAuthor = $otherAuthor | append . }}
           {{ end }}
         {{ end }}
+        
+        <!-- Sort each category by year (descending) -->
+        {{ $firstAuthor = sort $firstAuthor "year" "desc" }}
+        {{ $secondAuthor = sort $secondAuthor "year" "desc" }}
+        {{ $otherAuthor = sort $otherAuthor "year" "desc" }}
         
         <!-- First Author Publications -->
         {{ if $firstAuthor }}

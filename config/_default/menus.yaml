@@ -19,10 +19,10 @@ main:
   # - name: CV
   #   url: experience/
     # weight: 20
-  - name: Papers
+  - name: Publications
     url: publication/
     weight: 15
-  - name: Student Projects
+  - name: Projects
     url: projects/
     weight: 30
   - name: Notes
