@@ -17,35 +17,6 @@
   fill: none;
 }
 
-/* Pulse effect for field lines */
-.field-pulse {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 30%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-}
-
-@keyframes pulse-move {
-  0% {
-    opacity: 0;
-    transform: translateX(0) scale(0.5);
-  }
-  10% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-  90% {
-    opacity: 1;
-    transform: translateX(var(--pulse-distance)) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(var(--pulse-distance)) scale(0.5);
-  }
-}
 
 @keyframes field-flow {
   0% {
@@ -169,43 +140,92 @@ document.addEventListener('DOMContentLoaded', function() {
   const headerButtons = header.querySelectorAll('.nav-link, .navbar-nav a, .btn, button');
   const nameElement = document.querySelector('.navbar-brand') || document.querySelector('header h1') || document.querySelector('.site-title');
   
-  // Function to create and animate pulse
-  function createPulse(startX, startY, fieldLineY) {
-    const pulse = document.createElement('div');
-    pulse.className = 'field-pulse';
-    pulse.style.left = startX + 'px';
-    pulse.style.top = fieldLineY + 'px';
+  // Wave distortion animation variables
+  let waveAnimationId = null;
+  let waveStartTime = null;
+  
+  // Function to create wave-distorted field line path
+  function createWaveFieldLinePath(y, direction = 1, amplitude = 20, fieldIndex = 0, wavePosition = 0) {
+    const width = window.innerWidth;
+    const segments = 50;
+    const segmentWidth = width / segments;
+    let path = `M 0 ${y}`;
     
-    // Calculate distance to travel
-    const distance = window.innerWidth - startX;
-    pulse.style.setProperty('--pulse-distance', distance + 'px');
+    for (let i = 1; i <= segments; i++) {
+      const x = i * segmentWidth;
+      
+      // Calculate wave distortion based on distance from wave position
+      const distanceFromWave = Math.abs(x - wavePosition);
+      const waveInfluence = Math.max(0, 1 - (distanceFromWave / 200)); // 200px wave width
+      const waveAmplitude = waveInfluence * 15 * Math.sin(distanceFromWave * 0.05); // Wave shape
+      
+      const waveY = y + waveAmplitude * direction;
+      
+      if (i === 1) {
+        path += ` Q ${x/2} ${waveY} ${x} ${waveY}`;
+      } else {
+        path += ` T ${x} ${waveY}`;
+      }
+    }
     
-    // Add animation
-    pulse.style.animation = 'pulse-move 2s ease-out forwards';
-    
-    svgContainer.appendChild(pulse);
-    
-    // Remove pulse after animation
-    setTimeout(() => {
-      pulse.remove();
-    }, 2000);
+    return path;
   }
   
-  // Add hover listener to name element for pulse effect
+  // Animate wave distortion
+  function animateWave(nameX) {
+    waveStartTime = Date.now();
+    
+    function updateWave() {
+      const elapsed = Date.now() - waveStartTime;
+      const waveSpeed = 0.5; // pixels per millisecond
+      const wavePosition = nameX + (elapsed * waveSpeed);
+      
+      // Stop animation when wave reaches edge
+      if (wavePosition > window.innerWidth + 200) {
+        waveAnimationId = null;
+        createFieldLines(false, 0, 0); // Return to normal
+        return;
+      }
+      
+      // Clear and recreate field lines with wave distortion
+      svg.innerHTML = '';
+      
+      const headerHeight = header.offsetHeight;
+      const centerY = headerHeight / 2;
+      
+      // Top line with wave
+      const topLineY = (0 + (centerY - 15)) / 2;
+      const topLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      topLine.classList.add('header-field-line');
+      topLine.setAttribute('d', createWaveFieldLinePath(topLineY, -1, 15, 0, wavePosition));
+      svg.appendChild(topLine);
+      
+      // Bottom line with wave
+      const bottomLineY = ((centerY + 15) + headerHeight) / 2;
+      const bottomLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      bottomLine.classList.add('header-field-line');
+      bottomLine.setAttribute('d', createWaveFieldLinePath(bottomLineY, 1, 15, 1, wavePosition));
+      svg.appendChild(bottomLine);
+      
+      waveAnimationId = requestAnimationFrame(updateWave);
+    }
+    
+    updateWave();
+  }
+  
+  // Add hover listener to name element for wave effect
   if (nameElement) {
     nameElement.addEventListener('mouseenter', function() {
       const rect = nameElement.getBoundingClientRect();
       const nameX = rect.left + rect.width / 2;
       
-      // Get field line Y positions
-      const headerHeight = header.offsetHeight;
-      const centerY = headerHeight / 2;
-      const topLineY = (0 + (centerY - 15)) / 2;
-      const bottomLineY = ((centerY + 15) + headerHeight) / 2;
+      // Cancel any existing wave animation
+      if (waveAnimationId) {
+        cancelAnimationFrame(waveAnimationId);
+      }
       
-      // Create pulses on both field lines
-      createPulse(nameX, 0, topLineY);
-      createPulse(nameX, 0, bottomLineY);
+      // Start wave animation
+      animateWave(nameX);
     });
   }
   
