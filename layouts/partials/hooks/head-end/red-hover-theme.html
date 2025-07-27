@@ -26,7 +26,7 @@ nav .nav-link.active {
   border-bottom: none !important;
 }
 
-/* Hugo Blox navigation underline animations */
+/* Hugo Blox navigation - remove underline animations */
 .navbar-nav .nav-link {
   position: relative;
   border-bottom: none !important;
@@ -34,20 +34,12 @@ nav .nav-link.active {
 
 .navbar-nav .nav-link:after,
 .navbar-nav .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #ff0000 !important; /* Red instead of gradient */
-  transition: width 0.3s ease;
+  display: none !important; /* Remove underline animations */
 }
 
 .navbar-nav .nav-link:hover:after,
 .navbar-nav .nav-link:hover::after {
-  width: 100%;
-  background: #ff0000 !important; /* Red instead of gradient */
+  display: none !important; /* Remove underline animations */
 }
 
 /* Remove any gradient backgrounds */
@@ -285,18 +277,16 @@ a:hover,
   color: #ff0000 !important;
 }
 
-/* Ensure header underline is red and animated */
+/* Ensure header underlines are completely removed */
 .navbar-light .navbar-nav .nav-link:hover::after,
 .navbar-dark .navbar-nav .nav-link:hover::after {
-  background-color: #ff0000 !important;
-  background-image: none !important; /* Remove any gradient */
+  display: none !important;
 }
 
 /* Additional specificity for Hugo Blox themes */
 .hb-navbar .navbar-nav .nav-link::after,
 header .navbar .navbar-nav .nav-link::after {
-  background: #ff0000 !important;
-  background-image: none !important;
+  display: none !important;
 }
 
 /* Remove default underlines and borders */
