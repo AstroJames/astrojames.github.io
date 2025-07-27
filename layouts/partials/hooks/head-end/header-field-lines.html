@@ -135,40 +135,33 @@ document.addEventListener('DOMContentLoaded', function() {
   svgContainer.appendChild(svg);
   document.body.appendChild(svgContainer);
   
-  // Get name element for hover detection
-  const nameElement = document.querySelector('.navbar-brand') || document.querySelector('header h1') || document.querySelector('.site-title');
+  // Get all header buttons/links for hover detection
+  const headerButtons = header.querySelectorAll('.nav-link, .navbar-nav a, .btn, button');
   
-  if (nameElement) {
-    // Add hover listeners to name element
-    nameElement.addEventListener('mouseenter', function() {
-      isNameHovered = true;
+  // Add hover listeners to header buttons for field line distortion
+  headerButtons.forEach(button => {
+    button.addEventListener('mouseenter', function() {
+      const rect = button.getBoundingClientRect();
+      const buttonCenterX = rect.left + rect.width / 2;
+      const buttonCenterY = rect.top + rect.height / 2;
       
-      // Get name position relative to viewport
-      const rect = nameElement.getBoundingClientRect();
-      namePosition.x = rect.left + rect.width / 2;
-      namePosition.y = rect.top + rect.height / 2;
-      
-      // Update global state for particles
+      // Distortion when hovering buttons
       window.magneticFieldState.isDistorted = true;
-      window.magneticFieldState.nameX = namePosition.x;
-      window.magneticFieldState.nameY = namePosition.y;
+      window.magneticFieldState.nameX = buttonCenterX;
+      window.magneticFieldState.nameY = buttonCenterY;
       
-      // Update field lines with distortion
-      createFieldLines(true, namePosition.x, namePosition.y);
+      createFieldLines(true, buttonCenterX, buttonCenterY);
     });
     
-    nameElement.addEventListener('mouseleave', function() {
-      isNameHovered = false;
-      
-      // Update global state for particles
+    button.addEventListener('mouseleave', function() {
+      // Return to straight field lines when leaving button
       window.magneticFieldState.isDistorted = false;
       window.magneticFieldState.nameX = 0;
       window.magneticFieldState.nameY = 0;
       
-      // Return to straight field lines
       createFieldLines(false, 0, 0);
     });
-  }
+  });
   
   // Initialize
   createFieldLines();
