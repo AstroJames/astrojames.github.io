@@ -41,12 +41,10 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© {year} James R. Beattie. This work is licensed under {license}'
+    notice: '© {year} James R. Beattie.'
     license:
-      enable: true
-      allow_derivatives: false
-      share_alike: true
-      allow_commercial: false
+      enable: false
+  block: minimal
 
 # Localization
 locale:

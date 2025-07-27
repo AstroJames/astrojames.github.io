@@ -300,3 +300,11 @@ header,
   background-color: #000000 !important;
   background: #000000 !important;
 }
+
+/* Hide Hugo Blox attribution */
+.powered-by,
+[class*="powered"],
+[class*="hugo-blox"],
+.footer-powered-by {
+  display: none !important;
+}
