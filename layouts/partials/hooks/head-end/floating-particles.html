@@ -1,0 +1,172 @@
+{{/* Floating Particles Around Header */}}
+<style>
+#particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.particle.magnetic {
+  background: rgba(255, 0, 0, 0.9);
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+  transform: scale(1.2);
+}
+
+/* Make sure header has proper z-index */
+header, .navbar {
+  position: relative;
+  z-index: 1000;
+}
+</style>
+
+<div id="particle-container"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const particleContainer = document.getElementById('particle-container');
+  const header = document.querySelector('header') || document.querySelector('.navbar');
+  const particles = [];
+  const numParticles = 25;
+  
+  // Create particles
+  for (let i = 0; i < numParticles; i++) {
+    createParticle();
+  }
+  
+  function createParticle() {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    // Random position in header area
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * 150; // Roughly header height area
+    
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    
+    // Store original position and current velocity
+    particle.originalX = x;
+    particle.originalY = y;
+    particle.currentX = x;
+    particle.currentY = y;
+    particle.vx = (Math.random() - 0.5) * 0.5;
+    particle.vy = (Math.random() - 0.5) * 0.5;
+    
+    particleContainer.appendChild(particle);
+    particles.push(particle);
+  }
+  
+  let mouseX = 0;
+  let mouseY = 0;
+  let isMouseInHeader = false;
+  
+  // Mouse tracking
+  document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  // Header mouse events
+  if (header) {
+    header.addEventListener('mouseenter', function() {
+      isMouseInHeader = true;
+      particles.forEach(particle => {
+        particle.classList.add('magnetic');
+      });
+    });
+    
+    header.addEventListener('mouseleave', function() {
+      isMouseInHeader = false;
+      particles.forEach(particle => {
+        particle.classList.remove('magnetic');
+      });
+    });
+  }
+  
+  // Animation loop
+  function animateParticles() {
+    particles.forEach(particle => {
+      if (isMouseInHeader) {
+        // Converge toward mouse
+        const dx = mouseX - particle.currentX;
+        const dy = mouseY - particle.currentY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance > 5) {
+          // Apply magnetic force
+          const force = 0.02;
+          particle.vx += dx * force;
+          particle.vy += dy * force;
+          
+          // Damping
+          particle.vx *= 0.95;
+          particle.vy *= 0.95;
+        } else {
+          // Orbit around mouse when very close
+          const angle = Math.atan2(dy, dx) + 0.1;
+          const radius = 20;
+          particle.currentX = mouseX + Math.cos(angle) * radius;
+          particle.currentY = mouseY + Math.sin(angle) * radius;
+        }
+      } else {
+        // Return to floating behavior
+        const dx = particle.originalX - particle.currentX;
+        const dy = particle.originalY - particle.currentY;
+        
+        // Apply gentle force back to original position
+        particle.vx += dx * 0.001;
+        particle.vy += dy * 0.001;
+        
+        // Add random floating motion
+        particle.vx += (Math.random() - 0.5) * 0.02;
+        particle.vy += (Math.random() - 0.5) * 0.02;
+        
+        // Damping
+        particle.vx *= 0.98;
+        particle.vy *= 0.98;
+      }
+      
+      // Update position
+      particle.currentX += particle.vx;
+      particle.currentY += particle.vy;
+      
+      // Boundary constraints
+      particle.currentX = Math.max(0, Math.min(window.innerWidth, particle.currentX));
+      particle.currentY = Math.max(0, Math.min(200, particle.currentY));
+      
+      // Apply position
+      particle.style.left = particle.currentX + 'px';
+      particle.style.top = particle.currentY + 'px';
+    });
+    
+    requestAnimationFrame(animateParticles);
+  }
+  
+  // Start animation
+  animateParticles();
+  
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    particles.forEach((particle, index) => {
+      particle.originalX = Math.random() * window.innerWidth;
+      particle.currentX = particle.originalX;
+    });
+  });
+});
+</script>
