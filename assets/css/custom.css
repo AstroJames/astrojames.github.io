@@ -301,28 +301,9 @@ header,
   background: #000000 !important;
 }
 
-/* Hide Hugo Blox attribution only - very specific targeting */
-footer a[href*="blox"]:not(.copyright),
-footer a[href*="hugoblox"]:not(.copyright),
-footer .powered-by,
-.footer-powered-by,
-footer p:has(a[href*="blox"]) {
+/* Only hide specific Hugo Blox text, not the whole footer */
+footer a[href*="hugoblox.com"] {
   display: none !important;
-}
-
-/* Ensure footer and copyright are always visible */
-footer {
-  display: block !important;
-  visibility: visible !important;
-}
-
-footer .copyright,
-footer .copyright *,
-.copyright,
-.site-footer .copyright {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 /* Helvetica Neue font family - with higher specificity */
@@ -342,18 +323,22 @@ p, span, div, a, li, td, th,
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-/* Restore icon fonts */
-i, .fa, .fab, .fas, .far, .ai, .academicons,
-[class*="fa-"], [class*="ai-"],
-.social-link i, .social-link .x-icon {
+/* Exclude icon fonts from Helvetica override */
+i[class*="fa"], i[class*="ai"], 
+.fa, .fab, .fas, .far, .fal, .fad,
+.ai, .academicons,
+[class^="ai-"], [class*=" ai-"],
+[class^="fa-"], [class*=" fa-"] {
   font-family: inherit !important;
 }
 
-/* Specific icon font families */
-.fa, .fas, .far, .fab {
-  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+/* Ensure academic icons use proper font */
+.ai, [class^="ai-"], [class*=" ai-"] {
+  font-family: "Academicons" !important;
 }
 
-.ai, .academicons, [class*="ai-"] {
-  font-family: "Academicons" !important;
+/* Ensure Font Awesome icons use proper font */
+.fa, .fas, .far, .fab, .fal, .fad,
+[class^="fa-"], [class*=" fa-"] {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
 }
