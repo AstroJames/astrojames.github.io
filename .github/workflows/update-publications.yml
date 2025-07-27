@@ -1,0 +1,45 @@
+name: Update Publications from ADS
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual triggering
+  push:
+    paths:
+      - '.github/workflows/update-publications.yml'
+      - 'scripts/fetch_publications.py'
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests pyyaml
+        
+    - name: Fetch publications from ADS
+      env:
+        ADS_TOKEN: ${{ secrets.ADS_TOKEN }}
+        ORCID: "0000-0001-9199-7771"
+      run: |
+        python scripts/fetch_publications.py
+        
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/publications.json
+        git diff --staged --quiet || git commit -m "🤖 Update publications from ADS API
+
+        Co-Authored-By: Claude <noreply@anthropic.com>"
+        git push

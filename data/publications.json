@@ -1,0 +1,496 @@
+{
+  "last_updated": "2025-07-27T19:36:31.118352Z",
+  "total_publications": 26,
+  "orcid": "0000-0001-9199-7771",
+  "publications": [
+    {
+      "title": "The spectrum of magnetized turbulence in the interstellar medium",
+      "authors": "Beattie, James R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
+      "journal": "Nature Astronomy",
+      "year": "2025",
+      "pubdate": "2025-05-00",
+      "abstract": "The interstellar medium (ISM) of our Galaxy is magnetized, compressible and turbulent, influencing many key ISM properties, such as star formation, cosmic-ray transport, and metal and phase mixing. Yet, basic statistics describing compressible, magnetized turbulence remain uncertain. Utilizing grid resolutions up to 10,080<SUP>3</SUP> cells, we simulated highly compressible, magnetized ISM-style turbulence with a magnetic field maintained by a small-scale dynamo. We measured two coexisting kinetic energy cascades, E<SUB>kin</SUB>(k ) ∝k<SUP>−n</SUP>, in the turbulence, separating the plasma into scales that are non-locally interacting, supersonic and weakly magnetized (n = 2.01 ± 0.03 ≈ 2) and locally interacting, subsonic and highly magnetized (n = 1.465 ± 0.002 ≈ 3/2), where k is the wavenumber. We show that the 3/2 spectrum can be explained with scale-dependent kinetic energy fluxes and velocity-magnetic field alignment. On the highly magnetized modes, the magnetic energy spectrum forms a local cascade (n = 1.798 ± 0.001 ≈ 9/5), deviating from any known ab initio theory. With a new generation of radio telescopes coming online, these results provide a means to directly test if the ISM in our Galaxy is maintained by the compressible turbulent motions from within it.",
+      "bibcode": "2025NatAs.tmp..114B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs.tmp..114B/abstract",
+      "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
+      "citation_count": 4,
+      "read_count": 1949,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.SR",
+        "nlin.CD",
+        "physics.comp-ph"
+      ]
+    },
+    {
+      "title": "Density Fluctuation–Mach Number Scaling in Compressible, High Plasma Beta Turbulence: In Situ Space Observations and High-Reynolds Number Simulations",
+      "authors": "Bandyopadhyay, Riddhi; Beattie, James R.; Bhattacharjee, Amitava",
+      "authors_highlighted": "Bandyopadhyay, Riddhi; <strong>Beattie, James</strong> R.; Bhattacharjee, Amitava",
+      "journal": "The Astrophysical Journal",
+      "year": "2025",
+      "pubdate": "2025-04-00",
+      "abstract": "Understanding the nature of compressible fluctuations in a broad range of turbulent plasmas, from the intracluster medium to the solar wind, has been an active field of research in the past decades. Theoretical frameworks for weakly compressible magnetohydrodynamical turbulence in an inhomogeneous background magnetic field predict a linear scaling of the normalized mass density fluctuation (δρ/ρ<SUB>0</SUB>), as a function of the turbulent Mach number (<inline-formula> </inline-formula>), <inline-formula> </inline-formula>. However, so far, the scaling relation has been tested only using moderate to low plasma beta (β ≲ 1) solar wind observational data, where the compressibility is weak δρ/ρ<SUB>0</SUB> ∼ 0.1. Here, we combine NASA's Magnetospheric Multiscale Mission data in Earth's magnetosheath, where β ∼ 10 is high, and β ∼ 1/8 highly compressible magnetohydrodynamic turbulence simulations at unprecedented resolutions. Both show that <inline-formula> </inline-formula> holds across a broad range of δρ/ρ<SUB>0</SUB>, <inline-formula> </inline-formula>, and β, demonstrating that <inline-formula> </inline-formula> is a robust compressible turbulence relation, going beyond the asymptotics of the weakly compressible theory. We discuss the findings in the context of understanding the nature of strongly compressible turbulent fluctuations and the driving parameter in astrophysical and space plasmas.",
+      "bibcode": "2025ApJ...982L..45B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
+      "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
+      "citation_count": 1,
+      "read_count": 256,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.SR",
+        "astro-ph.GA",
+        "physics.plasm-ph",
+        "physics.space-ph"
+      ]
+    },
+    {
+      "title": "Fundamental MHD scales - II. The kinematic phase of the supersonic small-scale dynamo",
+      "authors": "Kriel, Neco; Beattie, James R.; Federrath, Christoph; Krumholz, Mark R.; Hew, Justin Kin Jun",
+      "authors_highlighted": "Kriel, Neco; <strong>Beattie, James</strong> R.; Federrath, Christoph; Krumholz, Mark R.; Hew, Justin Kin Jun",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2025",
+      "pubdate": "2025-03-00",
+      "abstract": "Many astrophysical small-scale dynamos (SSDs) amplify weak magnetic fields via highly compressible, supersonic turbulence, but most established SSD theories have only considered incompressible flows. To address this gap, we perform viscoresistive SSD simulations across a range of sonic Mach numbers (<inline-formula><tex-math id=\"TM0001\" notation=\"LaTeX\">$\\mathcal {M}$</tex-math></inline-formula>), hydrodynamic Reynolds numbers (<inline-formula><tex-math id=\"TM0002\" notation=\"LaTeX\">$\\mathrm{Re}$</tex-math></inline-formula>), and magnetic Prandtl numbers (<inline-formula><tex-math id=\"TM0003\" notation=\"LaTeX\">$\\mathrm{Pm}$</tex-math></inline-formula>), focusing on the exponential growth phase. From these simulations, we develop robust measurements of the kinetic and magnetic energy dissipation scales (<inline-formula><tex-math id=\"TM0004\" notation=\"LaTeX\">$\\ell _\\nu$</tex-math></inline-formula> and <inline-formula><tex-math id=\"TM0005\" notation=\"LaTeX\">$\\ell _\\eta$</tex-math></inline-formula>, respectively), and show that <inline-formula><tex-math id=\"TM0006\" notation=\"LaTeX\">$\\ell _\\nu /\\ell _\\eta \\sim \\mathrm{Pm}^{1/2}$</tex-math></inline-formula> is a universal feature of turbulent (<inline-formula><tex-math id=\"TM0007\" notation=\"LaTeX\">$\\mathrm{Re} \\ge \\mathrm{Re}_\\mathrm{crit} \\approx 100$</tex-math></inline-formula>), <inline-formula><tex-math id=\"TM0008\" notation=\"LaTeX\">$\\mathrm{Pm} \\ge 1$</tex-math></inline-formula> SSDs, regardless of <inline-formula><tex-math id=\"TM0009\" notation=\"LaTeX\">$\\mathcal {M}$</tex-math></inline-formula>. We also measure the scale of maximum magnetic field strength (<inline-formula><tex-math id=\"TM0010\" notation=\"LaTeX\">$\\ell _\\mathrm{p}$</tex-math></inline-formula>), where we confirm that incompressible SSDs (where either <inline-formula><tex-math id=\"TM0011\" notation=\"LaTeX\">$\\mathcal {M} \\le 1$</tex-math></inline-formula> or <inline-formula><tex-math id=\"TM0012\" notation=\"LaTeX\">$\\mathrm{Re} \\lt \\mathrm{Re}_\\mathrm{crit}$</tex-math></inline-formula>) concentrate magnetic energy at <inline-formula><tex-math id=\"TM0013\" notation=\"LaTeX\">$\\ell _\\mathrm{p} \\sim \\ell _\\eta$</tex-math></inline-formula> with inversely correlated field strength and curvature. By contrast, for compressible SSDs (where <inline-formula><tex-math id=\"TM0014\" notation=\"LaTeX\">$\\mathcal {M} \\gt 1$</tex-math></inline-formula> and <inline-formula><tex-math id=\"TM0015\" notation=\"LaTeX\">$\\mathrm{Re} \\ge \\mathrm{Re}_\\mathrm{crit}$</tex-math></inline-formula>), shocks concentrate magnetic energy in large, overdense, coherent structures with <inline-formula><tex-math id=\"TM0016\" notation=\"LaTeX\">$\\ell _\\mathrm{p} \\sim (\\ell _\\mathrm{turb} / \\ell _\\mathrm{shock})^{1/3} \\ell _\\eta \\gg \\ell _\\eta$</tex-math></inline-formula>, where <inline-formula><tex-math id=\"TM0017\" notation=\"LaTeX\">$\\ell _\\mathrm{shock}$</tex-math></inline-formula> is the characteristic shock width, and <inline-formula><tex-math id=\"TM0018\" notation=\"LaTeX\">$\\ell _\\mathrm{turb}$</tex-math></inline-formula> is the outer scale of the turbulent field. When <inline-formula><tex-math id=\"TM0019\" notation=\"LaTeX\">$\\mbox{Pm}\\lt \\mbox{Re}^{2/3}$</tex-math></inline-formula>, the shift of <inline-formula><tex-math id=\"TM0020\" notation=\"LaTeX\">$\\ell _\\mathrm{p}$</tex-math></inline-formula> (from the incompressible to compressible flow regime) is large enough to move the peak magnetic energy scale out of the subviscous range, and the plasma converges on a hierarchy of scales: <inline-formula><tex-math id=\"TM0021\" notation=\"LaTeX\">$\\ell _\\mathrm{turb}\\gt \\ell _\\mathrm{p}\\gt \\ell _\\mathrm{shock}\\gt \\ell _\\nu \\gt \\ell _\\eta$</tex-math></inline-formula>. In the compressible flow regime, more broadly, we also find that magnetic field-line curvature becomes nearly independent of the field strength, not because the field geometry has changed, but instead the field becomes locally amplified through flux-frozen compression by shocks. These results have implications for various astrophysical plasma environments in the early Universe, and cosmic ray transport models in the interstellar medium.",
+      "bibcode": "2025MNRAS.537.2602K",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/staf188",
+      "citation_count": 13,
+      "read_count": 282,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.HE",
+        "physics.flu-dyn",
+        "physics.plasm-ph"
+      ]
+    },
+    {
+      "title": "Taking control of compressible modes: bulk viscosity and the turbulent dynamo",
+      "authors": "Beattie, James R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
+      "journal": "arXiv e-prints",
+      "year": "2023",
+      "pubdate": "2023-12-00",
+      "abstract": "Many polyatomic astrophysical plasmas are compressible and out of chemical and thermal equilibrium, and yet, a means to carefully control the decay of compressible modes in these systems has largely been neglected. This is especially important for small-scale, turbulent dynamo processes, which are known to be sensitive to the effects of compression. To control the viscous properties of the compressible modes, we perform supersonic, visco-resistive dynamo simulations with additional bulk viscosity $\\nu_{\\rm bulk}$, deriving a new $\\nu_{\\rm bulk}$ Reynolds number $\\rm{Re}_{\\rm bulk}$, and viscous Prandtl number $\\rm{P}\\nu \\equiv \\rm{Re}_{\\rm bulk} / \\rm{Re}_{\\rm shear}$, where $\\rm{Re}_{\\rm shear}$ is the shear viscosity Reynolds number. For $10^{-3} \\leq \\rm{P}\\nu \\leq \\infty$, we explore a broad range of statistics critical to the dynamo problem. We derive a general framework for decomposing $E_{\\rm mag}$ growth rates into incompressible and compressible terms via orthogonal tensor decompositions of $\\nabla\\otimes\\mathbf{v}$, where $\\mathbf{v}$ is the fluid velocity. We find that compressible modes play a dual role, growing and decaying $E_{\\rm mag}$, and that field-line stretching is the main driver of growth, even in supersonic dynamos. In the absence of $\\nu_{\\rm bulk}$ ($\\rm{P}\\nu \\to \\infty$), compressible modes pile up on small-scales, creating a spectral bottleneck, which disappears for $\\rm{P}\\nu \\approx 1$. As $\\rm{P}\\nu$ decreases, compressible modes are dissipated at increasingly larger scales, in turn suppressing incompressible modes through a coupling between viscosity operators. We emphasise the importance of further understanding the role of $\\nu_{\\rm bulk}$ in compressible astrophysical plasmas and direct numerical simulations that include compressibility.",
+      "bibcode": "2023arXiv231203984B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2023arXiv231203984B/abstract",
+      "doi_url": "https://doi.org/10.48550/arXiv.2312.03984",
+      "citation_count": 9,
+      "read_count": 213,
+      "is_refereed": false,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.HE",
+        "physics.plasm-ph"
+      ]
+    },
+    {
+      "title": "Growth or Decay - I: universality of the turbulent dynamo saturation",
+      "authors": "Beattie, James R.; Federrath, Christoph; Kriel, Neco; Mocz, Philip; Seta, Amit",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Kriel, Neco; Mocz, Philip; Seta, Amit",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2023",
+      "pubdate": "2023-09-00",
+      "abstract": "The turbulent small-scale dynamo (SSD) is likely to be responsible for the magnetization of the interstellar medium (ISM) that we observe in the Universe today. The SSD efficiently converts kinetic energy E<SUB>kin</SUB> into magnetic energy E<SUB>mag</SUB> and is often used to explain how an initially weak magnetic field with E<SUB>mag</SUB> ≪ E<SUB>kin</SUB> is amplified, and then maintained at a level E<SUB>mag</SUB> ≲ E<SUB>kin</SUB>. Usually, this process is studied by initializing a weak seed magnetic field and letting the turbulence grow it to saturation. However, in this Part I of the Growth or Decay series, using three-dimensional, visco-resistive magnetohydrodynamical turbulence simulations up to magnetic Reynolds numbers of 2000, we show that the same final state in the integral quantities, energy spectra, and characteristic scales of the magnetic field can also be achieved if initially E<SUB>mag</SUB> ~ E<SUB>kin</SUB> or even if initially E<SUB>mag</SUB> ≫ E<SUB>kin</SUB>. This suggests that the final saturated state of the turbulent dynamo is set by the turbulence and the material properties of the plasma, independent of the initial structure or amplitude of the magnetic field. We discuss the implications this has for the maintenance of magnetic fields in turbulent plasmas and future studies exploring the dynamo saturation.",
+      "bibcode": "2023MNRAS.524.3201B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stad1863",
+      "citation_count": 14,
+      "read_count": 107,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA"
+      ]
+    },
+    {
+      "title": "Turbulent diffusion of streaming cosmic rays in compressible, partially ionized plasma",
+      "authors": "Sampson, Matt L.; Beattie, James R.; Krumholz, Mark R.; Crocker, Roland M.; Federrath, Christoph; Seta, Amit",
+      "authors_highlighted": "Sampson, Matt L.; <strong>Beattie, James</strong> R.; Krumholz, Mark R.; Crocker, Roland M.; Federrath, Christoph; Seta, Amit",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2023",
+      "pubdate": "2023-02-00",
+      "abstract": "Cosmic rays (CRs) are a dynamically important component of the interstellar medium (ISM) of galaxies. The ~GeV CRs that carry most CR energy and pressure are likely confined by self-generated turbulence, leading them to stream along magnetic field lines at the ion Alfvén speed. However, the consequences of self-confinement for CR propagation on galaxy scales remain highly uncertain. In this paper, we use a large ensemble of magnetohydrodynamical turbulence simulations to quantify how the basic parameters describing ISM turbulence - the sonic Mach number, $\\mathcal {M}$ (plasma compressibility), Alfvén Mach number, $\\mathcal {M}_{\\text{A0}}$ (strength of the large-scale field with respect to the turbulence), and ionization fraction by mass, χ - affect the transport of streaming CRs. We show that the large-scale transport of CRs whose small-scale motion consists of streaming along field lines is well described as a combination of streaming along the mean field and superdiffusion both along (parallel to) and across (perpendicular to) it; $\\mathcal {M}_{\\text{A0}}$ drives the level of anisotropy between parallel and perpendicular diffusion and χ modulates the magnitude of the diffusion coefficients, while in our choice of units, $\\mathcal {M}$ is unimportant except in the sub-Alfvénic ($\\mathcal {M}_{\\text{A0}}\\lesssim 0.5$) regime. Our finding that superdiffusion is ubiquitous potentially explains the apparent discrepancy between CR diffusion coefficients inferred from measurements close to individual sources compared to those measured on larger, Galactic scales. Finally, we present empirical fits for the diffusion coefficients as a function of plasma parameters that may be used as subgrid recipes for global ISM, galaxy, or cosmological simulations.",
+      "bibcode": "2023MNRAS.519.1503S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stac3207",
+      "citation_count": 32,
+      "read_count": 116,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.HE"
+      ]
+    },
+    {
+      "title": "The density distribution and physical origins of intermittency in supersonic, highly magnetized turbulence with diverse modes of driving",
+      "authors": "Beattie, James R.; Mocz, Philip; Federrath, Christoph; Klessen, Ralf S.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Mocz, Philip; Federrath, Christoph; Klessen, Ralf S.",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2022",
+      "pubdate": "2022-12-00",
+      "abstract": "The probability density function (PDF) of the logarithmic density contrast, s = ln (ρ/ρ<SUB>0</SUB>), with gas density ρ and mean density ρ<SUB>0</SUB>, for hydrodynamical supersonic turbulence is well known to have significant non-Gaussian (intermittent) features that monotonically increase with the turbulent Mach number, $\\mathcal {M}$. By studying the mass- and volume-weighted s-PDF for an ensemble of 36 sub-to-trans-Alfv́enic mean-field, supersonic, isothermal turbulence simulations with different modes of driving, relevant to molecular gas in the cool interstellar medium, we show that a more intricate picture emerges for the non-Gaussian nature of s. Using four independent measures of the non-Gaussian components, we find hydrodynamical-like structure in the highly magnetized plasma for $\\mathcal {M} \\lesssim 4$. However, for $\\mathcal {M} \\gtrsim 4$, the non-Gaussian signatures disappear, leaving approximately Gaussian s-statistics - exactly the opposite of hydrodynamical turbulence in the high-$\\mathcal {M}$ limit. We also find that the non-Gaussian components of the PDF increase monotonically with more compressive driving modes. To understand the $\\mathcal {M} \\lesssim 4$ non-Gaussian features, we use one-dimensional pencil beams to explore the dynamics along and across the large-scale magnetic field, $\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0$. We discuss kinetic, density, and magnetic field fluctuations from the pencil beams, and identify physical sources of non-Gaussian components to the PDF as single, strong shocks coupled to fast magnetosonic compressions that form along $\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0$. We discuss the Gaussianization of the $\\mathcal {M} \\gtrsim 4$s-fields through the lens of two phenomenologies: the self-similarity of the s-field and homogenization of the dynamical time-scales between the over- and underdense regions in the compressible gas.",
+      "bibcode": "2022MNRAS.517.5003B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stac3005",
+      "citation_count": 29,
+      "read_count": 204,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn"
+      ]
+    },
+    {
+      "title": "Availability, outage, and capacity of spatially correlated, Australasian free-space optical networks",
+      "authors": "Birch, Marcus; Beattie, James R.; Bennet, Francis; Rattenbury, Nicholas; Copeland, Michael; Travouillon, Tony; Ferguson, Kate; Cater, John; Sayat, Mikhael",
+      "authors_highlighted": "Birch, Marcus; <strong>Beattie, James</strong> R.; Bennet, Francis; Rattenbury, Nicholas; Copeland, Michael; Travouillon, Tony; Ferguson, Kate; Cater, John; Sayat, Mikhael",
+      "journal": "arXiv e-prints",
+      "year": "2022",
+      "pubdate": "2022-11-00",
+      "abstract": "Network capacity and reliability for free space optical communication (FSOC) is strongly driven by ground station availability, dominated by local cloud cover causing an outage, and how availability relations between stations produce network diversity. We combine remote sensing data and novel methods to provide a generalised framework for assessing and optimising optical ground station networks. This work is guided by an example network of eight Australian and New Zealand optical communication ground stations which would span approximately $60^\\circ$ in longitude and $20^\\circ$ in latitude. Utilising time-dependent cloud cover data from five satellites, we present a detailed analysis determining the availability and diversity of the network, finding the Australasian region is well-suited for an optical network with a 69% average site availability and low spatial cloud cover correlations. Employing methods from computational neuroscience, we provide a Monte Carlo method for sampling the joint probability distribution of site availabilities for an arbitrarily sized and point-wise correlated network of ground stations. Furthermore, we develop a general heuristic for site selection under availability and correlation optimisations, and combine this with orbital propagation simulations to compare the data capacity between optimised networks and the example network. We show that the example network may be capable of providing tens of terabits per day to a LEO satellite, and up to 99.97% reliability to GEO satellites. We therefore use the Australasian region to demonstrate novel, generalised tools for assessing and optimising FSOC ground station networks, and additionally, the suitability of the region for hosting such a network.",
+      "bibcode": "2022arXiv221109248B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
+      "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
+      "citation_count": 0,
+      "read_count": 120,
+      "is_refereed": false,
+      "arxiv_class": [
+        "eess.SP"
+      ]
+    },
+    {
+      "title": "Understanding star formation in molecular clouds. IV. Column density PDFs from quiescent to massive molecular clouds",
+      "authors": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; Beattie, J. R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
+      "authors_highlighted": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; <strong>Beattie, J.</strong> R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
+      "journal": "Astronomy and Astrophysics",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "Probability distribution functions of the total hydrogen column density (N-PDFs) are a valuable tool for distinguishing between the various processes (turbulence, gravity, radiative feedback, magnetic fields) governing the morphological and dynamical structure of the interstellar medium. We present N-PDFs of 29 Galactic regions obtained from Herschel imaging at high angular resolution (18″), covering diffuse and quiescent clouds, and those showing low-, intermediate-, and high-mass star formation (SF), and characterize the cloud structure using the ∆-variance tool. The N-PDFs show a large variety of morphologies. They are all double-log-normal at low column densities, and display one or two power law tails (PLTs) at higher column densities. For diffuse, quiescent, and low-mass SF clouds, we propose that the two log-normals arise from the atomic and molecular phase, respectively. For massive clouds, we suggest that the first log-normal is built up by turbulently mixed H<SUB>2</SUB> and the second one by compressed (via stellar feedback) molecular gas. Nearly all clouds have two PLTs with slopes consistent with self-gravity, where the second one can be flatter or steeper than the first one. A flatter PLT could be caused by stellar feedback or other physical processes that slow down collapse and reduce the flow of mass toward higher densities. The steeper slope could arise if the magnetic field is oriented perpendicular to the LOS column density distribution. The first deviation point (DP), where the N-PDF turns from log-normal into a PLT, shows a clustering around values of a visual extinction of A<SUB>V</SUB> (DP1) ~ 2-5. The second DP, which defines the break between the two PLTs, varies strongly. In contrast, the width of the N-PDFs is the most stable parameter, with values of σ between ~0.5 and 0.6. Using the ∆-variance tool, we observe that the A<SUB>V</SUB> value, where the slope changes between the first and second PLT, increases with the characteristic size scale in the ∆-variance spectrum. We conclude that at low column densities, atomic and molecular gas is turbulently mixed, while at high column densities, the gas is fully molecular and dominated by self-gravity. The best fitting model N-PDFs of molecular clouds is thus one with log-normal low column density distributions, followed by one or two PLTs.",
+      "bibcode": "2022A&A...666A.165S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
+      "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
+      "citation_count": 40,
+      "read_count": 136,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA"
+      ]
+    },
+    {
+      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "journal": "Frontiers in Astronomy and Space Sciences",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV − TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
+      "bibcode": "2022FrASS...9.0900B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
+      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
+      "citation_count": 19,
+      "read_count": 196,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn"
+      ]
+    },
+    {
+      "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "Energy equipartition is a powerful theoretical tool for understanding astrophysical plasmas. It is invoked, for example, to measure magnetic fields in the interstellar medium (ISM), as evidence for small-scale turbulent dynamo action, and, in general, to estimate the energy budget of star-forming molecular clouds. In this study, we motivate and explore the role of the volume-averaged root-mean-squared (rms) magnetic coupling term between the turbulent, $\\delta {\\boldsymbol{B}}$ , and large-scale, ${\\boldsymbol{B}}_0$, fields, ${\\left\\langle (\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}\\cdot {\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0})^{2} \\right\\rangle ^{1/2}_{\\mathcal {V}}}$. By considering the second moments of the energy balance equations we show that the rms coupling term is in energy equipartition with the volume-averaged turbulent kinetic energy for turbulence with a sub-Alfvénic large-scale field. Under the assumption of exact energy equipartition between these terms, we derive relations for the magnetic and coupling term fluctuations, which provide excellent, parameter-free agreement with time-averaged data from 280 numerical simulations of compressible magnetohydrodynamic (MHD) turbulence. Furthermore, we explore the relation between the turbulent mean field and total Alfvén Mach numbers, and demonstrate that sub-Alfvénic turbulence can only be developed through a strong, large-scale magnetic field, which supports an extremely super-Alfvénic turbulent magnetic field. This means that the magnetic field fluctuations are significantly subdominant to the velocity fluctuations in the sub-Alfvénic large-scale field regime. Throughout our study, we broadly discuss the implications for observations of magnetic fields and understanding the dynamics in the magnetized ISM.",
+      "bibcode": "2022MNRAS.515.5267B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stac2099",
+      "citation_count": 22,
+      "read_count": 214,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn",
+        "physics.plasm-ph"
+      ]
+    },
+    {
+      "title": "Fundamental scales in the kinematic phase of the turbulent dynamo",
+      "authors": "Kriel, Neco; Beattie, James R.; Seta, Amit; Federrath, Christoph",
+      "authors_highlighted": "Kriel, Neco; <strong>Beattie, James</strong> R.; Seta, Amit; Federrath, Christoph",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2022",
+      "pubdate": "2022-06-00",
+      "abstract": "The turbulent dynamo is a powerful mechanism that converts turbulent kinetic energy to magnetic energy. A key question regarding the magnetic field amplification by turbulence, is, on what scale, k<SUB>p</SUB>, do magnetic fields become most concentrated? There has been some disagreement about whether k<SUB>p</SUB> is controlled by the viscous scale, k<SUB>ν</SUB> (where turbulent kinetic energy dissipates), or the resistive scale, k<SUB>η</SUB> (where magnetic fields dissipate). Here, we use direct numerical simulations of magnetohydrodynamic turbulence to measure characteristic scales in the kinematic phase of the turbulent dynamo. We run 104-simulations with hydrodynamic Reynolds numbers of 10 ≤ Re ≤ 3600, and magnetic Reynolds numbers of 270 ≤ Rm ≤ 4000, to explore the dependence of k<SUB>p</SUB> on k<SUB>ν</SUB> and k<SUB>η</SUB>. Using physically motivated models for the kinetic and magnetic energy spectra, we measure k<SUB>ν</SUB>, k<SUB>η</SUB>, and k<SUB>p</SUB>, making sure that the obtained scales are numerically converged. We determine the overall dissipation scale relations $k_\\nu = (0.025^{+0.005}_{-0.006})\\, k_\\text{turb}\\, \\mbox{Re}^{3/4}$ and $k_\\eta = (0.88^{+0.21}_{-0.23})\\, k_\\nu \\, \\mbox{Pm}^{1/2}$, where k<SUB>turb</SUB> is the turbulence driving wavenumber and Pm = Rm/Re is the magnetic Prandtl number. We demonstrate that the principle dependence of k<SUB>p</SUB> is on k<SUB>η</SUB>. For plasmas, where Re ≳ 100, we find that $k_p= (1.2_{-0.2}^{+0.2})\\, k_\\eta$, with the proportionality constant related to the power-law 'Kazantsev' exponent of the magnetic power spectrum. Throughout this study, we find a dichotomy in the fundamental properties of the dynamo where Re &gt; 100, compared to Re &lt; 100. We report a minimum critical hydrodynamic Reynolds number, Re<SUB>crit</SUB> = 100 for bonafide turbulent dynamo action.",
+      "bibcode": "2022MNRAS.513.2457K",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stac969",
+      "citation_count": 26,
+      "read_count": 264,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.SR",
+        "astro-ph.GA",
+        "astro-ph.HE",
+        "physics.flu-dyn",
+        "physics.plasm-ph"
+      ]
+    },
+    {
+      "title": "Theoretical and Observational Evidence for Coriolis Effects in Coronal Magnetic Fields via Direct Current Driven Flaring Events",
+      "authors": "Seligman, Darryl Z.; Rogers, Leslie A.; Feinstein, Adina D.; Krumholz, Mark R.; Beattie, James R.; Federrath, Christoph; Adams, Fred C.; Fatuzzo, Marco; Günther, Maximilian N.",
+      "authors_highlighted": "Seligman, Darryl Z.; Rogers, Leslie A.; Feinstein, Adina D.; Krumholz, Mark R.; <strong>Beattie, James</strong> R.; Federrath, Christoph; Adams, Fred C.; Fatuzzo, Marco; Günther, Maximilian N.",
+      "journal": "The Astrophysical Journal",
+      "year": "2022",
+      "pubdate": "2022-04-00",
+      "abstract": "All stars produce explosive surface events such as flares and coronal mass ejections. These events are driven by the release of energy stored in coronal magnetic fields, generated by the stellar dynamo. However, it remains unclear if the energy deposition in the magnetic fields is driven by direct or alternating currents. Recently, we presented observational measurements of the flare intensity distributions for a sample of ~10<SUP>5</SUP> stars across the main sequence observed by TESS, all of which exhibited power-law distributions similar to those observed in the Sun, albeit with varying slopes. Here we investigate the mechanisms required to produce such a distribution of flaring events via direct current energy deposition, in which coronal magnetic fields braid, reconnect, and produce flares. We adopt a topological model for this process, which produces a power-law distribution of energetic flaring events. We expand this model to include the Coriolis effect, which we demonstrate produces a shallower distribution of flare energies in stars that rotate more rapidly (corresponding to a weaker decline in occurrence rates toward increasing flare energies). We present tentative evidence for the predicted rotation-power-law index correlation in the observations. We advocate for future observations of stellar flares that would improve our measurements of the power-law exponents, and yield key insights into the underlying dynamo mechanisms that underpin the self-similar flare intensity distributions.",
+      "bibcode": "2022ApJ...929...54S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
+      "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
+      "citation_count": 6,
+      "read_count": 121,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.SR"
+      ]
+    },
+    {
+      "title": "Controls of Initial Wood Decomposition on and in Forest Soils Using Standard Material",
+      "authors": "Risch, Anita C.; Page-Dumroese, Deborah S.; Schweiger, Anna K.; Beattie, James R.; Curran, Mike P.; Finér, Leena; Hyslop, Mike D.; Liu, Yong; Schütz, Martin; Terry, Tom A.; Wang, Weiwei; Jurgensen, Martin F.",
+      "authors_highlighted": "Risch, Anita C.; Page-Dumroese, Deborah S.; Schweiger, Anna K.; <strong>Beattie, James</strong> R.; Curran, Mike P.; Finér, Leena; Hyslop, Mike D.; Liu, Yong; Schütz, Martin; Terry, Tom A.; Wang, Weiwei; Jurgensen, Martin F.",
+      "journal": "Frontiers in Forests and Global Change",
+      "year": "2022",
+      "pubdate": "2022-03-00",
+      "abstract": "Forest ecosystems sequester approximately half of the world's organic carbon (C), most of it in the soil. The amount of soil C stored depends on the input and decomposition rate of soil organic matter (OM), which is controlled by the abundance and composition of the microbial and invertebrate communities, soil physico-chemical properties, and (micro)-climatic conditions. Although many studies have assessed how these site-specific climatic and soil properties affect the decomposition of fresh OM, differences in the type and quality of the OM substrate used, make it difficult to compare and extrapolate results across larger scales. Here, we used standard wood stakes made from aspen (Populus tremuloides Michx.) and loblolly pine (Pinus taeda L.) to explore how climate and abiotic soil properties affect wood decomposition across 44 unharvested forest stands located across the northern hemisphere. Stakes were placed in three locations: (i) on top of the surface organic horizons (surface), (ii) at the interface between the surface organic horizons and mineral soil (interface), and (iii) into the mineral soil (mineral). Decomposition rates of both wood species was greatest for mineral stakes and lowest for stakes placed on the surface organic horizons, but aspen stakes decomposed faster than pine stakes. Our models explained 44 and 36% of the total variation in decomposition for aspen surface and interface stakes, but only 0.1% (surface), 12% (interface), 7% (mineral) for pine, and 7% for mineral aspen stakes. Generally, air temperature was positively, precipitation negatively related to wood stake decomposition. Climatic variables were stronger predictors of decomposition than soil properties (surface C:nitrogen ratio, mineral C concentration, and pH), regardless of stake location or wood species. However, climate-only models failed in explaining wood decomposition, pointing toward the importance of including local-site properties when predicting wood decomposition. The difficulties we had in explaining the variability in wood decomposition, especially for pine and mineral soil stakes, highlight the need to continue assessing drivers of decomposition across large global scales to better understand and estimate surface and belowground C cycling, and understand the drivers and mechanisms that affect C pools, CO<SUB>2</SUB> emissions, and nutrient cycles.",
+      "bibcode": "2022FrFGC...5.9810R",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrFGC...5.9810R/abstract",
+      "doi_url": "https://doi.org/10.3389/ffgc.2022.829810",
+      "citation_count": 4,
+      "read_count": 0,
+      "is_refereed": true,
+      "arxiv_class": []
+    },
+    {
+      "title": "First extragalactic measurement of the turbulence driving parameter: ALMA observations of the star-forming region N159E in the Large Magellanic Cloud",
+      "authors": "Sharda, Piyush; Menon, Shyam H.; Federrath, Christoph; Krumholz, Mark R.; Beattie, James R.; Jameson, Katherine E.; Tokuda, Kazuki; Burkhart, Blakesley; Crocker, Roland M.; Law, Charles J.; Seta, Amit; Gaetz, Terrance J.; Pingel, Nickolas M.; Seitenzahl, Ivo R.; Sano, Hidetoshi; Fukui, Yasuo",
+      "authors_highlighted": "Sharda, Piyush; Menon, Shyam H.; Federrath, Christoph; Krumholz, Mark R.; <strong>Beattie, James</strong> R.; Jameson, Katherine E.; Tokuda, Kazuki; Burkhart, Blakesley; Crocker, Roland M.; Law, Charles J.; Seta, Amit; Gaetz, Terrance J.; Pingel, Nickolas M.; Seitenzahl, Ivo R.; Sano, Hidetoshi; Fukui, Yasuo",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2022",
+      "pubdate": "2022-01-00",
+      "abstract": "Studying the driving modes of turbulence is important for characterizing the impact of turbulence in various astrophysical environments. The driving mode of turbulence is parametrized by b, which relates the width of the gas density PDF to the turbulent Mach number; b ≈ 1/3, 1, and 0.4 correspond to driving that is solenoidal, compressive, and a natural mixture of the two, respectively. In this work, we use high-resolution (sub-pc) ALMA <SUP>12</SUP>CO (J = 2-1), <SUP>13</SUP>CO (J = 2-1), and C<SUP>18</SUP>O (J = 2-1) observations of filamentary molecular clouds in the star-forming region N159E (the Papillon Nebula) in the Large Magellanic Cloud (LMC) to provide the first measurement of turbulence driving parameter in an extragalactic region. We use a non-local thermodynamic equilibrium (NLTE) analysis of the CO isotopologues to construct a gas density PDF, which we find to be largely lognormal in shape with some intermittent features indicating deviations from lognormality. We find that the width of the lognormal part of the density PDF is comparable to the supersonic turbulent Mach number, resulting in b ≈ 0.9. This implies that the driving mode of turbulence in N159E is primarily compressive. We speculate that the compressive turbulence could have been powered by gravo-turbulent fragmentation of the molecular gas, or due to compression powered by H I flows that led to the development of the molecular filaments observed by ALMA in the region. Our analysis can be easily applied to study the nature of turbulence driving in resolved star-forming regions in the local as well as the high-redshift Universe.",
+      "bibcode": "2022MNRAS.509.2180S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stab3048",
+      "citation_count": 20,
+      "read_count": 125,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.SR"
+      ]
+    },
+    {
+      "title": "Why take the square root? An assessment of interstellar magnetic field strength estimation methods",
+      "authors": "Skalidis, R.; Sternberg, J.; Beattie, J. R.; Pavlidou, V.; Tassis, K.",
+      "authors_highlighted": "Skalidis, R.; Sternberg, J.; <strong>Beattie, J.</strong> R.; Pavlidou, V.; Tassis, K.",
+      "journal": "Astronomy and Astrophysics",
+      "year": "2021",
+      "pubdate": "2021-12-00",
+      "abstract": "Context. The magnetic field strength in interstellar clouds can be estimated indirectly from measurements of dust polarization by assuming that turbulent kinetic energy is comparable to the fluctuating magnetic energy, and using the spread of polarization angles to estimate the latter. The method developed by Davis (1951, Phys. Rev., 81, 890) and by Chandrasekhar and Fermi (1953, ApJ, 118, 1137) (DCF) assumes that incompressible magnetohydrodynamic (MHD) fluctuations induce the observed dispersion of polarization angles, deriving B ∝ 1∕δθ (or, equivalently, δθ ∝ M<SUB>A</SUB>, in terms of the Alfvénic Mach number). However, observations show that the interstellar medium is highly compressible. Recently, two of us (ST) relaxed the incompressibility assumption and derived instead B ∝ 1/√δθ (equivalently, δθ ∝ M<SUB>A</SUB><SUP>2</SUP>). <BR /> Aims: We explored what the correct scaling is in compressible and magnetized turbulence through theoretical arguments, and tested the assumptions and the accuracy of the two methods with numerical simulations. <BR /> Methods: We used 26 magnetized, isothermal, ideal-MHD numerical simulations without self-gravity and with different types of forcing. The range of M<SUB>A</SUB> and sonic Mach numbers M<SUB>s</SUB> explored are 0.1 ≤ M<SUB>A</SUB> ≤ 2.0 and 0.5 ≤ M<SUB>s</SUB> ≤ 20. We created synthetic polarization maps and tested the assumptions and accuracy of the two methods. <BR /> Results: The synthetic data have a remarkable consistency with the δθ ∝ M<SUB>A</SUB><SUP>2</SUP> scaling, which is inferred by ST, while the DCF scaling failed to follow the data. Similarly, the assumption of ST that the turbulent kinetic energy is comparable to the root-mean-square (rms) of the coupling term of the magnetic energy between the mean and fluctuating magnetic field is valid within a factor of two for all M<SUB>A</SUB> (with the exception of solenoidally driven simulations at high M<SUB>A</SUB>, where the assumption fails by a factor of 10). In contrast, the assumption of DCF that the turbulent kinetic energy is comparable to the rms of the second-order fluctuating magnetic field term fails by factors of several to hundreds for sub-Alfvénic simulations. The ST method shows an accuracy better than 50% over the entire range of M<SUB>A</SUB> explored; DCF performs adequately only in the range of M<SUB>A</SUB> for which it has been optimized through the use of a \"fudge factor\". For low M<SUB>A</SUB>, it is inaccurate by factors of tens, since it omits the magnetic energy coupling term, which is of first order and corresponds to compressible modes. We found no dependence of the accuracy of the two methods on M<SUB>s</SUB>. <BR /> Conclusions: The assumptions of the ST method reflect better the physical reality in clouds with compressible and magnetized turbulence, and for this reason the method provides a much better estimate of the magnetic field strength over the DCF method. Even in super-Alfvénic cases where DCF might outperform ST, the ST method still provides an adequate estimate of the magnetic field strength, while the reverse is not true.",
+      "bibcode": "2021A&A...656A.118S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
+      "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
+      "citation_count": 49,
+      "read_count": 69,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA"
+      ]
+    },
+    {
+      "title": "A multishock model for the density variance of anisotropic, highly magnetized, supersonic turbulence",
+      "authors": "Beattie, James R.; Mocz, Philip; Federrath, Christoph; Klessen, Ralf S.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Mocz, Philip; Federrath, Christoph; Klessen, Ralf S.",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2021",
+      "pubdate": "2021-07-00",
+      "abstract": "Shocks form the basis of our understanding for the density and velocity statistics of supersonic turbulent flows, such as those found in the cool interstellar medium (ISM). The variance of the density field, $\\sigma ^2_{\\rho /\\rho _0}$, is of particular interest for molecular clouds (MCs), the birthplaces of stars in the Universe. The density variance may be used to infer underlying physical processes in an MC, and parametrizes the star formation (SF) rate of a cloud. However, models for $\\sigma ^2_{\\rho /\\rho _0}$ all share a common feature - the variance is assumed to be isotropic. This assumption does not hold when a trans-/sub-Alfvénic mean magnetic field, ${B}_0$, is present in the cloud, which observations suggest is relevant for some MCs. We develop an anisotropic model for $\\sigma _{\\rho /\\rho _0}^2$, using contributions from hydrodynamical and fast magnetosonic shocks that propagate orthogonal to each other. Our model predicts an upper bound for $\\sigma _{\\rho /\\rho _0}^2$ in the high Mach number $(\\mathcal {M})$ limit as small-scale density fluctuations become suppressed by the strong ${B}_0$. The model reduces to the isotropic $\\sigma _{\\rho /\\rho _0}^2\\!-\\!\\mathcal {M}$ relation in the hydrodynamical limit. To validate our model, we calculate $\\sigma _{\\rho /\\rho _0}^2$ from 12 high-resolution, three-dimensional, supersonic, sub-Alfvénic magnetohydrodynamical (MHD) turbulence simulations and find good agreement with our theory. We discuss how the two MHD shocks may be the bimodally oriented overdensities observed in some MCs and the implications for SF theory in the presence of a sub-Alfvénic ${B}_0$. By creating an anisotropic, supersonic density fluctuation model, this study paves the way for SF theory in the highly anisotropic regime of interstellar turbulence.",
+      "bibcode": "2021MNRAS.504.4354B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stab1037",
+      "citation_count": 27,
+      "read_count": 163,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn"
+      ]
+    },
+    {
+      "title": "The sonic scale of interstellar turbulence",
+      "authors": "Federrath, Christoph; Klessen, Ralf S.; Iapichino, Luigi; Beattie, James R.",
+      "authors_highlighted": "Federrath, Christoph; Klessen, Ralf S.; Iapichino, Luigi; <strong>Beattie, James</strong> R.",
+      "journal": "Nature Astronomy",
+      "year": "2021",
+      "pubdate": "2021-01-00",
+      "abstract": "Understanding the physics of turbulence is crucial for many applications, including weather, industry and astrophysics. In the interstellar medium<SUP>1,2</SUP>, supersonic turbulence plays a crucial role in controlling the gas density and velocity structure, and ultimately the birth of stars<SUP>3-8</SUP>. Here we present a simulation of interstellar turbulence with a grid resolution of 10,048<SUP>3</SUP> cells that allows us to determine the position and width of the sonic scale (ℓ<SUB>s</SUB>)—the transition from supersonic to subsonic turbulence. The simulation simultaneously resolves the supersonic and subsonic cascade, with the velocity as a function of scale, v(ℓ) ∝ ℓ<SUP>p</SUP>, where we measure p<SUB>sup</SUB> = 0.49 ± 0.01 and p<SUB>sub</SUB> = 0.39 ± 0.02, respectively. We find that ℓ<SUB>s</SUB> agrees with the relation ℓ<SUB>s</SUB>=ϕ<SUB>s</SUB>L M<SUP>−1 /p<SUB>sup</SUB></SUP> , where M is the three-dimensional Mach number, L is either the driving scale of the turbulence or the diameter of a molecular cloud, and ϕ<SUB>s</SUB> is a dimensionless factor of order unity. If L is the driving scale, we measure ϕ<SUB>s</SUB>=0.4 2<SUB>−0.09</SUB><SUP>+0.12</SUP> , primarily because of the separation between the driving scale and the start of the supersonic cascade. For a supersonic cascade extending beyond the cloud scale, we get ϕ<SUB>s</SUB>=0.9 1<SUB>−0.20</SUB><SUP>+0.25</SUP> . In both cases, ϕ<SUB>s</SUB> ≲ 1, because we find that the supersonic cascade transitions smoothly to the subsonic cascade over a factor of 3 in scale, instead of a sharp transition. Our measurements provide quantitative input for turbulence-regulated models of filament structure and star formation in molecular clouds.",
+      "bibcode": "2021NatAs...5..365F",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
+      "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
+      "citation_count": 135,
+      "read_count": 230,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.SR",
+        "physics.comp-ph",
+        "physics.flu-dyn"
+      ]
+    },
+    {
+      "title": "Magnetic field fluctuations in anisotropic, supersonic turbulence",
+      "authors": "Beattie, James R.; Federrath, Christoph; Seta, Amit",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Seta, Amit",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2020",
+      "pubdate": "2020-10-00",
+      "abstract": "The rich structure that we observe in molecular clouds is due to the interplay between strong magnetic fields and supersonic (turbulent) velocity fluctuations. The velocity fluctuations interact with the magnetic field, causing it too to fluctuate. Using numerical simulations, we explore the nature of such magnetic field fluctuations, $\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}$ , over a wide range of turbulent Mach numbers, $\\operatorname{\\mathcal {M}}= 2\\!-\\!20$ (i.e. from weak to strong compressibility), and Alfvén Mach numbers, $\\operatorname{\\mathcal {M}_{\\text{A0}}}= 0.1\\!-\\!100$ (i.e. from strong to weak magnetic mean fields, B<SUB>0</SUB>). We derive a compressible quasi-static fluctuation model from the magnetohydrodynamical (MHD) equations and show that velocity gradients parallel to the mean magnetic field give rise to compressible modes in sub-Alfvénic flows, which prevents the flow from becoming two dimensional, as is the case in incompressible MHD turbulence. We then generalize an analytical model for the magnitude of the magnetic fluctuations to include $\\operatorname{\\mathcal {M}}$ , and find $|\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}| = \\delta B = c_{\\rm s}\\sqrt{\\pi \\rho _0}\\operatorname{\\mathcal {M}}\\operatorname{\\mathcal {M}_{\\text{A0}}}$ , where c<SUB>s</SUB> is the sound speed and ρ<SUB>0</SUB> is the mean density of gas. This new relation fits well in the strong B-field regime. We go on to study the anisotropy between the perpendicular (B<SUB>⊥</SUB>) and parallel (B<SUB>∥</SUB>) fluctuations and the mean-normalized fluctuations, which we find follow universal scaling relations, invariant of $\\operatorname{\\mathcal {M}}$ . We provide a detailed analysis of the morphology for the δB<SUB>⊥</SUB> and δB<SUB>∥</SUB> probability density functions and find that eddies aligned with B<SUB>0</SUB> cause parallel fluctuations that reduce B<SUB>∥</SUB> in the most anisotropic simulations. We discuss broadly the implications of our fluctuation models for magnetized gases in the interstellar medium.",
+      "bibcode": "2020MNRAS.498.1593B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/staa2257",
+      "citation_count": 35,
+      "read_count": 196,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.SR",
+        "physics.flu-dyn"
+      ]
+    },
+    {
+      "title": "Filaments and striations: anisotropies in observed, supersonic, highly magnetized turbulent clouds",
+      "authors": "Beattie, James R.; Federrath, Christoph",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2020",
+      "pubdate": "2020-02-00",
+      "abstract": "Stars form in highly magnetized, supersonic turbulent molecular clouds. Many of the tools and models that we use to carry out star formation studies rely upon the assumption of cloud isotropy. However, structures like high-density filaments in the presence of magnetic fields and magnetosonic striations introduce anisotropies into the cloud. In this study, we use the two-dimensional power spectrum to perform a systematic analysis of the anisotropies in the column density for a range of Alfvén Mach numbers (\\operatorname{M<SUB>A</SUB>}=0.1{-10}) and turbulent Mach numbers (\\operatorname{M}=2{-20}), with 20 high-resolution, three-dimensional turbulent magnetohydrodynamic simulations. We find that for cases with a strong magnetic guide field, corresponding to \\operatorname{M<SUB>A</SUB>}&lt; 1, and \\operatorname{M}≲ 4, the anisotropy in the column density is dominated by thin striations aligned with the magnetic field, while for \\operatorname{M}≳ 4 the anisotropy is significantly changed by high-density filaments that form perpendicular to the magnetic guide field. Indeed, the strength of the magnetic field controls the degree of anisotropy and whether or not any anisotropy is present, but it is the turbulent motions controlled by \\operatorname{M} that determine which kind of anisotropy dominates the morphology of a cloud.",
+      "bibcode": "2020MNRAS.492..668B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stz3377",
+      "citation_count": 29,
+      "read_count": 90,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA"
+      ]
+    },
+    {
+      "title": "Determining the efficacy of camera traps, live capture traps, and detection dogs for locating cryptic small mammal species",
+      "authors": "Thomas, Morgan L.; Baker, Lynn; Beattie, James R.; Baker, Andrew M.",
+      "authors_highlighted": "Thomas, Morgan L.; Baker, Lynn; <strong>Beattie, James</strong> R.; Baker, Andrew M.",
+      "journal": "Ecology and Evolution",
+      "year": "2020",
+      "pubdate": "2020-01-00",
+      "abstract": "Metal box (e.g., Elliott, Sherman) traps and remote cameras are two of the most commonly employed methods presently used to survey terrestrial mammals. However, their relative efficacy at accurately detecting cryptic small mammals has not been adequately assessed. The present study therefore compared the effectiveness of metal box (Elliott) traps and vertically oriented, close range, white flash camera traps in detecting small mammals occurring in the Scenic Rim of eastern Australia. We also conducted a preliminary survey to determine effectiveness of a conservation detection dog (CDD) for identifying presence of a threatened carnivorous marsupial, Antechinus arktos, in present-day and historical locations, using camera traps to corroborate detections. 200 Elliott traps and 20 white flash camera traps were set for four deployments per method, across a site where the target small mammals, including A. arktos, are known to occur. Camera traps produced higher detection probabilities than Elliott traps for all four species. Thus, vertically mounted white flash cameras were preferable for detecting the presence of cryptic small mammals in our survey. The CDD, which had been trained to detect A. arktos scat, indicated in total 31 times when deployed in the field survey area, with subsequent camera trap deployments specifically corroborating A. arktos presence at 100% (3) indication locations. Importantly, the dog indicated twice within Border Ranges National Park, where historical (1980s–1990s) specimen-based records indicate the species was present, but extensive Elliott and camera trapping over the last 5–10 years have resulted in zero A. arktos captures. Camera traps subsequently corroborated A. arktos presence at these sites. This demonstrates that detection dogs can be a highly effective means of locating threatened, cryptic species, especially when traditional methods are unable to detect low-density mammal populations.",
+      "bibcode": "2020EcoEv..10.1054T",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2020EcoEv..10.1054T/abstract",
+      "doi_url": "https://doi.org/10.1002/ece3.5972",
+      "citation_count": 20,
+      "read_count": 0,
+      "is_refereed": true,
+      "arxiv_class": []
+    },
+    {
+      "title": "The relation between the turbulent Mach number and observed fractal dimensions of turbulent clouds",
+      "authors": "Beattie, James R.; Federrath, Christoph; Klessen, Ralf S.; Schneider, Nicola",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Klessen, Ralf S.; Schneider, Nicola",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2019",
+      "pubdate": "2019-09-00",
+      "abstract": "Supersonic turbulence is a key player in controlling the structure and star formation potential of molecular clouds (MCs). The three-dimensional (3D) turbulent Mach number, M, allows us to predict the rate of star formation. However, determining Mach numbers in observations is challenging because it requires accurate measurements of the velocity dispersion. Moreover, observations are limited to two-dimensional (2D) projections of the MCs and velocity information can usually only be obtained for the line-of-sight component. Here we present a new method that allows us to estimate M from the 2D column density, Σ, by analysing the fractal dimension, D. We do this by computing D for six simulations, ranging between 1 and 100 in M. From this data we are able to construct an empirical relation, log M(D) = ξ _1(erfc^{-1} [(D-{D_min})/Ω ] + ξ _2), where erfc^{-1} is the inverse complimentary error function, D_min= 1.55 ± 0.13 is the minimum fractal dimension of Σ, Ω = 0.22 ± 0.07, ξ<SUB>1</SUB> = 0.9 ± 0.1, and ξ<SUB>2</SUB> = 0.2 ± 0.2. We test the accuracy of this new relation on column density maps from Herschel observations of two quiescent subregions in the Polaris Flare MC, `saxophone' and `quiet'. We measure M∼ 10 and M∼ 2 for the subregions, respectively, which are similar to previous estimates based on measuring the velocity dispersion from molecular line data. These results show that this new empirical relation can provide useful estimates of the cloud kinematics, solely based upon the geometry from the column density of the cloud.",
+      "bibcode": "2019MNRAS.488.2493B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stz1853",
+      "citation_count": 23,
+      "read_count": 115,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.CO"
+      ]
+    },
+    {
+      "title": "The relation between the true and observed fractal dimensions of turbulent clouds",
+      "authors": "Beattie, James R.; Federrath, Christoph; Klessen, Ralf S.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Klessen, Ralf S.",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2019",
+      "pubdate": "2019-08-00",
+      "abstract": "Observations of interstellar gas clouds are typically limited to two-dimensional (2D) projections of the intrinsically three-dimensional (3D) structure of the clouds. In this study, we present a novel method for relating the 2D projected fractal dimension (D<SUB>p</SUB>) to the 3D fractal dimension (D_{3D}) of turbulent clouds. We do this by computing the fractal dimension of clouds over two orders of magnitude in turbulent Mach number (M = 1{-}100), corresponding to seven orders of magnitude in spatial scales within the clouds. This provides us with the data to create a new empirical relation between D<SUB>p</SUB> and D_{3D}. The proposed relation is D_{3D}(D<SUB>p</SUB>) = Ω _1 \\operatorname{erfc}(ξ _1 \\operatorname{erfc}^{-1}[ (D<SUB>p</SUB> - D_{p,min})/Ω _2 ] + ξ _2) + D_{3D,min}, where the minimum 3D fractal dimension, D_{3D,min} = 2.06 ± 0.35, the minimum projected fractal dimension, D_{p,min} = 1.55 ± 0.13, Ω<SUB>1</SUB> = 0.47 ± 0.18, Ω<SUB>2</SUB> = 0.22 ± 0.07, ξ<SUB>1</SUB> = 0.80 ± 0.18, and ξ<SUB>2</SUB> = 0.26 ± 0.19. The minimum 3D fractal dimension, D_{3D,min} = 2.06 ± 0.35, indicates that in the high M limit the 3D clouds are dominated by planar shocks. The relation between D<SUB>p</SUB> and D_{3D} of molecular clouds may be a useful tool for those who are seeking to understand the 3D structures of molecular clouds, purely based upon 2D projected data and shows promise for relating the physics of the turbulent clouds to the fractal dimension.",
+      "bibcode": "2019MNRAS.487.2070B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stz1416",
+      "citation_count": 18,
+      "read_count": 104,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA"
+      ]
+    },
+    {
+      "title": "Is The Starry Night Turbulent?",
+      "authors": "Beattie, James; Kriel, Neco",
+      "authors_highlighted": "<strong>Beattie, James</strong>; Kriel, Neco",
+      "journal": "arXiv e-prints",
+      "year": "2019",
+      "pubdate": "2019-02-00",
+      "abstract": "Vincent van Gogh's painting, The Starry Night, is an iconic piece of art and cultural history. The painting portrays a night sky full of stars, with eddies (spirals) both large and small. \\cite{Kolmogorov1941}'s description of subsonic, incompressible turbulence gives a model for turbulence that involves eddies interacting on many length scales, and so the question has been asked: is The Starry Night turbulent? To answer this question, we calculate the azimuthally averaged power spectrum of a square region ($1165 \\times 1165$ pixels) of night sky in The Starry Night. We find a power spectrum, $\\mathcal{P}(k)$, where $k$ is the wavevector, that shares the same features as supersonic turbulence. It has a power-law $\\mathcal{P}(k) \\propto k^{-2.1\\pm0.3}$ in the scaling range, $34 \\leq k \\leq 80$. We identify a driving scale, $k_\\text{D} = 3$, dissipation scale, $k_\\nu = 220$ and a bottleneck. This leads us to believe that van Gogh's depiction of the starry night closely resembles the turbulence found in real molecular clouds, the birthplace of stars in the Universe.",
+      "bibcode": "2019arXiv190203381B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
+      "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
+      "citation_count": 4,
+      "read_count": 199,
+      "is_refereed": false,
+      "arxiv_class": [
+        "physics.pop-ph",
+        "physics.flu-dyn"
+      ]
+    },
+    {
+      "title": "Automating analysis of vegetation with computer vision: Cover estimates and classification",
+      "authors": "McCool, Chris; Beattie, James; Milford, Michael; Bakker, Jonathan D.; Moore, Joslin L.; Firn, Jennifer",
+      "authors_highlighted": "McCool, Chris; <strong>Beattie, James</strong>; Milford, Michael; Bakker, Jonathan D.; Moore, Joslin L.; Firn, Jennifer",
+      "journal": "Ecology and Evolution",
+      "year": "2018",
+      "pubdate": "2018-06-00",
+      "abstract": "This study develops an approach to automating the process of vegetation cover estimates using computer vision and pattern recognition algorithms. Visual cover estimation is a key tool for many ecological studies, yet quadrat-based analyses are known to suffer from issues of consistency between people as well as across sites (spatially) and time (temporally). Previous efforts to estimate cover from photograps require considerable manual work. We demonstrate that an automated system can be used to estimate vegetation cover and the type of vegetation cover present using top–down photographs of 1 m by 1 m quadrats. Vegetation cover is estimated by modelling the distribution of color using a multivariate Gaussian. The type of vegetation cover is then classified, using illumination robust local binary pattern features, into two broad groups: graminoids (grasses) and forbs. This system is evaluated on two datasets from the globally distributed experiment, the Nutrient Network (NutNet). These NutNet sites were selected for analyses because repeat photographs were taken over time and these sites are representative of very different grassland ecosystems—a low stature subalpine grassland in an alpine region of Australia and a higher stature and more productive lowland grassland in the Pacific Northwest of the USA. We find that estimates of treatment effects on grass and forb cover did not differ between field and automated estimates for eight of nine experimental treatments. Conclusions about total vegetation cover did not correspond quite as strongly, particularly at the more productive site. A limitation with this automated system is that the total vegetation cover is given as a percentage of pixels considered to contain vegetation, but ecologists can distinguish species with overlapping coverage and thus can estimate total coverage to exceed 100%. Automated approaches such as this offer techniques for estimating vegetation cover that are repeatable, cheaper to use, and likely more reliable for quantifying changes in vegetation over the long-term. These approaches would also enable ecologists to increase the spatial and temporal depth of their coverage estimates with methods that allow for vegetation sampling over large spatial scales quickly.",
+      "bibcode": "2018EcoEv...8.6005M",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2018EcoEv...8.6005M/abstract",
+      "doi_url": "https://doi.org/10.1002/ece3.4135",
+      "citation_count": 4,
+      "read_count": 0,
+      "is_refereed": true,
+      "arxiv_class": []
+    },
+    {
+      "title": "Efficacy of Mechanical Weeding Tools: A Study Into Alternative Weed Management Strategies Enabled by Robotics",
+      "authors": "McCool, Chris; Beattie, James; Firn, Jennifer; Lehnert, Chris; Kulk, Jason; Bawden, Owen; Russell, Raymond; Perez, Tristan",
+      "authors_highlighted": "McCool, Chris; <strong>Beattie, James</strong>; Firn, Jennifer; Lehnert, Chris; Kulk, Jason; Bawden, Owen; Russell, Raymond; Perez, Tristan",
+      "journal": "IEEE Robotics and Automation Letters",
+      "year": "2018",
+      "pubdate": "2018-00-00",
+      "abstract": "The rise of herbicide resistant weed species has re-invigorated research in nonchemical methods for weed management. Robots, such as AgBot II, that can detect and classify weeds as they traverse a field are a key enabling factor for individualised treatment of weed species. Integral to the invidualized treatment of weed species are the the nonherbicide methods through which the weeds are managed. This letter explores mechanical methods as an alternative to weed management. Three implements are considered: below-surface tilling (arrow hoe), above-surface tilling (tines), and a cutting mechanism. These mechanisms were evaluated in a controlled field with varying rates of application to herbicide-resistant weeds of interest for Queensland, Australia. Statistical analysis demonstrated the efficacy of these implements and highlighted the importance of early intervention. It was found that a tine, deployed automatically on AgBotII, was effective for all of the weeds considered in this study, leading to an overall survival probability of <inline-formula><tex-math>$\\text{0.28} \\pm \\text{0.15}$</tex-math> </inline-formula>. Further analysis demonstrated the significance of treatment time with late intervention commencing at week 6 resulting in a survival probability of <inline-formula><tex-math>$\\text{0.54}\\pm \\text{0.08}$</tex-math></inline-formula> vs <inline-formula><tex-math>$\\text{0.24}\\pm \\text{0.18}$ </tex-math></inline-formula> for earlier intervention at week 4.",
+      "bibcode": "2018IRAL....3.1184M",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2018IRAL....3.1184M/abstract",
+      "doi_url": "https://doi.org/10.1109/LRA.2018.2794619",
+      "citation_count": 0,
+      "read_count": 0,
+      "is_refereed": true,
+      "arxiv_class": []
+    }
+  ]
+}
