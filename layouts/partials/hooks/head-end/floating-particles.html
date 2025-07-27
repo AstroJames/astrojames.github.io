@@ -337,8 +337,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         if (distance > 30) {
-          // Apply gentle magnetic force toward mouse
-          const force = 0.003;
+          // Apply stronger magnetic force toward mouse
+          const force = 0.008;
           particle.vx += dx * force;
           particle.vy += dy * force;
         }
