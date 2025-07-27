@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const particleContainer = document.getElementById('particle-container');
   const header = document.querySelector('header') || document.querySelector('.navbar');
   const particles = [];
-  const numParticles = 50;
+  const numParticles = 75;
   
   // Create particles
   for (let i = 0; i < numParticles; i++) {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Check if this position overlaps with any navigation text
       for (let link of navLinks) {
         const rect = link.getBoundingClientRect();
-        const buffer = 30; // 30px buffer around text
+        const buffer = 15; // Reduced buffer around text
         
         if (x >= rect.left - buffer && x <= rect.right + buffer &&
             y >= rect.top - buffer && y <= rect.bottom + buffer) {
@@ -82,13 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
       attempts++;
     }
     
-    // If we can't find a good position, place it in safe zones (edges)
+    // If we can't find a good position, place it randomly and let it move naturally
     if (!validPosition) {
-      if (Math.random() > 0.5) {
-        x = Math.random() * 100; // Left edge
-      } else {
-        x = window.innerWidth - Math.random() * 100; // Right edge
-      }
+      x = Math.random() * window.innerWidth;
       y = Math.random() * headerHeight;
     }
     
