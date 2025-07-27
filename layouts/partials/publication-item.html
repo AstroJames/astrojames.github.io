@@ -58,18 +58,6 @@
         {{ end }}
       </div>
       
-      <!-- Citation sparkline chart on the right -->
-      {{ if gt .citation_count 0 }}
-        <canvas 
-          class="citation-sparkline" 
-          data-citations="{{ .citation_count }}"
-          data-year="{{ .year }}"
-          data-bibcode="{{ .bibcode }}"
-          width="50" 
-          height="20" 
-          style="opacity: 0.8; border-radius: 2px; vertical-align: middle;">
-        </canvas>
-      {{ end }}
     </div>
   </div>
   
