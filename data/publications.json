@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-07-29T06:02:03.906381+00:00",
+  "last_updated": "2025-07-30T06:02:14.454474+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -17,7 +17,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs.tmp..114B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 4,
-      "read_count": 1950,
+      "read_count": 1910,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -40,7 +40,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 1,
-      "read_count": 256,
+      "read_count": 245,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -63,7 +63,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 13,
-      "read_count": 283,
+      "read_count": 278,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -85,8 +85,8 @@
       "bibcode": "2023arXiv231203984B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023arXiv231203984B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2312.03984",
-      "citation_count": 9,
-      "read_count": 213,
+      "citation_count": 8,
+      "read_count": 211,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -108,7 +108,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
       "citation_count": 14,
-      "read_count": 107,
+      "read_count": 106,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -128,7 +128,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
       "citation_count": 32,
-      "read_count": 116,
+      "read_count": 117,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -149,7 +149,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 29,
-      "read_count": 203,
+      "read_count": 193,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -170,7 +170,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 120,
+      "read_count": 117,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
@@ -233,7 +233,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
       "citation_count": 40,
-      "read_count": 136,
+      "read_count": 138,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -252,8 +252,8 @@
       "bibcode": "2022MNRAS.513.2457K",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
-      "citation_count": 26,
-      "read_count": 264,
+      "citation_count": 25,
+      "read_count": 258,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -277,7 +277,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 6,
-      "read_count": 121,
+      "read_count": 123,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -315,7 +315,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
       "citation_count": 20,
-      "read_count": 124,
+      "read_count": 125,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -336,7 +336,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
       "citation_count": 49,
-      "read_count": 70,
+      "read_count": 68,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -356,7 +356,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 27,
-      "read_count": 163,
+      "read_count": 158,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -376,8 +376,8 @@
       "bibcode": "2021NatAs...5..365F",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
-      "citation_count": 135,
-      "read_count": 230,
+      "citation_count": 134,
+      "read_count": 213,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -399,8 +399,8 @@
       "bibcode": "2020MNRAS.498.1593B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
-      "citation_count": 35,
-      "read_count": 196,
+      "citation_count": 34,
+      "read_count": 195,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -422,7 +422,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 29,
-      "read_count": 90,
+      "read_count": 85,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -460,7 +460,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
       "citation_count": 23,
-      "read_count": 115,
+      "read_count": 112,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -481,7 +481,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1416",
       "citation_count": 18,
-      "read_count": 104,
+      "read_count": 99,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -501,7 +501,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 4,
-      "read_count": 199,
+      "read_count": 192,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -558,7 +558,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 0,
-      "read_count": 449,
+      "read_count": 469,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -579,7 +579,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 0,
-      "read_count": 755,
+      "read_count": 428,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
@@ -602,7 +602,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250320013G/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2503.20013",
       "citation_count": 1,
-      "read_count": 232,
+      "read_count": 214,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.HE"
@@ -622,7 +622,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250109855B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2501.09855",
       "citation_count": 4,
-      "read_count": 207,
+      "read_count": 199,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
