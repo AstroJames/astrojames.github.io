@@ -12,24 +12,10 @@
 }
 
 .header-field-line {
-  stroke: rgba(255, 255, 255, 0.8);
+  stroke: var(--field-line-color);
   stroke-width: 0.5;
   fill: none;
   transition: stroke 0.3s ease;
-}
-
-/* Light theme field lines - dark stroke */
-[data-mode="light"] .header-field-line,
-html[data-theme="light"] .header-field-line,
-body[data-theme="light"] .header-field-line {
-  stroke: rgba(0, 0, 0, 0.6);
-}
-
-/* Dark theme field lines - light stroke */
-[data-mode="dark"] .header-field-line,
-html[data-theme="dark"] .header-field-line,
-body[data-theme="dark"] .header-field-line {
-  stroke: rgba(255, 255, 255, 0.8);
 }
 
 
@@ -51,97 +37,6 @@ header, .navbar {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('header') || document.querySelector('.navbar');
-  
-  // Theme detection and header adaptation
-  function updateHeaderTheme() {
-    const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const themeButton = document.querySelector('[data-target="html"]') || document.querySelector('.theme-toggle') || document.querySelector('button[title*="theme"]');
-    
-    // Check various ways the theme might be stored/detected
-    const htmlElement = document.documentElement;
-    const bodyElement = document.body;
-    
-    // Check for theme classes or data attributes
-    const isLightMode = htmlElement.classList.contains('light') || 
-                       bodyElement.classList.contains('light') ||
-                       htmlElement.hasAttribute('data-theme') && htmlElement.getAttribute('data-theme').includes('light') ||
-                       bodyElement.hasAttribute('data-theme') && bodyElement.getAttribute('data-theme').includes('light') ||
-                       htmlElement.hasAttribute('data-mode') && htmlElement.getAttribute('data-mode').includes('light') ||
-                       bodyElement.hasAttribute('data-mode') && bodyElement.getAttribute('data-mode').includes('light');
-    
-    const isDarkMode = htmlElement.classList.contains('dark') || 
-                      bodyElement.classList.contains('dark') ||
-                      htmlElement.hasAttribute('data-theme') && htmlElement.getAttribute('data-theme').includes('dark') ||
-                      bodyElement.hasAttribute('data-theme') && bodyElement.getAttribute('data-theme').includes('dark') ||
-                      htmlElement.hasAttribute('data-mode') && htmlElement.getAttribute('data-mode').includes('dark') ||
-                      bodyElement.hasAttribute('data-mode') && bodyElement.getAttribute('data-mode').includes('dark');
-    
-    // Apply header styling based on theme
-    if (header) {
-      if (isLightMode) {
-        header.style.backgroundColor = '#ffffff';
-        header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
-        // Update nav links
-        const navLinks = header.querySelectorAll('a, .nav-link');
-        navLinks.forEach(link => {
-          link.style.color = '#333333';
-        });
-      } else {
-        header.style.backgroundColor = '#000000';
-        header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-        // Update nav links
-        const navLinks = header.querySelectorAll('a, .nav-link');
-        navLinks.forEach(link => {
-          link.style.color = '#ffffff';
-        });
-      }
-    }
-    
-    // Update field lines color
-    const fieldLines = document.querySelectorAll('.header-field-line');
-    fieldLines.forEach(line => {
-      if (isLightMode) {
-        line.style.stroke = 'rgba(0, 0, 0, 0.6)';
-      } else {
-        line.style.stroke = 'rgba(255, 255, 255, 0.8)';
-      }
-    });
-  }
-  
-  // Initial theme update
-  updateHeaderTheme();
-  
-  // Watch for theme changes via media query
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateHeaderTheme);
-  }
-  
-  // Watch for manual theme toggle clicks
-  document.addEventListener('click', function(e) {
-    if (e.target.closest('[data-target="html"]') || 
-        e.target.closest('.theme-toggle') || 
-        e.target.closest('button[title*="theme"]') ||
-        e.target.closest('button[title*="Theme"]')) {
-      setTimeout(updateHeaderTheme, 100); // Small delay to let theme change take effect
-    }
-  });
-  
-  // Watch for attribute changes on html/body elements
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'attributes' && 
-          (mutation.attributeName === 'data-theme' || 
-           mutation.attributeName === 'data-mode' || 
-           mutation.attributeName === 'class')) {
-        updateHeaderTheme();
-      }
-    });
-  });
-  
-  observer.observe(document.documentElement, { attributes: true });
-  observer.observe(document.body, { attributes: true });
-  
-  if (!header) return;
   
   // Create SVG container
   const svgContainer = document.createElement('div');

@@ -293,56 +293,40 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Theme-aware header background */
+/* Use CSS custom properties for theme-aware header */
+:root {
+  --header-bg: #000000;
+  --header-text: #ffffff;
+  --header-border: rgba(255, 255, 255, 0.1);
+  --field-line-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Light theme variables */
+:root[data-theme="light"],
+html[data-theme="light"],
+body[data-theme="light"] {
+  --header-bg: #ffffff;
+  --header-text: #333333;
+  --header-border: rgba(0, 0, 0, 0.1);
+  --field-line-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Header styling using custom properties */
 header,
 .navbar {
-  background-color: #000000 !important;
-  background: #000000 !important;
-  transition: background-color 0.3s ease !important;
+  background-color: var(--header-bg) !important;
+  background: var(--header-bg) !important;
+  border-bottom: 1px solid var(--header-border) !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Light theme header - white background */
-[data-mode="light"] header,
-[data-mode="light"] .navbar,
-html[data-theme="light"] header,
-html[data-theme="light"] .navbar,
-body[data-theme="light"] header,
-body[data-theme="light"] .navbar {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Ensure navbar links are visible in light theme */
-[data-mode="light"] .navbar a,
-[data-mode="light"] .navbar .nav-link,
-html[data-theme="light"] .navbar a,
-html[data-theme="light"] .navbar .nav-link,
-body[data-theme="light"] .navbar a,
-body[data-theme="light"] .navbar .nav-link {
-  color: #333333 !important;
-}
-
-/* Dark theme header - keep black */
-[data-mode="dark"] header,
-[data-mode="dark"] .navbar,
-html[data-theme="dark"] header,
-html[data-theme="dark"] .navbar,
-body[data-theme="dark"] header,
-body[data-theme="dark"] .navbar {
-  background-color: #000000 !important;
-  background: #000000 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Ensure navbar links are visible in dark theme */
-[data-mode="dark"] .navbar a,
-[data-mode="dark"] .navbar .nav-link,
-html[data-theme="dark"] .navbar a,
-html[data-theme="dark"] .navbar .nav-link,
-body[data-theme="dark"] .navbar a,
-body[data-theme="dark"] .navbar .nav-link {
-  color: #ffffff !important;
+/* Navbar text styling */
+.navbar a,
+.navbar .nav-link,
+header a,
+header .nav-link {
+  color: var(--header-text) !important;
+  transition: color 0.3s ease !important;
 }
 
 /* Hide Hugo Blox attribution text */
