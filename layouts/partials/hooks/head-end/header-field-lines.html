@@ -15,6 +15,21 @@
   stroke: rgba(255, 255, 255, 0.8);
   stroke-width: 0.5;
   fill: none;
+  transition: stroke 0.3s ease;
+}
+
+/* Light theme field lines - dark stroke */
+[data-mode="light"] .header-field-line,
+html[data-theme="light"] .header-field-line,
+body[data-theme="light"] .header-field-line {
+  stroke: rgba(0, 0, 0, 0.6);
+}
+
+/* Dark theme field lines - light stroke */
+[data-mode="dark"] .header-field-line,
+html[data-theme="dark"] .header-field-line,
+body[data-theme="dark"] .header-field-line {
+  stroke: rgba(255, 255, 255, 0.8);
 }
 
 

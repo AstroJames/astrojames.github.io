@@ -293,13 +293,56 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Black header background */
+/* Theme-aware header background */
 header,
-.navbar,
-.navbar-dark,
-.navbar-light {
+.navbar {
   background-color: #000000 !important;
   background: #000000 !important;
+  transition: background-color 0.3s ease !important;
+}
+
+/* Light theme header - white background */
+[data-mode="light"] header,
+[data-mode="light"] .navbar,
+html[data-theme="light"] header,
+html[data-theme="light"] .navbar,
+body[data-theme="light"] header,
+body[data-theme="light"] .navbar {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ensure navbar links are visible in light theme */
+[data-mode="light"] .navbar a,
+[data-mode="light"] .navbar .nav-link,
+html[data-theme="light"] .navbar a,
+html[data-theme="light"] .navbar .nav-link,
+body[data-theme="light"] .navbar a,
+body[data-theme="light"] .navbar .nav-link {
+  color: #333333 !important;
+}
+
+/* Dark theme header - keep black */
+[data-mode="dark"] header,
+[data-mode="dark"] .navbar,
+html[data-theme="dark"] header,
+html[data-theme="dark"] .navbar,
+body[data-theme="dark"] header,
+body[data-theme="dark"] .navbar {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure navbar links are visible in dark theme */
+[data-mode="dark"] .navbar a,
+[data-mode="dark"] .navbar .nav-link,
+html[data-theme="dark"] .navbar a,
+html[data-theme="dark"] .navbar .nav-link,
+body[data-theme="dark"] .navbar a,
+body[data-theme="dark"] .navbar .nav-link {
+  color: #ffffff !important;
 }
 
 /* Hide Hugo Blox attribution text */
