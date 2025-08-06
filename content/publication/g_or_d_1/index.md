@@ -48,7 +48,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: "A 2D slice of the mass density (left), current density (right) and magnetic field (white streamlines)."
+  caption: "The integral energy ratio for three different experiments with different initial magneti energies. Every experiment is asymptotic to the same integral energy ratio after enough time."
   focal_point: ""
   preview_only: false
 
