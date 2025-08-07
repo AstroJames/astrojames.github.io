@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-08-06T06:02:33.640152+00:00",
+  "last_updated": "2025-08-07T06:02:05.143752+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -501,7 +501,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 4,
-      "read_count": 192,
+      "read_count": 193,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -558,7 +558,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 0,
-      "read_count": 476,
+      "read_count": 477,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
