@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-09-01T06:01:57.469809+00:00",
-  "total_publications": 30,
+  "last_updated": "2025-09-02T06:01:40.040303+00:00",
+  "total_publications": 29,
   "orcid": "0000-0001-9199-7771",
   "publications": [
     {
@@ -23,29 +23,6 @@
         "astro-ph.GA",
         "astro-ph.HE",
         "physics.plasm-ph"
-      ]
-    },
-    {
-      "title": "The spectrum of magnetized turbulence in the interstellar medium",
-      "authors": "Beattie, James R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Nature Astronomy",
-      "year": "2025",
-      "pubdate": "2025-05-00",
-      "abstract": "The interstellar medium (ISM) of our Galaxy is magnetized, compressible and turbulent, influencing many key ISM properties, such as star formation, cosmic-ray transport, and metal and phase mixing. Yet, basic statistics describing compressible, magnetized turbulence remain uncertain. Utilizing grid resolutions up to 10,080<SUP>3</SUP> cells, we simulated highly compressible, magnetized ISM-style turbulence with a magnetic field maintained by a small-scale dynamo. We measured two coexisting kinetic energy cascades, E<SUB>kin</SUB>(k ) ∝k<SUP>−n</SUP>, in the turbulence, separating the plasma into scales that are non-locally interacting, supersonic and weakly magnetized (n = 2.01 ± 0.03 ≈ 2) and locally interacting, subsonic and highly magnetized (n = 1.465 ± 0.002 ≈ 3/2), where k is the wavenumber. We show that the 3/2 spectrum can be explained with scale-dependent kinetic energy fluxes and velocity-magnetic field alignment. On the highly magnetized modes, the magnetic energy spectrum forms a local cascade (n = 1.798 ± 0.001 ≈ 9/5), deviating from any known ab initio theory. With a new generation of radio telescopes coming online, these results provide a means to directly test if the ISM in our Galaxy is maintained by the compressible turbulent motions from within it.",
-      "bibcode": "2025NatAs.tmp..114B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs.tmp..114B/abstract",
-      "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
-      "citation_count": 5,
-      "read_count": 1629,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "astro-ph.SR",
-        "nlin.CD",
-        "physics.comp-ph"
       ]
     },
     {
@@ -107,7 +84,7 @@
       "bibcode": "2023MNRAS.524.3201B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
-      "citation_count": 15,
+      "citation_count": 14,
       "read_count": 91,
       "is_refereed": true,
       "arxiv_class": [
@@ -127,7 +104,7 @@
       "bibcode": "2023MNRAS.519.1503S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
-      "citation_count": 33,
+      "citation_count": 32,
       "read_count": 102,
       "is_refereed": true,
       "arxiv_class": [
@@ -148,7 +125,7 @@
       "bibcode": "2022MNRAS.517.5003B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
-      "citation_count": 30,
+      "citation_count": 29,
       "read_count": 154,
       "is_refereed": true,
       "arxiv_class": [
@@ -197,27 +174,6 @@
       ]
     },
     {
-      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
-      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Frontiers in Astronomy and Space Sciences",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV − TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
-      "bibcode": "2022FrASS...9.0900B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
-      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
-      "citation_count": 20,
-      "read_count": 165,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "physics.flu-dyn"
-      ]
-    },
-    {
       "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
       "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
       "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
@@ -230,13 +186,34 @@
       "bibcode": "2022MNRAS.515.5267B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac2099",
-      "citation_count": 23,
+      "citation_count": 22,
       "read_count": 179,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
         "physics.flu-dyn",
         "physics.plasm-ph"
+      ]
+    },
+    {
+      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Frontiers in Astronomy and Space Sciences",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV − TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
+      "bibcode": "2022FrASS...9.0900B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
+      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
+      "citation_count": 19,
+      "read_count": 165,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn"
       ]
     },
     {
@@ -252,7 +229,7 @@
       "bibcode": "2022MNRAS.513.2457K",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
-      "citation_count": 26,
+      "citation_count": 25,
       "read_count": 191,
       "is_refereed": true,
       "arxiv_class": [
@@ -376,7 +353,7 @@
       "bibcode": "2021NatAs...5..365F",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
-      "citation_count": 136,
+      "citation_count": 135,
       "read_count": 178,
       "is_refereed": true,
       "arxiv_class": [
@@ -459,7 +436,7 @@
       "bibcode": "2019MNRAS.488.2493B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
-      "citation_count": 24,
+      "citation_count": 23,
       "read_count": 109,
       "is_refereed": true,
       "arxiv_class": [
@@ -621,7 +598,7 @@
       "bibcode": "2025arXiv250109855B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250109855B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2501.09855",
-      "citation_count": 7,
+      "citation_count": 6,
       "read_count": 252,
       "is_refereed": false,
       "arxiv_class": [
