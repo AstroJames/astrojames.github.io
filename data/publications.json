@@ -1,29 +1,28 @@
 {
-  "last_updated": "2025-08-05T06:02:21.412900+00:00",
-  "total_publications": 30,
+  "last_updated": "2025-09-02T06:01:40.040303+00:00",
+  "total_publications": 29,
   "orcid": "0000-0001-9199-7771",
   "publications": [
     {
-      "title": "The spectrum of magnetized turbulence in the interstellar medium",
-      "authors": "Beattie, James R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
+      "title": "Taking control of compressible modes: bulk viscosity and the turbulent dynamo",
+      "authors": "Beattie, James R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
       "authorship_position": "first",
       "beattie_position": 1,
-      "journal": "Nature Astronomy",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
       "year": "2025",
-      "pubdate": "2025-05-00",
-      "abstract": "The interstellar medium (ISM) of our Galaxy is magnetized, compressible and turbulent, influencing many key ISM properties, such as star formation, cosmic-ray transport, and metal and phase mixing. Yet, basic statistics describing compressible, magnetized turbulence remain uncertain. Utilizing grid resolutions up to 10,080<SUP>3</SUP> cells, we simulated highly compressible, magnetized ISM-style turbulence with a magnetic field maintained by a small-scale dynamo. We measured two coexisting kinetic energy cascades, E<SUB>kin</SUB>(k ) ∝k<SUP>−n</SUP>, in the turbulence, separating the plasma into scales that are non-locally interacting, supersonic and weakly magnetized (n = 2.01 ± 0.03 ≈ 2) and locally interacting, subsonic and highly magnetized (n = 1.465 ± 0.002 ≈ 3/2), where k is the wavenumber. We show that the 3/2 spectrum can be explained with scale-dependent kinetic energy fluxes and velocity-magnetic field alignment. On the highly magnetized modes, the magnetic energy spectrum forms a local cascade (n = 1.798 ± 0.001 ≈ 9/5), deviating from any known ab initio theory. With a new generation of radio telescopes coming online, these results provide a means to directly test if the ISM in our Galaxy is maintained by the compressible turbulent motions from within it.",
-      "bibcode": "2025NatAs.tmp..114B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs.tmp..114B/abstract",
-      "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
-      "citation_count": 5,
-      "read_count": 1903,
+      "pubdate": "2025-08-00",
+      "abstract": "Many polyatomic astrophysical plasmas are compressible and out of chemical and thermal equilibrium, introducing a bulk viscosity into the plasma via the internal degrees of freedom of the molecular composition, directly impacting the decay of compressible modes, <inline-formula><tex-math id=\"TM0001\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula>. This is especially important for small-scale, turbulent dynamo processes in the interstellar medium, which are known to be sensitive to the effects of compression. To control the viscous properties of <inline-formula><tex-math id=\"TM0002\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula>, we perform trans-sonic, visco-resistive dynamo simulations with additional bulk viscosity ν<SUB>bulk</SUB>, deriving a new ν<SUB>bulk</SUB> Reynolds number Re<SUB>bulk</SUB>, and viscous Prandtl number Pν ≡ Re<SUB>bulk</SUB>/Re<SUB>shear</SUB>, where Re<SUB>shear</SUB> is the shear viscosity Reynolds number. We derive a framework for decomposing E<SUB>mag</SUB> growth rates into incompressible and compressible terms via orthogonal tensor decompositions of <inline-formula><tex-math id=\"TM0003\" notation=\"LaTeX\">${\\nabla }\\otimes \\mathrm{{\\mathit {v}}}$</tex-math></inline-formula>, where <inline-formula><tex-math id=\"TM0004\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}$</tex-math></inline-formula> is the fluid velocity. We find that <inline-formula><tex-math id=\"TM0005\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> play a dual role, growing and decaying E<SUB>mag</SUB>, and that field-line stretching is the main driver of growth, even in compressible dynamos. In the absence of ν<SUB>bulk</SUB> (Pν → ∞), <inline-formula><tex-math id=\"TM0006\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> pile up on small-scales, creating a spectral bottleneck, which disappears for Pν ≈ 1. As Pν decreases, <inline-formula><tex-math id=\"TM0007\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> are dissipated at increasingly larger scales, in turn suppressing incompressible modes through a coupling between high-k modes. We emphasise the importance of further understanding the role of ν<SUB>bulk</SUB> in compressible astrophysical plasmas, which we estimate could be as strong as the shear viscosity in the cold ISM, and highlight that compressible direct numerical simulations without bulk viscosity have unresolved compressible mode dissipation scales.",
+      "bibcode": "2025MNRAS.tmp.1274B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.tmp.1274B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/staf1318",
+      "citation_count": 8,
+      "read_count": 260,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
-        "astro-ph.SR",
-        "nlin.CD",
-        "physics.comp-ph"
+        "astro-ph.HE",
+        "physics.plasm-ph"
       ]
     },
     {
@@ -40,7 +39,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 1,
-      "read_count": 245,
+      "read_count": 193,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -63,34 +62,12 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 13,
-      "read_count": 279,
+      "read_count": 246,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
         "astro-ph.HE",
         "physics.flu-dyn",
-        "physics.plasm-ph"
-      ]
-    },
-    {
-      "title": "Taking control of compressible modes: bulk viscosity and the turbulent dynamo",
-      "authors": "Beattie, James R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "arXiv e-prints",
-      "year": "2023",
-      "pubdate": "2023-12-00",
-      "abstract": "Many polyatomic astrophysical plasmas are compressible and out of chemical and thermal equilibrium, and yet, a means to carefully control the decay of compressible modes in these systems has largely been neglected. This is especially important for small-scale, turbulent dynamo processes, which are known to be sensitive to the effects of compression. To control the viscous properties of the compressible modes, we perform supersonic, visco-resistive dynamo simulations with additional bulk viscosity $\\nu_{\\rm bulk}$, deriving a new $\\nu_{\\rm bulk}$ Reynolds number $\\rm{Re}_{\\rm bulk}$, and viscous Prandtl number $\\rm{P}\\nu \\equiv \\rm{Re}_{\\rm bulk} / \\rm{Re}_{\\rm shear}$, where $\\rm{Re}_{\\rm shear}$ is the shear viscosity Reynolds number. For $10^{-3} \\leq \\rm{P}\\nu \\leq \\infty$, we explore a broad range of statistics critical to the dynamo problem. We derive a general framework for decomposing $E_{\\rm mag}$ growth rates into incompressible and compressible terms via orthogonal tensor decompositions of $\\nabla\\otimes\\mathbf{v}$, where $\\mathbf{v}$ is the fluid velocity. We find that compressible modes play a dual role, growing and decaying $E_{\\rm mag}$, and that field-line stretching is the main driver of growth, even in supersonic dynamos. In the absence of $\\nu_{\\rm bulk}$ ($\\rm{P}\\nu \\to \\infty$), compressible modes pile up on small-scales, creating a spectral bottleneck, which disappears for $\\rm{P}\\nu \\approx 1$. As $\\rm{P}\\nu$ decreases, compressible modes are dissipated at increasingly larger scales, in turn suppressing incompressible modes through a coupling between viscosity operators. We emphasise the importance of further understanding the role of $\\nu_{\\rm bulk}$ in compressible astrophysical plasmas and direct numerical simulations that include compressibility.",
-      "bibcode": "2023arXiv231203984B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2023arXiv231203984B/abstract",
-      "doi_url": "https://doi.org/10.48550/arXiv.2312.03984",
-      "citation_count": 8,
-      "read_count": 212,
-      "is_refereed": false,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "astro-ph.HE",
         "physics.plasm-ph"
       ]
     },
@@ -108,7 +85,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
       "citation_count": 14,
-      "read_count": 105,
+      "read_count": 91,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -127,8 +104,8 @@
       "bibcode": "2023MNRAS.519.1503S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
-      "citation_count": 33,
-      "read_count": 117,
+      "citation_count": 32,
+      "read_count": 102,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -149,7 +126,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 29,
-      "read_count": 193,
+      "read_count": 154,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -170,7 +147,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 116,
+      "read_count": 113,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
@@ -189,8 +166,8 @@
       "bibcode": "2022A&A...666A.165S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
-      "citation_count": 40,
-      "read_count": 137,
+      "citation_count": 41,
+      "read_count": 119,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -210,7 +187,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac2099",
       "citation_count": 22,
-      "read_count": 213,
+      "read_count": 179,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -232,7 +209,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
       "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
       "citation_count": 19,
-      "read_count": 197,
+      "read_count": 165,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -253,7 +230,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
       "citation_count": 25,
-      "read_count": 258,
+      "read_count": 191,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -277,7 +254,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 6,
-      "read_count": 123,
+      "read_count": 103,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -315,7 +292,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
       "citation_count": 20,
-      "read_count": 127,
+      "read_count": 100,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -335,8 +312,8 @@
       "bibcode": "2021A&A...656A.118S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
-      "citation_count": 49,
-      "read_count": 68,
+      "citation_count": 50,
+      "read_count": 60,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -355,8 +332,8 @@
       "bibcode": "2021MNRAS.504.4354B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
-      "citation_count": 27,
-      "read_count": 158,
+      "citation_count": 28,
+      "read_count": 141,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -376,8 +353,8 @@
       "bibcode": "2021NatAs...5..365F",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
-      "citation_count": 134,
-      "read_count": 211,
+      "citation_count": 135,
+      "read_count": 178,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -400,7 +377,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
       "citation_count": 34,
-      "read_count": 195,
+      "read_count": 158,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -422,7 +399,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 29,
-      "read_count": 86,
+      "read_count": 70,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -441,7 +418,7 @@
       "bibcode": "2020EcoEv..10.1054T",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020EcoEv..10.1054T/abstract",
       "doi_url": "https://doi.org/10.1002/ece3.5972",
-      "citation_count": 20,
+      "citation_count": 21,
       "read_count": 0,
       "is_refereed": true,
       "arxiv_class": []
@@ -460,7 +437,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
       "citation_count": 23,
-      "read_count": 112,
+      "read_count": 109,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -481,7 +458,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1416",
       "citation_count": 18,
-      "read_count": 99,
+      "read_count": 96,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -500,8 +477,8 @@
       "bibcode": "2019arXiv190203381B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
-      "citation_count": 4,
-      "read_count": 196,
+      "citation_count": 5,
+      "read_count": 155,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -539,7 +516,7 @@
       "bibcode": "2018IRAL....3.1184M",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2018IRAL....3.1184M/abstract",
       "doi_url": "https://doi.org/10.1109/LRA.2018.2794619",
-      "citation_count": 0,
+      "citation_count": 1,
       "read_count": 0,
       "is_refereed": true,
       "arxiv_class": []
@@ -557,8 +534,8 @@
       "bibcode": "2025arXiv250603768S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
-      "citation_count": 0,
-      "read_count": 468,
+      "citation_count": 1,
+      "read_count": 502,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -579,7 +556,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 0,
-      "read_count": 424,
+      "read_count": 254,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
@@ -601,8 +578,8 @@
       "bibcode": "2025arXiv250320013G",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250320013G/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2503.20013",
-      "citation_count": 1,
-      "read_count": 216,
+      "citation_count": 2,
+      "read_count": 170,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.HE"
@@ -617,12 +594,12 @@
       "journal": "arXiv e-prints",
       "year": "2025",
       "pubdate": "2025-01-00",
-      "abstract": "The interstellar medium (ISM) of disk galaxies is turbulent, and yet the fundamental nature of ISM turbulence, the energy cascade, is not understood in detail. In this study, we use high-resolution simulations of a hydrodynamical, gravitationally stratified, supernova (SNe)-driven, multiphase ISM to probe the nature of a galactic turbulence cascade. Through the use of kinetic energy flux transfer functions split into interactions between compressible $\\mathbf{u}_c$ and incompressible $\\mathbf{u}_s$ modes, we show that there exists a large-to-small-scale cascade in both $\\mathbf{u}_c$ and $\\mathbf{u}_s$ when mediated by an additional $\\mathbf{u}_s$ mode. But the $\\mathbf{u}_s$ cascade is highly non-local. Moreover, there is a $\\mathbf{u}_c$ mediated component of the $\\mathbf{u}_s$ cascade that proceeds in the opposite direction -- an inverse cascade from small-to-large scales. The cascade feeds flux into scales well beyond the scale height, energizing the winds and fueling the direct cascades. Both the strongly non-local and the inverse $\\mathbf{u}_s$ cascades happen on scales that have a power law $\\mathbf{u}_s$ energy spectrum, highlighting how degenerate the spectrum is to the true underlying physical processes. We directly show that the inverse cascade comes from $\\mathbf{u}_s$ modes interacting with expanding SNe remnants (SNRs) and that $\\mathbf{u}_s$ modes are generated to leading order via baroclinic, highly corrugated cooling layers between warm $(T\\lesssim 10^4\\,\\rm{K})$ and hot $(T\\gg10^4\\,\\rm{K})$ gas in these SNRs. Finally, we outline a complete phenomenology for SNe-driven turbulence in a galactic disk, estimate a $10^{-16}\\,\\rm{G}$ Biermann field generated from SNR cooling layers, and highlight the strong deviations that SNe-driven turbulence has from the conventional Kolmogorov model.",
+      "abstract": "The interstellar medium (ISM) of disk galaxies is turbulent, and yet the fundamental nature of ISM turbulence, the energy cascade, is not understood in detail. In this study, we use high-resolution simulations of a hydrodynamical, gravitationally stratified, supernova (SNe)-driven, multiphase ISM to probe the nature of a galactic turbulence cascade. Through the use of velocity flux transfer functions split into interactions between compressible $\\mathbf{u}_c$ and incompressible $\\mathbf{u}_s$ modes, we show that there exists a large-to-small-scale cascade in both $\\mathbf{u}_c$ and $\\mathbf{u}_s$ when mediated by an additional $\\mathbf{u}_s$ mode. But the $\\mathbf{u}_s$ cascade is highly non-local. Moreover, there is a $\\mathbf{u}_c$ mediated component of the $\\mathbf{u}_s$ cascade that proceeds in the opposite direction -- an inverse cascade from small-to-large scales. The cascade feeds flux into scales well beyond the scale height, energizing the winds and fueling the direct cascades. Both the strongly non-local and the inverse $\\mathbf{u}_s$ cascades happen on scales that have a power law $\\mathbf{u}_s$ energy spectrum, highlighting how degenerate the spectrum is to the true underlying physical processes. We directly show that the inverse cascade comes from $\\mathbf{u}_s$ modes interacting with expanding SNe remnants (SNRs) and that $\\mathbf{u}_s$ modes are generated to leading order via baroclinic, highly corrugated cooling layers between warm $(T\\lesssim 10^4\\,\\rm{K})$ and hot $(T\\gg10^4\\,\\rm{K})$ gas in these SNRs. Finally, we outline a complete phenomenology for SNe-driven turbulence in a galactic disk, estimate a $10^{-16}\\,\\rm{G}$ Biermann field generated from SNR cooling layers, and highlight the strong deviations that SNe-driven turbulence has from the conventional Kolmogorov model.",
       "bibcode": "2025arXiv250109855B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250109855B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2501.09855",
-      "citation_count": 4,
-      "read_count": 201,
+      "citation_count": 6,
+      "read_count": 252,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
