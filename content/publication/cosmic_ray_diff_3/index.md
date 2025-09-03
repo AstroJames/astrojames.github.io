@@ -30,7 +30,7 @@ abstract: Cosmic rays (CRs) are an integral part of the non-thermal pressure bud
 summary: "It is hard to make a relativistic cosmic ray fluid couple to the plasma! (lead author: Matt Sampson)"
 
 tags:
-- cosmic ray diffusion
+- Two-moment cosmic ray fluid MHD
 - streaming instability
 - numerical simulation
 - MHD turbulence
