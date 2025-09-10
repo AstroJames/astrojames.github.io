@@ -1,30 +1,8 @@
 {
-  "last_updated": "2025-09-09T06:01:39.206974+00:00",
+  "last_updated": "2025-09-10T06:01:47.568093+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
-    {
-      "title": "Taking control of compressible modes: bulk viscosity and the turbulent dynamo",
-      "authors": "Beattie, James R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Monthly Notices of the Royal Astronomical Society",
-      "year": "2025",
-      "pubdate": "2025-08-00",
-      "abstract": "Many polyatomic astrophysical plasmas are compressible and out of chemical and thermal equilibrium, introducing a bulk viscosity into the plasma via the internal degrees of freedom of the molecular composition, directly impacting the decay of compressible modes, <inline-formula><tex-math id=\"TM0001\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula>. This is especially important for small-scale, turbulent dynamo processes in the interstellar medium, which are known to be sensitive to the effects of compression. To control the viscous properties of <inline-formula><tex-math id=\"TM0002\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula>, we perform trans-sonic, visco-resistive dynamo simulations with additional bulk viscosity ν<SUB>bulk</SUB>, deriving a new ν<SUB>bulk</SUB> Reynolds number Re<SUB>bulk</SUB>, and viscous Prandtl number Pν ≡ Re<SUB>bulk</SUB>/Re<SUB>shear</SUB>, where Re<SUB>shear</SUB> is the shear viscosity Reynolds number. We derive a framework for decomposing E<SUB>mag</SUB> growth rates into incompressible and compressible terms via orthogonal tensor decompositions of <inline-formula><tex-math id=\"TM0003\" notation=\"LaTeX\">${\\nabla }\\otimes \\mathrm{{\\mathit {v}}}$</tex-math></inline-formula>, where <inline-formula><tex-math id=\"TM0004\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}$</tex-math></inline-formula> is the fluid velocity. We find that <inline-formula><tex-math id=\"TM0005\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> play a dual role, growing and decaying E<SUB>mag</SUB>, and that field-line stretching is the main driver of growth, even in compressible dynamos. In the absence of ν<SUB>bulk</SUB> (Pν → ∞), <inline-formula><tex-math id=\"TM0006\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> pile up on small-scales, creating a spectral bottleneck, which disappears for Pν ≈ 1. As Pν decreases, <inline-formula><tex-math id=\"TM0007\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> are dissipated at increasingly larger scales, in turn suppressing incompressible modes through a coupling between high-k modes. We emphasise the importance of further understanding the role of ν<SUB>bulk</SUB> in compressible astrophysical plasmas, which we estimate could be as strong as the shear viscosity in the cold ISM, and highlight that compressible direct numerical simulations without bulk viscosity have unresolved compressible mode dissipation scales.",
-      "bibcode": "2025MNRAS.tmp.1274B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.tmp.1274B/abstract",
-      "doi_url": "https://doi.org/10.1093/mnras/staf1318",
-      "citation_count": 9,
-      "read_count": 235,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "astro-ph.HE",
-        "physics.plasm-ph"
-      ]
-    },
     {
       "title": "The spectrum of magnetized turbulence in the interstellar medium",
       "authors": "Beattie, James R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
@@ -39,13 +17,35 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 6,
-      "read_count": 1,
+      "read_count": 316,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
         "astro-ph.SR",
         "nlin.CD",
         "physics.comp-ph"
+      ]
+    },
+    {
+      "title": "Taking control of compressible modes: bulk viscosity and the turbulent dynamo",
+      "authors": "Beattie, James R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2025",
+      "pubdate": "2025-08-00",
+      "abstract": "Many polyatomic astrophysical plasmas are compressible and out of chemical and thermal equilibrium, introducing a bulk viscosity into the plasma via the internal degrees of freedom of the molecular composition, directly impacting the decay of compressible modes, <inline-formula><tex-math id=\"TM0001\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula>. This is especially important for small-scale, turbulent dynamo processes in the interstellar medium, which are known to be sensitive to the effects of compression. To control the viscous properties of <inline-formula><tex-math id=\"TM0002\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula>, we perform trans-sonic, visco-resistive dynamo simulations with additional bulk viscosity ν<SUB>bulk</SUB>, deriving a new ν<SUB>bulk</SUB> Reynolds number Re<SUB>bulk</SUB>, and viscous Prandtl number Pν ≡ Re<SUB>bulk</SUB>/Re<SUB>shear</SUB>, where Re<SUB>shear</SUB> is the shear viscosity Reynolds number. We derive a framework for decomposing E<SUB>mag</SUB> growth rates into incompressible and compressible terms via orthogonal tensor decompositions of <inline-formula><tex-math id=\"TM0003\" notation=\"LaTeX\">${\\nabla }\\otimes \\mathrm{{\\mathit {v}}}$</tex-math></inline-formula>, where <inline-formula><tex-math id=\"TM0004\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}$</tex-math></inline-formula> is the fluid velocity. We find that <inline-formula><tex-math id=\"TM0005\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> play a dual role, growing and decaying E<SUB>mag</SUB>, and that field-line stretching is the main driver of growth, even in compressible dynamos. In the absence of ν<SUB>bulk</SUB> (Pν → ∞), <inline-formula><tex-math id=\"TM0006\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> pile up on small-scales, creating a spectral bottleneck, which disappears for Pν ≈ 1. As Pν decreases, <inline-formula><tex-math id=\"TM0007\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> are dissipated at increasingly larger scales, in turn suppressing incompressible modes through a coupling between high-k modes. We emphasise the importance of further understanding the role of ν<SUB>bulk</SUB> in compressible astrophysical plasmas, which we estimate could be as strong as the shear viscosity in the cold ISM, and highlight that compressible direct numerical simulations without bulk viscosity have unresolved compressible mode dissipation scales.",
+      "bibcode": "2025MNRAS.tmp.1274B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.tmp.1274B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/staf1318",
+      "citation_count": 9,
+      "read_count": 223,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.HE",
+        "physics.plasm-ph"
       ]
     },
     {
@@ -62,7 +62,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 1,
-      "read_count": 165,
+      "read_count": 142,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -85,7 +85,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 14,
-      "read_count": 204,
+      "read_count": 163,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -108,7 +108,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
       "citation_count": 14,
-      "read_count": 80,
+      "read_count": 79,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -128,7 +128,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
       "citation_count": 33,
-      "read_count": 92,
+      "read_count": 85,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -149,7 +149,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 30,
-      "read_count": 140,
+      "read_count": 122,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -170,7 +170,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 107,
+      "read_count": 92,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
@@ -190,7 +190,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
       "citation_count": 41,
-      "read_count": 120,
+      "read_count": 112,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -210,7 +210,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
       "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
       "citation_count": 20,
-      "read_count": 134,
+      "read_count": 109,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -231,7 +231,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac2099",
       "citation_count": 22,
-      "read_count": 159,
+      "read_count": 140,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -253,7 +253,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
       "citation_count": 26,
-      "read_count": 174,
+      "read_count": 146,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -277,7 +277,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 6,
-      "read_count": 93,
+      "read_count": 84,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -315,7 +315,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
       "citation_count": 21,
-      "read_count": 98,
+      "read_count": 76,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -336,7 +336,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
       "citation_count": 51,
-      "read_count": 61,
+      "read_count": 54,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -356,7 +356,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 28,
-      "read_count": 120,
+      "read_count": 113,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -377,7 +377,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
       "citation_count": 137,
-      "read_count": 156,
+      "read_count": 136,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -400,7 +400,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
       "citation_count": 35,
-      "read_count": 135,
+      "read_count": 98,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -422,7 +422,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 29,
-      "read_count": 61,
+      "read_count": 49,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -460,7 +460,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
       "citation_count": 23,
-      "read_count": 102,
+      "read_count": 93,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -481,7 +481,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1416",
       "citation_count": 18,
-      "read_count": 85,
+      "read_count": 66,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -501,7 +501,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 5,
-      "read_count": 153,
+      "read_count": 140,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -558,7 +558,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 2,
-      "read_count": 494,
+      "read_count": 273,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -579,7 +579,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 1,
-      "read_count": 230,
+      "read_count": 194,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
@@ -602,7 +602,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250320013G/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2503.20013",
       "citation_count": 3,
-      "read_count": 158,
+      "read_count": 147,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.HE"
@@ -622,7 +622,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250109855B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2501.09855",
       "citation_count": 7,
-      "read_count": 248,
+      "read_count": 247,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
