@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Postdoctoral Research Fellow at Princeton / CITA
+role: Postdoctoral Research Fellow at CITA / Princeton
 
 # Organizations/Affiliations to display in Biography blox
 organizations:

@@ -23,7 +23,7 @@ abstract: The sources of turbulence in our Galaxy may be diverse, but core-colla
 summary: "Supernova-driven turbulence through instabilities in their cooling layer!"
 
 tags:
-- Universality in supernovae-driven turbulence
+- Small-scale instabilities drive large-scale turbulence
 - interstellar medium turbulence
 - baroclinicity
 - gravito-hydrodynamics
