@@ -24,10 +24,10 @@ role: Postdoctoral Research Fellow at CITA / Princeton
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Princeton Department of Astrophysical Sciences
-    url: https://web.astro.princeton.edu
   - name: Canadian Institute for Theoretical Astrophysics
     url: https://www.cita.utoronto.ca
+  - name: Princeton Department of Astrophysical Sciences
+    url: https://web.astro.princeton.edu
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
