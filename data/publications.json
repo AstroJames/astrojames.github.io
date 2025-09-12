@@ -1,31 +1,8 @@
 {
-  "last_updated": "2025-09-11T06:01:46.186016+00:00",
+  "last_updated": "2025-09-12T06:01:39.387611+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
-    {
-      "title": "The spectrum of magnetized turbulence in the interstellar medium",
-      "authors": "Beattie, James R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Nature Astronomy",
-      "year": "2025",
-      "pubdate": "2025-08-00",
-      "abstract": "The interstellar medium (ISM) of our Galaxy is magnetized, compressible and turbulent, influencing many key ISM properties, such as star formation, cosmic-ray transport, and metal and phase mixing. Yet, basic statistics describing compressible, magnetized turbulence remain uncertain. Utilizing grid resolutions up to 10,080<SUP>3</SUP> cells, we simulated highly compressible, magnetized ISM-style turbulence with a magnetic field maintained by a small-scale dynamo. We measured two coexisting kinetic energy cascades, E<SUB>kin</SUB>(k ) ∝k<SUP>−n</SUP>, in the turbulence, separating the plasma into scales that are non-locally interacting, supersonic and weakly magnetized (n = 2.01 ± 0.03 ≈ 2) and locally interacting, subsonic and highly magnetized (n = 1.465 ± 0.002 ≈ 3/2), where k is the wavenumber. We show that the 3/2 spectrum can be explained with scale-dependent kinetic energy fluxes and velocity-magnetic field alignment. On the highly magnetized modes, the magnetic energy spectrum forms a local cascade (n = 1.798 ± 0.001 ≈ 9/5), deviating from any known ab initio theory. With a new generation of radio telescopes coming online, these results provide a means to directly test if the ISM in our Galaxy is maintained by the compressible turbulent motions from within it.",
-      "bibcode": "2025NatAs...9.1195B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
-      "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
-      "citation_count": 6,
-      "read_count": 316,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "astro-ph.SR",
-        "nlin.CD",
-        "physics.comp-ph"
-      ]
-    },
     {
       "title": "Taking control of compressible modes: bulk viscosity and the turbulent dynamo",
       "authors": "Beattie, James R.; Federrath, Christoph; Kriel, Neco; Hew, Justin Kin Jun; Bhattacharjee, Amitava",
@@ -46,6 +23,29 @@
         "astro-ph.GA",
         "astro-ph.HE",
         "physics.plasm-ph"
+      ]
+    },
+    {
+      "title": "The spectrum of magnetized turbulence in the interstellar medium",
+      "authors": "Beattie, James R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Federrath, Christoph; Klessen, Ralf S.; Cielo, Salvatore; Bhattacharjee, Amitava",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Nature Astronomy",
+      "year": "2025",
+      "pubdate": "2025-08-00",
+      "abstract": "The interstellar medium (ISM) of our Galaxy is magnetized, compressible and turbulent, influencing many key ISM properties, such as star formation, cosmic-ray transport, and metal and phase mixing. Yet, basic statistics describing compressible, magnetized turbulence remain uncertain. Utilizing grid resolutions up to 10,080<SUP>3</SUP> cells, we simulated highly compressible, magnetized ISM-style turbulence with a magnetic field maintained by a small-scale dynamo. We measured two coexisting kinetic energy cascades, E<SUB>kin</SUB>(k ) ∝k<SUP>−n</SUP>, in the turbulence, separating the plasma into scales that are non-locally interacting, supersonic and weakly magnetized (n = 2.01 ± 0.03 ≈ 2) and locally interacting, subsonic and highly magnetized (n = 1.465 ± 0.002 ≈ 3/2), where k is the wavenumber. We show that the 3/2 spectrum can be explained with scale-dependent kinetic energy fluxes and velocity-magnetic field alignment. On the highly magnetized modes, the magnetic energy spectrum forms a local cascade (n = 1.798 ± 0.001 ≈ 9/5), deviating from any known ab initio theory. With a new generation of radio telescopes coming online, these results provide a means to directly test if the ISM in our Galaxy is maintained by the compressible turbulent motions from within it.",
+      "bibcode": "2025NatAs...9.1195B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
+      "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
+      "citation_count": 3,
+      "read_count": 317,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.SR",
+        "nlin.CD",
+        "physics.comp-ph"
       ]
     },
     {
@@ -277,7 +277,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 6,
-      "read_count": 84,
+      "read_count": 85,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -314,7 +314,7 @@
       "bibcode": "2022MNRAS.509.2180S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
-      "citation_count": 21,
+      "citation_count": 22,
       "read_count": 76,
       "is_refereed": true,
       "arxiv_class": [
@@ -376,7 +376,7 @@
       "bibcode": "2021NatAs...5..365F",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
-      "citation_count": 137,
+      "citation_count": 138,
       "read_count": 136,
       "is_refereed": true,
       "arxiv_class": [
@@ -558,7 +558,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 2,
-      "read_count": 273,
+      "read_count": 274,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -579,7 +579,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 1,
-      "read_count": 194,
+      "read_count": 196,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
