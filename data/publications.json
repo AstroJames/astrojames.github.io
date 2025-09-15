@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-09-14T06:01:48.317001+00:00",
+  "last_updated": "2025-09-15T06:01:48.616713+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -11,19 +11,15 @@
       "beattie_position": 1,
       "journal": "Monthly Notices of the Royal Astronomical Society",
       "year": "2025",
-      "pubdate": "2025-08-00",
-      "abstract": "Many polyatomic astrophysical plasmas are compressible and out of chemical and thermal equilibrium, introducing a bulk viscosity into the plasma via the internal degrees of freedom of the molecular composition, directly impacting the decay of compressible modes, <inline-formula><tex-math id=\"TM0001\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula>. This is especially important for small-scale, turbulent dynamo processes in the interstellar medium, which are known to be sensitive to the effects of compression. To control the viscous properties of <inline-formula><tex-math id=\"TM0002\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula>, we perform trans-sonic, visco-resistive dynamo simulations with additional bulk viscosity ν<SUB>bulk</SUB>, deriving a new ν<SUB>bulk</SUB> Reynolds number Re<SUB>bulk</SUB>, and viscous Prandtl number Pν ≡ Re<SUB>bulk</SUB>/Re<SUB>shear</SUB>, where Re<SUB>shear</SUB> is the shear viscosity Reynolds number. We derive a framework for decomposing E<SUB>mag</SUB> growth rates into incompressible and compressible terms via orthogonal tensor decompositions of <inline-formula><tex-math id=\"TM0003\" notation=\"LaTeX\">${\\nabla }\\otimes \\mathrm{{\\mathit {v}}}$</tex-math></inline-formula>, where <inline-formula><tex-math id=\"TM0004\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}$</tex-math></inline-formula> is the fluid velocity. We find that <inline-formula><tex-math id=\"TM0005\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> play a dual role, growing and decaying E<SUB>mag</SUB>, and that field-line stretching is the main driver of growth, even in compressible dynamos. In the absence of ν<SUB>bulk</SUB> (Pν → ∞), <inline-formula><tex-math id=\"TM0006\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> pile up on small-scales, creating a spectral bottleneck, which disappears for Pν ≈ 1. As Pν decreases, <inline-formula><tex-math id=\"TM0007\" notation=\"LaTeX\">$\\mathrm{{\\mathit {v}}}_{\\parallel }({k})$</tex-math></inline-formula> are dissipated at increasingly larger scales, in turn suppressing incompressible modes through a coupling between high-k modes. We emphasise the importance of further understanding the role of ν<SUB>bulk</SUB> in compressible astrophysical plasmas, which we estimate could be as strong as the shear viscosity in the cold ISM, and highlight that compressible direct numerical simulations without bulk viscosity have unresolved compressible mode dissipation scales.",
-      "bibcode": "2025MNRAS.tmp.1274B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.tmp.1274B/abstract",
+      "pubdate": "2025-10-00",
+      "abstract": "Many polyatomic astrophysical plasmas are compressible and out of chemical and thermal equilibrium, introducing a bulk viscosity into the plasma via the internal degrees of freedom of the molecular composition, directly impacting the decay of compressible modes, <inline-formula><tex-math>$\\mathrm{{\\boldsymbol {\\mathit {v}}}}_{\\parallel }(\\boldsymbol {k})$</tex-math></inline-formula>. This is especially important for small-scale, turbulent dynamo processes in the interstellar medium (ISM), which are known to be sensitive to the effects of compression. To control the viscous properties of <inline-formula><tex-math>$\\mathrm{{\\boldsymbol {\\mathit {v}}}}_{\\parallel }(\\boldsymbol {k})$</tex-math></inline-formula>, we perform trans-sonic, visco-resistive dynamo simulations with additional bulk viscosity <inline-formula><tex-math>$\\nu _{\\text{bulk}}$</tex-math></inline-formula>, deriving a new <inline-formula><tex-math>$\\nu _{\\text{bulk}}$</tex-math></inline-formula> Reynolds number <inline-formula><tex-math>$\\text{Re}_{\\text{bulk}}$</tex-math></inline-formula>, and viscous Prandtl number <inline-formula><tex-math>$\\text{P}\\nu \\equiv \\text{Re}_{\\text{bulk}}/ \\text{Re}_{\\text{shear}}$</tex-math></inline-formula>, where <inline-formula><tex-math>$\\text{Re}_{\\text{shear}}$</tex-math></inline-formula> is the shear viscosity Reynolds number. We derive a framework for decomposing <inline-formula><tex-math>$E_{\\rm mag}$</tex-math></inline-formula> growth rates into incompressible and compressible terms via orthogonal tensor decompositions of <inline-formula><tex-math>$\\boldsymbol {\\nabla }\\otimes \\mathrm{{\\boldsymbol {\\mathit {v}}}}$</tex-math></inline-formula>, where <inline-formula><tex-math>$\\mathrm{{\\boldsymbol {\\mathit {v}}}}$</tex-math></inline-formula> is the fluid velocity. We find that <inline-formula><tex-math>$\\mathrm{{\\boldsymbol {\\mathit {v}}}}_{\\parallel }(\\boldsymbol {k})$</tex-math></inline-formula> play a dual role, growing and decaying <inline-formula><tex-math>$E_{\\rm mag}$</tex-math></inline-formula>, and that field-line stretching is the main driver of growth, even in compressible dynamos. In the absence of <inline-formula><tex-math>$\\nu _{\\text{bulk}}$</tex-math></inline-formula> (<inline-formula><tex-math>$\\text{P}\\nu \\rightarrow \\infty$</tex-math></inline-formula>), <inline-formula><tex-math>$\\mathrm{{\\boldsymbol {\\mathit {v}}}}_{\\parallel }(\\boldsymbol {k})$</tex-math></inline-formula> pile up on small-scales, creating a spectral bottleneck, which disappears for <inline-formula><tex-math>$\\text{P}\\nu \\approx 1$</tex-math></inline-formula>. As <inline-formula><tex-math>$\\text{P}\\nu$</tex-math></inline-formula> decreases, <inline-formula><tex-math>$\\mathrm{{\\boldsymbol {\\mathit {v}}}}_{\\parallel }(\\boldsymbol {k})$</tex-math></inline-formula> are dissipated at increasingly larger scales, in turn suppressing incompressible modes through a coupling between high-k modes. We emphasize the importance of further understanding the role of <inline-formula><tex-math>$\\nu _{\\text{bulk}}$</tex-math></inline-formula> in compressible astrophysical plasmas, which we estimate could be as strong as the shear viscosity in the cold ISM, and highlight that compressible direct numerical simulations without bulk viscosity have unresolved compressible mode dissipation scales.",
+      "bibcode": "2025MNRAS.542.2669B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.542.2669B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf1318",
-      "citation_count": 10,
-      "read_count": 223,
+      "citation_count": 0,
+      "read_count": 0,
       "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "astro-ph.HE",
-        "physics.plasm-ph"
-      ]
+      "arxiv_class": []
     },
     {
       "title": "The spectrum of magnetized turbulence in the interstellar medium",
@@ -39,7 +35,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 4,
-      "read_count": 317,
+      "read_count": 316,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -85,7 +81,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 16,
-      "read_count": 163,
+      "read_count": 164,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -149,7 +145,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 30,
-      "read_count": 122,
+      "read_count": 123,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -376,8 +372,8 @@
       "bibcode": "2021NatAs...5..365F",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
-      "citation_count": 138,
-      "read_count": 136,
+      "citation_count": 139,
+      "read_count": 137,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -422,7 +418,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 29,
-      "read_count": 49,
+      "read_count": 50,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
