@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-09T06:01:37.091539+00:00",
+  "last_updated": "2025-10-10T06:02:27.387910+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -253,7 +253,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
       "citation_count": 40,
-      "read_count": 96,
+      "read_count": 97,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -622,7 +622,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250109855B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2501.09855",
       "citation_count": 9,
-      "read_count": 268,
+      "read_count": 267,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
