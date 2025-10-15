@@ -25,7 +25,7 @@ main:
   - name: Projects
     url: projects/
     weight: 30
-  - name: Notes
+  - name: Talks
     url: notes/
     weight: 40
   - name: Data
