@@ -31,7 +31,7 @@ image:
 #    name: Follow
 #    url: https://twitter.com/georgecushen
 url_code: ''
-url_pdf: 'lectures/Cascade_I_Beattie_Goutelas.pdf'
+url_pdf: 'lectures/Cascade_I_Beattie_Goutelas_compressed.pdf'
 url_slides: ''
 url_video: ''
 
