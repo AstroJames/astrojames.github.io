@@ -1,5 +1,7 @@
 ---
 title: Curriculum Vitae
-type: page
+type: cv
+layout: single
 show_breadcrumbs: false
+show_title: false
 ---
