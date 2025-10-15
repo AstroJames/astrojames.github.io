@@ -51,7 +51,3 @@ projects:
   - MHD
 ---
 
-{{% callout note %}}
-Click on the **pdf** button above to view the built-in pdf viewer feature.
-{{% /callout %}}
-
