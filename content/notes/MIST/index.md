@@ -1,7 +1,7 @@
 ---
 title: So long Kolmogorov -- a supernovae-driven turbulence phenomenology
 
-summary: Presented at MIST 2025, Corsica, France
+summary: Invited review talk at MIST 2025, Corsica, France
 abstract: 
 
 # Talk start and end times.

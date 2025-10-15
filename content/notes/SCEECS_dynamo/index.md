@@ -1,7 +1,7 @@
 ---
 title: The chronology of high-k magnetic modes -- from dynamo to stationary turbulence
 
-summary: Presented at Frontiers of Relativistic Plasma Physics in Astrophysics and Laboratory Experiments
+summary: Invited talk at Frontiers of Relativistic Plasma Physics in Astrophysics and Laboratory Experiments
 abstract: An invited talk I gave on the fluctuation dynamo, which includes a full chronology from the kinematic stage into the saturation, supported by many numerical and theoretical results.
 
 # Talk start and end times.

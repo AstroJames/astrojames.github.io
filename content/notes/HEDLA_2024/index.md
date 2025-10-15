@@ -1,7 +1,7 @@
 ---
 title: The Supersonic Turbulent Dynamo
 
-summary: contributed talk at HEDLA 2024, in Tallahassee, Florida
+summary: Contributed talk at HEDLA 2024, in Tallahassee, Florida
 abstract: ''
 
 # Talk start and end times.
