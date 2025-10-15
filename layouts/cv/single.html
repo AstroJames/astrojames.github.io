@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="cv-full-wrapper">
+  <iframe
+    src="{{ "/uploads/resume.pdf" | relURL }}"
+    title="James R. Beattie CV"
+    class="cv-iframe"
+  ></iframe>
+  <p class="cv-download-fallback">
+    If the document does not display, <a href="{{ "/uploads/resume.pdf" | relURL }}" target="_blank" rel="noopener">download the CV</a>.
+  </p>
+</div>
+
+<style>
+.cv-full-wrapper {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  padding: 0;
+  overflow: hidden;
+}
+
+.cv-iframe {
+  display: block;
+  width: 100vw;
+  height: calc(100vh - 140px);
+  border: none;
+  background: #111827;
+}
+
+.cv-download-fallback {
+  text-align: center;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cv-download-fallback a {
+  color: #4dabf7;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .cv-iframe {
+    height: calc(100vh - 120px);
+  }
+}
+</style>
+{{ end }}
