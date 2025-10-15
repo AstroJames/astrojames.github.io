@@ -1,7 +1,7 @@
 ---
 title: The interstellar cascade I - the world’s largest turbulent MHD box experiment
 
-summary: Presented at Falgarone's ISM meeting in Château de Goutelas, France
+summary: Invited talk at Falgarone's ISM meeting in Château de Goutelas, France
 abstract: turbulence… it’s less turbulent than we think
 
 # Talk start and end times.

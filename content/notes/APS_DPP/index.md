@@ -1,11 +1,11 @@
 ---
-title: The Supersonic Turbulent Dynamo
+title: Magnetized supersonic turbulence sustained by a fluctuation dynamo
 
-summary: Contributed talk at High Energy Density Laboratory Astrophysics (HEDLA) 2024, in Tallahassee, Florida
+summary: Invited talk at APS Division of Plasma Physics 2024, Atlanta.
 abstract: ''
 
 # Talk start and end times.
-date: '2024-05-20'
+date: '2024-10-09'
 date_end: 
 all_day: false
 
@@ -25,7 +25,7 @@ image:
   focal_point: Right
 
 url_code: ''
-url_pdf: 'lectures/Beattie_HEDLA_2024_compressed.pdf'
+url_pdf: 'lectures/Beattie_APS-DPP_compressed.pdf'
 url_slides: ''
 url_video: ''
 

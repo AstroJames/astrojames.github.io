@@ -1,7 +1,7 @@
 ---
 title: The interstellar cascade II - supernova driven turbulence
 
-summary: Presented at Falgarone's ISM meeting in Château de Goutelas, France
+summary: Invited talk at Falgarone's ISM meeting in Château de Goutelas, France
 abstract: a story of compressible and solenoidal modes
 
 # Talk start and end times.
