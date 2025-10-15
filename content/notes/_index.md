@@ -1,5 +1,5 @@
 ---
-title: Talks
+title: Selected and Highlighted Talks
 cms_exclude: true
 
 # View.
@@ -10,4 +10,3 @@ banner:
   caption: ''
   image: ''
 ---
-
