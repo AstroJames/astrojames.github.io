@@ -23,6 +23,13 @@
     <div class="notes-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2rem; margin-top: 2rem;">
 
       {{ range .Pages.ByDate.Reverse }}
+        {{ $preview := "" }}
+        {{ with .Params.url_pdf }}
+          {{ $candidate := printf "lectures/previews/%s" (replace (path.Base .) ".pdf" ".jpg") }}
+          {{ if fileExists (printf "static/%s" $candidate) }}
+            {{ $preview = printf "/%s" $candidate }}
+          {{ end }}
+        {{ end }}
         <article class="note-card" style="
           background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
           border: 1px solid rgba(255,255,255,0.1);
@@ -34,6 +41,12 @@
         "
         onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.2)'; this.style.borderColor='rgba(77, 171, 247, 0.3)';"
         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255,255,255,0.1)';">
+
+          {{ if $preview }}
+            <a href="{{ .RelPermalink }}" style="display: block; margin: -2rem -2rem 1.25rem; overflow: hidden; border-radius: 12px 12px 0 0;">
+              <img src="{{ $preview }}" alt="Preview slide for {{ .Title }}" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+            </a>
+          {{ end }}
 
           <h3 style="color: #4dabf7; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.3;">
             <a href="{{ .RelPermalink }}" style="color: inherit; text-decoration: none;">{{ .Title }}</a>
