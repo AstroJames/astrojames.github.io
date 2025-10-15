@@ -16,9 +16,9 @@ main:
   - name: Collaborators
     url: /#collabs
     weight: 14
-  # - name: CV
-  #   url: experience/
-    # weight: 20
+  - name: CV
+    url: /uploads/resume.pdf
+    weight: 20
   - name: Publications
     url: publication/
     weight: 15
