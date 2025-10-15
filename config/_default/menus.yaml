@@ -17,7 +17,7 @@ main:
     url: /#collabs
     weight: 14
   - name: CV
-    url: /uploads/resume.pdf
+    url: /cv/
     weight: 20
   - name: Publications
     url: publication/
