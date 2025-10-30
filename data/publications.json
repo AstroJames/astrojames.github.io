@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-29T06:01:52.363829+00:00",
+  "last_updated": "2025-10-30T06:01:39.691845+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -105,7 +105,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 19,
-      "read_count": 137,
+      "read_count": 138,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -148,7 +148,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
       "citation_count": 37,
-      "read_count": 62,
+      "read_count": 63,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -376,7 +376,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 28,
-      "read_count": 71,
+      "read_count": 72,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -397,7 +397,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
       "citation_count": 144,
-      "read_count": 90,
+      "read_count": 91,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -420,7 +420,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
       "citation_count": 34,
-      "read_count": 64,
+      "read_count": 65,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -622,7 +622,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250109855B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2501.09855",
       "citation_count": 11,
-      "read_count": 265,
+      "read_count": 266,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
