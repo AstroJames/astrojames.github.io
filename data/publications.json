@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-06T06:01:38.735684+00:00",
+  "last_updated": "2025-11-07T06:01:56.069019+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -376,7 +376,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 28,
-      "read_count": 85,
+      "read_count": 86,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
