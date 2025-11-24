@@ -66,7 +66,7 @@ sections:
   - block: markdown
     id: collabs
     content:
-      title: 'Frequent and Current Collaborators'
+      title: 'Current and Previous Collaborators'
       subtitle: 'In order of roughly who I slack, hassle or email the most.'
       text: |-
         <style>
