@@ -1,5 +1,5 @@
 ---
-title: "The growth of magnetic energy during the nonlinear phase of the subsonic and supersonic small-scale dynamo"
+title: "Conservation of magnetic-helicity fluctuations due to spatial decorrelation of fluxes in decaying MHD turbulence"
 authors:
 - Justin Kin Jun Hew
 - David Hosking
