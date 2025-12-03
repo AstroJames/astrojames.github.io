@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    {{ if .Title }}
+    <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.75rem;">{{ .Title }}</h1>
+    {{ end }}
+    {{ with .Params.summary }}
+    <p style="color: rgba(255,255,255,0.7); font-size: 1.15rem; line-height: 1.6; margin: 0;">{{ . }}</p>
+    {{ end }}
+  </div>
+</div>
+
+<div class="page-body">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem;">
+    <div class="movies-content" style="color: rgba(255,255,255,0.9); line-height: 1.7; font-size: 1.05rem;">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+
+<style>
+.movies-content h2 {
+  font-size: 1.9rem;
+  margin-top: 2.5rem;
+  color: #4dabf7;
+}
+
+.movies-content p {
+  margin-bottom: 1.25rem;
+}
+
+.movies-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+  margin: 1.5rem 0;
+}
+
+.movies-content figcaption,
+.movies-content em {
+  color: rgba(255,255,255,0.75);
+}
+
+@media (max-width: 768px) {
+  .movies-content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .movies-content h2 {
+    font-size: 1.6rem;
+  }
+}
+</style>
+
+{{ end }}
