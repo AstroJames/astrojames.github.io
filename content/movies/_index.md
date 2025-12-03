@@ -4,7 +4,7 @@ summary: Numerical experiments and simulations that are easier to appreciate in 
 type: page
 ---
 
-## Extracted SNRs from disk cut-out simulations in [Beattie et al. (2025)](https://arxiv.org/abs/2501.09855)
+## Cooling supernovae remnants are turbulence engines. Extracted SNRs from disk cut-out simulations in [Beattie et al. (2025)](https://arxiv.org/abs/2501.09855)
 
 {{< video
     src="movies/grid_vort_pingpong_x10.mp4"
