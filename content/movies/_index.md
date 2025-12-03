@@ -4,7 +4,7 @@ summary: Numerical experiments and simulations that are easier to appreciate in 
 type: page
 ---
 
-## Grid Vorticity Ping-Pong
+## Extraced SNRs from disk cut-out simulations in [Beattie et al. (2025)](https://arxiv.org/abs/2501.09855)
 
 {{< video
     src="movies/grid_vort_pingpong_x10.mp4"
@@ -14,6 +14,5 @@ type: page
     playsinline="yes"
 >}}
 
-*Thin vortex sheets ricochet across the grid in this driven turbulence run; see [Beattie et al. (2024)](/publication/10k_MHD_sim/) for the accompanying paper.*
+*An animated version of Figure 2 from [Beattie (2025), submitted to ApJL][https://arxiv.org/abs/2509.07354], where I derive the power spectrum relation between a baroclinic source and an incompressible turbulence spectrum, which has direct applications for supernova-driven turbulence. Each panel is a supernova remanant, and the slider shows the baroclinic magnitude (blue) and the vorticity magnitude (red).*
 
-Duplicate this block for additional movies—just copy the shortcode, place the new MP4 in `assets/media/`, and update the caption/link.
