@@ -28,6 +28,9 @@ main:
   - name: Talks
     url: notes/
     weight: 40
+  - name: Movies
+    url: movies/
+    weight: 45
   - name: Data
     url: https://www.cita.utoronto.ca/~jbeattie/
     weight: 50
