@@ -6,3 +6,4 @@ resources/
 .hugo_build.lock
 hugo_stats.json
 go.sum
+_vendor/

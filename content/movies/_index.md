@@ -7,7 +7,7 @@ type: page
 ## Grid Vorticity Ping-Pong
 
 {{< video
-    src="grid_vort_pingpong_x10.mp4"
+    src="movies/grid_vort_pingpong_x10.mp4"
     controls="yes"
     loop="yes"
     muted="yes"
