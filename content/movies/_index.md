@@ -18,24 +18,13 @@ type: page
 
 ## Supernova Remnant Volume Viewer
 
-Interactively explore 3D reconstructions exported as glTF models. Drag to rotate, scroll or pinch to zoom, and tap the AR button on supported devices to drop the remnant into your room.
+_Temporarily disabled while we debug the 3D model pipeline—check back soon for interactive reconstructions._
 
-{{< model_viewer
-    src="/models/clustering_cache_00030_cluster_26_surface_preview.gltf"
-    alt="Preview of supernova remnant cluster 26"
-    caption="Preview remnant: 10× down-sampled mesh for quick interaction."
->}}
-
-{{< model_viewer
-    src="/models/clustering_cache_00030_cluster_26_surface.gltf"
-    alt="Full-resolution supernova remnant cluster 26"
-    caption="Full-resolution remnant from Beattie et al. (2025)."
-    exposure="1.1"
->}}
-
+{{/*
 {{< model_viewer
     src="/models/cube_demo.gltf"
     alt="Geometry sanity check"
     caption="Simple cube for debugging and verifying the viewer."
     height="360px"
 >}}
+*/}}
