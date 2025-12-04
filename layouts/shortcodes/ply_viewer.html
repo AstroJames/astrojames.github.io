@@ -16,7 +16,7 @@
         <button type="button" data-direction="1">Next ▶</button>
       </div>
     </div>
-    <div class="ply-viewer__canvas"></div>
+    <canvas class="ply-viewer__canvas" aria-label="Interactive PLY viewer"></canvas>
     <div class="ply-viewer__status">Loading…</div>
   </div>
   <style>
@@ -82,9 +82,6 @@
   </style>
   {{ if not (.Page.Scratch.Get "ply-viewer-scripts") }}
     {{ .Page.Scratch.Set "ply-viewer-scripts" true }}
-    <script defer src="https://cdn.jsdelivr.net/npm/three@0.166.0/build/three.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/three@0.166.0/examples/js/controls/OrbitControls.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/three@0.166.0/examples/js/loaders/PLYLoader.js"></script>
     <script defer src="/js/ply-viewer.js"></script>
   {{ end }}
 {{ end }}
