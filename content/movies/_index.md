@@ -3,7 +3,9 @@ title: Movies
 summary: Numerical experiments and simulations that are easier to appreciate in motion than in text.
 type: page
 models:
-  - label: 'Clustering cache: cluster 26 surface'
+  - label: 'SNR cluster 26 (preview)'
+    file: '/models/clustering_cache_00030_cluster_26_surface_preview.ply'
+  - label: 'SNR cluster 26 (full resolution)'
     file: '/models/clustering_cache_00030_cluster_26_surface.ply'
 ---
 
@@ -22,5 +24,7 @@ models:
 ## Supernova Remnant Volume Viewer
 
 Interactively explore 3D point-cloud surfaces exported from volume renders. Drag to rotate, scroll to zoom, or use the dropdown to switch data products.
+
+Default selection loads a down-sampled preview for faster interaction. Switch to the full-resolution entry once you're ready—the initial load may take longer.
 
 {{< ply_viewer >}}
