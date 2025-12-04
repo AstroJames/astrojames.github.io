@@ -18,7 +18,7 @@ type: page
 
 ## Supernova Remnant Volume Viewer
 
-_Temporarily disabled while we debug the 3D model pipeline—check back soon for interactive reconstructions._
+_Temporarily disabled while I debug the 3D model pipeline—check back soon for interactive reconstructions._
 
 {{/*
 {{< model_viewer
