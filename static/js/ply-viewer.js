@@ -130,36 +130,48 @@
       this.loader.load(
         model.file,
         geometry => {
-          geometry.computeVertexNormals();
-          geometry.computeBoundingBox();
-          geometry.center();
-          geometry.computeBoundingSphere();
+          try {
+            geometry.computeBoundingBox();
+            geometry.center();
+            geometry.computeBoundingSphere();
 
-          const radius = geometry.boundingSphere ? geometry.boundingSphere.radius : 1;
-          const scale = radius > 0 ? 1 / radius : 1;
-          geometry.scale(scale, scale, scale);
+            const radius = geometry.boundingSphere ? geometry.boundingSphere.radius : 1;
+            const scale = radius > 0 ? 1 / radius : 1;
+            geometry.scale(scale, scale, scale);
 
-          const material = new THREE.MeshStandardMaterial({
-            color: 0x7dd3fc,
-            roughness: 0.5,
-            metalness: 0.1,
-            side: THREE.DoubleSide,
-          });
+            const hasFaces = geometry.index && geometry.index.count > 0;
+            let object;
 
-          if (this.currentMesh) {
-            this.currentMesh.geometry.dispose();
-            this.currentMesh.material.dispose();
-            this.scene.remove(this.currentMesh);
+            if (hasFaces) {
+              geometry.computeVertexNormals();
+              const meshMaterial = new THREE.MeshStandardMaterial({
+                color: 0x7dd3fc,
+                roughness: 0.5,
+                metalness: 0.1,
+                side: THREE.DoubleSide,
+                vertexColors: geometry.hasAttribute('color'),
+              });
+              object = new THREE.Mesh(geometry, meshMaterial);
+            } else {
+              const pointMaterial = new THREE.PointsMaterial({
+                size: 0.01,
+                sizeAttenuation: true,
+                vertexColors: geometry.hasAttribute('color'),
+                color: geometry.hasAttribute('color') ? undefined : 0x7dd3fc,
+              });
+              object = new THREE.Points(geometry, pointMaterial);
+            }
+
+            this.replaceObject(object);
+            this.camera.position.set(2.5, 2.5, 2.5);
+            this.controls.target.set(0, 0, 0);
+            this.controls.update();
+
+            this.setStatus(`${model.label || model.file} ready. Drag to rotate, scroll to zoom.`);
+          } catch (error) {
+            console.error('PLY post-process error', error);
+            this.setStatus('Loaded file but could not render geometry.', true);
           }
-
-          this.currentMesh = new THREE.Mesh(geometry, material);
-          this.scene.add(this.currentMesh);
-
-          this.camera.position.set(2.5, 2.5, 2.5);
-          this.controls.target.set(0, 0, 0);
-          this.controls.update();
-
-          this.setStatus(`${model.label || model.file} ready. Drag to rotate, scroll to zoom.`);
         },
         xhr => {
           if (xhr.total) {
@@ -172,6 +184,17 @@
           this.setStatus('Failed to load model.', true);
         }
       );
+    }
+
+    replaceObject(object) {
+      if (!object) return;
+      if (this.currentMesh) {
+        this.currentMesh.geometry?.dispose?.();
+        this.currentMesh.material?.dispose?.();
+        this.scene.remove(this.currentMesh);
+      }
+      this.currentMesh = object;
+      this.scene.add(object);
     }
 
     changeModel(delta) {
