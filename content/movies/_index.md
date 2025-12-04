@@ -3,6 +3,8 @@ title: Movies
 summary: Numerical experiments and simulations that are easier to appreciate in motion than in text.
 type: page
 models:
+  - label: 'Demo cube'
+    file: '/models/cube_demo.ply'
   - label: 'SNR cluster 26 (preview)'
     file: '/models/clustering_cache_00030_cluster_26_surface_preview.ply'
   - label: 'SNR cluster 26 (full resolution)'
