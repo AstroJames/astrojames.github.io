@@ -1,0 +1,228 @@
+{{ $models := .Page.Params.models }}
+{{ if not $models }}
+  <p style="color: rgba(255,255,255,0.6);">Add a <code>models</code> list to this page's front matter so the viewer knows which PLY files to load.</p>
+{{ else }}
+  {{ $id := printf "ply-viewer-%d" now.UnixNano }}
+  <div class="ply-viewer" id="{{ $id }}" data-models='{{ $models | jsonify | safeHTMLAttr }}'>
+    <div class="ply-viewer__controls">
+      <label for="{{ $id }}-select">Model</label>
+      <select id="{{ $id }}-select"></select>
+      <div class="ply-viewer__buttons">
+        <button type="button" data-direction="-1">◀ Prev</button>
+        <button type="button" data-direction="1">Next ▶</button>
+      </div>
+    </div>
+    <div class="ply-viewer__canvas"></div>
+    <div class="ply-viewer__status">Loading…</div>
+  </div>
+  <style>
+    #{{ $id }} {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 25px 65px rgba(0,0,0,0.35);
+    }
+    #{{ $id }} .ply-viewer__controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    #{{ $id }} label {
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+    }
+    #{{ $id }} select {
+      background: rgba(0,0,0,0.35);
+      color: #e5e7eb;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      min-width: 220px;
+    }
+    #{{ $id }} .ply-viewer__buttons button {
+      background: rgba(77,171,247,0.15);
+      color: #4dabf7;
+      border: 1px solid rgba(77,171,247,0.3);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    #{{ $id }} .ply-viewer__buttons button:hover {
+      background: rgba(77,171,247,0.25);
+    }
+    #{{ $id }} .ply-viewer__canvas {
+      width: 100%;
+      min-height: 420px;
+    }
+    #{{ $id }} .ply-viewer__status {
+      margin-top: 0.75rem;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 640px) {
+      #{{ $id }} select {
+        flex: 1 1 100%;
+      }
+      #{{ $id }} .ply-viewer__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+  <script type="module">
+    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.166.0/build/three.module.js';
+    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.166.0/examples/jsm/controls/OrbitControls.js';
+    import { PLYLoader } from 'https://cdn.jsdelivr.net/npm/three@0.166.0/examples/jsm/loaders/PLYLoader.js';
+
+    const root = document.getElementById('{{ $id }}');
+    const selectEl = document.getElementById('{{ $id }}-select');
+    const statusEl = root.querySelector('.ply-viewer__status');
+    const canvasHost = root.querySelector('.ply-viewer__canvas');
+    const buttons = root.querySelectorAll('[data-direction]');
+    const models = JSON.parse(root.dataset.models || '[]');
+
+    if (!models.length) {
+      statusEl.textContent = 'No models found in front matter.';
+      return;
+    }
+
+    let currentIndex = 0;
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    canvasHost.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x050912);
+
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 5000);
+    camera.position.set(4, 3, 5);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x111111, 0.7));
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    dirLight.position.set(5, 10, 7);
+    scene.add(dirLight);
+
+    const loader = new PLYLoader();
+    let currentMesh = null;
+
+    function setStatus(text, isError = false) {
+      statusEl.textContent = text;
+      statusEl.style.color = isError ? '#f87171' : 'rgba(255,255,255,0.65)';
+    }
+
+    function resizeRenderer() {
+      const width = canvasHost.clientWidth;
+      const height = Math.max(width * 0.6, 320);
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    }
+
+    function populateSelect() {
+      selectEl.innerHTML = '';
+      models.forEach((model, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = model.label || `Model ${index + 1}`;
+        selectEl.appendChild(option);
+      });
+      selectEl.value = '0';
+    }
+
+    function loadModel(index) {
+      const model = models[index];
+      if (!model) {
+        setStatus('Missing model definition', true);
+        return;
+      }
+      currentIndex = index;
+      setStatus(`Loading ${model.label || model.file}…`);
+
+      loader.load(
+        model.file,
+        geometry => {
+          geometry.computeVertexNormals();
+          geometry.computeBoundingBox();
+          geometry.center();
+          geometry.computeBoundingSphere();
+
+          const radius = geometry.boundingSphere ? geometry.boundingSphere.radius : 1;
+          const scale = radius > 0 ? 1 / radius : 1;
+          geometry.scale(scale, scale, scale);
+
+          const material = new THREE.MeshStandardMaterial({
+            color: 0x7dd3fc,
+            roughness: 0.5,
+            metalness: 0.1,
+            side: THREE.DoubleSide,
+          });
+
+          if (currentMesh) {
+            currentMesh.geometry.dispose();
+            currentMesh.material.dispose();
+            scene.remove(currentMesh);
+          }
+
+          currentMesh = new THREE.Mesh(geometry, material);
+          scene.add(currentMesh);
+
+          camera.position.set(2.5, 2.5, 2.5);
+          controls.target.set(0, 0, 0);
+          controls.update();
+
+          setStatus(`${model.label || model.file} ready. Drag to rotate, scroll to zoom.`);
+        },
+        xhr => {
+          if (xhr.total) {
+            const percent = ((xhr.loaded / xhr.total) * 100).toFixed(0);
+            setStatus(`Loading ${percent}%`);
+          }
+        },
+        error => {
+          console.error('PLY load error', error);
+          setStatus('Failed to load model.', true);
+        }
+      );
+    }
+
+    function changeModel(delta) {
+      const nextIndex = (currentIndex + delta + models.length) % models.length;
+      selectEl.value = String(nextIndex);
+      loadModel(nextIndex);
+    }
+
+    selectEl.addEventListener('change', event => {
+      loadModel(Number(event.target.value));
+    });
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const dir = Number(button.dataset.direction || 0);
+        changeModel(dir);
+      });
+    });
+
+    window.addEventListener('resize', resizeRenderer);
+
+    populateSelect();
+    resizeRenderer();
+    loadModel(0);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+{{ end }}
