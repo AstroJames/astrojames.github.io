@@ -2,13 +2,6 @@
 title: Movies
 summary: Numerical experiments and simulations that are easier to appreciate in motion than in text.
 type: page
-models:
-  - label: 'Demo cube'
-    file: '/models/cube_demo.ply'
-  - label: 'SNR cluster 26 (preview)'
-    file: '/models/clustering_cache_00030_cluster_26_surface_preview.ply'
-  - label: 'SNR cluster 26 (full resolution)'
-    file: '/models/clustering_cache_00030_cluster_26_surface.ply'
 ---
 
 ## Cooling supernovae remnants are turbulence engines. Extracted SNRs from disk cut-out simulations in [Beattie et al. (2025)](https://arxiv.org/abs/2501.09855)
@@ -25,8 +18,24 @@ models:
 
 ## Supernova Remnant Volume Viewer
 
-Interactively explore 3D point-cloud surfaces exported from volume renders. Drag to rotate, scroll to zoom, or use the dropdown to switch data products.
+Interactively explore 3D reconstructions exported as glTF models. Drag to rotate, scroll or pinch to zoom, and tap the AR button on supported devices to drop the remnant into your room.
 
-Default selection loads a down-sampled preview for faster interaction. Switch to the full-resolution entry once you're ready—the initial load may take longer.
+{{< model_viewer
+    src="/models/clustering_cache_00030_cluster_26_surface_preview.gltf"
+    alt="Preview of supernova remnant cluster 26"
+    caption="Preview remnant: 10× down-sampled mesh for quick interaction."
+>}}
 
-{{< ply_viewer >}}
+{{< model_viewer
+    src="/models/clustering_cache_00030_cluster_26_surface.gltf"
+    alt="Full-resolution supernova remnant cluster 26"
+    caption="Full-resolution remnant from Beattie et al. (2025)."
+    exposure="1.1"
+>}}
+
+{{< model_viewer
+    src="/models/cube_demo.gltf"
+    alt="Geometry sanity check"
+    caption="Simple cube for debugging and verifying the viewer."
+    height="360px"
+>}}

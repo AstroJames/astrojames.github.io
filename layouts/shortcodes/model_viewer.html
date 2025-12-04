@@ -1,0 +1,25 @@
+{{ $src := .Get "src" }}
+{{ if not $src }}
+  <p style="color: rgba(255,255,255,0.7);">Model viewer requires a <code>src</code> parameter.</p>
+{{ else }}
+  {{ if not (.Page.Scratch.Get "model-viewer-script") }}
+    {{ .Page.Scratch.Set "model-viewer-script" true }}
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  {{ end }}
+  <div class="model-viewer-block" style="margin: 2rem 0;">
+    <model-viewer
+      src="{{ $src }}"
+      alt="{{ .Get "alt" | default "3D model" }}"
+      camera-controls
+      auto-rotate
+      autoplay
+      exposure="{{ .Get "exposure" | default "0.9" }}"
+      shadow-intensity="{{ .Get "shadow" | default "1" }}"
+      style="width: 100%; height: {{ .Get "height" | default "520px" }}; border-radius: 20px; background: radial-gradient(circle at top, rgba(255,255,255,0.15), rgba(9,12,20,0.9));"
+    ></model-viewer>
+    {{ with .Get "caption" }}
+      <p style="margin-top: 0.75rem; color: rgba(255,255,255,0.75); font-size: 0.95rem;">{{ . }}</p>
+    {{ end }}
+  </div>
+{{ end }}
