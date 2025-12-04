@@ -39,9 +39,9 @@
       }
 
       this.initThree();
-    this.bindEvents();
-    this.resizeRenderer();
-    this.loadModel(0);
+      this.bindEvents();
+      this.resizeRenderer();
+      this.loadModel(0);
       this.animate();
     }
 
@@ -55,7 +55,6 @@
         }
       }
 
-      // Fallback: read from select options
       const options = Array.from(this.root.querySelectorAll('select option'));
       return options.map(option => ({
         label: option.textContent,
@@ -72,7 +71,7 @@
       this.scene.background = new THREE.Color(0x050912);
 
       this.camera = new THREE.PerspectiveCamera(45, 1, 0.1, 5000);
-      this.camera.position.set(4, 3, 5);
+      this.camera.position.set(3, 2.5, 3);
 
       this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
       this.controls.enableDamping = true;
@@ -83,14 +82,20 @@
       this.scene.add(dirLight);
 
       this.loader = new THREE.PLYLoader();
+      this.pointMaterial = new THREE.PointsMaterial({
+        size: 0.02,
+        sizeAttenuation: true,
+        color: 0x7dd3fc,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.9,
+      });
     }
 
     bindEvents() {
-      if (this.selectEl) {
-        this.selectEl.addEventListener('change', event => {
-          this.loadModel(Number(event.target.value));
-        });
-      }
+      this.selectEl?.addEventListener('change', event => {
+        this.loadModel(Number(event.target.value));
+      });
 
       this.buttons.forEach(button => {
         button.addEventListener('click', () => {
@@ -111,9 +116,9 @@
       this.camera.updateProjectionMatrix();
     }
 
-    setStatus(message, isError = false) {
+    setStatus(text, isError = false) {
       if (!this.statusEl) return;
-      this.statusEl.textContent = message;
+      this.statusEl.textContent = text;
       this.statusEl.style.color = isError ? '#f87171' : 'rgba(255,255,255,0.65)';
     }
 
@@ -131,6 +136,16 @@
         model.file,
         geometry => {
           try {
+            if (geometry.hasAttribute('color')) {
+              const colors = geometry.getAttribute('color');
+              for (let i = 0; i < colors.count; i++) {
+                colors.setX(i, colors.getX(i) / 255);
+                colors.setY(i, colors.getY(i) / 255);
+                colors.setZ(i, colors.getZ(i) / 255);
+              }
+              colors.needsUpdate = true;
+            }
+
             geometry.computeBoundingBox();
             geometry.center();
             geometry.computeBoundingSphere();
@@ -139,33 +154,10 @@
             const scale = radius > 0 ? 1 / radius : 1;
             geometry.scale(scale, scale, scale);
 
-            const hasFaces = geometry.index && geometry.index.count > 0;
-            let object;
+            const points = new THREE.Points(geometry, this.pointMaterial);
+            this.replaceObject(points);
 
-            if (hasFaces) {
-              geometry.computeVertexNormals();
-              const meshMaterial = new THREE.MeshStandardMaterial({
-                color: 0x7dd3fc,
-                roughness: 0.5,
-                metalness: 0.1,
-                side: THREE.DoubleSide,
-                vertexColors: geometry.hasAttribute('color'),
-              });
-              object = new THREE.Mesh(geometry, meshMaterial);
-            } else {
-              const pointMaterial = new THREE.PointsMaterial({
-                size: 0.015,
-                sizeAttenuation: true,
-                vertexColors: geometry.hasAttribute('color'),
-                color: geometry.hasAttribute('color') ? undefined : 0x7dd3fc,
-                transparent: true,
-                opacity: 0.9,
-              });
-              object = new THREE.Points(geometry, pointMaterial);
-            }
-
-            this.replaceObject(object);
-            this.camera.position.set(2.2, 2.2, 2.2);
+            this.camera.position.set(1.8, 1.8, 1.8);
             this.controls.target.set(0, 0, 0);
             this.controls.update();
 
@@ -208,23 +200,10 @@
       this.loadModel(nextIndex);
     }
 
-    replaceObject(object) {
-      if (!object) return;
-      if (this.currentMesh) {
-        this.currentMesh.geometry?.dispose?.();
-        this.currentMesh.material?.dispose?.();
-        this.scene.remove(this.currentMesh);
-      }
-      this.currentMesh = object;
-      this.scene.add(object);
-    }
-
     animate() {
       requestAnimationFrame(() => this.animate());
-      if (this.controls && this.renderer && this.scene && this.camera) {
-        this.controls.update();
-        this.renderer.render(this.scene, this.camera);
-      }
+      this.controls.update();
+      this.renderer.render(this.scene, this.camera);
     }
   }
 
