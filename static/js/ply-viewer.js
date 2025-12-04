@@ -5,6 +5,7 @@
   const MAX_POINT_SIZE = 8.0;
 
   function initWhenReady() {
+    console.info('[PLY viewer] initializing…');
     if (!READY_STATES.includes(document.readyState)) {
       document.addEventListener('DOMContentLoaded', initPlyViewers, { once: true });
     } else {
@@ -13,7 +14,11 @@
   }
 
   function initPlyViewers() {
-    document.querySelectorAll('.ply-viewer').forEach(root => {
+    const viewers = document.querySelectorAll('.ply-viewer');
+    if (!viewers.length) {
+      console.warn('[PLY viewer] no viewer blocks found on page');
+    }
+    viewers.forEach(root => {
       if (root.dataset.plyViewerInit) return;
       root.dataset.plyViewerInit = 'true';
       new PlyViewer(root);
@@ -23,6 +28,7 @@
   class PlyViewer {
     constructor(root) {
       this.root = root;
+      console.info('[PLY viewer] initializing viewer', { id: root.id });
       this.models = this.extractModels();
       this.selectEl = root.querySelector('select');
       this.statusEl = root.querySelector('.ply-viewer__status');
@@ -37,17 +43,20 @@
 
       if (!this.canvas) {
         this.setStatus('Canvas element missing.', true);
+        console.error('[PLY viewer] canvas missing; aborting');
         return;
       }
 
       if (!this.models.length) {
         this.setStatus('No models configured.', true);
+        console.error('[PLY viewer] models array empty; check front matter');
         return;
       }
 
       this.gl = this.canvas.getContext('webgl', { antialias: true });
       if (!this.gl) {
         this.setStatus('WebGL not supported in this browser.', true);
+        console.error('[PLY viewer] WebGL context unavailable');
         return;
       }
 
@@ -242,6 +251,7 @@
         this.applyGeometry(parsed);
         const note = parsed.sampleInfo ? ` (${parsed.sampleInfo})` : '';
         this.setStatus(`${model.label || model.file} ready${note}. Drag to rotate, scroll to zoom.`);
+        console.info('[PLY viewer] loaded model', { file: model.file, points: this.pointCount, downsample: parsed.sampleInfo || '1:1' });
       } catch (error) {
         console.error('PLY load error', error);
         if (this.loadToken === token) {
