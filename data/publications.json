@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-12-03T06:01:32.258044+00:00",
-  "total_publications": 31,
+  "last_updated": "2025-12-04T06:02:22.802216+00:00",
+  "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
     {
@@ -16,10 +16,13 @@
       "bibcode": "2025ApJ...994..193B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
-      "citation_count": 0,
-      "read_count": 0,
+      "citation_count": 12,
+      "read_count": 251,
       "is_refereed": true,
-      "arxiv_class": []
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.HE"
+      ]
     },
     {
       "title": "Taking control of compressible modes: bulk viscosity and the turbulent dynamo",
@@ -56,8 +59,8 @@
       "bibcode": "2025PhRvD.112f3046G",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
-      "citation_count": 5,
-      "read_count": 145,
+      "citation_count": 4,
+      "read_count": 155,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -77,7 +80,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 14,
-      "read_count": 258,
+      "read_count": 273,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -100,7 +103,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 1,
-      "read_count": 103,
+      "read_count": 114,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -123,7 +126,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 21,
-      "read_count": 180,
+      "read_count": 197,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -215,6 +218,28 @@
       ]
     },
     {
+      "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "Energy equipartition is a powerful theoretical tool for understanding astrophysical plasmas. It is invoked, for example, to measure magnetic fields in the interstellar medium (ISM), as evidence for small-scale turbulent dynamo action, and, in general, to estimate the energy budget of star-forming molecular clouds. In this study, we motivate and explore the role of the volume-averaged root-mean-squared (rms) magnetic coupling term between the turbulent, $\\delta {\\boldsymbol{B}}$ , and large-scale, ${\\boldsymbol{B}}_0$, fields, ${\\left\\langle (\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}\\cdot {\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0})^{2} \\right\\rangle ^{1/2}_{\\mathcal {V}}}$. By considering the second moments of the energy balance equations we show that the rms coupling term is in energy equipartition with the volume-averaged turbulent kinetic energy for turbulence with a sub-Alfvénic large-scale field. Under the assumption of exact energy equipartition between these terms, we derive relations for the magnetic and coupling term fluctuations, which provide excellent, parameter-free agreement with time-averaged data from 280 numerical simulations of compressible magnetohydrodynamic (MHD) turbulence. Furthermore, we explore the relation between the turbulent mean field and total Alfvén Mach numbers, and demonstrate that sub-Alfvénic turbulence can only be developed through a strong, large-scale magnetic field, which supports an extremely super-Alfvénic turbulent magnetic field. This means that the magnetic field fluctuations are significantly subdominant to the velocity fluctuations in the sub-Alfvénic large-scale field regime. Throughout our study, we broadly discuss the implications for observations of magnetic fields and understanding the dynamics in the magnetized ISM.",
+      "bibcode": "2022MNRAS.515.5267B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stac2099",
+      "citation_count": 22,
+      "read_count": 110,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn",
+        "physics.plasm-ph"
+      ]
+    },
+    {
       "title": "Understanding star formation in molecular clouds. IV. Column density PDFs from quiescent to massive molecular clouds",
       "authors": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; Beattie, J. R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
       "authors_highlighted": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; <strong>Beattie, J.</strong> R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
@@ -253,28 +278,6 @@
       "arxiv_class": [
         "astro-ph.GA",
         "physics.flu-dyn"
-      ]
-    },
-    {
-      "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
-      "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Monthly Notices of the Royal Astronomical Society",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "Energy equipartition is a powerful theoretical tool for understanding astrophysical plasmas. It is invoked, for example, to measure magnetic fields in the interstellar medium (ISM), as evidence for small-scale turbulent dynamo action, and, in general, to estimate the energy budget of star-forming molecular clouds. In this study, we motivate and explore the role of the volume-averaged root-mean-squared (rms) magnetic coupling term between the turbulent, $\\delta {\\boldsymbol{B}}$ , and large-scale, ${\\boldsymbol{B}}_0$, fields, ${\\left\\langle (\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}\\cdot {\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0})^{2} \\right\\rangle ^{1/2}_{\\mathcal {V}}}$. By considering the second moments of the energy balance equations we show that the rms coupling term is in energy equipartition with the volume-averaged turbulent kinetic energy for turbulence with a sub-Alfvénic large-scale field. Under the assumption of exact energy equipartition between these terms, we derive relations for the magnetic and coupling term fluctuations, which provide excellent, parameter-free agreement with time-averaged data from 280 numerical simulations of compressible magnetohydrodynamic (MHD) turbulence. Furthermore, we explore the relation between the turbulent mean field and total Alfvén Mach numbers, and demonstrate that sub-Alfvénic turbulence can only be developed through a strong, large-scale magnetic field, which supports an extremely super-Alfvénic turbulent magnetic field. This means that the magnetic field fluctuations are significantly subdominant to the velocity fluctuations in the sub-Alfvénic large-scale field regime. Throughout our study, we broadly discuss the implications for observations of magnetic fields and understanding the dynamics in the magnetized ISM.",
-      "bibcode": "2022MNRAS.515.5267B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
-      "doi_url": "https://doi.org/10.1093/mnras/stac2099",
-      "citation_count": 22,
-      "read_count": 111,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "physics.flu-dyn",
-        "physics.plasm-ph"
       ]
     },
     {
@@ -479,7 +482,7 @@
       "bibcode": "2020EcoEv..10.1054T",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020EcoEv..10.1054T/abstract",
       "doi_url": "https://doi.org/10.1002/ece3.5972",
-      "citation_count": 21,
+      "citation_count": 22,
       "read_count": 0,
       "is_refereed": true,
       "arxiv_class": []
@@ -596,7 +599,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 7,
-      "read_count": 128,
+      "read_count": 129,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -617,34 +620,13 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 4,
-      "read_count": 134,
+      "read_count": 144,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
         "astro-ph.GA",
         "nlin.CD",
         "physics.flu-dyn"
-      ]
-    },
-    {
-      "title": "So long Kolmogorov: the forward and backward turbulence cascades in a supernovae-driven, multiphase interstellar medium",
-      "authors": "Beattie, James R.; Noer Kolborg, Anne; Ramirez-Ruiz, Enrico; Federrath, Christoph",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Noer Kolborg, Anne; Ramirez-Ruiz, Enrico; Federrath, Christoph",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "arXiv e-prints",
-      "year": "2025",
-      "pubdate": "2025-01-00",
-      "abstract": "The interstellar medium (ISM) of disk galaxies is turbulent, and yet the fundamental nature of ISM turbulence, the energy cascade, is not understood in detail. In this study, we use high-resolution simulations of a hydrodynamical, gravitationally stratified, supernova (SNe)-driven, multiphase ISM to probe the nature of a galactic turbulence cascade. Through the use of velocity flux transfer functions split into interactions between compressible $\\mathbf{u}_c$ and incompressible $\\mathbf{u}_s$ modes, we show that there exists a large-to-small-scale cascade in both $\\mathbf{u}_c$ and $\\mathbf{u}_s$ when mediated by an additional $\\mathbf{u}_s$ mode. But the $\\mathbf{u}_s$ cascade is highly non-local. Moreover, there is a $\\mathbf{u}_c$ mediated component of the $\\mathbf{u}_s$ cascade that proceeds in the opposite direction -- an inverse cascade from small-to-large scales. The cascade feeds flux into scales well beyond the scale height, energizing the winds and fueling the direct cascades. Both the strongly non-local and the inverse $\\mathbf{u}_s$ cascades happen on scales that have a power law $\\mathbf{u}_s$ energy spectrum, highlighting how degenerate the spectrum is to the true underlying physical processes. We directly show that the inverse cascade comes from $\\mathbf{u}_s$ modes interacting with expanding SNe remnants (SNRs) and that $\\mathbf{u}_s$ modes are generated to leading order via baroclinic, highly corrugated cooling layers between warm $(T\\lesssim 10^4\\,\\rm{K})$ and hot $(T\\gg10^4\\,\\rm{K})$ gas in these SNRs. Finally, we outline a complete phenomenology for SNe-driven turbulence in a galactic disk, estimate a $10^{-16}\\,\\rm{G}$ Biermann field generated from SNR cooling layers, and highlight the strong deviations that SNe-driven turbulence has from the conventional Kolmogorov model.",
-      "bibcode": "2025arXiv250109855B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250109855B/abstract",
-      "doi_url": "https://doi.org/10.48550/arXiv.2501.09855",
-      "citation_count": 12,
-      "read_count": 246,
-      "is_refereed": false,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "astro-ph.HE"
       ]
     }
   ]
