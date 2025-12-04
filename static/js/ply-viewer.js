@@ -39,9 +39,9 @@
       }
 
       this.initThree();
-      this.bindEvents();
-      this.resizeRenderer();
-      this.loadModel(0);
+    this.bindEvents();
+    this.resizeRenderer();
+    this.loadModel(0);
       this.animate();
     }
 
@@ -154,16 +154,18 @@
               object = new THREE.Mesh(geometry, meshMaterial);
             } else {
               const pointMaterial = new THREE.PointsMaterial({
-                size: 0.01,
+                size: 0.015,
                 sizeAttenuation: true,
                 vertexColors: geometry.hasAttribute('color'),
                 color: geometry.hasAttribute('color') ? undefined : 0x7dd3fc,
+                transparent: true,
+                opacity: 0.9,
               });
               object = new THREE.Points(geometry, pointMaterial);
             }
 
             this.replaceObject(object);
-            this.camera.position.set(2.5, 2.5, 2.5);
+            this.camera.position.set(2.2, 2.2, 2.2);
             this.controls.target.set(0, 0, 0);
             this.controls.update();
 
@@ -204,6 +206,17 @@
         this.selectEl.value = String(nextIndex);
       }
       this.loadModel(nextIndex);
+    }
+
+    replaceObject(object) {
+      if (!object) return;
+      if (this.currentMesh) {
+        this.currentMesh.geometry?.dispose?.();
+        this.currentMesh.material?.dispose?.();
+        this.scene.remove(this.currentMesh);
+      }
+      this.currentMesh = object;
+      this.scene.add(object);
     }
 
     animate() {
