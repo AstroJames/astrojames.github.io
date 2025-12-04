@@ -6,7 +6,11 @@
   <div class="ply-viewer" id="{{ $id }}" data-models='{{ $models | jsonify | safeHTMLAttr }}'>
     <div class="ply-viewer__controls">
       <label for="{{ $id }}-select">Model</label>
-      <select id="{{ $id }}-select"></select>
+      <select id="{{ $id }}-select">
+        {{ range $index, $model := $models }}
+          <option value="{{ $index }}" data-file="{{ $model.file }}">{{ $model.label | default (printf "Model %d" (add $index 1)) }}</option>
+        {{ end }}
+      </select>
       <div class="ply-viewer__buttons">
         <button type="button" data-direction="-1">◀ Prev</button>
         <button type="button" data-direction="1">Next ▶</button>
@@ -76,8 +80,11 @@
       }
     }
   </style>
-  {{ if not (.Page.Scratch.Get "ply-viewer-script") }}
-    {{ .Page.Scratch.Set "ply-viewer-script" true }}
-    <script type="module" src="/js/ply-viewer.js"></script>
+  {{ if not (.Page.Scratch.Get "ply-viewer-scripts") }}
+    {{ .Page.Scratch.Set "ply-viewer-scripts" true }}
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.166.0/build/three.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.166.0/examples/js/controls/OrbitControls.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.166.0/examples/js/loaders/PLYLoader.js"></script>
+    <script defer src="/js/ply-viewer.js"></script>
   {{ end }}
 {{ end }}
