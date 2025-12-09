@@ -37,51 +37,64 @@ Pick a model and explore it interactively.
     </option>
   </select>
 
-  {{< model_viewer
-      src="/models/clustering_cache_00030_cluster_26_surface.glb"
-      alt="Clustering cache cluster 26 surface"
-      caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom."
-      height="520px"
-      loading="lazy"
-      reveal="auto"
-      camera_orbit="auto auto 2.5m"
-      min_camera_orbit="auto auto 0.01m"
-      max_camera_orbit="auto auto 8m"
-      field_of_view="35deg"
-      id="model-viewer-main"
-  >}}
+  <div id="viewer-host">
+    {{< model_viewer
+        src="/models/clustering_cache_00030_cluster_26_surface.glb"
+        alt="Clustering cache cluster 26 surface"
+        caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom."
+        height="520px"
+        loading="lazy"
+        reveal="auto"
+        camera_orbit="auto auto 2.5m"
+        min_camera_orbit="auto auto 0.01m"
+        max_camera_orbit="auto auto 8m"
+        field_of_view="35deg"
+        id="model-viewer-main"
+    >}}
+  </div>
 </div>
 
 <script>
   (function() {
-    const init = () => {
-      const select = document.getElementById('model-select');
-      const viewer = document.getElementById('model-viewer-main');
-      const captionEl = viewer?.nextElementSibling;
-      if (!select || !viewer) return;
+    const select = document.getElementById('model-select');
+    const host = document.getElementById('viewer-host');
+    const initialViewer = document.getElementById('model-viewer-main');
+    const captionEl = initialViewer?.nextElementSibling;
+    if (!select || !host || !initialViewer) return;
 
-      const apply = (opt) => {
-        if (!opt) return;
-        // Use a stable cache-busted URL per option value to force reloads.
-        const src = `${opt.value}?model=${encodeURIComponent(opt.value)}`;
-        const alt = opt.dataset.alt || opt.textContent.trim();
-        const caption = opt.dataset.caption || alt;
-        viewer.setAttribute('src', src);
-        viewer.setAttribute('alt', alt);
-        if (captionEl) captionEl.textContent = caption;
-        // Force reload
-        if (typeof viewer.dismissPoster === 'function') viewer.dismissPoster();
-        viewer.updateComplete?.then(() => viewer.dismissPoster && viewer.dismissPoster());
-      };
+    // Capture baseline attributes/styles from the initial viewer.
+    const baseAttrs = {};
+    ['style', 'height', 'loading', 'reveal', 'camera-orbit', 'min-camera-orbit', 'max-camera-orbit', 'camera-target', 'field-of-view', 'shadow-intensity', 'exposure']
+      .forEach(attr => {
+        const val = initialViewer.getAttribute(attr);
+        if (val !== null) baseAttrs[attr] = val;
+      });
 
-      select.addEventListener('change', () => apply(select.options[select.selectedIndex]));
-      apply(select.options[select.selectedIndex]);
-    };
+    function render(option) {
+      if (!option) return;
+      const src = option.value;
+      const alt = option.dataset.alt || option.textContent.trim();
+      const caption = option.dataset.caption || alt;
 
-    if ('customElements' in window && customElements.whenDefined) {
-      customElements.whenDefined('model-viewer').then(init);
-    } else {
-      init();
+      const mv = document.createElement('model-viewer');
+      mv.id = 'model-viewer-main';
+      mv.setAttribute('camera-controls', '');
+      Object.entries(baseAttrs).forEach(([k, v]) => mv.setAttribute(k, v));
+      mv.setAttribute('src', src);
+      mv.setAttribute('alt', alt);
+
+      // Replace current viewer with new one to force load of the new model.
+      const current = host.querySelector('model-viewer');
+      if (current) {
+        host.replaceChild(mv, current);
+      } else {
+        host.appendChild(mv);
+      }
+
+      if (captionEl) captionEl.textContent = caption;
     }
+
+    select.addEventListener('change', () => render(select.selectedOptions[0]));
+    render(select.selectedOptions[0]);
   })();
 </script>
