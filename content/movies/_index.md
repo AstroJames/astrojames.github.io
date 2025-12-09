@@ -65,12 +65,17 @@ Pick a model and explore it interactively.
       const src = option.value;
       const alt = option.dataset.alt || option.textContent.trim();
       const caption = option.dataset.caption || alt;
+      // Update attributes and properties to ensure model-viewer reacts.
+      viewer.setAttribute('src', src);
       viewer.src = src;
+      viewer.setAttribute('alt', alt);
       viewer.alt = alt;
       if (captionEl) captionEl.textContent = caption;
-      // Kick the viewer to refresh if reveal was interaction-only.
-      if (typeof viewer.dismissPoster === 'function') {
-        viewer.dismissPoster();
+      // Kick the viewer to refresh.
+      if (typeof viewer.dismissPoster === 'function') viewer.dismissPoster();
+      if (typeof viewer.showPoster === 'function') viewer.showPoster(false);
+      if (typeof viewer.updateComplete === 'object' && viewer.updateComplete.then) {
+        viewer.updateComplete.then(() => viewer.dismissPoster && viewer.dismissPoster());
       }
     }
 
