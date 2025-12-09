@@ -43,7 +43,7 @@ Pick a model and explore it interactively.
       caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom."
       height="520px"
       loading="lazy"
-      reveal="interaction"
+      reveal="auto"
       id="model-viewer-main"
   >}}
 </div>
@@ -61,9 +61,13 @@ Pick a model and explore it interactively.
       const src = option.value;
       const alt = option.dataset.alt || option.textContent.trim();
       const caption = option.dataset.caption || alt;
-      viewer.setAttribute('src', src);
-      viewer.setAttribute('alt', alt);
+      viewer.src = src;
+      viewer.alt = alt;
       if (captionEl) captionEl.textContent = caption;
+      // Kick the viewer to refresh if reveal was interaction-only.
+      if (typeof viewer.dismissPoster === 'function') {
+        viewer.dismissPoster();
+      }
     }
 
     select.addEventListener('change', () => applyModel(select.selectedOptions[0]));
