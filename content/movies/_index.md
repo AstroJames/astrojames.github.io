@@ -54,35 +54,33 @@ Pick a model and explore it interactively.
 
 <script>
   (function() {
-    const select = document.getElementById('model-select');
-    const originalViewer = document.getElementById('model-viewer-main');
-    const container = originalViewer?.parentElement;
-    const captionEl = originalViewer?.nextElementSibling;
+    const init = () => {
+      const select = document.getElementById('model-select');
+      const viewer = document.getElementById('model-viewer-main');
+      const captionEl = viewer?.nextElementSibling;
+      if (!select || !viewer) return;
 
-    if (!select || !originalViewer || !container) return;
+      const apply = (opt) => {
+        if (!opt) return;
+        const src = opt.value;
+        const alt = opt.dataset.alt || opt.textContent.trim();
+        const caption = opt.dataset.caption || alt;
+        viewer.setAttribute('src', src);
+        viewer.setAttribute('alt', alt);
+        if (captionEl) captionEl.textContent = caption;
+        // Force reload
+        if (typeof viewer.dismissPoster === 'function') viewer.dismissPoster();
+        viewer.updateComplete?.then(() => viewer.dismissPoster && viewer.dismissPoster());
+      };
 
-    function recreateViewer(option) {
-      if (!option) return;
-      const src = option.value;
-      const alt = option.dataset.alt || option.textContent.trim();
-      const caption = option.dataset.caption || alt;
+      select.addEventListener('change', () => apply(select.options[select.selectedIndex]));
+      apply(select.options[select.selectedIndex]);
+    };
 
-      const newViewer = originalViewer.cloneNode(false);
-      newViewer.id = 'model-viewer-main';
-      newViewer.setAttribute('style', originalViewer.getAttribute('style'));
-      // Copy over known attributes.
-      ['height', 'loading', 'reveal', 'camera-orbit', 'min-camera-orbit', 'max-camera-orbit', 'camera-target', 'field-of-view', 'shadow-intensity', 'exposure'].forEach(attr => {
-        if (originalViewer.hasAttribute(attr)) newViewer.setAttribute(attr, originalViewer.getAttribute(attr));
-      });
-      newViewer.setAttribute('camera-controls', '');
-      newViewer.setAttribute('src', src);
-      newViewer.setAttribute('alt', alt);
-
-      container.replaceChild(newViewer, document.getElementById('model-viewer-main'));
-      if (captionEl) captionEl.textContent = caption;
+    if ('customElements' in window && customElements.whenDefined) {
+      customElements.whenDefined('model-viewer').then(init);
+    } else {
+      init();
     }
-
-    select.addEventListener('change', () => recreateViewer(select.selectedOptions[0]));
-    recreateViewer(select.selectedOptions[0]);
   })();
 </script>
