@@ -62,7 +62,8 @@ Pick a model and explore it interactively.
 
       const apply = (opt) => {
         if (!opt) return;
-        const src = opt.value;
+        // Use a stable cache-busted URL per option value to force reloads.
+        const src = `${opt.value}?model=${encodeURIComponent(opt.value)}`;
         const alt = opt.dataset.alt || opt.textContent.trim();
         const caption = opt.dataset.caption || alt;
         viewer.setAttribute('src', src);
