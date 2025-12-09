@@ -55,31 +55,34 @@ Pick a model and explore it interactively.
 <script>
   (function() {
     const select = document.getElementById('model-select');
-    const viewer = document.getElementById('model-viewer-main');
-    const captionEl = viewer?.nextElementSibling;
+    const originalViewer = document.getElementById('model-viewer-main');
+    const container = originalViewer?.parentElement;
+    const captionEl = originalViewer?.nextElementSibling;
 
-    if (!select || !viewer) return;
+    if (!select || !originalViewer || !container) return;
 
-    function applyModel(option) {
+    function recreateViewer(option) {
       if (!option) return;
       const src = option.value;
       const alt = option.dataset.alt || option.textContent.trim();
       const caption = option.dataset.caption || alt;
-      // Update attributes and properties to ensure model-viewer reacts.
-      viewer.setAttribute('src', src);
-      viewer.src = src;
-      viewer.setAttribute('alt', alt);
-      viewer.alt = alt;
+
+      const newViewer = originalViewer.cloneNode(false);
+      newViewer.id = 'model-viewer-main';
+      newViewer.setAttribute('style', originalViewer.getAttribute('style'));
+      // Copy over known attributes.
+      ['height', 'loading', 'reveal', 'camera-orbit', 'min-camera-orbit', 'max-camera-orbit', 'camera-target', 'field-of-view', 'shadow-intensity', 'exposure'].forEach(attr => {
+        if (originalViewer.hasAttribute(attr)) newViewer.setAttribute(attr, originalViewer.getAttribute(attr));
+      });
+      newViewer.setAttribute('camera-controls', '');
+      newViewer.setAttribute('src', src);
+      newViewer.setAttribute('alt', alt);
+
+      container.replaceChild(newViewer, document.getElementById('model-viewer-main'));
       if (captionEl) captionEl.textContent = caption;
-      // Kick the viewer to refresh.
-      if (typeof viewer.dismissPoster === 'function') viewer.dismissPoster();
-      if (typeof viewer.showPoster === 'function') viewer.showPoster(false);
-      if (typeof viewer.updateComplete === 'object' && viewer.updateComplete.then) {
-        viewer.updateComplete.then(() => viewer.dismissPoster && viewer.dismissPoster());
-      }
     }
 
-    select.addEventListener('change', () => applyModel(select.selectedOptions[0]));
-    applyModel(select.selectedOptions[0]);
+    select.addEventListener('change', () => recreateViewer(select.selectedOptions[0]));
+    recreateViewer(select.selectedOptions[0]);
   })();
 </script>
