@@ -19,8 +19,8 @@ type: page
 ## Supernova Remnant Volume Viewer
 
 {{< model_viewer
-    src="/models/cube_demo.glb"
-    alt="Geometry sanity check (colored cube)"
-    caption="Sanity check for the new model pipeline. Click and drag to orbit; use scroll to zoom."
-    height="420px"
+    src="/models/clustering_cache_00030_cluster_26_surface.glb"
+    alt="Clustering cache cluster 26 surface"
+    caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom."
+    height="520px"
 >}}
