@@ -44,6 +44,10 @@ Pick a model and explore it interactively.
       height="520px"
       loading="lazy"
       reveal="auto"
+      camera_orbit="auto auto 2.5m"
+      min_camera_orbit="auto auto 0.01m"
+      max_camera_orbit="auto auto 8m"
+      field_of_view="35deg"
       id="model-viewer-main"
   >}}
 </div>

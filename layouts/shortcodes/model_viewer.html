@@ -16,6 +16,11 @@
       shadow-intensity="{{ .Get "shadow" | default "1" }}"
       loading="{{ .Get "loading" | default "lazy" }}"
       reveal="{{ .Get "reveal" | default "interaction" }}"
+      {{ with .Get "camera_orbit" }}camera-orbit="{{ . }}"{{ end }}
+      {{ with .Get "min_camera_orbit" }}min-camera-orbit="{{ . }}"{{ end }}
+      {{ with .Get "max_camera_orbit" }}max-camera-orbit="{{ . }}"{{ end }}
+      {{ with .Get "camera_target" }}camera-target="{{ . }}"{{ end }}
+      {{ with .Get "field_of_view" }}field-of-view="{{ . }}"{{ end }}
       {{ if .Get "auto_rotate" }}auto-rotate{{ end }}
       {{ if .Get "autoplay" }}autoplay{{ end }}
       style="width: 100%; height: {{ .Get "height" | default "520px" }}; border-radius: 20px; background: radial-gradient(circle at top, rgba(255,255,255,0.15), rgba(9,12,20,0.9));"
