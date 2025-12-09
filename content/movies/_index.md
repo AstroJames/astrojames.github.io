@@ -18,9 +18,53 @@ type: page
 
 ## Supernova Remnant Volume Viewer
 
-{{< model_viewer
-    src="/models/clustering_cache_00030_cluster_26_surface.glb"
-    alt="Clustering cache cluster 26 surface"
-    caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom."
-    height="520px"
->}}
+Pick a model and explore it interactively.
+
+<div class="model-viewer-block" style="margin: 2rem 0;">
+  <label for="model-select" style="color: rgba(255,255,255,0.8); font-weight: 600; display: block; margin-bottom: 0.5rem;">Choose a model</label>
+  <select id="model-select" style="background: rgba(0,0,0,0.35); color: #e5e7eb; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 0.6rem 1rem; min-width: 260px;">
+    <option
+      value="/models/clustering_cache_00030_cluster_26_surface.glb"
+      data-alt="Clustering cache cluster 26 surface"
+      data-caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom.">
+      Cluster 26 surface (clustering cache)
+    </option>
+    <option
+      value="/models/cube_demo.glb"
+      data-alt="Geometry sanity check (colored cube)"
+      data-caption="Sanity check for the new model pipeline. Click and drag to orbit; use scroll to zoom.">
+      Cube demo
+    </option>
+  </select>
+
+  {{< model_viewer
+      src="/models/clustering_cache_00030_cluster_26_surface.glb"
+      alt="Clustering cache cluster 26 surface"
+      caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom."
+      height="520px"
+      id="model-viewer-main"
+  >}}
+</div>
+
+<script>
+  (function() {
+    const select = document.getElementById('model-select');
+    const viewer = document.getElementById('model-viewer-main');
+    const captionEl = viewer?.nextElementSibling;
+
+    if (!select || !viewer) return;
+
+    function applyModel(option) {
+      if (!option) return;
+      const src = option.value;
+      const alt = option.dataset.alt || option.textContent.trim();
+      const caption = option.dataset.caption || alt;
+      viewer.setAttribute('src', src);
+      viewer.setAttribute('alt', alt);
+      if (captionEl) captionEl.textContent = caption;
+    }
+
+    select.addEventListener('change', () => applyModel(select.selectedOptions[0]));
+    applyModel(select.selectedOptions[0]);
+  })();
+</script>
