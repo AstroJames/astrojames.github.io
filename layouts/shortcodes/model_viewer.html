@@ -12,10 +12,12 @@
       src="{{ $src }}"
       alt="{{ .Get "alt" | default "3D model" }}"
       camera-controls
-      auto-rotate
-      autoplay
       exposure="{{ .Get "exposure" | default "0.9" }}"
       shadow-intensity="{{ .Get "shadow" | default "1" }}"
+      loading="{{ .Get "loading" | default "lazy" }}"
+      reveal="{{ .Get "reveal" | default "interaction" }}"
+      {{ if .Get "auto_rotate" }}auto-rotate{{ end }}
+      {{ if .Get "autoplay" }}autoplay{{ end }}
       style="width: 100%; height: {{ .Get "height" | default "520px" }}; border-radius: 20px; background: radial-gradient(circle at top, rgba(255,255,255,0.15), rgba(9,12,20,0.9));"
     ></model-viewer>
     {{ with .Get "caption" }}

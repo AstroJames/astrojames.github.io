@@ -42,6 +42,8 @@ Pick a model and explore it interactively.
       alt="Clustering cache cluster 26 surface"
       caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom."
       height="520px"
+      loading="lazy"
+      reveal="interaction"
       id="model-viewer-main"
   >}}
 </div>
