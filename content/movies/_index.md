@@ -18,13 +18,9 @@ type: page
 
 ## Supernova Remnant Volume Viewer
 
-_Temporarily disabled while I debug the 3D model pipeline—check back soon for interactive reconstructions._
-
-{{/*
 {{< model_viewer
-    src="/models/cube_demo.gltf"
-    alt="Geometry sanity check"
-    caption="Simple cube for debugging and verifying the viewer."
-    height="360px"
+    src="/models/cube_demo.glb"
+    alt="Geometry sanity check (colored cube)"
+    caption="Sanity check for the new model pipeline. Click and drag to orbit; use scroll to zoom."
+    height="420px"
 >}}
-*/}}

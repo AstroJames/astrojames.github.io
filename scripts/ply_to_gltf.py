@@ -175,15 +175,48 @@ def write_gltf(vertices, colors, indices, out_base):
     return gltf_path, bin_path
 
 
+def write_glb_from_files(gltf_path: Path, bin_path: Path, glb_path: Path):
+    with open(gltf_path, 'r', encoding='utf-8') as f:
+        gltf = json.load(f)
+
+    # Embed the buffer: drop the URI so the GLB chunk is authoritative.
+    for buf in gltf.get('buffers', []):
+        buf.pop('uri', None)
+
+    json_bytes = json.dumps(gltf, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+    while len(json_bytes) % 4:
+        json_bytes += b' '
+
+    with open(bin_path, 'rb') as f:
+        bin_bytes = f.read()
+    while len(bin_bytes) % 4:
+        bin_bytes += b'\x00'
+
+    # GLB header + two chunks (JSON, BIN).
+    total_length = 12 + 8 + len(json_bytes) + 8 + len(bin_bytes)
+    with open(glb_path, 'wb') as f:
+        f.write(struct.pack('<4sII', b'glTF', 2, total_length))
+        f.write(struct.pack('<I4s', len(json_bytes), b'JSON'))
+        f.write(json_bytes)
+        f.write(struct.pack('<I4s', len(bin_bytes), b'BIN\x00'))
+        f.write(bin_bytes)
+
+
 def main():
     parser = argparse.ArgumentParser(description='Convert ASCII PLY to glTF (.gltf+.bin).')
     parser.add_argument('ply', help='Input PLY file')
     parser.add_argument('output_base', help='Output base path without extension')
+    parser.add_argument('--glb', action='store_true', help='Also emit a combined .glb file')
     args = parser.parse_args()
 
     vertices, colors, indices = parse_ply(args.ply)
     gltf_path, bin_path = write_gltf(vertices, colors, indices, args.output_base)
     print(f'Wrote {gltf_path} and {bin_path}')
+
+    if args.glb:
+        glb_path = Path(args.output_base).with_suffix('.glb')
+        write_glb_from_files(gltf_path, bin_path, glb_path)
+        print(f'Wrote {glb_path}')
 
 
 if __name__ == '__main__':
