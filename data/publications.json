@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-11T06:02:08.080429+00:00",
+  "last_updated": "2025-12-12T06:01:40.726306+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -16,7 +16,7 @@
       "bibcode": "2025ApJ...994..193B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
-      "citation_count": 12,
+      "citation_count": 13,
       "read_count": 258,
       "is_refereed": true,
       "arxiv_class": [
@@ -60,7 +60,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 4,
-      "read_count": 160,
+      "read_count": 159,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -80,7 +80,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 14,
-      "read_count": 277,
+      "read_count": 278,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -126,7 +126,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 21,
-      "read_count": 206,
+      "read_count": 205,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -218,27 +218,6 @@
       ]
     },
     {
-      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
-      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Frontiers in Astronomy and Space Sciences",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV − TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
-      "bibcode": "2022FrASS...9.0900B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
-      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
-      "citation_count": 21,
-      "read_count": 118,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "physics.flu-dyn"
-      ]
-    },
-    {
       "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
       "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
       "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
@@ -258,6 +237,27 @@
         "astro-ph.GA",
         "physics.flu-dyn",
         "physics.plasm-ph"
+      ]
+    },
+    {
+      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Frontiers in Astronomy and Space Sciences",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV − TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
+      "bibcode": "2022FrASS...9.0900B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
+      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
+      "citation_count": 21,
+      "read_count": 120,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn"
       ]
     },
     {
