@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-17T06:01:37.687102+00:00",
+  "last_updated": "2025-12-18T06:02:22.056869+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -60,7 +60,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 4,
-      "read_count": 170,
+      "read_count": 169,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -80,7 +80,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 14,
-      "read_count": 286,
+      "read_count": 287,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -103,7 +103,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 1,
-      "read_count": 130,
+      "read_count": 131,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -376,7 +376,7 @@
       "bibcode": "2021A&A...656A.118S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
-      "citation_count": 53,
+      "citation_count": 54,
       "read_count": 44,
       "is_refereed": true,
       "arxiv_class": [
@@ -542,7 +542,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 5,
-      "read_count": 218,
+      "read_count": 219,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -580,7 +580,7 @@
       "bibcode": "2018IRAL....3.1184M",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2018IRAL....3.1184M/abstract",
       "doi_url": "https://doi.org/10.1109/LRA.2018.2794619",
-      "citation_count": 3,
+      "citation_count": 4,
       "read_count": 0,
       "is_refereed": true,
       "arxiv_class": []
