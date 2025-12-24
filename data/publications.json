@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-23T06:01:34.198701+00:00",
+  "last_updated": "2025-12-24T06:01:42.384832+00:00",
   "total_publications": 30,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -17,7 +17,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 14,
-      "read_count": 230,
+      "read_count": 204,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -60,7 +60,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 6,
-      "read_count": 167,
+      "read_count": 183,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -80,7 +80,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 14,
-      "read_count": 301,
+      "read_count": 309,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -103,7 +103,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 1,
-      "read_count": 132,
+      "read_count": 134,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -126,7 +126,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 21,
-      "read_count": 198,
+      "read_count": 208,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -149,7 +149,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
       "citation_count": 17,
-      "read_count": 83,
+      "read_count": 82,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -169,7 +169,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
       "citation_count": 38,
-      "read_count": 90,
+      "read_count": 96,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -190,7 +190,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 30,
-      "read_count": 102,
+      "read_count": 99,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -211,10 +211,32 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 78,
+      "read_count": 80,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
+      ]
+    },
+    {
+      "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "Energy equipartition is a powerful theoretical tool for understanding astrophysical plasmas. It is invoked, for example, to measure magnetic fields in the interstellar medium (ISM), as evidence for small-scale turbulent dynamo action, and, in general, to estimate the energy budget of star-forming molecular clouds. In this study, we motivate and explore the role of the volume-averaged root-mean-squared (rms) magnetic coupling term between the turbulent, $\\delta {\\boldsymbol{B}}$ , and large-scale, ${\\boldsymbol{B}}_0$, fields, ${\\left\\langle (\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}\\cdot {\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0})^{2} \\right\\rangle ^{1/2}_{\\mathcal {V}}}$. By considering the second moments of the energy balance equations we show that the rms coupling term is in energy equipartition with the volume-averaged turbulent kinetic energy for turbulence with a sub-Alfvénic large-scale field. Under the assumption of exact energy equipartition between these terms, we derive relations for the magnetic and coupling term fluctuations, which provide excellent, parameter-free agreement with time-averaged data from 280 numerical simulations of compressible magnetohydrodynamic (MHD) turbulence. Furthermore, we explore the relation between the turbulent mean field and total Alfvén Mach numbers, and demonstrate that sub-Alfvénic turbulence can only be developed through a strong, large-scale magnetic field, which supports an extremely super-Alfvénic turbulent magnetic field. This means that the magnetic field fluctuations are significantly subdominant to the velocity fluctuations in the sub-Alfvénic large-scale field regime. Throughout our study, we broadly discuss the implications for observations of magnetic fields and understanding the dynamics in the magnetized ISM.",
+      "bibcode": "2022MNRAS.515.5267B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stac2099",
+      "citation_count": 24,
+      "read_count": 126,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn",
+        "physics.plasm-ph"
       ]
     },
     {
@@ -231,7 +253,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
       "citation_count": 43,
-      "read_count": 132,
+      "read_count": 136,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -251,33 +273,11 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
       "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
       "citation_count": 21,
-      "read_count": 128,
+      "read_count": 138,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
         "physics.flu-dyn"
-      ]
-    },
-    {
-      "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
-      "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Monthly Notices of the Royal Astronomical Society",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "Energy equipartition is a powerful theoretical tool for understanding astrophysical plasmas. It is invoked, for example, to measure magnetic fields in the interstellar medium (ISM), as evidence for small-scale turbulent dynamo action, and, in general, to estimate the energy budget of star-forming molecular clouds. In this study, we motivate and explore the role of the volume-averaged root-mean-squared (rms) magnetic coupling term between the turbulent, $\\delta {\\boldsymbol{B}}$ , and large-scale, ${\\boldsymbol{B}}_0$, fields, ${\\left\\langle (\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}\\cdot {\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0})^{2} \\right\\rangle ^{1/2}_{\\mathcal {V}}}$. By considering the second moments of the energy balance equations we show that the rms coupling term is in energy equipartition with the volume-averaged turbulent kinetic energy for turbulence with a sub-Alfvénic large-scale field. Under the assumption of exact energy equipartition between these terms, we derive relations for the magnetic and coupling term fluctuations, which provide excellent, parameter-free agreement with time-averaged data from 280 numerical simulations of compressible magnetohydrodynamic (MHD) turbulence. Furthermore, we explore the relation between the turbulent mean field and total Alfvén Mach numbers, and demonstrate that sub-Alfvénic turbulence can only be developed through a strong, large-scale magnetic field, which supports an extremely super-Alfvénic turbulent magnetic field. This means that the magnetic field fluctuations are significantly subdominant to the velocity fluctuations in the sub-Alfvénic large-scale field regime. Throughout our study, we broadly discuss the implications for observations of magnetic fields and understanding the dynamics in the magnetized ISM.",
-      "bibcode": "2022MNRAS.515.5267B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
-      "doi_url": "https://doi.org/10.1093/mnras/stac2099",
-      "citation_count": 24,
-      "read_count": 120,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "physics.flu-dyn",
-        "physics.plasm-ph"
       ]
     },
     {
@@ -294,7 +294,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
       "citation_count": 31,
-      "read_count": 119,
+      "read_count": 118,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -318,7 +318,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 6,
-      "read_count": 80,
+      "read_count": 89,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -356,7 +356,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
       "citation_count": 22,
-      "read_count": 97,
+      "read_count": 99,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -377,7 +377,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
       "citation_count": 55,
-      "read_count": 45,
+      "read_count": 55,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -397,7 +397,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 28,
-      "read_count": 116,
+      "read_count": 119,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -418,7 +418,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
       "citation_count": 149,
-      "read_count": 128,
+      "read_count": 136,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -441,7 +441,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
       "citation_count": 35,
-      "read_count": 97,
+      "read_count": 94,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -463,7 +463,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 29,
-      "read_count": 61,
+      "read_count": 65,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -501,7 +501,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
       "citation_count": 24,
-      "read_count": 71,
+      "read_count": 74,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -522,7 +522,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1416",
       "citation_count": 18,
-      "read_count": 82,
+      "read_count": 79,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -542,7 +542,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 5,
-      "read_count": 220,
+      "read_count": 223,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -599,7 +599,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 7,
-      "read_count": 152,
+      "read_count": 158,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -620,7 +620,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 4,
-      "read_count": 142,
+      "read_count": 134,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
