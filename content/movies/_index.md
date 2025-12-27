@@ -27,7 +27,25 @@ Pick a model and explore it interactively.
       value="/models/clustering_cache_00030_cluster_26_surface.glb"
       data-alt="Clustering cache cluster 26 surface"
       data-caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom.">
-      Cluster 26 surface (clustering cache)
+      SNR 26
+    </option>
+    <option
+      value="/models/clustering_cache_00030_cluster_16_surface.glb"
+      data-alt="Clustering cache cluster 16 surface"
+      data-caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom.">
+      SNR 16
+    </option>
+    <option
+      value="/models/clustering_cache_00040_cluster_57_surface.glb"
+      data-alt="Clustering cache cluster 57 surface"
+      data-caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom.">
+      SNR 57
+    </option>
+    <option
+      value="/models/clustering_cache_00040_cluster_60_surface.glb"
+      data-alt="Clustering cache cluster 60 surface"
+      data-caption="Surface exported from clustering cache output. Drag to rotate; scroll to zoom.">
+      SNR 60
     </option>
     <option
       value="/models/cube_demo.glb"
