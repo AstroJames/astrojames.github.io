@@ -28,7 +28,7 @@ slides: ""
 projects: []
 ---
 
-The PDF poster is available below. The thumbnail is auto-generated from the first page for quick browsing.
+The PDF poster is available below.
 
 ![SCEECS poster preview](/lectures/previews/Beattie_SCEECS.jpg)
 
