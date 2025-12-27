@@ -67,6 +67,10 @@ Pick a model and explore it interactively.
         min_camera_orbit="auto auto 0.01m"
         max_camera_orbit="auto auto 8m"
         field_of_view="35deg"
+        environment_image="neutral"
+        tone_mapping="aces"
+        shadow_softness="0.9"
+        shadow="0.6"
         id="model-viewer-main"
     >}}
   </div>
@@ -85,7 +89,7 @@ Pick a model and explore it interactively.
     const wrapper = initialViewer.parentElement || host;
 
     const baseAttrs = {};
-    ['style', 'height', 'loading', 'reveal', 'camera-orbit', 'min-camera-orbit', 'max-camera-orbit', 'camera-target', 'field-of-view', 'shadow-intensity', 'exposure']
+    ['style', 'height', 'loading', 'reveal', 'camera-orbit', 'min-camera-orbit', 'max-camera-orbit', 'camera-target', 'field-of-view', 'shadow-intensity', 'exposure', 'environment-image', 'skybox-image', 'tone-mapping', 'shadow-softness']
       .forEach(attr => {
         const val = initialViewer.getAttribute(attr);
         if (val !== null) baseAttrs[attr] = val;

@@ -21,6 +21,10 @@
       {{ with .Get "max_camera_orbit" }}max-camera-orbit="{{ . }}"{{ end }}
       {{ with .Get "camera_target" }}camera-target="{{ . }}"{{ end }}
       {{ with .Get "field_of_view" }}field-of-view="{{ . }}"{{ end }}
+      {{ with .Get "environment_image" }}environment-image="{{ . }}"{{ end }}
+      {{ with .Get "skybox_image" }}skybox-image="{{ . }}"{{ end }}
+      {{ with .Get "tone_mapping" }}tone-mapping="{{ . }}"{{ end }}
+      {{ with .Get "shadow_softness" }}shadow-softness="{{ . }}"{{ end }}
       {{ if .Get "auto_rotate" }}auto-rotate{{ end }}
       {{ if .Get "autoplay" }}autoplay{{ end }}
       style="width: 100%; height: {{ .Get "height" | default "520px" }}; border-radius: 20px; background: radial-gradient(circle at top, rgba(255,255,255,0.15), rgba(9,12,20,0.9));"
