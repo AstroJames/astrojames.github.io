@@ -58,11 +58,14 @@ Pick a model and explore it interactively.
   (function() {
     const select = document.getElementById('model-select');
     const host = document.getElementById('viewer-host');
-    const initialViewer = document.getElementById('model-viewer-main');
-    const captionEl = initialViewer?.nextElementSibling;
-    if (!select || !host || !initialViewer) return;
+    if (!select || !host) return;
 
-    // Capture baseline attributes/styles from the initial viewer.
+    // The shortcode nests <model-viewer> inside its own wrapper; grab those nodes dynamically.
+    const initialViewer = host.querySelector('model-viewer');
+    const captionEl = host.querySelector('.model-viewer-block p');
+    if (!initialViewer) return;
+    const wrapper = initialViewer.parentElement || host;
+
     const baseAttrs = {};
     ['style', 'height', 'loading', 'reveal', 'camera-orbit', 'min-camera-orbit', 'max-camera-orbit', 'camera-target', 'field-of-view', 'shadow-intensity', 'exposure']
       .forEach(attr => {
@@ -77,24 +80,24 @@ Pick a model and explore it interactively.
       const caption = option.dataset.caption || alt;
 
       const mv = document.createElement('model-viewer');
-      mv.id = 'model-viewer-main';
       mv.setAttribute('camera-controls', '');
       Object.entries(baseAttrs).forEach(([k, v]) => mv.setAttribute(k, v));
       mv.setAttribute('src', src);
       mv.setAttribute('alt', alt);
 
       // Replace current viewer with new one to force load of the new model.
-      const current = host.querySelector('model-viewer');
+      const current = wrapper.querySelector('model-viewer');
       if (current) {
-        host.replaceChild(mv, current);
+        wrapper.replaceChild(mv, current);
       } else {
-        host.appendChild(mv);
+        wrapper.appendChild(mv);
       }
 
       if (captionEl) captionEl.textContent = caption;
     }
 
     select.addEventListener('change', () => render(select.selectedOptions[0]));
+    // Render once on load to sync attributes and caption with the default option.
     render(select.selectedOptions[0]);
   })();
 </script>
