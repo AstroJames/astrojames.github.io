@@ -1,8 +1,26 @@
 {
-  "last_updated": "2026-01-18T06:01:35.830133+00:00",
-  "total_publications": 30,
+  "last_updated": "2026-01-19T06:03:26.259462+00:00",
+  "total_publications": 31,
   "orcid": "0000-0001-9199-7771",
   "publications": [
+    {
+      "title": "Cascading from the Winds to the Disk: The Universality of Supernovae-driven Turbulence in Different Galactic Interstellar Media",
+      "authors": "Connor, Isabelle; Beattie, James R.; Kolborg, Anne Noer; Ramirez-Ruiz, Enrico",
+      "authors_highlighted": "Connor, Isabelle; <strong>Beattie, James</strong> R.; Kolborg, Anne Noer; Ramirez-Ruiz, Enrico",
+      "authorship_position": "second",
+      "beattie_position": 2,
+      "journal": "The Astrophysical Journal",
+      "year": "2026",
+      "pubdate": "2026-01-00",
+      "abstract": "Star-forming galaxies are in a state of turbulence, with one of the principle components of the turbulence sourced by the constant injection of momentum from supernovae (SNe) explosions. Utilizing high-resolution stratified, gravito-hydrodynamical models of SNe-driven turbulence with interstellar medium (ISM) cooling and heating, we explore how SNe-driven turbulence changes across different galactic conditions, parameterized by the galactic mass and potential, SNe driving rate, and seeding functions. We show that, even though the underlying ISM changes between starburst and Milky Way analog models, the velocity fluctuations in the turbulence of both models, but not the kinetic energy fluctuations, can be normalized into a universal, single cascade, du<SUP>2</SUP>(k)/dk ∝ k<SUP>−3/2</SUP>, where u is the velocity and k is the wave mode, indicating that the structure of the turbulence is robust to significant changes in the ISM and SNe seeding. Moreover, the cascades connect smoothly from the winds into the galactic disk, pushing the outer scale of the turbulence, ℓ<SUB>cor</SUB>, to over ℓ<SUB>cor</SUB> ≍ 6ℓ<SUB>0</SUB>, where ℓ<SUB>0</SUB> is the gaseous scale height. By providing an analytical model for the sound speed spectrum, <inline-formula> <mml:math><mml:mi>d</mml:mi><mml:msubsup><mml:mrow><mml:mi>c</mml:mi></mml:mrow><mml:mrow><mml:mi>s</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>(</mml:mo><mml:mi>k</mml:mi><mml:mo>)</mml:mo><mml:mo>/</mml:mo><mml:mi>d</mml:mi><mml:mi>k</mml:mi></mml:math> </inline-formula>, in the weak-cooling, adiabatic limit, we show that it is the compressible turbulent modes, u<SUB>c</SUB>, that control the volume-filling phase structure of the galactic disks in our models, with <inline-formula> <mml:math><mml:mi>d</mml:mi><mml:msubsup><mml:mrow><mml:mi>c</mml:mi></mml:mrow><mml:mrow><mml:mi>s</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>(</mml:mo><mml:mi>k</mml:mi><mml:mo>)</mml:mo><mml:mo>/</mml:mo><mml:mi>d</mml:mi><mml:mi>k</mml:mi><mml:mo>∝</mml:mo><mml:msup><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>∝</mml:mo><mml:mi>d</mml:mi><mml:msubsup><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mrow><mml:mi>c</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>(</mml:mo><mml:mi>k</mml:mi><mml:mo>)</mml:mo><mml:mo>/</mml:mo><mml:mi>d</mml:mi><mml:mi>k</mml:mi></mml:math> </inline-formula>. This may indicate that galactic turbulence does not only have highly universal features across different galaxies, but also directly sets the volume-filling hot and warm phase structure of the underlying galactic ISM through turbulent compressible modes.",
+      "bibcode": "2026ApJ...997...33C",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
+      "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
+      "citation_count": 0,
+      "read_count": 0,
+      "is_refereed": false,
+      "arxiv_class": []
+    },
     {
       "title": "So Long Kolmogorov: The Forward and Backward Turbulence Cascades in a Supernovae-driven, Multiphase Interstellar Medium",
       "authors": "Beattie, James R.; Kolborg, Anne Noer; Ramirez-Ruiz, Enrico; Federrath, Christoph",
@@ -17,7 +35,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 15,
-      "read_count": 236,
+      "read_count": 253,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -60,7 +78,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 7,
-      "read_count": 184,
+      "read_count": 182,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -80,7 +98,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 14,
-      "read_count": 319,
+      "read_count": 336,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -103,7 +121,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 3,
-      "read_count": 120,
+      "read_count": 119,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -149,7 +167,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
       "citation_count": 17,
-      "read_count": 83,
+      "read_count": 82,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -272,7 +290,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac2099",
       "citation_count": 24,
-      "read_count": 133,
+      "read_count": 134,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -294,7 +312,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
       "citation_count": 32,
-      "read_count": 108,
+      "read_count": 107,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -522,7 +540,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1416",
       "citation_count": 18,
-      "read_count": 77,
+      "read_count": 78,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -542,7 +560,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 5,
-      "read_count": 238,
+      "read_count": 245,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
