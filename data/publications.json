@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-28T06:02:33.221405+00:00",
+  "last_updated": "2026-01-29T06:10:10.994701+00:00",
   "total_publications": 31,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -17,7 +17,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
       "citation_count": 3,
-      "read_count": 534,
+      "read_count": 533,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -38,7 +38,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 15,
-      "read_count": 246,
+      "read_count": 247,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -101,7 +101,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 14,
-      "read_count": 795,
+      "read_count": 793,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -124,7 +124,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 3,
-      "read_count": 145,
+      "read_count": 344,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -232,30 +232,10 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 117,
+      "read_count": 118,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
-      ]
-    },
-    {
-      "title": "Understanding star formation in molecular clouds. IV. Column density PDFs from quiescent to massive molecular clouds",
-      "authors": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; Beattie, J. R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
-      "authors_highlighted": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; <strong>Beattie, J.</strong> R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
-      "authorship_position": "other",
-      "beattie_position": 15,
-      "journal": "Astronomy and Astrophysics",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "Probability distribution functions of the total hydrogen column density (N-PDFs) are a valuable tool for distinguishing between the various processes (turbulence, gravity, radiative feedback, magnetic fields) governing the morphological and dynamical structure of the interstellar medium. We present N-PDFs of 29 Galactic regions obtained from Herschel imaging at high angular resolution (18″), covering diffuse and quiescent clouds, and those showing low-, intermediate-, and high-mass star formation (SF), and characterize the cloud structure using the ∆-variance tool. The N-PDFs show a large variety of morphologies. They are all double-log-normal at low column densities, and display one or two power law tails (PLTs) at higher column densities. For diffuse, quiescent, and low-mass SF clouds, we propose that the two log-normals arise from the atomic and molecular phase, respectively. For massive clouds, we suggest that the first log-normal is built up by turbulently mixed H<SUB>2</SUB> and the second one by compressed (via stellar feedback) molecular gas. Nearly all clouds have two PLTs with slopes consistent with self-gravity, where the second one can be flatter or steeper than the first one. A flatter PLT could be caused by stellar feedback or other physical processes that slow down collapse and reduce the flow of mass toward higher densities. The steeper slope could arise if the magnetic field is oriented perpendicular to the LOS column density distribution. The first deviation point (DP), where the N-PDF turns from log-normal into a PLT, shows a clustering around values of a visual extinction of A<SUB>V</SUB> (DP1) ~ 2-5. The second DP, which defines the break between the two PLTs, varies strongly. In contrast, the width of the N-PDFs is the most stable parameter, with values of σ between ~0.5 and 0.6. Using the ∆-variance tool, we observe that the A<SUB>V</SUB> value, where the slope changes between the first and second PLT, increases with the characteristic size scale in the ∆-variance spectrum. We conclude that at low column densities, atomic and molecular gas is turbulently mixed, while at high column densities, the gas is fully molecular and dominated by self-gravity. The best fitting model N-PDFs of molecular clouds is thus one with log-normal low column density distributions, followed by one or two PLTs.",
-      "bibcode": "2022A&A...666A.165S",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
-      "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
-      "citation_count": 44,
-      "read_count": 148,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA"
       ]
     },
     {
@@ -299,6 +279,26 @@
       "arxiv_class": [
         "astro-ph.GA",
         "physics.flu-dyn"
+      ]
+    },
+    {
+      "title": "Understanding star formation in molecular clouds. IV. Column density PDFs from quiescent to massive molecular clouds",
+      "authors": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; Beattie, J. R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
+      "authors_highlighted": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; <strong>Beattie, J.</strong> R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
+      "authorship_position": "other",
+      "beattie_position": 15,
+      "journal": "Astronomy and Astrophysics",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "Probability distribution functions of the total hydrogen column density (N-PDFs) are a valuable tool for distinguishing between the various processes (turbulence, gravity, radiative feedback, magnetic fields) governing the morphological and dynamical structure of the interstellar medium. We present N-PDFs of 29 Galactic regions obtained from Herschel imaging at high angular resolution (18″), covering diffuse and quiescent clouds, and those showing low-, intermediate-, and high-mass star formation (SF), and characterize the cloud structure using the ∆-variance tool. The N-PDFs show a large variety of morphologies. They are all double-log-normal at low column densities, and display one or two power law tails (PLTs) at higher column densities. For diffuse, quiescent, and low-mass SF clouds, we propose that the two log-normals arise from the atomic and molecular phase, respectively. For massive clouds, we suggest that the first log-normal is built up by turbulently mixed H<SUB>2</SUB> and the second one by compressed (via stellar feedback) molecular gas. Nearly all clouds have two PLTs with slopes consistent with self-gravity, where the second one can be flatter or steeper than the first one. A flatter PLT could be caused by stellar feedback or other physical processes that slow down collapse and reduce the flow of mass toward higher densities. The steeper slope could arise if the magnetic field is oriented perpendicular to the LOS column density distribution. The first deviation point (DP), where the N-PDF turns from log-normal into a PLT, shows a clustering around values of a visual extinction of A<SUB>V</SUB> (DP1) ~ 2-5. The second DP, which defines the break between the two PLTs, varies strongly. In contrast, the width of the N-PDFs is the most stable parameter, with values of σ between ~0.5 and 0.6. Using the ∆-variance tool, we observe that the A<SUB>V</SUB> value, where the slope changes between the first and second PLT, increases with the characteristic size scale in the ∆-variance spectrum. We conclude that at low column densities, atomic and molecular gas is turbulently mixed, while at high column densities, the gas is fully molecular and dominated by self-gravity. The best fitting model N-PDFs of molecular clouds is thus one with log-normal low column density distributions, followed by one or two PLTs.",
+      "bibcode": "2022A&A...666A.165S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
+      "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
+      "citation_count": 44,
+      "read_count": 149,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA"
       ]
     },
     {
@@ -620,7 +620,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 7,
-      "read_count": 361,
+      "read_count": 360,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -641,7 +641,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 4,
-      "read_count": 330,
+      "read_count": 326,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
