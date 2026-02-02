@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-01T06:13:51.238722+00:00",
+  "last_updated": "2026-02-02T06:18:00.450023+00:00",
   "total_publications": 31,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -17,7 +17,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
       "citation_count": 3,
-      "read_count": 534,
+      "read_count": 545,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -38,7 +38,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 15,
-      "read_count": 246,
+      "read_count": 245,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -58,7 +58,7 @@
       "bibcode": "2025MNRAS.542.2669B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.542.2669B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf1318",
-      "citation_count": 12,
+      "citation_count": 13,
       "read_count": 186,
       "is_refereed": true,
       "arxiv_class": [
@@ -100,7 +100,7 @@
       "bibcode": "2025NatAs...9.1195B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
-      "citation_count": 14,
+      "citation_count": 15,
       "read_count": 809,
       "is_refereed": true,
       "arxiv_class": [
@@ -147,7 +147,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 23,
-      "read_count": 199,
+      "read_count": 198,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -315,7 +315,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
       "citation_count": 32,
-      "read_count": 112,
+      "read_count": 113,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
