@@ -28,6 +28,9 @@ main:
   - name: Talks
     url: notes/
     weight: 40
+  - name: Lecture Notes
+    url: lecture-notes/
+    weight: 42
   - name: Movies
     url: movies/
     weight: 45

@@ -1,0 +1,82 @@
+{{ define "main" }}
+{{ $pdf := .Params.url_pdf }}
+{{ $pdfRel := $pdf }}
+{{ if and $pdf (not (hasPrefix $pdf "http")) }}
+  {{ $pdfRel = $pdf | relURL }}
+{{ end }}
+
+<div class="lecture-note-header">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 1.5rem;">
+    <h1 style="font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem;">{{ .Title }}</h1>
+    {{ with .Params.summary }}
+      <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 1rem;">{{ . }}</p>
+    {{ end }}
+    <div style="color: rgba(255,255,255,0.55); font-size: 0.9rem;">
+      {{ if .Date }}
+        <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+      {{ end }}
+      {{ with .Params.location }}
+        <span style="margin-left: 0.75rem;">• {{ . }}</span>
+      {{ end }}
+    </div>
+    {{ if $pdfRel }}
+      <div style="margin-top: 1.25rem;">
+        <a href="{{ $pdfRel }}" target="_blank" rel="noopener" style="
+          background: rgba(77, 171, 247, 0.18);
+          color: #4dabf7;
+          padding: 0.45rem 1rem;
+          border-radius: 999px;
+          font-size: 0.9rem;
+          text-decoration: none;
+          display: inline-block;
+        ">Download PDF</a>
+      </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ if $pdfRel }}
+  <div class="lecture-note-embed" style="background: #050913; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);">
+    <iframe
+      src="{{ (print $pdfRel "#toolbar=1&navpanes=0&view=FitH") }}"
+      title="{{ .Title }}"
+      class="lecture-note-iframe"
+    ></iframe>
+    <p class="lecture-note-fallback">
+      If the document does not display, <a href="{{ $pdfRel }}" target="_blank" rel="noopener">open the PDF in a new tab</a>.
+    </p>
+  </div>
+{{ else }}
+  <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 2rem 3rem;">
+    {{ .Content }}
+  </div>
+{{ end }}
+
+<style>
+.lecture-note-iframe {
+  display: block;
+  width: 100vw;
+  height: calc(100vh - 120px);
+  border: none;
+  background: #111827;
+  filter: invert(0.92) hue-rotate(180deg);
+}
+
+.lecture-note-fallback {
+  text-align: center;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lecture-note-fallback a {
+  color: #4dabf7;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .lecture-note-iframe {
+    height: calc(100vh - 160px);
+  }
+}
+</style>
+{{ end }}
