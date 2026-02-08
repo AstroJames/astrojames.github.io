@@ -75,7 +75,7 @@
             {{ $body := .Content | plainify | truncate 180 }}
             {{ $body }}
             {{ if gt (len (.Content | plainify)) 180 }}
-              <span style="color: #4dabf7; font-weight: 500;">… Read more</span>
+              <a href="{{ .RelPermalink }}" style="color: #4dabf7; font-weight: 500; text-decoration: none;">... Read more</a>
             {{ end }}
           </div>
           {{ end }}
