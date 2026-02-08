@@ -85,13 +85,23 @@ header, .navbar {
   position: relative;
   z-index: 1000;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  #particle-container {
+    display: none !important;
+  }
+}
 </style>
 
 <div id="particle-container"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  const isTouchPrimary = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  if (isTouchPrimary) return;
+
   const particleContainer = document.getElementById('particle-container');
+  if (!particleContainer) return;
   const header = document.querySelector('header') || document.querySelector('.navbar');
   const particles = [];
   const photons = [];
