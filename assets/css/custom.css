@@ -388,3 +388,45 @@ i[class^="fa-"], i[class*=" fa-"] {
   border: 2px solid transparent !important;
 }
 
+/* Mobile readability and spacing overrides */
+@media (max-width: 768px) {
+  #news .max-w-3xl,
+  .full-justify .container,
+  .full-justify .prose,
+  #section-markdown .max-w-prose {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .full-justify,
+  .about-content,
+  .about-content p {
+    text-align: left !important;
+  }
+}
+
+/* Avoid hover-only motion only on true touch-primary devices */
+@media (hover: none) and (pointer: coarse) {
+  #featured article:hover,
+  [id*="publication"] article:hover,
+  .card:hover,
+  #featured article:hover img,
+  [id*="publication"] article:hover img,
+  .social-links a:hover,
+  [class*="social"] a:hover,
+  .profiles a:hover,
+  #projects article:hover,
+  .project-card:hover,
+  #news article:hover,
+  .button:hover,
+  .btn:hover,
+  a[href*="resume.pdf"]:hover,
+  #collabs a:hover {
+    transform: none !important;
+  }
+
+  #news article:hover {
+    border-left: none !important;
+    background: transparent !important;
+  }
+}
