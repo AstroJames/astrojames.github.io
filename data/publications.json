@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-19T06:17:54.203694+00:00",
+  "last_updated": "2026-02-20T06:14:17.476342+00:00",
   "total_publications": 31,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -439,7 +439,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
       "citation_count": 154,
-      "read_count": 117,
+      "read_count": 118,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -484,7 +484,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 31,
-      "read_count": 78,
+      "read_count": 79,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -620,7 +620,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 7,
-      "read_count": 340,
+      "read_count": 341,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
