@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-09T06:16:29.249665+00:00",
+  "last_updated": "2026-03-10T06:09:44.027607+00:00",
   "total_publications": 31,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -38,7 +38,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 15,
-      "read_count": 256,
+      "read_count": 257,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -59,7 +59,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.542.2669B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf1318",
       "citation_count": 13,
-      "read_count": 169,
+      "read_count": 170,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -101,7 +101,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 16,
-      "read_count": 803,
+      "read_count": 804,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -542,7 +542,7 @@
       "bibcode": "2019MNRAS.487.2070B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1416",
-      "citation_count": 20,
+      "citation_count": 21,
       "read_count": 119,
       "is_refereed": true,
       "arxiv_class": [
