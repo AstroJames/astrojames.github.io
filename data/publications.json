@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-11T06:11:16.574770+00:00",
+  "last_updated": "2026-03-12T06:12:54.941184+00:00",
   "total_publications": 31,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -59,7 +59,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.542.2669B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf1318",
       "citation_count": 13,
-      "read_count": 177,
+      "read_count": 176,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -101,7 +101,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 16,
-      "read_count": 813,
+      "read_count": 814,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -123,7 +123,7 @@
       "bibcode": "2025ApJ...982L..45B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
-      "citation_count": 3,
+      "citation_count": 4,
       "read_count": 356,
       "is_refereed": true,
       "arxiv_class": [
@@ -211,7 +211,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 31,
-      "read_count": 164,
+      "read_count": 167,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -462,7 +462,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
       "citation_count": 38,
-      "read_count": 168,
+      "read_count": 167,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -563,7 +563,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 5,
-      "read_count": 250,
+      "read_count": 249,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
