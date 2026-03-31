@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-24T06:18:29.648208+00:00",
+  "last_updated": "2026-03-30T06:30:58.109045+00:00",
   "total_publications": 31,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -17,7 +17,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
       "citation_count": 3,
-      "read_count": 584,
+      "read_count": 594,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -38,7 +38,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 15,
-      "read_count": 318,
+      "read_count": 320,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -59,7 +59,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.542.2669B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf1318",
       "citation_count": 13,
-      "read_count": 4,
+      "read_count": 169,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -80,8 +80,8 @@
       "bibcode": "2025PhRvD.112f3046G",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
-      "citation_count": 9,
-      "read_count": 348,
+      "citation_count": 10,
+      "read_count": 338,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -96,12 +96,12 @@
       "journal": "Nature Astronomy",
       "year": "2025",
       "pubdate": "2025-08-00",
-      "abstract": "The interstellar medium (ISM) of our Galaxy is magnetized, compressible and turbulent, influencing many key ISM properties, such as star formation, cosmic-ray transport, and metal and phase mixing. Yet, basic statistics describing compressible, magnetized turbulence remain uncertain. Utilizing grid resolutions up to 10,080<SUP>3</SUP> cells, we simulated highly compressible, magnetized ISM-style turbulence with a magnetic field maintained by a small-scale dynamo. We measured two coexisting kinetic energy cascades, E<SUB>kin</SUB>(k ) ∝k<SUP>−n</SUP>, in the turbulence, separating the plasma into scales that are non-locally interacting, supersonic and weakly magnetized (n = 2.01 ± 0.03 ≈ 2) and locally interacting, subsonic and highly magnetized (n = 1.465 ± 0.002 ≈ 3/2), where k is the wavenumber. We show that the 3/2 spectrum can be explained with scale-dependent kinetic energy fluxes and velocity-magnetic field alignment. On the highly magnetized modes, the magnetic energy spectrum forms a local cascade (n = 1.798 ± 0.001 ≈ 9/5), deviating from any known ab initio theory. With a new generation of radio telescopes coming online, these results provide a means to directly test if the ISM in our Galaxy is maintained by the compressible turbulent motions from within it.",
+      "abstract": "The interstellar medium (ISM) of our Galaxy is magnetized, compressible and turbulent, influencing many key ISM properties, such as star formation, cosmic-ray transport, and metal and phase mixing. Yet, basic statistics describing compressible, magnetized turbulence remain uncertain. Utilizing grid resolutions up to 10,080<SUP>3</SUP> cells, we simulated highly compressible, magnetized ISM-style turbulence with a magnetic field maintained by a small-scale dynamo. We measured two coexisting kinetic energy cascades, E<SUB>kin</SUB>(k ) ∝k<SUP>‒n</SUP>, in the turbulence, separating the plasma into scales that are non-locally interacting, supersonic and weakly magnetized (n = 2.01 ± 0.03 ≈ 2) and locally interacting, subsonic and highly magnetized (n = 1.465 ± 0.002 ≈ 3/2), where k is the wavenumber. We show that the 3/2 spectrum can be explained with scale-dependent kinetic energy fluxes and velocity-magnetic field alignment. On the highly magnetized modes, the magnetic energy spectrum forms a local cascade (n = 1.798 ± 0.001 ≈ 9/5), deviating from any known ab initio theory. With a new generation of radio telescopes coming online, these results provide a means to directly test if the ISM in our Galaxy is maintained by the compressible turbulent motions from within it.",
       "bibcode": "2025NatAs...9.1195B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 16,
-      "read_count": 854,
+      "read_count": 876,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -124,7 +124,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 4,
-      "read_count": 365,
+      "read_count": 384,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -147,7 +147,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 23,
-      "read_count": 241,
+      "read_count": 226,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -170,7 +170,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
       "citation_count": 17,
-      "read_count": 114,
+      "read_count": 131,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -190,7 +190,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
       "citation_count": 38,
-      "read_count": 120,
+      "read_count": 140,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -211,7 +211,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 31,
-      "read_count": 184,
+      "read_count": 192,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -232,7 +232,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 0,
+      "read_count": 166,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
@@ -252,7 +252,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac2099",
       "citation_count": 25,
-      "read_count": 163,
+      "read_count": 186,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -273,8 +273,8 @@
       "bibcode": "2022A&A...666A.165S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
-      "citation_count": 48,
-      "read_count": 17,
+      "citation_count": 49,
+      "read_count": 252,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -294,7 +294,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
       "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
       "citation_count": 22,
-      "read_count": 1,
+      "read_count": 201,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -315,7 +315,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
       "citation_count": 34,
-      "read_count": 147,
+      "read_count": 154,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -339,7 +339,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 7,
-      "read_count": 128,
+      "read_count": 125,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -372,12 +372,12 @@
       "journal": "Monthly Notices of the Royal Astronomical Society",
       "year": "2022",
       "pubdate": "2022-01-00",
-      "abstract": "Studying the driving modes of turbulence is important for characterizing the impact of turbulence in various astrophysical environments. The driving mode of turbulence is parametrized by b, which relates the width of the gas density PDF to the turbulent Mach number; b ≈ 1/3, 1, and 0.4 correspond to driving that is solenoidal, compressive, and a natural mixture of the two, respectively. In this work, we use high-resolution (sub-pc) ALMA <SUP>12</SUP>CO (J = 2-1), <SUP>13</SUP>CO (J = 2-1), and C<SUP>18</SUP>O (J = 2-1) observations of filamentary molecular clouds in the star-forming region N159E (the Papillon Nebula) in the Large Magellanic Cloud (LMC) to provide the first measurement of turbulence driving parameter in an extragalactic region. We use a non-local thermodynamic equilibrium (NLTE) analysis of the CO isotopologues to construct a gas density PDF, which we find to be largely lognormal in shape with some intermittent features indicating deviations from lognormality. We find that the width of the lognormal part of the density PDF is comparable to the supersonic turbulent Mach number, resulting in b ≈ 0.9. This implies that the driving mode of turbulence in N159E is primarily compressive. We speculate that the compressive turbulence could have been powered by gravo-turbulent fragmentation of the molecular gas, or due to compression powered by H I flows that led to the development of the molecular filaments observed by ALMA in the region. Our analysis can be easily applied to study the nature of turbulence driving in resolved star-forming regions in the local as well as the high-redshift Universe.",
+      "abstract": "Studying the driving modes of turbulence is important for characterizing the impact of turbulence in various astrophysical environments. The driving mode of turbulence is parametrized by b, which relates the width of the gas density PDF to the turbulent Mach number; b ≍ 1/3, 1, and 0.4 correspond to driving that is solenoidal, compressive, and a natural mixture of the two, respectively. In this work, we use high-resolution (sub-pc) ALMA <SUP>12</SUP>CO (J = 2-1), <SUP>13</SUP>CO (J = 2-1), and C<SUP>18</SUP>O (J = 2-1) observations of filamentary molecular clouds in the star-forming region N159E (the Papillon Nebula) in the Large Magellanic Cloud (LMC) to provide the first measurement of turbulence driving parameter in an extragalactic region. We use a non-local thermodynamic equilibrium (NLTE) analysis of the CO isotopologues to construct a gas density PDF, which we find to be largely lognormal in shape with some intermittent features indicating deviations from lognormality. We find that the width of the lognormal part of the density PDF is comparable to the supersonic turbulent Mach number, resulting in b ≍ 0.9. This implies that the driving mode of turbulence in N159E is primarily compressive. We speculate that the compressive turbulence could have been powered by gravo-turbulent fragmentation of the molecular gas, or due to compression powered by H I flows that led to the development of the molecular filaments observed by ALMA in the region. Our analysis can be easily applied to study the nature of turbulence driving in resolved star-forming regions in the local as well as the high-redshift Universe.",
       "bibcode": "2022MNRAS.509.2180S",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
       "citation_count": 25,
-      "read_count": 121,
+      "read_count": 135,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -398,7 +398,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
       "citation_count": 56,
-      "read_count": 2,
+      "read_count": 86,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -418,7 +418,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 29,
-      "read_count": 1,
+      "read_count": 147,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -439,7 +439,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
       "citation_count": 158,
-      "read_count": 10,
+      "read_count": 141,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -462,7 +462,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
       "citation_count": 39,
-      "read_count": 7,
+      "read_count": 175,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -484,7 +484,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 32,
-      "read_count": 2,
+      "read_count": 77,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -499,7 +499,7 @@
       "journal": "Ecology and Evolution",
       "year": "2020",
       "pubdate": "2020-01-00",
-      "abstract": "Metal box (e.g., Elliott, Sherman) traps and remote cameras are two of the most commonly employed methods presently used to survey terrestrial mammals. However, their relative efficacy at accurately detecting cryptic small mammals has not been adequately assessed. The present study therefore compared the effectiveness of metal box (Elliott) traps and vertically oriented, close range, white flash camera traps in detecting small mammals occurring in the Scenic Rim of eastern Australia. We also conducted a preliminary survey to determine effectiveness of a conservation detection dog (CDD) for identifying presence of a threatened carnivorous marsupial, Antechinus arktos, in present-day and historical locations, using camera traps to corroborate detections. 200 Elliott traps and 20 white flash camera traps were set for four deployments per method, across a site where the target small mammals, including A. arktos, are known to occur. Camera traps produced higher detection probabilities than Elliott traps for all four species. Thus, vertically mounted white flash cameras were preferable for detecting the presence of cryptic small mammals in our survey. The CDD, which had been trained to detect A. arktos scat, indicated in total 31 times when deployed in the field survey area, with subsequent camera trap deployments specifically corroborating A. arktos presence at 100% (3) indication locations. Importantly, the dog indicated twice within Border Ranges National Park, where historical (1980s–1990s) specimen-based records indicate the species was present, but extensive Elliott and camera trapping over the last 5–10 years have resulted in zero A. arktos captures. Camera traps subsequently corroborated A. arktos presence at these sites. This demonstrates that detection dogs can be a highly effective means of locating threatened, cryptic species, especially when traditional methods are unable to detect low-density mammal populations.",
+      "abstract": "Metal box (e.g., Elliott, Sherman) traps and remote cameras are two of the most commonly employed methods presently used to survey terrestrial mammals. However, their relative efficacy at accurately detecting cryptic small mammals has not been adequately assessed. The present study therefore compared the effectiveness of metal box (Elliott) traps and vertically oriented, close range, white flash camera traps in detecting small mammals occurring in the Scenic Rim of eastern Australia. We also conducted a preliminary survey to determine effectiveness of a conservation detection dog (CDD) for identifying presence of a threatened carnivorous marsupial, Antechinus arktos, in present-day and historical locations, using camera traps to corroborate detections. 200 Elliott traps and 20 white flash camera traps were set for four deployments per method, across a site where the target small mammals, including A. arktos, are known to occur. Camera traps produced higher detection probabilities than Elliott traps for all four species. Thus, vertically mounted white flash cameras were preferable for detecting the presence of cryptic small mammals in our survey. The CDD, which had been trained to detect A. arktos scat, indicated in total 31 times when deployed in the field survey area, with subsequent camera trap deployments specifically corroborating A. arktos presence at 100% (3) indication locations. Importantly, the dog indicated twice within Border Ranges National Park, where historical (1980s─1990s) specimen-based records indicate the species was present, but extensive Elliott and camera trapping over the last 5─10 years have resulted in zero A. arktos captures. Camera traps subsequently corroborated A. arktos presence at these sites. This demonstrates that detection dogs can be a highly effective means of locating threatened, cryptic species, especially when traditional methods are unable to detect low-density mammal populations.",
       "bibcode": "2020EcoEv..10.1054T",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020EcoEv..10.1054T/abstract",
       "doi_url": "https://doi.org/10.1002/ece3.5972",
@@ -522,7 +522,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
       "citation_count": 25,
-      "read_count": 1,
+      "read_count": 100,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -543,7 +543,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1416",
       "citation_count": 20,
-      "read_count": 1,
+      "read_count": 138,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -563,7 +563,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 5,
-      "read_count": 2,
+      "read_count": 255,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -579,11 +579,11 @@
       "journal": "Ecology and Evolution",
       "year": "2018",
       "pubdate": "2018-06-00",
-      "abstract": "This study develops an approach to automating the process of vegetation cover estimates using computer vision and pattern recognition algorithms. Visual cover estimation is a key tool for many ecological studies, yet quadrat-based analyses are known to suffer from issues of consistency between people as well as across sites (spatially) and time (temporally). Previous efforts to estimate cover from photograps require considerable manual work. We demonstrate that an automated system can be used to estimate vegetation cover and the type of vegetation cover present using top–down photographs of 1 m by 1 m quadrats. Vegetation cover is estimated by modelling the distribution of color using a multivariate Gaussian. The type of vegetation cover is then classified, using illumination robust local binary pattern features, into two broad groups: graminoids (grasses) and forbs. This system is evaluated on two datasets from the globally distributed experiment, the Nutrient Network (NutNet). These NutNet sites were selected for analyses because repeat photographs were taken over time and these sites are representative of very different grassland ecosystems—a low stature subalpine grassland in an alpine region of Australia and a higher stature and more productive lowland grassland in the Pacific Northwest of the USA. We find that estimates of treatment effects on grass and forb cover did not differ between field and automated estimates for eight of nine experimental treatments. Conclusions about total vegetation cover did not correspond quite as strongly, particularly at the more productive site. A limitation with this automated system is that the total vegetation cover is given as a percentage of pixels considered to contain vegetation, but ecologists can distinguish species with overlapping coverage and thus can estimate total coverage to exceed 100%. Automated approaches such as this offer techniques for estimating vegetation cover that are repeatable, cheaper to use, and likely more reliable for quantifying changes in vegetation over the long-term. These approaches would also enable ecologists to increase the spatial and temporal depth of their coverage estimates with methods that allow for vegetation sampling over large spatial scales quickly.",
+      "abstract": "This study develops an approach to automating the process of vegetation cover estimates using computer vision and pattern recognition algorithms. Visual cover estimation is a key tool for many ecological studies, yet quadrat-based analyses are known to suffer from issues of consistency between people as well as across sites (spatially) and time (temporally). Previous efforts to estimate cover from photograps require considerable manual work. We demonstrate that an automated system can be used to estimate vegetation cover and the type of vegetation cover present using top─down photographs of 1 m by 1 m quadrats. Vegetation cover is estimated by modelling the distribution of color using a multivariate Gaussian. The type of vegetation cover is then classified, using illumination robust local binary pattern features, into two broad groups: graminoids (grasses) and forbs. This system is evaluated on two datasets from the globally distributed experiment, the Nutrient Network (NutNet). These NutNet sites were selected for analyses because repeat photographs were taken over time and these sites are representative of very different grassland ecosystems—a low stature subalpine grassland in an alpine region of Australia and a higher stature and more productive lowland grassland in the Pacific Northwest of the USA. We find that estimates of treatment effects on grass and forb cover did not differ between field and automated estimates for eight of nine experimental treatments. Conclusions about total vegetation cover did not correspond quite as strongly, particularly at the more productive site. A limitation with this automated system is that the total vegetation cover is given as a percentage of pixels considered to contain vegetation, but ecologists can distinguish species with overlapping coverage and thus can estimate total coverage to exceed 100%. Automated approaches such as this offer techniques for estimating vegetation cover that are repeatable, cheaper to use, and likely more reliable for quantifying changes in vegetation over the long-term. These approaches would also enable ecologists to increase the spatial and temporal depth of their coverage estimates with methods that allow for vegetation sampling over large spatial scales quickly.",
       "bibcode": "2018EcoEv...8.6005M",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2018EcoEv...8.6005M/abstract",
       "doi_url": "https://doi.org/10.1002/ece3.4135",
-      "citation_count": 5,
+      "citation_count": 6,
       "read_count": 0,
       "is_refereed": true,
       "arxiv_class": []
@@ -620,7 +620,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250603768S/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2506.03768",
       "citation_count": 8,
-      "read_count": 385,
+      "read_count": 401,
       "is_refereed": false,
       "arxiv_class": [
         "astro-ph.GA",
@@ -641,7 +641,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 4,
-      "read_count": 367,
+      "read_count": 382,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
