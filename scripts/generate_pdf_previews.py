@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-"""Generate JPEG previews for lecture PDFs.
+"""Generate JPEG previews for lecture PDFs and lecture-note PDFs.
 
-This script mirrors each PDF in ``static/lectures`` with a JPEG created from
-its first page and stores the result in ``static/lectures/previews``. Hugo then
-uses these previews on the Talks listing page.
+This script mirrors each PDF in ``static/lectures`` and ``static/lecture-notes``
+with a JPEG created from its first page, storing the result in the matching
+``previews`` directory. Hugo then uses these previews on the list pages.
 
 Run ``python scripts/generate_pdf_previews.py`` after adding or updating any
-lectures to refresh the previews. Install ImageMagick so the ``magick`` command
+lecture PDFs or lecture-note PDFs. Install ImageMagick so the ``magick`` command
 is available.
 """
 
@@ -21,8 +21,10 @@ from pathlib import Path
 
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
-LECTURES_DIR = ROOT_DIR / "static" / "lectures"
-PREVIEW_DIR = LECTURES_DIR / "previews"
+PDF_COLLECTIONS = (
+    ROOT_DIR / "static" / "lectures",
+    ROOT_DIR / "static" / "lecture-notes",
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -56,9 +58,12 @@ def parse_args() -> argparse.Namespace:
 def ensure_environment() -> None:
     if not shutil.which("magick"):
         sys.exit("Error: ImageMagick (magick) is required but was not found in PATH.")
-    if not LECTURES_DIR.exists():
-        sys.exit(f"Error: Expected lectures directory at {LECTURES_DIR}.")
-    PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
+    missing_dirs = [pdf_dir for pdf_dir in PDF_COLLECTIONS if not pdf_dir.exists()]
+    if missing_dirs:
+        missing_paths = ", ".join(str(path) for path in missing_dirs)
+        sys.exit(f"Error: Expected PDF directory at {missing_paths}.")
+    for pdf_dir in PDF_COLLECTIONS:
+        (pdf_dir / "previews").mkdir(parents=True, exist_ok=True)
 
 
 def should_render(pdf_path: Path, preview_path: Path, force: bool) -> bool:
@@ -103,8 +108,13 @@ def render_preview(
     preview_tmp.replace(preview_path)
 
 
-def find_pdfs() -> list[Path]:
-    return sorted(p for p in LECTURES_DIR.glob("*.pdf") if p.is_file())
+def find_pdfs() -> list[tuple[Path, Path]]:
+    pdf_pairs: list[tuple[Path, Path]] = []
+    for pdf_dir in PDF_COLLECTIONS:
+        preview_dir = pdf_dir / "previews"
+        for pdf_path in sorted(p for p in pdf_dir.glob("*.pdf") if p.is_file()):
+            pdf_pairs.append((pdf_path, preview_dir / pdf_path.with_suffix(".jpg").name))
+    return pdf_pairs
 
 
 def main() -> None:
@@ -113,16 +123,13 @@ def main() -> None:
 
     pdfs = find_pdfs()
     if not pdfs:
-        print("No PDFs discovered under static/lectures – nothing to do.")
+        print("No PDFs discovered under static/lectures or static/lecture-notes - nothing to do.")
         return
 
     regenerated = 0
     skipped = 0
 
-    for pdf_path in pdfs:
-        preview_name = pdf_path.with_suffix(".jpg").name
-        preview_path = PREVIEW_DIR / preview_name
-
+    for pdf_path, preview_path in pdfs:
         if should_render(pdf_path, preview_path, args.force):
             print(f"Rendering preview for {pdf_path.name} → {preview_path.relative_to(ROOT_DIR)}")
             render_preview(pdf_path, preview_path, args.density, args.quality, args.max_width)
