@@ -1,8 +1,26 @@
 {
-  "last_updated": "2026-04-19T06:29:45.678817+00:00",
+  "last_updated": "2026-04-20T06:38:40.568175+00:00",
   "total_publications": 32,
   "orcid": "0000-0001-9199-7771",
   "publications": [
+    {
+      "title": "Universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos",
+      "authors": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; Beattie, James R.; Schober, Jennifer",
+      "authors_highlighted": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; <strong>Beattie, James</strong> R.; Schober, Jennifer",
+      "authorship_position": "other",
+      "beattie_position": 4,
+      "journal": "Physical Review E",
+      "year": "2026",
+      "pubdate": "2026-04-00",
+      "abstract": "Small-scale dynamos (SSDs) amplify magnetic fields in turbulent plasmas. Theory predicts nonlinear magnetic energy growth <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mi>mag</mml:mi></mml:msub><mml:mo>∝</mml:mo><mml:msup><mml:mi>t</mml:mi><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub></mml:msup></mml:mrow></mml:math></inline-formula>, but this scaling has not been tested across flow regimes. Using a large ensemble of SSD simulations spanning subsonic to supersonic turbulence, we measure linear growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></inline-formula>) in subsonic flows and quadratic growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></inline-formula>) in supersonic flows. In all cases, the nonlinear dynamo converts a nearly constant fraction approximately equal to <inline-formula><mml:math><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>100</mml:mn></mml:mrow></mml:math></inline-formula> of the turbulent kinetic energy flux into magnetic energy, and the nonlinear phase has a characteristic duration <inline-formula><mml:math><mml:mrow><mml:mi>∆</mml:mi><mml:mi>t</mml:mi><mml:mo>≍</mml:mo><mml:mn>20</mml:mn><mml:mspace></mml:mspace><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, where <inline-formula><mml:math><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math></inline-formula> is the outer-scale turnover time. By isolating the onset of magnetic backreaction in SSDs, our statistical ensemble approach identifies a robust efficiency and duration for the nonlinear SSD that can be used to interpret more complex astrophysical and laboratory plasmas.",
+      "bibcode": "2026PhRvE.113d5208K",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
+      "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
+      "citation_count": 0,
+      "read_count": 0,
+      "is_refereed": true,
+      "arxiv_class": []
+    },
     {
       "title": "Cosmic-Ray and Plasma Coupling for Isothermal Supersonic Turbulence in the Magnetized Interstellar Medium",
       "authors": "Sampson, Matt L.; Beattie, James R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
@@ -23,24 +41,6 @@
         "astro-ph.GA",
         "astro-ph.HE"
       ]
-    },
-    {
-      "title": "Universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos",
-      "authors": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; Beattie, James R.; Schober, Jennifer",
-      "authors_highlighted": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; <strong>Beattie, James</strong> R.; Schober, Jennifer",
-      "authorship_position": "other",
-      "beattie_position": 4,
-      "journal": "Physical Review E",
-      "year": "2026",
-      "pubdate": "2026-04-00",
-      "abstract": "Small-scale dynamos (SSDs) amplify magnetic fields in turbulent plasmas. Theory predicts nonlinear magnetic energy growth <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mi>mag</mml:mi></mml:msub><mml:mo>∝</mml:mo><mml:msup><mml:mi>t</mml:mi><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub></mml:msup></mml:mrow></mml:math></inline-formula>, but this scaling has not been tested across flow regimes. Using a large ensemble of SSD simulations spanning subsonic to supersonic turbulence, we measure linear growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></inline-formula>) in subsonic flows and quadratic growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></inline-formula>) in supersonic flows. In all cases, the nonlinear dynamo converts a nearly constant fraction approximately equal to <inline-formula><mml:math><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>100</mml:mn></mml:mrow></mml:math></inline-formula> of the turbulent kinetic energy flux into magnetic energy, and the nonlinear phase has a characteristic duration <inline-formula><mml:math><mml:mrow><mml:mi>∆</mml:mi><mml:mi>t</mml:mi><mml:mo>≍</mml:mo><mml:mn>20</mml:mn><mml:mspace></mml:mspace><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, where <inline-formula><mml:math><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math></inline-formula> is the outer-scale turnover time. By isolating the onset of magnetic backreaction in SSDs, our statistical ensemble approach identifies a robust efficiency and duration for the nonlinear SSD that can be used to interpret more complex astrophysical and laboratory plasmas.",
-      "bibcode": "2026PhRvE.113d5208K",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
-      "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
-      "citation_count": 0,
-      "read_count": 0,
-      "is_refereed": true,
-      "arxiv_class": []
     },
     {
       "title": "Cascading from the Winds to the Disk: The Universality of Supernovae-driven Turbulence in Different Galactic Interstellar Media",
@@ -298,6 +298,27 @@
       ]
     },
     {
+      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Frontiers in Astronomy and Space Sciences",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV ‒ TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
+      "bibcode": "2022FrASS...9.0900B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
+      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
+      "citation_count": 22,
+      "read_count": 242,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn"
+      ]
+    },
+    {
       "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
       "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
       "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
@@ -317,27 +338,6 @@
         "astro-ph.GA",
         "physics.flu-dyn",
         "physics.plasm-ph"
-      ]
-    },
-    {
-      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
-      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Frontiers in Astronomy and Space Sciences",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV ‒ TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
-      "bibcode": "2022FrASS...9.0900B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
-      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
-      "citation_count": 22,
-      "read_count": 242,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "physics.flu-dyn"
       ]
     },
     {
