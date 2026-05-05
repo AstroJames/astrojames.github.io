@@ -20,7 +20,12 @@
         <div class="profile-info">
           <h1 class="profile-name">{{ $author.Title }}</h1>
           {{ with $author.Params.role }}
-            <p class="profile-role">{{ . }}</p>
+            <p class="profile-role">
+              {{- range $index, $line := split . "\n" -}}
+                {{- if $index }}<br>{{ end -}}
+                {{- $line | markdownify -}}
+              {{- end -}}
+            </p>
           {{ end }}
           
           {{/* Organizations */}}
@@ -186,6 +191,16 @@
   color: #ffffff; /* White instead of grey */
   margin: 0 0 1rem 0;
   text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Thin black outline */
+}
+
+.profile-role a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.profile-role a:hover {
+  color: #ff0000;
 }
 
 .profile-organizations {
