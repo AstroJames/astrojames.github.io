@@ -21,9 +21,9 @@
           <h1 class="profile-name">{{ $author.Title }}</h1>
           {{ with $author.Params.role }}
             <p class="profile-role">
-              {{- range $index, $line := split . "\n" -}}
-                {{- if $index }}<br>{{ end -}}
-                {{- $line | markdownify -}}
+              {{- . -}}
+              {{- with $author.Params.future_role -}}
+                <br>{{ .prefix }} <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a> {{ .suffix }}
               {{- end -}}
             </p>
           {{ end }}
