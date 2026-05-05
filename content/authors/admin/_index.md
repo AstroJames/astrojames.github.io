@@ -21,7 +21,7 @@ highlight_name: true
 
 # Role/position/tagline
 role: |-
-  Postdoctoral Research Fellow at CITA / Princeton<br>
+  Postdoctoral Research Fellow at CITA / Princeton
   Future [Hubble Fellow](https://www.stsci.edu/stsci-research/fellowships/nasa-hubble-fellowship-program/2026-nhfp-fellows) at the Institute for Advanced Study
 
 # Organizations/Affiliations to display in Biography blox
