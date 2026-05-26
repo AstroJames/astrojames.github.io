@@ -7,3 +7,9 @@ resources/
 hugo_stats.json
 go.sum
 _vendor/
+
+# Python cache files
+__pycache__/
+
+# Local lecture upload instructions/scratch area
+static/lectures/new/
