@@ -1,8 +1,26 @@
 {
-  "last_updated": "2026-06-08T07:31:36.373691+00:00",
-  "total_publications": 32,
+  "last_updated": "2026-06-09T07:06:29.139317+00:00",
+  "total_publications": 33,
   "orcid": "0000-0001-9199-7771",
   "publications": [
+    {
+      "title": "Supernovae Drive Large-scale, Incompressible Turbulence through Small-scale Instabilities",
+      "authors": "Beattie, James R.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "The Astrophysical Journal",
+      "year": "2026",
+      "pubdate": "2026-06-00",
+      "abstract": "The sources of turbulence in our Galaxy may be diverse, but core-collapse supernovae (SNe) alone provide enough energy to sustain a steady-state galactic turbulence cascade at the observed velocity dispersion. By localizing and analyzing supernova remnants (SNRs) in high-resolution SN-driven galactic disk cutout simulations from J. R. Beattie et al., I show that isolated SNRs source incompressible turbulence through baroclinic vorticity generation localized at the unstable contact discontinuity. Through the spherical harmonic power spectrum of the corrugations, I provide evidence that this process is seeded by surface instabilities and 2D turbulence on the shell, which corrugates and folds the interface, becoming the strongest source of baroclinicity in the simulations. I present an analytical relation for a baroclinicity-fed incompressible mode (co)spectrum, which matches that observed in the simulated SNRs and reveals a ∝k<SUP>3/4</SUP> spectrum that drives the turbulence. I show that vortex stretching allows for modes to be shed from the contact discontinuity into the surrounding medium and derive a timescale criterion for this process, revealing that young SNRs with radii close to the cooling radius are efficient at radiating turbulence. The unstable layer produces a spectrum of incompressible modes ∝k<SUP>−3/2</SUP> locally within the SNRs. Through the inverse cascade mechanism revealed in J. R. Beattie et al., this opens the possibility that the k<SUP>−3/2</SUP> spectrum, arising from corrugated folds in the unstable layer, imprints itself on kiloparsec scales, thereby connecting small-scale structure in the layer to the large-scale incompressible turbulence cascade.",
+      "bibcode": "2026ApJ..1004L...9B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1004L...9B/abstract",
+      "doi_url": "https://doi.org/10.3847/2041-8213/ae6eed",
+      "citation_count": 0,
+      "read_count": 0,
+      "is_refereed": true,
+      "arxiv_class": []
+    },
     {
       "title": "Cosmic-Ray and Plasma Coupling for Isothermal Supersonic Turbulence in the Magnetized Interstellar Medium",
       "authors": "Sampson, Matt L.; Beattie, James R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
@@ -59,7 +77,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
       "citation_count": 3,
-      "read_count": 425,
+      "read_count": 424,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -142,7 +160,7 @@
       "bibcode": "2025NatAs...9.1195B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
-      "citation_count": 21,
+      "citation_count": 22,
       "read_count": 589,
       "is_refereed": true,
       "arxiv_class": [
@@ -253,7 +271,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 31,
-      "read_count": 200,
+      "read_count": 199,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -336,7 +354,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
       "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
       "citation_count": 22,
-      "read_count": 272,
+      "read_count": 276,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -440,7 +458,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
       "citation_count": 58,
-      "read_count": 138,
+      "read_count": 137,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -481,7 +499,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
       "citation_count": 162,
-      "read_count": 256,
+      "read_count": 257,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -662,7 +680,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 4,
-      "read_count": 443,
+      "read_count": 447,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
