@@ -136,6 +136,135 @@
   text-align: justify;
 }
 
+/* ===== VISA APPOINTMENT MONITOR ===== */
+
+.visa-monitor {
+  max-width: 1080px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.visa-monitor__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.visa-monitor__header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.visa-monitor__subtitle,
+.visa-monitor__note {
+  color: #64748b;
+}
+
+.visa-monitor__status,
+.visa-monitor__pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.visa-monitor__status[data-outcome="available"],
+.visa-monitor__pill[data-outcome="available"] {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.visa-monitor__status[data-outcome="busy"],
+.visa-monitor__pill[data-outcome="busy"] {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.visa-monitor__status[data-outcome="error"],
+.visa-monitor__status[data-outcome="blocked"],
+.visa-monitor__status[data-outcome="login_required"],
+.visa-monitor__pill[data-outcome="error"],
+.visa-monitor__pill[data-outcome="blocked"],
+.visa-monitor__pill[data-outcome="login_required"] {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.visa-monitor__summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.visa-monitor__summary div {
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: rgba(248, 250, 252, 0.85);
+}
+
+.visa-monitor__summary dt {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.visa-monitor__summary dd {
+  margin: 0.35rem 0 0;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.visa-monitor__table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.visa-monitor__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.visa-monitor__table th,
+.visa-monitor__table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.visa-monitor__table th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.visa-monitor__table tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .visa-monitor__header {
+    flex-direction: column;
+  }
+
+  .visa-monitor__summary {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== HOVER ANIMATIONS ===== */
 
 /* Publication cards hover effects */
