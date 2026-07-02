@@ -49,6 +49,7 @@
   const updated = document.getElementById("visa-monitor-updated");
   const outcome = document.getElementById("visa-monitor-outcome");
   const soonest = document.getElementById("visa-monitor-soonest");
+  const statusUrl = "https://raw.githubusercontent.com/AstroJames/astrojames.github.io/main/static/visa-appointments/status.json";
 
   function formatDate(value) {
     if (!value) return "None visible";
@@ -74,7 +75,7 @@
   }
 
   try {
-    const response = await fetch("/visa-appointments/status.json", { cache: "no-store" });
+    const response = await fetch(`${statusUrl}?t=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     const consulates = data.consulates || [];
