@@ -3,7 +3,7 @@
   <div class="visa-monitor__header">
     <div>
       <h1 id="visa-monitor-title">Visa Appointments</h1>
-      <p class="visa-monitor__subtitle">Canadian consulate availability monitor.</p>
+      <p class="visa-monitor__subtitle">Canadian US consulate availability monitor.</p>
     </div>
     <span class="visa-monitor__status" id="visa-monitor-status">Loading</span>
   </div>
@@ -40,8 +40,6 @@
       </tbody>
     </table>
   </div>
-
-  <p class="visa-monitor__note" id="visa-monitor-note">No appointment was selected or booked.</p>
 </section>
 
 <script>
@@ -51,7 +49,6 @@
   const updated = document.getElementById("visa-monitor-updated");
   const outcome = document.getElementById("visa-monitor-outcome");
   const soonest = document.getElementById("visa-monitor-soonest");
-  const note = document.getElementById("visa-monitor-note");
 
   function formatDate(value) {
     if (!value) return "None visible";
@@ -89,7 +86,6 @@
     soonest.textContent = data.soonestAvailableAppointment
       ? `${data.soonestAvailableAppointment.location}: ${formatAppointment(data.soonestAvailableAppointment)}`
       : "None visible";
-    note.textContent = data.note || "No appointment was selected or booked.";
 
     rows.innerHTML = "";
     if (consulates.length === 0) {

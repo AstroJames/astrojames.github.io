@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T14:26:50.823Z",
+  "updatedAt": "2026-07-02T14:56:58.566Z",
   "outcome": "busy",
   "reason": "portal_busy",
   "baseline": {
@@ -57,6 +57,5 @@
       "soonestAvailableAppointment": null,
       "appointments": []
     }
-  ],
-  "note": "No appointment was selected or booked."
+  ]
 }
