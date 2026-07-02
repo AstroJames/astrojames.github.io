@@ -1,11 +1,61 @@
 {
-  "updatedAt": "2026-07-02T18:26:27.986Z",
-  "outcome": "error",
-  "reason": "page.goto: net::ERR_ABORTED at https://ais.usvisa-info.com/en-ca/niv/users/sign_in\nCall log:\n\u001b[2m  - navigating to \"https://ais.usvisa-info.com/en-ca/niv/users/sign_in\", waiting until \"domcontentloaded\"\u001b[22m\n",
+  "updatedAt": "2026-07-02T18:27:45.929Z",
+  "outcome": "busy",
+  "reason": "portal_busy",
   "baseline": {
     "raw": "11 August, 2026, 07:30",
     "isoLocal": "2026-08-11T07:30:00"
   },
   "soonestAvailableAppointment": null,
-  "consulates": []
+  "consulates": [
+    {
+      "location": "Calgary",
+      "outcome": "busy",
+      "reason": "portal_busy",
+      "soonestAvailableAppointment": null,
+      "appointments": []
+    },
+    {
+      "location": "Halifax",
+      "outcome": "busy",
+      "reason": "portal_busy",
+      "soonestAvailableAppointment": null,
+      "appointments": []
+    },
+    {
+      "location": "Montreal",
+      "outcome": "busy",
+      "reason": "portal_busy",
+      "soonestAvailableAppointment": null,
+      "appointments": []
+    },
+    {
+      "location": "Ottawa",
+      "outcome": "busy",
+      "reason": "portal_busy",
+      "soonestAvailableAppointment": null,
+      "appointments": []
+    },
+    {
+      "location": "Quebec City",
+      "outcome": "busy",
+      "reason": "portal_busy",
+      "soonestAvailableAppointment": null,
+      "appointments": []
+    },
+    {
+      "location": "Toronto",
+      "outcome": "busy",
+      "reason": "portal_busy",
+      "soonestAvailableAppointment": null,
+      "appointments": []
+    },
+    {
+      "location": "Vancouver",
+      "outcome": "busy",
+      "reason": "portal_busy",
+      "soonestAvailableAppointment": null,
+      "appointments": []
+    }
+  ]
 }
