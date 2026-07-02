@@ -1,0 +1,130 @@
+{{ define "main" }}
+<section class="visa-monitor" aria-labelledby="visa-monitor-title">
+  <div class="visa-monitor__header">
+    <div>
+      <h1 id="visa-monitor-title">Visa Appointments</h1>
+      <p class="visa-monitor__subtitle">Canadian consulate availability monitor.</p>
+    </div>
+    <span class="visa-monitor__status" id="visa-monitor-status">Loading</span>
+  </div>
+
+  <dl class="visa-monitor__summary">
+    <div>
+      <dt>Last checked</dt>
+      <dd id="visa-monitor-updated">Loading</dd>
+    </div>
+    <div>
+      <dt>Overall result</dt>
+      <dd id="visa-monitor-outcome">Loading</dd>
+    </div>
+    <div>
+      <dt>Soonest visible</dt>
+      <dd id="visa-monitor-soonest">Loading</dd>
+    </div>
+  </dl>
+
+  <div class="visa-monitor__table-wrap">
+    <table class="visa-monitor__table">
+      <thead>
+        <tr>
+          <th>Consulate</th>
+          <th>Status</th>
+          <th>Soonest date</th>
+          <th>Times</th>
+        </tr>
+      </thead>
+      <tbody id="visa-monitor-rows">
+        <tr>
+          <td colspan="4">Loading appointment monitor data.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="visa-monitor__note" id="visa-monitor-note">No appointment was selected or booked.</p>
+</section>
+
+<script>
+(async function renderVisaAppointments() {
+  const rows = document.getElementById("visa-monitor-rows");
+  const status = document.getElementById("visa-monitor-status");
+  const updated = document.getElementById("visa-monitor-updated");
+  const outcome = document.getElementById("visa-monitor-outcome");
+  const soonest = document.getElementById("visa-monitor-soonest");
+  const note = document.getElementById("visa-monitor-note");
+
+  function formatDate(value) {
+    if (!value) return "None visible";
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return value;
+    return parsed.toLocaleString([], {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit"
+    });
+  }
+
+  function formatAppointment(appointment) {
+    if (!appointment) return "None visible";
+    return appointment.raw || formatDate(appointment.isoLocal);
+  }
+
+  function formatTimes(appointment) {
+    const times = appointment?.times || [];
+    return times.length > 0 ? times.join(", ") : "None visible";
+  }
+
+  try {
+    const response = await fetch("/visa-appointments/status.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    const consulates = data.consulates || [];
+
+    status.textContent = data.outcome || "unknown";
+    status.dataset.outcome = data.outcome || "unknown";
+    updated.textContent = formatDate(data.updatedAt);
+    outcome.textContent = [data.outcome, data.reason].filter(Boolean).join(" / ");
+    soonest.textContent = data.soonestAvailableAppointment
+      ? `${data.soonestAvailableAppointment.location}: ${formatAppointment(data.soonestAvailableAppointment)}`
+      : "None visible";
+    note.textContent = data.note || "No appointment was selected or booked.";
+
+    rows.innerHTML = "";
+    if (consulates.length === 0) {
+      rows.innerHTML = '<tr><td colspan="4">No consulate data was exported yet.</td></tr>';
+      return;
+    }
+
+    for (const item of consulates) {
+      const appointment = item.soonestAvailableAppointment;
+      const tr = document.createElement("tr");
+      const locationCell = document.createElement("td");
+      const outcomeCell = document.createElement("td");
+      const dateCell = document.createElement("td");
+      const timesCell = document.createElement("td");
+      const pill = document.createElement("span");
+
+      locationCell.textContent = item.location || "";
+      pill.className = "visa-monitor__pill";
+      pill.dataset.outcome = item.outcome || "unknown";
+      pill.textContent = item.outcome || "unknown";
+      outcomeCell.appendChild(pill);
+      dateCell.textContent = formatAppointment(appointment);
+      timesCell.textContent = formatTimes(appointment);
+
+      tr.append(locationCell, outcomeCell, dateCell, timesCell);
+      rows.appendChild(tr);
+    }
+  } catch (error) {
+    status.textContent = "error";
+    status.dataset.outcome = "error";
+    updated.textContent = "Unavailable";
+    outcome.textContent = error.message;
+    soonest.textContent = "Unavailable";
+    rows.innerHTML = '<tr><td colspan="4">Could not load appointment monitor data.</td></tr>';
+  }
+})();
+</script>
+{{ end }}
