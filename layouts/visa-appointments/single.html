@@ -49,7 +49,7 @@
   const updated = document.getElementById("visa-monitor-updated");
   const outcome = document.getElementById("visa-monitor-outcome");
   const soonest = document.getElementById("visa-monitor-soonest");
-  const statusUrl = "https://raw.githubusercontent.com/AstroJames/astrojames.github.io/main/static/visa-appointments/status.json";
+  const statusUrl = "https://api.github.com/repos/AstroJames/astrojames.github.io/contents/static/visa-appointments/status.json";
 
   function formatDate(value) {
     if (!value) return "None visible";
@@ -74,10 +74,24 @@
     return times.length > 0 ? times.join(", ") : "None visible";
   }
 
-  try {
-    const response = await fetch(`${statusUrl}?t=${Date.now()}`, { cache: "no-store" });
+  async function loadStatus() {
+    const response = await fetch(`${statusUrl}?ref=main&t=${Date.now()}`, {
+      cache: "no-store",
+      headers: {
+        Accept: "application/vnd.github.raw+json"
+      }
+    });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
+
+    const payload = await response.json();
+    if (typeof payload?.content === "string") {
+      return JSON.parse(atob(payload.content.replace(/\s/g, "")));
+    }
+    return payload;
+  }
+
+  try {
+    const data = await loadStatus();
     const consulates = data.consulates || [];
 
     status.textContent = data.outcome || "unknown";
