@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03T06:59:49.734069+00:00",
+  "last_updated": "2026-07-04T06:55:54.200507+00:00",
   "total_publications": 33,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -40,7 +40,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
       "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
       "citation_count": 2,
-      "read_count": 316,
+      "read_count": 317,
       "is_refereed": true,
       "arxiv_class": [
         "physics.plasm-ph",
@@ -146,7 +146,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 10,
-      "read_count": 329,
+      "read_count": 328,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -189,7 +189,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 5,
-      "read_count": 371,
+      "read_count": 370,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -212,7 +212,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 25,
-      "read_count": 437,
+      "read_count": 438,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -304,47 +304,6 @@
       ]
     },
     {
-      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
-      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Frontiers in Astronomy and Space Sciences",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV ‒ TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
-      "bibcode": "2022FrASS...9.0900B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
-      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
-      "citation_count": 22,
-      "read_count": 341,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "physics.flu-dyn"
-      ]
-    },
-    {
-      "title": "Understanding star formation in molecular clouds. IV. Column density PDFs from quiescent to massive molecular clouds",
-      "authors": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; Beattie, J. R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
-      "authors_highlighted": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; <strong>Beattie, J.</strong> R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
-      "authorship_position": "other",
-      "beattie_position": 15,
-      "journal": "Astronomy and Astrophysics",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "Probability distribution functions of the total hydrogen column density (N-PDFs) are a valuable tool for distinguishing between the various processes (turbulence, gravity, radiative feedback, magnetic fields) governing the morphological and dynamical structure of the interstellar medium. We present N-PDFs of 29 Galactic regions obtained from Herschel imaging at high angular resolution (18″), covering diffuse and quiescent clouds, and those showing low-, intermediate-, and high-mass star formation (SF), and characterize the cloud structure using the ∆-variance tool. The N-PDFs show a large variety of morphologies. They are all double-log-normal at low column densities, and display one or two power law tails (PLTs) at higher column densities. For diffuse, quiescent, and low-mass SF clouds, we propose that the two log-normals arise from the atomic and molecular phase, respectively. For massive clouds, we suggest that the first log-normal is built up by turbulently mixed H<SUB>2</SUB> and the second one by compressed (via stellar feedback) molecular gas. Nearly all clouds have two PLTs with slopes consistent with self-gravity, where the second one can be flatter or steeper than the first one. A flatter PLT could be caused by stellar feedback or other physical processes that slow down collapse and reduce the flow of mass toward higher densities. The steeper slope could arise if the magnetic field is oriented perpendicular to the LOS column density distribution. The first deviation point (DP), where the N-PDF turns from log-normal into a PLT, shows a clustering around values of a visual extinction of A<SUB>V</SUB> (DP1) ~ 2-5. The second DP, which defines the break between the two PLTs, varies strongly. In contrast, the width of the N-PDFs is the most stable parameter, with values of σ between ~0.5 and 0.6. Using the ∆-variance tool, we observe that the A<SUB>V</SUB> value, where the slope changes between the first and second PLT, increases with the characteristic size scale in the ∆-variance spectrum. We conclude that at low column densities, atomic and molecular gas is turbulently mixed, while at high column densities, the gas is fully molecular and dominated by self-gravity. The best fitting model N-PDFs of molecular clouds is thus one with log-normal low column density distributions, followed by one or two PLTs.",
-      "bibcode": "2022A&A...666A.165S",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
-      "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
-      "citation_count": 53,
-      "read_count": 271,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA"
-      ]
-    },
-    {
       "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
       "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
       "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
@@ -364,6 +323,47 @@
         "astro-ph.GA",
         "physics.flu-dyn",
         "physics.plasm-ph"
+      ]
+    },
+    {
+      "title": "Understanding star formation in molecular clouds. IV. Column density PDFs from quiescent to massive molecular clouds",
+      "authors": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; Beattie, J. R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
+      "authors_highlighted": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; <strong>Beattie, J.</strong> R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
+      "authorship_position": "other",
+      "beattie_position": 15,
+      "journal": "Astronomy and Astrophysics",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "Probability distribution functions of the total hydrogen column density (N-PDFs) are a valuable tool for distinguishing between the various processes (turbulence, gravity, radiative feedback, magnetic fields) governing the morphological and dynamical structure of the interstellar medium. We present N-PDFs of 29 Galactic regions obtained from Herschel imaging at high angular resolution (18″), covering diffuse and quiescent clouds, and those showing low-, intermediate-, and high-mass star formation (SF), and characterize the cloud structure using the ∆-variance tool. The N-PDFs show a large variety of morphologies. They are all double-log-normal at low column densities, and display one or two power law tails (PLTs) at higher column densities. For diffuse, quiescent, and low-mass SF clouds, we propose that the two log-normals arise from the atomic and molecular phase, respectively. For massive clouds, we suggest that the first log-normal is built up by turbulently mixed H<SUB>2</SUB> and the second one by compressed (via stellar feedback) molecular gas. Nearly all clouds have two PLTs with slopes consistent with self-gravity, where the second one can be flatter or steeper than the first one. A flatter PLT could be caused by stellar feedback or other physical processes that slow down collapse and reduce the flow of mass toward higher densities. The steeper slope could arise if the magnetic field is oriented perpendicular to the LOS column density distribution. The first deviation point (DP), where the N-PDF turns from log-normal into a PLT, shows a clustering around values of a visual extinction of A<SUB>V</SUB> (DP1) ~ 2-5. The second DP, which defines the break between the two PLTs, varies strongly. In contrast, the width of the N-PDFs is the most stable parameter, with values of σ between ~0.5 and 0.6. Using the ∆-variance tool, we observe that the A<SUB>V</SUB> value, where the slope changes between the first and second PLT, increases with the characteristic size scale in the ∆-variance spectrum. We conclude that at low column densities, atomic and molecular gas is turbulently mixed, while at high column densities, the gas is fully molecular and dominated by self-gravity. The best fitting model N-PDFs of molecular clouds is thus one with log-normal low column density distributions, followed by one or two PLTs.",
+      "bibcode": "2022A&A...666A.165S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
+      "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
+      "citation_count": 53,
+      "read_count": 270,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA"
+      ]
+    },
+    {
+      "title": "Ion alfvén velocity fluctuations and implications for the diffusion of streaming cosmic rays",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Federrath, Christoph; Sampson, Matt L.; Crocker, Roland M.",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Frontiers in Astronomy and Space Sciences",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "The interstellar medium (ISM) of star-forming galaxies is magnetized and turbulent. Cosmic rays (CRs) propagate through it, and those with energies from ∼ GeV ‒ TeV are likely subject to the streaming instability, whereby the wave damping processes balances excitation of resonant ionic Alfvén waves by the CRs, reaching an equilibrium in which the propagation speed of the CRs is very close to the local ion Alfvén velocity. The transport of streaming CRs is therefore sensitive to ionic Alfvén velocity fluctuations. In this paper we systematically study these fluctuations using a large ensemble of compressible MHD turbulence simulations. We show that for sub-Alfvénic turbulence, as applies for a strongly magnetized ISM, the ionic Alfvén velocity probability density function (PDF) is determined solely by the density fluctuations from shocked gas forming parallel to the magnetic field, and we develop analytical models for the ionic Alfvén velocity PDF up to second moments. For super-Alfvénic turbulence, magnetic and density fluctuations are correlated in complex ways, and these correlations as well as contributions from the magnetic fluctuations sets the ionic Alfvén velocity PDF. We discuss the implications of these findings for underlying \"macroscopic\" diffusion mechanisms in CRs undergoing the streaming instability, including modeling the macroscopic diffusion coefficient for the parallel transport in sub-Alfvénic plasmas. We also describe how, for highly-magnetized turbulent gas, the gas density PDF, and hence column density PDF, can be used to access information about ionic Alfvén velocity structure from observations of the magnetized ISM.",
+      "bibcode": "2022FrASS...9.0900B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
+      "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
+      "citation_count": 22,
+      "read_count": 340,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn"
       ]
     },
     {
@@ -587,7 +587,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
       "citation_count": 25,
-      "read_count": 229,
+      "read_count": 230,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -608,7 +608,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.487.2070B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1416",
       "citation_count": 21,
-      "read_count": 318,
+      "read_count": 323,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -628,7 +628,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 6,
-      "read_count": 504,
+      "read_count": 505,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
