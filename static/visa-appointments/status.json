@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T07:34:36.705Z",
+  "updatedAt": "2026-07-07T07:51:24.457Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -404,7 +404,8 @@
           "times": [
             "08:00",
             "08:15",
-            "08:30"
+            "08:30",
+            "08:45"
           ]
         },
         {
@@ -462,39 +463,49 @@
       "outcome": "none",
       "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": {
-        "raw": "22 September, 2026",
-        "isoLocal": "2026-09-22T00:00:00",
+        "raw": "16 September, 2026",
+        "isoLocal": "2026-09-16T00:00:00",
         "times": [
-          "07:30"
+          "09:15",
+          "09:30",
+          "09:45"
         ]
       },
       "appointments": [
         {
-          "raw": "22 September, 2026",
-          "isoLocal": "2026-09-22T00:00:00",
+          "raw": "16 September, 2026",
+          "isoLocal": "2026-09-16T00:00:00",
           "times": [
-            "07:30"
+            "09:15",
+            "09:30",
+            "09:45"
           ]
         },
         {
           "raw": "1 November, 2026",
           "isoLocal": "2026-11-01T00:00:00",
           "times": [
-            "07:30"
+            "08:00",
+            "08:15",
+            "08:30"
           ]
         },
         {
           "raw": "2 November, 2026",
           "isoLocal": "2026-11-02T00:00:00",
           "times": [
-            "07:30"
+            "09:15",
+            "09:30",
+            "09:45"
           ]
         },
         {
           "raw": "3 November, 2026",
           "isoLocal": "2026-11-03T00:00:00",
           "times": [
-            "07:30"
+            "09:15",
+            "09:30",
+            "09:45"
           ]
         },
         {
