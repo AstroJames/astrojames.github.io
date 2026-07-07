@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T03:18:57.147Z",
+  "updatedAt": "2026-07-07T03:48:51.971Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -7,11 +7,11 @@
     "isoLocal": "2026-08-11T07:30:00"
   },
   "soonestAvailableAppointment": {
-    "raw": "2 September, 2026",
-    "isoLocal": "2026-09-02T00:00:00",
-    "location": "Vancouver",
+    "raw": "5 September, 2026",
+    "isoLocal": "2026-09-05T00:00:00",
+    "location": "Calgary",
     "times": [
-      "07:30"
+      "08:00"
     ]
   },
   "consulates": [
@@ -451,6 +451,8 @@
           "raw": "4 January, 2027",
           "isoLocal": "2027-01-04T00:00:00",
           "times": [
+            "07:45",
+            "08:00",
             "08:15",
             "08:30"
           ]
@@ -462,16 +464,16 @@
       "outcome": "none",
       "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": {
-        "raw": "2 September, 2026",
-        "isoLocal": "2026-09-02T00:00:00",
+        "raw": "22 September, 2026",
+        "isoLocal": "2026-09-22T00:00:00",
         "times": [
           "07:30"
         ]
       },
       "appointments": [
         {
-          "raw": "2 September, 2026",
-          "isoLocal": "2026-09-02T00:00:00",
+          "raw": "22 September, 2026",
+          "isoLocal": "2026-09-22T00:00:00",
           "times": [
             "07:30"
           ]
