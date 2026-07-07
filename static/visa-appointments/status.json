@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T02:49:00.058Z",
+  "updatedAt": "2026-07-07T03:18:57.147Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -451,8 +451,6 @@
           "raw": "4 January, 2027",
           "isoLocal": "2027-01-04T00:00:00",
           "times": [
-            "07:45",
-            "08:00",
             "08:15",
             "08:30"
           ]
