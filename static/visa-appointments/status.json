@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T03:54:16.259Z",
+  "updatedAt": "2026-07-08T04:54:19.378Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -436,8 +436,7 @@
           "times": [
             "08:00",
             "08:15",
-            "08:30",
-            "08:45"
+            "08:30"
           ]
         },
         {
