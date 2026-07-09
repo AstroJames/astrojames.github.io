@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-09T11:41:19.496Z",
-  "outcome": "error",
-  "reason": "some_locations_failed",
+  "updatedAt": "2026-07-09T11:41:43.657Z",
+  "outcome": "busy",
+  "reason": "portal_busy",
   "baseline": {
     "raw": "11 August, 2026, 07:30",
     "isoLocal": "2026-08-11T07:30:00"
@@ -10,50 +10,50 @@
   "consulates": [
     {
       "location": "Calgary",
-      "outcome": "error",
-      "reason": "redacted",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Halifax",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Montreal",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Ottawa",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Quebec City",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Toronto",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Vancouver",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     }
