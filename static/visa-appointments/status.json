@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T02:09:52.303Z",
+  "updatedAt": "2026-07-09T02:40:03.919Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -7,11 +7,11 @@
     "isoLocal": "2026-08-11T07:30:00"
   },
   "soonestAvailableAppointment": {
-    "raw": "25 August, 2026",
-    "isoLocal": "2026-08-25T00:00:00",
+    "raw": "28 August, 2026",
+    "isoLocal": "2026-08-28T00:00:00",
     "location": "Toronto",
     "times": [
-      "08:15"
+      "08:00"
     ]
   },
   "consulates": [
@@ -356,18 +356,18 @@
       "outcome": "none",
       "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": {
-        "raw": "25 August, 2026",
-        "isoLocal": "2026-08-25T00:00:00",
+        "raw": "28 August, 2026",
+        "isoLocal": "2026-08-28T00:00:00",
         "times": [
-          "08:15"
+          "08:00"
         ]
       },
       "appointments": [
         {
-          "raw": "25 August, 2026",
-          "isoLocal": "2026-08-25T00:00:00",
+          "raw": "28 August, 2026",
+          "isoLocal": "2026-08-28T00:00:00",
           "times": [
-            "08:15"
+            "08:00"
           ]
         },
         {
