@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T04:53:59.777Z",
+  "updatedAt": "2026-07-10T05:23:57.510Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -325,8 +325,8 @@
     },
     {
       "location": "Halifax",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
@@ -359,8 +359,7 @@
         "raw": "23 September, 2026",
         "isoLocal": "2026-09-23T00:00:00",
         "times": [
-          "08:00",
-          "08:15"
+          "08:00"
         ]
       },
       "appointments": [
@@ -368,8 +367,7 @@
           "raw": "23 September, 2026",
           "isoLocal": "2026-09-23T00:00:00",
           "times": [
-            "08:00",
-            "08:15"
+            "08:00"
           ]
         },
         {
