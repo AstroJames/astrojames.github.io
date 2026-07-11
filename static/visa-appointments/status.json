@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T23:55:06.318Z",
+  "updatedAt": "2026-07-11T00:41:53.922Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -7,8 +7,8 @@
     "isoLocal": "2026-08-11T07:30:00"
   },
   "soonestAvailableAppointment": {
-    "raw": "18 August, 2026",
-    "isoLocal": "2026-08-18T00:00:00",
+    "raw": "21 August, 2026",
+    "isoLocal": "2026-08-21T00:00:00",
     "location": "Toronto",
     "times": [
       "08:45"
@@ -356,16 +356,16 @@
       "outcome": "none",
       "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": {
-        "raw": "18 August, 2026",
-        "isoLocal": "2026-08-18T00:00:00",
+        "raw": "21 August, 2026",
+        "isoLocal": "2026-08-21T00:00:00",
         "times": [
           "08:45"
         ]
       },
       "appointments": [
         {
-          "raw": "18 August, 2026",
-          "isoLocal": "2026-08-18T00:00:00",
+          "raw": "21 August, 2026",
+          "isoLocal": "2026-08-21T00:00:00",
           "times": [
             "08:45"
           ]
