@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-11T06:40:24.733339+00:00",
+  "last_updated": "2026-07-12T06:49:21.551764+00:00",
   "total_publications": 33,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -17,7 +17,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1004L...9B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/ae6eed",
       "citation_count": 1,
-      "read_count": 531,
+      "read_count": 529,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -81,8 +81,8 @@
       "bibcode": "2026ApJ...997...33C",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
-      "citation_count": 3,
-      "read_count": 410,
+      "citation_count": 4,
+      "read_count": 411,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -234,7 +234,7 @@
       "bibcode": "2023MNRAS.524.3201B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
-      "citation_count": 17,
+      "citation_count": 18,
       "read_count": 222,
       "is_refereed": true,
       "arxiv_class": [
@@ -275,7 +275,7 @@
       "bibcode": "2022MNRAS.517.5003B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
-      "citation_count": 31,
+      "citation_count": 32,
       "read_count": 249,
       "is_refereed": true,
       "arxiv_class": [
@@ -337,7 +337,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
       "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
       "citation_count": 22,
-      "read_count": 335,
+      "read_count": 334,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -379,8 +379,8 @@
       "bibcode": "2022MNRAS.513.2457K",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
-      "citation_count": 37,
-      "read_count": 449,
+      "citation_count": 38,
+      "read_count": 448,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -483,7 +483,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 29,
-      "read_count": 302,
+      "read_count": 303,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -503,7 +503,7 @@
       "bibcode": "2021NatAs...5..365F",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
-      "citation_count": 161,
+      "citation_count": 162,
       "read_count": 333,
       "is_refereed": true,
       "arxiv_class": [
@@ -526,7 +526,7 @@
       "bibcode": "2020MNRAS.498.1593B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
-      "citation_count": 40,
+      "citation_count": 41,
       "read_count": 318,
       "is_refereed": true,
       "arxiv_class": [
@@ -628,7 +628,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 6,
-      "read_count": 474,
+      "read_count": 475,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
