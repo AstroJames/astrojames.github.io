@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-13T05:25:33.858Z",
+  "updatedAt": "2026-07-13T05:55:28.041Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -339,8 +339,8 @@
     },
     {
       "location": "Ottawa",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "none",
+      "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
@@ -353,8 +353,8 @@
     },
     {
       "location": "Toronto",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
