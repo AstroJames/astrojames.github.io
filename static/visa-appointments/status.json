@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-13T23:25:26.772Z",
+  "updatedAt": "2026-07-13T23:55:41.117Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -346,15 +346,15 @@
     },
     {
       "location": "Quebec City",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "none",
+      "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Toronto",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
