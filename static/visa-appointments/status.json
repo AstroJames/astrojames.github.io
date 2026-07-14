@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T04:57:30.450Z",
+  "updatedAt": "2026-07-14T05:27:30.213Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -325,8 +325,8 @@
     },
     {
       "location": "Halifax",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
