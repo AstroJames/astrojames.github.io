@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T01:25:40.943Z",
+  "updatedAt": "2026-07-15T01:55:34.247Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -339,8 +339,8 @@
     },
     {
       "location": "Ottawa",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
