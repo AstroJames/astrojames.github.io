@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T02:55:28.811Z",
+  "updatedAt": "2026-07-15T03:25:46.975Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -325,8 +325,8 @@
     },
     {
       "location": "Halifax",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "none",
+      "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
@@ -346,22 +346,22 @@
     },
     {
       "location": "Quebec City",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "none",
+      "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Toronto",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "none",
+      "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Vancouver",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     }
