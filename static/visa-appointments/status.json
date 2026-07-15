@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T06:25:28.665Z",
+  "updatedAt": "2026-07-15T06:55:34.509Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -353,8 +353,8 @@
     },
     {
       "location": "Toronto",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "none",
+      "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
