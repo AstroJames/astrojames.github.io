@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-15T06:39:45.277952+00:00",
+  "last_updated": "2026-07-16T06:43:54.387414+00:00",
   "total_publications": 33,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -166,7 +166,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 24,
-      "read_count": 541,
+      "read_count": 540,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
