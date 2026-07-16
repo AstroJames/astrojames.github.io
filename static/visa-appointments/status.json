@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T04:48:11.804Z",
+  "updatedAt": "2026-07-16T06:18:07.655Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -346,8 +346,8 @@
     },
     {
       "location": "Quebec City",
-      "outcome": "none",
-      "reason": "no_earlier_candidate_visible",
+      "outcome": "busy",
+      "reason": "portal_busy",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
@@ -560,13 +560,6 @@
         {
           "raw": "4 November, 2026",
           "isoLocal": "2026-11-04T00:00:00",
-          "times": [
-            "07:30"
-          ]
-        },
-        {
-          "raw": "6 November, 2026",
-          "isoLocal": "2026-11-06T00:00:00",
           "times": [
             "07:30"
           ]
