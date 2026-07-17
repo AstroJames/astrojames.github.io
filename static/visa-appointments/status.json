@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-16T22:58:56.879Z",
-  "outcome": "busy",
-  "reason": "portal_busy",
+  "updatedAt": "2026-07-17T00:20:36.568Z",
+  "outcome": "error",
+  "reason": "some_locations_failed",
   "baseline": {
     "raw": "11 August, 2026, 07:30",
     "isoLocal": "2026-08-11T07:30:00"
@@ -10,50 +10,50 @@
   "consulates": [
     {
       "location": "Calgary",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "error",
+      "reason": "redacted",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Halifax",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "error",
+      "reason": "redacted",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Montreal",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "error",
+      "reason": "redacted",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Ottawa",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "error",
+      "reason": "redacted",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Quebec City",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "error",
+      "reason": "redacted",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Toronto",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "error",
+      "reason": "redacted",
       "soonestAvailableAppointment": null,
       "appointments": []
     },
     {
       "location": "Vancouver",
-      "outcome": "busy",
-      "reason": "portal_busy",
+      "outcome": "error",
+      "reason": "redacted",
       "soonestAvailableAppointment": null,
       "appointments": []
     }
