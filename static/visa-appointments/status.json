@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T05:53:24.591Z",
+  "updatedAt": "2026-07-18T06:23:09.020Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -20,13 +20,20 @@
       "outcome": "none",
       "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": {
-        "raw": "1 November, 2026",
-        "isoLocal": "2026-11-01T00:00:00",
+        "raw": "2 September, 2026",
+        "isoLocal": "2026-09-02T00:00:00",
         "times": [
           "08:00"
         ]
       },
       "appointments": [
+        {
+          "raw": "2 September, 2026",
+          "isoLocal": "2026-09-02T00:00:00",
+          "times": [
+            "08:00"
+          ]
+        },
         {
           "raw": "1 November, 2026",
           "isoLocal": "2026-11-01T00:00:00",
