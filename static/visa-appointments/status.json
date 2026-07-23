@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T01:56:05.726Z",
+  "updatedAt": "2026-07-23T03:26:06.257Z",
   "outcome": "busy",
   "reason": "some_locations_busy",
   "baseline": {
@@ -356,16 +356,20 @@
       "outcome": "none",
       "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": {
-        "raw": "2 November, 2026",
-        "isoLocal": "2026-11-02T00:00:00",
+        "raw": "23 September, 2026",
+        "isoLocal": "2026-09-23T00:00:00",
         "times": [
-          "08:00",
-          "08:15",
-          "08:30",
-          "08:45"
+          "08:15"
         ]
       },
       "appointments": [
+        {
+          "raw": "23 September, 2026",
+          "isoLocal": "2026-09-23T00:00:00",
+          "times": [
+            "08:15"
+          ]
+        },
         {
           "raw": "2 November, 2026",
           "isoLocal": "2026-11-02T00:00:00",
@@ -469,16 +473,16 @@
       "outcome": "none",
       "reason": "no_earlier_candidate_visible",
       "soonestAvailableAppointment": {
-        "raw": "6 October, 2026",
-        "isoLocal": "2026-10-06T00:00:00",
+        "raw": "2 October, 2026",
+        "isoLocal": "2026-10-02T00:00:00",
         "times": [
           "07:30"
         ]
       },
       "appointments": [
         {
-          "raw": "6 October, 2026",
-          "isoLocal": "2026-10-06T00:00:00",
+          "raw": "2 October, 2026",
+          "isoLocal": "2026-10-02T00:00:00",
           "times": [
             "07:30"
           ]
