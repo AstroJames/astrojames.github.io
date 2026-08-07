@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-06T06:49:26.582278+00:00",
+  "last_updated": "2026-08-07T06:20:49.911283+00:00",
   "total_publications": 33,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -9,7 +9,7 @@
       "authors_highlighted": "<strong>Beattie, James</strong> R.",
       "authorship_position": "first",
       "beattie_position": 1,
-      "journal": "The Astrophysical Journal",
+      "journal": "The Astrophysical Journal Letters",
       "year": "2026",
       "pubdate": "2026-06-00",
       "abstract": "The sources of turbulence in our Galaxy may be diverse, but core-collapse supernovae (SNe) alone provide enough energy to sustain a steady-state galactic turbulence cascade at the observed velocity dispersion. By localizing and analyzing supernova remnants (SNRs) in high-resolution SN-driven galactic disk cutout simulations from J. R. Beattie et al., I show that isolated SNRs source incompressible turbulence through baroclinic vorticity generation localized at the unstable contact discontinuity. Through the spherical harmonic power spectrum of the corrugations, I provide evidence that this process is seeded by surface instabilities and 2D turbulence on the shell, which corrugates and folds the interface, becoming the strongest source of baroclinicity in the simulations. I present an analytical relation for a baroclinicity-fed incompressible mode (co)spectrum, which matches that observed in the simulated SNRs and reveals a ∝k<SUP>3/4</SUP> spectrum that drives the turbulence. I show that vortex stretching allows for modes to be shed from the contact discontinuity into the surrounding medium and derive a timescale criterion for this process, revealing that young SNRs with radii close to the cooling radius are efficient at radiating turbulence. The unstable layer produces a spectrum of incompressible modes ∝k<SUP>−3/2</SUP> locally within the SNRs. Through the inverse cascade mechanism revealed in J. R. Beattie et al., this opens the possibility that the k<SUP>−3/2</SUP> spectrum, arising from corrugated folds in the unstable layer, imprints itself on kiloparsec scales, thereby connecting small-scale structure in the layer to the large-scale incompressible turbulence cascade.",
@@ -181,7 +181,7 @@
       "authors_highlighted": "Bandyopadhyay, Riddhi; <strong>Beattie, James</strong> R.; Bhattacharjee, Amitava",
       "authorship_position": "second",
       "beattie_position": 2,
-      "journal": "The Astrophysical Journal",
+      "journal": "The Astrophysical Journal Letters",
       "year": "2025",
       "pubdate": "2025-04-00",
       "abstract": "Understanding the nature of compressible fluctuations in a broad range of turbulent plasmas, from the intracluster medium to the solar wind, has been an active field of research in the past decades. Theoretical frameworks for weakly compressible magnetohydrodynamical turbulence in an inhomogeneous background magnetic field predict a linear scaling of the normalized mass density fluctuation (δρ/ρ<SUB>0</SUB>), as a function of the turbulent Mach number (<inline-formula> </inline-formula>), <inline-formula> </inline-formula>. However, so far, the scaling relation has been tested only using moderate to low plasma beta (β ≲ 1) solar wind observational data, where the compressibility is weak δρ/ρ<SUB>0</SUB> ∼ 0.1. Here, we combine NASA's Magnetospheric Multiscale Mission data in Earth's magnetosheath, where β ∼ 10 is high, and β ∼ 1/8 highly compressible magnetohydrodynamic turbulence simulations at unprecedented resolutions. Both show that <inline-formula> </inline-formula> holds across a broad range of δρ/ρ<SUB>0</SUB>, <inline-formula> </inline-formula>, and β, demonstrating that <inline-formula> </inline-formula> is a robust compressible turbulence relation, going beyond the asymptotics of the weakly compressible theory. We discuss the findings in the context of understanding the nature of strongly compressible turbulent fluctuations and the driving parameter in astrophysical and space plasmas.",
