@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-13T06:25:48.958489+00:00",
+  "last_updated": "2026-08-14T06:24:49.577431+00:00",
   "total_publications": 33,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -165,7 +165,7 @@
       "bibcode": "2025NatAs...9.1195B",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
-      "citation_count": 24,
+      "citation_count": 25,
       "read_count": 562,
       "is_refereed": true,
       "arxiv_class": [
@@ -503,7 +503,7 @@
       "bibcode": "2021NatAs...5..365F",
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
-      "citation_count": 163,
+      "citation_count": 164,
       "read_count": 279,
       "is_refereed": true,
       "arxiv_class": [
