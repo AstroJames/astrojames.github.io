@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-20T06:04:52.579441+00:00",
+  "last_updated": "2026-08-21T06:05:43.049089+00:00",
   "total_publications": 33,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -27,27 +27,6 @@
       ]
     },
     {
-      "title": "Universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos",
-      "authors": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; Beattie, James R.; Schober, Jennifer",
-      "authors_highlighted": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; <strong>Beattie, James</strong> R.; Schober, Jennifer",
-      "authorship_position": "other",
-      "beattie_position": 4,
-      "journal": "Physical Review E",
-      "year": "2026",
-      "pubdate": "2026-04-00",
-      "abstract": "Small-scale dynamos (SSDs) amplify magnetic fields in turbulent plasmas. Theory predicts nonlinear magnetic energy growth <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mi>mag</mml:mi></mml:msub><mml:mo>∝</mml:mo><mml:msup><mml:mi>t</mml:mi><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub></mml:msup></mml:mrow></mml:math></inline-formula>, but this scaling has not been tested across flow regimes. Using a large ensemble of SSD simulations spanning subsonic to supersonic turbulence, we measure linear growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></inline-formula>) in subsonic flows and quadratic growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></inline-formula>) in supersonic flows. In all cases, the nonlinear dynamo converts a nearly constant fraction approximately equal to <inline-formula><mml:math><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>100</mml:mn></mml:mrow></mml:math></inline-formula> of the turbulent kinetic energy flux into magnetic energy, and the nonlinear phase has a characteristic duration <inline-formula><mml:math><mml:mrow><mml:mi>∆</mml:mi><mml:mi>t</mml:mi><mml:mo>≍</mml:mo><mml:mn>20</mml:mn><mml:mspace></mml:mspace><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, where <inline-formula><mml:math><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math></inline-formula> is the outer-scale turnover time. By isolating the onset of magnetic backreaction in SSDs, our statistical ensemble approach identifies a robust efficiency and duration for the nonlinear SSD that can be used to interpret more complex astrophysical and laboratory plasmas.",
-      "bibcode": "2026PhRvE.113d5208K",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
-      "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
-      "citation_count": 3,
-      "read_count": 228,
-      "is_refereed": true,
-      "arxiv_class": [
-        "physics.plasm-ph",
-        "physics.comp-ph"
-      ]
-    },
-    {
       "title": "Cosmic-Ray and Plasma Coupling for Isothermal Supersonic Turbulence in the Magnetized Interstellar Medium",
       "authors": "Sampson, Matt L.; Beattie, James R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
       "authors_highlighted": "Sampson, Matt L.; <strong>Beattie, James</strong> R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
@@ -66,6 +45,27 @@
       "arxiv_class": [
         "astro-ph.GA",
         "astro-ph.HE"
+      ]
+    },
+    {
+      "title": "Universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos",
+      "authors": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; Beattie, James R.; Schober, Jennifer",
+      "authors_highlighted": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; <strong>Beattie, James</strong> R.; Schober, Jennifer",
+      "authorship_position": "other",
+      "beattie_position": 4,
+      "journal": "Physical Review E",
+      "year": "2026",
+      "pubdate": "2026-04-00",
+      "abstract": "Small-scale dynamos (SSDs) amplify magnetic fields in turbulent plasmas. Theory predicts nonlinear magnetic energy growth <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mi>mag</mml:mi></mml:msub><mml:mo>∝</mml:mo><mml:msup><mml:mi>t</mml:mi><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub></mml:msup></mml:mrow></mml:math></inline-formula>, but this scaling has not been tested across flow regimes. Using a large ensemble of SSD simulations spanning subsonic to supersonic turbulence, we measure linear growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></inline-formula>) in subsonic flows and quadratic growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></inline-formula>) in supersonic flows. In all cases, the nonlinear dynamo converts a nearly constant fraction approximately equal to <inline-formula><mml:math><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>100</mml:mn></mml:mrow></mml:math></inline-formula> of the turbulent kinetic energy flux into magnetic energy, and the nonlinear phase has a characteristic duration <inline-formula><mml:math><mml:mrow><mml:mi>∆</mml:mi><mml:mi>t</mml:mi><mml:mo>≍</mml:mo><mml:mn>20</mml:mn><mml:mspace></mml:mspace><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, where <inline-formula><mml:math><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math></inline-formula> is the outer-scale turnover time. By isolating the onset of magnetic backreaction in SSDs, our statistical ensemble approach identifies a robust efficiency and duration for the nonlinear SSD that can be used to interpret more complex astrophysical and laboratory plasmas.",
+      "bibcode": "2026PhRvE.113d5208K",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
+      "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
+      "citation_count": 3,
+      "read_count": 230,
+      "is_refereed": true,
+      "arxiv_class": [
+        "physics.plasm-ph",
+        "physics.comp-ph"
       ]
     },
     {
@@ -103,7 +103,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 15,
-      "read_count": 371,
+      "read_count": 370,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -146,7 +146,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 11,
-      "read_count": 297,
+      "read_count": 298,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -189,7 +189,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 5,
-      "read_count": 292,
+      "read_count": 290,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -255,7 +255,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
       "citation_count": 40,
-      "read_count": 289,
+      "read_count": 304,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -404,7 +404,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 7,
-      "read_count": 244,
+      "read_count": 245,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -549,7 +549,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 32,
-      "read_count": 138,
+      "read_count": 155,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -628,7 +628,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 6,
-      "read_count": 338,
+      "read_count": 339,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
