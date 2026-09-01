@@ -20,21 +20,17 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Hubble Fellow at The Institute for Advanced Study
+role: Hubble Fellow & Member
 role_links:
   fellowship:
     label: Hubble Fellow
     url: https://www.stsci.edu/stsci-research/fellowships/nasa-hubble-fellowship-program/2026-nhfp-fellows
-  institution:
-    label: The Institute for Advanced Study
-    url: https://www.ias.edu/scholars/james-beattie
+  suffix: "& Member"
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Canadian Institute for Theoretical Astrophysics
-    url: https://www.cita.utoronto.ca
-  - name: Princeton Department of Astrophysical Sciences
-    url: https://web.astro.princeton.edu
+  - name: The Institute for Advanced Study
+    url: https://www.ias.edu/scholars/james-beattie
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.

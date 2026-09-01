@@ -23,8 +23,7 @@
             <p class="profile-role">
               {{- with $author.Params.role_links -}}
                 <a href="{{ .fellowship.url }}" target="_blank" rel="noopener">{{ .fellowship.label }}</a>
-                at
-                <a href="{{ .institution.url }}" target="_blank" rel="noopener">{{ .institution.label }}</a>
+                {{ .suffix }}
               {{- else -}}
                 {{- . -}}
               {{- end -}}
