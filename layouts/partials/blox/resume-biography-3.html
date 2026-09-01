@@ -21,9 +21,12 @@
           <h1 class="profile-name">{{ $author.Title }}</h1>
           {{ with $author.Params.role }}
             <p class="profile-role">
-              {{- . -}}
-              {{- with $author.Params.future_role -}}
-                <br>{{ .prefix }} <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a> {{ .suffix }}
+              {{- with $author.Params.role_links -}}
+                <a href="{{ .fellowship.url }}" target="_blank" rel="noopener">{{ .fellowship.label }}</a>
+                at
+                <a href="{{ .institution.url }}" target="_blank" rel="noopener">{{ .institution.label }}</a>
+              {{- else -}}
+                {{- . -}}
               {{- end -}}
             </p>
           {{ end }}

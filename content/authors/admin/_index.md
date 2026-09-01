@@ -20,12 +20,14 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Postdoctoral Research Fellow at CITA / Princeton
-future_role:
-  prefix: Future
-  label: Hubble Fellow
-  url: https://www.stsci.edu/stsci-research/fellowships/nasa-hubble-fellowship-program/2026-nhfp-fellows
-  suffix: at the Institute for Advanced Study
+role: Hubble Fellow at The Institute for Advanced Study
+role_links:
+  fellowship:
+    label: Hubble Fellow
+    url: https://www.stsci.edu/stsci-research/fellowships/nasa-hubble-fellowship-program/2026-nhfp-fellows
+  institution:
+    label: The Institute for Advanced Study
+    url: https://www.ias.edu/scholars/james-beattie
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
