@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-04T06:03:17.413123+00:00",
+  "last_updated": "2026-09-05T06:02:41.075482+00:00",
   "total_publications": 33,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -17,34 +17,13 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1004L...9B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/ae6eed",
       "citation_count": 2,
-      "read_count": 397,
+      "read_count": 407,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
         "astro-ph.HE",
         "astro-ph.SR",
         "physics.flu-dyn"
-      ]
-    },
-    {
-      "title": "Universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos",
-      "authors": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; Beattie, James R.; Schober, Jennifer",
-      "authors_highlighted": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; <strong>Beattie, James</strong> R.; Schober, Jennifer",
-      "authorship_position": "other",
-      "beattie_position": 4,
-      "journal": "Physical Review E",
-      "year": "2026",
-      "pubdate": "2026-04-00",
-      "abstract": "Small-scale dynamos (SSDs) amplify magnetic fields in turbulent plasmas. Theory predicts nonlinear magnetic energy growth <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mi>mag</mml:mi></mml:msub><mml:mo>∝</mml:mo><mml:msup><mml:mi>t</mml:mi><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub></mml:msup></mml:mrow></mml:math></inline-formula>, but this scaling has not been tested across flow regimes. Using a large ensemble of SSD simulations spanning subsonic to supersonic turbulence, we measure linear growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></inline-formula>) in subsonic flows and quadratic growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></inline-formula>) in supersonic flows. In all cases, the nonlinear dynamo converts a nearly constant fraction approximately equal to <inline-formula><mml:math><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>100</mml:mn></mml:mrow></mml:math></inline-formula> of the turbulent kinetic energy flux into magnetic energy, and the nonlinear phase has a characteristic duration <inline-formula><mml:math><mml:mrow><mml:mi>∆</mml:mi><mml:mi>t</mml:mi><mml:mo>≍</mml:mo><mml:mn>20</mml:mn><mml:mspace></mml:mspace><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, where <inline-formula><mml:math><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math></inline-formula> is the outer-scale turnover time. By isolating the onset of magnetic backreaction in SSDs, our statistical ensemble approach identifies a robust efficiency and duration for the nonlinear SSD that can be used to interpret more complex astrophysical and laboratory plasmas.",
-      "bibcode": "2026PhRvE.113d5208K",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
-      "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
-      "citation_count": 3,
-      "read_count": 251,
-      "is_refereed": true,
-      "arxiv_class": [
-        "physics.plasm-ph",
-        "physics.comp-ph"
       ]
     },
     {
@@ -69,6 +48,27 @@
       ]
     },
     {
+      "title": "Universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos",
+      "authors": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; Beattie, James R.; Schober, Jennifer",
+      "authors_highlighted": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; <strong>Beattie, James</strong> R.; Schober, Jennifer",
+      "authorship_position": "other",
+      "beattie_position": 4,
+      "journal": "Physical Review E",
+      "year": "2026",
+      "pubdate": "2026-04-00",
+      "abstract": "Small-scale dynamos (SSDs) amplify magnetic fields in turbulent plasmas. Theory predicts nonlinear magnetic energy growth <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mi>mag</mml:mi></mml:msub><mml:mo>∝</mml:mo><mml:msup><mml:mi>t</mml:mi><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub></mml:msup></mml:mrow></mml:math></inline-formula>, but this scaling has not been tested across flow regimes. Using a large ensemble of SSD simulations spanning subsonic to supersonic turbulence, we measure linear growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></inline-formula>) in subsonic flows and quadratic growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></inline-formula>) in supersonic flows. In all cases, the nonlinear dynamo converts a nearly constant fraction approximately equal to <inline-formula><mml:math><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>100</mml:mn></mml:mrow></mml:math></inline-formula> of the turbulent kinetic energy flux into magnetic energy, and the nonlinear phase has a characteristic duration <inline-formula><mml:math><mml:mrow><mml:mi>∆</mml:mi><mml:mi>t</mml:mi><mml:mo>≍</mml:mo><mml:mn>20</mml:mn><mml:mspace></mml:mspace><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, where <inline-formula><mml:math><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math></inline-formula> is the outer-scale turnover time. By isolating the onset of magnetic backreaction in SSDs, our statistical ensemble approach identifies a robust efficiency and duration for the nonlinear SSD that can be used to interpret more complex astrophysical and laboratory plasmas.",
+      "bibcode": "2026PhRvE.113d5208K",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
+      "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
+      "citation_count": 3,
+      "read_count": 250,
+      "is_refereed": true,
+      "arxiv_class": [
+        "physics.plasm-ph",
+        "physics.comp-ph"
+      ]
+    },
+    {
       "title": "Cascading from the Winds to the Disk: The Universality of Supernovae-driven Turbulence in Different Galactic Interstellar Media",
       "authors": "Connor, Isabelle; Beattie, James R.; Kolborg, Anne Noer; Ramirez-Ruiz, Enrico",
       "authors_highlighted": "Connor, Isabelle; <strong>Beattie, James</strong> R.; Kolborg, Anne Noer; Ramirez-Ruiz, Enrico",
@@ -82,7 +82,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
       "citation_count": 4,
-      "read_count": 312,
+      "read_count": 313,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -103,7 +103,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 15,
-      "read_count": 321,
+      "read_count": 333,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -124,7 +124,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.542.2669B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf1318",
       "citation_count": 15,
-      "read_count": 348,
+      "read_count": 355,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -166,7 +166,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 27,
-      "read_count": 654,
+      "read_count": 661,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -212,7 +212,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 25,
-      "read_count": 274,
+      "read_count": 283,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -276,7 +276,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 32,
-      "read_count": 173,
+      "read_count": 174,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -301,6 +301,28 @@
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
+      ]
+    },
+    {
+      "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
+      "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
+      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
+      "authorship_position": "first",
+      "beattie_position": 1,
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "Energy equipartition is a powerful theoretical tool for understanding astrophysical plasmas. It is invoked, for example, to measure magnetic fields in the interstellar medium (ISM), as evidence for small-scale turbulent dynamo action, and, in general, to estimate the energy budget of star-forming molecular clouds. In this study, we motivate and explore the role of the volume-averaged root-mean-squared (rms) magnetic coupling term between the turbulent, $\\delta {\\boldsymbol{B}}$ , and large-scale, ${\\boldsymbol{B}}_0$, fields, ${\\left\\langle (\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}\\cdot {\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0})^{2} \\right\\rangle ^{1/2}_{\\mathcal {V}}}$. By considering the second moments of the energy balance equations we show that the rms coupling term is in energy equipartition with the volume-averaged turbulent kinetic energy for turbulence with a sub-Alfvénic large-scale field. Under the assumption of exact energy equipartition between these terms, we derive relations for the magnetic and coupling term fluctuations, which provide excellent, parameter-free agreement with time-averaged data from 280 numerical simulations of compressible magnetohydrodynamic (MHD) turbulence. Furthermore, we explore the relation between the turbulent mean field and total Alfvén Mach numbers, and demonstrate that sub-Alfvénic turbulence can only be developed through a strong, large-scale magnetic field, which supports an extremely super-Alfvénic turbulent magnetic field. This means that the magnetic field fluctuations are significantly subdominant to the velocity fluctuations in the sub-Alfvénic large-scale field regime. Throughout our study, we broadly discuss the implications for observations of magnetic fields and understanding the dynamics in the magnetized ISM.",
+      "bibcode": "2022MNRAS.515.5267B",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
+      "doi_url": "https://doi.org/10.1093/mnras/stac2099",
+      "citation_count": 25,
+      "read_count": 239,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "physics.flu-dyn",
+        "physics.plasm-ph"
       ]
     },
     {
@@ -337,33 +359,11 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
       "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
       "citation_count": 22,
-      "read_count": 217,
+      "read_count": 218,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
         "physics.flu-dyn"
-      ]
-    },
-    {
-      "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
-      "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
-      "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
-      "authorship_position": "first",
-      "beattie_position": 1,
-      "journal": "Monthly Notices of the Royal Astronomical Society",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "Energy equipartition is a powerful theoretical tool for understanding astrophysical plasmas. It is invoked, for example, to measure magnetic fields in the interstellar medium (ISM), as evidence for small-scale turbulent dynamo action, and, in general, to estimate the energy budget of star-forming molecular clouds. In this study, we motivate and explore the role of the volume-averaged root-mean-squared (rms) magnetic coupling term between the turbulent, $\\delta {\\boldsymbol{B}}$ , and large-scale, ${\\boldsymbol{B}}_0$, fields, ${\\left\\langle (\\delta \\mathrm{{\\boldsymbol {\\mathit {B}}}}\\cdot {\\mathrm{{\\boldsymbol {\\mathit {B}}}}_0})^{2} \\right\\rangle ^{1/2}_{\\mathcal {V}}}$. By considering the second moments of the energy balance equations we show that the rms coupling term is in energy equipartition with the volume-averaged turbulent kinetic energy for turbulence with a sub-Alfvénic large-scale field. Under the assumption of exact energy equipartition between these terms, we derive relations for the magnetic and coupling term fluctuations, which provide excellent, parameter-free agreement with time-averaged data from 280 numerical simulations of compressible magnetohydrodynamic (MHD) turbulence. Furthermore, we explore the relation between the turbulent mean field and total Alfvén Mach numbers, and demonstrate that sub-Alfvénic turbulence can only be developed through a strong, large-scale magnetic field, which supports an extremely super-Alfvénic turbulent magnetic field. This means that the magnetic field fluctuations are significantly subdominant to the velocity fluctuations in the sub-Alfvénic large-scale field regime. Throughout our study, we broadly discuss the implications for observations of magnetic fields and understanding the dynamics in the magnetized ISM.",
-      "bibcode": "2022MNRAS.515.5267B",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
-      "doi_url": "https://doi.org/10.1093/mnras/stac2099",
-      "citation_count": 25,
-      "read_count": 239,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "physics.flu-dyn",
-        "physics.plasm-ph"
       ]
     },
     {
@@ -404,7 +404,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 7,
-      "read_count": 196,
+      "read_count": 195,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -442,7 +442,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
       "citation_count": 26,
-      "read_count": 181,
+      "read_count": 182,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -483,7 +483,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 30,
-      "read_count": 214,
+      "read_count": 213,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -587,7 +587,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
       "citation_count": 25,
-      "read_count": 189,
+      "read_count": 188,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -685,7 +685,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 5,
-      "read_count": 457,
+      "read_count": 466,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
