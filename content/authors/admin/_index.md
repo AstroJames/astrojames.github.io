@@ -39,7 +39,7 @@ profiles:
     url: /uploads/resume.pdf
     label: Download CV
   - icon: at-symbol
-    url: 'mailto:james.beattie@princeton.edu'
+    url: 'mailto:beattie@ias.edu'
     label: E-mail Me
   - icon: brands/x
     url: https://twitter.com/astro_magnetism

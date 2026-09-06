@@ -13,4 +13,4 @@ This September, I’m joining the [Institute for Advanced Study](https://www.ias
 
 My research explores how turbulence and magnetic fields evolve in astrophysical plasmas. At IAS, I will develop analytical and numerical models of how young supernova remnants drive and maintain turbulence in our Galaxy.
 
-I look forward to new collaborations and conversations. Please [get in touch](mailto:james.beattie@princeton.edu) if you would like to discuss turbulence, dynamos, or plasma astrophysics.
+I look forward to new collaborations and conversations. Please [get in touch](mailto:beattie@ias.edu) if you would like to discuss turbulence, dynamos, or plasma astrophysics.
