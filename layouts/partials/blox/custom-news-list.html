@@ -1,5 +1,8 @@
 {{ $block := .block }}
-{{ $posts := first ($block.content.count | default 3) (sort (where site.RegularPages "Type" "post") "Date" "desc") }}
+{{ $allPosts := sort (where site.RegularPages "Type" "post") "Date" "desc" }}
+{{ $pinned := where $allPosts "Params.news_pinned" true }}
+{{ $recent := where $allPosts "Params.news_pinned" "ne" true }}
+{{ $posts := first ($block.content.count | default 3) (union $pinned $recent) }}
 <div class="recent-news-list">
   <div class="recent-news-heading">
     <h2>{{ $block.content.title | default "Recent News" }}</h2>
@@ -8,6 +11,7 @@
   <div class="recent-news-grid">
     {{ range $posts }}
       <article class="recent-news-entry">
+        {{ if .Params.news_pinned }}<span class="recent-news-featured">Featured</span>{{ end }}
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Params.news_date | default (.Date.Format "January 2, 2006") }}</time>
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <p>{{ .Params.summary | markdownify }}</p>
@@ -24,6 +28,7 @@
 .recent-news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
 #news .recent-news-entry { margin: 0; padding: 1rem 0 0; border: 0; border-top: 2px solid #546575; }
 .recent-news-entry time { color: #b8c4d1; font-size: .8rem; }
+.recent-news-featured { color: #a4d8f5; font-size: .8rem; font-weight: 600; margin-right: .75rem; }
 .recent-news-entry h3 { margin: .65rem 0; font-size: 1.05rem; font-weight: 600; line-height: 1.45; }
 #news .recent-news-entry p { color: #c6cdd6; font-size: .9rem; line-height: 1.6; margin: 0; }
 .recent-news-list a:focus-visible { outline: 2px solid #a4d8f5; outline-offset: 4px; }

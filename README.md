@@ -52,8 +52,10 @@ normalized title takes precedence, including journal records carrying the arXiv
 identifier. The importer retains ADS identifiers for this matching. Fallback
 entries link directly to arXiv and do not display an unverified ADS link.
 
-Recent News shows the three newest posts directly below the biography, with an
-archive link and no automatic rotation. Add news as a `content/post/` page bundle
+Recent News shows three posts directly below the biography, with an archive link
+and no automatic rotation. Posts marked `news_pinned: true` appear first with a
+Featured label; remaining places use the newest posts. The archive keeps its
+chronological ordering. Add news as a `content/post/` page bundle
 with a title, date, summary, and body. Use `news_date` for a month-only date label
 when an exact date is not known.
 
