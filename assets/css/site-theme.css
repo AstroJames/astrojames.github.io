@@ -18,7 +18,9 @@ a:not(.no-hover):hover { color: var(--site-link-hover); }
 }
 .prose a, .article-style a, .page-body a { color: var(--site-accent); }
 .prose a:hover, .article-style a:hover, .page-body a:hover { color: var(--site-link-hover); }
-.page-header, .page-body { background-color: var(--site-bg); }
+.page-header { background-color: var(--site-bg); }
+/* Keep the biography's negative-z-index KHI layer inside its own stacking context. */
+#section-resume-biography-3 { isolation: isolate; }
 .page-subtitle, .collaborators-grid .collaborator-affiliation { color: var(--site-muted); }
 header .navbar-brand::after { background: var(--site-accent); }
 header .nav-link:hover, header .navbar-brand:hover,
