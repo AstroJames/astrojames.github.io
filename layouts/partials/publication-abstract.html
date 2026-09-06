@@ -1,0 +1,4 @@
+{{/* Escape imported text, then allow only attribute-free scientific formatting. */}}
+{{ $text := . | htmlUnescape | htmlEscape }}
+{{ $text = replaceRE `(?i)&lt;(/?)(sup|sub|em|strong|i|b)&gt;` "<$1$2>" $text }}
+{{ return ($text | safeHTML) }}

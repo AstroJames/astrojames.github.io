@@ -1,0 +1,15 @@
+# Broad, overlapping topics matched against titles, including future ADS imports.
+- name: Turbulence
+  pattern: 'turbulen|multishock|density (distribution|variance|pdf)|fractal|magnetic field fluctuations'
+- name: Dynamos
+  pattern: 'dynamo|growth of magnetic energy'
+- name: Interstellar medium & star formation
+  pattern: 'interstellar|supernova|molecular cloud|star formation|star-forming|turbulent cloud'
+- name: Cosmic rays
+  pattern: 'cosmic.?ray'
+- name: Reconnection & relativistic plasmas
+  pattern: 'reconnection|relativistic magnetohydrodynamics|force-free'
+- name: Space & solar physics
+  pattern: 'in situ|coronal|solar|magnetosheath'
+- name: Interdisciplinary research
+  pattern: 'starry night|optical network|wood decomposition|vegetation|weeding|mammal'

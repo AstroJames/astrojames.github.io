@@ -1,142 +1,68 @@
 {{ define "main" }}
-<div class="page-header">
-  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-    {{ if .Title }}
-    <h1 style="font-size: 2.5rem; font-weight: bold; color: inherit; margin-bottom: 1rem;">{{ .Title }}</h1>
+{{ $style := resources.Get "css/publications.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+<div class="page-header"><div class="publication-container"><h1>{{ .Title }}</h1></div></div>
+<div class="page-body publication-container">
+  {{ .Content }}
+  {{ with site.Data.publications }}
+    {{ $years := slice }}
+    {{ $topics := slice }}
+    {{ $records := slice }}
+    {{ range sort .publications "pubdate" "desc" }}
+      {{ $record := partial "publication-record.html" . }}
+      {{ $records = $records | append $record }}
+      {{ $years = $years | append .year }}
+      {{ range $record.topics }}{{ $topics = $topics | append . }}{{ end }}
     {{ end }}
-    {{ if .Params.subtitle }}
-    <p class="page-subtitle">{{ .Params.subtitle }}</p>
-    {{ end }}
-  </div>
-</div>
-
-<div class="page-body">
-  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-    {{ .Content }}
-    
-    <!-- Publications loaded via ADS API -->
-    <div style="margin-top: 2rem;">
-      {{ with .Site.Data.publications }}
-        <div style="margin-bottom: 2rem;">
-          <p style="color: rgba(255,255,255,0.7); font-size: 0.9em;">
-            {{ .total_publications }} publications • Last updated: {{ dateFormat "January 2, 2006" (time .last_updated) }} • 
-            <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A{{ .orcid }}&sort=date%20desc" target="_blank" style="color: #4dabf7; text-decoration: none;">View on NASA-ADS</a>
-          </p>
+    <p class="publication-meta">{{ len $records }} publications · Updated {{ dateFormat "January 2, 2006" (time .last_updated) }} · <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A{{ .orcid }}&sort=date%20desc" target="_blank" rel="noopener">View on NASA ADS</a></p>
+    <div data-publication-browser>
+      <form class="publication-controls" hidden aria-label="Filter publications">
+        <div class="publication-search">
+          <label for="publication-search">Search publications</label>
+          <input id="publication-search" name="query" type="search" placeholder="Title, author, or keyword" autocomplete="off" aria-controls="publication-results">
         </div>
-        
-        <!-- Organize publications by authorship and sort by year (newest first) -->
-        {{ $firstAuthor := slice }}
-        {{ $secondAuthor := slice }}
-        {{ $otherAuthor := slice }}
-        
-        {{ range .publications }}
-          {{ if eq .authorship_position "first" }}
-            {{ $firstAuthor = $firstAuthor | append . }}
-          {{ else if eq .authorship_position "second" }}
-            {{ $secondAuthor = $secondAuthor | append . }}
-          {{ else }}
-            {{ $otherAuthor = $otherAuthor | append . }}
-          {{ end }}
-        {{ end }}
-        
-        <!-- Sort each category by year (descending) -->
-        {{ $firstAuthor = sort $firstAuthor "year" "desc" }}
-        {{ $secondAuthor = sort $secondAuthor "year" "desc" }}
-        {{ $otherAuthor = sort $otherAuthor "year" "desc" }}
-        
-        <!-- First Author Publications -->
-        {{ if $firstAuthor }}
-          <div style="margin-bottom: 3rem;">
-            <h2 style="color: #007acc; border-bottom: 2px solid #007acc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-              📝 First Author Publications ({{ len $firstAuthor }})
-            </h2>
-            {{ range $firstAuthor }}
-              {{ partial "publication-item.html" . }}
-            {{ end }}
-          </div>
-        {{ end }}
-        
-        <!-- Second Author Publications -->
-        {{ if $secondAuthor }}
-          <div style="margin-bottom: 3rem;">
-            <h2 style="color: #007acc; border-bottom: 2px solid #007acc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-              🥈 Second Author Publications ({{ len $secondAuthor }})
-            </h2>
-            {{ range $secondAuthor }}
-              {{ partial "publication-item.html" . }}
-            {{ end }}
-          </div>
-        {{ end }}
-        
-        <!-- Co-author Publications -->
-        {{ if $otherAuthor }}
-          <div style="margin-bottom: 3rem;">
-            <h2 style="color: #007acc; border-bottom: 2px solid #007acc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-              🤝 Co-author Publications ({{ len $otherAuthor }})
-            </h2>
-            {{ range $otherAuthor }}
-              {{ partial "publication-item.html" . }}
-            {{ end }}
-          </div>
-        {{ end }}
-        
-      {{ else }}
-        <div style="padding: 2rem; background-color: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 4px; text-align: center;">
-          <p><strong>Publications will appear here once the GitHub Action runs.</strong></p>
-          <p>The system will automatically fetch your publications from NASA-ADS daily.</p>
+        <div>
+          <label for="publication-year">Year</label>
+          <select id="publication-year" name="year" aria-controls="publication-results">
+            <option value="">All years</option>
+            {{ range sort (uniq $years) "value" "desc" }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+          </select>
         </div>
-      {{ end }}
+        <div>
+          <label for="publication-topic">Topic</label>
+          <select id="publication-topic" name="topic" aria-controls="publication-results">
+            <option value="">All topics</option>
+            {{ range sort (uniq $topics) }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+          </select>
+        </div>
+        <div>
+          <label for="publication-authorship">Authorship</label>
+          <select id="publication-authorship" name="authorship" aria-controls="publication-results">
+            <option value="">All authorships</option>
+            <option value="first">First author</option>
+            <option value="second">Second author</option>
+            <option value="other">Other coauthor</option>
+          </select>
+        </div>
+        <div>
+          <label for="publication-sort">Order</label>
+          <select id="publication-sort" name="sort" aria-controls="publication-results">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+        <button type="reset">Clear filters</button>
+      </form>
+      <p class="publication-count" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+      <div id="publication-results">
+        {{ range $records }}{{ partial "publication-item.html" . }}{{ end }}
+      </div>
+      <p class="publication-empty" hidden>No publications match these filters. Try another keyword or clear the filters.</p>
     </div>
-    
-  </div>
+    {{ $script := resources.Get "js/publications.mjs" | fingerprint }}
+    <script type="module" src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+  {{ else }}
+    <p>The publication list is temporarily unavailable. <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9199-7771&sort=date%20desc">Browse publications on NASA ADS.</a></p>
+  {{ end }}
 </div>
-
-<!-- Publication Hover Animation Styles -->
-<style>
-.publication-item {
-  position: relative;
-  transform-origin: center;
-}
-
-
-.publication-item:hover .publication-links a {
-  color: #66d9ff !important;
-  text-shadow: 0 0 8px rgba(102, 217, 255, 0.3);
-}
-
-.publication-item:hover .authorship-badge {
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-/* Smooth transitions for all interactive elements */
-.publication-item a, 
-.publication-item span {
-  transition: all 0.3s ease;
-}
-
-/* Subtle pulse animation for highly cited papers */
-.publication-item[data-citations-high]:hover {
-  animation: citationPulse 2s ease-in-out infinite;
-}
-
-@keyframes citationPulse {
-  0%, 100% { box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-  50% { box-shadow: 0 8px 35px rgba(77, 171, 247, 0.2); }
-}
-
-/* Loading shimmer effect for new data */
-@keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
-}
-
-.publication-loading {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  background-size: 200px 100%;
-  animation: shimmer 1.5s infinite;
-}
-</style>
-
-
 {{ end }}

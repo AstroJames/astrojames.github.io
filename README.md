@@ -30,6 +30,26 @@ Because the repo uses Hugo modules, avoid checking in `_vendor/` (already gitign
    ```
    Then embed them with the `model_viewer` shortcode, e.g. `{{< model_viewer src="/models/your_model.gltf" alt="Demo" >}}`.
 
+## Publications and News
+
+The publication browser uses the automatically refreshed `data/publications.json`
+and renders all records in date order, including when JavaScript is unavailable.
+Search covers titles, authors, abstracts, and displayed topics; year, topic, and
+authorship filters can be combined. Run `node --test test/publications.test.mjs`
+to check search and ordering behavior.
+
+Keep verified preprint links and optional `code_url` / `data_url` links in
+`data/publication_resources.yaml`, keyed by the record's ADS bibcode. These
+editorial additions survive automated ADS refreshes. Broad topic rules are in
+`data/publication_topics.yaml` and apply to newly imported titles as well.
+Imported abstracts allow only attribute-free superscript, subscript, and emphasis
+markup; the rest is escaped.
+
+Recent News shows the three newest posts directly below the biography, with an
+archive link and no automatic rotation. Add news as a `content/post/` page bundle
+with a title, date, summary, and body. Use `news_date` for a month-only date label
+when an exact date is not known.
+
 ## Deployment
 
 Commits pushed to `main` trigger the GitHub Pages workflow configured in this repo (see `.github/workflows/`). No manual `hugo` builds are required; Follow the [Hugo Blox Builder](https://hugoblox.com/) instructions to set this up.

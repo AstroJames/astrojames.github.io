@@ -1,0 +1,12 @@
+{{/* Editorial resources survive automatic ADS refreshes. */}}
+{{ $record := . }}
+{{ with index site.Data.publication_resources .bibcode }}
+  {{ $record = merge $record . }}
+{{ end }}
+{{ $topics := slice }}
+{{ range site.Data.publication_topics }}
+  {{ if findRE .pattern (lower $record.title) }}
+    {{ $topics = $topics | append .name }}
+  {{ end }}
+{{ end }}
+{{ return (merge $record (dict "topics" $topics)) }}

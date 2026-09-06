@@ -1,0 +1,50 @@
+# Links matched to ADS records by bibcode; preserved when the ADS feed refreshes.
+# Optional code_url and data_url fields may be added when a paper has public resources.
+2026ApJ..1004L...9B:
+  preprint_url: https://arxiv.org/abs/2509.07354
+2026ApJ..1001...99S:
+  preprint_url: https://arxiv.org/abs/2506.03768
+2026PhRvE.113d5208K:
+  preprint_url: https://arxiv.org/abs/2509.09949
+2026ApJ...997...33C:
+  preprint_url: https://arxiv.org/abs/2509.01653
+2025ApJ...994..193B:
+  preprint_url: https://arxiv.org/abs/2501.09855
+2025MNRAS.542.2669B:
+  preprint_url: https://arxiv.org/abs/2312.03984
+2025PhRvD.112f3046G:
+  preprint_url: https://arxiv.org/abs/2503.20013
+2025NatAs...9.1195B:
+  preprint_url: https://arxiv.org/abs/2504.07136
+2025MNRAS.537.2602K:
+  preprint_url: https://arxiv.org/abs/2310.17036
+2025arXiv250415538B:
+  preprint_url: https://arxiv.org/abs/2504.15538
+2023MNRAS.524.3201B:
+  preprint_url: https://arxiv.org/abs/2209.10749
+2023MNRAS.519.1503S:
+  preprint_url: https://arxiv.org/abs/2205.08174
+2022MNRAS.517.5003B:
+  preprint_url: https://arxiv.org/abs/2109.10470
+2022arXiv221109248B:
+  preprint_url: https://arxiv.org/abs/2211.09248
+2022FrASS...9.0900B:
+  preprint_url: https://arxiv.org/abs/2203.13952
+2022MNRAS.515.5267B:
+  preprint_url: https://arxiv.org/abs/2202.13020
+2022MNRAS.513.2457K:
+  preprint_url: https://arxiv.org/abs/2204.00828
+2021MNRAS.504.4354B:
+  preprint_url: https://arxiv.org/abs/2102.00629
+2021NatAs...5..365F:
+  preprint_url: https://arxiv.org/abs/2011.06238
+2020MNRAS.498.1593B:
+  preprint_url: https://arxiv.org/abs/2007.13937
+2020MNRAS.492..668B:
+  preprint_url: https://arxiv.org/abs/1911.13090
+2019MNRAS.488.2493B:
+  preprint_url: https://arxiv.org/abs/1907.01689
+2019MNRAS.487.2070B:
+  preprint_url: https://arxiv.org/abs/1905.04979
+2019arXiv190203381B:
+  preprint_url: https://arxiv.org/abs/1902.03381

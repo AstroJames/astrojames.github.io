@@ -30,6 +30,12 @@ sections:
           size: cover
           position: center
           parallax: false
+  - block: custom-news-list
+    id: news
+    content:
+      title: Recent News
+      count: 3
+
   - block: collection
     id: featured
     content:
@@ -56,13 +62,6 @@ sections:
       # spacing:
       #   padding: [0, 0, 0, 0]
 
-  - block: custom-news-carousel
-    id: news
-    content:
-      title: Recent News
-      subtitle: ''
-      count: 8
-    
   - block: markdown
     id: collabs
     content:

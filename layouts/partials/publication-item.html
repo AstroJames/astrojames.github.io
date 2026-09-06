@@ -1,71 +1,27 @@
-<div class="publication-item" {{ if ge .citation_count 25 }}data-citations-high{{ end }} style="margin-bottom: 1rem; padding: 1rem; background-color: rgba(255,255,255,0.03); border-left: 3px solid {{ if eq .authorship_position "first" }}#28a745{{ else if eq .authorship_position "second" }}#fd7e14{{ else }}#6c757d{{ end }}; border-radius: 4px; transition: all 0.3s ease; cursor: pointer;" 
-  onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'; this.style.backgroundColor='rgba(255,255,255,0.06)'; this.style.borderLeftWidth='4px';"
-  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.backgroundColor='rgba(255,255,255,0.03)'; this.style.borderLeftWidth='3px';"
-  onclick="if(this.querySelector('a[href*=&quot;ui.adsabs.harvard.edu&quot;]')) { window.open(this.querySelector('a[href*=&quot;ui.adsabs.harvard.edu&quot;]').href, '_blank'); }">
-  
-  <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem;">
-    <!-- Authorship Badge -->
-    <span class="authorship-badge" style="background-color: {{ if eq .authorship_position "first" }}#28a745{{ else if eq .authorship_position "second" }}#fd7e14{{ else }}#6c757d{{ end }}; color: white; padding: 2px 6px; border-radius: 8px; font-size: 0.7em; flex-shrink: 0; transition: all 0.3s ease;">
-      {{ if eq .authorship_position "first" }}1st{{ else if eq .authorship_position "second" }}2nd{{ else }}Co-auth{{ end }}
-    </span>
-    
-    <!-- Title -->
-    <div style="flex: 1; min-width: 0;">
-      <h4 style="margin: 0; font-size: 1rem; line-height: 1.3; color: inherit;">
-        {{ if .ads_url }}
-          <a href="{{ .ads_url }}" target="_blank" style="color: #4dabf7; text-decoration: none;">{{ .title }}</a>
-        {{ else }}
-          {{ .title }}
-        {{ end }}
-      </h4>
-    </div>
-    
-    <!-- Year -->
-    <span style="color: rgba(255,255,255,0.6); font-size: 0.9em; flex-shrink: 0;">{{ .year }}</span>
+<article class="publication-item" data-year="{{ .year }}" data-authorship="{{ .authorship_position }}" data-date="{{ .pubdate }}" data-topics="{{ delimit .topics "|" }}">
+  <div class="publication-title-row">
+    <h2><a href="{{ .ads_url }}" target="_blank" rel="noopener">{{ .title }}</a></h2>
+    <span class="publication-year">{{ .year }}</span>
   </div>
-  
-  <!-- Authors (condensed) -->
-  <p style="margin: 0 0 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.9em; line-height: 1.2;">
-    {{ .authors_highlighted | safeHTML }}
-  </p>
-  
-  <!-- Journal and badges in one line -->
-  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-    <span style="font-style: italic; color: rgba(255,255,255,0.6); font-size: 0.85em;">{{ .journal }}</span>
-    {{ if .is_refereed }}<span style="background-color: #28a745; color: white; padding: 1px 4px; border-radius: 2px; font-size: 0.7em;">REF</span>{{ end }}
+  <p class="publication-authors">{{ .authors_highlighted | safeHTML }}</p>
+  <div class="publication-details">
+    <span class="publication-journal">{{ .journal }}</span>
+    <span class="publication-badge">{{ if eq .authorship_position "first" }}First author{{ else if eq .authorship_position "second" }}Second author{{ else }}Coauthor{{ end }}</span>
+    {{ if .is_refereed }}<span class="publication-badge">Refereed</span>{{ else if eq .journal "arXiv e-prints" }}<span class="publication-badge">Preprint</span>{{ end }}
+    {{ if gt .citation_count 0 }}<span>{{ .citation_count }} citations</span>{{ end }}
   </div>
-  
-  <!-- Stats and Links with sparkline on right -->
-  <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; font-size: 0.8em;">
-    <!-- Citation count -->
-    {{ if gt .citation_count 0 }}
-      <span style="color: rgba(255,255,255,0.8);">citations: {{ .citation_count }}</span>
-    {{ end }}
-    
-    <!-- Read count with note - commented out due to API caching issues -->
-    <!-- {{ if gt .read_count 0 }}
-      <span style="color: rgba(255,255,255,0.8);" title="ADS read count from API (may differ significantly from current ADS web interface)">👁️ {{ .read_count }}</span>
-    {{ end }} -->
-    
-    <!-- Links -->
-    <div style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
-      <div class="publication-links" style="display: flex; gap: 0.5rem;">
-        {{ if .ads_url }}
-          <a href="{{ .ads_url }}" target="_blank" style="color: #4dabf7; text-decoration: none; transition: all 0.3s ease;">ADS</a>
-        {{ end }}
-        {{ if .doi_url }}
-          <a href="{{ .doi_url }}" target="_blank" style="color: #4dabf7; text-decoration: none; transition: all 0.3s ease;">DOI</a>
-        {{ end }}
-      </div>
-      
-    </div>
-  </div>
-  
-  <!-- Abstract (optional, collapsed by default) -->
-  {{ if .abstract }}
-    <details style="margin-top: 0.5rem;">
-      <summary style="cursor: pointer; color: #4dabf7; font-size: 0.8em;">Abstract</summary>
-      <p style="margin-top: 0.5rem; font-size: 0.85em; line-height: 1.4; color: rgba(255,255,255,0.7); padding-left: 1rem; border-left: 2px solid rgba(255,255,255,0.2);">{{ .abstract }}</p>
+  {{ with .topics }}<p class="publication-topics">{{ delimit . " · " }}</p>{{ end }}
+  <nav class="publication-links" aria-label="Resources for {{ .title }}">
+    <a href="{{ .ads_url }}" target="_blank" rel="noopener">ADS</a>
+    {{ with .doi_url }}<a href="{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+    {{ with .preprint_url }}<a href="{{ . }}" target="_blank" rel="noopener">Preprint</a>{{ end }}
+    {{ with .code_url }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+    {{ with .data_url }}<a href="{{ . }}" target="_blank" rel="noopener">Data</a>{{ end }}
+  </nav>
+  {{ with .abstract }}
+    <details class="publication-abstract">
+      <summary>Abstract</summary>
+      <p>{{ partial "publication-abstract.html" . }}</p>
     </details>
   {{ end }}
-</div>
+</article>
