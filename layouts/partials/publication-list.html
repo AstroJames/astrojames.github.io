@@ -1,0 +1,16 @@
+{{/* Keep manually verified papers visible while preferring an eventual ADS record. */}}
+{{ $records := .ads | default slice }}
+{{ range .fallbacks }}
+  {{ $fallback := . }}
+  {{ $fallbackTitle := replaceRE `[^\p{L}\p{N}]` "" (lower (.title | htmlUnescape)) }}
+  {{ $found := false }}
+  {{ range $records }}
+    {{ $title := replaceRE `[^\p{L}\p{N}]` "" (lower (.title | htmlUnescape)) }}
+    {{ $identifiers := printf "%s %s %s %s" (.bibcode | default "") (.doi_url | default "") (.arxiv_id | default "") (delimit (.identifiers | default slice) " ") }}
+    {{ if or (eq $title $fallbackTitle) (and $fallback.arxiv_id (in $identifiers $fallback.arxiv_id)) }}
+      {{ $found = true }}
+    {{ end }}
+  {{ end }}
+  {{ if not $found }}{{ $records = $records | append $fallback }}{{ end }}
+{{ end }}
+{{ return (sort $records "pubdate" "desc") }}

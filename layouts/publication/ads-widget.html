@@ -8,7 +8,7 @@
     {{ $years := slice }}
     {{ $topics := slice }}
     {{ $records := slice }}
-    {{ range sort .publications "pubdate" "desc" }}
+    {{ range partial "publication-list.html" (dict "ads" .publications "fallbacks" site.Data.publication_fallbacks) }}
       {{ $record := partial "publication-record.html" . }}
       {{ $records = $records | append $record }}
       {{ $years = $years | append .year }}

@@ -1,4 +1,6 @@
 # Broad, overlapping topics matched against titles, including future ADS imports.
+- name: Fluid theory & mathematical methods
+  pattern: 'navier[–— -]*stokes|schr.dinger|cole.hopf'
 - name: Turbulence
   pattern: 'turbulen|multishock|density (distribution|variance|pdf)|fractal|magnetic field fluctuations'
 - name: Dynamos

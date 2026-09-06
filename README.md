@@ -45,6 +45,13 @@ editorial additions survive automated ADS refreshes. Broad topic rules are in
 Imported abstracts allow only attribute-free superscript, subscript, and emphasis
 markup; the rest is escaped.
 
+Papers missing from ADS can be added to `data/publication_fallbacks.yaml` using
+verified arXiv metadata. The publication list merges these at build time, so an
+ADS refresh cannot remove them. An ADS record with the same arXiv identifier or
+normalized title takes precedence, including journal records carrying the arXiv
+identifier. The importer retains ADS identifiers for this matching. Fallback
+entries link directly to arXiv and do not display an unverified ADS link.
+
 Recent News shows the three newest posts directly below the biography, with an
 archive link and no automatic rotation. Add news as a `content/post/` page bundle
 with a title, date, summary, and body. Use `news_date` for a month-only date label

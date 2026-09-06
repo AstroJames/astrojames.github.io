@@ -1,0 +1,34 @@
+# Verified against arXiv:2604.27088 and its v2 full text on 2026-09-05.
+# The date is the first arXiv submission; acceptance is reported by arXiv.
+# Citation count is unknown and is not displayed.
+- title: Compressible Navier–Stokes Flow in Schrödinger-Type Variables
+  authors: Beattie, James R.; Sokolova, Max; Negandhi, Khush; Ripperda, Bart
+  authors_highlighted: <strong>Beattie, James R.</strong>; Sokolova, Max; Negandhi, Khush; Ripperda,
+    Bart
+  authorship_position: first
+  beattie_position: 1
+  journal: arXiv e-prints
+  year: '2026'
+  pubdate: '2026-04-29'
+  arxiv_id: '2604.27088'
+  bibcode: ''
+  ads_url: ''
+  doi_url: https://doi.org/10.48550/arXiv.2604.27088
+  preprint_url: https://arxiv.org/abs/2604.27088
+  abstract: Fluid equations are nonlinear, dissipative, and non-Hamiltonian, which makes their
+    relation to Schrödinger evolution and quantum algorithms nontrivial. We derive an exact
+    Eulerian Cole-Hopf-type reformulation of isothermal compressible Navier-Stokes flow in Schrödinger-type
+    amplitude variables. In two dimensions, a Helmholtz decomposition separates the velocity
+    into compressive and vortical potentials, whose logarithmic transforms yield two scalar
+    imaginary-time Schrödinger-type equations with nonlinear self-consistent potentials. We
+    show that the mixed density-compressive amplitude satisfies a nonlinear Schrödinger-type
+    equation with a vector-potential-coupled Laplacian. The transformed system is exactly equivalent
+    to compressible Navier-Stokes and is nonlocal only through Helmholtz and Poisson projections.
+    In three dimensions, the density-carrying equation retains the same vector-potential-coupled
+    structure, while the solenoidal sector admits a compressible analogue of Ohkitani's incompressible
+    Navier-Stokes Cole-Hopf formulation. A two-dimensional Kelvin-Helmholtz unstable shear-layer
+    calculation verifies the transformed equations against a direct compressible Navier-Stokes
+    simulation.
+  citation_count: 0
+  is_refereed: false
+  publication_status: Accepted in Physical Review Research

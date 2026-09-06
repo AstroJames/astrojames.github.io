@@ -16,7 +16,7 @@ def fetch_ads_publications(token, orcid):
     # Query parameters
     params = {
         'q': f'orcid:{orcid}',
-        'fl': 'bibcode,title,author,first_author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property,metrics',
+        'fl': 'bibcode,identifier,title,author,first_author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property,metrics',
         'sort': 'date desc',
         'rows': 100  # Adjust as needed
     }
@@ -95,6 +95,7 @@ def process_publication(pub):
         'pubdate': pubdate,
         'abstract': pub.get('abstract', ''),
         'bibcode': bibcode,
+        'identifiers': pub.get('identifier', []),
         'ads_url': ads_url,
         'doi_url': doi_url,
         'citation_count': pub.get('citation_count', 0),
@@ -131,7 +132,7 @@ def fetch_manual_publications(token, bibcodes):
     
     params = {
         'q': bibcode_query,
-        'fl': 'bibcode,title,author,first_author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property,metrics',
+        'fl': 'bibcode,identifier,title,author,first_author,pubdate,pub,abstract,doi,arxiv_class,citation_count,read_count,property,metrics',
         'sort': 'date desc',
         'rows': len(bibcodes)
     }
