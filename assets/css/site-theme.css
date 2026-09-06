@@ -1,0 +1,63 @@
+/* Color rules are shared; scientific images and section layouts are preserved. */
+html body.page-wrapper, .dark body.page-wrapper { background-color: var(--site-bg); color: var(--site-text); }
+::selection { background: var(--site-accent); color: var(--site-on-accent); }
+a { color: var(--site-accent); text-underline-offset: .2em; }
+a:not(.no-hover):hover { color: var(--site-link-hover); }
+:is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 4px;
+}
+.prose, .dark .prose {
+  --tw-prose-body: var(--site-text);
+  --tw-prose-headings: var(--site-text);
+  --tw-prose-links: var(--site-accent);
+  --tw-prose-bold: var(--site-text);
+  --tw-prose-captions: var(--site-muted);
+  --tw-prose-bullets: var(--site-muted);
+  --tw-prose-hr: var(--site-border);
+}
+.prose a, .article-style a, .page-body a { color: var(--site-accent); }
+.prose a:hover, .article-style a:hover, .page-body a:hover { color: var(--site-link-hover); }
+.page-header, .page-body { background-color: var(--site-bg); }
+.page-subtitle, .collaborators-grid .collaborator-affiliation { color: var(--site-muted); }
+header .navbar-brand::after { background: var(--site-accent); }
+header .nav-link:hover, header .navbar-brand:hover,
+header .nav-link:focus-visible, header .nav-link.active {
+  color: var(--site-accent) !important;
+}
+.navbar-nav .nav-link::before, .navbar-nav .nav-link::after { display: none; }
+.navbar-nav .nav-link { border-bottom: 0; text-decoration: none; }
+.dropdown-item:hover, .nav-dropdown-link:hover {
+  color: var(--site-link-hover);
+  background-color: var(--site-accent-soft);
+}
+.btn-outline-primary, .btn-links .btn {
+  color: var(--site-accent);
+  border-color: var(--site-border-strong);
+}
+.btn-primary, .btn-outline-primary:hover, .btn-links .btn:hover {
+  background: var(--site-accent);
+  border-color: var(--site-accent);
+  color: var(--site-on-accent);
+}
+.cv-button:hover { border-color: var(--site-accent) !important; color: var(--site-link-hover) !important; }
+.article-title, .article-title a, .project-title, .note-title { color: var(--site-accent); }
+#featured a, .article-grid a, .article-title a {
+  box-shadow: none; text-shadow: none; background-image: none;
+  text-decoration: none; border-bottom: none;
+}
+#featured a:hover, .article-title a:hover { color: var(--site-link-hover); }
+.collaborators-grid .collaborator-item,
+.collaborators-grid .collaborator-item:hover { background: transparent; box-shadow: none; }
+#collabs a:hover { color: var(--site-link-hover); background: transparent; }
+.card:hover { border-color: var(--site-border-strong); }
+/* Allow the expanded navigation to wrap without dropping any existing links. */
+@media (min-width: 1024px) {
+  #site-header .navbar { flex-wrap: wrap; height: auto; min-height: 64px; }
+  #site-header #nav-menu { flex: 1; min-width: 0; flex-wrap: wrap; gap: .2rem 1rem; margin-left: 1.5rem; }
+  #site-header #nav-menu > li { margin-left: 0; margin-right: 0; }
+  #site-header .nav-link { white-space: nowrap; }
+}
+@media (max-width: 1023px) {
+  #site-header #nav-menu { max-height: calc(100dvh - 80px); overflow-y: auto; }
+}

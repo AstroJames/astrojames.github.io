@@ -1,0 +1,65 @@
+{{ define "main" }}
+{{ partial "meetings/styles.html" . }}
+{{ $meeting := index site.Data.informal_meetings .Params.meeting_key }}
+{{ $upcoming := slice }}{{ $planning := slice }}{{ $archive := slice }}
+{{ range $meeting.sessions }}
+  {{ if in (slice "completed" "cancelled") .status }}
+    {{ $archive = $archive | append . }}
+  {{ else if .date }}
+    {{ $upcoming = $upcoming | append . }}
+  {{ else }}
+    {{ $planning = $planning | append . }}
+  {{ end }}
+{{ end }}
+{{ $upcoming = sort $upcoming "date" "asc" }}
+{{ $archive = sort $archive "date" "desc" }}
+<div class="meetings-page">
+  <a class="meeting-back" href="{{ "/informal-meetings/" | relURL }}">← All informal meetings</a>
+  <div class="meeting-heading">
+    <p class="meeting-eyebrow">{{ $meeting.cadence }} · Informal discussion</p>
+    <h1>{{ .Title }}</h1>
+    <div class="meeting-intro">{{ .Content }}</div>
+  </div>
+  <dl class="meeting-logistics">
+    <div><dt>When</dt><dd>{{ with $meeting.day }}{{ . }}{{ else }}Day to be confirmed{{ end }}<span class="meeting-cell-note">{{ with $meeting.time }}{{ . }}{{ else }}Time to be confirmed{{ end }}</span>{{ with $meeting.timezone }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</dd></div>
+    <div><dt>Where</dt><dd>{{ $meeting.location | default "Location to be confirmed" }}{{ with $meeting.online_url }}<span class="meeting-cell-note"><a href="{{ . }}" rel="noopener">Join online</a></span>{{ end }}</dd></div>
+    <div><dt>Format</dt><dd>{{ $meeting.format }}</dd></div>
+    <div><dt>Organizer</dt><dd>{{ $meeting.organizer }}<span class="meeting-cell-note"><a href="mailto:{{ $meeting.contact }}">{{ $meeting.contact }}</a></span></dd></div>
+  </dl>
+  <div class="meeting-toolbar">
+    <nav class="meeting-jumps" aria-label="On this page"><a href="#schedule">Schedule</a><a href="#topics">Topics & resources</a><a href="#archive">Archive</a></nav>
+    <a class="meeting-button" href="mailto:{{ $meeting.contact }}?subject={{ printf "Session proposal: %s" .Title | urlquery }}">Propose a session</a>
+  </div>
+  <section id="schedule" class="meeting-section" aria-labelledby="schedule-heading">
+    <h2 id="schedule-heading">Weekly schedule</h2>
+    {{ if $upcoming }}
+      {{ partial "meetings/sessions.html" (dict "series" $meeting "sessions" $upcoming "label" "Scheduled meetings") }}
+    {{ else }}
+      <p class="meeting-empty">The first meeting is being planned. Dates, speakers, and materials will be announced here.</p>
+    {{ end }}
+    {{ with $planning }}
+      <h3 class="meeting-subheading">Open weekly slots</h3>
+      <p class="meeting-muted">These slots are awaiting dates and speakers.</p>
+      {{ partial "meetings/sessions.html" (dict "series" $meeting "sessions" . "label" "Open weekly slots") }}
+    {{ end }}
+  </section>
+  <div class="meeting-planning-grid">
+    <section id="topics" class="meeting-section" aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Topics & resources</h2>
+      <p class="meeting-muted">Possible starting points for a session.</p>
+      <ul class="meeting-list">{{ range $meeting.topics }}<li>{{ . }}</li>{{ end }}</ul>
+      <h3 class="meeting-subheading">Shared reading</h3>
+      {{ with $meeting.resources }}<ul class="meeting-list">{{ range . }}<li><a href="{{ .url }}" rel="noopener">{{ .label }}</a>{{ with .description }} — {{ . }}{{ end }}</li>{{ end }}</ul>{{ else }}<p class="meeting-muted">Papers, notes, and useful background will be collected here. Session-specific material appears in the schedule.</p>{{ end }}
+    </section>
+    <section class="meeting-section" aria-labelledby="format-heading">
+      <h2 id="format-heading">A suggested hour together</h2>
+      <ol class="meeting-agenda"><li><span>5 min</span>Context and the main question</li><li><span>25 min</span>Presentation, paper, or work in progress</li><li><span>25 min</span>Discussion and calculations at the board</li><li><span>5 min</span>Open questions and next steps</li></ol>
+      <p class="meeting-muted">Before the meeting, confirm the speaker and share preparation material. Afterwards, record the main questions, notes, and follow-up owners in the session details.</p>
+    </section>
+  </div>
+  <section id="archive" class="meeting-section" aria-labelledby="archive-heading">
+    <h2 id="archive-heading">Session archive</h2>
+    {{ if $archive }}{{ partial "meetings/sessions.html" (dict "series" $meeting "sessions" $archive "label" "Archived meetings") }}{{ else }}<p class="meeting-muted">Completed sessions and their materials, notes, and follow-up actions will appear here.</p>{{ end }}
+  </section>
+</div>
+{{ end }}

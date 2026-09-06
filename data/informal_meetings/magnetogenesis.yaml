@@ -1,0 +1,58 @@
+# Public meeting information. Blank fields render as unconfirmed, never as a booked session.
+cadence: Weekly
+day: ""
+time: ""
+timezone: ""
+location: ""
+online_url: ""
+organizer: James R. Beattie
+contact: beattie@ias.edu
+format: Short presentation, paper discussion, or a problem at the board
+topics:
+  - Seed fields and battery mechanisms
+  - Primordial magnetic fields and their evolution
+  - Dynamo amplification and the connection to observations
+resources: []
+# Dates use YYYY-MM-DD; time uses HH:MM. Keep dates quoted.
+# Status: planning, confirmed, completed, or cancelled.
+# Materials/resources: [{label: "Paper", url: "https://..."}]
+# Actions: [{task: "Follow-up calculation", owner: "Name", status: "Open"}]
+sessions:
+  - id: week-01
+    slot: Week 1
+    date: ""
+    time: ""
+    speaker: ""
+    affiliation: ""
+    title: ""
+    format: ""
+    location: ""
+    online_url: ""
+    status: planning
+    abstract: ""
+    materials: []
+    preparation: ""
+    questions: []
+    notes: ""
+    actions: []
+  - id: week-02
+    slot: Week 2
+    date: ""
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-03
+    slot: Week 3
+    date: ""
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-04
+    slot: Week 4
+    date: ""
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []

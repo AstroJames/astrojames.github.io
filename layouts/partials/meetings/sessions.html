@@ -1,0 +1,35 @@
+{{ $series := .series }}
+<div class="meeting-table-scroll" role="region" aria-label="{{ .label }}" tabindex="0">
+  <table class="meeting-schedule">
+    <caption class="meeting-sr-only">{{ .label }} — dates, speakers, session titles, materials, and status</caption>
+    <thead><tr><th scope="col">Week / date</th><th scope="col">Speaker</th><th scope="col">Title & discussion</th><th scope="col">Materials</th><th scope="col">Status</th></tr></thead>
+    <tbody>
+      {{ range .sessions }}
+      <tr id="session-{{ .id }}">
+        <th scope="row">
+          {{ with .date }}<time datetime="{{ . }}">{{ time.Format "Jan 2, 2006" . }}</time>{{ else }}{{ .slot | default "Open slot" }}<span class="meeting-cell-note">Date to be confirmed</span>{{ end }}
+          {{ with (.time | default $series.time) }}<span class="meeting-cell-note">{{ . }}{{ with $series.timezone }} · {{ . }}{{ end }}</span>{{ end }}
+        </th>
+        <td>{{ .speaker | default "Speaker to be confirmed" }}{{ with .affiliation }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</td>
+        <td>
+          <span class="meeting-session-title">{{ .title | default "Title to be confirmed" }}</span>
+          {{ with .format }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}
+          <details class="meeting-session-details">
+            <summary>Session details</summary>
+            <dl>
+              <dt>Location</dt><dd>{{ .location | default $series.location | default "To be confirmed" }}{{ with (.online_url | default $series.online_url) }} · <a href="{{ . }}" rel="noopener">Join online</a>{{ end }}</dd>
+              {{ with .abstract }}<dt>Overview</dt><dd>{{ . | markdownify }}</dd>{{ end }}
+              <dt>Preparation</dt><dd>{{ with .preparation }}{{ . | markdownify }}{{ else }}Reading or preparation to be added.{{ end }}</dd>
+              <dt>Discussion questions</dt><dd>{{ with .questions }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ else }}Questions to be collected.{{ end }}</dd>
+              <dt>Notes</dt><dd>{{ with .notes }}{{ . | markdownify }}{{ else }}Notes will be added after the meeting.{{ end }}</dd>
+              <dt>Follow-up</dt><dd>{{ with .actions }}<ul>{{ range . }}<li>{{ .task }}{{ with .owner }} — {{ . }}{{ end }}{{ with .status }} <span class="meeting-muted">({{ . }})</span>{{ end }}</li>{{ end }}</ul>{{ else }}Actions and owners to be recorded.{{ end }}</dd>
+            </dl>
+          </details>
+        </td>
+        <td>{{ with .materials }}<ul class="meeting-materials">{{ range . }}<li><a href="{{ .url }}" rel="noopener">{{ .label }}</a></li>{{ end }}</ul>{{ else }}<span class="meeting-muted">Not shared yet</span>{{ end }}</td>
+        <td><span class="meeting-status" data-status="{{ .status | default "planning" }}">{{ .status | default "planning" | humanize }}</span></td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,38 @@
+/* Shared palette for Hugo Blox and the site's custom sections. */
+:root {
+  --color-primary-50: 241 248 253;
+  --color-primary-100: 224 240 251;
+  --color-primary-200: 197 231 252;
+  --color-primary-300: 140 204 244;
+  --color-primary-400: 97 175 224;
+  --color-primary-500: 54 137 191;
+  --color-primary-600: 34 108 157;
+  --color-primary-700: 27 85 126;
+  --color-primary-800: 25 67 98;
+  --color-primary-900: 22 49 72;
+  --color-primary-950: 8 18 30;
+  --site-bg: #f4f7fb;
+  --site-surface: #ffffff;
+  --site-surface-raised: #e8eff7;
+  --site-text: #18283b;
+  --site-muted: #4c6078;
+  --site-border: #c3cfdd;
+  --site-border-strong: #738ba4;
+  --site-accent: #226c9d;
+  --site-link-hover: #163148;
+  --site-accent-soft: #e0f0fb;
+  --site-on-accent: #ffffff;
+}
+.dark {
+  --site-bg: #090e17;
+  --site-surface: #121c2a;
+  --site-surface-raised: #1b2a3d;
+  --site-text: #edf2f7;
+  --site-muted: #b2bfce;
+  --site-border: #36485e;
+  --site-border-strong: #6a829f;
+  --site-accent: #8cccf4;
+  --site-link-hover: #c5e7fc;
+  --site-accent-soft: #1a344b;
+  --site-on-accent: #08121e;
+}

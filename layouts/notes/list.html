@@ -15,7 +15,7 @@
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
 
     {{ with .Content }}
-      <div style="margin-bottom: 2.5rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
+      <div style="margin-bottom: 2.5rem; color: var(--site-text); line-height: 1.6;">
         {{ . }}
       </div>
     {{ end }}
@@ -32,16 +32,16 @@
           {{ end }}
         {{ end }}
         <article class="note-card" style="
-          background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-          border: 1px solid rgba(255,255,255,0.1);
+          background: var(--site-surface);
+          border: 1px solid var(--site-border);
           border-radius: 12px;
           padding: 2rem;
           position: relative;
           transition: all 0.3s ease;
           overflow: hidden;
         "
-        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.2)'; this.style.borderColor='rgba(77, 171, 247, 0.3)';"
-        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255,255,255,0.1)';">
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.2)'; this.style.borderColor='var(--site-border-strong)';"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='var(--site-border)';">
 
           {{ if $preview }}
             <a
@@ -54,7 +54,7 @@
             </a>
           {{ end }}
 
-          <h3 style="color: #4dabf7; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.3;">
+          <h3 style="color: var(--site-accent); font-size: 1.35rem; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.3;">
             <a
               href="{{ with $page.Params.url_pdf }}{{ . | relURL }}{{ else }}{{ $page.RelPermalink }}{{ end }}"
               {{ if $page.Params.url_pdf }}target="_blank" rel="noopener"{{ end }}
@@ -63,10 +63,10 @@
           </h3>
 
           {{ if .Params.summary }}
-          <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 0.75rem;">{{ .Params.summary }}</p>
+          <p style="color: var(--site-muted); font-size: 0.95rem; margin-bottom: 0.75rem;">{{ .Params.summary }}</p>
           {{ end }}
 
-          <div style="color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-bottom: 1.25rem;">
+          <div style="color: var(--site-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
             {{ if .Date }}
               <span>{{ .Date.Format "Jan 2, 2006" }}</span>
             {{ end }}
@@ -76,11 +76,11 @@
           </div>
 
           {{ if .Content }}
-          <div style="color: rgba(255,255,255,0.8); line-height: 1.5; font-size: 0.95rem; margin-bottom: 1.5rem;">
+          <div style="color: var(--site-text); line-height: 1.5; font-size: 0.95rem; margin-bottom: 1.5rem;">
             {{ $body := .Content | plainify | truncate 180 }}
             {{ $body }}
             {{ if gt (len (.Content | plainify)) 180 }}
-              <span style="color: #4dabf7; font-weight: 500;">… Read more</span>
+              <span style="color: var(--site-accent); font-weight: 500;">… Read more</span>
             {{ end }}
           </div>
           {{ end }}
@@ -89,8 +89,8 @@
           <div class="note-links" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
             {{ with .Params.url_pdf }}
             <a class="note-link" href="{{ . | relURL }}" target="_blank" rel="noopener" style="
-              background: rgba(77, 171, 247, 0.15);
-              color: #4dabf7;
+              background: var(--site-accent-soft);
+              color: var(--site-accent);
               padding: 0.35rem 0.8rem;
               border-radius: 999px;
               font-size: 0.8rem;
@@ -100,8 +100,8 @@
             {{ end }}
             {{ with .Params.url_slides }}
             <a class="note-link" href="{{ . | relURL }}" target="_blank" rel="noopener" style="
-              background: rgba(16, 185, 129, 0.18);
-              color: #34d399;
+              background: var(--site-accent-soft);
+              color: var(--site-accent);
               padding: 0.35rem 0.8rem;
               border-radius: 999px;
               font-size: 0.8rem;
@@ -111,8 +111,8 @@
             {{ end }}
             {{ with .Params.url_video }}
             <a class="note-link" href="{{ . }}" target="_blank" rel="noopener" style="
-              background: rgba(236, 72, 153, 0.18);
-              color: #f472b6;
+              background: var(--site-accent-soft);
+              color: var(--site-accent);
               padding: 0.35rem 0.8rem;
               border-radius: 999px;
               font-size: 0.8rem;
@@ -151,7 +151,7 @@
 
 <style>
 .note-card:hover .note-arrow {
-  color: #4dabf7 !important;
+  color: var(--site-accent) !important;
   transform: translateX(4px);
 }
 
@@ -196,7 +196,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(17, 24, 39, 0.85);
+  background: var(--site-surface);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
@@ -213,7 +213,7 @@
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  background: rgba(15, 23, 42, 0.85);
+  background: var(--site-surface-raised);
   border: none;
   color: #fff;
   font-size: 1.5rem;
@@ -225,7 +225,7 @@
 }
 
 .talk-preview-close:hover {
-  background: rgba(59, 130, 246, 0.9);
+  background: var(--site-accent-soft);
 }
 
 .talk-preview-open {

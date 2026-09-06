@@ -28,6 +28,9 @@ main:
   - name: Talks
     url: notes/
     weight: 40
+  - name: Informal Meetings
+    url: /informal-meetings/
+    weight: 41
   - name: Lecture Notes
     url: lecture-notes/
     weight: 42

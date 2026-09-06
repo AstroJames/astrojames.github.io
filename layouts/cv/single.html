@@ -18,7 +18,7 @@
   min-height: 100vh;
   padding: 0;
   overflow: hidden;
-  background: #050913;
+  background: var(--site-bg);
 }
 
 .cv-iframe {
@@ -26,7 +26,7 @@
   width: 100vw;
   height: calc(100vh - 60px);
   border: none;
-  background: #111827;
+  background: var(--site-surface);
   /* Invert the embedded PDF to mimic a dark mode view. */
   filter: invert(0.92) hue-rotate(180deg);
 }
@@ -34,11 +34,11 @@
 .cv-download-fallback {
   text-align: center;
   margin: 1rem 0 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--site-muted);
 }
 
 .cv-download-fallback a {
-  color: #4dabf7;
+  color: var(--site-accent);
   text-decoration: underline;
 }
 

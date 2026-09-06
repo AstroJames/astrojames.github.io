@@ -16,7 +16,7 @@
     
     <!-- Projects Description -->
     {{ with .Content }}
-      <div style="margin-bottom: 3rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
+      <div style="margin-bottom: 3rem; color: var(--site-text); line-height: 1.6;">
         {{ . }}
       </div>
     {{ end }}
@@ -26,8 +26,8 @@
       
       {{ range .Pages }}
         <div class="project-card" style="
-          background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-          border: 1px solid rgba(255,255,255,0.1);
+          background: var(--site-surface);
+          border: 1px solid var(--site-border);
           border-radius: 12px;
           padding: 2rem;
           transition: all 0.3s ease;
@@ -35,13 +35,13 @@
           position: relative;
           overflow: hidden;
         " 
-        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.2)'; this.style.borderColor='rgba(77, 171, 247, 0.3)';"
-        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255,255,255,0.1)';"
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.2)'; this.style.borderColor='var(--site-border-strong)';"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='var(--site-border)';"
         onclick="window.location.href='{{ .RelPermalink }}'">
           
           <!-- Project Title -->
           <h3 style="
-            color: #4dabf7;
+            color: var(--site-accent);
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1rem;
@@ -53,7 +53,7 @@
           <!-- Project Summary/Collaborator -->
           {{ if .Params.summary }}
             <p style="
-              color: rgba(255,255,255,0.6);
+              color: var(--site-muted);
               font-size: 0.9rem;
               margin-bottom: 1rem;
               font-style: italic;
@@ -63,7 +63,7 @@
           <!-- Project Date -->
           {{ if .Date }}
             <div style="
-              color: rgba(255,255,255,0.5);
+              color: var(--site-muted);
               font-size: 0.8rem;
               margin-bottom: 1rem;
             ">{{ .Date.Format "January 2006" }}</div>
@@ -71,14 +71,14 @@
           
           <!-- Project Description (truncated) -->
           <div style="
-            color: rgba(255,255,255,0.8);
+            color: var(--site-text);
             line-height: 1.5;
             font-size: 0.95rem;
           ">
             {{ $content := .Content | plainify | truncate 200 }}
             {{ $content }}
             {{ if gt (len (.Content | plainify)) 200 }}
-              <span style="color: #4dabf7; font-weight: 500;">... Read more</span>
+              <span style="color: var(--site-accent); font-weight: 500;">... Read more</span>
             {{ end }}
           </div>
           
@@ -87,8 +87,8 @@
             <div style="margin-top: 1.5rem;">
               {{ range .Params.tags }}
                 <span style="
-                  background: rgba(77, 171, 247, 0.15);
-                  color: #4dabf7;
+                  background: var(--site-accent-soft);
+                  color: var(--site-accent);
                   padding: 4px 8px;
                   border-radius: 16px;
                   font-size: 0.75rem;
@@ -120,7 +120,7 @@
 <!-- Project Card Hover Animation Styles -->
 <style>
 .project-card:hover .project-arrow {
-  color: #4dabf7 !important;
+  color: var(--site-accent) !important;
   transform: translateX(4px);
 }
 

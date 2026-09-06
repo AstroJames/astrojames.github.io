@@ -59,6 +59,43 @@ chronological ordering. Add news as a `content/post/` page bundle
 with a title, date, summary, and body. Use `news_date` for a month-only date label
 when an exact date is not known.
 
+## Colors
+
+The `slate-blue` Hugo theme in `assets/css/themes/slate-blue.css` defines the
+shared accent, text, background, surface, and border colors, including light-mode
+fallbacks. Custom sections use the same `--site-*` variables. Global link,
+button, and navigation rules live in `assets/css/site-theme.css`; avoid adding
+another page-specific accent or global hover override. Scientific figures and
+their color scales are unchanged.
+
+## Informal Meetings
+
+The navigation links to `/informal-meetings/`, with separate pages for MHD at
+the IAS and Magnetogenesis. Edit the matching file in
+`data/informal_meetings/` to maintain each series. The four initial weekly slots
+are explicitly unconfirmed; blank dates, speakers, and locations remain labeled
+as such. Set the series day, time, timezone, location, and optional online link
+when agreed. Content in these files appears on the public website.
+
+Copy a session entry to add a week, giving it a unique `id`. Each supports:
+
+- `date` (`"YYYY-MM-DD"`), `time` (`"HH:MM"`), and optional location/online-link overrides.
+- `speaker`, `affiliation`, `title`, `format`, and a short `abstract`.
+- `materials`: a list of `{label, url}` entries for papers, slides, code, or notes.
+- `preparation`, `questions` (a list), and `notes` (Markdown).
+- `actions`: a list of `{task, owner, status}` follow-up items.
+- `status`: `planning`, `confirmed`, `completed`, or `cancelled`.
+
+Dated planning/confirmed sessions are sorted chronologically in the schedule;
+undated slots appear under Open weekly slots. Mark sessions `completed` or
+`cancelled` to move them into the archive without losing materials or notes.
+The series-level `topics` and `resources` lists support future session planning
+and shared reading. Updates follow the site's normal commit/deploy workflow.
+The Propose a session link opens an email to `beattie@ias.edu`.
+
+Run the meeting-template checks with
+`HUGO_BIN=/path/to/hugo python -m unittest discover -s test -p 'test_meetings.py'`.
+
 ## Deployment
 
 Commits pushed to `main` trigger the GitHub Pages workflow configured in this repo (see `.github/workflows/`). No manual `hugo` builds are required; Follow the [Hugo Blox Builder](https://hugoblox.com/) instructions to set this up.

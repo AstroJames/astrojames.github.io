@@ -9,9 +9,9 @@
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 1.5rem;">
     <h1 style="font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem;">{{ .Title }}</h1>
     {{ with .Params.summary }}
-      <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 1rem;">{{ . }}</p>
+      <p style="color: var(--site-muted); font-size: 1.05rem; margin-bottom: 1rem;">{{ . }}</p>
     {{ end }}
-    <div style="color: rgba(255,255,255,0.55); font-size: 0.9rem;">
+    <div style="color: var(--site-muted); font-size: 0.9rem;">
       {{ if .Date }}
         <span>{{ .Date.Format "Jan 2, 2006" }}</span>
       {{ end }}
@@ -22,8 +22,8 @@
     {{ if $pdfRel }}
       <div style="margin-top: 1.25rem;">
         <a href="{{ $pdfRel }}" target="_blank" rel="noopener" style="
-          background: rgba(77, 171, 247, 0.18);
-          color: #4dabf7;
+          background: var(--site-accent-soft);
+          color: var(--site-accent);
           padding: 0.45rem 1rem;
           border-radius: 999px;
           font-size: 0.9rem;
@@ -36,7 +36,7 @@
 </div>
 
 {{ if $pdfRel }}
-  <div class="lecture-note-embed" style="background: #050913; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);">
+  <div class="lecture-note-embed" style="background: var(--site-bg); margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);">
     <iframe
       src="{{ (print $pdfRel "#toolbar=1&navpanes=0&view=FitH") }}"
       title="{{ .Title }}"
@@ -58,18 +58,18 @@
   width: 100vw;
   height: calc(100vh - 120px);
   border: none;
-  background: #111827;
+  background: var(--site-surface);
   filter: invert(0.92) hue-rotate(180deg);
 }
 
 .lecture-note-fallback {
   text-align: center;
   margin: 1rem 0 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--site-muted);
 }
 
 .lecture-note-fallback a {
-  color: #4dabf7;
+  color: var(--site-accent);
   text-decoration: underline;
 }
 

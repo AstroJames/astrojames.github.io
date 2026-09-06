@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ partial "meetings/styles.html" . }}
+<div class="meetings-page">
+  <div class="meeting-heading">
+    <p class="meeting-eyebrow">Discussion & work in progress</p>
+    <h1>{{ .Title }}</h1>
+    <div class="meeting-intro">{{ .Content }}</div>
+  </div>
+  <div class="meeting-series-grid">
+    {{ range .RegularPages.ByWeight }}
+    {{ $meeting := index site.Data.informal_meetings .Params.meeting_key }}
+    <article class="meeting-series">
+      <p class="meeting-eyebrow">{{ $meeting.cadence }} · Informal discussion</p>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p>{{ .Params.summary }}</p>
+      <p class="meeting-muted">{{ with $meeting.day }}{{ . }}{{ else }}Day to be confirmed{{ end }} · {{ with $meeting.location }}{{ . }}{{ else }}Location to be confirmed{{ end }}</p>
+      <a class="meeting-text-link" href="{{ .RelPermalink }}">Schedule & meeting details <span aria-hidden="true">→</span></a>
+    </article>
+    {{ end }}
+  </div>
+  <p class="meeting-contact">Interested in speaking or suggesting a topic? <a href="mailto:beattie@ias.edu">Contact James Beattie</a>.</p>
+</div>
+{{ end }}
