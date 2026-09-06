@@ -1,5 +1,5 @@
 ---
-title: Magnetohydrodynamics at the IAS
+title: Numerical magnetohydrodynamics at the IAS
 summary: A weekly space to discuss MHD theory, simulations, and work in progress at the Institute for Advanced Study.
 meeting_key: mhd_ias
 weight: 10
