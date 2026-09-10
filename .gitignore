@@ -11,5 +11,8 @@ _vendor/
 # Python cache files
 __pycache__/
 
+# Private scheduling preview data and organizer credentials
+.local/meeting-scheduler/
+
 # Local lecture upload instructions/scratch area
 static/lectures/new/

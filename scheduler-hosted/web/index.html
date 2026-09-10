@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Weekly meeting availability · James Beattie</title><meta name="description" content="Find a weekly meeting time with James Beattie. Monday–Friday, 9 a.m.–5 p.m. Eastern."><link rel="stylesheet" href="/styles.css"></head><body>
+<div class="meetings-page scheduler" id="weekly-scheduler" data-hosted="true">
+  <a class="meeting-back" href="https://astrojames.github.io/informal-meetings/">← Informal meetings</a>
+  <div class="meeting-heading scheduler-heading">
+    <div><p class="meeting-eyebrow">Weekly availability</p><h1>Find a meeting time</h1><p class="meeting-intro">Mark the hours you’re usually free. We’ll find a time to meet each week.</p></div>
+    <span class="scheduler-timezone">Mon–Fri <span>Eastern · America/New_York</span></span>
+  </div>
+  <div class="scheduler-draft"><strong>Weekly availability</strong><span>James’s availability is shaded red. Everyone can see it; only James can change it.</span><button type="button" id="load-example" hidden>Load example schedules</button></div>
+  <noscript><p class="meeting-empty">Please enable JavaScript to try the scheduling draft.</p></noscript>
+  <div class="scheduler-workspace">
+    <section class="scheduler-board" aria-label="Availability calendar">
+      <div class="scheduler-board-toolbar"><div class="scheduler-tabs" role="group" aria-label="Calendar view"><button id="view-mine" type="button" aria-pressed="true">My availability</button><button id="view-group" type="button" aria-pressed="false">Group overlap</button></div><span class="scheduler-unit">1-hour slots</span></div>
+      <div class="scheduler-instructions"><p id="grid-instruction">Enter your name to start marking available hours.</p><button type="button" id="clear-mine" disabled>Clear my slots</button></div>
+      <div class="scheduler-table-scroll" tabindex="0" aria-label="Weekly hours"><table class="scheduler-calendar"><caption class="meeting-sr-only">Recurring Monday to Friday availability, in Eastern time. Each slot lasts one hour.</caption><thead><tr><th scope="col">ET</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th></tr></thead><tbody id="schedule-grid"></tbody></table></div>
+      <div class="scheduler-legend"><span><i class="legend-available"></i>Participant availability</span><span><i class="legend-owner"></i>James is available</span><span id="slot-count">0 hours selected</span></div>
+    </section>
+    <aside class="scheduler-sidebar">
+      <section class="scheduler-panel"><h2>Your availability</h2><form id="participant-form"><label for="participant-name">Your name</label><div class="scheduler-name-row"><input id="participant-name" name="name" placeholder="e.g. Alex Chen" maxlength="60" required autocomplete="name"><button class="meeting-button" type="submit">Join</button></div></form><p id="active-person" class="scheduler-person-note">Your selections save as you go.</p><p id="save-status" role="status" aria-live="polite"></p></section>
+      <section class="scheduler-panel"><div class="scheduler-panel-title"><h2>People</h2><span id="people-count">1</span></div><ul id="participant-list" class="scheduler-people"></ul><p class="scheduler-person-note">James’s schedule carries over when participant responses are cleared.</p></section>
+      <section class="scheduler-panel"><h2>Best times together</h2><p id="overlap-summary" class="scheduler-person-note">Add availability to find shared hours.</p><ol id="best-times" class="scheduler-best-times"></ol></section>
+      <p id="organizer-locked" class="scheduler-person-note">James’s schedule is read-only for participants. <a href="/signin-with-chatgpt?return_to=%2F" target="_top">Sign in as organizer</a>.</p>
+      <section id="organizer-controls" class="scheduler-organizer" hidden><h2>Organizer controls</h2><p>Signed in as James.</p><button type="button" class="meeting-button" id="organizer-edit">Edit my schedule</button><button type="button" id="reset-participants" disabled>Clear participant responses</button><p>Your own schedule is always kept.</p><button type="button" id="organizer-signout" class="scheduler-signout">Sign out</button></section>
+    </aside>
+  </div>
+  <dialog id="reset-dialog" class="scheduler-dialog"><form method="dialog"><h2>Clear participant responses?</h2><p>Everyone else’s name and availability will be removed from this schedule. James’s schedule will stay exactly as it is.</p><div class="scheduler-dialog-actions"><button value="cancel" autofocus>Cancel</button><button value="confirm" class="meeting-button">Clear responses</button></div></form></dialog>
+</div>
+<script type="module" src="/scheduler.mjs"></script></body></html>

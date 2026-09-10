@@ -1,10 +1,19 @@
 {{ define "main" }}
 {{ partial "meetings/styles.html" . }}
 <div class="meetings-page">
-  <div class="meeting-heading">
+  <div class="meeting-heading meeting-heading-with-action">
+    <div>
     <p class="meeting-eyebrow">Discussion & work in progress</p>
     <h1>{{ .Title }}</h1>
     <div class="meeting-intro">{{ .Content }}</div>
+    </div>
+    {{ with site.Params.meeting_scheduler_url }}
+    <a class="meeting-button" href="{{ . }}">Find a meeting time <span aria-hidden="true">↗</span></a>
+    {{ else }}
+    {{ with site.GetPage "/meeting-scheduler" }}
+    <a class="meeting-button" href="{{ .RelPermalink }}">Find a meeting time <span aria-hidden="true">↗</span></a>
+    {{ end }}
+    {{ end }}
   </div>
   <div class="meeting-series-grid">
     {{ range .RegularPages.ByWeight }}

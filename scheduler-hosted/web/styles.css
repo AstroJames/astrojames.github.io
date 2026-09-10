@@ -1,0 +1,194 @@
+/* Shared palette for Hugo Blox and the site's custom sections. */
+:root {
+  --color-primary-50: 241 248 253;
+  --color-primary-100: 224 240 251;
+  --color-primary-200: 197 231 252;
+  --color-primary-300: 140 204 244;
+  --color-primary-400: 97 175 224;
+  --color-primary-500: 54 137 191;
+  --color-primary-600: 34 108 157;
+  --color-primary-700: 27 85 126;
+  --color-primary-800: 25 67 98;
+  --color-primary-900: 22 49 72;
+  --color-primary-950: 8 18 30;
+  --site-bg: #f4f7fb;
+  --site-surface: #ffffff;
+  --site-surface-raised: #e8eff7;
+  --site-text: #18283b;
+  --site-muted: #4c6078;
+  --site-border: #c3cfdd;
+  --site-border-strong: #738ba4;
+  --site-accent: #226c9d;
+  --site-link-hover: #163148;
+  --site-accent-soft: #e0f0fb;
+  --site-on-accent: #ffffff;
+}
+.dark {
+  --site-bg: #090e17;
+  --site-surface: #121c2a;
+  --site-surface-raised: #1b2a3d;
+  --site-text: #edf2f7;
+  --site-muted: #b2bfce;
+  --site-border: #36485e;
+  --site-border-strong: #6a829f;
+  --site-accent: #8cccf4;
+  --site-link-hover: #c5e7fc;
+  --site-accent-soft: #1a344b;
+  --site-on-accent: #08121e;
+}
+
+.meetings-page { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 5rem; color: var(--site-text); font-size: 1rem; line-height: 1.65; }
+.meeting-heading { margin: 0 0 2rem; }
+.meeting-heading-with-action { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
+.meeting-heading-with-action .meeting-button { flex-shrink: 0; gap: .75rem; }
+@media (max-width: 760px) { .meeting-heading-with-action { flex-direction: column; gap: 1rem; } }
+.meeting-heading h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; font-weight: 700; margin: .6rem 0 1rem; max-width: 28ch; }
+.meeting-eyebrow { font-size: .875rem; color: var(--site-accent); font-weight: 600; letter-spacing: .04em; margin: 0; }
+.meeting-intro { max-width: 76ch; color: var(--site-muted); }
+.meeting-intro p { margin: 0; }
+.meeting-series-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.meeting-series { border-top: 3px solid var(--site-accent); border-bottom: 1px solid var(--site-border); padding: 1.5rem 0 2rem; }
+.meeting-series h2 { font-size: 1.5rem; line-height: 1.35; font-weight: 650; margin: .6rem 0 1rem; }
+.meeting-series p { margin-bottom: 1rem; }
+.meeting-text-link { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; font-weight: 600; text-decoration: underline; }
+.meeting-contact { margin-top: 2rem; color: var(--site-muted); }
+.meeting-back { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 1.25rem; font-size: .9rem; }
+.meeting-muted, .meeting-cell-note { color: var(--site-muted); }
+.meeting-cell-note { display: block; margin-top: .2rem; font-size: .875rem; font-weight: 400; }
+.meeting-logistics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 1.25rem 0; margin: 0; gap: 1.5rem; border-top: 1px solid var(--site-border); border-bottom: 1px solid var(--site-border); }
+.meeting-logistics dt { color: var(--site-muted); font-size: .875rem; margin-bottom: .4rem; }
+.meeting-logistics dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+.meeting-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+.meeting-jumps { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; }
+.meeting-jumps a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; }
+.meeting-jumps a::after { display: none; }
+.meetings-page .meeting-button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .55rem 1rem; border: 1px solid var(--site-border-strong); border-radius: 6px; background: var(--site-accent-soft); color: var(--site-accent); font-weight: 600; }
+.meetings-page .meeting-button:hover { background: var(--site-accent); color: var(--site-on-accent); }
+.meeting-section { margin: 0 0 2.5rem; scroll-margin-top: 9rem; }
+.meeting-section h2 { font-size: 1.5rem; line-height: 1.4; font-weight: 650; margin: 0 0 1rem; }
+.meeting-subheading { font-size: 1.05rem; font-weight: 650; margin: 1.5rem 0 .5rem; }
+.meeting-empty { padding: 1rem 1.25rem; margin-bottom: 1rem; background: var(--site-surface); border-left: 3px solid var(--site-border-strong); color: var(--site-muted); }
+.meeting-table-scroll { overflow-x: auto; margin-top: 1rem; border: 1px solid var(--site-border); border-radius: 6px; }
+.meeting-schedule { border-collapse: collapse; width: 100%; min-width: 850px; font-size: .9375rem; }
+.meeting-schedule th, .meeting-schedule td { padding: 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--site-border); }
+.meeting-schedule thead th { background: var(--site-surface); color: var(--site-muted); font-size: .875rem; font-weight: 600; }
+.meeting-schedule tbody th { width: 18%; font-weight: 500; }
+.meeting-schedule td:nth-child(2) { width: 19%; }
+.meeting-schedule td:nth-child(3) { width: 36%; }
+.meeting-schedule td:nth-child(4) { width: 15%; }
+.meeting-schedule tbody tr:last-child > * { border-bottom: 0; }
+.meeting-session-title { display: block; font-weight: 600; }
+.meeting-session-details { margin-top: .5rem; }
+.meeting-session-details summary { color: var(--site-accent); cursor: pointer; min-height: 32px; }
+.meeting-session-details dl { margin: .5rem 0 0; font-size: .875rem; }
+.meeting-session-details dt { margin-top: .7rem; font-weight: 600; }
+.meeting-session-details dd { margin: .15rem 0 0; color: var(--site-muted); }
+.meeting-session-details p { margin: 0; }
+.meeting-session-details ul, .meeting-materials { margin: 0; padding-left: 1rem; list-style: disc; }
+.meeting-materials a { display: inline-block; padding: .1rem 0; text-decoration: underline; overflow-wrap: anywhere; }
+.meeting-status { display: inline-flex; padding: .1rem .5rem; font-size: .875rem; border: 1px solid var(--site-border); border-radius: 4px; color: var(--site-muted); }
+.meeting-status[data-status="confirmed"] { color: var(--site-accent); background: var(--site-accent-soft); border-color: var(--site-border-strong); }
+.meeting-status[data-status="cancelled"] { text-decoration: line-through; }
+.meeting-planning-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+.meeting-list { list-style: disc; padding-left: 1.25rem; margin: 1rem 0; }
+.meeting-list li { margin-bottom: .5rem; }
+.meeting-agenda { list-style: none; padding: 0; margin: 1rem 0; }
+.meeting-agenda li { display: grid; grid-template-columns: 4rem 1fr; gap: .75rem; padding: .6rem 0; border-bottom: 1px solid var(--site-border); }
+.meeting-agenda span { color: var(--site-accent); font-size: .875rem; }
+.meeting-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 900px) { .meeting-logistics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .meetings-page { padding: 2rem 1rem 3rem; }
+  .meeting-series-grid, .meeting-planning-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .meeting-logistics { gap: 1.25rem; }
+  .meeting-toolbar { align-items: flex-start; flex-direction: column; }
+}
+
+.scheduler { max-width: 1320px; --scheduler-owner: #a62032; --scheduler-owner-soft: #fce6e9; }
+.dark .scheduler { --scheduler-owner: #ffabb5; --scheduler-owner-soft: #47232e; }
+.scheduler-heading { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.scheduler-heading h1 { margin-bottom: .75rem; }
+.scheduler-timezone { text-align: right; font-weight: 600; flex-shrink: 0; }
+.scheduler-timezone span { display: block; color: var(--site-muted); font-weight: 400; font-size: .875rem; }
+.scheduler button { cursor: pointer; font: inherit; }
+.scheduler button:disabled { cursor: default; opacity: .5; }
+.scheduler-draft { display: flex; align-items: center; gap: .5rem 1rem; flex-wrap: wrap; border: 1px solid var(--site-border); border-radius: 6px; padding: .8rem 1rem; margin-bottom: 1.5rem; font-size: .875rem; color: var(--site-muted); }
+.scheduler-draft strong { color: var(--site-text); }
+.scheduler-draft button { color: var(--site-accent); text-decoration: underline; margin-left: auto; min-height: 32px; }
+.scheduler-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.5rem; align-items: start; }
+.scheduler-board { border: 1px solid var(--site-border); border-radius: 10px; overflow: hidden; background: var(--site-surface); }
+.scheduler-board-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--site-border); }
+.scheduler-tabs { display: flex; gap: .3rem; }
+.scheduler-tabs button { padding: .5rem .8rem; border-radius: 5px; color: var(--site-muted); font-weight: 600; font-size: .9375rem; min-height: 44px; }
+.scheduler-tabs button[aria-pressed="true"] { background: var(--site-accent-soft); color: var(--site-accent); }
+.scheduler-unit { color: var(--site-muted); font-size: .875rem; white-space: nowrap; }
+.scheduler-instructions { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: .7rem 1.25rem; gap: .5rem; font-size: .875rem; color: var(--site-muted); min-height: 60px; }
+.scheduler-instructions p { margin: 0; }
+.scheduler-instructions button { color: var(--site-accent); text-decoration: underline; min-height: 32px; }
+.scheduler-table-scroll { padding: 0 1.25rem; overflow-x: auto; }
+.scheduler-calendar { width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 4px; margin: 0; font-size: .875rem; }
+.scheduler-calendar th { font-weight: 500; color: var(--site-muted); text-align: center; height: 34px; }
+.scheduler-calendar th:first-child { width: 62px; text-align: left; white-space: nowrap; }
+.scheduler-calendar td { padding: 0; height: 42px; }
+.scheduler-slot { position: relative; display: block; width: 100%; min-height: 42px; height: 100%; border-radius: 4px; background: var(--site-surface-raised); border: 1px solid transparent; color: var(--site-muted); touch-action: pan-y; user-select: none; }
+.scheduler-slot:not(:disabled):hover { border-color: var(--site-accent); }
+.scheduler-slot[aria-pressed="true"], .scheduler-slot[data-overlap="all"] { background: var(--site-accent); color: var(--site-on-accent); font-weight: 600; }
+.scheduler-slot[data-overlap="some"] { background: var(--site-accent-soft); color: var(--site-accent); }
+.scheduler-slot[data-owner="true"] { background: var(--scheduler-owner-soft); color: var(--scheduler-owner); border-color: var(--scheduler-owner); }
+.scheduler-slot[data-owner="true"]::before { content: ""; position: absolute; left: 3px; top: 6px; bottom: 6px; width: 3px; background: var(--scheduler-owner); border-radius: 2px; }
+.scheduler-slot[data-owner="true"][data-selected-participant="true"] { background: linear-gradient(135deg, var(--scheduler-owner-soft) 0 65%, var(--site-accent-soft) 65%); }
+.scheduler-slot:disabled { opacity: 1; }
+.scheduler-slot[data-owner="true"][data-overlap="all"] { font-weight: 700; }
+.scheduler-legend { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.25rem; padding: 1rem 1.25rem; font-size: .875rem; color: var(--site-muted); }
+.scheduler-legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.scheduler-legend span:last-child { margin-left: auto; }
+.scheduler-legend i { display: inline-block; height: 12px; width: 12px; background: var(--site-accent); border-radius: 2px; }
+.scheduler-legend .legend-owner { background: var(--scheduler-owner-soft); border: 1px solid var(--scheduler-owner); }
+.scheduler-sidebar { display: grid; gap: 1.25rem; }
+.scheduler-panel { border-bottom: 1px solid var(--site-border); padding-bottom: 1.25rem; }
+.scheduler-panel h2, .scheduler-dialog h2 { font-size: 1.05rem; font-weight: 650; margin: 0 0 .9rem; }
+.scheduler-panel label { display: block; font-size: .875rem; color: var(--site-muted); margin-bottom: .35rem; }
+.scheduler-name-row { display: flex; gap: .5rem; }
+.scheduler-name-row input { min-width: 0; width: 100%; border-radius: 5px; border: 1px solid var(--site-border-strong); background: var(--site-surface); color: var(--site-text); padding: .5rem .65rem; font-size: 1rem; }
+.scheduler-person-note, .scheduler-organizer p { color: var(--site-muted); font-size: .875rem; margin: .6rem 0 0; }
+#save-status { font-size: .875rem; color: var(--site-accent); margin: .4rem 0 0; overflow-wrap: anywhere; }
+.scheduler-panel-title { display: flex; justify-content: space-between; align-items: baseline; }
+.scheduler-panel-title > span { color: var(--site-muted); font-size: .875rem; }
+.scheduler-people { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; }
+.scheduler-people li { display: flex; align-items: center; gap: .65rem; font-size: .9375rem; overflow-wrap: anywhere; }
+.scheduler-avatar { width: 32px; height: 32px; flex-shrink: 0; display: grid; place-items: center; background: var(--site-surface-raised); color: var(--site-accent); border-radius: 50%; font-size: .875rem; }
+.scheduler-people small { display: block; color: var(--site-muted); font-size: .875rem; }
+.scheduler-best-times { list-style: none; padding: 0; margin: .75rem 0 0; }
+.scheduler-best-times li { padding: .5rem 0; display: flex; gap: .5rem; justify-content: space-between; font-size: .9375rem; }
+.scheduler-best-times span { color: var(--site-muted); font-size: .875rem; white-space: nowrap; }
+.scheduler-organizer { font-size: .875rem; }
+.scheduler-organizer summary { color: var(--site-accent); cursor: pointer; min-height: 32px; }
+.scheduler-organizer[hidden], .scheduler button[hidden] { display: none; }
+.scheduler-organizer .meeting-button { margin: .75rem 0; width: 100%; }
+.scheduler-signout { color: var(--site-accent); text-decoration: underline; min-height: 44px; margin-top: .5rem; }
+#reset-participants { border: 1px solid var(--site-border-strong); padding: .55rem .7rem; border-radius: 5px; width: 100%; text-align: left; }
+.scheduler-dialog { background: var(--site-surface); color: var(--site-text); border: 1px solid var(--site-border); border-radius: 10px; padding: 1.5rem; max-width: 450px; width: calc(100% - 2rem); margin: auto; font-size: 1rem; }
+.scheduler-dialog::backdrop { background: #0009; }
+.scheduler-dialog-actions { display: flex; justify-content: flex-end; gap: 1.5rem; margin-top: 1.5rem; }
+@media (max-width: 1000px) { .scheduler-workspace { grid-template-columns: minmax(0, 1fr) 260px; } }
+@media (max-width: 800px) {
+  .scheduler-workspace { grid-template-columns: minmax(0, 1fr); }
+  .scheduler-sidebar { display: contents; }
+  .scheduler-panel:first-child { grid-row: 1; }
+  .scheduler-board { grid-row: 2; }
+  .scheduler-heading { align-items: flex-start; flex-direction: column; }
+  .scheduler-timezone { text-align: left; }
+  .scheduler-organizer { grid-column: 1 / -1; }
+  .scheduler-draft button { margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .scheduler-board-toolbar { flex-wrap: wrap; padding: .75rem; gap: .35rem; }
+  .scheduler-instructions { padding: .75rem; }
+  .scheduler-table-scroll { padding: 0 .25rem; }
+  .scheduler-calendar { border-spacing: 2px; }
+  .scheduler-calendar th:first-child { width: 48px; }
+  .scheduler-legend { padding: .75rem; }
+  .scheduler-sidebar { grid-template-columns: 1fr; }
+}
+
+*{box-sizing:border-box}body{margin:0;background:var(--site-bg);color:var(--site-text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{background:transparent;border:0;color:inherit}button,a,input,summary{outline-offset:4px}a{color:var(--site-accent);text-underline-offset:.2em}a:hover{color:var(--site-link-hover)}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--site-accent)}h1,h2,p{margin-top:0}dialog:not([open]),[hidden]{display:none!important}::selection{background:var(--site-accent);color:var(--site-on-accent)}

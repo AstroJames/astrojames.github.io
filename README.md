@@ -98,4 +98,69 @@ Run the meeting-template checks with
 
 ## Deployment
 
+### Shared weekly scheduler
+
+“Find a meeting time” in the upper-right corner of Informal Meetings opens
+[the hosted scheduler](https://james-beattie-meetings.beattiejames.chatgpt.site).
+The link is configured by `meeting_scheduler_url` in
+`config/_default/params.yaml`. GitHub Pages continues to host the main website;
+the scheduler runs separately on Sites with a persistent D1 database.
+
+The grid covers Monday–Friday, 9 a.m.–5 p.m. Eastern. James’s hours stay shaded
+red in both calendar views; participants can select overlapping hours without
+changing his. Suggested times require James to be available. Changes save
+immediately, and visible calendars refresh every 15 seconds when no edit is
+pending. Names and selected hours are public to schedule visitors.
+
+Participants join by name. A Secure, HttpOnly session cookie lets each browser
+edit only its own record for up to 30 days. James uses **Sign in as organizer**
+with his ChatGPT account. Sites provides the verified identity; the Worker
+checks it against the configured owner email on every protected request.
+Other signed-in accounts gain no organizer permissions. Clearing responses
+removes all other people, slots, and sessions in one database operation,
+while preserving James’s exact availability. No organizer key is shipped in
+public code, and the local preview’s private links do not grant hosted access.
+
+Hosted source lives in `scheduler-hosted/`. The UI remains shared with the Hugo
+draft; run `node scripts/sync-scheduler-site.mjs` from the repository root after
+editing the scheduler template or assets. Within `scheduler-hosted`, `npm run
+build` creates the standalone Worker and `npm test` checks authorization,
+reset behavior, persistence queries, and input validation with SQLite.
+`.openai/hosting.json` identifies the existing Sites project: reuse it for
+updates. `drizzle/` contains the schema-only database migration. Do not edit an
+already published migration; append new ones.
+
+Sites runtime configuration is managed outside Git:
+
+- `PUBLIC_ORIGIN`: the exact public scheduler origin, used for write-origin checks.
+- `OWNER_EMAIL`: the verified organizer account, stored as a secret.
+- `INITIAL_OWNER_SLOTS`: initial owner availability, stored as a secret and
+  applied only when the database is first initialized. Later resets never
+  restore old seed values.
+
+After syncing the UI, build and deploy the scheduler through Sites separately
+from the normal GitHub Pages push. Only source files belong in Git; live data,
+account sessions, and runtime secrets stay in the hosted service. The optional
+WebMCP tools read availability and edit the current participant’s hour through
+the same protected API; a supported WebMCP browser was not available for their
+contract verification during the initial publication.
+
+### Local scheduling prototype
+
+The original `/meeting-scheduler/` Hugo page remains `draft: true` so GitHub
+Pages does not publish a page without its required API. To use the local
+prototype, build with Hugo 0.126.3 and start its loopback-only server:
+
+```sh
+hugo --buildDrafts --environment development --destination /tmp/astrojames-scheduler-protected-preview
+node scripts/scheduler-preview-server.mjs /tmp/astrojames-scheduler-protected-preview .local/meeting-scheduler 1313
+```
+
+The server saves its private access link and state under the gitignored
+`.local/meeting-scheduler/` directory, outside the served files. This prototype
+is separate from the live database. Run `node --test test/meeting-scheduler.test.mjs
+test/scheduler-server.test.mjs` to check the local model/API.
+
+### Publishing the site
+
 Commits pushed to `main` trigger the GitHub Pages workflow configured in this repo (see `.github/workflows/`). No manual `hugo` builds are required; Follow the [Hugo Blox Builder](https://hugoblox.com/) instructions to set this up.
