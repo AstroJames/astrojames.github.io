@@ -4,6 +4,7 @@ for (const [name, type] of [['index.html', 'text/html; charset=utf-8'], ['styles
   assets[name === 'index.html' ? '/' : '/' + name] = { type, body: readFileSync('web/' + name, 'utf8') };
 }
 mkdirSync('dist/server', { recursive: true });
+cpSync('src/visits.mjs', 'dist/server/visits.mjs');
 writeFileSync('dist/server/index.js', 'const STATIC = ' + JSON.stringify(assets) + ';\n' + readFileSync('src/worker.mjs', 'utf8'));
 mkdirSync('dist/.openai', { recursive: true });
 cpSync('.openai/hosting.json', 'dist/.openai/hosting.json');

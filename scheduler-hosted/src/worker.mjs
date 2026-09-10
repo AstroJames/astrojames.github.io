@@ -1,3 +1,4 @@
+import { handleVisits } from './visits.mjs';
 // Sites dispatch authenticates these headers. Never expose this Worker outside dispatch.
 const API = '/api/scheduler/';
 const COOKIE = '__Host-meeting-participant';
@@ -63,6 +64,7 @@ async function readBody(request) {
 }
 export async function handleRequest(request, env) {
   const url = new URL(request.url);
+  if (url.pathname === "/api/visits") return handleVisits(request, env);
   if (!url.pathname.startsWith(API)) {
     if (!['GET', 'HEAD'].includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
     const path = url.pathname === '/meeting-scheduler/' ? '/' : url.pathname;

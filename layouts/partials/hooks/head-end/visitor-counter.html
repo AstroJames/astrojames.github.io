@@ -17,6 +17,7 @@
   .visitor-counter:hover {
     opacity: 0.9;
   }
+  #counter-since { display: block; font-size: 12px; opacity: .8; }
 
   @media (max-width: 768px) {
     .visitor-counter {
@@ -28,125 +29,13 @@
   }
 </style>
 
-<div id="visitor-counter" class="visitor-counter">
-  <span id="counter-text">👁️ <span id="visit-count">...</span> visits</span>
+<div id="visitor-counter" class="visitor-counter" data-endpoint="https://schedule.astro-beattie.com/api/visits" title="Shared website visit total">
+  <span id="counter-text">👁️ <span id="visit-count">…</span><span id="counter-label"> visits</span></span>
+  <span id="counter-since"></span>
 </div>
 
-{{/* 
-  SETUP INSTRUCTIONS:
-  1. Go to https://goatcounter.com and sign up (free)
-  2. Create a new site (e.g., "astrojames")
-  3. Replace 'YOUR-SITE' below with your GoatCounter site name
-  4. You'll get analytics at https://YOUR-SITE.goatcounter.com
-*/}}
-
-{{/* GoatCounter Analytics */}}
+{{/* Keep existing analytics separate from the public visit total. */}}
 <script data-goatcounter="https://jamesbeattie.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-
-<script>
-  // Global visitor counter using Hits Counter
-  document.addEventListener('DOMContentLoaded', function() {
-    let countElement = document.getElementById('visit-count');
-    countElement.textContent = 'Loading...';
-    
-    async function updateCounter() {
-      try {
-        // Add cache-busting parameter to ensure fresh requests
-        const timestamp = new Date().getTime();
-        const response = await fetch(`https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fastrojames.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false&_=${timestamp}`);
-        
-        if (response.ok) {
-          const svgText = await response.text();
-          console.log('SVG Response:', svgText); // Debug log
-          
-          // Multiple parsing strategies
-          let count = null;
-          
-          // Strategy 1: Parse as DOM
-          try {
-            const parser = new DOMParser();
-            const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
-            const textElements = svgDoc.getElementsByTagName('text');
-            
-            console.log('Found text elements:', textElements.length); // Debug log
-            
-            for (let i = 0; i < textElements.length; i++) {
-              const text = textElements[i].textContent.trim();
-              console.log(`Text element ${i}:`, text); // Debug log
-              
-              // Look for numeric values (allowing commas and spaces)
-              if (text && /^\d[\d,\s]*$/.test(text) && text !== 'hits') {
-                count = text.replace(/[,\s]/g, ''); // Remove commas and spaces
-                console.log('Found count via DOM:', count); // Debug log
-                break;
-              }
-            }
-          } catch (e) {
-            console.log('DOM parsing failed:', e);
-          }
-          
-          // Strategy 2: Regex parsing as fallback
-          if (!count) {
-            // Look for patterns like >123< or >1,234< in the SVG
-            const regex = />(\d[\d,\s]*)</g;
-            let match;
-            while ((match = regex.exec(svgText)) !== null) {
-              const text = match[1].trim();
-              if (text && /^\d[\d,\s]*$/.test(text)) {
-                count = text.replace(/[,\s]/g, '');
-                console.log('Found count via regex:', count); // Debug log
-                break;
-              }
-            }
-          }
-          
-          if (count && !isNaN(count)) {
-            const numericCount = parseInt(count);
-            countElement.textContent = numericCount.toLocaleString();
-            console.log('Successfully updated counter to:', numericCount); // Debug log
-            return;
-          } else {
-            console.log('No valid count found in SVG');
-          }
-        } else {
-          console.log('Response not OK:', response.status);
-        }
-      } catch (e) {
-        console.error('Hits Counter failed:', e);
-      }
-      
-      // Fallback to localStorage if parsing fails
-      console.log('Falling back to localStorage');
-      fallbackToLocalStorage();
-    }
-    
-    function fallbackToLocalStorage() {
-      // Enhanced localStorage that better simulates global count
-      let baseCount = 2847; // Starting from a realistic number
-      let globalKey = 'astrojames-estimated-global';
-      let lastVisit = localStorage.getItem('last-visit-date');
-      let today = new Date().toDateString();
-      let estimatedCount = parseInt(localStorage.getItem(globalKey) || baseCount);
-      
-      // Add some variance to simulate other visitors
-      let dailyVisitors = Math.floor(Math.random() * 50) + 25; // 25-75 daily visitors
-      
-      if (lastVisit !== today) {
-        estimatedCount += dailyVisitors;
-        localStorage.setItem(globalKey, estimatedCount);
-        localStorage.setItem('last-visit-date', today);
-      }
-      
-      // Add current session
-      if (!sessionStorage.getItem('counted')) {
-        estimatedCount += 1;
-        sessionStorage.setItem('counted', 'true');
-      }
-      
-      countElement.textContent = estimatedCount.toLocaleString();
-    }
-    
-    updateCounter();
-  });
-</script>
+        async src="https://gc.zgo.at/count.js"></script>
+{{ $counter := resources.Get "js/visitor-counter.mjs" | fingerprint }}
+<script type="module" src="{{ $counter.RelPermalink }}" integrity="{{ $counter.Data.Integrity }}"></script>
