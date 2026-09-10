@@ -3,8 +3,9 @@
 #section-resume-biography-3 { overflow: hidden; }
 #section-resume-biography-3 > .home-section-bg.bg-image {
   right: auto;
-  width: calc(100% + 2000px);
-  background-size: 2000px 120% !important;
+  --biography-tile-width: 2000px;
+  width: calc(100% + var(--biography-tile-width));
+  background-size: var(--biography-tile-width) auto !important;
   background-repeat: repeat-x !important;
   background-position: left center !important;
   filter: none !important;
@@ -12,7 +13,7 @@
   animation: biography-pan 45s linear infinite;
 }
 @keyframes biography-pan {
-  from { transform: translate3d(-2000px, 0, 0); }
+  from { transform: translate3d(calc(-1 * var(--biography-tile-width)), 0, 0); }
   to { transform: translate3d(0, 0, 0); }
 }
 @media (max-width: 768px) {
@@ -26,3 +27,21 @@
   }
 }
 </style>
+{{ $image := resources.Get "media/KHI.webp" }}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const layer = document.querySelector('#section-resume-biography-3 > .home-section-bg.bg-image');
+  if (!layer) return;
+
+  // Keep the image's intrinsic ratio. Only enlarge uniformly when the section
+  // needs more height; the section clips the excess image at either side.
+  const imageRatio = {{ $image.Width }} / {{ $image.Height }};
+  let tileWidth = 2000;
+  new ResizeObserver(([entry]) => {
+    const nextWidth = Math.max(2000, Math.ceil(entry.contentRect.height * imageRatio));
+    if (nextWidth === tileWidth) return;
+    tileWidth = nextWidth;
+    layer.style.setProperty('--biography-tile-width', `${tileWidth}px`);
+  }).observe(layer);
+});
+</script>
