@@ -6,7 +6,7 @@ mkdirSync(destination + '/web', { recursive: true });
 const template = readFileSync('layouts/_default/meeting-scheduler.html', 'utf8');
 let content = template.slice(template.indexOf('<div class="meetings-page scheduler"'), template.indexOf('{{ $script'));
 content = content.replace('id="weekly-scheduler"', 'id="weekly-scheduler" data-hosted="true"');
-content = content.replace('{{ "/informal-meetings/" | relURL }}', 'https://astrojames.github.io/informal-meetings/');
+content = content.replace('{{ "/informal-meetings/" | relURL }}', 'https://astro-beattie.com/informal-meetings/');
 content = content.replace('<strong>Local draft</strong>', '<strong>Weekly availability</strong>');
 content = content.replace('from this draft.', 'from this schedule.');
 content = content.replace('Organizer access uses a private sign-in link.', '<a href="/signin-with-chatgpt?return_to=%2F" target="_top">Sign in as organizer</a>.');

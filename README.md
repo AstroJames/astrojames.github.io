@@ -101,7 +101,7 @@ Run the meeting-template checks with
 ### Shared weekly scheduler
 
 “Find a meeting time” in the upper-right corner of Informal Meetings opens
-[the hosted scheduler](https://james-beattie-meetings.beattiejames.chatgpt.site).
+[the hosted scheduler](https://schedule.astro-beattie.com).
 The link is configured by `meeting_scheduler_url` in
 `config/_default/params.yaml`. GitHub Pages continues to host the main website;
 the scheduler runs separately on Sites with a persistent D1 database.
