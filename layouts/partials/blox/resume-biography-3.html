@@ -296,7 +296,7 @@
   padding: 1rem; /* Tighter padding */
   border-radius: 8px;
   border: none; /* Removed border */
-  backdrop-filter: blur(3px); /* Reduced blur */
+  /* A translucent surface avoids re-blurring the moving image every frame. */
   margin-bottom: 1rem; /* Reduced space between sections */
   max-width: 90%; /* Tighter horizontal width */
 }
@@ -306,7 +306,7 @@
   padding: 1rem; /* Tighter padding */
   border-radius: 8px;
   border: none; /* Removed border */
-  backdrop-filter: blur(3px); /* Reduced blur */
+  /* A translucent surface avoids re-blurring the moving image every frame. */
   margin-bottom: 0.25rem; /* Further reduced space between sections */
   max-width: 90%; /* Tighter horizontal width */
 }
@@ -401,7 +401,7 @@
   padding: 1rem; /* Smaller padding */
   border-radius: 8px;
   border: none; /* Removed border */
-  backdrop-filter: blur(3px); /* Reduced blur effect */
+  /* A translucent surface avoids re-blurring the moving image every frame. */
 }
 
 .sidebar-title {
@@ -427,7 +427,7 @@
   border-radius: 12px;
   font-size: 0.75rem; /* Smaller font */
   font-weight: 500;
-  backdrop-filter: blur(5px);
+  /* A translucent surface avoids re-blurring the moving image every frame. */
   text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; /* Black outline */
 }
 

@@ -22,9 +22,6 @@ main:
   - name: Publications
     url: publication/
     weight: 15
-  - name: Projects
-    url: projects/
-    weight: 30
   - name: Talks
     url: notes/
     weight: 40

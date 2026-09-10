@@ -5,7 +5,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: var(--particle-height, 80px);
+  contain: layout style paint;
   pointer-events: none;
   z-index: 999;
   overflow: hidden;
@@ -18,7 +19,9 @@
   background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   pointer-events: none;
-  transition: all 0.3s ease-out;
+  left: 0;
+  top: 0;
+  will-change: transform;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
   animation: twinkle 2s ease-in-out infinite;
 }
@@ -26,12 +29,14 @@
 .particle.magnetic {
   background: var(--site-accent);
   box-shadow: 0 0 8px rgb(var(--color-primary-300) / 0.8);
-  transform: scale(1.2);
+
   animation: twinkle-accent 1.5s ease-in-out infinite;
 }
 
 .photon {
   position: absolute;
+  left: 0;
+  top: 0;
   width: 2px;
   height: 2px;
   background: var(--site-link-hover);
@@ -41,43 +46,11 @@
   animation: photon-fade 0.6s ease-out forwards;
 }
 
-@keyframes photon-fade {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 0 8px rgb(var(--color-primary-300) / 1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.3);
-    box-shadow: 0 0 2px rgb(var(--color-primary-300) / 0.3);
-  }
-}
-
-@keyframes twinkle {
-  0%, 100% { 
-    opacity: 0.3;
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
-    transform: scale(0.8);
-  }
-  50% { 
-    opacity: 1;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
-    transform: scale(1.2);
-  }
-}
-
-@keyframes twinkle-accent {
-  0%, 100% { 
-    opacity: 0.4;
-    box-shadow: 0 0 4px rgb(var(--color-primary-300) / 0.4);
-    transform: scale(1.0);
-  }
-  50% { 
-    opacity: 1;
-    box-shadow: 0 0 16px rgb(var(--color-primary-300) / 1.0);
-    transform: scale(1.4);
-  }
+@keyframes photon-fade { from { opacity: 1; } to { opacity: 0; } }
+@keyframes twinkle { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+@keyframes twinkle-accent { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  #particle-container { display: none; }
 }
 
 /* Make sure header has proper z-index */
@@ -93,7 +66,7 @@ header, .navbar {
 }
 </style>
 
-<div id="particle-container"></div>
+<div id="particle-container" aria-hidden="true"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -103,10 +76,32 @@ document.addEventListener('DOMContentLoaded', function() {
   const particleContainer = document.getElementById('particle-container');
   if (!particleContainer) return;
   const header = document.querySelector('header') || document.querySelector('.navbar');
+  if (!header) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let headerHeight = header.offsetHeight;
+  let headerWidth = window.innerWidth;
+  const navRects = [...header.querySelectorAll('a')].map(link => link.getBoundingClientRect());
+  const fieldLines = [{ y: 0, direction: -1 }, { y: 0, direction: 1 }];
   const particles = [];
   const photons = [];
   const numParticles = 75;
   
+  function measureHeader() {
+    const previousWidth = headerWidth;
+    headerWidth = window.innerWidth;
+    headerHeight = header.offsetHeight;
+    const centerY = headerHeight / 2;
+    fieldLines[0].y = (centerY - 15) / 2;
+    fieldLines[1].y = ((centerY + 15) + headerHeight) / 2;
+    particleContainer.style.setProperty('--particle-height', headerHeight + 'px');
+    particles.forEach(particle => {
+      particle.currentX *= headerWidth / previousWidth;
+      particle.currentY = Math.min(particle.currentY, headerHeight - 8);
+    });
+  }
+  measureHeader();
+  new ResizeObserver(measureHeader).observe(header);
+
   // Create particles
   for (let i = 0; i < numParticles; i++) {
     createParticle();
@@ -117,8 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
     particle.className = 'particle';
     
     // Get actual header height and text areas to avoid
-    const headerHeight = header ? header.offsetHeight : 80;
-    const navLinks = header ? header.querySelectorAll('a, .navbar-brand, .nav-link') : [];
     
     let x, y, attempts = 0;
     let validPosition = false;
@@ -131,8 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
       validPosition = true;
       
       // Check if this position overlaps with any navigation text
-      for (let link of navLinks) {
-        const rect = link.getBoundingClientRect();
+      for (const rect of navRects) {
         const buffer = 15; // Reduced buffer around text
         
         if (x >= rect.left - buffer && x <= rect.right + buffer &&
@@ -151,8 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
       y = Math.random() * headerHeight;
     }
     
-    particle.style.left = x + 'px';
-    particle.style.top = y + 'px';
+    particle.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     
     // Store original position and current velocity (slower initial movement)
     particle.originalX = x;
@@ -164,6 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize drift properties
     particle.driftDirection = Math.random() > 0.5 ? 1 : -1; // Random initial drift direction
+    particle.gyrationRadius = 4 + Math.random() * 3;
+    particle.gyrationAngle = Math.random() * Math.PI * 2;
     particle.driftSpeed = 0.135 + Math.random() * 0.18; // 0.135-0.315 drift speed (10% slower)
     
     // Randomize the twinkling animation timing
@@ -203,34 +196,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Get magnetic field line paths (now extended across full site)
-  function getMagneticFieldPaths() {
-    const headerHeight = header ? header.offsetHeight : 80;
-    const centerY = headerHeight / 2;
-    
-    // Define the two field lines (same positions as in header-field-lines.html)
-    const topLineY = (0 + (centerY - 15)) / 2; // Halfway between top and text
-    const bottomLineY = ((centerY + 15) + headerHeight) / 2; // Halfway between text and bottom
-    
-    const topLine = {
-      y: topLineY,
-      amplitude: 15,
-      direction: -1
-    };
-    
-    const bottomLine = {
-      y: bottomLineY,
-      amplitude: 15,
-      direction: 1
-    };
-    
-    return [topLine, bottomLine];
-  }
-  
   // Calculate field line Y position at given X (straight or curved)
   function getFieldLineY(x, fieldLine) {
     // Check if field lines are distorted by name hover
-    if (window.magneticFieldState && window.magneticFieldState.isDistorted) {
+    if (window.magneticFieldState && (window.magneticFieldState.isDistorted || window.magneticFieldState.isRelaxing || window.magneticFieldState.waveActive)) {
       return window.magneticFieldState.getFieldLineY(x, fieldLine.y);
     }
     
@@ -240,7 +209,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Find closest field line to particle
   function getClosestFieldLine(x, y) {
-    const fieldLines = getMagneticFieldPaths();
     let closest = fieldLines[0];
     let minDistance = Math.abs(y - getFieldLineY(x, fieldLines[0]));
     
@@ -257,16 +225,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Create photon emission when particle loses energy
-  function emitPhoton(x, y, vx, vy, energyLoss) {
+  function emitPhoton(x, y, vx, vy, energyLoss, step) {
     if (energyLoss < 0.01) return; // Original threshold for emission
-    if (Math.random() > 0.1) return; // Only 10% chance of emission
+    if (photons.length >= 40 || Math.random() > 0.1 * step) return; // Only 10% chance of emission
     
     const photon = document.createElement('div');
     photon.className = 'photon';
     
     // Position photon at particle location
-    photon.style.left = x + 'px';
-    photon.style.top = y + 'px';
+    photon.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     
     // Store photon properties
     photon.currentX = x;
@@ -293,20 +260,19 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Update photon positions
-  function updatePhotons() {
+  function updatePhotons(step) {
     photons.forEach(photon => {
-      photon.currentX += photon.vx;
-      photon.currentY += photon.vy;
+      photon.currentX += photon.vx * step;
+      photon.currentY += photon.vy * step;
       
-      photon.style.left = photon.currentX + 'px';
-      photon.style.top = photon.currentY + 'px';
+      photon.style.transform = `translate3d(${photon.currentX}px, ${photon.currentY}px, 0)`;
       
       // Photons travel at constant speed (no damping)
     });
   }
   
   // Calculate repulsive forces between particles (Coulomb-like)
-  function applyParticleRepulsion() {
+  function applyParticleRepulsion(step) {
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const p1 = particles[i];
@@ -317,27 +283,33 @@ document.addEventListener('DOMContentLoaded', function() {
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         if (distance < 50 && distance > 0) { // Repulsion range
-          const force = 2.0 / (distance * distance); // Stronger inverse square law
+          const force = 2.0 / Math.max(16, distance * distance); // Stronger inverse square law
           const fx = (dx / distance) * force;
           const fy = (dy / distance) * force;
           
           // Apply force to both particles
-          p1.vx += fx;
-          p1.vy += fy;
-          p2.vx -= fx;
-          p2.vy -= fy;
+          p1.vx += (fx) * step;
+          p1.vy += (fy) * step;
+          p2.vx -= (fx) * step;
+          p2.vy -= (fy) * step;
         }
       }
     }
   }
   
   // Animation loop
-  function animateParticles() {
+  let animationId = null;
+  let lastTimestamp = null;
+  function animateParticles(timestamp) {
+    animationId = null;
+    // Normalize to the original 60 Hz simulation; never catch up a hidden tab.
+    const step = lastTimestamp === null ? 1 : Math.min(2, (timestamp - lastTimestamp) / (1000 / 60));
+    lastTimestamp = timestamp;
     // Apply particle-particle repulsion first
-    applyParticleRepulsion();
+    applyParticleRepulsion(step);
     
     // Update photons
-    updatePhotons();
+    updatePhotons(step);
     
     particles.forEach(particle => {
       if (isMouseInHeader) {
@@ -349,8 +321,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (distance > 30) {
           // Apply stronger magnetic force toward mouse
           const force = 0.008;
-          particle.vx += dx * force;
-          particle.vy += dy * force;
+          particle.vx += (dx * force) * step;
+          particle.vy += (dy * force) * step;
         }
         
         // But still constrain to gyration around field lines
@@ -360,30 +332,30 @@ document.addEventListener('DOMContentLoaded', function() {
         if (fieldDistance > 8) { // 8px radius from field line
           // Apply force toward the field line
           const fieldForce = (particle.currentY - fieldLineY) * -0.02;
-          particle.vy += fieldForce;
+          particle.vy += (fieldForce) * step;
         }
         
         // Gyration around field line
         if (!particle.gyrationAngle) particle.gyrationAngle = Math.random() * Math.PI * 2;
-        particle.gyrationAngle += 0.15; // Gyration speed
+        particle.gyrationAngle += 0.15 * step; // Gyration speed
         
         const gyrationRadius = 6;
         const targetY = fieldLineY + Math.sin(particle.gyrationAngle) * gyrationRadius;
-        particle.vy += (targetY - particle.currentY) * 0.05;
+        particle.vy += ((targetY - particle.currentY) * 0.05) * step;
         
         // Calculate energy before damping
         const energyBefore = particle.vx * particle.vx + particle.vy * particle.vy;
         
         // Stronger damping when tracking cursor
-        particle.vx *= 0.85; // Increased damping from 0.92
-        particle.vy *= 0.85;
+        particle.vx *= Math.pow(0.85, step); // Increased damping from 0.92
+        particle.vy *= Math.pow(0.85, step);
         
         // Calculate energy loss and emit photons (synchrotron radiation)
         const energyAfter = particle.vx * particle.vx + particle.vy * particle.vy;
         const energyLoss = energyBefore - energyAfter;
         
         if (energyLoss > 0.02) { // Higher threshold for photon emission
-          emitPhoton(particle.currentX, particle.currentY, particle.vx, particle.vy, energyLoss);
+          emitPhoton(particle.currentX, particle.currentY, particle.vx, particle.vy, energyLoss, step);
         }
         
       } else {
@@ -397,35 +369,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Gyration physics
-        particle.gyrationAngle += 0.08; // Gyration frequency
-        const gyrationRadius = 4 + Math.random() * 3; // 4-7px radius
+        particle.gyrationAngle += 0.08 * step; // Gyration frequency
+        const gyrationRadius = particle.gyrationRadius; // 4-7px radius
         
         // Calculate target position on circular gyration
         const targetY = fieldLineY + Math.sin(particle.gyrationAngle) * gyrationRadius;
         
         // Apply forces to maintain gyration
-        particle.vy += (targetY - particle.currentY) * 0.03;
+        particle.vy += ((targetY - particle.currentY) * 0.03) * step;
         
         // Drift along field line (parallel motion) with boundary reflection
-        particle.vx += particle.driftDirection * particle.driftSpeed;
+        particle.vx += (particle.driftDirection * particle.driftSpeed) * step;
         
         // Keep particle near field line
         if (fieldDistance > 12) {
           const pullForce = (particle.currentY - fieldLineY) * -0.05;
-          particle.vy += pullForce;
+          particle.vy += (pullForce) * step;
         }
         
         // Damping (normal when not tracking cursor)
-        particle.vx *= 0.95;
-        particle.vy *= 0.95;
+        particle.vx *= Math.pow(0.95, step);
+        particle.vy *= Math.pow(0.95, step);
       }
       
       // Update position
-      particle.currentX += particle.vx;
-      particle.currentY += particle.vy;
+      particle.currentX += particle.vx * step;
+      particle.currentY += particle.vy * step;
       
       // Boundary constraints - keep within header with buffer from bottom
-      const headerHeight = header ? header.offsetHeight : 80;
       const bottomBuffer = 8; // 8px buffer from bottom
       const sideBuffer = 5; // 5px buffer from sides
       
@@ -434,13 +405,13 @@ document.addEventListener('DOMContentLoaded', function() {
         particle.driftDirection = 1; // Reverse drift direction when hitting left boundary
         particle.vx = Math.abs(particle.vx); // Ensure velocity is positive
       }
-      if (particle.currentX >= window.innerWidth - sideBuffer && particle.driftDirection > 0) {
+      if (particle.currentX >= headerWidth - sideBuffer && particle.driftDirection > 0) {
         particle.driftDirection = -1; // Reverse drift direction when hitting right boundary
         particle.vx = -Math.abs(particle.vx); // Ensure velocity is negative
       }
       
       // Apply boundary constraints
-      particle.currentX = Math.max(sideBuffer, Math.min(window.innerWidth - sideBuffer, particle.currentX));
+      particle.currentX = Math.max(sideBuffer, Math.min(headerWidth - sideBuffer, particle.currentX));
       particle.currentY = Math.max(5, Math.min(headerHeight - bottomBuffer, particle.currentY));
       
       // Vertical boundary bouncing (for gyration motion)
@@ -449,25 +420,21 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       // Apply position
-      particle.style.left = particle.currentX + 'px';
-      particle.style.top = particle.currentY + 'px';
+      particle.style.transform = `translate3d(${particle.currentX}px, ${particle.currentY}px, 0)`;
     });
     
-    requestAnimationFrame(animateParticles);
+    animationId = requestAnimationFrame(animateParticles);
   }
   
-  // Start animation
-  animateParticles();
-  
-  // Handle window resize
-  window.addEventListener('resize', function() {
-    const headerHeight = header ? header.offsetHeight : 80;
-    particles.forEach((particle, index) => {
-      particle.originalX = Math.random() * window.innerWidth;
-      particle.originalY = Math.random() * headerHeight;
-      particle.currentX = particle.originalX;
-      particle.currentY = particle.originalY;
-    });
-  });
+  function updateMotion() {
+    if (animationId !== null) cancelAnimationFrame(animationId);
+    animationId = null;
+    lastTimestamp = null;
+    particleContainer.hidden = reducedMotion.matches;
+    if (!document.hidden && !reducedMotion.matches) animationId = requestAnimationFrame(animateParticles);
+  }
+  document.addEventListener('visibilitychange', updateMotion);
+  reducedMotion.addEventListener('change', updateMotion);
+  updateMotion();
 });
 </script>

@@ -53,13 +53,3 @@ header .nav-link:focus-visible, header .nav-link.active {
 .collaborators-grid .collaborator-item:hover { background: transparent; box-shadow: none; }
 #collabs a:hover { color: var(--site-link-hover); background: transparent; }
 .card:hover { border-color: var(--site-border-strong); }
-/* Allow the expanded navigation to wrap without dropping any existing links. */
-@media (min-width: 1024px) {
-  #site-header .navbar { flex-wrap: wrap; height: auto; min-height: 64px; }
-  #site-header #nav-menu { flex: 1; min-width: 0; flex-wrap: wrap; gap: .2rem 1rem; margin-left: 1.5rem; }
-  #site-header #nav-menu > li { margin-left: 0; margin-right: 0; }
-  #site-header .nav-link { white-space: nowrap; }
-}
-@media (max-width: 1023px) {
-  #site-header #nav-menu { max-height: calc(100dvh - 80px); overflow-y: auto; }
-}
