@@ -5,6 +5,9 @@
   align-items: center;
   gap: 1.25rem;
   min-height: 56px;
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
   padding: 0 1.25rem;
 }
 #site-header .navbar-brand { white-space: nowrap; }
@@ -22,7 +25,7 @@
   overflow-x: auto; /* All links remain reachable without JavaScript. */
   text-align: left;
 }
-#site-header .navigation-ready #nav-menu { overflow: visible; justify-content: flex-end; }
+#site-header .navigation-ready #nav-menu { overflow: visible; justify-content: center; }
 #site-header #nav-menu > li { flex: none; margin: 0; }
 #site-header .nav-link {
   display: block;
