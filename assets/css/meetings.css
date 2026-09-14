@@ -7,6 +7,13 @@
 .meeting-eyebrow { font-size: .875rem; color: var(--site-accent); font-weight: 600; letter-spacing: .04em; margin: 0; }
 .meeting-intro { max-width: 76ch; color: var(--site-muted); }
 .meeting-intro p { margin: 0; }
+.meeting-heading-with-logo { display: grid; grid-template-columns: minmax(0, 1fr) 280px; align-items: center; gap: 2rem; }
+.meeting-heading-with-logo h1 { overflow-wrap: anywhere; }
+.meeting-logo { display: block; width: 100%; max-width: 280px; height: auto; background: #fff; border-radius: 8px; }
+@media (max-width: 760px) {
+  .meeting-heading-with-logo { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .meeting-logo { width: 240px; max-width: 100%; justify-self: center; }
+}
 .meeting-series-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
 .meeting-series { border-top: 3px solid var(--site-accent); border-bottom: 1px solid var(--site-border); padding: 1.5rem 0 2rem; }
 .meeting-series h2 { font-size: 1.5rem; line-height: 1.35; font-weight: 650; margin: .6rem 0 1rem; }

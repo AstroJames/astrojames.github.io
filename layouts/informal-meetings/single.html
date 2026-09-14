@@ -15,10 +15,15 @@
 {{ $archive = sort $archive "date" "desc" }}
 <div class="meetings-page">
   <a class="meeting-back" href="{{ "/informal-meetings/" | relURL }}">← All informal meetings</a>
-  <div class="meeting-heading">
+  <div class="meeting-heading{{ with .Params.logo }} meeting-heading-with-logo{{ end }}">
+    <div>
     <p class="meeting-eyebrow">{{ $meeting.cadence }} · Informal discussion</p>
     <h1>{{ .Title }}</h1>
     <div class="meeting-intro">{{ .Content }}</div>
+    </div>
+    {{ with .Params.logo }}
+    <img class="meeting-logo" src="{{ . | relURL }}" alt="{{ $.Title }} logo" width="1254" height="1254">
+    {{ end }}
   </div>
   <dl class="meeting-logistics">
     <div><dt>When</dt><dd>{{ with $meeting.day }}{{ . }}{{ else }}Day to be confirmed{{ end }}<span class="meeting-cell-note">{{ with $meeting.time }}{{ . }}{{ else }}Time to be confirmed{{ end }}</span>{{ with $meeting.timezone }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</dd></div>

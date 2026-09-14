@@ -70,8 +70,8 @@ their color scales are unchanged.
 
 ## Informal Meetings
 
-The navigation links to `/informal-meetings/`, with separate pages for MHD at
-the IAS and Magnetogenesis. Edit the matching file in
+The navigation links to `/informal-meetings/`, with separate pages for Advances
+in Magnetohydrodynamics (AIM) at the IAS and Magnetogenesis. Edit the matching file in
 `data/informal_meetings/` to maintain each series. The four initial weekly slots
 are explicitly unconfirmed; blank dates, speakers, and locations remain labeled
 as such. Set the series day, time, timezone, location, and optional online link

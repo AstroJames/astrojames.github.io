@@ -1,6 +1,7 @@
 ---
-title: Numerical magnetohydrodynamics at the IAS
-summary: A weekly space to discuss MHD theory, simulations, and work in progress at the Institute for Advanced Study.
+title: Advances in Magnetohydrodynamics (AIM) at the IAS
+summary: Advances in Magnetohydrodynamics (AIM), a weekly discussion of MHD theory, simulations, and work in progress at the Institute for Advanced Study.
+logo: /images/meetings/aim.png
 meeting_key: mhd_ias
 weight: 10
 ---
