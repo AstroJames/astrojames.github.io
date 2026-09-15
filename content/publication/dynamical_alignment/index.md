@@ -1,75 +1,43 @@
 ---
-title: "Scale-dependent alignment in compressible magnetohydrodynamic turbulence"
+title: "Local relaxation and scale-dependent alignment in compressible, magnetized turbulence"
 authors:
 - admin
 - Amitava Bhattacharjee
-date: "2025-05-22"
+date: "2026-09-15"
+lastmod: "2026-09-15"
 doi: "10.48550/arXiv.2504.15538"
+publication_types: ["article-journal"]
+publication: "Physical Review Letters (accepted)"
+publication_short: "PRL (accepted)"
 
-# Schedule page publish date (NOT publication's date).
-publishDate: ""
-
-# Publication type.
-# Accepts a single type but formatted as a YAML list (for Hugo requirements).
-# Enter a publication type from the CSL standard.
-publication_types: ["article"]
-
-# Publication name and optional abbreviated publication name.
-publication: ""
-publication_short: ""
-
-abstract: Using 10,0803 grid simulations, we analyze scale-dependent alignment in driven, compressible, no net-flux magnetohydrodynamic turbulence. The plasma self-organizes into localized, strongly aligned regions. Alignment spans all primitive variables and their curls. Contrary to incompressible theory, velocity-magnetic alignment scales as θ(λ)∼λ1/8, where λ is the scale, suggesting a distinct three-dimensional eddy anisotropy and a much higher critical transition scale toward a reconnection-mediated cascade.
-
-# Summary. An optional shortened abstract.
-summary: "Scale-dependent alignment is how turbulence connects to reconnection. We show that the nature of scale-dependent alignment in compressible turbulence differs from well-established incompressible theory."
+abstract: "Driven magnetohydrodynamic turbulence simulations with and without a mean magnetic field, on grids up to 10,368³ cells, reveal patches of local alignment below the energy-equipartition scale. Velocity–magnetic and velocity–vorticity alignment angles scale as λ¹⁄⁸ and λ¹⁄¹⁶, respectively, while magnetic–current alignment depends only weakly on scale. A constant-flux model for departures from locally relaxed states predicts both exponents, with implications for eddy geometry, reconnection, and dynamos."
+summary: "Accepted in PRL! Simulations reveal how turbulent plasma forms locally aligned patches and how that alignment changes across scales."
 
 tags:
 - fundamental compressible MHD turbulence
 - reconnection
 - numerical simulations
-- supersonic plasma dynamics
-
+- plasma relaxation
 featured: true
 
 links:
-- name: Custom Link
+- name: arXiv
   url: https://arxiv.org/abs/2504.15538
 url_pdf: https://arxiv.org/pdf/2504.15538
-url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
 
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: "A 2D slice of the alignment betewen u and b."
-  focal_point: ""
+  caption: "A simulation slice showing local alignment between the velocity and magnetic fields. Visualization: James R. Beattie."
+  focal_point: "Center"
   preview_only: false
-
-# Associated Projects (optional).
-#   Associate this publication with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `internal-project` references `content/project/internal-project/index.md`.
-#   Otherwise, set `projects: []`.
-projects:
-- internal-project
-
-# Slides (optional).
-#   Associate this publication with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides: "example"` references `content/slides/example/index.md`.
-#   Otherwise, set `slides: ""`.
-slides: ""
+projects: []
 ---
 
-<!-- This work is driven by the results in my [previous paper](/publication/conference-paper/) on LLMs.
+## Order within turbulent plasma
 
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
+Our paper with Amitava Bhattacharjee has been **accepted in Physical Review Letters**. The [updated paper](https://arxiv.org/abs/2504.15538) explores how a turbulent plasma organizes itself into locally aligned patches, even while the flow remains turbulent overall.
 
-Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/). -->
+We compare simulations with and without a mean magnetic field, using grids as large as **10,368³ cells**. Below the scale where kinetic and magnetic energies balance, the velocity, magnetic field, vorticity, and electric current show distinct patterns of alignment. The image above reveals the intricate spatial structure of velocity–magnetic alignment.
+
+The revised study connects this local organization to a model for how departures from relaxed states move between scales. It predicts the measured velocity–magnetic and velocity–vorticity alignment exponents, helping explain the geometry of turbulent eddies and when magnetic reconnection may reshape the cascade.
+
+[Read the accepted manuscript →](https://arxiv.org/pdf/2504.15538)
