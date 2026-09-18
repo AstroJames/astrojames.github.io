@@ -1,16 +1,16 @@
 [
   {
     "id": "A2",
-    "file": "aim-a2-serif",
+    "file": "aim-a2-serif-dark",
     "title": "Reconnection \u00b7 Serif",
     "family": "aim",
     "format": "logo",
-    "description": "AIM at IAS: navy and teal reconnection field lines with serif lettering.",
+    "description": "AIM at IAS: white and teal reconnection field lines with serif lettering.",
     "selected": true
   },
   {
     "id": "A6",
-    "file": "aim-banner-reconnection",
+    "file": "aim-banner-reconnection-dark",
     "title": "Reconnection banner \u00b7 Serif",
     "family": "aim",
     "format": "banner",

@@ -26,6 +26,7 @@
     dialog.querySelector('img').alt = link.querySelector('img').alt;
     dialog.querySelector('h2').textContent = link.dataset.title;
     dialog.querySelector('a').href = link.href;
+    dialog.classList.toggle("logo-dialog-dark", !!link.closest(".logo-card-selected"));
     dialog.showModal();
   }));
   dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());

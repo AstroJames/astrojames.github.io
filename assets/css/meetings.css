@@ -71,3 +71,5 @@
   .meeting-logistics { gap: 1.25rem; }
   .meeting-toolbar { align-items: flex-start; flex-direction: column; }
 }
+
+.meeting-logo[src$="aim-a2-serif-dark.png"] { background: #090e17; }

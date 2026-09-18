@@ -1,7 +1,7 @@
 ---
 title: Advances in Magnetohydrodynamics (AIM) at the IAS
 summary: Advances in Magnetohydrodynamics (AIM), a weekly discussion of MHD theory, simulations, and work in progress at the Institute for Advanced Study.
-logo: /images/meetings/logo-options/aim-a2-serif.png
+logo: /images/meetings/logo-options/aim-a2-serif-dark.png
 meeting_key: mhd_ias
 weight: 10
 ---
