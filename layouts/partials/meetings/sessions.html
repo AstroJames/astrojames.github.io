@@ -5,13 +5,14 @@
     <thead><tr><th scope="col">Date</th><th scope="col">Speaker</th><th scope="col">Title & discussion</th><th scope="col">Materials</th><th scope="col">Status</th></tr></thead>
     <tbody>
       {{ range .sessions }}
-      <tr id="session-{{ .id }}">
+      <tr id="session-{{ .id }}" data-meeting-date="{{ .date }}" data-meeting-status="{{ .status | default "planning" }}" data-meeting-end="{{ .end_time | default $series.end_time | default "23:59" }}">
         <th scope="row">
+          <span class="meeting-next-badge" hidden>Next session</span>
           {{ with .date }}<time datetime="{{ . }}">{{ time.Format "Mon, Jan 2, 2006" . }}</time>{{ else }}{{ .slot | default "Open slot" }}<span class="meeting-cell-note">Date to be confirmed</span>{{ end }}
           {{ if .holiday }}<span class="meeting-holiday">US federal holiday: {{ if .holiday_url }}<a href="{{ .holiday_url }}">{{ .holiday }}</a>{{ else }}{{ .holiday }}{{ end }}</span>{{ end }}
-          {{ with (.time | default $series.time) }}<span class="meeting-cell-note">{{ . }}{{ with $series.timezone }} · {{ . }}{{ end }}</span>{{ end }}
+          {{ with (.time | default $series.time) }}<span class="meeting-cell-note meeting-session-time">{{ . }}{{ with $series.timezone }} · {{ . }}{{ end }}</span>{{ end }}
         </th>
-        <td>{{ if and .speaker .speaker_url }}<a href="{{ .speaker_url }}" rel="noopener">{{ .speaker }}</a>{{ else }}{{ .speaker | default "Speaker to be confirmed" }}{{ end }}{{ with .affiliation }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</td>
+        <td class="meeting-session-speaker">{{ if and .speaker .speaker_url }}<a href="{{ .speaker_url }}" rel="noopener">{{ .speaker }}</a>{{ else }}{{ .speaker | default "Speaker to be confirmed" }}{{ end }}{{ with .affiliation }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</td>
         <td>
           <span class="meeting-session-title">{{ .title | default "Title to be confirmed" }}</span>
           {{ with .format }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}

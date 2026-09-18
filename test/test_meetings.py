@@ -20,6 +20,8 @@ class MeetingTemplateTests(unittest.TestCase):
         for folder in ("layouts/informal-meetings", "layouts/partials/meetings", "content/informal-meetings", "data/informal_meetings"):
             shutil.copytree(ROOT / folder, cls.site / folder)
         (cls.site / "assets/css").mkdir(parents=True)
+        (cls.site / "assets/js").mkdir(parents=True)
+        shutil.copyfile(ROOT / "assets/js/meeting-next.mjs", cls.site / "assets/js/meeting-next.mjs")
         shutil.copyfile(ROOT / "assets/css/meetings.css", cls.site / "assets/css/meetings.css")
         (cls.site / "layouts/_default").mkdir()
         (cls.site / "layouts/_default/baseof.html").write_text('{{ block "main" . }}{{ end }}')

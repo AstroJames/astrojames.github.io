@@ -13,7 +13,7 @@
 {{ end }}
 {{ $upcoming = sort $upcoming "date" "asc" }}
 {{ $archive = sort $archive "date" "desc" }}
-<div class="meetings-page">
+<div class="meetings-page" data-meeting-timezone="{{ $meeting.timezone | default "America/New_York" }}">
   <a class="meeting-back" href="{{ "/informal-meetings/" | relURL }}">← All informal meetings</a>
   <div class="meeting-heading{{ if .Params.banner }} meeting-heading-with-banner{{ else }}{{ with .Params.logo }} meeting-heading-with-logo{{ end }}{{ end }}">
     <div>
@@ -47,6 +47,10 @@
     <a class="meeting-button" href="mailto:{{ $meeting.contact }}?subject={{ printf "Session proposal: %s" .Title | urlquery }}">Propose a session</a>
   </div>
   <section id="schedule" class="meeting-section" aria-labelledby="schedule-heading">
+    <aside class="meeting-next" hidden aria-labelledby="meeting-next-label" aria-live="polite">
+      <div><p id="meeting-next-label" class="meeting-next-label">Next session</p><h2 class="meeting-next-title"></h2><p class="meeting-next-when"></p><p class="meeting-next-speaker"></p></div>
+      <a class="meeting-button meeting-next-link">Session details →</a>
+    </aside>
     <h2 id="schedule-heading">Meeting schedule</h2>
     {{ with $meeting.schedule_note }}<p class="meeting-muted">{{ . }}</p>{{ end }}
     {{ if $upcoming }}
@@ -89,4 +93,6 @@
   </section>
   {{ end }}
 </div>
+{{ $nextScript := resources.Get "js/meeting-next.mjs" | minify | fingerprint }}
+<script type="module" src="{{ $nextScript.RelPermalink }}" integrity="{{ $nextScript.Data.Integrity }}"></script>
 {{ end }}
