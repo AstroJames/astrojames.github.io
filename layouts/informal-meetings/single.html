@@ -15,15 +15,19 @@
 {{ $archive = sort $archive "date" "desc" }}
 <div class="meetings-page">
   <a class="meeting-back" href="{{ "/informal-meetings/" | relURL }}">← All informal meetings</a>
-  <div class="meeting-heading{{ with .Params.logo }} meeting-heading-with-logo{{ end }}">
+  <div class="meeting-heading{{ if .Params.banner }} meeting-heading-with-banner{{ else }}{{ with .Params.logo }} meeting-heading-with-logo{{ end }}{{ end }}">
     <div>
     <p class="meeting-eyebrow">{{ $meeting.cadence }} · Informal discussion</p>
+    {{ with .Params.banner }}
+    <h1 class="meeting-banner-title"><img class="meeting-banner" src="{{ . | relURL }}" alt="{{ $.Title }}" width="2172" height="724" fetchpriority="high"></h1>
+    {{ else }}
     <h1>{{ .Title }}</h1>
+    {{ end }}
     <div class="meeting-intro">{{ .Content }}</div>
     </div>
-    {{ with .Params.logo }}
+    {{ if not .Params.banner }}{{ with .Params.logo }}
     <img class="meeting-logo" src="{{ . | relURL }}" alt="{{ $.Title }} logo" width="1254" height="1254">
-    {{ end }}
+    {{ end }}{{ end }}
   </div>
   <dl class="meeting-logistics">
     <div><dt>When</dt><dd>{{ with $meeting.day }}{{ . }}{{ else }}Day to be confirmed{{ end }}<span class="meeting-cell-note">{{ with $meeting.time }}{{ . }}{{ else }}Time to be confirmed{{ end }}</span>{{ with $meeting.timezone }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</dd></div>
