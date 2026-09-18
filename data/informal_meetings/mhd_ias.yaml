@@ -1,56 +1,64 @@
-# Public meeting information. Blank fields render as unconfirmed, never as a booked session.
-cadence: Weekly
-day: ""
-time: ""
+# Dates are set; the Wednesday 1–2 p.m. time is still being finalized.
+cadence: Wednesday meetings
+day: Wednesdays
+time: "1–2 p.m. (proposed)"
 timezone: America/New_York
 location: ""
 online_url: ""
 organizer: James R. Beattie
 contact: beattie@ias.edu
-format: Short presentation, paper discussion, or a problem at the board
+format: In-person discussion, with a format that varies by session
 topics:
-  - Turbulence, reconnection, and dynamo action
-  - Waves, instabilities, and transport in magnetized fluids
-  - Numerical methods, simulation comparisons, and open problems
+  - Fluid-scale magnetohydrodynamics, turbulence, reconnection, and dynamo action
+  - Foundational theory, waves, instabilities, and transport
+  - Advances in numerical methods and computational fluid dynamics
+  - Open problems and work in progress in MHD and astrophysical fluid dynamics
+event_types:
+  - Foundational theory talks, including informal blackboard presentations
+  - Talks and discussions on new numerical methods
+  - Interesting unpublished results and work in progress
+  - Collaborative problem-solving sessions — bring a problem to the group
+  - Journal clubs on fluid dynamics and astrophysical plasmas
+  - Coding tools, development environments, and scientific workflows
+  - Discussions led by local researchers working on MHD
+format_note: Meetings are primarily in person. Occasional invited Zoom talks are welcome for special sessions, rather than as the regular format.
 resources: []
-# Dates use YYYY-MM-DD; time uses HH:MM. Keep dates quoted.
-# Status: planning, confirmed, completed, or cancelled.
-# Materials/resources: [{label: "Paper", url: "https://..."}]
-# Actions: [{task: "Follow-up calculation", owner: "Name", status: "Open"}]
 sessions:
   - id: week-01
-    slot: Week 1
-    date: ""
-    time: ""
-    speaker: ""
-    affiliation: ""
-    title: ""
-    format: ""
-    location: ""
-    online_url: ""
-    status: planning
-    abstract: ""
+    slot: Session 1
+    date: "2026-09-30"
+    speaker: Everyone
+    title: "Roundtable: bring one plot"
+    format: Introductions and open discussion
+    status: confirmed
+    abstract: Our first meeting is a chance to get to know one another and help shape AIM. Everyone is invited to introduce themselves and share one plot from their work or an area they find interesting.
+    preparation: Bring one plot to introduce your research or a question you would like to discuss.
+    questions:
+      - Who are you, and what do you work on?
+      - What does your plot show?
+      - What would you like to see in future AIM meetings?
     materials: []
-    preparation: ""
-    questions: []
-    notes: ""
-    actions: []
   - id: week-02
-    slot: Week 2
-    date: ""
-    speaker: ""
-    title: ""
-    status: planning
+    slot: Session 2
+    date: "2026-10-14"
+    speaker: David Velasco-Romero
+    speaker_url: https://davidvelasco07.github.io/
+    affiliation: Princeton University
+    title: Numerical methods discussion
+    format: Research talk and discussion
+    status: confirmed
+    abstract: David will discuss either hierarchical flux corrections or his latest work on Ohmic resistivity. The final topic and title will be announced ahead of the meeting.
+    preparation: Any suggested reading will be shared once the topic is confirmed.
     materials: []
   - id: week-03
-    slot: Week 3
+    slot: Future session
     date: ""
     speaker: ""
     title: ""
     status: planning
     materials: []
   - id: week-04
-    slot: Week 4
+    slot: Future session
     date: ""
     speaker: ""
     title: ""

@@ -40,14 +40,14 @@
     <a class="meeting-button" href="mailto:{{ $meeting.contact }}?subject={{ printf "Session proposal: %s" .Title | urlquery }}">Propose a session</a>
   </div>
   <section id="schedule" class="meeting-section" aria-labelledby="schedule-heading">
-    <h2 id="schedule-heading">Weekly schedule</h2>
+    <h2 id="schedule-heading">Meeting schedule</h2>
     {{ if $upcoming }}
       {{ partial "meetings/sessions.html" (dict "series" $meeting "sessions" $upcoming "label" "Scheduled meetings") }}
     {{ else }}
       <p class="meeting-empty">The first meeting is being planned. Dates, speakers, and materials will be announced here.</p>
     {{ end }}
     {{ with $planning }}
-      <h3 class="meeting-subheading">Open weekly slots</h3>
+      <h3 class="meeting-subheading">Future sessions</h3>
       <p class="meeting-muted">These slots are awaiting dates and speakers.</p>
       {{ partial "meetings/sessions.html" (dict "series" $meeting "sessions" . "label" "Open weekly slots") }}
     {{ end }}
@@ -61,9 +61,15 @@
       {{ with $meeting.resources }}<ul class="meeting-list">{{ range . }}<li><a href="{{ .url }}" rel="noopener">{{ .label }}</a>{{ with .description }} — {{ . }}{{ end }}</li>{{ end }}</ul>{{ else }}<p class="meeting-muted">Papers, notes, and useful background will be collected here. Session-specific material appears in the schedule.</p>{{ end }}
     </section>
     <section class="meeting-section" aria-labelledby="format-heading">
+      {{ with $meeting.event_types }}
+      <h2 id="format-heading">What we do</h2>
+      <ul class="meeting-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      {{ with $meeting.format_note }}<p class="meeting-muted">{{ . }}</p>{{ end }}
+      {{ else }}
       <h2 id="format-heading">A suggested hour together</h2>
       <ol class="meeting-agenda"><li><span>5 min</span>Context and the main question</li><li><span>25 min</span>Presentation, paper, or work in progress</li><li><span>25 min</span>Discussion and calculations at the board</li><li><span>5 min</span>Open questions and next steps</li></ol>
       <p class="meeting-muted">Before the meeting, confirm the speaker and share preparation material. Afterwards, record the main questions, notes, and follow-up owners in the session details.</p>
+      {{ end }}
     </section>
   </div>
   <section id="archive" class="meeting-section" aria-labelledby="archive-heading">

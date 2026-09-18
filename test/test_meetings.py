@@ -39,12 +39,22 @@ class MeetingTemplateTests(unittest.TestCase):
         return (self.site / "public/informal-meetings/magnetohydrodynamics-at-the-ias/index.html").read_text()
 
     def test_open_slots_are_explicitly_unconfirmed(self):
-        html = self.render()
+        html = self.render([{"id": f"open-{i}", "status": "planning"} for i in range(4)])
         self.assertEqual(html.count('<tr id="session-'), 4)
         self.assertEqual(html.count("Speaker to be confirmed"), 4)
         self.assertNotIn("<time datetime=", html)
         self.assertNotIn('href=""', html)
         self.assertIn("mailto:beattie@ias.edu", html)
+
+    def test_announced_aim_dates_speaker_and_formats(self):
+        html = self.render()
+        self.assertIn('datetime="2026-09-30"', html)
+        self.assertIn('datetime="2026-10-14"', html)
+        self.assertNotIn('datetime="2026-10-07"', html)
+        self.assertLess(html.index('datetime="2026-09-30"'), html.index('datetime="2026-10-14"'))
+        self.assertIn('href="https://davidvelasco07.github.io/"', html)
+        for text in ("David Velasco-Romero", "Roundtable: bring one plot", "hierarchical flux corrections", "Ohmic resistivity", "(proposed)", "What we do", "Coding tools"):
+            self.assertIn(text, html)
 
     def test_materials_notes_and_followup_survive_archiving(self):
         session = {"id": "completed", "date": "2026-09-01", "status": "completed", "speaker": "Example Speaker", "title": "A completed discussion", "materials": [{"label": "Reading", "url": "https://example.org/paper"}], "notes": "A recorded result.", "questions": ["What should we calculate next?"], "actions": [{"task": "Check convergence", "owner": "Example Speaker", "status": "Open"}]}

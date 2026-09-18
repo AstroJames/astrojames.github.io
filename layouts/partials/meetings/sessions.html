@@ -7,10 +7,10 @@
       {{ range .sessions }}
       <tr id="session-{{ .id }}">
         <th scope="row">
-          {{ with .date }}<time datetime="{{ . }}">{{ time.Format "Jan 2, 2006" . }}</time>{{ else }}{{ .slot | default "Open slot" }}<span class="meeting-cell-note">Date to be confirmed</span>{{ end }}
+          {{ with .date }}<time datetime="{{ . }}">{{ time.Format "Mon, Jan 2, 2006" . }}</time>{{ else }}{{ .slot | default "Open slot" }}<span class="meeting-cell-note">Date to be confirmed</span>{{ end }}
           {{ with (.time | default $series.time) }}<span class="meeting-cell-note">{{ . }}{{ with $series.timezone }} · {{ . }}{{ end }}</span>{{ end }}
         </th>
-        <td>{{ .speaker | default "Speaker to be confirmed" }}{{ with .affiliation }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</td>
+        <td>{{ if and .speaker .speaker_url }}<a href="{{ .speaker_url }}" rel="noopener">{{ .speaker }}</a>{{ else }}{{ .speaker | default "Speaker to be confirmed" }}{{ end }}{{ with .affiliation }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</td>
         <td>
           <span class="meeting-session-title">{{ .title | default "Title to be confirmed" }}</span>
           {{ with .format }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}
