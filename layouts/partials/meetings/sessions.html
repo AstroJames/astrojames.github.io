@@ -2,12 +2,13 @@
 <div class="meeting-table-scroll" role="region" aria-label="{{ .label }}" tabindex="0">
   <table class="meeting-schedule">
     <caption class="meeting-sr-only">{{ .label }} — dates, speakers, session titles, materials, and status</caption>
-    <thead><tr><th scope="col">Week / date</th><th scope="col">Speaker</th><th scope="col">Title & discussion</th><th scope="col">Materials</th><th scope="col">Status</th></tr></thead>
+    <thead><tr><th scope="col">Date</th><th scope="col">Speaker</th><th scope="col">Title & discussion</th><th scope="col">Materials</th><th scope="col">Status</th></tr></thead>
     <tbody>
       {{ range .sessions }}
       <tr id="session-{{ .id }}">
         <th scope="row">
           {{ with .date }}<time datetime="{{ . }}">{{ time.Format "Mon, Jan 2, 2006" . }}</time>{{ else }}{{ .slot | default "Open slot" }}<span class="meeting-cell-note">Date to be confirmed</span>{{ end }}
+          {{ if .holiday }}<span class="meeting-holiday">US federal holiday: {{ if .holiday_url }}<a href="{{ .holiday_url }}">{{ .holiday }}</a>{{ else }}{{ .holiday }}{{ end }}</span>{{ end }}
           {{ with (.time | default $series.time) }}<span class="meeting-cell-note">{{ . }}{{ with $series.timezone }} · {{ . }}{{ end }}</span>{{ end }}
         </th>
         <td>{{ if and .speaker .speaker_url }}<a href="{{ .speaker_url }}" rel="noopener">{{ .speaker }}</a>{{ else }}{{ .speaker | default "Speaker to be confirmed" }}{{ end }}{{ with .affiliation }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</td>
@@ -26,7 +27,7 @@
             </dl>
           </details>
         </td>
-        <td>{{ with .materials }}<ul class="meeting-materials">{{ range . }}<li><a href="{{ .url }}" rel="noopener">{{ .label }}</a></li>{{ end }}</ul>{{ else }}<span class="meeting-muted">Not shared yet</span>{{ end }}</td>
+        <td>{{ with .materials }}<ul class="meeting-materials">{{ range . }}<li><a href="{{ .url }}" rel="noopener">{{ .label }}</a></li>{{ end }}</ul>{{ else }}<span class="meeting-muted">-</span>{{ end }}</td>
         <td><span class="meeting-status" data-status="{{ .status | default "planning" }}">{{ .status | default "planning" | humanize }}</span></td>
       </tr>
       {{ end }}

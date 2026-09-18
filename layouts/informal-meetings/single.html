@@ -29,6 +29,13 @@
     <img class="meeting-logo" src="{{ . | relURL }}" alt="{{ $.Title }} logo" width="1254" height="1254">
     {{ end }}{{ end }}
   </div>
+  {{ if $meeting.compact_layout }}
+  <section id="format" class="meeting-section meeting-purpose" aria-labelledby="format-heading">
+    <h2 id="format-heading">What we do</h2>
+    <ul class="meeting-list">{{ range $meeting.event_types }}<li>{{ . }}</li>{{ end }}</ul>
+    {{ with $meeting.format_note }}<p class="meeting-muted">{{ . }}</p>{{ end }}
+  </section>
+  {{ end }}
   <dl class="meeting-logistics">
     <div><dt>When</dt><dd>{{ with $meeting.day }}{{ . }}{{ else }}Day to be confirmed{{ end }}<span class="meeting-cell-note">{{ with $meeting.time }}{{ . }}{{ else }}Time to be confirmed{{ end }}</span>{{ with $meeting.timezone }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</dd></div>
     <div><dt>Where</dt><dd>{{ $meeting.location | default "Location to be confirmed" }}{{ with $meeting.online_url }}<span class="meeting-cell-note"><a href="{{ . }}" rel="noopener">Join online</a></span>{{ end }}</dd></div>
@@ -36,11 +43,12 @@
     <div><dt>Organizer</dt><dd>{{ $meeting.organizer }}<span class="meeting-cell-note"><a href="mailto:{{ $meeting.contact }}">{{ $meeting.contact }}</a></span></dd></div>
   </dl>
   <div class="meeting-toolbar">
-    <nav class="meeting-jumps" aria-label="On this page"><a href="#schedule">Schedule</a><a href="#topics">Topics & resources</a><a href="#archive">Archive</a></nav>
+    <nav class="meeting-jumps" aria-label="On this page"><a href="#schedule">Schedule</a>{{ if $meeting.compact_layout }}<a href="#format">What we do</a>{{ else }}<a href="#topics">Topics & resources</a>{{ end }}{{ if or $archive (not $meeting.compact_layout) }}<a href="#archive">Archive</a>{{ end }}</nav>
     <a class="meeting-button" href="mailto:{{ $meeting.contact }}?subject={{ printf "Session proposal: %s" .Title | urlquery }}">Propose a session</a>
   </div>
   <section id="schedule" class="meeting-section" aria-labelledby="schedule-heading">
     <h2 id="schedule-heading">Meeting schedule</h2>
+    {{ with $meeting.schedule_note }}<p class="meeting-muted">{{ . }}</p>{{ end }}
     {{ if $upcoming }}
       {{ partial "meetings/sessions.html" (dict "series" $meeting "sessions" $upcoming "label" "Scheduled meetings") }}
     {{ else }}
@@ -52,6 +60,7 @@
       {{ partial "meetings/sessions.html" (dict "series" $meeting "sessions" . "label" "Open weekly slots") }}
     {{ end }}
   </section>
+  {{ if not $meeting.compact_layout }}
   <div class="meeting-planning-grid">
     <section id="topics" class="meeting-section" aria-labelledby="topics-heading">
       <h2 id="topics-heading">Topics & resources</h2>
@@ -72,9 +81,12 @@
       {{ end }}
     </section>
   </div>
+  {{ end }}
+  {{ if or $archive (not $meeting.compact_layout) }}
   <section id="archive" class="meeting-section" aria-labelledby="archive-heading">
     <h2 id="archive-heading">Session archive</h2>
     {{ if $archive }}{{ partial "meetings/sessions.html" (dict "series" $meeting "sessions" $archive "label" "Archived meetings") }}{{ else }}<p class="meeting-muted">Completed sessions and their materials, notes, and follow-up actions will appear here.</p>{{ end }}
   </section>
+  {{ end }}
 </div>
 {{ end }}

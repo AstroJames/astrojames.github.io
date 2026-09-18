@@ -8,11 +8,7 @@ online_url: ""
 organizer: James R. Beattie
 contact: beattie@ias.edu
 format: In-person discussion, with a format that varies by session
-topics:
-  - Fluid-scale magnetohydrodynamics, turbulence, reconnection, and dynamo action
-  - Foundational theory, waves, instabilities, and transport
-  - Advances in numerical methods and computational fluid dynamics
-  - Open problems and work in progress in MHD and astrophysical fluid dynamics
+compact_layout: true
 event_types:
   - Foundational theory talks, including informal blackboard presentations
   - Talks and discussions on new numerical methods
@@ -22,7 +18,7 @@ event_types:
   - Coding tools, development environments, and scientific workflows
   - Discussions led by local researchers working on MHD
 format_note: Meetings are primarily in person. Occasional invited Zoom talks are welcome for special sessions, rather than as the regular format.
-resources: []
+schedule_note: Future Wednesday slots are listed through December 2026; speakers and holiday arrangements are to be confirmed.
 sessions:
   - id: week-01
     slot: Session 1
@@ -51,15 +47,69 @@ sessions:
     preparation: Any suggested reading will be shared once the topic is confirmed.
     materials: []
   - id: week-03
-    slot: Future session
-    date: ""
+    date: "2026-10-21"
     speaker: ""
     title: ""
     status: planning
     materials: []
   - id: week-04
-    slot: Future session
-    date: ""
+    date: "2026-10-28"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-05
+    date: "2026-11-04"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-06
+    date: "2026-11-11"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+    holiday: Veterans Day
+    holiday_url: https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/#url=2026
+  - id: week-07
+    date: "2026-11-18"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-08
+    date: "2026-11-25"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-09
+    date: "2026-12-02"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-10
+    date: "2026-12-09"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-11
+    date: "2026-12-16"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-12
+    date: "2026-12-23"
+    speaker: ""
+    title: ""
+    status: planning
+    materials: []
+  - id: week-13
+    date: "2026-12-30"
     speaker: ""
     title: ""
     status: planning

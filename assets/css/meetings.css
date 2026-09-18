@@ -73,7 +73,12 @@
 }
 
 .meeting-logo[src$="aim-a2-serif-dark.png"] { background: #090e17; }
-.meeting-heading .meeting-banner-title { max-width: 900px; margin: .75rem 0 1.5rem; line-height: 0; }
+.meeting-heading .meeting-banner-title { max-width: 100%; margin: .75rem 0 1.5rem; line-height: 0; }
 .meeting-banner { display: block; width: 100%; height: auto; background: #090e17; }
 
 .meeting-intro p + p { margin-top: .75rem; }
+
+.meeting-holiday { display: block; margin-top: .4rem; font-size: .8rem; color: var(--site-accent); }
+.meeting-purpose .meeting-list { columns: 2; column-gap: 3rem; }
+.meeting-purpose li { break-inside: avoid; }
+@media (max-width: 760px) { .meeting-purpose .meeting-list { columns: 1; } }

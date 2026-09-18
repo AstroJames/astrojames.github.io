@@ -55,6 +55,15 @@ class MeetingTemplateTests(unittest.TestCase):
         self.assertIn('href="https://davidvelasco07.github.io/"', html)
         for text in ("David Velasco-Romero", "Roundtable: bring one plot", "hierarchical flux corrections", "Ohmic resistivity", "(proposed)", "What we do", "Coding tools"):
             self.assertIn(text, html)
+        self.assertIn('datetime="2026-12-30"', html)
+        self.assertIn('US federal holiday:', html)
+        self.assertEqual(html.count('Veterans Day'), 1)
+        self.assertNotIn('Not shared yet', html)
+        self.assertIn('<span class="meeting-muted">-</span>', html)
+        self.assertNotIn('Topics &amp; resources', html)
+        self.assertNotIn('id="topics"', html)
+        self.assertNotIn('id="archive"', html)
+        self.assertLess(html.index('id="format"'), html.index('id="schedule"'))
 
     def test_materials_notes_and_followup_survive_archiving(self):
         session = {"id": "completed", "date": "2026-09-01", "status": "completed", "speaker": "Example Speaker", "title": "A completed discussion", "materials": [{"label": "Reading", "url": "https://example.org/paper"}], "notes": "A recorded result.", "questions": ["What should we calculate next?"], "actions": [{"task": "Check convergence", "owner": "Example Speaker", "status": "Open"}]}

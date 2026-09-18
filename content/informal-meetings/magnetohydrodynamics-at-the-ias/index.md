@@ -8,7 +8,3 @@ weight: 10
 ---
 
 AIM brings together researchers interested in the forefront of magnetohydrodynamics, with a focus on fluid scales. We are kinetic-curious, while keeping fluid dynamics at the heart of the meeting.
-
-Bring a plot, an unpublished result, an interesting paper, or a problem. The emphasis is on discussion: learning foundational theory, exploring new numerical methods, and working through questions together.
-
-[View the AIM logo and banner →](/mhd-logo-options/)
