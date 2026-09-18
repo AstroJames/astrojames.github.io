@@ -1,19 +1,29 @@
 [
   {
+    "id": "A2",
+    "file": "aim-a2-serif",
+    "title": "Reconnection \u00b7 Serif",
+    "family": "aim",
+    "format": "logo",
+    "description": "AIM at IAS: navy and teal reconnection field lines with serif lettering.",
+    "selected": true
+  },
+  {
+    "id": "A6",
+    "file": "aim-banner-reconnection",
+    "title": "Reconnection banner \u00b7 Serif",
+    "family": "aim",
+    "format": "banner",
+    "description": "AIM at IAS reconnection banner with serif lettering and the full Institute affiliation.",
+    "selected": true
+  },
+  {
     "id": "A1",
     "file": "aim-a1",
     "title": "Linked field lines",
     "family": "aim",
     "format": "logo",
     "description": "An A-shaped magnetic ribbon in navy and orange."
-  },
-  {
-    "id": "A2",
-    "file": "aim-a2",
-    "title": "Reconnection",
-    "family": "aim",
-    "format": "logo",
-    "description": "A geometric meeting of magnetic field lines."
   },
   {
     "id": "A3",
