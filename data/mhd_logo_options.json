@@ -3,7 +3,7 @@
     "id": "A1",
     "file": "aim-a1",
     "title": "Linked field lines",
-    "family": "aims",
+    "family": "aim",
     "format": "logo",
     "description": "An A-shaped magnetic ribbon in navy and orange."
   },
@@ -11,7 +11,7 @@
     "id": "A2",
     "file": "aim-a2",
     "title": "Reconnection",
-    "family": "aims",
+    "family": "aim",
     "format": "logo",
     "description": "A geometric meeting of magnetic field lines."
   },
@@ -19,7 +19,7 @@
     "id": "A3",
     "file": "aim-a3",
     "title": "Wavefront",
-    "family": "aims",
+    "family": "aim",
     "format": "logo",
     "description": "A copper wave above a serif wordmark."
   },
@@ -49,19 +49,19 @@
   },
   {
     "id": "A4",
-    "file": "aims-banner-field",
+    "file": "aim-banner-field",
     "title": "Linked-field banner",
-    "family": "aims",
+    "family": "aim",
     "format": "banner",
-    "description": "The magnetic A alongside the full AIMS name and IAS affiliation."
+    "description": "The magnetic A alongside the full AIM name and IAS affiliation."
   },
   {
     "id": "A5",
-    "file": "aims-banner-wave",
+    "file": "aim-banner-wave",
     "title": "Wavefront banner",
-    "family": "aims",
+    "family": "aim",
     "format": "banner",
-    "description": "A broad wavefront above the full AIMS name and IAS affiliation."
+    "description": "A broad wavefront above the full AIM name and IAS affiliation."
   },
   {
     "id": "M4",
