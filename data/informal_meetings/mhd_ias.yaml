@@ -38,8 +38,8 @@ sessions:
     slot: Session 2
     date: "2026-10-14"
     speaker: David Velasco-Romero
-    speaker_url: https://davidvelasco07.github.io/
-    affiliation: Princeton University
+    speaker_url: https://www.ias.edu/scholars/david-velasco-romero
+    affiliation: Institute for Advanced Study
     title: Numerical methods discussion
     format: Research talk and discussion
     status: confirmed
