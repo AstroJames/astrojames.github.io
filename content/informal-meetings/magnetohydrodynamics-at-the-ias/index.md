@@ -7,3 +7,5 @@ weight: 10
 ---
 
 Bring a result, a paper, or a problem in magnetohydrodynamics. The emphasis is on discussion: working through the physics together, comparing approaches, and finding useful next steps.
+
+[Explore the AIMS and MIST name & logo options →](/mhd-logo-options/)

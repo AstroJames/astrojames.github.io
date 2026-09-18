@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{ $css := resources.Get "css/mhd-logo-options.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<div class="logo-page">
+  <a class="logo-back" href="{{ "/informal-meetings/magnetohydrodynamics-at-the-ias/" | relURL }}">← Back to the meeting</a>
+  <header class="logo-header">
+    <p class="logo-eyebrow">Institute for Advanced Study · MHD meeting</p>
+    <h1>A name. A mark.<br>A meeting of ideas.</h1>
+    <div class="logo-intro">{{ .Content }}</div>
+  </header>
+  <section class="logo-names" aria-label="Two possible names">
+    <article><span class="logo-eyebrow">Option 01</span><h2>AIMS</h2><p class="logo-expansion">Advances in Magnetohydrodynamics Seminar</p><p>at the Institute for Advanced Study</p><p class="logo-note">A forward-looking name for sharing the latest results and ideas.</p></article>
+    <article><span class="logo-eyebrow">Option 02</span><h2>MIST</h2><p class="logo-expansion">Magnetohydrodynamics at the Institute</p><p>Simulations and Theory</p><p class="logo-note">A name that brings computational and theoretical perspectives together.</p></article>
+  </section>
+  <section aria-labelledby="gallery-title">
+    <div class="logo-section-heading"><h2 id="gallery-title">Explore the designs</h2><p>Six original concepts and four wide banners. Select any image for a closer look.</p></div>
+    <p class="logo-note">The original A1–A3 concepts retain their AIM@IAS wording: “Advances in Magnetohydrodynamics.” The new A4–A5 banners explore the AIMS name above.</p>
+    <div class="logo-filters" hidden aria-label="Filter designs">
+      <div role="group" aria-label="Name"><button type="button" data-family="all" aria-pressed="true">Both names</button><button type="button" data-family="aims" aria-pressed="false">AIMS / AIM@IAS</button><button type="button" data-family="mist" aria-pressed="false">MIST</button></div>
+      <div role="group" aria-label="Format"><button type="button" data-format="all" aria-pressed="true">All formats</button><button type="button" data-format="logo" aria-pressed="false">Logos</button><button type="button" data-format="banner" aria-pressed="false">Wide banners</button></div>
+    </div>
+    <p class="logo-count" aria-live="polite">10 designs</p>
+    <div class="logo-gallery">
+      {{ range site.Data.mhd_logo_options }}
+      {{ $src := printf "/images/meetings/logo-options/%s.png" .file | relURL }}
+      <article class="logo-card logo-card-{{ .format }}" id="{{ .id | lower }}" data-family="{{ .family }}" data-format="{{ .format }}">
+        <a class="logo-image" href="{{ $src }}" data-preview data-title="{{ .id }} · {{ .title }}" aria-label="Enlarge {{ .id }}: {{ .title }}"><img src="{{ $src }}" alt="{{ .description }}" width="{{ if eq .format "banner" }}2172{{ else }}1536{{ end }}" height="{{ if eq .format "banner" }}724{{ else }}1024{{ end }}" loading="lazy" decoding="async"></a>
+        <div class="logo-card-info"><p class="logo-eyebrow">{{ .id }} · {{ if eq .format "banner" }}Wide banner{{ else }}Original concept{{ end }}</p><h3>{{ .title }}</h3><p>{{ .description }}</p><div class="logo-card-links"><a href="{{ $src }}" download>Download PNG <span aria-hidden="true">↓</span></a><a href="mailto:beattie@ias.edu?subject={{ printf "MHD meeting logo preference: %s" .id | urlquery }}">Suggest this option <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  <details class="logo-original"><summary>Our starting point: the current AIM logo</summary><img src="{{ "/images/meetings/aim.png" | relURL }}" alt="Current AIM logo: blue and orange magnetic loops above Advances in Magnetohydrodynamics and IAS" width="1254" height="1254" loading="lazy"></details>
+  <footer class="logo-footer"><h2>Which direction feels right?</h2><p>Use the option labels when sharing feedback—for example, “AIMS with the A1 symbol” or “MIST with the M4 banner.” Names, symbols, and typography can be refined together.</p><a href="mailto:beattie@ias.edu?subject=MHD%20meeting%20name%20and%20logo%20ideas">Share your thoughts →</a></footer>
+</div>
+<dialog class="logo-dialog" aria-labelledby="logo-dialog-title"><div class="logo-dialog-bar"><h2 id="logo-dialog-title"></h2><button type="button" data-close aria-label="Close enlarged logo">Close ×</button></div><img alt=""><a class="logo-dialog-download" download>Download PNG ↓</a></dialog>
+{{ $js := resources.Get "js/mhd-logo-options.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

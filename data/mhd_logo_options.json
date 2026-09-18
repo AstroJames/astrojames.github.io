@@ -1,0 +1,82 @@
+[
+  {
+    "id": "A1",
+    "file": "aim-a1",
+    "title": "Linked field lines",
+    "family": "aims",
+    "format": "logo",
+    "description": "An A-shaped magnetic ribbon in navy and orange."
+  },
+  {
+    "id": "A2",
+    "file": "aim-a2",
+    "title": "Reconnection",
+    "family": "aims",
+    "format": "logo",
+    "description": "A geometric meeting of magnetic field lines."
+  },
+  {
+    "id": "A3",
+    "file": "aim-a3",
+    "title": "Wavefront",
+    "family": "aims",
+    "format": "logo",
+    "description": "A copper wave above a serif wordmark."
+  },
+  {
+    "id": "M1",
+    "file": "mist-m1",
+    "title": "Magnetic M",
+    "family": "mist",
+    "format": "logo",
+    "description": "Parallel field lines form the letter M."
+  },
+  {
+    "id": "M2",
+    "file": "mist-m2",
+    "title": "Turbulent flow",
+    "family": "mist",
+    "format": "logo",
+    "description": "A flowing vortex in navy and orange."
+  },
+  {
+    "id": "M3",
+    "file": "mist-m3",
+    "title": "Institute wordmark",
+    "family": "mist",
+    "format": "logo",
+    "description": "A restrained serif wordmark with an undulating field line."
+  },
+  {
+    "id": "A4",
+    "file": "aims-banner-field",
+    "title": "Linked-field banner",
+    "family": "aims",
+    "format": "banner",
+    "description": "The magnetic A alongside the full AIMS name and IAS affiliation."
+  },
+  {
+    "id": "A5",
+    "file": "aims-banner-wave",
+    "title": "Wavefront banner",
+    "family": "aims",
+    "format": "banner",
+    "description": "A broad wavefront above the full AIMS name and IAS affiliation."
+  },
+  {
+    "id": "M4",
+    "file": "mist-banner-field",
+    "title": "Magnetic-M banner",
+    "family": "mist",
+    "format": "banner",
+    "description": "A horizontal field-line mark and full MIST name."
+  },
+  {
+    "id": "M5",
+    "file": "mist-banner-vortex",
+    "title": "Vortex banner",
+    "family": "mist",
+    "format": "banner",
+    "description": "A circular flow symbol beside the full MIST name."
+  }
+]
