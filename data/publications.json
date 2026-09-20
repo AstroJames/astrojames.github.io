@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-19T06:03:09.194458+00:00",
+  "last_updated": "2026-09-20T06:02:59.348040+00:00",
   "total_publications": 34,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -873,7 +873,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 6,
-      "read_count": 323,
+      "read_count": 322,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
