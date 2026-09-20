@@ -6,7 +6,12 @@ end_time: "14:00"
 timezone: America/New_York
 location: ""
 online_url: ""
-organizer: James R. Beattie
+organizers:
+  - James R. Beattie
+  - Jim Stone
+  - Alexander Dittmann
+  - Jacob Fields
+  - David Velasco-Romero
 contact: beattie@ias.edu
 format: In-person discussion, with a format that varies by session
 compact_layout: true

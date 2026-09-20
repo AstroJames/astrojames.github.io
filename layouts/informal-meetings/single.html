@@ -40,7 +40,7 @@
     <div><dt>When</dt><dd>{{ with $meeting.day }}{{ . }}{{ else }}Day to be confirmed{{ end }}<span class="meeting-cell-note">{{ with $meeting.time }}{{ . }}{{ else }}Time to be confirmed{{ end }}</span>{{ with $meeting.timezone }}<span class="meeting-cell-note">{{ . }}</span>{{ end }}</dd></div>
     <div><dt>Where</dt><dd>{{ $meeting.location | default "Location to be confirmed" }}{{ with $meeting.online_url }}<span class="meeting-cell-note"><a href="{{ . }}" rel="noopener">Join online</a></span>{{ end }}</dd></div>
     <div><dt>Format</dt><dd>{{ $meeting.format }}</dd></div>
-    <div><dt>Organizer</dt><dd>{{ $meeting.organizer }}<span class="meeting-cell-note"><a href="mailto:{{ $meeting.contact }}">{{ $meeting.contact }}</a></span></dd></div>
+    <div><dt>{{ if $meeting.organizers }}Organizers{{ else }}Organizer{{ end }}</dt><dd>{{ with $meeting.organizers }}{{ delimit . ", " }}{{ else }}{{ $meeting.organizer }}{{ end }}<span class="meeting-cell-note"><a href="mailto:{{ $meeting.contact }}">{{ $meeting.contact }}</a></span></dd></div>
   </dl>
   <div class="meeting-toolbar">
     <nav class="meeting-jumps" aria-label="On this page"><a href="#schedule">Schedule</a>{{ if $meeting.compact_layout }}<a href="#format">What we do</a>{{ else }}<a href="#topics">Topics & resources</a>{{ end }}{{ if or $archive (not $meeting.compact_layout) }}<a href="#archive">Archive</a>{{ end }}</nav>
