@@ -2,7 +2,6 @@
 title: "My single-author ApJL paper on supernova-driven turbulence"
 summary: "Published in The Astrophysical Journal Letters, 1004, L9. I show how instabilities in supernova shells generate incompressible turbulence, connecting small-scale structure to the turbulence cascade in our Galaxy."
 date: 2026-06-03
-news_pinned: true
 authors:
   - admin
 tags:
