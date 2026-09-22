@@ -13,7 +13,13 @@
         {{/* Profile Image */}}
         {{ $avatar := $author.Resources.GetMatch "avatar*" }}
         {{ if $avatar }}
-          <img src="{{ $avatar.RelPermalink }}" alt="{{ $author.Title }}" class="profile-avatar">
+          {{ $portrait := $avatar.Resize "800x" }}
+          <figure class="profile-portrait">
+            <img src="{{ $portrait.RelPermalink }}" alt="{{ $author.Title }}" class="profile-avatar" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}">
+            {{ with $author.Params.photo_credit }}
+              <figcaption class="profile-photo-credit">Photo: {{ . }}</figcaption>
+            {{ end }}
+          </figure>
         {{ end }}
         
         {{/* Name and Title */}}
@@ -167,11 +173,27 @@
   align-items: flex-start;
 }
 
+.profile-portrait {
+  width: 200px;
+  flex-shrink: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.profile-photo-credit {
+  margin-top: 0.65rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: var(--site-text-muted, #cbd5e1);
+}
+
 .profile-avatar {
+  display: block;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   flex-shrink: 0;
   border: 3px solid #000000; /* Black border around profile picture */
 }
@@ -489,6 +511,10 @@
     align-items: center;
   }
   
+  .profile-portrait {
+    width: 150px;
+  }
+
   .profile-avatar {
     width: 150px;
     height: 150px;

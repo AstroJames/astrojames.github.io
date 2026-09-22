@@ -1,6 +1,7 @@
 ---
 # Display name
 title: James R. Beattie
+photo_credit: "Maria O'Leary / Institute for Advanced Study."
 
 # Name pronunciation (optional)
 name_pronunciation: 
