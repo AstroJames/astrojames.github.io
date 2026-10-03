@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-02T06:03:36.709424+00:00",
+  "last_updated": "2026-10-03T06:06:11.437525+00:00",
   "total_publications": 34,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -83,7 +83,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
       "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
       "citation_count": 3,
-      "read_count": 207,
+      "read_count": 208,
       "is_refereed": true,
       "arxiv_class": [
         "physics.plasm-ph",
@@ -253,7 +253,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
       "citation_count": 27,
-      "read_count": 579,
+      "read_count": 580,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -455,7 +455,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
       "citation_count": 58,
-      "read_count": 195,
+      "read_count": 194,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -769,7 +769,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 32,
-      "read_count": 109,
+      "read_count": 110,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -873,7 +873,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 6,
-      "read_count": 317,
+      "read_count": 314,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -943,7 +943,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 5,
-      "read_count": 383,
+      "read_count": 385,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
