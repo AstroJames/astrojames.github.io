@@ -80,9 +80,12 @@ sessions:
     holiday_url: https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/#url=2026
   - id: week-07
     date: "2026-11-18"
-    speaker: ""
-    title: ""
-    status: planning
+    speaker: Abhishek Hegade
+    speaker_url: https://abhihegade.github.io/
+    affiliation: Princeton University
+    title: CGL magnetohydrodynamics
+    format: Research talk and discussion
+    status: confirmed
     materials: []
   - id: week-08
     date: "2026-11-25"
