@@ -46,7 +46,13 @@ An animated version of Figure 2 from [Beattie (2025), submitted to ApJL](https:/
 
 ## Explore supernova remnants in 3D {#volume-viewer}
 
-Choose a remnant, drag to rotate, and scroll to zoom.
+Explore SNR 26 with selectable fields and vector overlays, or browse the other remnant surfaces below.
+
+{{< snr_explorer >}}
+
+### Other remnant surfaces
+
+These additional previews show remnant shapes; their colors are illustrative. Use the SNR 26 explorer above for field colors and vector overlays. Drag to rotate and scroll to zoom.
 
 <div class="model-viewer-block" style="margin: 2rem 0;">
   <label for="model-select" style="color: rgba(255,255,255,0.8); font-weight: 600; display: block; margin-bottom: 0.5rem;">Choose a model</label>

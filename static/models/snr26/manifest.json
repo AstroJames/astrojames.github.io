@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "title": "SNR 26 \u00b7 output 00030",
+  "source": "clustering_cache_00030_cluster_26.h5",
+  "source_sha256": "e38459871bd851c412e400a00cdbe71c4d4c5421118ebe8a4fd09f9287479805",
+  "cube_shape": [
+    128,
+    128,
+    128
+  ],
+  "center_global_voxels": [
+    356,
+    347,
+    471
+  ],
+  "binary": "surface.bin",
+  "arrays": {
+    "positions": {
+      "offset": 0,
+      "count": 286668,
+      "shape": [
+        95556,
+        3
+      ],
+      "dtype": "<f4"
+    },
+    "triangles": {
+      "offset": 1146672,
+      "count": 574188,
+      "shape": [
+        191396,
+        3
+      ],
+      "dtype": "<u4"
+    },
+    "arrowPositions": {
+      "offset": 3443424,
+      "count": 2400,
+      "shape": [
+        800,
+        3
+      ],
+      "dtype": "<f4"
+    },
+    "density": {
+      "offset": 3453024,
+      "count": 95556,
+      "shape": [
+        95556
+      ],
+      "dtype": "<f4"
+    },
+    "temperature": {
+      "offset": 3835248,
+      "count": 95556,
+      "shape": [
+        95556
+      ],
+      "dtype": "<f4"
+    },
+    "pressure": {
+      "offset": 4217472,
+      "count": 95556,
+      "shape": [
+        95556
+      ],
+      "dtype": "<f4"
+    },
+    "omega_mag": {
+      "offset": 4599696,
+      "count": 95556,
+      "shape": [
+        95556
+      ],
+      "dtype": "<f4"
+    },
+    "baro_mag": {
+      "offset": 4981920,
+      "count": 95556,
+      "shape": [
+        95556
+      ],
+      "dtype": "<f4"
+    },
+    "production": {
+      "offset": 5364144,
+      "count": 95556,
+      "shape": [
+        95556
+      ],
+      "dtype": "<f4"
+    },
+    "alignment": {
+      "offset": 5746368,
+      "count": 95556,
+      "shape": [
+        95556
+      ],
+      "dtype": "<f4"
+    },
+    "velocity": {
+      "offset": 6128592,
+      "count": 2400,
+      "shape": [
+        800,
+        3
+      ],
+      "dtype": "<f4"
+    },
+    "vorticity": {
+      "offset": 6138192,
+      "count": 2400,
+      "shape": [
+        800,
+        3
+      ],
+      "dtype": "<f4"
+    },
+    "baroclinic": {
+      "offset": 6147792,
+      "count": 2400,
+      "shape": [
+        800,
+        3
+      ],
+      "dtype": "<f4"
+    },
+    "solenoidal": {
+      "offset": 6157392,
+      "count": 2400,
+      "shape": [
+        800,
+        3
+      ],
+      "dtype": "<f4"
+    },
+    "compressive": {
+      "offset": 6166992,
+      "count": 2400,
+      "shape": [
+        800,
+        3
+      ],
+      "dtype": "<f4"
+    }
+  },
+  "scalars": [
+    {
+      "key": "density",
+      "label": "Density",
+      "legend": "log\u2081\u2080(\u03c1 / \u27e8\u03c1\u27e9)",
+      "range": [
+        -0.25824854337694647,
+        2.3533223286925624
+      ],
+      "palette": "sequential",
+      "reference": 2.366888089526486e-15
+    },
+    {
+      "key": "temperature",
+      "label": "Temperature proxy",
+      "legend": "log\u2081\u2080((P/\u03c1) / \u27e8P/\u03c1\u27e9)",
+      "range": [
+        -2.500361837084876,
+        0.14596783513251876
+      ],
+      "palette": "sequential",
+      "reference": 4.700213204723332
+    },
+    {
+      "key": "pressure",
+      "label": "Pressure",
+      "legend": "log\u2081\u2080(P / \u27e8P\u27e9)",
+      "range": [
+        -0.258205859351301,
+        0.2599648762340854
+      ],
+      "palette": "sequential",
+      "reference": 7.956621447992522e-15
+    },
+    {
+      "key": "omega_mag",
+      "label": "Vorticity magnitude",
+      "legend": "log\u2081\u2080(|\u03c9| / \u03c9rms)",
+      "range": [
+        -0.751297023116666,
+        0.484225067359696
+      ],
+      "palette": "sequential",
+      "reference": 3055.441941126342
+    },
+    {
+      "key": "baro_mag",
+      "label": "Baroclinic-source magnitude",
+      "legend": "log\u2081\u2080(|b| / brms)",
+      "range": [
+        -2.9941058007270507,
+        -0.7480240808961952
+      ],
+      "palette": "sequential",
+      "reference": 400194.5338415645
+    },
+    {
+      "key": "production",
+      "label": "Signed baroclinic contribution",
+      "legend": "\u03c9 \u00b7 b / (\u03c9rms brms)",
+      "range": [
+        -0.20386083168459196,
+        0.20386083168459196
+      ],
+      "palette": "diverging"
+    },
+    {
+      "key": "alignment",
+      "label": "Vorticity\u2013source alignment",
+      "legend": "cos \u03b8 = \u03c9 \u00b7 b / (|\u03c9| |b|)",
+      "range": [
+        -1,
+        1
+      ],
+      "palette": "diverging"
+    }
+  ],
+  "vectors": [
+    {
+      "key": "velocity",
+      "label": "Velocity",
+      "p95": 15.522099470522893
+    },
+    {
+      "key": "vorticity",
+      "label": "Vorticity",
+      "p95": 6341.477175498204
+    },
+    {
+      "key": "baroclinic",
+      "label": "Baroclinic source",
+      "p95": 53548.6634062539
+    },
+    {
+      "key": "solenoidal",
+      "label": "Solenoidal velocity",
+      "p95": 11.890439444026576
+    },
+    {
+      "key": "compressive",
+      "label": "Compressive velocity",
+      "p95": 9.232606113992542
+    }
+  ],
+  "surface": {
+    "field": "baro_mag",
+    "smoothing_sigma_voxels": 0.8,
+    "percentile": 95,
+    "level": 57046.600321557205,
+    "vertices": 95556,
+    "triangles": 191396
+  },
+  "coordinates": "Array axes and vector components are x,y,z. Positions are voxel/128 - 0.5. The cutout width is one coordinate unit.",
+  "normalization": "Scalar means and RMS values are measured within cluster_mask. Positive scalars use log10; display limits are surface percentiles 2\u201398. Signed contribution uses symmetric 98th-percentile absolute limits. Colors saturate outside the displayed limits.",
+  "vector_encoding": "Vectors are trilinearly sampled at farthest-point-spaced shell vertices. Equal-length arrows show direction; magnitude mode uses length/p95 capped at 1. Simulation-frame velocities; no bulk subtraction. All components remain three-dimensional.",
+  "baroclinic_convention": {
+    "definition": "b = grad(rho) cross grad(P) / rho^2",
+    "stored_to_physical_sign": -1,
+    "note": "The saved vector is multiplied by this sign before arrow export, dot products, and alignment. Source HDF5 is unchanged."
+  },
+  "validation": {
+    "curl_relative_error": 2.472539860681194e-08,
+    "curl_derivative_scale": 1024.0000000163718,
+    "baroclinic_relative_error": 5.842060136922939e-08,
+    "baroclinic_derivative_scale": -1048575.9987246052,
+    "temperature_proxy_relative_error": 2.440611649137974e-08,
+    "affine_interpolation_pass": true
+  },
+  "bytes": 6176592
+}

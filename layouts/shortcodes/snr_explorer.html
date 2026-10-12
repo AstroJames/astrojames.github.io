@@ -1,0 +1,62 @@
+<section class="snr-explorer" aria-label="SNR 26 scientific explorer" data-snr-explorer data-manifest="/models/snr26/manifest.json">
+  <div class="snr-intro">
+    <div><p class="snr-kicker">Interactive scientific explorer</p><h3>SNR 26 <span>Output 00030</span></h3></div>
+    <p>One shell, several views of the physics. Compare the fields without moving the camera.</p>
+  </div>
+  <div class="snr-workspace">
+    <div class="snr-stage-wrap">
+      <div class="snr-stage" data-stage>
+        <div class="snr-launch" data-launch>
+          <img src="/images/snr26-preview.png" alt="Baroclinic shell of supernova remnant 26" loading="lazy" onerror="this.hidden=true">
+          <div><button type="button" data-load>Explore SNR 26 in 3D</button><p>Loads about 7 MB. Drag to rotate · scroll or pinch to zoom.</p></div>
+        </div>
+      </div>
+      <p class="snr-status" role="status" aria-live="polite" data-status>Ready to explore. The simulation data load when you open the viewer.</p>
+      <div class="snr-view-buttons" aria-label="Camera views">
+        <button type="button" data-view="reset" disabled>Reset view</button>
+        <button type="button" data-view="x" disabled>View along x</button>
+        <button type="button" data-view="y" disabled>View along y</button>
+        <button type="button" data-view="z" disabled>View along z</button>
+        <button type="button" data-fullscreen disabled>Full screen</button>
+      </div>
+      <div class="snr-legend" hidden data-legend>
+        <strong data-legend-title></strong><div class="snr-colorbar" data-colorbar></div>
+        <div class="snr-ticks"><span data-low></span><span data-mid></span><span data-high></span></div>
+        <p data-scale-note></p>
+      </div>
+    </div>
+    <fieldset class="snr-settings" disabled data-settings>
+      <legend>Explore the fields</legend>
+      <label for="snr-scalar">Color surface by</label>
+      <select id="snr-scalar" data-scalar></select>
+      <p class="snr-field-note" data-field-note></p>
+      <label for="snr-vector">Vector overlay</label>
+      <select id="snr-vector" data-vector><option value="none">None</option></select>
+      <p class="snr-vector-note" data-vector-note>Arrows show the full three-dimensional direction at the shell.</p>
+      <label for="snr-count">Arrow count <output data-count-output>250</output></label>
+      <input id="snr-count" type="range" min="50" max="800" step="50" value="250" data-count>
+      <label for="snr-length">Arrow length <output data-length-output>1×</output></label>
+      <input id="snr-length" type="range" min="0.3" max="2.5" step="0.1" value="1" data-length>
+      <label class="snr-check"><input type="checkbox" data-magnitude> Scale arrow length by magnitude</label>
+      <label for="snr-opacity">Shell opacity <output data-opacity-output>100%</output></label>
+      <input id="snr-opacity" type="range" min="0.1" max="1" step="0.05" value="1" data-opacity>
+      <label for="snr-cut">Cutaway</label>
+      <select id="snr-cut" data-cut><option value="none">Whole shell</option><option value="x">Cut along x</option><option value="y">Cut along y</option><option value="z">Cut along z</option></select>
+      <label for="snr-cut-position">Cut position <output data-cut-output>50%</output></label>
+      <input id="snr-cut-position" type="range" min="0" max="100" step="1" value="50" data-cut-position disabled>
+      <p class="snr-coordinate-note">Coordinates follow x, y, z. The cutaway removes the higher-coordinate side of the shell and arrows.</p>
+    </fieldset>
+  </div>
+  <details class="snr-methods"><summary>What the surface and arrows represent</summary>
+    <p>The surface follows the 95th percentile of the baroclinic-source magnitude in this 128³ cutout, smoothed over 0.8 voxels. It is a diagnostic isosurface, not a fitted shock front. Its geometry stays fixed when the color field changes.</p>
+    <p>Density, pressure, and the temperature proxy P/ρ are divided by their mean within the remnant mask. Vorticity and baroclinic-source magnitudes are divided by their RMS within that mask. These positive fields use logarithmic colors, limited to their surface 2nd–98th percentiles. Values outside the scale saturate at the end colors. Physical-unit conversions are not assumed.</p>
+    <p>Here b = ∇ρ × ∇P / ρ² is the physical baroclinic source. The signed quantity ω · b shows the baroclinic contribution to the evolution of |ω|²/2. Positive values reinforce existing vorticity, while negative values oppose it. It is one contribution to the enstrophy budget. The alignment view separates direction from magnitude.</p>
+    <p>Arrows sample the selected vector at evenly spaced locations on the surface. Equal-length arrows show direction. With magnitude scaling enabled, lengths are proportional to magnitude up to the 95th percentile of the 800 sampled vectors. Velocity is shown in the simulation frame, without subtracting remnant motion. Vorticity arrows mark rotation axes, not flow trajectories. Increasing transparency reveals arrows behind the surface but blends the surface colors.</p>
+    <p><a href="/models/snr26/manifest.json">View field definitions and export metadata</a></p>
+  </details>
+  <noscript><p>The interactive explorer needs JavaScript. The other remnant surfaces below remain available.</p></noscript>
+</section>
+{{ $css := resources.Get "css/snr-explorer.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ $js := resources.Get "js/snr-explorer.js" | minify | fingerprint }}
+<script type="module" src="{{ $js.RelPermalink }}"></script>

@@ -164,3 +164,43 @@ test/scheduler-server.test.mjs` to check the local model/API.
 ### Publishing the site
 
 Commits pushed to `main` trigger the GitHub Pages workflow configured in this repo (see `.github/workflows/`). No manual `hugo` builds are required; Follow the [Hugo Blox Builder](https://hugoblox.com/) instructions to set this up.
+
+## SNR scientific explorer
+
+The Movies page loads the SNR 26 explorer only after a visitor selects **Explore
+SNR 26 in 3D**. Its fixed baroclinic isosurface, scalar values and sparse vectors
+are in `static/models/snr26/`. The source volumes remain outside this repository.
+The export manifest records the source SHA256, axis convention, normalization,
+color limits, extraction settings, and numerical validation.
+
+Regenerate with Python, NumPy, SciPy, h5py and scikit-image:
+
+```sh
+python scripts/export_snr_explorer.py /path/to/clustering_cache_00030_cluster_26.h5 static/models/snr26
+python -m unittest discover -s test -p 'test_snr_export.py'
+```
+
+Input axes and vector components are **x, y, z**. Marching-cubes coordinates must
+be sampled in that same order. The exporter checks this against the saved curl
+of velocity and an asymmetric synthetic field. Do not reuse the old
+`marching_cubes.py` field samples, which reversed x and z during interpolation.
+Existing remnant GLBs remain shape previews; the new explorer does not use their
+thickness colors. Temperature is presented as a normalized P/rho proxy, and no
+physical-unit conversion is assumed.
+
+`layouts/shortcodes/snr_explorer.html`, `assets/js/snr-explorer.js`, and
+`assets/css/snr-explorer.css` provide the controls and rendering. Three.js 0.180.0
+is vendored under `static/vendor/three-0.180.0/` with its MIT license. Only the
+OrbitControls import path is changed to the adjacent local module. Unlit surface
+colors preserve the legend mapping at full opacity; transparency blends colors.
+Rendering occurs on interaction rather than in a continuous animation loop.
+The surface remains fixed across fields, arrows retain full 3D directions, and
+clipping affects both surface and arrows. Arrow density uses prefixes of a
+farthest-point sample. Velocity remains in the simulation frame.
+
+SNR26's stored baroclinic components have the **opposite sign** to
+`grad(rho) cross grad(P) / rho²`. The exporter independently checks this against
+finite differences, applies the validated sign to vectors before interpolation,
+and records `baroclinic_convention.stored_to_physical_sign` (−1 for this cutout).
+Both signed scalar views use the corrected physical source. Magnitudes and shell
+geometry are unaffected. Source HDF5 files are never modified.
