@@ -54,6 +54,7 @@ sessions:
   - id: week-04
     date: "2026-10-28"
     speaker: Jacob Fields
+    speaker_url: https://www.ias.edu/scholars/jacob-fields
     title: Riemann solvers and advanced numerical methods in AthenaK.
     format: Research talk and discussion
     status: confirmed
@@ -78,6 +79,7 @@ sessions:
   - id: week-10
     date: "2026-12-09"
     speaker: James Beattie
+    speaker_url: https://astro-beattie.com
     title: The Kinematic Kelvin Helmholtz Instability Dynamo.
     format: Research talk and discussion
     status: confirmed
