@@ -1,62 +1,22 @@
 {{ define "main" }}
-
-<div class="page-header">
-  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-    {{ if .Title }}
-    <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.75rem;">{{ .Title }}</h1>
-    {{ end }}
-    {{ with .Params.summary }}
-    <p style="color: var(--site-muted); font-size: 1.15rem; line-height: 1.6; margin: 0;">{{ . }}</p>
-    {{ end }}
+<main class="movies-page">
+  <div class="movies-header">
+    <p class="movies-eyebrow">Simulations in motion</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Params.summary }}</p>
+    <nav class="movies-nav" aria-label="Movie collections">
+      <a href="#kelvin-helmholtz">Kelvin–Helmholtz instability <span>5 movies</span></a>
+      <a href="#supernovae">Supernova remnants <span>1 movie</span></a>
+      <a href="#volume-viewer">Explore in 3D</a>
+    </nav>
   </div>
-</div>
-
-<div class="page-body">
-  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem;">
-    <div class="movies-content" style="color: var(--site-text); line-height: 1.7; font-size: 1.05rem;">
-      {{ .Content }}
-    </div>
-  </div>
-</div>
-
-<style>
-.movies-content h2 {
-  font-size: 1.9rem;
-  margin-top: 2.5rem;
-  color: var(--site-accent);
-}
-
-.movies-content p {
-  margin-bottom: 1.25rem;
-}
-
-.movies-content video {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.35);
-  margin: 1.5rem 0;
-}
-
-.movies-content figcaption,
-.movies-content em {
-  color: var(--site-muted);
-}
-
-@media (max-width: 768px) {
-  .movies-content {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .movies-content h2 {
-    font-size: 1.6rem;
-  }
-}
-</style>
-
+  <div class="movies-content">{{ .Content }}</div>
+</main>
+{{ $css := resources.Get "css/movies.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ $js := resources.Get "js/movies.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script>
 {{ if .HasShortcode "model_viewer" }}
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 {{ end }}
-
 {{ end }}

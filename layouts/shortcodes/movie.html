@@ -1,0 +1,23 @@
+{{ $src := resources.Get (printf "media/%s" (.Get "src")) }}
+{{ $poster := resources.Get (printf "media/%s" (replace (.Get "src") ".mp4" ".jpg")) }}
+{{ $title := .Get "title" }}
+<article class="movie-card {{ if .Get "wide" }}movie-card-wide{{ end }}">
+  <div class="movie-card-heading"><h3>{{ $title }}</h3><span>{{ .Get "duration" }} · {{ .Get "size" }}</span></div>
+  <div class="movie-player" data-movie-player>
+    <video controls preload="none" loop muted playsinline aria-label="{{ $title }}" {{ with $poster }}poster="{{ .RelPermalink }}"{{ end }}>
+      <source src="{{ $src.RelPermalink }}" type="video/mp4">
+      <a href="{{ $src.RelPermalink }}">Open {{ $title }}</a>
+    </video>
+    <div class="movie-controls" hidden>
+      <button type="button" data-play aria-label="Play {{ $title }}">Play</button>
+      <input type="range" data-seek min="0" max="100" value="0" step="0.1" disabled aria-label="Seek in {{ $title }}">
+      <span data-time class="movie-time">0:00 / {{ .Get "duration" }}</span>
+      <button type="button" data-fullscreen aria-label="Full screen: {{ $title }}">Full screen</button>
+    </div>
+    <p class="movie-error" role="status" hidden>Playback could not start. <a href="{{ $src.RelPermalink }}">Open the movie directly</a>.</p>
+  </div>
+  <div class="movie-caption"><p>{{ .Get "summary" }}</p>
+    <details><summary>Scientific details</summary>{{ .Inner | .Page.RenderString (dict "display" "block") }}</details>
+    <a class="movie-download" href="{{ $src.RelPermalink }}" download>Download MP4</a>
+  </div>
+</article>
