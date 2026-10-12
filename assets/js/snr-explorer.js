@@ -12,7 +12,12 @@ const notes = {
 for (const root of document.querySelectorAll('[data-snr-explorer]')) {
   const q = name => root.querySelector(`[data-${name}]`);
   const status = q('status');
-  q('load').addEventListener('click', async () => {
+  let cleanup = () => {};
+  let opened = false;
+  const load = async () => {
+    const manifestURL = q('remnant').value;
+    const previousScalar=q('scalar').value||'omega_mag',previousVector=opened?q('vector').value:'vorticity';
+    q('remnant').disabled = true;
     q('load').disabled = true;
     status.textContent = 'Loading the surface and scientific fields…';
     let renderer;
@@ -20,11 +25,11 @@ for (const root of document.querySelectorAll('[data-snr-explorer]')) {
       const [THREE, { OrbitControls }, response] = await Promise.all([
         import('/vendor/three-0.180.0/three.module.min.js'),
         import('/vendor/three-0.180.0/OrbitControls.js'),
-        fetch(root.dataset.manifest),
+        fetch(manifestURL),
       ]);
       if (!response.ok) throw new Error('The field definitions could not be loaded.');
       const manifest = await response.json();
-      const binaryResponse = await fetch(new URL(manifest.binary, new URL(root.dataset.manifest, location.href)));
+      const binaryResponse = await fetch(new URL(manifest.binary, new URL(manifestURL, location.href)));
       if (!binaryResponse.ok) throw new Error('The surface data could not be loaded.');
       const binary = await binaryResponse.arrayBuffer();
       if (binary.byteLength !== manifest.bytes) throw new Error('The surface download is incomplete.');
@@ -32,6 +37,9 @@ for (const root of document.querySelectorAll('[data-snr-explorer]')) {
         const a = manifest.arrays[name];
         return a.dtype === '<u4' ? new Uint32Array(binary,a.offset,a.count) : new Float32Array(binary,a.offset,a.count);
       };
+      cleanup();
+      const events = new AbortController();
+      const listen = (node, event, handler) => node.addEventListener(event, handler, {signal:events.signal});
       const stage = q('stage');
       renderer = new THREE.WebGLRenderer({antialias:true,alpha:false});
       renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
@@ -95,7 +103,7 @@ for (const root of document.querySelectorAll('[data-snr-explorer]')) {
       const describe = () => {
         const vector = manifest.vectors.find(v=>v.key===q('vector').value);
         const cut = q('cut').value;
-        status.textContent = `${activeScalar.label} · ${vector ? `${visibleArrows} ${vector.label.toLowerCase()} arrows` : 'no arrows'} · ${cut==='none' ? 'whole shell' : `${cut} cutaway at ${q('cut-position').value}%`}. Drag to rotate; scroll or pinch to zoom.`;
+        status.textContent = `${manifest.title} · ${activeScalar.label} · ${vector ? `${visibleArrows} ${vector.label.toLowerCase()} arrows` : 'no arrows'} · ${cut==='none' ? 'whole shell' : `${cut} cutaway at ${q('cut-position').value}%`}. Drag to rotate; scroll or pinch to zoom.`;
       };
       const updateVectors = () => {
         const field = manifest.vectors.find(v=>v.key===q('vector').value);
@@ -132,8 +140,50 @@ for (const root of document.querySelectorAll('[data-snr-explorer]')) {
         shafts.count=tips.count=visibleArrows;
         shafts.instanceMatrix.needsUpdate=tips.instanceMatrix.needsUpdate=true;
         q('vector-note').textContent = !field ? 'Choose a vector field to show arrows.' : `${darkArrows ? 'Dark' : 'White'} arrows: ${field.label.toLowerCase()}. ${mode ? 'Length ∝ magnitude, capped at the sampled 95th percentile.' : 'Equal lengths show direction only.'}${field.key.includes('velocity') || ['solenoidal','compressive'].includes(field.key) ? ' Simulation frame; no bulk subtraction.' : ''}`;
-        describe(); render();
+        describe(); render(); updatePDF();
       };
+      const escape = text => String(text).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      const selectedPDF = () => {
+        const vector = manifest.vectors.find(v=>v.key===q('vector').value);
+        q('pdf-quantity').options[1].disabled = !vector;
+        if (!vector) q('pdf-quantity').value='scalar';
+        const useVector=q('pdf-quantity').value==='vector';
+        return {key:useVector?vector.distribution_key:activeScalar.key,
+          label:useVector?`${vector.label} magnitude`:activeScalar.label,
+          legend:useVector?vector.distribution_legend:activeScalar.legend};
+      };
+      const updatePDF = () => {
+        const selected=selectedPDF(), region=q('pdf-region').value;
+        const pdf=manifest.distributions[selected.key][region];
+        const {edges,density}=pdf;
+        const logarithmic=q('pdf-log').checked;
+        const positive=density.filter(v=>v>0);
+        const ymax=Math.max(...density)*1.08;
+        const ymin=logarithmic?Math.min(...positive)*.5:0;
+        const transform=v=>logarithmic?Math.log10(Math.max(v,ymin)):v;
+        const x=v=>90+(v-edges[0])/(edges.at(-1)-edges[0])*644;
+        const y=v=>230-(transform(v)-transform(ymin))/(transform(ymax)-transform(ymin))*205;
+        const fmt=v=>v!==0&&(Math.abs(v)<.01||Math.abs(v)>=1000)?v.toExponential(1):Number(v.toPrecision(3)).toString();
+        const path=density.map((d,i)=>`${i?'L':'M'}${x(edges[i])},${y(d)} L${x(edges[i+1])},${y(d)}`).join(' ');
+        let svg=`<svg viewBox="0 0 760 300" role="img" aria-label="${escape(selected.label)} probability density function"><title>${escape(manifest.title+' — '+selected.legend)}</title><path d="M90 25 V230 H734" fill="none" stroke="currentColor"/><path d="${path}" fill="none" stroke="#8cccf4" stroke-width="2"/>`;
+        for(let i=0;i<=4;i++) {
+          const xv=edges[0]+(edges.at(-1)-edges[0])*i/4;
+          const yv=logarithmic?10**(transform(ymin)+(transform(ymax)-transform(ymin))*i/4):ymax*i/4;
+          svg+=`<path d="M${x(xv)} 230 v5 M85 ${y(yv)} h5" stroke="currentColor"/><text x="${x(xv)}" y="251" text-anchor="middle">${fmt(xv)}</text><text x="80" y="${y(yv)+4}" text-anchor="end">${fmt(yv)}</text>`;
+        }
+        svg+=`<text x="412" y="282" text-anchor="middle">${escape(selected.legend)}</text><text transform="translate(16 130) rotate(-90)" text-anchor="middle">Probability density</text></svg>`;
+        q('pdf-plot').innerHTML=svg;
+        q('pdf-heading').textContent=`${manifest.title} · ${selected.label}`;
+        q('pdf-note').textContent=`${region==='shell'?'Whole shell, approximate area weighting':'Remnant mask, equal-volume cell weighting'}. 80 bins over the full range; integral = 1. Camera and cutaway do not change the PDF. ${selected.legend.startsWith('log')?'Density is per unit log₁₀. ':''}${pdf.excluded_weight_fraction>1e-12?`${(100*pdf.excluded_weight_fraction).toPrecision(3)}% of weight excluded (undefined values). `:''}${logarithmic?'Empty bins sit at the lower plot boundary.':''}`;
+      };
+      for(const name of ['pdf-quantity','pdf-region','pdf-log']) listen(q(name),'change',updatePDF);
+      listen(q('pdf-download'),'click',()=>{
+        const selected=selectedPDF(),region=q('pdf-region').value,pdf=manifest.distributions[selected.key][region];
+        const rows=[`# ${manifest.title}`,`# ${selected.legend}`,`# region=${region}; excluded_weight_fraction=${pdf.excluded_weight_fraction}`, 'bin_left,bin_right,probability_density'];
+        pdf.density.forEach((value,i)=>rows.push(`${pdf.edges[i]},${pdf.edges[i+1]},${value}`));
+        const url=URL.createObjectURL(new Blob([rows.join('\n')+'\n'],{type:'text/csv'}));
+        const link=document.createElement('a');link.href=url;link.download=`snr${manifest.cluster_id}-output${manifest.output}-${selected.key}-${region}.csv`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+      });
       const paletteRGB = palette => palette.map(hex=>[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255));
       const updateScalar = () => {
         activeScalar = manifest.scalars.find(s=>s.key===q('scalar').value);
@@ -176,43 +226,60 @@ for (const root of document.querySelectorAll('[data-snr-explorer]')) {
         camera.position.copy(center).addScaledVector(direction,distance);
         orbit.update();render();
       };
+      q('scalar').replaceChildren();q('vector').replaceChildren(new Option('None','none'));
       for (const field of manifest.scalars) q('scalar').add(new Option(field.label,field.key));
       for (const field of manifest.vectors) q('vector').add(new Option(field.label,field.key));
-      q('scalar').value='omega_mag';q('vector').value='vorticity';
-      q('scalar').addEventListener('change',updateScalar);
-      for(const name of ['vector','count','length','magnitude']) q(name).addEventListener('input',updateVectors);
-      q('opacity').addEventListener('input',()=>{
+      q('scalar').value=previousScalar;q('vector').value=previousVector;
+      listen(q('scalar'),'change',updateScalar);
+      for(const name of ['vector','count','length','magnitude']) listen(q(name),'input',updateVectors);
+      listen(q('opacity'),'input',()=>{
         material.opacity=Number(q('opacity').value);material.transparent=material.opacity<1;
         material.depthWrite=!material.transparent;material.needsUpdate=true;
         q('opacity-output').textContent=`${Math.round(material.opacity*100)}%`;updateVectors();
       });
-      for(const name of ['cut','cut-position']) q(name).addEventListener('input',updateCut);
+      for(const name of ['cut','cut-position']) listen(q(name),'input',updateCut);
       root.querySelectorAll('[data-view]').forEach(button=>{
-        button.disabled=false;button.addEventListener('click',()=>setView(button.dataset.view));
+        button.disabled=false;listen(button,'click',()=>setView(button.dataset.view));
       });
       const full=q('fullscreen'),wrap=stage.parentElement;
       full.disabled=!wrap.requestFullscreen;
-      full.addEventListener('click',async()=>{
+      listen(full,'click',async()=>{
         try {if(document.fullscreenElement===wrap) await document.exitFullscreen();else await wrap.requestFullscreen();}
         catch {status.textContent='Full screen is unavailable in this browser. You can still rotate and zoom the shell.';}
       });
-      document.addEventListener('fullscreenchange',()=>{full.textContent=document.fullscreenElement===wrap?'Exit full screen':'Full screen';});
+      listen(document,'fullscreenchange',()=>{full.textContent=document.fullscreenElement===wrap?'Exit full screen':'Full screen';});
       orbit.addEventListener('change',render);
       const resize=()=>{
         const width=stage.clientWidth,height=stage.clientHeight;
         if (!width||!height) return;
         renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();render();
       };
-      new ResizeObserver(resize).observe(stage);
+      const observer=new ResizeObserver(resize);observer.observe(stage);
+      cleanup=()=>{
+        events.abort();observer.disconnect();orbit.dispose();
+        geometry.dispose();material.dispose();shaftGeometry.dispose();tipGeometry.dispose();arrowMaterial.dispose();
+        shafts.dispose();tips.dispose();renderer.dispose();renderer.domElement.remove();axes.remove();
+      };
       renderer.domElement.addEventListener('webglcontextlost',event=>{event.preventDefault();status.textContent='The graphics session was interrupted. Reload this page to reopen the explorer.';});
       q('settings').disabled=false;q('legend').hidden=false;q('launch').hidden=true;
-      updateScalar();updateVectors();resize();setView('reset');
+      q('opacity').value='1';q('opacity-output').textContent='100%';q('cut').value='none';
+      q('title').textContent=manifest.title;q('metadata').href=manifestURL;q('distributions').hidden=false;
+      updateScalar();updateCut();resize();setView('reset');opened=true;
       // Handy non-sensitive state for accessibility and browser verification.
       stage.dataset.loaded='true';
     } catch(error) {
       renderer?.dispose();renderer?.domElement.remove();
-      status.textContent=`${error.message || 'The interactive viewer could not start.'} You can use the remnant viewer below.`;
+      status.textContent=`${error.message || 'The interactive viewer could not start.'} Choose a remnant and try loading again.`;
+      cleanup();cleanup=()=>{};opened=false;
+      q('launch').hidden=false;q('settings').disabled=true;q('legend').hidden=true;q('distributions').hidden=true;
+      root.querySelectorAll('[data-view], [data-fullscreen]').forEach(button=>button.disabled=true);
+      q('stage').dataset.loaded='false';
       q('load').disabled=false;q('load').textContent='Try loading again';
-    }
+    } finally { q('remnant').disabled=false; }
+  };
+  q('load').addEventListener('click',load);
+  q('remnant').addEventListener('change',()=>{
+    if(opened) load();
+    else {q('title').textContent=q('remnant').selectedOptions[0].textContent;q('launch').querySelector('img').hidden=q('remnant').selectedIndex!==0;}
   });
 }

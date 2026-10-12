@@ -51,3 +51,20 @@
 
 .snr-axes { position:absolute; bottom:.5rem; left:.5rem; width:80px; height:80px; pointer-events:none; background:#080e19b3; border-radius:8px; }
 .snr-axes svg { width:80px; height:80px; font:14px sans-serif; }
+
+.snr-remnant-picker { padding:1rem 1.5rem; border-bottom:1px solid var(--site-border); }
+.snr-remnant-picker label { display:block; font-weight:600; margin-bottom:.5rem; }
+.snr-remnant-picker select,.snr-pdf-controls select { background:var(--site-bg); color:var(--site-text); border:1px solid var(--site-border); border-radius:5px; padding:.6rem; max-width:100%; }
+.snr-remnant-picker p,.snr-pdf-note { font-size:.8rem; color:var(--site-muted); line-height:1.6; margin:.7rem 0 0; }
+.snr-distributions { padding:1rem 1.5rem; border-top:1px solid var(--site-border); }
+.snr-distributions[hidden] { display:none; }
+.snr-distributions summary { cursor:pointer; color:var(--site-accent); }
+.snr-pdf-controls { display:flex; flex-wrap:wrap; align-items:end; gap:1rem; margin-top:1rem; }
+.snr-pdf-controls label { font-size:.8rem; min-width:0; }
+.snr-pdf-controls select { display:block; width:100%; margin-top:.4rem; }
+.snr-pdf-log { padding-bottom:.6rem; }
+.snr-pdf-plot { max-width:900px; margin:auto; overflow-x:auto; }
+.snr-pdf-plot svg { width:100%; min-width:600px; display:block; font:14px sans-serif; color:var(--site-muted); overflow:visible; }
+.snr-pdf-plot text { fill:currentColor; }
+.snr-distributions button { margin-top:.8rem; padding:.5rem .8rem; border:1px solid var(--site-border); border-radius:5px; font-size:.85rem; }
+@media(max-width:450px) { .snr-distributions { padding:1rem .65rem; } .snr-pdf-controls { display:block; } .snr-pdf-controls label { display:block; margin:.8rem 0; } }

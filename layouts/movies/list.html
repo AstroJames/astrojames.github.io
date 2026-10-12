@@ -16,7 +16,4 @@
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ $js := resources.Get "js/movies.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" defer></script>
-{{ if .HasShortcode "model_viewer" }}
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-{{ end }}
 {{ end }}

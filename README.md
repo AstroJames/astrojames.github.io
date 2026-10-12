@@ -169,7 +169,7 @@ Commits pushed to `main` trigger the GitHub Pages workflow configured in this re
 
 The Movies page loads the SNR 26 explorer only after a visitor selects **Explore
 SNR 26 in 3D**. Its fixed baroclinic isosurface, scalar values and sparse vectors
-are in `static/models/snr26/`. The source volumes remain outside this repository.
+are in `static/models/snr26/`, `snr16/`, `snr57/`, and `snr60/`. The source volumes remain outside this repository.
 The export manifest records the source SHA256, axis convention, normalization,
 color limits, extraction settings, and numerical validation.
 
@@ -184,8 +184,7 @@ Input axes and vector components are **x, y, z**. Marching-cubes coordinates mus
 be sampled in that same order. The exporter checks this against the saved curl
 of velocity and an asymmetric synthetic field. Do not reuse the old
 `marching_cubes.py` field samples, which reversed x and z during interpolation.
-Existing remnant GLBs remain shape previews; the new explorer does not use their
-thickness colors. Temperature is presented as a normalized P/rho proxy, and no
+The old shape-only viewer has been replaced; retained GLB assets are unused. Temperature is presented as a normalized P/rho proxy, and no
 physical-unit conversion is assumed.
 
 `layouts/shortcodes/snr_explorer.html`, `assets/js/snr-explorer.js`, and
@@ -204,3 +203,20 @@ finite differences, applies the validated sign to vectors before interpolation,
 and records `baroclinic_convention.stored_to_physical_sign` (−1 for this cutout).
 Both signed scalar views use the corrected physical source. Magnitudes and shell
 geometry are unaffected. Source HDF5 files are never modified.
+
+The remnant selector includes clusters 26 and 16 at output 00030, and 57 and 60
+at output 00040. These IDs are snapshot-specific, not temporal tracks. Each
+surface downloads on demand, and switching disposes the previous graphics
+resources and event listeners. Missing source center metadata is recorded as null.
+
+The probability-density panel follows the selected color field or vector
+magnitude. Each manifest includes 80-bin full-range histograms for the whole
+shell (area-lumped vertex quadrature) and the cluster mask (equal-volume cells).
+Each triangle contributes one third of its area to each vertex. This approximates
+surface-area weighting without bias toward densely triangulated regions.
+Densities integrate to one over finite samples; undefined samples have their
+excluded weight fraction reported. Log quantities are densities per unit log10.
+Vector-magnitude PDFs use the norm of the interpolated vector, normalized by its
+interior RMS. Scalar magnitude fields instead interpolate the saved magnitude,
+as the surface colors do. Camera, cutaway, arrow sampling and opacity do not
+filter distributions. CSV download retains edges, density, scope and normalization.

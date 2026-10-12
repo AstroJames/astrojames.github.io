@@ -21,9 +21,30 @@ class RegistrationTests(unittest.TestCase):
         expected=points @ np.array([[2,1,-3],[3,-5,1],[-1,2,7]])
         np.testing.assert_allclose(actual,expected)
 
+    def test_weighted_density_and_excluded_values(self):
+        pdf=exporter.distribution([0,1,2,np.nan],weights=[1,2,3,4],bins=2)
+        np.testing.assert_allclose(pdf['edges'],[0,1,2])
+        np.testing.assert_allclose(pdf['density'],[1/6,5/6])
+        self.assertAlmostEqual(pdf['excluded_weight_fraction'],.4)
+
     def test_all_packaged_arrays_are_finite_and_in_bounds(self):
-        folder=ROOT/'static/models/snr26'
+        for name in ['snr26','snr16','snr57','snr60']:
+            with self.subTest(remnant=name):
+                self.check_package(ROOT/'static/models'/name)
+
+    def check_package(self, folder):
         meta=json.loads((folder/'manifest.json').read_text())
+        self.assertEqual(len(meta['distributions']),12)
+        for regions in meta['distributions'].values():
+            for pdf in regions.values():
+                edges, density=np.array(pdf['edges']),np.array(pdf['density'])
+                self.assertEqual(len(density),80)
+                self.assertTrue(np.all(np.diff(edges)>0))
+                self.assertTrue(np.all(density>=0))
+                self.assertTrue(np.isfinite(density).all())
+                self.assertAlmostEqual(float(np.sum(np.diff(edges)*density)),1,places=12)
+                self.assertGreaterEqual(pdf['excluded_weight_fraction'],-1e-14)
+                self.assertLess(pdf['excluded_weight_fraction'],1)
         buffer=(folder/meta['binary']).read_bytes()
         self.assertEqual(len(buffer),meta['bytes'])
         arrays={}
