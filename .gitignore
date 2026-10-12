@@ -13,6 +13,7 @@ __pycache__/
 
 # Private scheduling preview data and organizer credentials
 .local/meeting-scheduler/
+.local/movie-originals-*/
 
 # Local lecture upload instructions/scratch area
 static/lectures/new/

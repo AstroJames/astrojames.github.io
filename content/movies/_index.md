@@ -4,6 +4,28 @@ summary: Numerical experiments and simulations that are easier to appreciate in 
 type: page
 ---
 
+## Kelvin–Helmholtz instability in three dimensions
+
+{{< video src="movies/KHI_density_smooth_flythrough_t200.mp4" controls="yes" loop="yes" muted="yes" playsinline="yes" >}}
+
+*A flight through the density field at a fixed time, $t/t_\Delta \simeq 200$, in a Mach 1 Kelvin–Helmholtz simulation with $\mathrm{Re}_\Delta = 16384$ and $\mathrm{Pm}_\Delta = 1$. Color shows the logarithmic density contrast, $\ln(\rho/\rho_0)$.*
+
+## Density and magnetic-field stretching
+
+{{< video src="movies/Mach1_figure1.mp4" controls="yes" loop="yes" muted="yes" playsinline="yes" >}}
+
+*Density and magnetic-field stretching in the $xy$ and $yz$ planes of the Mach 1 simulation. The density panels show $\rho/\langle\rho\rangle_0$, while the adjacent panels show the dimensionless stretching rate, $t_\Delta \hat{B}_i\hat{B}_j\partial_j u_i$. The Reynolds number is $\mathrm{Re}_\Delta = 16384$ and the magnetic Prandtl number is $\mathrm{Pm}_\Delta = 1$.*
+
+## Vorticity across Reynolds numbers
+
+{{< video src="movies/Mach1_vorticity_xy.mp4" controls="yes" loop="yes" muted="yes" playsinline="yes" >}}
+
+*Vorticity magnitude in the $xy$ plane near $z/L = 0$. The ten panels compare Reynolds numbers from $\mathrm{Re}_\Delta = 64$ to $16384$ at Mach 1 and $\mathrm{Pm}_\Delta = 1$. Color shows $t_\Delta |\nabla\times\boldsymbol{u}|$.*
+
+{{< video src="movies/Mach1_vorticity_yz.mp4" controls="yes" loop="yes" muted="yes" playsinline="yes" >}}
+
+*The same Reynolds-number comparison in the $yz$ plane near $x/L = -1/4$, showing the flow from a perpendicular direction.*
+
 ## Cooling supernovae remnants are turbulence engines. Extracted SNRs from disk cut-out simulations in [Beattie et al. (2025)](https://arxiv.org/abs/2501.09855)
 
 {{< video
