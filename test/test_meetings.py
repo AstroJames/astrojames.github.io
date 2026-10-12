@@ -55,7 +55,7 @@ class MeetingTemplateTests(unittest.TestCase):
         self.assertNotIn('datetime="2026-10-07"', html)
         self.assertLess(html.index('datetime="2026-09-30"'), html.index('datetime="2026-10-14"'))
         self.assertIn('href="https://www.ias.edu/scholars/david-velasco-romero"', html)
-        for text in ("David Velasco-Romero", "Roundtable: bring one plot", "hierarchical flux corrections", "Ohmic resistivity", "(proposed)", "What we do", "Coding tools"):
+        for text in ("David Velasco-Romero", "Roundtable: bring one plot", "Limiting only where it fails:", "MOOD (Multi-dimensional Optimal Order Detection)", "∇·B = 0.", "(proposed)", "What we do", "Coding tools"):
             self.assertIn(text, html)
         self.assertIn('datetime="2026-12-30"', html)
         self.assertIn('US federal holiday:', html)

@@ -46,11 +46,10 @@ sessions:
     speaker: David Velasco-Romero
     speaker_url: https://www.ias.edu/scholars/david-velasco-romero
     affiliation: Institute for Advanced Study
-    title: Numerical methods discussion
+    title: "Limiting only where it fails: an a-posteriori fallback for high-order hydrodynamics and MHD in AthenaK."
     format: Research talk and discussion
     status: confirmed
-    abstract: David will discuss either hierarchical flux corrections or his latest work on Ohmic resistivity. The final topic and title will be announced ahead of the meeting.
-    preparation: Any suggested reading will be shared once the topic is confirmed.
+    abstract: Standard shock-capturing schemes limit the reconstruction everywhere, before knowing whether limiting is needed, and pay for robustness with dissipation in smooth flow. This talk presents an a-posteriori alternative implemented in AthenaK, following the MOOD (Multi-dimensional Optimal Order Detection) approach. The method covers Newtonian and relativistic hydrodynamics and MHD, with the fallback applied consistently to fluxes and electric fields so that constrained transport preserves ∇·B = 0.
     materials: []
   - id: week-03
     date: "2026-10-21"
