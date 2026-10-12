@@ -10,6 +10,10 @@ type: page
 
 *A flight through the density field at a fixed time, $t/t_\Delta \simeq 200$, in a Mach 1 Kelvin–Helmholtz simulation with $\mathrm{Re}_\Delta = 16384$ and $\mathrm{Pm}_\Delta = 1$. Color shows the logarithmic density contrast, $\ln(\rho/\rho_0)$.*
 
+{{< video src="movies/KHI_white_tubes_flythrough_t200.mp4" controls="yes" loop="yes" muted="yes" playsinline="yes" >}}
+
+*A flight through the same snapshot with magnetic-field lines shown as white tubes. The density colors and simulation parameters are the same as above.*
+
 ## Density and magnetic-field stretching
 
 {{< video src="movies/Mach1_figure1.mp4" controls="yes" loop="yes" muted="yes" playsinline="yes" >}}
