@@ -8,12 +8,14 @@
 .snr-stage-wrap { min-width:0; padding:1rem; }
 .snr-stage { height:520px; min-width:0; position:relative; background:#080e19; border:1px solid var(--site-border); border-radius:8px; overflow:hidden; }
 .snr-stage canvas { width:100%; height:100%; display:block; touch-action:none; }
-.snr-launch { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center; color:#edf2f7; }
+.snr-launch { position:absolute; inset:0; display:grid; grid-template-rows:minmax(0,1fr) auto; text-align:center; color:#edf2f7; }
 .snr-launch[hidden] { display:none; }
-.snr-launch img { width:100%; height:100%; object-fit:contain; position:absolute; inset:0; }
-.snr-launch > div { z-index:1; background:#101d2cf0; border:1px solid #496780; border-radius:10px; padding:1.1rem; max-width:90%; }
+.snr-launch img { width:100%; height:100%; min-height:0; object-fit:contain; display:block; }
+.snr-launch img[hidden] { visibility:hidden; display:block; }
+.snr-launch > div { background:#101d2c; border-top:1px solid #496780; padding:.8rem 1rem; }
 .snr-launch button { background:#8cccf4; color:#08121e; font-weight:650; border-radius:6px; padding:.8rem 1rem; }
 .snr-launch p { font-size:.8rem; margin:.65rem 0 0; }
+.snr-launch .snr-preview-caption { margin:0 0 .65rem; color:#b9cedd; }
 .snr-status { font-size:.8rem; line-height:1.5; color:var(--site-muted); min-height:2.4em; margin:.75rem 0; }
 .snr-view-buttons { display:flex; flex-wrap:wrap; gap:.4rem; }
 .snr-view-buttons button { padding:.5rem .65rem; border:1px solid var(--site-border); border-radius:5px; font-size:.8rem; }

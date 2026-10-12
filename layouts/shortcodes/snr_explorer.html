@@ -6,10 +6,10 @@
   <div class="snr-remnant-picker">
     <label for="snr-remnant">Choose a remnant</label>
     <select id="snr-remnant" data-remnant>
-      <option value="/models/snr26/manifest.json">SNR 26 · output 00030</option>
-      <option value="/models/snr16/manifest.json">SNR 16 · output 00030</option>
-      <option value="/models/snr57/manifest.json">SNR 57 · output 00040</option>
-      <option value="/models/snr60/manifest.json">SNR 60 · output 00040</option>
+      <option value="/models/snr26/manifest.json" data-preview-src="/images/snr26-preview-v2.webp">SNR 26 · output 00030</option>
+      <option value="/models/snr16/manifest.json" data-preview-src="/images/snr16-preview-v2.webp">SNR 16 · output 00030</option>
+      <option value="/models/snr57/manifest.json" data-preview-src="/images/snr57-preview-v2.webp">SNR 57 · output 00040</option>
+      <option value="/models/snr60/manifest.json" data-preview-src="/images/snr60-preview-v2.webp">SNR 60 · output 00040</option>
     </select>
     <p>Each remnant loads on demand. Output labels identify snapshots, not a time sequence of the same remnant.</p>
   </div>
@@ -17,8 +17,8 @@
     <div class="snr-stage-wrap">
       <div class="snr-stage" data-stage>
         <div class="snr-launch" data-launch>
-          <img src="/images/snr26-preview.png" alt="Preview of the SNR 26 baroclinic shell" loading="lazy" onerror="this.hidden=true">
-          <div><button type="button" data-load>Open the 3D explorer</button><p>Each surface loads about 5–7 MB. Drag to rotate · scroll or pinch to zoom.</p></div>
+          <img data-preview src="/images/snr26-preview-v2.webp" alt="SNR 26: vorticity magnitude with vorticity arrows" loading="lazy" onerror="this.hidden=true">
+          <div><p class="snr-preview-caption" data-preview-caption>SNR 26 · vorticity magnitude and arrows</p><button type="button" data-load>Open the 3D explorer</button><p>Each surface loads about 5–7 MB. Drag to rotate · scroll or pinch to zoom.</p></div>
         </div>
       </div>
       <p class="snr-status" role="status" aria-live="polite" data-status>Ready to explore. The simulation data load when you open the viewer.</p>
@@ -38,10 +38,10 @@
     <fieldset class="snr-settings" disabled data-settings>
       <legend>Explore the fields</legend>
       <label for="snr-scalar">Color surface by</label>
-      <select id="snr-scalar" data-scalar></select>
+      <select id="snr-scalar" data-scalar><option value="omega_mag">Vorticity magnitude</option></select>
       <p class="snr-field-note" data-field-note></p>
       <label for="snr-vector">Vector overlay</label>
-      <select id="snr-vector" data-vector><option value="none">None</option></select>
+      <select id="snr-vector" data-vector><option value="vorticity">Vorticity</option></select>
       <p class="snr-vector-note" data-vector-note>Arrows show the full three-dimensional direction at the shell.</p>
       <label for="snr-count">Arrow count <output data-count-output>250</output></label>
       <input id="snr-count" type="range" min="50" max="800" step="50" value="250" data-count>

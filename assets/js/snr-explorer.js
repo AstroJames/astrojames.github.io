@@ -19,6 +19,7 @@ for (const root of document.querySelectorAll('[data-snr-explorer]')) {
     const previousScalar=q('scalar').value||'omega_mag',previousVector=opened?q('vector').value:'vorticity';
     q('remnant').disabled = true;
     q('load').disabled = true;
+    q('load').textContent = 'Loading the remnant…';
     status.textContent = 'Loading the surface and scientific fields…';
     let renderer;
     try {
@@ -279,7 +280,11 @@ for (const root of document.querySelectorAll('[data-snr-explorer]')) {
   };
   q('load').addEventListener('click',load);
   q('remnant').addEventListener('change',()=>{
+    const option=q('remnant').selectedOptions[0], name=option.textContent.split(' · ')[0];
+    q('preview').src=option.dataset.previewSrc;q('preview').hidden=false;
+    q('preview').alt=`${name}: vorticity magnitude with vorticity arrows`;
+    q('preview-caption').textContent=`${name} · vorticity magnitude and arrows`;
     if(opened) load();
-    else {q('title').textContent=q('remnant').selectedOptions[0].textContent;q('launch').querySelector('img').hidden=q('remnant').selectedIndex!==0;}
+    else {q('title').textContent=option.textContent;q('load').textContent='Open the 3D explorer';}
   });
 }
