@@ -1,6 +1,6 @@
 # Dates are set; the Wednesday 1–2 p.m. time is still being finalized.
-cadence: Wednesday meetings
-day: Wednesdays
+cadence: Wednesday meetings every two weeks
+day: Every other Wednesday
 time: "1–2 p.m. (proposed)"
 end_time: "14:00"
 timezone: America/New_York
@@ -24,7 +24,7 @@ event_types:
   - Coding tools, development environments, and scientific workflows
   - Discussions led by local researchers working on MHD
 format_note: Meetings are primarily in person. Occasional invited Zoom talks are welcome for special sessions, rather than as the regular format.
-schedule_note: Future Wednesday slots are listed through December 2026; speakers and holiday arrangements are to be confirmed.
+schedule_note: Meetings are spaced every two weeks through December 2026; remaining speakers and holiday arrangements are to be confirmed.
 sessions:
   - id: week-01
     slot: Session 1
@@ -51,20 +51,8 @@ sessions:
     status: confirmed
     abstract: Standard shock-capturing schemes limit the reconstruction everywhere, before knowing whether limiting is needed, and pay for robustness with dissipation in smooth flow. This talk presents an a-posteriori alternative implemented in AthenaK, following the MOOD (Multi-dimensional Optimal Order Detection) approach. The method covers Newtonian and relativistic hydrodynamics and MHD, with the fallback applied consistently to fluxes and electric fields so that constrained transport preserves ∇·B = 0.
     materials: []
-  - id: week-03
-    date: "2026-10-21"
-    speaker: ""
-    title: ""
-    status: planning
-    materials: []
   - id: week-04
     date: "2026-10-28"
-    speaker: ""
-    title: ""
-    status: planning
-    materials: []
-  - id: week-05
-    date: "2026-11-04"
     speaker: ""
     title: ""
     status: planning
@@ -78,7 +66,7 @@ sessions:
     holiday: Veterans Day
     holiday_url: https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/#url=2026
   - id: week-07
-    date: "2026-11-18"
+    date: "2026-11-25"
     speaker: Abhishek Hegade
     speaker_url: https://abhihegade.github.io/
     affiliation: Princeton University
@@ -86,38 +74,14 @@ sessions:
     format: Research talk and discussion
     status: confirmed
     materials: []
-  - id: week-08
-    date: "2026-11-25"
-    speaker: ""
-    title: ""
-    status: planning
-    materials: []
-  - id: week-09
-    date: "2026-12-02"
-    speaker: ""
-    title: ""
-    status: planning
-    materials: []
   - id: week-10
     date: "2026-12-09"
     speaker: ""
     title: ""
     status: planning
     materials: []
-  - id: week-11
-    date: "2026-12-16"
-    speaker: ""
-    title: ""
-    status: planning
-    materials: []
   - id: week-12
     date: "2026-12-23"
-    speaker: ""
-    title: ""
-    status: planning
-    materials: []
-  - id: week-13
-    date: "2026-12-30"
     speaker: ""
     title: ""
     status: planning

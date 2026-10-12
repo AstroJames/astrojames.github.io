@@ -1,5 +1,6 @@
 """Render the real meeting templates with open slots and populated sessions."""
 import copy
+from datetime import date
 import os
 from pathlib import Path
 import shutil
@@ -57,7 +58,12 @@ class MeetingTemplateTests(unittest.TestCase):
         self.assertIn('href="https://www.ias.edu/scholars/david-velasco-romero"', html)
         for text in ("David Velasco-Romero", "Roundtable: bring one plot", "Limiting only where it fails:", "MOOD (Multi-dimensional Optimal Order Detection)", "∇·B = 0.", "(proposed)", "What we do", "Coding tools"):
             self.assertIn(text, html)
-        self.assertIn('datetime="2026-12-30"', html)
+        self.assertIn('datetime="2026-12-23"', html)
+        dates = [date.fromisoformat(session['date']) for session in self.original['sessions']]
+        self.assertTrue(all(day.weekday() == 2 for day in dates))
+        self.assertTrue(all((later - earlier).days == 14 for earlier, later in zip(dates, dates[1:])))
+        abhishek = next(session for session in self.original['sessions'] if session.get('speaker') == 'Abhishek Hegade')
+        self.assertEqual(abhishek['date'], '2026-11-25')
         self.assertIn('US federal holiday:', html)
         self.assertEqual(html.count('Veterans Day'), 1)
         self.assertNotIn('Not shared yet', html)
