@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "shape": [
+    128,
+    128,
+    128
+  ],
+  "encoding": "byte-shuffled little-endian float32, gzip; component-major, x/y/z array order",
+  "groups": {
+    "thermo": {
+      "file": "volume-thermo-v1.bin.gz",
+      "components": [
+        "density",
+        "pressure"
+      ],
+      "bytes": 12336237,
+      "raw_bytes": 16777216,
+      "sha256": "062f2c52b47fb57fa95ac0a2b1efdd1e2675778fea8b7cb1312656b56c7a62cb"
+    },
+    "velocity": {
+      "file": "volume-velocity-v1.bin.gz",
+      "components": [
+        "vx",
+        "vy",
+        "vz"
+      ],
+      "bytes": 19750009,
+      "raw_bytes": 25165824,
+      "sha256": "b7e267018bacb0e33bb05e7aacdc0c94355e9fc6a35b48921657eb4d78539a87"
+    },
+    "vorticity": {
+      "file": "volume-vorticity-v1.bin.gz",
+      "components": [
+        "omega_x",
+        "omega_y",
+        "omega_z"
+      ],
+      "bytes": 20311009,
+      "raw_bytes": 25165824,
+      "sha256": "951e0d748493d60a34d065335e199f333d378f317242caa9368a5183b72c7e40"
+    },
+    "baroclinic": {
+      "file": "volume-baroclinic-v1.bin.gz",
+      "components": [
+        "baro_x",
+        "baro_y",
+        "baro_z"
+      ],
+      "bytes": 21282624,
+      "raw_bytes": 25165824,
+      "sha256": "65b3802a962c216499e22671fa697a2e6f56464f8be864ff2611c7294904458a"
+    },
+    "solenoidal": {
+      "file": "volume-solenoidal-v1.bin.gz",
+      "components": [
+        "u_sx",
+        "u_sy",
+        "u_sz"
+      ],
+      "bytes": 20041612,
+      "raw_bytes": 25165824,
+      "sha256": "f565e49c74c4a391a54561a84c1a8ac17d275a2830e350b82c310bb2f00385cc"
+    },
+    "compressive": {
+      "file": "volume-compressive-v1.bin.gz",
+      "components": [
+        "u_cx",
+        "u_cy",
+        "u_cz"
+      ],
+      "bytes": 19359686,
+      "raw_bytes": 25165824,
+      "sha256": "1897ec54436ec90e6490bc15ec4882b588604ebb2f9fd9adecf98b36becb15b5"
+    }
+  },
+  "fields": {
+    "density": {
+      "0": {
+        "min": 0.42270781066253826,
+        "max": 13362.45990207078,
+        "p95": 2909.1349237850613
+      },
+      "0.8": {
+        "min": 0.42407591475625067,
+        "max": 9473.174957405225,
+        "p95": 2840.308616968704
+      }
+    },
+    "pressure": {
+      "0": {
+        "min": 0.028150364725683,
+        "max": 276.6053831866486,
+        "p95": 54.19237777783078
+      },
+      "0.8": {
+        "min": 0.07035522938571931,
+        "max": 193.0603531617375,
+        "p95": 52.01723746467812
+      }
+    },
+    "temperature": {
+      "0": {
+        "min": 0.0004330916457105737,
+        "max": 1.846737184040523,
+        "p95": 1.2122791028310267
+      },
+      "0.8": {
+        "min": 0.000570029779722198,
+        "max": 1.789858760841914,
+        "p95": 1.201821165923214
+      }
+    },
+    "omega_mag": {
+      "0": {
+        "min": 4.3880273586173566e-05,
+        "max": 9.755526111226468,
+        "p95": 1.6137762770352797
+      },
+      "0.8": {
+        "min": 0.00038100658924296245,
+        "max": 6.487181251225712,
+        "p95": 1.4700327855544078
+      }
+    },
+    "baro_mag": {
+      "0": {
+        "min": 1.8708165724507098e-08,
+        "max": 97.05559535909367,
+        "p95": 0.021081348367532015
+      },
+      "0.8": {
+        "min": 4.1996614583377414e-07,
+        "max": 14.366115342426511,
+        "p95": 0.14254717543265674
+      }
+    }
+  },
+  "source_sha256": "e38459871bd851c412e400a00cdbe71c4d4c5421118ebe8a4fd09f9287479805"
+}

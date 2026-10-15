@@ -18,7 +18,7 @@
       <div class="snr-stage" data-stage>
         <div class="snr-launch" data-launch>
           <img data-preview src="/images/snr26-preview-v2.webp" alt="SNR 26: vorticity magnitude with vorticity arrows" loading="lazy" onerror="this.hidden=true">
-          <div><p class="snr-preview-caption" data-preview-caption>SNR 26 · vorticity magnitude and arrows</p><button type="button" data-load>Open the 3D explorer</button><p>Each surface loads about 5–7 MB. Drag to rotate · scroll or pinch to zoom.</p></div>
+          <div><p class="snr-preview-caption" data-preview-caption>SNR 26 · vorticity magnitude and arrows</p><button type="button" data-load>Open the 3D explorer</button><p>The preset loads about 5–7 MB. Drag to rotate · scroll or pinch to zoom.</p></div>
         </div>
       </div>
       <p class="snr-status" role="status" aria-live="polite" data-status>Ready to explore. The simulation data load when you open the viewer.</p>
@@ -37,6 +37,28 @@
     </div>
     <fieldset class="snr-settings" disabled data-settings>
       <legend>Explore the fields</legend>
+      <label for="snr-surface-mode">Surface</label>
+      <select id="snr-surface-mode" data-surface-mode><option value="preset">Original baroclinic shell</option><option value="custom">Explore the full volume</option></select>
+      <div data-volume-controls hidden>
+        <p>Volumes load on demand, about 13–21 MB per field group. Loaded fields are reused while you explore this remnant.</p>
+        <label for="snr-surface-field">Shape surface by</label>
+        <select id="snr-surface-field" data-surface-field><option value="baro_mag">Baroclinic-source magnitude</option><option value="omega_mag">Vorticity magnitude</option><option value="density">Density</option><option value="pressure">Pressure</option><option value="temperature">Temperature proxy</option></select>
+        <label for="snr-level">Contour level <span data-level-unit></span></label>
+        <input id="snr-level" type="number" min="0" step="any" data-level>
+        <input aria-label="Contour level, logarithmic slider" type="range" min="-4" max="4" step="0.005" data-level-slider>
+        <button type="button" class="snr-apply-level" data-apply-level>Apply level</button>
+        <label for="snr-smoothing">Surface smoothing</label>
+        <select id="snr-smoothing" data-smoothing><option value="0.8">0.8 voxels</option><option value="0">None</option></select>
+        <label for="snr-resolution">Geometry detail</label>
+        <select id="snr-resolution" data-resolution><option value="128">Full · 128³</option><option value="64">Fast · 64³</option></select>
+        <p>Both modes cover the full cutout. Colors and vectors sample the original 128³ fields. Release the slider to update.</p>
+        <label for="snr-slice">Interior slice and contour</label>
+        <select id="snr-slice" data-slice><option value="none">None</option><option value="x">x plane</option><option value="y">y plane</option><option value="z">z plane</option></select>
+        <label for="snr-slice-position">Slice position <output data-slice-output>50%</output></label>
+        <input id="snr-slice-position" type="range" min="0" max="100" value="50" data-slice-position>
+        <p>The slice uses the color field. Contour lines mark the selected surface level. A matching cutaway reveals the plane.</p>
+      </div>
+      <p class="snr-volume-note" data-surface-note>The preset loads a fixed diagnostic shell. Full-volume mode loads about 13–21 MB per field group as needed.</p>
       <label for="snr-scalar">Color surface by</label>
       <select id="snr-scalar" data-scalar><option value="omega_mag">Vorticity magnitude</option></select>
       <p class="snr-field-note" data-field-note></p>
@@ -61,7 +83,7 @@
     <summary>Probability density functions (PDFs)</summary>
     <div class="snr-pdf-controls">
       <label>Quantity<select data-pdf-quantity><option value="scalar">Surface color field</option><option value="vector">Vector magnitude</option></select></label>
-      <label>Region<select data-pdf-region><option value="shell">Shell · area weighted</option><option value="interior">Remnant interior · volume weighted</option></select></label>
+      <label>Region<select data-pdf-region><option value="shell">Current surface · area weighted</option><option value="interior">Remnant interior · volume weighted</option></select></label>
       <label class="snr-pdf-log"><input type="checkbox" data-pdf-log> Logarithmic PDF axis</label>
     </div>
     <p data-pdf-heading></p>
@@ -70,11 +92,12 @@
     <button type="button" data-pdf-download>Download distribution (CSV)</button>
   </details>
   <details class="snr-methods"><summary>What the surface and arrows represent</summary>
-    <p>The surface follows the 95th percentile of the baroclinic-source magnitude in this 128³ cutout, smoothed over 0.8 voxels. It is a diagnostic isosurface, not a fitted shock front. Its geometry stays fixed when the color field changes.</p>
+    <p>The original preset follows the 95th percentile of the baroclinic-source magnitude, smoothed over 0.8 voxels. Full-volume mode extracts a new isosurface at the chosen field value across the whole 128³ cutout, including material outside the remnant mask. The level is divided by the field’s interior mean or RMS. Smoothing changes only the shape field. Geometry stays fixed when the color field changes. These diagnostic isosurfaces are not fitted shock fronts. Classical marching cubes can resolve ambiguous cells differently from the original preset.</p>
     <p>Density, pressure, and the temperature proxy P/ρ are divided by their mean within the remnant mask. Vorticity and baroclinic-source magnitudes are divided by their RMS within that mask. These positive fields use logarithmic colors, limited to their surface 2nd–98th percentiles. Values outside the scale saturate at the end colors. Physical-unit conversions are not assumed.</p>
     <p>Here b = ∇ρ × ∇P / ρ² is the physical baroclinic source. The signed quantity ω · b shows the baroclinic contribution to the evolution of |ω|²/2. Positive values reinforce existing vorticity, while negative values oppose it. It is one contribution to the enstrophy budget. The alignment view separates direction from magnitude.</p>
-    <p>Arrows sample the selected vector at evenly spaced locations on the surface. Equal-length arrows show direction. With magnitude scaling enabled, lengths are proportional to magnitude up to the 95th percentile of the 800 sampled vectors. Velocity is shown in the simulation frame, without subtracting remnant motion. Vorticity arrows mark rotation axes, not flow trajectories. Increasing transparency reveals arrows behind the surface but blends the surface colors.</p>
-    <p>PDFs span the full finite range of the selected quantity, including values beyond the color limits. Shell PDFs approximate area weighting by assigning one third of each triangle’s area to each vertex. Interior PDFs use equal-volume cells in the remnant mask. Each PDF integrates to one over its included samples. Logarithmic quantities have a density per unit log₁₀. Vector PDFs use the magnitude of the interpolated vector and its interior RMS. Cutaways, camera views, and arrow counts do not filter these distributions.</p>
+    <p>Arrows sample the selected vector at well-spaced locations on the current surface. Full-volume mode uses farthest-point sampling from up to 4,000 candidate vertices. Equal-length arrows show direction. With magnitude scaling enabled, lengths are proportional to magnitude up to the 95th percentile of up to 800 sampled vectors. Velocity is shown in the simulation frame, without subtracting remnant motion. Vorticity arrows mark rotation axes, not flow trajectories. Increasing transparency reveals arrows behind the surface but blends the surface colors.</p>
+    <p>PDFs span the full finite range of the selected quantity, including values beyond the color limits. Surface PDFs update with the geometry and approximate area weighting by assigning one third of each triangle’s area to each vertex. Interior PDFs use equal-volume cells in the remnant mask. Each PDF integrates to one over its included samples. Logarithmic quantities have a density per unit log₁₀. Vector PDFs use the magnitude of the interpolated vector and its interior RMS. Cutaways, camera views, and arrow counts do not filter these distributions.</p>
+    <p>Full-volume data retain the original float32 values with lossless compression. Temperature is reconstructed as P/ρ and magnitudes from the saved vector components. Colors and vectors use trilinear interpolation on the original grid. Fast geometry samples the smoothed shape field on a 64³ grid spanning the same cutout. Surface PDFs describe that displayed mesh. The slice is sampled at 128² points, and its contour lines use linear interpolation within triangles. Undefined color values appear gray.</p>
     <p><a data-metadata href="/models/snr26/manifest.json">View field definitions and export metadata</a></p>
   </details>
   <noscript><p>The interactive explorer needs JavaScript. A static preview is shown above.</p></noscript>

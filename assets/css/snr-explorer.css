@@ -70,3 +70,13 @@
 .snr-pdf-plot text { fill:currentColor; }
 .snr-distributions button { margin-top:.8rem; padding:.5rem .8rem; border:1px solid var(--site-border); border-radius:5px; font-size:.85rem; }
 @media(max-width:450px) { .snr-distributions { padding:1rem .65rem; } .snr-pdf-controls { display:block; } .snr-pdf-controls label { display:block; margin:.8rem 0; } }
+
+.snr-settings input[type=number] { width:100%; background:var(--site-bg); color:var(--site-text); border:1px solid var(--site-border); border-radius:5px; padding:.6rem; }
+.snr-settings [data-volume-controls] { border-bottom:1px solid var(--site-border); padding-bottom:.7rem; }
+.snr-settings [data-volume-controls][hidden] { display:none; }
+.snr-settings [data-level-unit] { display:block; color:var(--site-muted); font-size:.75rem; margin-top:.3rem; }
+.snr-volume-note { overflow-wrap:anywhere; }
+
+@media(min-width:851px) { .snr-settings { max-height:850px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; } }
+
+.snr-apply-level { padding:.45rem .7rem; border:1px solid var(--site-border); border-radius:5px; font-size:.8rem; }

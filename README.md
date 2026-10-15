@@ -184,7 +184,7 @@ Input axes and vector components are **x, y, z**. Marching-cubes coordinates mus
 be sampled in that same order. The exporter checks this against the saved curl
 of velocity and an asymmetric synthetic field. Do not reuse the old
 `marching_cubes.py` field samples, which reversed x and z during interpolation.
-The old shape-only viewer has been replaced; retained GLB assets are unused. Temperature is presented as a normalized P/rho proxy, and no
+The old shape-only viewer and its unused GLB assets have been removed. Temperature is presented as a normalized P/rho proxy, and no
 physical-unit conversion is assumed.
 
 `layouts/shortcodes/snr_explorer.html`, `assets/js/snr-explorer.js`, and
@@ -220,3 +220,44 @@ Vector-magnitude PDFs use the norm of the interpolated vector, normalized by its
 interior RMS. Scalar magnitude fields instead interpolate the saved magnitude,
 as the surface colors do. Camera, cutaway, arrow sampling and opacity do not
 filter distributions. CSV download retains edges, density, scope and normalization.
+
+
+### Full-volume surfaces
+
+The original fixed shell remains the initial preset. “Explore the full volume”
+loads selected full-resolution field groups and extracts an independent contour
+of density, pressure, P/rho, vorticity magnitude, or baroclinic magnitude.
+The normalized numeric level and logarithmic slider describe the shape field.
+The 95th percentile is the initial level for each field and smoothing choice.
+All 128³ cells span the original cutout, including material outside cluster_mask.
+Surface smoothing (none or sigma0.8voxels) affects geometry only. Fast64³ geometry
+samples the same full extent; colors/vectors still sample native128³ fields.
+
+`scripts/export_snr_volumes.py SOURCE.h5 static/models/snr26` exports lossless
+byte-shuffled float32 gzip groups, approximately109–113MB per remnant in total.
+Each group is13–21MB and downloads only when required. Group bytes and SHA256
+are checked in the worker. P/rho and vector magnitudes are reconstructed on the
+native grid; the physical baroclinic sign is inherited from the verified export.
+
+`static/js/snr/volume-core.js` supplies trilinear interpolation, separable Gaussian
+smoothing, classical marching cubes, surface-area histograms and arrow anchors.
+The case table is from scikit-image0.25.2, with its license alongside it. Ambiguous
+cube topology can differ from the Lewiner extraction used by the original preset.
+The worker caches volumes, the smoothed shape field and the latest mesh. It caps
+meshes at1.2million triangles and preserves the previous view on an empty contour
+or failed request. Returning to the preset restores its original arrays and PDFs.
+Remnant switching terminates the old worker and disposes graphics resources.
+
+Surface PDFs use the displayed geometry and full vertex samples, independently
+of arrow count, opacity, slice and cutaway. Interior PDFs retain the original
+cluster-mask reference. Near-constant scalar ranges are padded to avoid magnifying
+floating-point interpolation noise into false color contrast. Optional128²
+orthogonal slices share the color scale and show the current shape-field contour
+with piecewise-linear triangle intersections. Enabling/moving a slice positions a
+matching cutaway; it does not change which surface enters the PDF.
+
+Checks: `node test/test_snr_volume.mjs` and
+`python -m unittest discover -s test -p 'test_snr*.py'`.
+Independent source checks also compared128³ contour levels, signed colors and
+velocity arrows against SciPy interpolation of the HDF5 data. Keep the complete
+built site below the GitHub Pages1GB limit before adding more volume datasets.
