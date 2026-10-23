@@ -22,12 +22,16 @@ Magnetic-field lines shown as white tubes over the density field at $t/t_\Delta 
 Density and magnetic-field stretching in the $xy$ and $yz$ planes of the Mach 1 simulation. The density panels show $\rho/\langle\rho\rangle_0$, while the adjacent panels show the dimensionless stretching rate, $t_\Delta \hat{B}_i\hat{B}_j\partial_j u_i$. The Reynolds number is $\mathrm{Re}_\Delta = 16384$ and the magnetic Prandtl number is $\mathrm{Pm}_\Delta = 1$.
 {{< /movie >}}
 
-{{< movie src="movies/Mach1_vorticity_xy.mp4" title="Vorticity in the xy plane" duration="0:15" size="22 MB" summary="Compare ten Reynolds numbers in a slice through the shear layers." >}}
-Vorticity magnitude in the $xy$ plane near $z/L = 0$. The ten panels compare Reynolds numbers from $\mathrm{Re}_\Delta = 64$ to $16384$ at Mach 1 and $\mathrm{Pm}_\Delta = 1$. Color shows $t_\Delta |\nabla\times\boldsymbol{u}|$.
+{{< movie src="movies/Mach1_vorticity_xy.mp4" title="Vorticity in the xy plane" duration="0:21" size="31 MB" summary="Compare ten Reynolds numbers in a slice through the shear layers." >}}
+Vorticity magnitude in the $xy$ plane near $z/L = 0$. The ten panels compare Reynolds numbers from $\mathrm{Re}_\Delta = 64$ to $16,\!384$ at Mach 1 and $\mathrm{Pm}_\Delta = 1$. Color shows $t_\Delta |\nabla\times\boldsymbol{u}|$.
+
+The sequence extends to $t/t_\Delta=1,\!000$. The $\mathrm{Re}_\Delta=64$ and $4,\!096$ panels hold their final saved states at $t/t_\Delta=700$ and $943.1$, respectively; the other eight runs reach $1,\!000$.
 {{< /movie >}}
 
-{{< movie src="movies/Mach1_vorticity_yz.mp4" title="Vorticity in the yz plane" duration="0:15" size="23 MB" summary="View the same Reynolds-number sequence from a perpendicular direction." >}}
-Vorticity magnitude in the $yz$ plane near $x/L = -1/4$. The ten panels compare $\mathrm{Re}_\Delta = 64$ to $16384$ at Mach 1 and $\mathrm{Pm}_\Delta = 1$. Color shows $t_\Delta |\nabla\times\boldsymbol{u}|$.
+{{< movie src="movies/Mach1_vorticity_yz.mp4" title="Vorticity in the yz plane" duration="0:21" size="32 MB" summary="View the same Reynolds-number sequence from a perpendicular direction." >}}
+Vorticity magnitude in the $yz$ plane near $x/L = -1/4$. The ten panels compare $\mathrm{Re}_\Delta = 64$ to $16,\!384$ at Mach 1 and $\mathrm{Pm}_\Delta = 1$. Color shows $t_\Delta |\nabla\times\boldsymbol{u}|$.
+
+The sequence extends to $t/t_\Delta=1,\!000$. The $\mathrm{Re}_\Delta=64$ and $4,\!096$ panels hold their final saved states at $t/t_\Delta=700$ and $943.1$, respectively; the other eight runs reach $1,\!000$.
 {{< /movie >}}
 
 </div>
