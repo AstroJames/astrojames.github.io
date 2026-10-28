@@ -55,7 +55,8 @@ sessions:
     date: "2026-10-28"
     speaker: Jacob Fields
     speaker_url: https://www.ias.edu/scholars/jacob-fields
-    title: Riemann solvers and advanced numerical methods in AthenaK.
+    title: Advanced Approximate Riemann Solvers and Numerical Methods for GRMHD
+    abstract: In this talk, I will provide a brief review of the Riemann problem and how it is used to build accurate numerical schemes for conservation laws, including MHD. I will then discuss a recent implementation of an HLLD approximate Riemann solver into AthenaK's dynamical-spacetime GRMHD solver and present a suite of tests validating it. As time permits, I will also discuss recent efforts to develop a well-balanced method suitable for dynamical spacetimes.
     format: Research talk and discussion
     status: confirmed
     materials: []
