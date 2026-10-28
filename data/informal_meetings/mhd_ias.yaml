@@ -63,7 +63,7 @@ sessions:
   - id: week-06
     date: "2026-11-11"
     speaker: ""
-    title: ""
+    title: holiday
     status: planning
     materials: []
     holiday: Veterans Day
