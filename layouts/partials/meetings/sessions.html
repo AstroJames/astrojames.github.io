@@ -21,10 +21,10 @@
             <dl>
               <dt>Location</dt><dd>{{ .location | default $series.location | default "To be confirmed" }}{{ with (.online_url | default $series.online_url) }} · <a href="{{ . }}" rel="noopener">Join online</a>{{ end }}</dd>
               {{ with .abstract }}<dt>Overview</dt><dd>{{ . | markdownify }}</dd>{{ end }}
-              <dt>Preparation</dt><dd>{{ with .preparation }}{{ . | markdownify }}{{ else }}Reading or preparation to be added.{{ end }}</dd>
-              <dt>Discussion questions</dt><dd>{{ with .questions }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ else }}Questions to be collected.{{ end }}</dd>
-              <dt>Notes</dt><dd>{{ with .notes }}{{ . | markdownify }}{{ else }}Notes will be added after the meeting.{{ end }}</dd>
-              <dt>Follow-up</dt><dd>{{ with .actions }}<ul>{{ range . }}<li>{{ .task }}{{ with .owner }} — {{ . }}{{ end }}{{ with .status }} <span class="meeting-muted">({{ . }})</span>{{ end }}</li>{{ end }}</ul>{{ else }}Actions and owners to be recorded.{{ end }}</dd>
+              {{ with .preparation }}<dt>Preparation</dt><dd>{{ . | markdownify }}</dd>{{ end }}
+              {{ with .questions }}<dt>Discussion questions</dt><dd><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></dd>{{ end }}
+              {{ with .notes }}<dt>Notes</dt><dd>{{ . | markdownify }}</dd>{{ end }}
+              {{ with .actions }}<dt>Follow-up</dt><dd><ul>{{ range . }}<li>{{ .task }}{{ with .owner }} — {{ . }}{{ end }}{{ with .status }} <span class="meeting-muted">({{ . }})</span>{{ end }}</li>{{ end }}</ul></dd>{{ end }}
             </dl>
           </details>
         </td>
