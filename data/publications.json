@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-31T06:01:43.040752+00:00",
+  "last_updated": "2026-11-01T06:01:48.932580+00:00",
   "total_publications": 36,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -836,7 +836,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020EcoEv..10.1054T/abstract",
       "doi_url": "https://doi.org/10.1002/ece3.5972",
-      "citation_count": 24,
+      "citation_count": 25,
       "read_count": 0,
       "is_refereed": true,
       "arxiv_class": []
@@ -941,7 +941,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2018EcoEv...8.6005M/abstract",
       "doi_url": "https://doi.org/10.1002/ece3.4135",
-      "citation_count": 6,
+      "citation_count": 7,
       "read_count": 0,
       "is_refereed": true,
       "arxiv_class": []
@@ -963,7 +963,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2018IRAL....3.1184M/abstract",
       "doi_url": "https://doi.org/10.1109/LRA.2018.2794619",
-      "citation_count": 21,
+      "citation_count": 23,
       "read_count": 0,
       "is_refereed": true,
       "arxiv_class": []
