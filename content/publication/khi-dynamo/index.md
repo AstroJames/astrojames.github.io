@@ -27,8 +27,8 @@ links:
 url_pdf: https://arxiv.org/pdf/2611.05880
 url_video: /movies/#kelvin-helmholtz
 image:
-  caption: "Density roll-up in a Kelvin–Helmholtz billow at Re = 8192 and 140 shear times. Detail from Figure 3a, Beattie et al. (2026)."
-  alt_text: "A density slice shows a Kelvin–Helmholtz billow rolling into a spiral, with fine secondary fingers along its folded layers."
+  caption: "AI-generated artist’s impression of two merging neutron stars, with Kelvin–Helmholtz billows along their contact layer."
+  alt_text: "An orange and a blue neutron star meet along a shear layer containing a chain of bright spiral billows."
   focal_point: "Center"
   preview_only: false
 projects: []
