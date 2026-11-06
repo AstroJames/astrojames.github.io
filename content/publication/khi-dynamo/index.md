@@ -27,8 +27,8 @@ links:
 url_pdf: https://arxiv.org/pdf/2611.05880
 url_video: /movies/#kelvin-helmholtz
 image:
-  caption: "Magnetic-field lines over the density structure of a Kelvin–Helmholtz simulation. Visualization: James R. Beattie."
-  alt_text: "White magnetic-field lines thread the folded density layers of a three-dimensional Kelvin–Helmholtz billow."
+  caption: "Density roll-up in a Kelvin–Helmholtz billow at Re = 8192 and 140 shear times. Detail from Figure 3a, Beattie et al. (2026)."
+  alt_text: "A density slice shows a Kelvin–Helmholtz billow rolling into a spiral, with fine secondary fingers along its folded layers."
   focal_point: "Center"
   preview_only: false
 projects: []
