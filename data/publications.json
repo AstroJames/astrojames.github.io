@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-05T06:02:06.671154+00:00",
+  "last_updated": "2026-11-06T06:02:10.557274+00:00",
   "total_publications": 36,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -45,8 +45,8 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvR...8c3383B/abstract",
       "doi_url": "https://doi.org/10.1103/6gnr-vkx3",
-      "citation_count": 0,
-      "read_count": 2,
+      "citation_count": 1,
+      "read_count": 426,
       "is_refereed": true,
       "arxiv_class": [
         "physics.flu-dyn",
@@ -75,7 +75,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026A&A...713A...7S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202558554",
       "citation_count": 1,
-      "read_count": 236,
+      "read_count": 237,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -114,34 +114,6 @@
       ]
     },
     {
-      "title": "Universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos",
-      "authors": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; Beattie, James R.; Schober, Jennifer",
-      "authors_highlighted": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; <strong>Beattie, James</strong> R.; Schober, Jennifer",
-      "authorship_position": "other",
-      "beattie_position": 4,
-      "journal": "Physical Review E",
-      "year": "2026",
-      "pubdate": "2026-04-00",
-      "abstract": "Small-scale dynamos (SSDs) amplify magnetic fields in turbulent plasmas. Theory predicts nonlinear magnetic energy growth <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mi>mag</mml:mi></mml:msub><mml:mo>∝</mml:mo><mml:msup><mml:mi>t</mml:mi><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub></mml:msup></mml:mrow></mml:math></inline-formula>, but this scaling has not been tested across flow regimes. Using a large ensemble of SSD simulations spanning subsonic to supersonic turbulence, we measure linear growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></inline-formula>) in subsonic flows and quadratic growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></inline-formula>) in supersonic flows. In all cases, the nonlinear dynamo converts a nearly constant fraction approximately equal to <inline-formula><mml:math><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>100</mml:mn></mml:mrow></mml:math></inline-formula> of the turbulent kinetic energy flux into magnetic energy, and the nonlinear phase has a characteristic duration <inline-formula><mml:math><mml:mrow><mml:mi>∆</mml:mi><mml:mi>t</mml:mi><mml:mo>≈</mml:mo><mml:mn>20</mml:mn><mml:mspace></mml:mspace><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, where <inline-formula><mml:math><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math></inline-formula> is the outer-scale turnover time. By isolating the onset of magnetic backreaction in SSDs, our statistical ensemble approach identifies a robust efficiency and duration for the nonlinear SSD that can be used to interpret more complex astrophysical and laboratory plasmas.",
-      "bibcode": "2026PhRvE.113d5208K",
-      "identifiers": [
-        "10.1103/8qjf-8gg4",
-        "2026PhRvE.113d5208K",
-        "10.48550/arXiv.2509.09949",
-        "2025arXiv250909949K",
-        "arXiv:2509.09949"
-      ],
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
-      "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
-      "citation_count": 6,
-      "read_count": 249,
-      "is_refereed": true,
-      "arxiv_class": [
-        "physics.plasm-ph",
-        "physics.comp-ph"
-      ]
-    },
-    {
       "title": "Cosmic-Ray and Plasma Coupling for Isothermal Supersonic Turbulence in the Magnetized Interstellar Medium",
       "authors": "Sampson, Matt L.; Beattie, James R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
       "authors_highlighted": "Sampson, Matt L.; <strong>Beattie, James</strong> R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
@@ -167,6 +139,34 @@
       "arxiv_class": [
         "astro-ph.GA",
         "astro-ph.HE"
+      ]
+    },
+    {
+      "title": "Universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos",
+      "authors": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; Beattie, James R.; Schober, Jennifer",
+      "authors_highlighted": "Kriel, Neco; Krumholz, Mark R.; Armstrong, Patrick J.; <strong>Beattie, James</strong> R.; Schober, Jennifer",
+      "authorship_position": "other",
+      "beattie_position": 4,
+      "journal": "Physical Review E",
+      "year": "2026",
+      "pubdate": "2026-04-00",
+      "abstract": "Small-scale dynamos (SSDs) amplify magnetic fields in turbulent plasmas. Theory predicts nonlinear magnetic energy growth <inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mi>mag</mml:mi></mml:msub><mml:mo>∝</mml:mo><mml:msup><mml:mi>t</mml:mi><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub></mml:msup></mml:mrow></mml:math></inline-formula>, but this scaling has not been tested across flow regimes. Using a large ensemble of SSD simulations spanning subsonic to supersonic turbulence, we measure linear growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></inline-formula>) in subsonic flows and quadratic growth (<inline-formula><mml:math><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>nl</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></inline-formula>) in supersonic flows. In all cases, the nonlinear dynamo converts a nearly constant fraction approximately equal to <inline-formula><mml:math><mml:mrow><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>100</mml:mn></mml:mrow></mml:math></inline-formula> of the turbulent kinetic energy flux into magnetic energy, and the nonlinear phase has a characteristic duration <inline-formula><mml:math><mml:mrow><mml:mi>∆</mml:mi><mml:mi>t</mml:mi><mml:mo>≈</mml:mo><mml:mn>20</mml:mn><mml:mspace></mml:mspace><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>, where <inline-formula><mml:math><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math></inline-formula> is the outer-scale turnover time. By isolating the onset of magnetic backreaction in SSDs, our statistical ensemble approach identifies a robust efficiency and duration for the nonlinear SSD that can be used to interpret more complex astrophysical and laboratory plasmas.",
+      "bibcode": "2026PhRvE.113d5208K",
+      "identifiers": [
+        "10.1103/8qjf-8gg4",
+        "2026PhRvE.113d5208K",
+        "10.48550/arXiv.2509.09949",
+        "2025arXiv250909949K",
+        "arXiv:2509.09949"
+      ],
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
+      "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
+      "citation_count": 6,
+      "read_count": 248,
+      "is_refereed": true,
+      "arxiv_class": [
+        "physics.plasm-ph",
+        "physics.comp-ph"
       ]
     },
     {
@@ -217,7 +217,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
-      "citation_count": 20,
+      "citation_count": 19,
       "read_count": 308,
       "is_refereed": true,
       "arxiv_class": [
@@ -246,7 +246,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.542.2669B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf1318",
-      "citation_count": 18,
+      "citation_count": 17,
       "read_count": 277,
       "is_refereed": true,
       "arxiv_class": [
@@ -276,7 +276,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 16,
-      "read_count": 240,
+      "read_count": 241,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -303,7 +303,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
-      "citation_count": 40,
+      "citation_count": 38,
       "read_count": 474,
       "is_refereed": true,
       "arxiv_class": [
@@ -333,8 +333,8 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
-      "citation_count": 8,
-      "read_count": 213,
+      "citation_count": 7,
+      "read_count": 212,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -364,7 +364,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
-      "citation_count": 27,
+      "citation_count": 26,
       "read_count": 274,
       "is_refereed": true,
       "arxiv_class": [
@@ -395,7 +395,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
-      "citation_count": 20,
+      "citation_count": 19,
       "read_count": 129,
       "is_refereed": true,
       "arxiv_class": [
@@ -452,7 +452,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
-      "citation_count": 36,
+      "citation_count": 34,
       "read_count": 153,
       "is_refereed": true,
       "arxiv_class": [
@@ -479,7 +479,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 266,
+      "read_count": 267,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
@@ -514,6 +514,33 @@
       ]
     },
     {
+      "title": "Understanding star formation in molecular clouds. IV. Column density PDFs from quiescent to massive molecular clouds",
+      "authors": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; Beattie, J. R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
+      "authors_highlighted": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; <strong>Beattie, J.</strong> R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
+      "authorship_position": "other",
+      "beattie_position": 15,
+      "journal": "Astronomy and Astrophysics",
+      "year": "2022",
+      "pubdate": "2022-10-00",
+      "abstract": "Probability distribution functions of the total hydrogen column density (N-PDFs) are a valuable tool for distinguishing between the various processes (turbulence, gravity, radiative feedback, magnetic fields) governing the morphological and dynamical structure of the interstellar medium. We present N-PDFs of 29 Galactic regions obtained from Herschel imaging at high angular resolution (18″), covering diffuse and quiescent clouds, and those showing low-, intermediate-, and high-mass star formation (SF), and characterize the cloud structure using the ∆-variance tool. The N-PDFs show a large variety of morphologies. They are all double-log-normal at low column densities, and display one or two power law tails (PLTs) at higher column densities. For diffuse, quiescent, and low-mass SF clouds, we propose that the two log-normals arise from the atomic and molecular phase, respectively. For massive clouds, we suggest that the first log-normal is built up by turbulently mixed H<SUB>2</SUB> and the second one by compressed (via stellar feedback) molecular gas. Nearly all clouds have two PLTs with slopes consistent with self-gravity, where the second one can be flatter or steeper than the first one. A flatter PLT could be caused by stellar feedback or other physical processes that slow down collapse and reduce the flow of mass toward higher densities. The steeper slope could arise if the magnetic field is oriented perpendicular to the LOS column density distribution. The first deviation point (DP), where the N-PDF turns from log-normal into a PLT, shows a clustering around values of a visual extinction of A<SUB>V</SUB> (DP1) ~ 2-5. The second DP, which defines the break between the two PLTs, varies strongly. In contrast, the width of the N-PDFs is the most stable parameter, with values of σ between ~0.5 and 0.6. Using the ∆-variance tool, we observe that the A<SUB>V</SUB> value, where the slope changes between the first and second PLT, increases with the characteristic size scale in the ∆-variance spectrum. We conclude that at low column densities, atomic and molecular gas is turbulently mixed, while at high column densities, the gas is fully molecular and dominated by self-gravity. The best fitting model N-PDFs of molecular clouds is thus one with log-normal low column density distributions, followed by one or two PLTs.",
+      "bibcode": "2022A&A...666A.165S",
+      "identifiers": [
+        "arXiv:2207.14604",
+        "10.1051/0004-6361/202039610",
+        "10.48550/arXiv.2207.14604",
+        "2022arXiv220714604S",
+        "2022A&A...666A.165S"
+      ],
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
+      "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
+      "citation_count": 62,
+      "read_count": 194,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA"
+      ]
+    },
+    {
       "title": "Energy balance and Alfvén Mach numbers in compressible magnetohydrodynamic turbulence with a large-scale magnetic field",
       "authors": "Beattie, James R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
       "authors_highlighted": "<strong>Beattie, James</strong> R.; Krumholz, Mark R.; Skalidis, Raphael; Federrath, Christoph; Seta, Amit; Crocker, Roland M.; Mocz, Philip; Kriel, Neco",
@@ -534,40 +561,13 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac2099",
-      "citation_count": 25,
+      "citation_count": 24,
       "read_count": 194,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
         "physics.flu-dyn",
         "physics.plasm-ph"
-      ]
-    },
-    {
-      "title": "Understanding star formation in molecular clouds. IV. Column density PDFs from quiescent to massive molecular clouds",
-      "authors": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; Beattie, J. R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
-      "authors_highlighted": "Schneider, N.; Ossenkopf-Okada, V.; Clarke, S.; Klessen, R. S.; Kabanovic, S.; Veltchev, T.; Bontemps, S.; Dib, S.; Csengeri, T.; Federrath, C.; Di Francesco, J.; Motte, F.; André, Ph.; Arzoumanian, D.; <strong>Beattie, J.</strong> R.; Bonne, L.; Didelon, P.; Elia, D.; Könyves, V.; Kritsuk, A.; Ladjelate, B.; Myers, Ph.; Pezzuto, S.; Robitaille, J. F.; Roy, A.; Seifried, D.; Simon, R.; Soler, J.; Ward-Thompson, D.",
-      "authorship_position": "other",
-      "beattie_position": 15,
-      "journal": "Astronomy and Astrophysics",
-      "year": "2022",
-      "pubdate": "2022-10-00",
-      "abstract": "Probability distribution functions of the total hydrogen column density (N-PDFs) are a valuable tool for distinguishing between the various processes (turbulence, gravity, radiative feedback, magnetic fields) governing the morphological and dynamical structure of the interstellar medium. We present N-PDFs of 29 Galactic regions obtained from Herschel imaging at high angular resolution (18″), covering diffuse and quiescent clouds, and those showing low-, intermediate-, and high-mass star formation (SF), and characterize the cloud structure using the ∆-variance tool. The N-PDFs show a large variety of morphologies. They are all double-log-normal at low column densities, and display one or two power law tails (PLTs) at higher column densities. For diffuse, quiescent, and low-mass SF clouds, we propose that the two log-normals arise from the atomic and molecular phase, respectively. For massive clouds, we suggest that the first log-normal is built up by turbulently mixed H<SUB>2</SUB> and the second one by compressed (via stellar feedback) molecular gas. Nearly all clouds have two PLTs with slopes consistent with self-gravity, where the second one can be flatter or steeper than the first one. A flatter PLT could be caused by stellar feedback or other physical processes that slow down collapse and reduce the flow of mass toward higher densities. The steeper slope could arise if the magnetic field is oriented perpendicular to the LOS column density distribution. The first deviation point (DP), where the N-PDF turns from log-normal into a PLT, shows a clustering around values of a visual extinction of A<SUB>V</SUB> (DP1) ~ 2-5. The second DP, which defines the break between the two PLTs, varies strongly. In contrast, the width of the N-PDFs is the most stable parameter, with values of σ between ~0.5 and 0.6. Using the ∆-variance tool, we observe that the A<SUB>V</SUB> value, where the slope changes between the first and second PLT, increases with the characteristic size scale in the ∆-variance spectrum. We conclude that at low column densities, atomic and molecular gas is turbulently mixed, while at high column densities, the gas is fully molecular and dominated by self-gravity. The best fitting model N-PDFs of molecular clouds is thus one with log-normal low column density distributions, followed by one or two PLTs.",
-      "bibcode": "2022A&A...666A.165S",
-      "identifiers": [
-        "arXiv:2207.14604",
-        "10.1051/0004-6361/202039610",
-        "10.48550/arXiv.2207.14604",
-        "2022arXiv220714604S",
-        "2022A&A...666A.165S"
-      ],
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
-      "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
-      "citation_count": 64,
-      "read_count": 194,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA"
       ]
     },
     {
@@ -591,7 +591,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
-      "citation_count": 43,
+      "citation_count": 42,
       "read_count": 242,
       "is_refereed": true,
       "arxiv_class": [
@@ -758,7 +758,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
-      "citation_count": 177,
+      "citation_count": 174,
       "read_count": 187,
       "is_refereed": true,
       "arxiv_class": [
@@ -789,7 +789,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
-      "citation_count": 43,
+      "citation_count": 42,
       "read_count": 185,
       "is_refereed": true,
       "arxiv_class": [
@@ -869,7 +869,7 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
-      "citation_count": 26,
+      "citation_count": 25,
       "read_count": 145,
       "is_refereed": true,
       "arxiv_class": [
@@ -994,7 +994,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 7,
-      "read_count": 377,
+      "read_count": 382,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
