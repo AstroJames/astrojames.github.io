@@ -4,11 +4,9 @@ title: 'Where did all my nonlinearities go?!?! Alignment in MHD turbulence'
 summary: 'APS Division of Plasma Physics 2026, Chicago, November 2026.'
 abstract: ''
 
-# Added date for ordering. Exact presentation day has not been confirmed.
-# Display the meeting month in the summary instead of an assumed talk date.
-date: '2026-11-08'
+# Talk date confirmed by James.
+date: '2026-11-06'
 publishDate: '2026-11-08'
-hide_date: true
 all_day: false
 
 authors:
