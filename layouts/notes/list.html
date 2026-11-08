@@ -67,7 +67,7 @@
           {{ end }}
 
           <div style="color: var(--site-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
-            {{ if .Date }}
+            {{ if and .Date (not .Params.hide_date) }}
               <span>{{ .Date.Format "Jan 2, 2006" }}</span>
             {{ end }}
             {{ with .Params.location }}
