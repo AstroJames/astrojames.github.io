@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The seed's journey: can turbulence lift a tiny magnetic field to cosmic sizes?</title>
+<meta name="description" content="An interactive explainer: can turbulence capture a magnetic seed born on tiny plasma scales and carry it up to the size of galaxy clusters? Built from solutions of the Kazantsev-Kraichnan dynamo model.">
+<script>
+// All asset paths are relative to this folder. If the page is reached as ".../seed_journey" (no trailing slash),
+// add the slash so that relative paths resolve inside the folder.
+(function () { var p = location.pathname; if (!/\/$/.test(p) && !/\.html?$/.test(p)) location.replace(p + '/' + location.search + location.hash); })();
+</script>
+<link rel="stylesheet" href="outreach.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/three.module.js",
+               "three/addons/": "./vendor/three/addons/" } }
+</script>
+<script type="module" src="js/main.js"></script>
+</head>
+<body data-pagefind-ignore="all">
+<a class="skip" href="#player">Skip to the animation</a>
+<header class="hero">
+  <p class="kicker">An interactive explainer</p>
+  <h1>The seed's journey</h1>
+  <p class="lede">The first magnetic fields in the Universe were probably born in plasma structures far smaller than anything
+    turbulence normally touches. Today we see magnetic fields stretched across whole clusters of galaxies. Can turbulent gas carry a tiny
+    seed field up to those enormous sizes, in places from galaxy clusters to the emptiest cosmic voids? If it can, how, and how fast?</p>
+</header>
+
+<main>
+<!-- Step 1: the scale ladder -->
+<section id="ladder" aria-labelledby="ladder-h">
+  <h2 id="ladder-h"><span class="step">1</span> About sixteen powers of ten</h2>
+  <p>Each rung is a size that matters in a galaxy cluster, from where the seed is born to where fields are seen. Click a rung, or
+    focus the ruler and use the <kbd>&larr;</kbd> <kbd>&rarr;</kbd> keys.</p>
+  <div class="ladder" role="group" aria-label="Scale ladder, sizes in centimetres on a logarithmic ruler">
+    <div class="ruler" id="ruler" aria-hidden="true"></div>
+    <div class="rungs" id="rungs"></div>
+  </div>
+  <div class="card" id="rung-card" aria-live="polite"></div>
+  <p class="note">Sizes are orders of magnitude for the hot gas of a typical galaxy cluster, compiled from published estimates.
+    Everyday comparisons are rounded.
+    Whether the seed really starts below the resistive scale is itself uncertain: it depends on what sets resistance in such a thin, hot
+    plasma, which is still debated.</p>
+</section>
+
+<!-- Step 2: the model player -->
+<section id="player" aria-labelledby="player-h">
+  <h2 id="player-h"><span class="step">2</span> Watch the model</h2>
+  <p>We solved the classic theory of the turbulent dynamo, the Kazantsev model, for two seeds with the same starting energy. One is
+    born <strong>ten times larger</strong> than the resistive scale, the other <strong>ten times smaller</strong>. Each curve shows how
+    a seed's magnetic energy is shared among sizes. Large structures are on the left, small ones on the right.</p>
+  <div class="figure">
+    <canvas id="spec" role="img" aria-label="Animated magnetic energy against size. The description below updates as the animation plays."></canvas>
+    <canvas id="energy" role="img" aria-label="Total magnetic energy against time"></canvas>
+  </div>
+  <div class="controls" role="group" aria-label="Animation controls">
+    <button id="play" type="button" aria-pressed="false">Play</button>
+    <label class="time">Time <input id="tslider" type="range" min="0" max="247" step="1" value="0" aria-describedby="treadout"></label>
+    <output id="treadout" for="tslider">0.00 stretching times</output>
+    <label><input type="checkbox" id="showA" checked> <span class="swatch a"></span> seed 10&times; larger than the resistive scale</label>
+    <label><input type="checkbox" id="showB" checked> <span class="swatch b"></span> seed 10&times; smaller</label>
+  </div>
+  <p class="keys">Keys: <kbd>Space</kbd> play/pause · <kbd>&larr;</kbd> <kbd>&rarr;</kbd> step · <kbd>Home</kbd> / <kbd>End</kbd> start/end.</p>
+  <div class="stage" id="stage" aria-live="polite"></div>
+  <details class="note">
+    <summary>What exactly is plotted?</summary>
+    <p>Left: the magnetic energy spectrum <i>M</i>(<i>k</i>,<i>t</i>) of the Kazantsev–Kraichnan model (in units of the initial energy per resistive
+      wavenumber) against wavenumber <i>k</i>/<i>k</i><sub>η</sub>, both on logarithmic axes. Wavenumber is inverse size, so small structures are on the right. The dashed line marks the
+      resistive scale <i>k</i><sub>η</sub> and the dotted lines the seed scales <i>k</i><sub>0</sub> = <i>k</i><sub>η</sub>/10 and <i>k</i><sub>0</sub> = 10<i>k</i><sub>η</sub>.
+      Right: the total magnetic energy <i>W</i>(<i>t</i>)/<i>W</i><sub>0</sub>.
+      Time is in stretching times 1/<i>γ̄</i>: in one stretching time, the smallest eddies stretch a typical field line about 1.8-fold.
+      Gold, solid: the seed born ten times larger than the resistive scale. Purple, dashed: the seed born ten times smaller. Both are
+      narrow (all their energy near one size) and start with the same energy. Energies below 10<sup>−7</sup> of the largest value in each
+      frame are not drawn: that is the precision limit of the transform used.</p>
+    <p>Data: a numerical solution of the model's equation for the magnetic spectrum, computed with the project's checked and
+      reviewed solver and stored as 248 frames. Between stored frames the curves are interpolated linearly in log energy.
+      This is an idealized model (a random flow with no memory). Times shorter than a few eddy times have no counterpart in real
+      turbulence. The project's simulations will test it.</p>
+  </details>
+</section>
+
+<!-- Step 3: move the seed -->
+<section id="survive" aria-labelledby="survive-h">
+  <h2 id="survive-h"><span class="step">3</span> Move the seed</h2>
+  <p>Now you choose where a narrow seed is born, from ten times larger than the resistive scale to a hundred times smaller. Drag the
+    slider and see how much of the seed survives to be amplified.</p>
+  <div class="slider-row">
+    <label for="x0">Seed size: <output id="x0out" for="x0">10 times smaller than the resistive scale</output></label>
+    <input id="x0" type="range" min="0" max="1000" step="1" value="667" aria-valuetext="10 times smaller than the resistive scale">
+  </div>
+  <div class="survive-grid">
+    <canvas id="fplot" role="img" aria-label="Fraction of the seed that survives, against the size at which it is born"></canvas>
+    <div class="readouts" aria-live="polite">
+      <div class="readout s"><h3>What happens to this seed</h3><p id="ra"></p></div>
+      <p id="rratio" class="ratio"></p>
+    </div>
+  </div>
+  <p class="note" id="x0-caveat">Beyond about 10–30 times smaller, the number is an extrapolation of the idealized model. Real
+    turbulence may differ, and our simulations will test it.</p>
+  <details class="note">
+    <summary>Where do these numbers come from?</summary>
+    <p>They are the model's own formulas, evaluated live in your browser. The slider sets
+      <i>x</i><sub>0</sub> = <i>k</i><sub>0</sub>/<i>k</i><sub>η</sub>, the seed's wavenumber in units of the resistive one, from 0.1 to 100.
+      The surviving fraction is the share of the seed's energy that ends up in the growing pattern:
+      <i>F</i><sub>δ</sub> = Γ(5/4)<sup>2</sup>(2π)<sup>−1/2</sup> <i>x</i><sub>0</sub><sup>−5/2</sup> <i>K</i><sub>0</sub>(<i>x</i><sub>0</sub>),
+      where <i>K</i><sub>0</sub> is a modified Bessel function.
+      The recovery time is how long the growing pattern takes to bring the field back to its starting energy.
+      The in-browser values were checked against an independent high-precision calculation.
+      These are late-time formulas, approximate below about <i>x</i><sub>0</sub> = 5 (hence "about" in the readouts), and they are shown only
+      from <i>x</i><sub>0</sub> = 3 up.</p>
+    <p>For smaller <i>x</i><sub>0</sub> the page says in words what happens. A narrow seed with <i>x</i><sub>0</sub> below about 1.7 never
+      loses energy: stretching beats resistance from the start. Between about 1.7 and 3 its energy dips for a few stretching times and then
+      grows. The 1.7 comes from a full numerical solution of the model, checked independently.</p>
+    <p>The formulas stop being trustworthy for real turbulence at large <i>x</i><sub>0</sub>: the model assumes a flow with no memory, and for
+      real eddies that assumption fails beyond about <i>x</i><sub>0</sub> = 10–30. Up there the number is an extrapolation
+      of the idealized model, which our simulations will test. The model also needs the seed to be much smaller than the smallest eddy;
+      in the animation above the larger seed is still 100 times smaller than the eddies.</p>
+  </details>
+</section>
+
+<!-- Step 4: 3D landscape -->
+<section id="landscape" aria-labelledby="land-h">
+  <h2 id="land-h"><span class="step">4</span> The whole story as a landscape</h2>
+  <p>The same model solution in 3D. Size runs left to right, time runs toward you, and height is magnetic energy on a
+    logarithmic scale. Drag to orbit, scroll to zoom. The bright line is the moment shown in the animation above.</p>
+  <button id="open3d" type="button">Open the 3D view</button>
+  <div id="land-wrap" class="land-wrap" hidden>
+    <canvas id="land" role="img" aria-label="3D surface of magnetic energy over size and time"></canvas>
+    <div class="land-controls" role="group" aria-label="3D view controls">
+      <label><input type="radio" name="lseed" value="A" checked> larger seed</label>
+      <label><input type="radio" name="lseed" value="B"> smaller seed</label>
+      <button id="reset3d" type="button">Reset view</button>
+    </div>
+    <p class="note">Colour and height both show log<sub>10</sub> <i>M</i> (CMasher <em>ember</em>). The time axis is not uniform: each stored frame is one step,
+      so early times (log-spaced, <i>γ̄t</i> = 0.001 to 1) are stretched out and later times (<i>γ̄t</i> = 1 to 60) are compressed. The flat floor
+      is below the precision limit (not drawn in the 2D view). Rendered with three.js r187.</p>
+  </div>
+</section>
+
+<section aria-labelledby="next-h">
+  <h2 id="next-h">A way to magnetize the Universe from any seed</h2>
+  <p class="punch">Turbulence pervades cosmic gas. It captures any magnetic seed, however tiny and however it was born, amplifies it, and
+    carries the field up to large scales.</p>
+  <p class="claim">In more detail: no seed is too small-scale. The turbulent dynamo captures any finite seed field, at an exponential cost in
+    amplitude for narrow seeds born below the resistive scale, and established nonlinear-dynamo results then carry the field to the outer scale.</p>
+  <p class="note">Two sources stand behind that sentence. The capture and its cost are what the model on this page shows: a narrow
+    seed born above the resistive scale loses nothing, and one born below it keeps only an exponentially small share. The last step,
+    growth from the resistive scale up to the size of the stirring, comes from published dynamo simulations
+    (<a href="https://arxiv.org/abs/2209.10749">Beattie et al. 2022</a>; <a href="https://arxiv.org/abs/2509.09949">Kriel et al. 2025</a>),
+    which started from seeds at or above the resistive scale.</p>
+  <p>Capture is shown in our model; growth to large scales is established in dynamo simulations (Beattie et al. 2022; Kriel et al. 2025);
+    our simulations with the AthenaK code will test the full chain for seeds born below the resistive scale. No simulation results are shown here yet.</p>
+</section>
+
+<section id="made" aria-labelledby="made-h">
+  <h2 id="made-h">How this was made</h2>
+  <p>Steps 2 to 4 use one classic theory of the turbulent dynamo, the Kazantsev–Kraichnan model of a
+    <em>kinematic</em> dynamo: a weak magnetic field stretched and folded by a random, fast-changing flow, before the field is strong
+    enough to push back. The animation, the 3D landscape and the numbers in the readouts come from the project's own solutions of that
+    model, which were checked independently and reviewed before they appear here. The slider's formulas are computed live in your
+    browser. Nothing is painted by hand. The scale sizes in step 1 come from published estimates.</p>
+  <p>The model is an idealization, and the page says where it stops being trustworthy. This page is part of a research project on how
+    turbulence could magnetize the Universe from any seed, however small. The project's simulations will test this idea.</p>
+</section>
+</main>
+<footer>
+  <p>Made by James Beattie and Claude. Colour maps from CMasher (E. van der Velden).
+    3D view rendered with <a href="https://threejs.org/">three.js</a> (MIT licence; see <a href="vendor/three/LICENSE">licence</a> and
+    <a href="THIRD_PARTY_NOTICES.txt">third-party notices</a>).</p>
+</footer>
+</body>
+</html>

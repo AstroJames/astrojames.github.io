@@ -1,0 +1,40 @@
+Third-party notices for "The seed's journey"
+=============================================
+
+1. three.js r187 (npm package three@0.187.0)
+   Files: vendor/three/three.module.js, vendor/three/three.core.js,
+          vendor/three/addons/controls/OrbitControls.js (all unmodified)
+   Homepage: https://threejs.org/
+   License: MIT. Full text in vendor/three/LICENSE:
+
+   The MIT License
+   
+   Copyright © 2010-2026 three.js authors
+   
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+   
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+   
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   THE SOFTWARE.
+
+2. CMasher colour maps ("ember", "chroma"), CMasher 1.9.2
+   Homepage: https://github.com/1313e/CMasher
+   License: BSD 3-Clause. Copyright (c) 2019-2021, Ellert van der Velden.
+   Only colour values are used: data/ember_lut.json (a 256-entry lookup table
+   sampled from "ember") and two colours sampled from "chroma" in js/main.js.
+   No CMasher code is included.
+
+All other files (page, scripts, styles, data, media) are original work of
+James Beattie and Claude.

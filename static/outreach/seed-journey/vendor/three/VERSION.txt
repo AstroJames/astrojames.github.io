@@ -1,0 +1,3 @@
+three.js r187 (npm package three@0.187.0), MIT license (see LICENSE).
+Obtained with `npm pack three@0.187.0`; tarball sha256 ff540832ded0cfe919764d24a3d88f3e2a05f23303f876423e4f893841e90728.
+Files copied unmodified: build/three.module.js, build/three.core.js, examples/jsm/controls/OrbitControls.js.
