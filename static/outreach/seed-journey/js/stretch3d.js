@@ -4,6 +4,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createLoop, gammaBar, GAMMA_ALL, BANDS } from './flow.js';
+import { COL } from './theme.js';
 
 const CAP = 160000;                  // most points on the line (memory ~ 12 MB)
 const T_END = 8;                     // run length, in stretching times 1/gammabar (gammabar of all four eddy sizes)
@@ -15,7 +16,7 @@ const BAND_NAMES = ['largest eddies only', 'down to ½ size', 'down to ¼ size',
 export function createStretch({ canvas, chart, lut, reduceMotion, onUpdate }) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  const scene = new THREE.Scene(); scene.background = new THREE.Color(0x0d0f14);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0x090e17);
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
   const HOME = new THREE.Vector3(7.5, 5.2, 11.5);
   camera.position.copy(HOME);
@@ -115,8 +116,8 @@ export function createStretch({ canvas, chart, lut, reduceMotion, onUpdate }) {
     const ctx = chart.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
     const box = { x: 44, y: 28, w: w - 56, h: h - 78 }, yr = [0, 7];
     const X = (t) => box.x + t / T_END * box.w, Y = (v) => box.y + box.h - (v - yr[0]) / (yr[1] - yr[0]) * box.h;
-    ctx.strokeStyle = '#1a1d23'; ctx.lineWidth = 1; ctx.strokeRect(box.x, box.y, box.w, box.h);
-    ctx.font = '12px system-ui, sans-serif'; ctx.fillStyle = '#1a1d23';
+    ctx.strokeStyle = COL.ink; ctx.lineWidth = 1; ctx.strokeRect(box.x, box.y, box.w, box.h);
+    ctx.font = '12px system-ui, sans-serif'; ctx.fillStyle = COL.ink;
     for (let t = 0; t <= T_END; t += 2) { ctx.beginPath(); ctx.moveTo(X(t), box.y + box.h); ctx.lineTo(X(t), box.y + box.h - 5); ctx.stroke();
       ctx.textAlign = 'center'; ctx.fillText(String(t), X(t), box.y + box.h + 16); }
     for (let v = 0; v <= 6; v += 2) { ctx.beginPath(); ctx.moveTo(box.x, Y(v)); ctx.lineTo(box.x + 5, Y(v)); ctx.stroke();
@@ -128,12 +129,12 @@ export function createStretch({ canvas, chart, lut, reduceMotion, onUpdate }) {
     // model rates for the current eddy selection: energy 2 gammabar, length 0.8 gammabar (white-noise limit)
     const g = gammaBar(nb) / GAMMA_ALL, LOG10E = Math.LOG10E;
     ctx.setLineDash([4, 4]); ctx.lineWidth = 1.2;
-    ctx.strokeStyle = '#b5430f'; ctx.beginPath(); ctx.moveTo(X(0), Y(0)); ctx.lineTo(X(T_END), Y(2 * g * T_END * LOG10E)); ctx.stroke();
-    ctx.strokeStyle = '#555c68'; ctx.beginPath(); ctx.moveTo(X(0), Y(0)); ctx.lineTo(X(T_END), Y(0.8 * g * T_END * LOG10E)); ctx.stroke();
+    ctx.strokeStyle = COL.accent; ctx.beginPath(); ctx.moveTo(X(0), Y(0)); ctx.lineTo(X(T_END), Y(2 * g * T_END * LOG10E)); ctx.stroke();
+    ctx.strokeStyle = COL.muted; ctx.beginPath(); ctx.moveTo(X(0), Y(0)); ctx.lineTo(X(T_END), Y(0.8 * g * T_END * LOG10E)); ctx.stroke();
     ctx.setLineDash([]);
     runs.forEach((run, ri) => {
       const cur = ri === runs.length - 1;
-      for (const [q, color] of [[2, '#b5430f'], [1, '#1a1d23']]) {
+      for (const [q, color] of [[2, COL.accent], [1, COL.ink]]) {
         if (!cur && q === 1) continue;
         ctx.strokeStyle = color; ctx.globalAlpha = cur ? 1 : 0.3; ctx.lineWidth = cur ? 2.2 : 1.6; ctx.beginPath();
         run.pts.forEach((p, i) => (i ? ctx.lineTo(X(p[0]), Y(p[q])) : ctx.moveTo(X(p[0]), Y(p[q]))));
@@ -142,10 +143,10 @@ export function createStretch({ canvas, chart, lut, reduceMotion, onUpdate }) {
       ctx.globalAlpha = 1;
     });
     ctx.restore();
-    ctx.fillStyle = '#b5430f'; ctx.textAlign = 'left';
+    ctx.fillStyle = COL.accent; ctx.textAlign = 'left';
     ctx.fillText('magnetic energy', box.x + 8, box.y + 16);
-    ctx.fillStyle = '#1a1d23'; ctx.fillText('length of the loop', box.x + 8, box.y + 32);
-    ctx.fillStyle = '#555c68'; ctx.fillText('dashed: dynamo-model rates', box.x + 8, box.y + 48);
+    ctx.fillStyle = COL.ink; ctx.fillText('length of the loop', box.x + 8, box.y + 32);
+    ctx.fillStyle = COL.muted; ctx.fillText('dashed: dynamo-model rates', box.x + 8, box.y + 48);
   }
 
   function resize() {

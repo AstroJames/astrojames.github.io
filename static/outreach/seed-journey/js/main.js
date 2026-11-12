@@ -4,8 +4,8 @@ import { withCites } from './refs.js';
 import { createCascade, CSTAGES } from './cascade.js';
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-// Seed colours: CMasher chroma at 0.62 (A, larger seed) and 0.30 (B, smaller seed), as in the two-seed hero animation
-const COL = { a: '#b68301', b: '#71026e', ink: '#1a1d23', muted: '#555c68', rule: '#c9c5bc', accent: '#b5430f' };
+// Gold and purple distinguish the seeds; the website palette keeps both visible on dark panels.
+import { COL } from './theme.js';
 
 // ---------------------------------------------------------------- 1. scale ladder
 // Intracluster-medium scales from published estimates (log10 cm; sources cited on each rung). Comparisons are rounded everyday facts.
@@ -275,7 +275,7 @@ function buildSurvival() {
       ctx.textAlign = t === 0.1 ? 'left' : t === 100 ? 'right' : 'center'; ctx.fillText(lab, X(t), box.y + box.h + 16); }
     for (const v of [-50, -40, -30, -20, -10, 0]) { ctx.beginPath(); ctx.moveTo(box.x, Y(v)); ctx.lineTo(box.x + 5, Y(v)); ctx.stroke();
       supText(ctx, '10', String(v).replace('-', '−'), box.x - 6, Y(v) + 4, 'right'); }
-    ctx.fillStyle = '#7a5800'; ctx.textAlign = 'left'; ctx.font = '12px system-ui, sans-serif';
+    ctx.fillStyle = COL.a; ctx.textAlign = 'left'; ctx.font = '12px system-ui, sans-serif';
     ctx.fillText('nothing lost', box.x + 6, Y(-46)); ctx.fillText('(grows from', box.x + 6, Y(-46) + 15); ctx.fillText('the start)', box.x + 6, Y(-46) + 30);
     ctx.strokeStyle = COL.b; ctx.lineWidth = 2.2; ctx.beginPath();
     curve.forEach((c, i) => i ? ctx.lineTo(X(c[0]), Y(c[1])) : ctx.moveTo(X(c[0]), Y(c[1]))); ctx.stroke();

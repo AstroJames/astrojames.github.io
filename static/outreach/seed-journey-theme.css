@@ -1,0 +1,55 @@
+/* Website presentation layer. Keep when refreshing the research export. */
+@font-face {
+  font-family: "Inter var";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/dist/font/Inter.var.woff2") format("woff2");
+}
+:root {
+  color-scheme: dark;
+  --ink: #edf2f7;
+  --muted: #b2bfce;
+  --bg: #090e17;
+  --panel: #121c2a;
+  --rule: #36485e;
+  --accent: #8cccf4;
+  --focus: #8cccf4;
+  --a: #e8ba4c;
+  --b: #dd8bda;
+  --raised: #1b2a3d;
+  --accent-soft: #1a344b;
+  --on-accent: #08121e;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+::selection { background: var(--accent); color: var(--on-accent); }
+a { color: var(--accent); text-underline-offset: .2em; }
+a:hover { color: #c5e7fc; }
+.hero { padding-top: clamp(3.5rem, 8vw, 6rem); padding-bottom: 2.5rem; border-bottom: 1px solid var(--rule); }
+h1 { font-weight: 750; letter-spacing: -.035em; font-size: clamp(2.6rem, 6vw, 4rem); }
+h2 { letter-spacing: -.02em; line-height: 1.3; }
+.lede { color: var(--muted); line-height: 1.7; }
+main > section { margin: 3.5rem 0 4rem; }
+.step { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--rule); flex-shrink: 0; }
+button { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 600; border-radius: 8px; }
+button:hover { background: #c5e7fc; border-color: #c5e7fc; }
+button.secondary, .stage-btn, .rung { background: var(--panel); color: var(--ink); border-color: var(--rule); }
+button.secondary:hover, .stage-btn:hover, .rung:hover { background: var(--raised); border-color: #6a829f; }
+.stage-btn[aria-pressed="true"], .rung[aria-pressed="true"], .rung[aria-pressed="true"]:hover {
+  background: var(--accent); color: var(--on-accent); border-color: var(--accent);
+}
+.ruler .span { background: rgb(140 204 244 / .25); }
+.card, .stage, .readout, .figure, #fplot, #s3chart, .bands { border-radius: 10px; }
+.figure { padding: .75rem; }
+.controls input[type=range], input[type=checkbox], input[type=radio] { accent-color: var(--accent); }
+code, .refs li:target { background: var(--accent-soft); }
+.refs a { color: var(--accent); }
+.refs li { padding-left: .2em; margin-bottom: .65em; }
+#s3d { background: var(--bg); border: 1px solid var(--rule); border-radius: 10px; }
+.s3d-msg { color: var(--muted); }
+footer { padding-top: 1.75rem; padding-bottom: 2rem; }
+@media (max-width: 720px) {
+  .hero { padding-top: 3rem; }
+  main > section { margin: 2.5rem 0 3rem; }
+  .figure { padding: .5rem; }
+}

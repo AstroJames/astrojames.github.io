@@ -165,6 +165,20 @@ test/scheduler-server.test.mjs` to check the local model/API.
 
 Commits pushed to `main` trigger the GitHub Pages workflow configured in this repo (see `.github/workflows/`). No manual `hugo` builds are required; Follow the [Hugo Blox Builder](https://hugoblox.com/) instructions to set this up.
 
+## Unlisted seed journey explainer
+
+`static/outreach/seed-journey/` hosts the research export at
+`/outreach/seed-journey/`. Keep it out of navigation, content listings, the
+sitemap, and Pagefind; retain its `noindex` meta tag and body exclusion.
+
+The website presentation layer is `static/outreach/seed-journey-theme.css`,
+loaded after the exported CSS. It uses the site's dark slate-blue palette and
+shared Inter font. `js/theme.js` supplies those CSS colors to the canvas charts
+in `main.js`, `cascade.js`, and `stretch3d.js`. When refreshing the research
+export, preserve this stylesheet link, palette module/imports, and the chart
+color substitutions. Keep the scientific text, formulas, and simulation logic
+from the export unchanged.
+
 ## SNR scientific explorer
 
 The Movies page loads the SNR 26 explorer only after a visitor selects **Explore

@@ -10,7 +10,7 @@
 import { logK0 } from './physics.js';
 import { withCites } from './refs.js';
 
-const COL = { ink: '#1a1d23', muted: '#555c68', rule: '#c9c5bc', accent: '#b5430f', mag: '#71026e', hi: 'rgba(181,67,15,0.13)' };
+import { COL } from './theme.js';
 const NLEV = 5;                                  // eddy sizes L, L/2, ..., L/16
 const KNU = 2 ** (NLEV - 1), KETA = 10 * KNU, KSEED = 50 * KETA;
 const rate = (n) => 2 ** (2 * n / 3);            // turnover (stretching) rate of level n relative to the largest eddies
