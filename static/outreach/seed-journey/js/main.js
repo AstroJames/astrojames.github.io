@@ -1,30 +1,32 @@
 // The seed's journey: outreach page logic. No build step; ES modules only.
 import { log10Fnarrow, tRecovery } from './physics.js';
+import { withCites } from './refs.js';
+import { createCascade, CSTAGES } from './cascade.js';
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Seed colours: CMasher chroma at 0.62 (A, larger seed) and 0.30 (B, smaller seed), as in the two-seed hero animation
 const COL = { a: '#b68301', b: '#71026e', ink: '#1a1d23', muted: '#555c68', rule: '#c9c5bc', accent: '#b5430f' };
 
 // ---------------------------------------------------------------- 1. scale ladder
-// Intracluster-medium scales from published estimates (log10 cm). Comparisons are rounded everyday facts.
+// Intracluster-medium scales from published estimates (log10 cm; sources cited on each rung). Comparisons are rounded everyday facts.
 const RUNGS = [
   { id: 'de', name: 'Electron skin depth', lg: 7.2, size: '≈ 160 km',
-    what: 'The natural size of the Weibel instability, the plasma process that can make magnetic fields from nothing. The first seed fields are born around here.',
+    what: 'The natural size of the Weibel instability, the plasma process that can make magnetic fields from nothing. The first seed fields are born around here[[Zhou2021spontaneous,Sironi2023generation,Zhou2023magnetogenesis]].',
     cmp: 'About the length of a large city region.' },
   { id: 'eta', name: 'Resistive scale', lg: 8.9, size: '≈ 8,000 km',
-    what: 'Below this size, the plasma\'s electrical resistance erases magnetic fields faster than turbulence can stretch them (if resistance is the classic, collisional kind).',
+    what: 'Below this size, the plasma\'s electrical resistance erases magnetic fields faster than turbulence can stretch them, if resistance is the classic, collisional kind[[StOnge2020fluctuation]]. In such thin, hot gas it may not be[[Zhou2023magnetogenesis,Schekochihin2020turbulence]].',
     cmp: 'A little smaller than the Earth (12,700 km across).' },
   { id: 'kw', name: 'Weibel filaments, grown', lg: 11.6, size: '≈ 4 million km',
-    what: 'Weibel filaments grow and merge to roughly this size before the instability stops.',
+    what: 'Weibel filaments grow to roughly this size by the time the instability stops growing[[Zhou2021spontaneous,Zhou2023magnetogenesis]].',
     cmp: 'About ten times the distance from the Earth to the Moon.' },
   { id: 'seed', name: 'Seed after merging', lg: 15.9, size: '≈ 500 times the Earth–Sun distance',
-    what: 'Where continued merging leaves the seed after one turn of the largest eddies, according to one published estimate.',
+    what: 'Where continued merging leaves the seed after one turn of the largest eddies, according to one published estimate[[Zhou2023magnetogenesis]].',
     cmp: 'Far beyond the orbit of Pluto, yet still a speck next to a galaxy.' },
   { id: 'obs', name: 'Observed cluster fields', lg: 22.0, lo: 21.5, hi: 22.5, size: '≈ 3,000 to 30,000 light-years',
-    what: 'The size over which magnetic fields in galaxy clusters are seen to be coherent, from radio observations.',
+    what: 'The size over which magnetic fields in galaxy clusters are seen to be coherent, from radio observations[[StOnge2020fluctuation,Schekochihin2005fast]].',
     cmp: 'Up to about a third of the width of the Milky Way.' },
   { id: 'L', name: 'Largest eddies', lg: 23.5, size: '≈ 300,000 light-years',
-    what: 'The size of the biggest turbulent swirls stirred up in the hot gas of a galaxy cluster.',
+    what: 'The size of the biggest turbulent swirls stirred up in the hot gas of a galaxy cluster[[StOnge2020fluctuation,Schekochihin2005fast]].',
     cmp: 'Several times the size of the Milky Way.' },
 ];
 const LG0 = 6.5, LG1 = 24;
@@ -62,7 +64,7 @@ function buildLadder() {
     const ratio = cur === 0 ? 'Start of the journey.' :
       `About 10<sup>${fromSeed.toFixed(0)}</sup> times larger than the electron skin depth, where the seed is born.`;
     card.innerHTML = `<h3>${r.name}</h3><p class="size">${r.size} (10<sup>${r.lo ? `${r.lo}–${r.hi}` : r.lg}</sup> cm)</p>
-      <p>${r.what}</p><p>${r.cmp} ${ratio}</p>`;
+      <p>${withCites(r.what)}</p><p>${r.cmp} ${ratio}</p>`;
   }
   rungs.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { select(cur + 1, true); e.preventDefault(); }
@@ -102,7 +104,7 @@ function axes(ctx, box, xr, yr, xt, yt) {
   return { X, Y };
 }
 
-// ---------------------------------------------------------------- 2. player
+// ---------------------------------------------------------------- 4. player
 const STAGES = [
   { t: 0, h: 'Two seeds', p: 'Two seeds start with the same energy. The gold one is born ten times larger than the resistive scale, the purple one ten times smaller. Well below the resistive scale, the plasma\'s resistance erases magnetic structures faster than turbulence can stretch them.' },
   { t: 0.3, h: 'Head start and erasure', p: 'The larger seed is stretched at once: its energy grows from the very first moment. The smaller seed is being erased. Its total energy will fall to about four millionths of its start, while a faint front of survivors creeps toward larger sizes.' },
@@ -235,7 +237,7 @@ async function buildPlayer(D) {
   return { onFrame: (fn) => listeners.push(fn), frame: () => f };
 }
 
-// ---------------------------------------------------------------- 3. move the seed
+// ---------------------------------------------------------------- 5. move the seed
 // One narrow seed at x0 = k0/k_eta from 0.1 (ten times larger than the resistive scale) to 100 (a hundred times smaller).
 // x0 <= X_NOLOSS: the energy never drops below its start (reviewed Fokker-Planck solver).
 // x0 >= X_FORMULA: late-time formulas for the surviving fraction and the recovery time.
@@ -303,32 +305,70 @@ function buildSurvival() {
   update();
 }
 
-// ---------------------------------------------------------------- 4. landscape (lazy-loaded three.js)
-function buildLandscapeLauncher(D, player) {
-  const btn = document.getElementById('open3d'), wrap = document.getElementById('land-wrap');
-  btn.addEventListener('click', async () => {
-    btn.disabled = true; btn.textContent = 'Loading…';
+// ---------------------------------------------------------------- 2. cascade
+function buildCascade() {
+  const box = document.getElementById('cstages');
+  const buttons = CSTAGES.map((st) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'stage-btn'; b.textContent = st.name;
+    b.setAttribute('aria-pressed', 'false'); box.appendChild(b); return b;
+  });
+  return createCascade({ eddies: document.getElementById('eddies'), spec: document.getElementById('cspec'), buttons,
+    caption: document.getElementById('ccaption'), pauseBtn: document.getElementById('cpause'), reduceMotion });
+}
+
+// ---------------------------------------------------------------- 3. stretch, twist, fold (three.js, loaded near the viewport)
+function buildStretchLauncher() {
+  const sec = document.getElementById('stretch'), msg = document.getElementById('s3d-msg'), read = document.getElementById('s3read');
+  const play = document.getElementById('s3play'), restartB = document.getElementById('s3restart'), endB = document.getElementById('s3end');
+  const resetB = document.getElementById('s3reset'), bands = document.getElementById('s3bands');
+  const fmt = (v) => (v < 100 ? v.toFixed(1) : v < 1e4 ? Math.round(v).toLocaleString('en-US') : `${(v / 10 ** Math.floor(Math.log10(v))).toFixed(1)} × 10<sup>${Math.floor(Math.log10(v))}</sup>`);
+  let view = null, started = false, autoplayed = false, lastAnnounce = -1;
+  function onUpdate(u) {
+    play.textContent = u.playing ? 'Pause' : (u.finished ? 'Play again' : 'Play'); play.setAttribute('aria-pressed', String(u.playing));
+    // the live region is refreshed at most once per stretching time while playing, to keep screen readers calm
+    const tick = Math.floor(u.t);
+    if (u.playing && tick === lastAnnounce) return;
+    lastAnnounce = u.playing ? tick : -1;
+    read.innerHTML = `<h3>After ${u.t.toFixed(1)} stretching times</h3>
+      <p>The loop is <strong>${fmt(u.length)}</strong> times longer.</p>
+      <p>Its magnetic energy is <strong>${fmt(u.energy)}</strong> times the start.</p>
+      <p class="small">Eddies: ${view ? view.bandName(u.nb) : ''}${u.finished ? '. Run finished.' : '.'}</p>`;
+  }
+  async function start() {
+    if (started) return; started = true; msg.textContent = 'Loading the 3D view…';
     try {
-      const [{ createLandscape }, lut] = await Promise.all([
-        import('./landscape.js'), fetch('data/ember_lut.json').then((r) => r.json())]);
-      wrap.hidden = false;
-      const land = createLandscape(document.getElementById('land'), D, lut.rgb, reduceMotion);
-      player.onFrame((f) => land.setFrame(f)); land.setFrame(player.frame());
-      document.querySelectorAll('input[name=lseed]').forEach((r) => r.addEventListener('change', (e) => land.setSeed(e.target.value)));
-      document.getElementById('reset3d').addEventListener('click', () => land.reset());
-      btn.hidden = true;
+      const [{ createStretch }, lut] = await Promise.all([import('./stretch3d.js'), fetch('data/ember_lut.json').then((r) => r.json())]);
+      view = createStretch({ canvas: document.getElementById('s3d'), chart: document.getElementById('s3chart'), lut: lut.rgb, reduceMotion, onUpdate });
+      msg.hidden = true;
+      [play, restartB, endB, resetB].forEach((b) => { b.disabled = false; }); bands.disabled = false;
+      play.addEventListener('click', () => view.toggle());
+      restartB.addEventListener('click', () => view.restart());
+      endB.addEventListener('click', () => view.skipToEnd());
+      resetB.addEventListener('click', () => view.reset());
+      bands.addEventListener('change', (e) => view.restart(Number(e.target.value)));
+      sec.dataset.ready = '1';
+      maybeAutoplay();
     } catch (err) {
-      btn.textContent = 'The 3D view could not start in this browser (WebGL is needed).';
+      msg.textContent = 'The 3D view could not start in this browser (WebGL is needed). The chart and text above describe it.';
       console.warn('3D view unavailable:', err);
     }
-  });
+  }
+  let inView = false;
+  function maybeAutoplay() { if (view && inView && !autoplayed && !reduceMotion) { autoplayed = true; view.play(); } }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((ents) => { if (ents.some((e) => e.isIntersecting)) start(); }, { rootMargin: '400px 0px' }).observe(sec);
+    new IntersectionObserver((ents) => {
+      inView = ents.some((e) => e.isIntersecting); if (view) view.setVisible(inView); maybeAutoplay();
+    }, { threshold: 0.35 }).observe(document.getElementById('s3d'));
+  } else start();
 }
 
 // ---------------------------------------------------------------- boot
 buildLadder();
+buildCascade();
+buildStretchLauncher();
 buildSurvival();
 fetch('data/kazantsev_frames.json').then((r) => r.json()).then(async (D) => {
-  const player = await buildPlayer(D);
-  buildLandscapeLauncher(D, player);
+  await buildPlayer(D);
   document.documentElement.dataset.ready = '1';
 });

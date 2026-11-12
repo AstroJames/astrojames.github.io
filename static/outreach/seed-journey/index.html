@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>The seed's journey: can turbulence lift a tiny magnetic field to cosmic sizes?</title>
+
 <meta name="description" content="An interactive explainer: can turbulence capture a magnetic seed born on tiny plasma scales and carry it up to the size of galaxy clusters? Built from solutions of the Kazantsev-Kraichnan dynamo model.">
 <script>
 // All asset paths are relative to this folder. If the page is reached as ".../seed_journey" (no trailing slash),
@@ -19,7 +20,7 @@
 <script type="module" src="js/main.js"></script>
 </head>
 <body data-pagefind-ignore="all">
-<a class="skip" href="#player">Skip to the animation</a>
+<a class="skip" href="#player">Skip to the model animation</a>
 <header class="hero">
   <p class="kicker">An interactive explainer</p>
   <h1>The seed's journey</h1>
@@ -33,24 +34,109 @@
 <section id="ladder" aria-labelledby="ladder-h">
   <h2 id="ladder-h"><span class="step">1</span> About sixteen powers of ten</h2>
   <p>Each rung is a size that matters in a galaxy cluster, from where the seed is born to where fields are seen. Click a rung, or
-    focus the ruler and use the <kbd>&larr;</kbd> <kbd>&rarr;</kbd> keys.</p>
+    focus the ruler and use the <kbd>&larr;</kbd> <kbd>&rarr;</kbd> keys. Small numbers point to the sources listed at the bottom of the page.</p>
   <div class="ladder" role="group" aria-label="Scale ladder, sizes in centimetres on a logarithmic ruler">
     <div class="ruler" id="ruler" aria-hidden="true"></div>
     <div class="rungs" id="rungs"></div>
   </div>
   <div class="card" id="rung-card" aria-live="polite"></div>
-  <p class="note">Sizes are orders of magnitude for the hot gas of a typical galaxy cluster, compiled from published estimates.
-    Everyday comparisons are rounded.
-    Whether the seed really starts below the resistive scale is itself uncertain: it depends on what sets resistance in such a thin, hot
-    plasma, which is still debated.</p>
+  <p class="note">Sizes are orders of magnitude for the hot gas of a typical galaxy cluster: about one particle per thousand cubic
+    centimetres, at about 60 million degrees, stirred by eddies a few hundred thousand light-years across<sup class="cite"><a href="#ref-StOnge2020fluctuation" aria-label="reference 4">4</a>,<a href="#ref-Schekochihin2005fast" aria-label="reference 5">5</a></sup>.
+    They follow from standard plasma formulas and the published estimates cited on each rung.
+    Everyday comparisons are rounded. Whether the seed really starts below the resistive scale is itself uncertain: it depends on what
+    sets resistance in such a thin, hot plasma, which is still debated<sup class="cite"><a href="#ref-Zhou2023magnetogenesis" aria-label="reference 3">3</a>,<a href="#ref-Schekochihin2020turbulence" aria-label="reference 6">6</a></sup>.</p>
 </section>
 
-<!-- Step 2: the model player -->
+<!-- Step 2: the turbulent cascade -->
+<section id="cascade" aria-labelledby="cascade-h">
+  <h2 id="cascade-h"><span class="step">2</span> How turbulence stirs</h2>
+  <p>The gas in a cluster is turbulent. Large eddies, stirred at the top of the ladder, break up into smaller and smaller ones, handing
+    their energy down a <em>cascade</em> until the gas's internal friction (viscosity) turns it into heat. Smaller eddies spin faster, so
+    the smallest ones stretch a magnetic field line the fastest. Choose a stage to see where it sits.</p>
+  <div class="figure cascade-fig">
+    <canvas id="eddies" role="img" aria-label="Schematic of the cascade: one large eddy at the top, then rows of two, four, eight and sixteen smaller eddies that spin faster. Bars on the right show how fast each size stretches a field line, longest for the smallest eddies."></canvas>
+    <canvas id="cspec" role="img" aria-label="Energy at each size: the energy in eddies falls with the minus five-thirds slope of Kolmogorov's law and drops sharply at the viscous scale. The growing magnetic field peaks further to the right, near the resistive scale. The seed is born further right still."></canvas>
+  </div>
+  <div class="controls">
+    <div class="stage-buttons" id="cstages" role="group" aria-label="Stages of the cascade"></div>
+    <button id="cpause" type="button" class="secondary" aria-pressed="false">Pause motion</button>
+  </div>
+  <div class="stage" id="ccaption" aria-live="polite"></div>
+  <details class="note">
+    <summary>What is real here, and what is illustrative?</summary>
+    <p>Real: the energy curve follows Kolmogorov's 1941 law, energy per wavenumber ∝ <i>k</i><sup>−5/3</sup>, as stated in the review
+      of ref.<sup class="cite"><a href="#ref-Schekochihin2020turbulence" aria-label="reference 6">6</a></sup> (eq. 2.1). The same law makes an
+      eddy of size ℓ turn over at a rate ∝ ℓ<sup>−2/3</sup>: that sets the spin of the drawn eddies, the lengths of the bars and the speed of
+      the orange energy packet. The magnetic curve has the shape of the growing pattern of the dynamo model used in steps 4 and 5,
+      <i>x</i><sup>3/2</sup><i>K</i><sub>0</sub>(<i>x</i>) with <i>x</i> = <i>k</i>/<i>k</i><sub>η</sub>, which peaks at the resistive scale;
+      simulations find the field concentrated there too<sup class="cite"><a href="#ref-Kriel2022fundamental" aria-label="reference 8">8</a></sup>.</p>
+    <p>Illustrative: the drawing of the eddies, the number of steps (five here), the exact shape of the drop at the viscous scale, the height
+      of the magnetic curve, and the spacing of the marked sizes. In a real cluster the gaps are far larger (step 1), and where the viscous
+      scale sits in such a thin, hot plasma is uncertain<sup class="cite"><a href="#ref-StOnge2020fluctuation" aria-label="reference 4">4</a>,<a href="#ref-Schekochihin2005fast" aria-label="reference 5">5</a></sup>.
+      The rungs of step 1 map onto this picture as follows: the largest eddies are the top rung, the resistive scale is the rung near the
+      bottom, and the seed is born below it, at the electron skin depth.</p>
+  </details>
+</section>
+
+<!-- Step 3: stretch, twist, fold (three.js, loaded when the section comes into view) -->
+<section id="stretch" aria-labelledby="stretch-h">
+  <h2 id="stretch-h"><span class="step">3</span> Stretch, twist, fold</h2>
+  <p>In hot cluster gas, a magnetic field line is carried along by the flow like a thread of dye stirred into it, and stretching the line
+    makes the field along it stronger<sup class="cite"><a href="#ref-Rincon2019dynamo" aria-label="reference 9">9</a></sup>. Here a closed loop of
+    field is stirred by eddies of four sizes, each moving with the speed Kolmogorov's law gives it. Press Play, then drag to turn the box.</p>
+  <div class="stretch-grid">
+    <div class="stretch-view">
+      <canvas id="s3d" role="img" aria-label="3D view of a magnetic loop inside a box, being stretched and folded by the flow. Colour shows field strength, brighter is stronger. The readouts beside the view give the numbers."></canvas>
+      <p class="s3d-msg" id="s3d-msg">The 3D view starts when you scroll here.</p>
+    </div>
+    <div class="stretch-side">
+      <canvas id="s3chart" role="img" aria-label="Chart of the loop's length and magnetic energy against time, on a logarithmic scale, with dashed lines for the growth rates of the dynamo model"></canvas>
+      <div class="readout s" aria-live="polite" id="s3read"><p>&nbsp;</p></div>
+    </div>
+  </div>
+  <div class="controls" role="group" aria-label="3D view controls">
+    <button id="s3play" type="button" aria-pressed="false" disabled>Play</button>
+    <button id="s3restart" type="button" class="secondary" disabled>Restart</button>
+    <button id="s3end" type="button" class="secondary" disabled>Skip to the end</button>
+    <button id="s3reset" type="button" class="secondary" disabled>Reset view</button>
+  </div>
+  <fieldset class="bands" id="s3bands" disabled>
+    <legend>Eddies stirring the loop (changing this restarts the run)</legend>
+    <label><input type="radio" name="s3b" value="1"> largest only</label>
+    <label><input type="radio" name="s3b" value="2"> down to ½ size</label>
+    <label><input type="radio" name="s3b" value="3"> down to ¼ size</label>
+    <label><input type="radio" name="s3b" value="4" checked> all four (down to ⅛)</label>
+  </fieldset>
+  <p class="keys">Keys, with the 3D view focused: <kbd>&larr;</kbd> <kbd>&rarr;</kbd> <kbd>&uarr;</kbd> <kbd>&darr;</kbd> turn, <kbd>+</kbd> <kbd>&minus;</kbd> zoom.</p>
+  <p>Try the largest eddies alone, then all four sizes. The earlier runs stay on the chart, faded. With small eddies stirring, the loop
+    grows far faster, because the smallest eddies set the pace<sup class="cite"><a href="#ref-Schekochihin2002model" aria-label="reference 7">7</a></sup>.
+    The folds also get thinner and thinner, packing the field into ever smaller sizes. In real gas, resistance (left out here) stops the
+    folding near the resistive scale. Without resistance, the loop's energy grows at the rate the dynamo model of the next step predicts for that case, about sevenfold per stretching time. Once resistance acts, as in step 4, the growth is slower.</p>
+  <details class="note">
+    <summary>How is this computed?</summary>
+    <p>The loop is a chain of points moved by the flow, which is exact for a field line in a perfectly conducting gas. Where the line has
+      been stretched, the field is stronger by the same factor (colour: CMasher <em>ember</em>, brighter is stronger, logarithmic from
+      0.3 to 3,000 times the starting field). The magnetic energy of a thin loop of fixed magnetic flux grows as the sum of the squared
+      stretching factors. Points are added wherever the line gets coarse, up to 160,000.</p>
+    <p>The flow is a stand-in for turbulence: each eddy size is a single random wave of shearing motion that is replaced by a new random
+      one after one turnover time. Its speed and lifetime follow Kolmogorov's law, so an eddy of half the size moves 0.79 times as fast and
+      turns over 1.6 times as often. The equations of motion are solved exactly in your browser. A flow that changes this quickly is the
+      kind assumed by the Kazantsev model of step 4<sup class="cite"><a href="#ref-Schekochihin2001spectra" aria-label="reference 10">10</a></sup>.
+      Time is in that model's "stretching times", and the dashed lines are the model's growth rates: the energy grows at twice the
+      stretching rate and the length at 0.8 times. With all four eddy sizes the computed run follows them to within about 10%, and an independent check confirms this. With only the largest eddies, the run lasts less than one of their own stretching times, too short to settle onto the rate, so it stays below the line.</p>
+    <p>Illustrative choices: only four eddy sizes; single-wave eddies instead of real turbulence; no resistance; the loop's size and
+      starting place; the box repeats, so a line leaving one face comes back through the opposite face. The view is not a simulation of
+      a galaxy cluster.</p>
+  </details>
+</section>
+
+<!-- Step 4: the model player -->
 <section id="player" aria-labelledby="player-h">
-  <h2 id="player-h"><span class="step">2</span> Watch the model</h2>
-  <p>We solved the classic theory of the turbulent dynamo, the Kazantsev model, for two seeds with the same starting energy. One is
-    born <strong>ten times larger</strong> than the resistive scale, the other <strong>ten times smaller</strong>. Each curve shows how
-    a seed's magnetic energy is shared among sizes. Large structures are on the left, small ones on the right.</p>
+  <h2 id="player-h"><span class="step">4</span> Watch the model</h2>
+  <p>We solved the classic theory of the turbulent dynamo, the Kazantsev model<sup class="cite"><a href="#ref-Schekochihin2001spectra" aria-label="reference 10">10</a>,<a href="#ref-Schekochihin2002model" aria-label="reference 7">7</a></sup>,
+    for two seeds with the same starting energy. One is born <strong>ten times larger</strong> than the resistive scale, the other
+    <strong>ten times smaller</strong>. Each curve shows how a seed's magnetic energy is shared among sizes. Large structures are on the left,
+    small ones on the right.</p>
   <div class="figure">
     <canvas id="spec" role="img" aria-label="Animated magnetic energy against size. The description below updates as the animation plays."></canvas>
     <canvas id="energy" role="img" aria-label="Total magnetic energy against time"></canvas>
@@ -74,6 +160,7 @@
       Gold, solid: the seed born ten times larger than the resistive scale. Purple, dashed: the seed born ten times smaller. Both are
       narrow (all their energy near one size) and start with the same energy. Energies below 10<sup>−7</sup> of the largest value in each
       frame are not drawn: that is the precision limit of the transform used.</p>
+    
     <p>Data: a numerical solution of the model's equation for the magnetic spectrum, computed with the project's checked and
       reviewed solver and stored as 248 frames. Between stored frames the curves are interpolated linearly in log energy.
       This is an idealized model (a random flow with no memory). Times shorter than a few eddy times have no counterpart in real
@@ -81,9 +168,9 @@
   </details>
 </section>
 
-<!-- Step 3: move the seed -->
+<!-- Step 5: move the seed -->
 <section id="survive" aria-labelledby="survive-h">
-  <h2 id="survive-h"><span class="step">3</span> Move the seed</h2>
+  <h2 id="survive-h"><span class="step">5</span> Move the seed</h2>
   <p>Now you choose where a narrow seed is born, from ten times larger than the resistive scale to a hundred times smaller. Drag the
     slider and see how much of the seed survives to be amplified.</p>
   <div class="slider-row">
@@ -106,6 +193,7 @@
       The surviving fraction is the share of the seed's energy that ends up in the growing pattern:
       <i>F</i><sub>δ</sub> = Γ(5/4)<sup>2</sup>(2π)<sup>−1/2</sup> <i>x</i><sub>0</sub><sup>−5/2</sup> <i>K</i><sub>0</sub>(<i>x</i><sub>0</sub>),
       where <i>K</i><sub>0</sub> is a modified Bessel function.
+      
       The recovery time is how long the growing pattern takes to bring the field back to its starting energy.
       The in-browser values were checked against an independent high-precision calculation.
       These are late-time formulas, approximate below about <i>x</i><sub>0</sub> = 5 (hence "about" in the readouts), and they are shown only
@@ -114,29 +202,10 @@
       loses energy: stretching beats resistance from the start. Between about 1.7 and 3 its energy dips for a few stretching times and then
       grows. The 1.7 comes from a full numerical solution of the model, checked independently.</p>
     <p>The formulas stop being trustworthy for real turbulence at large <i>x</i><sub>0</sub>: the model assumes a flow with no memory, and for
-      real eddies that assumption fails beyond about <i>x</i><sub>0</sub> = 10–30. Up there the number is an extrapolation
-      of the idealized model, which our simulations will test. The model also needs the seed to be much smaller than the smallest eddy;
-      in the animation above the larger seed is still 100 times smaller than the eddies.</p>
+      real eddies that assumption fails beyond about <i>x</i><sub>0</sub> = 10–30<sup class="cite"><a href="#ref-Schekochihin2000finitecorrelationtime" aria-label="reference 11">11</a>,<a href="#ref-Kriel2022fundamental" aria-label="reference 8">8</a></sup>.
+      Up there the number is an extrapolation of the idealized model, which our simulations will test. The model also needs the seed to be
+      much smaller than the smallest eddy; in the animation above the larger seed is still 100 times smaller than the eddies.</p>
   </details>
-</section>
-
-<!-- Step 4: 3D landscape -->
-<section id="landscape" aria-labelledby="land-h">
-  <h2 id="land-h"><span class="step">4</span> The whole story as a landscape</h2>
-  <p>The same model solution in 3D. Size runs left to right, time runs toward you, and height is magnetic energy on a
-    logarithmic scale. Drag to orbit, scroll to zoom. The bright line is the moment shown in the animation above.</p>
-  <button id="open3d" type="button">Open the 3D view</button>
-  <div id="land-wrap" class="land-wrap" hidden>
-    <canvas id="land" role="img" aria-label="3D surface of magnetic energy over size and time"></canvas>
-    <div class="land-controls" role="group" aria-label="3D view controls">
-      <label><input type="radio" name="lseed" value="A" checked> larger seed</label>
-      <label><input type="radio" name="lseed" value="B"> smaller seed</label>
-      <button id="reset3d" type="button">Reset view</button>
-    </div>
-    <p class="note">Colour and height both show log<sub>10</sub> <i>M</i> (CMasher <em>ember</em>). The time axis is not uniform: each stored frame is one step,
-      so early times (log-spaced, <i>γ̄t</i> = 0.001 to 1) are stretched out and later times (<i>γ̄t</i> = 1 to 60) are compressed. The flat floor
-      is below the precision limit (not drawn in the 2D view). Rendered with three.js r187.</p>
-  </div>
 </section>
 
 <section aria-labelledby="next-h">
@@ -145,27 +214,46 @@
     carries the field up to large scales.</p>
   <p class="claim">In more detail: no seed is too small-scale. The turbulent dynamo captures any finite seed field, at an exponential cost in
     amplitude for narrow seeds born below the resistive scale, and established nonlinear-dynamo results then carry the field to the outer scale.</p>
-  <p class="note">Two sources stand behind that sentence. The capture and its cost are what the model on this page shows: a narrow
-    seed born above the resistive scale loses nothing, and one born below it keeps only an exponentially small share. The last step,
-    growth from the resistive scale up to the size of the stirring, comes from published dynamo simulations
-    (<a href="https://arxiv.org/abs/2209.10749">Beattie et al. 2022</a>; <a href="https://arxiv.org/abs/2509.09949">Kriel et al. 2025</a>),
-    which started from seeds at or above the resistive scale.</p>
-  <p>Capture is shown in our model; growth to large scales is established in dynamo simulations (Beattie et al. 2022; Kriel et al. 2025);
+  <p class="note">Two sources stand behind that sentence. The capture and its cost are what the model on this page shows: a narrow seed born above the resistive scale loses nothing, and one born
+    below it keeps only an exponentially small share. The last step, growth from the resistive scale up to the size of the stirring, comes from published dynamo
+    simulations<sup class="cite"><a href="#ref-Beattie2022growth" aria-label="reference 12">12</a>,<a href="#ref-Kriel2025universal" aria-label="reference 13">13</a></sup>, which started from seeds at or above the resistive scale.</p>
+  <p>Capture is shown in our model; growth to large scales is established in dynamo simulations<sup class="cite"><a href="#ref-Beattie2022growth" aria-label="reference 12">12</a>,<a href="#ref-Kriel2025universal" aria-label="reference 13">13</a></sup>;
     our simulations with the AthenaK code will test the full chain for seeds born below the resistive scale. No simulation results are shown here yet.</p>
 </section>
 
 <section id="made" aria-labelledby="made-h">
   <h2 id="made-h">How this was made</h2>
-  <p>Steps 2 to 4 use one classic theory of the turbulent dynamo, the Kazantsev–Kraichnan model of a
-    <em>kinematic</em> dynamo: a weak magnetic field stretched and folded by a random, fast-changing flow, before the field is strong
-    enough to push back. The animation, the 3D landscape and the numbers in the readouts come from the project's own solutions of that
-    model, which were checked independently and reviewed before they appear here. The slider's formulas are computed live in your
-    browser. Nothing is painted by hand. The scale sizes in step 1 come from published estimates.</p>
+  <p>Steps 4 and 5 use one classic theory of the turbulent dynamo, the Kazantsev–Kraichnan model of a <em>kinematic</em> dynamo: a weak
+    magnetic field stretched and folded by a random, fast-changing flow, before the field is strong enough to push back. The animation and
+    the numbers in the readouts come from the project's own solutions of that model, which were checked independently and reviewed before
+    they appear here. The slider's formulas, the cascade's scalings and the 3D loop's motion are computed live in your browser. Nothing is
+    painted by hand, and the parts that are illustrative say so. The scale sizes in step 1 come from published estimates.</p>
   <p>The model is an idealization, and the page says where it stops being trustworthy. This page is part of a research project on how
     turbulence could magnetize the Universe from any seed, however small. The project's simulations will test this idea.</p>
 </section>
+
+<section id="refs" aria-labelledby="refs-h">
+  <h2 id="refs-h">References</h2>
+  <ol class="refs" id="refs-list">
+    <li id="ref-Zhou2021spontaneous">Zhou, Zhdankin, Kunz, Loureiro &amp; Uzdensky (2021). Spontaneous magnetization of collisionless plasma through the action of a shear flow. <a href="https://arxiv.org/abs/2110.01134">arXiv:2110.01134</a></li>
+    <li id="ref-Sironi2023generation">Sironi, Comisso &amp; Golant (2023). Generation of near-equipartition magnetic fields in turbulent collisionless plasmas. <i>Phys. Rev. Lett.</i> <a href="https://doi.org/10.1103/PhysRevLett.131.055201">doi:10.1103/PhysRevLett.131.055201</a> · <a href="https://arxiv.org/abs/2307.15112">arXiv:2307.15112</a></li>
+    <li id="ref-Zhou2023magnetogenesis">Zhou, Zhdankin, Kunz, Loureiro &amp; Uzdensky (2023). Magnetogenesis in a collisionless plasma: from Weibel instability to turbulent dynamo. <a href="https://arxiv.org/abs/2308.01924">arXiv:2308.01924</a></li>
+    <li id="ref-StOnge2020fluctuation">St-Onge, Kunz, Squire &amp; Schekochihin (2020). Fluctuation dynamo in a weakly collisional plasma. <i>J. Plasma Phys.</i> <a href="https://doi.org/10.1017/S0022377820000860">doi:10.1017/S0022377820000860</a> · <a href="https://arxiv.org/abs/2003.09760">arXiv:2003.09760</a></li>
+    <li id="ref-Schekochihin2005fast">Schekochihin &amp; Cowley (2005). Fast growth of magnetic fields in galaxy clusters: a self-accelerating dynamo. <i>Astron. Nachr.</i> <a href="https://doi.org/10.1002/asna.200610600">doi:10.1002/asna.200610600</a> · <a href="https://arxiv.org/abs/astro-ph/0508535">arXiv:astro-ph/0508535</a></li>
+    <li id="ref-Schekochihin2020turbulence">Schekochihin (2020). MHD turbulence: a biased review. <a href="https://arxiv.org/abs/2010.00699">arXiv:2010.00699</a></li>
+    <li id="ref-Schekochihin2002model">Schekochihin, Cowley, Hammett, Maron &amp; McWilliams (2002). A model of nonlinear evolution and saturation of the turbulent MHD dynamo. <i>New J. Phys.</i> <a href="https://doi.org/10.1088/1367-2630/4/1/384">doi:10.1088/1367-2630/4/1/384</a> · <a href="https://arxiv.org/abs/astro-ph/0207503">arXiv:astro-ph/0207503</a></li>
+    <li id="ref-Kriel2022fundamental">Kriel, Beattie, Seta &amp; Federrath (2022). Fundamental scales in the kinematic phase of the turbulent dynamo. <i>Mon. Not. R. Astron. Soc.</i> <a href="https://doi.org/10.1093/mnras/stac969">doi:10.1093/mnras/stac969</a> · <a href="https://arxiv.org/abs/2204.00828">arXiv:2204.00828</a></li>
+    <li id="ref-Rincon2019dynamo">Rincon (2019). Dynamo theories. <i>J. Plasma Phys.</i> <a href="https://doi.org/10.1017/S0022377819000539">doi:10.1017/S0022377819000539</a> · <a href="https://arxiv.org/abs/1903.07829">arXiv:1903.07829</a></li>
+    <li id="ref-Schekochihin2001spectra">Schekochihin, Boldyrev &amp; Kulsrud (2001). Spectra and growth rates of fluctuating magnetic fields in the kinematic dynamo theory with large magnetic Prandtl numbers. <i>Astrophys. J.</i> <a href="https://doi.org/10.1086/338697">doi:10.1086/338697</a> · <a href="https://arxiv.org/abs/astro-ph/0103333">arXiv:astro-ph/0103333</a></li>
+    <li id="ref-Schekochihin2000finitecorrelationtime">Schekochihin &amp; Kulsrud (2000). Finite-correlation-time effects in the kinematic dynamo problem. <i>Phys. Plasmas</i> <a href="https://doi.org/10.1063/1.1404383">doi:10.1063/1.1404383</a> · <a href="https://arxiv.org/abs/astro-ph/0002175">arXiv:astro-ph/0002175</a></li>
+    <li id="ref-Beattie2022growth">Beattie, Federrath, Kriel, Mocz &amp; Seta (2022). Growth or decay I: universality of the turbulent dynamo saturation. <i>Mon. Not. R. Astron. Soc.</i> <a href="https://doi.org/10.1093/mnras/stad1863">doi:10.1093/mnras/stad1863</a> · <a href="https://arxiv.org/abs/2209.10749">arXiv:2209.10749</a></li>
+    <li id="ref-Kriel2025universal">Kriel, Beattie, Krumholz, Schober &amp; Armstrong (2025). The universal growth of magnetic energy during the nonlinear phase of subsonic and supersonic small-scale dynamos. <a href="https://arxiv.org/abs/2509.09949">arXiv:2509.09949</a></li>
+  </ol>
+  <p class="note">Years are those of the arXiv preprint; the journal version, where there is one, is linked by its DOI.</p>
+</section>
 </main>
 <footer>
+  
   <p>Made by James Beattie and Claude. Colour maps from CMasher (E. van der Velden).
     3D view rendered with <a href="https://threejs.org/">three.js</a> (MIT licence; see <a href="vendor/three/LICENSE">licence</a> and
     <a href="THIRD_PARTY_NOTICES.txt">third-party notices</a>).</p>
