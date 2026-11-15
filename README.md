@@ -178,6 +178,8 @@ in `main.js`, `cascade.js`, and `stretch3d.js`. When refreshing the research
 export, preserve this stylesheet link, palette module/imports, and the chart
 color substitutions. Keep the scientific text, formulas, and simulation logic
 from the export unchanged.
+The live landscape in `js/landscape.js` has a drawing-only dark palette (`P`)
+matching the same website colors; preserve it during export refreshes too.
 
 ## SNR scientific explorer
 

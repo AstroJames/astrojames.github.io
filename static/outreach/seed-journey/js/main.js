@@ -107,10 +107,10 @@ function axes(ctx, box, xr, yr, xt, yt) {
 // ---------------------------------------------------------------- 4. player
 const STAGES = [
   { t: 0, h: 'Two seeds', p: 'Two seeds start with the same energy. The gold one is born ten times larger than the resistive scale, the purple one ten times smaller. Well below the resistive scale, the plasma\'s resistance erases magnetic structures faster than turbulence can stretch them.' },
-  { t: 0.3, h: 'Head start and erasure', p: 'The larger seed is stretched at once: its energy grows from the very first moment. The smaller seed is being erased. Its total energy will fall to about four millionths of its start, while a faint front of survivors creeps toward larger sizes.' },
+  { t: 0.3, h: 'Head start and erasure', p: 'The larger seed is stretched at once: its energy grows from the very first moment. The smaller seed is being erased: its total energy will fall to about four millionths of its start. Meanwhile the turbulence\'s stretching and shearing makes the seed\'s size wander, and carries a faint front of survivors toward larger sizes.' },
   { key: 'Wmin_B', h: 'Capture', p: 'After about four stretching times the survivors of the smaller seed reach sizes where stretching beats resistance. From now on the turbulent dynamo amplifies them too.' },
   { key: 'ground_half_B', h: 'One pattern takes over', p: 'For both seeds a single growing pattern now holds more than half of the energy. It peaks near the resistive scale, whatever size the seed was born at.' },
-  { key: 'ground_90_B', h: 'Steady growth', p: 'Both curves now have the same shape and grow at the same rate: the energy doubles about once every stretching time. Both seeds were captured. The only lasting difference is the price the smaller seed paid at the start: it ends with about six billion times less magnetic energy.' },
+  { key: 'ground_90_B', h: 'Steady growth', p: 'In the model, both curves now have the same shape and grow at the same rate: the energy doubles about once every stretching time. Both seeds were captured. The only lasting difference is the price the smaller seed paid at the start: it ends with about six billion times less magnetic energy.' },
 ];
 
 async function buildPlayer(D) {
@@ -208,7 +208,8 @@ async function buildPlayer(D) {
   }
   function tick(now) {
     if (!playing) return;
-    f = Math.min(N - 1, f + (now - last) / 1000 * FPS); last = now; render();
+    // the first frame's timestamp can precede `last` on a busy device: never step backwards (a negative f has no frame)
+    f = Math.min(N - 1, f + Math.max(0, now - last) / 1000 * FPS); last = now; render();
     if (f >= N - 1) { setPlaying(false); return; }
     requestAnimationFrame(tick);
   }
@@ -237,7 +238,7 @@ async function buildPlayer(D) {
   return { onFrame: (fn) => listeners.push(fn), frame: () => f };
 }
 
-// ---------------------------------------------------------------- 5. move the seed
+// ---------------------------------------------------------------- 6. move the seed
 // One narrow seed at x0 = k0/k_eta from 0.1 (ten times larger than the resistive scale) to 100 (a hundred times smaller).
 // x0 <= X_NOLOSS: the energy never drops below its start (reviewed Fokker-Planck solver).
 // x0 >= X_FORMULA: late-time formulas for the surviving fraction and the recovery time.
@@ -284,7 +285,7 @@ function buildSurvival() {
     if (x0 >= X_FORMULA) { ctx.fillStyle = COL.b; ctx.beginPath(); ctx.arc(X(x0), Y(fa), 5, 0, 2 * Math.PI); ctx.fill(); }
     ctx.fillStyle = COL.ink; ctx.font = '13px system-ui, sans-serif'; ctx.textAlign = 'center';
     ctx.fillText(w < 520 ? 'seed size vs resistive scale' : 'size of the seed compared with the resistive scale', box.x + box.w / 2, box.y + box.h + 36);
-    ctx.textAlign = 'left'; ctx.fillText('fraction of the seed that survives', box.x, box.y - 10);
+    ctx.textAlign = 'left'; ctx.fillText('fraction of the seed that survives (model)', box.x, box.y - 10);
   }
   function update() {
     const x0 = xOf(Number(sl.value)), fa = log10Fnarrow(x0);
@@ -297,7 +298,7 @@ function buildSurvival() {
     } else {
       ra.innerHTML = `Survives: about ${oneIn(fa)}<br>Back to its starting energy after about ${tRecovery(fa).toFixed(0)} stretching times`;
     }
-    rr.innerHTML = 'Either way the seed is captured: what survives grows in the same pattern, at the same rate. Only the price differs.';
+    rr.innerHTML = 'Either way, the model says the seed is captured: what survives grows in the same pattern, at the same rate. Only the price differs.';
     draw(x0, fa);
   }
   sl.addEventListener('input', update); window.addEventListener('resize', update);
@@ -363,10 +364,31 @@ function buildStretchLauncher() {
   } else start();
 }
 
+// ---------------------------------------------------------------- 5. a race against resistance, drawn as a landscape (loaded near the viewport)
+// landscape.js solves the model live. Its mountLandscape plays the run once when the view is first scrolled into view, stops the
+// animation loop while the view is off screen, and with reduced motion shows the end state and waits for Play.
+function buildLandscapeLauncher() {
+  const sec = document.getElementById('landscape');
+  let started = false;
+  async function start() {
+    if (started) return; started = true;
+    try {
+      const { mountLandscape } = await import('./landscape.js');
+      mountLandscape(sec, { reduceMotion });
+    } catch (err) {
+      console.warn('Landscape view unavailable:', err);
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((ents, obs) => { if (ents.some((e) => e.isIntersecting)) { obs.disconnect(); start(); } }, { rootMargin: '400px 0px' }).observe(sec);
+  } else start();
+}
+
 // ---------------------------------------------------------------- boot
 buildLadder();
 buildCascade();
 buildStretchLauncher();
+buildLandscapeLauncher();
 buildSurvival();
 fetch('data/kazantsev_frames.json').then((r) => r.json()).then(async (D) => {
   await buildPlayer(D);

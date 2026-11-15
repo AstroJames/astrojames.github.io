@@ -68,7 +68,7 @@
     <p>Real: the energy curve follows Kolmogorov's 1941 law, energy per wavenumber ∝ <i>k</i><sup>−5/3</sup>, as stated in the review
       of ref.<sup class="cite"><a href="#ref-Schekochihin2020turbulence" aria-label="reference 6">6</a></sup> (eq. 2.1). The same law makes an
       eddy of size ℓ turn over at a rate ∝ ℓ<sup>−2/3</sup>: that sets the spin of the drawn eddies, the lengths of the bars and the speed of
-      the orange energy packet. The magnetic curve has the shape of the growing pattern of the dynamo model used in steps 4 and 5,
+      the orange energy packet. The magnetic curve has the shape of the growing pattern of the dynamo model used in steps 4 to 6,
       <i>x</i><sup>3/2</sup><i>K</i><sub>0</sub>(<i>x</i>) with <i>x</i> = <i>k</i>/<i>k</i><sub>η</sub>, which peaks at the resistive scale;
       simulations find the field concentrated there too<sup class="cite"><a href="#ref-Kriel2022fundamental" aria-label="reference 8">8</a></sup>.</p>
     <p>Illustrative: the drawing of the eddies, the number of steps (five here), the exact shape of the drop at the viscous scale, the height
@@ -165,28 +165,90 @@
     <p>Data: a numerical solution of the model's equation for the magnetic spectrum, computed with the project's checked and
       reviewed solver and stored as 248 frames. Between stored frames the curves are interpolated linearly in log energy.
       This is an idealized model (a random flow with no memory). Times shorter than a few eddy times have no counterpart in real
-      turbulence. The project's simulations will test it.</p>
+      turbulence. Our first simulations have tested it for seeds up to about 4 times smaller than the resistive scale,
+      where the seeds kept more energy than it predicts (see <a href="#results">the first test</a> below).</p>
   </details>
 </section>
 
-<!-- Step 5: move the seed -->
+<!-- Step 5: the race against resistance, drawn as a landscape (js/landscape.js, loaded when the section comes near the viewport) -->
+<section id="landscape" aria-labelledby="landscape-h">
+  <h2 id="landscape-h"><span class="step">5</span> A race against resistance, drawn as a landscape</h2>
+  <p>How can a seed born too small be amplified at all? In the model it is a race against resistance. At the size where such a seed is
+    born, resistance is erasing it. The turbulence's random stretching and shearing makes the seed's size wander, sometimes down and
+    sometimes up. Most of the seed is erased. A small share is carried up to the resistive scale before resistance erases it, and that
+    share is what the dynamo captures. The smaller the seed is born, the further that share has to travel, and the less of it
+    arrives.</p>
+  <p>In our model, turbulence makes a seed's size wander while resistance erases it, and only the share that is carried up to about
+    the resistive scale, where growth can win, before it is erased gets to grow. Choose the seed's size and press Play.</p>
+  <div class="slider-row">
+    <label for="ls-x0">Seed size: <output id="ls-x0out" for="ls-x0">4.0 times smaller than the resistive scale</output></label>
+    <input id="ls-x0" type="range" min="0" max="113" step="1" value="53" aria-valuetext="4.0 times smaller than the resistive scale" disabled>
+  </div>
+  <div class="ls-grid">
+    <div class="ls-view">
+      <canvas id="ls-main" role="img" aria-label="Two drawings over the same axis of size, with larger sizes on the left and smaller sizes on the right. Above: the shape of the seed's magnetic energy across sizes, drawn at the same height in every frame, with the growing pattern as a dashed outline. Below: the landscape, a flat valley for sizes larger than the resistive scale and a wall that rises towards smaller sizes. The readouts beside the drawing give the numbers."></canvas>
+    </div>
+    <div class="ls-side">
+      <canvas id="ls-chart" role="img" aria-label="Chart of the seed's total magnetic energy against time, on a logarithmic scale, relative to its starting energy. A dashed line shows the model's formula for late times."></canvas>
+      <div class="readout s">
+        <h3 id="ls-time">After 0.00 stretching times</h3>
+        <!-- The two "ls-room" spans are invisible placeholders with the longest text each line can show. They only reserve its height. -->
+        <p class="ls-fit"><span id="ls-energy">&nbsp;</span><span class="ls-room" aria-hidden="true">The seed’s energy is now <strong>1 part in 8.8 × 10<sup>8</sup></strong> of its starting energy.</span></p>
+        <p class="ls-fit"><span id="ls-share">&nbsp;</span><span class="ls-room" aria-hidden="true">Share that ends up in the growing pattern: about <strong>1 part in 8,800,000</strong> (the model’s late-time formula). The energy never falls this low, because the survivors are already growing while the rest is erased.</span></p>
+      </div>
+    </div>
+  </div>
+  <p class="note" id="ls-caveat">This is our model's estimate. In our first simulations, seeds up to about 4 times smaller than the
+    resistive scale kept more energy, relative to a reference seed born at the resistive scale, than the model predicts. Smaller
+    seeds than that are untested.</p>
+  <div class="controls" role="group" aria-label="Landscape animation controls">
+    <button id="ls-play" type="button" aria-pressed="false" disabled>Play</button>
+    <button id="ls-restart" type="button" class="secondary" disabled>Restart</button>
+    <button id="ls-end" type="button" class="secondary" disabled>Skip to the end</button>
+  </div>
+  <p class="keys">The clock starts slowly and speeds up, so that the fast changes at the start can be seen. Time is counted in stretching
+    times: in one stretching time, the smallest eddies stretch a typical field line about 1.8-fold.</p>
+  <p class="sr-only" id="ls-status" aria-live="polite"></p>
+  <details class="note">
+    <summary>What am I looking at?</summary>
+    <p>This is our model of the turbulent dynamo, written in a form that looks like the equation for a quantum particle in a landscape,
+      and run so that lower means growth. The wall is resistance, and the flat valley is where turbulence makes the field grow. Nothing
+      tunnels through the wall. Nothing rolls down it either: the wall's height is how fast resistance erases, not a slope that pushes.
+      The turbulence does the carrying: it moves the seed's energy from each size to the neighbouring sizes, while resistance erases
+      it fastest where the wall is highest.</p>
+    <p>The growing pattern keeps most of its energy at sizes a little smaller than the resistive scale (here it peaks about 2 times
+      smaller), because turbulence keeps pushing energy towards smaller sizes, where resistance removes it. It still grows, because
+      stretching adds energy faster than resistance removes it. Counted as in step 4, the same pattern peaks at the resistive scale.
+      This is a picture of the model: our simulations do not show whether the capture happens by this race.</p>
+    <p>The seed here is narrower than the smaller seed in step 4, so its energy falls a little lower here than there.</p>
+    
+  </details>
+</section>
+
+<!-- Step 6: move the seed -->
 <section id="survive" aria-labelledby="survive-h">
-  <h2 id="survive-h"><span class="step">5</span> Move the seed</h2>
+  <h2 id="survive-h"><span class="step">6</span> Move the seed</h2>
   <p>Now you choose where a narrow seed is born, from ten times larger than the resistive scale to a hundred times smaller. Drag the
-    slider and see how much of the seed survives to be amplified.</p>
+    slider and see how much of the seed survives to be amplified, according to the model.</p>
   <div class="slider-row">
     <label for="x0">Seed size: <output id="x0out" for="x0">10 times smaller than the resistive scale</output></label>
     <input id="x0" type="range" min="0" max="1000" step="1" value="667" aria-valuetext="10 times smaller than the resistive scale">
   </div>
   <div class="survive-grid">
-    <canvas id="fplot" role="img" aria-label="Fraction of the seed that survives, against the size at which it is born"></canvas>
+    <canvas id="fplot" role="img" aria-label="The model's estimate of the fraction of the seed that survives, against the size at which it is born"></canvas>
     <div class="readouts" aria-live="polite">
-      <div class="readout s"><h3>What happens to this seed</h3><p id="ra"></p></div>
+      <div class="readout s"><h3>What the model says happens to this seed</h3><p id="ra"></p></div>
       <p id="rratio" class="ratio"></p>
     </div>
   </div>
-  <p class="note" id="x0-caveat">Beyond about 10–30 times smaller, the number is an extrapolation of the idealized model, and real turbulence may differ.
-    Our first simulations test seeds up to about four times smaller than the resistive scale.</p>
+  <p class="note" id="x0-caveat"><strong>This curve is the model's estimate, not a measurement.</strong> In the range our first
+    simulations tested (seeds up to about 4 times smaller than the resistive scale), the simulated seeds kept more energy than our
+    model predicted: 3 to 6 times more, relative to a reference seed born at the resistive scale (see
+    <a href="#results">the first test</a> below). In that range the model is
+    too pessimistic. The test compared each smaller seed with the reference seed over a set time window. That is related to this curve but is not the same
+    quantity, so the &ldquo;3 to 6 times&rdquo; cannot be applied to the numbers shown here (see the details below). Seeds more than about 4 times
+    smaller are untested.
+    Beyond about 10–30 times smaller, the number is an extrapolation of the idealized model, and real turbulence may differ.</p>
   <details class="note">
     <summary>Where do these numbers come from?</summary>
     <p>They are the model's own formulas, evaluated live in your browser. The slider sets
@@ -199,40 +261,75 @@
       The in-browser values were checked against an independent high-precision calculation.
       These are late-time formulas, approximate below about <i>x</i><sub>0</sub> = 5 (hence "about" in the readouts), and they are shown only
       from <i>x</i><sub>0</sub> = 3 up.</p>
-    <p>For smaller <i>x</i><sub>0</sub> the page says in words what happens. A narrow seed with <i>x</i><sub>0</sub> below about 1.7 never
+    <p>Our first simulations did not measure this curve directly. They tested the same model, solved in time for those runs, through a
+      related quantity: the energy of each smaller seed divided by the energy of a reference seed born at the resistive scale, averaged
+      from 2 to 5 turnover times after the seeds were added. The "3 to 6 times" above refers to that
+      comparison.</p>
+    <p>For smaller <i>x</i><sub>0</sub> the page says in words what happens in the model. A narrow seed with <i>x</i><sub>0</sub> below about 1.7 never
       loses energy: stretching beats resistance from the start. Between about 1.7 and 3 its energy dips for a few stretching times and then
       grows. The 1.7 comes from a full numerical solution of the model, checked independently.</p>
-    <p>The formulas stop being trustworthy for real turbulence at large <i>x</i><sub>0</sub>: the model assumes a flow with no memory, and for
+    <p>The formulas are least trustworthy for real turbulence at large <i>x</i><sub>0</sub>: the model assumes a flow with no memory, and for
       real eddies that assumption fails beyond about <i>x</i><sub>0</sub> = 10–30<sup class="cite"><a href="#ref-Schekochihin2000finitecorrelationtime" aria-label="reference 11">11</a>,<a href="#ref-Kriel2022fundamental" aria-label="reference 8">8</a></sup>.
-      Up there the number is an extrapolation of the idealized model. Our first simulations reach seeds about four times smaller than the resistive scale and do not test it. The model also needs the seed to be
+      Up there the number is an extrapolation of the idealized model. Our first simulations reached seeds about 4 times smaller than the
+      resistive scale, so they do not test that range. In the range they did test, the model already predicts too large a loss. So neither
+      the model nor the simulations tell us yet what happens to the far smaller seeds of a real galaxy cluster. The model also needs the seed to be
       much smaller than the smallest eddy; in the animation above the larger seed is still 100 times smaller than the eddies.</p>
   </details>
+</section>
+
+<!-- First simulation results, in words. The visuals on this page show the model. -->
+<section id="results" aria-labelledby="results-h">
+  <h2 id="results-h">The first test: what our simulations show</h2>
+  <p>Everything in steps 4 to 6 is a model, so we tested it. We ran computer simulations of turbulent, electrically conducting gas and
+    added very weak magnetic seeds of four sizes: a <em>reference seed</em> born at the resistive scale, and seeds about 2, 3 and 4 times
+    smaller than it. The model's predictions were written down before the test.</p>
+  <p><strong>Every seed we tested was captured.</strong> Within a few turnover times (a turnover time is the time the largest eddies
+    take to turn over once), each smaller seed took on the same growing pattern as the reference seed in the same flow: its energy
+    was spread across sizes in the same way. That is what we call capture. Capture does not mean that a seed has regained its starting
+    energy: the smallest seed had not when the runs ended.</p>
+  <p><strong>The seeds kept more energy than the model predicted.</strong> As in the model, a smaller seed kept less. But relative to the
+    reference seed, the smaller seeds kept 3 to 6 times more energy than our model predicted (averaged from 2 to 5 turnover times after
+    the seeds were added): 3 times more for the seed about 2 times smaller, and 6 times more for the seed about 4 times smaller. The
+    model's prediction, written down before the test, fails that test: it predicts too large a loss.</p>
+  <p><strong>What is not yet known.</strong> These are two repeats at one resolution. Seeds more than about 4 times smaller than the
+    resistive scale are untested, so neither the model nor the simulations tell us yet what happens to the far smaller seeds of a real
+    galaxy cluster. Why the seeds do better than the model predicted is not yet tested, and the simulations do not show whether the
+    capture happens by the race described in step 5. The simulated seeds are weak magnetic fields placed in a conducting fluid, at and
+    below its resistive scale. The simulations do not include the particle-scale physics that would create a real seed.</p>
+  
 </section>
 
 <section aria-labelledby="next-h">
   <h2 id="next-h">A way to magnetize the Universe from any seed</h2>
   <p class="punch">Turbulence pervades cosmic gas. It captures any magnetic seed, however tiny and however it was born, amplifies it, and
     carries the field up to large scales.</p>
-  <p class="claim">In more detail: no seed is too small-scale. The turbulent dynamo captures any finite seed field, at an exponential cost in
-    amplitude for narrow seeds born below the resistive scale, and established nonlinear-dynamo results then carry the field to the outer scale.</p>
-  <p class="note">Two sources stand behind that sentence. The capture and its cost are what the model on this page shows: a narrow seed born above the resistive scale loses nothing, and one born
-    below it keeps only an exponentially small share. The last step, growth from the resistive scale up to the size of the stirring, comes from published dynamo
+  <p class="claim">In more detail, no seed is too small-scale: in our model, the turbulent dynamo captures any finite seed field, at an
+    exponential cost in amplitude for narrow seeds born below the resistive scale. Our first simulations show this capture for every seed
+    tested, at a lower cost than the model predicts. Established nonlinear-dynamo results then carry the field to the outer scale.</p>
+  <p class="note">Three sources stand behind that statement. The capture and its exponential cost are what the model on this page shows: in the model, a narrow seed born above the resistive scale loses nothing, and one born
+    below it keeps only an exponentially small share. The capture at a lower cost is what our first simulations show, for seeds up to
+    about 4 times smaller than the resistive scale and no smaller (<a href="#results">the first test</a>, above). The last step, growth from the resistive scale up to the size of the stirring, comes from published dynamo
     simulations<sup class="cite"><a href="#ref-Beattie2022growth" aria-label="reference 12">12</a>,<a href="#ref-Kriel2025universal" aria-label="reference 13">13</a></sup>, which started from seeds at or above the resistive scale.</p>
   <p>Capture is shown in our model; growth to large scales is established in dynamo simulations<sup class="cite"><a href="#ref-Beattie2022growth" aria-label="reference 12">12</a>,<a href="#ref-Kriel2025universal" aria-label="reference 13">13</a></sup>.
-    Our simulations with the AthenaK code will test the capture for seeds born below the resistive scale. The later strong-field (nonlinear)
-    stage, which carries the field to large scales, is shown by those published simulations and is outside this project. No simulation
-    results are shown here yet.</p>
+    Our first simulations, run with the AthenaK code, show capture for seeds born up to about 4 times smaller than the resistive scale
+    (two repeats at one resolution). Smaller seeds are not yet tested. The model's prediction, written down before the test, fails it:
+    relative to the reference seed, the smaller seeds keep 3 to 6 times more energy than it predicted. The later strong-field (nonlinear)
+    stage, which carries the field to large scales, is shown by those published simulations and is outside this project. The animations
+    and the slider on this page show the model. The simulation results are given in words.</p>
 </section>
 
 <section id="made" aria-labelledby="made-h">
   <h2 id="made-h">How this was made</h2>
-  <p>Steps 4 and 5 use one classic theory of the turbulent dynamo, the Kazantsev–Kraichnan model of a <em>kinematic</em> dynamo: a weak
+  <p>Steps 4 to 6 use one classic theory of the turbulent dynamo, the Kazantsev–Kraichnan model of a <em>kinematic</em> dynamo: a weak
     magnetic field stretched and folded by a random, fast-changing flow, before the field is strong enough to push back. The animation and
     the numbers in the readouts come from the project's own solutions of that model, which were checked independently and reviewed before
     they appear here. The slider's formulas, the cascade's scalings and the 3D loop's motion are computed live in your browser. Nothing is
     painted by hand, and the parts that are illustrative say so. The scale sizes in step 1 come from published estimates.</p>
-  <p>The model is an idealization, and the page says where it stops being trustworthy. This page is part of a research project on how
-    turbulence could magnetize the Universe from any seed, however small. The project's simulations will test the first step, the capture.</p>
+  <p>The model is an idealization. The page says where it has been tested, where its numbers fail and where it is only an extrapolation. This page is part of a research project on how
+    turbulence could magnetize the Universe from any seed, however small. The project's first simulations have tested the first step,
+    the capture, for seeds up to about 4 times smaller than the resistive scale. Their results, given in words above, passed the
+    project's own internal science review before they appeared here. They are first results: they have not been peer-reviewed by
+    independent scientists or published in a journal.</p>
 </section>
 
 <section id="refs" aria-labelledby="refs-h">
