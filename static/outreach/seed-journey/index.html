@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <title>The seed's journey: can turbulence lift a tiny magnetic field to cosmic sizes?</title>
 
-<meta name="description" content="An interactive explainer: can turbulence capture a magnetic seed born on tiny plasma scales and carry it up to the size of galaxy clusters? Built from solutions of the Kazantsev-Kraichnan dynamo model.">
+<meta name="description" content="An interactive explainer: can turbulence carry a tiny, newborn magnetic field up to the scale of galaxy clusters? Built from solutions of the Kazantsev-Kraichnan dynamo model.">
 <script>
 // All asset paths are relative to this folder. If the page is reached as ".../seed_journey" (no trailing slash),
 // add the slash so that relative paths resolve inside the folder.
@@ -185,8 +185,8 @@
       <p id="rratio" class="ratio"></p>
     </div>
   </div>
-  <p class="note" id="x0-caveat">Beyond about 10–30 times smaller, the number is an extrapolation of the idealized model. Real
-    turbulence may differ, and our simulations will test it.</p>
+  <p class="note" id="x0-caveat">Beyond about 10–30 times smaller, the number is an extrapolation of the idealized model, and real turbulence may differ.
+    Our first simulations test seeds up to about four times smaller than the resistive scale.</p>
   <details class="note">
     <summary>Where do these numbers come from?</summary>
     <p>They are the model's own formulas, evaluated live in your browser. The slider sets
@@ -204,7 +204,7 @@
       grows. The 1.7 comes from a full numerical solution of the model, checked independently.</p>
     <p>The formulas stop being trustworthy for real turbulence at large <i>x</i><sub>0</sub>: the model assumes a flow with no memory, and for
       real eddies that assumption fails beyond about <i>x</i><sub>0</sub> = 10–30<sup class="cite"><a href="#ref-Schekochihin2000finitecorrelationtime" aria-label="reference 11">11</a>,<a href="#ref-Kriel2022fundamental" aria-label="reference 8">8</a></sup>.
-      Up there the number is an extrapolation of the idealized model, which our simulations will test. The model also needs the seed to be
+      Up there the number is an extrapolation of the idealized model. Our first simulations reach seeds about four times smaller than the resistive scale and do not test it. The model also needs the seed to be
       much smaller than the smallest eddy; in the animation above the larger seed is still 100 times smaller than the eddies.</p>
   </details>
 </section>
@@ -218,8 +218,10 @@
   <p class="note">Two sources stand behind that sentence. The capture and its cost are what the model on this page shows: a narrow seed born above the resistive scale loses nothing, and one born
     below it keeps only an exponentially small share. The last step, growth from the resistive scale up to the size of the stirring, comes from published dynamo
     simulations<sup class="cite"><a href="#ref-Beattie2022growth" aria-label="reference 12">12</a>,<a href="#ref-Kriel2025universal" aria-label="reference 13">13</a></sup>, which started from seeds at or above the resistive scale.</p>
-  <p>Capture is shown in our model; growth to large scales is established in dynamo simulations<sup class="cite"><a href="#ref-Beattie2022growth" aria-label="reference 12">12</a>,<a href="#ref-Kriel2025universal" aria-label="reference 13">13</a></sup>;
-    our simulations with the AthenaK code will test the full chain for seeds born below the resistive scale. No simulation results are shown here yet.</p>
+  <p>Capture is shown in our model; growth to large scales is established in dynamo simulations<sup class="cite"><a href="#ref-Beattie2022growth" aria-label="reference 12">12</a>,<a href="#ref-Kriel2025universal" aria-label="reference 13">13</a></sup>.
+    Our simulations with the AthenaK code will test the capture for seeds born below the resistive scale. The later strong-field (nonlinear)
+    stage, which carries the field to large scales, is shown by those published simulations and is outside this project. No simulation
+    results are shown here yet.</p>
 </section>
 
 <section id="made" aria-labelledby="made-h">
@@ -230,7 +232,7 @@
     they appear here. The slider's formulas, the cascade's scalings and the 3D loop's motion are computed live in your browser. Nothing is
     painted by hand, and the parts that are illustrative say so. The scale sizes in step 1 come from published estimates.</p>
   <p>The model is an idealization, and the page says where it stops being trustworthy. This page is part of a research project on how
-    turbulence could magnetize the Universe from any seed, however small. The project's simulations will test this idea.</p>
+    turbulence could magnetize the Universe from any seed, however small. The project's simulations will test the first step, the capture.</p>
 </section>
 
 <section id="refs" aria-labelledby="refs-h">
