@@ -28,9 +28,17 @@ main:
   - name: Informal Meetings
     url: /informal-meetings/
     weight: 41
-  - name: Lecture Notes
-    url: lecture-notes/
+  - name: Teaching
+    identifier: teaching
     weight: 42
+  - name: Lecture Notes
+    parent: teaching
+    url: /lecture-notes/
+    weight: 1
+  - name: Finite-volume lab
+    parent: teaching
+    url: /outreach/riemann-lab/
+    weight: 2
   - name: Movies
     url: movies/
     weight: 45

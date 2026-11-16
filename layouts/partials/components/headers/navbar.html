@@ -39,8 +39,9 @@
       {{ $pageURL:= $currentPage.Permalink | absLangURL }}
       {{ $active := eq $menuURL $pageURL }}
       {{ if .HasChildren }}
-      <li class="nav-item nav-dropdown group relative">
-            <span
+      <li class="nav-item nav-dropdown relative">
+        <details class="nav-section">
+            <summary
               class="nav-link {{ range .Children }}
                 {{ $childURL := .URL | absLangURL }}
                 {{ $active := eq $childURL $pageURL }}
@@ -51,9 +52,8 @@
                 <path
                   d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
               </svg>
-            </span>
-        <ul
-          class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+            </summary>
+        <ul class="nav-dropdown-list">
           {{ range .Children }}
           {{ $childURL := .URL | absLangURL }}
           {{ $active := eq $childURL $pageURL }}
@@ -78,6 +78,7 @@
           </li>
           {{ end }}
         </ul>
+        </details>
       </li>
       {{ else }}
       {{ $url := "" }}

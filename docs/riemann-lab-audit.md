@@ -9,7 +9,7 @@ The full-time preset sweep covers grids through 512 cells. The newer 1,024,
 
 An optional gas-only FOFC switch now applies to both solves and preserves live
 state/time. Defaults remain off. This follows the inspected local AthenaK
-AthenaK checkout (HEAD `da852028`,
+checkout (HEAD `da852028`,
 working-tree sources inspected):
 
 - `src/hydro/hydro_fofc.cpp`: form the actual stage trial, test whether primitive

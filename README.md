@@ -97,7 +97,8 @@ node scripts/audit-riemann-fofc.mjs            # 204 FOFC-on gas cases
 python scripts/generate-reconstruction-tables.py # exact SymPy table generation/checks
 ```
 
-The page is unlisted (`noindex`, excluded from Pagefind, no menu link). Hugo
+The main navigation links to the lab under **Teaching → Finite-volume lab**,
+alongside Lecture Notes. The lab retains `noindex` and Pagefind exclusion. Hugo
 copies the page modules and vendored assets verbatim on deployment.
 
 ## Structure & Customizations

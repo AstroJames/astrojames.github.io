@@ -47,7 +47,7 @@
   border-radius: 6px;
 }
 #site-header .nav-overflow summary::-webkit-details-marker { display: none; }
-#site-header .nav-overflow details[open] summary { background: var(--site-accent-soft); }
+#site-header .nav-overflow details[open] > summary { background: var(--site-accent-soft); }
 #site-header .nav-overflow-list {
   position: absolute;
   top: calc(100% + .5rem);
@@ -73,3 +73,28 @@
   #site-header .site-navigation { gap: .5rem; padding-inline: .75rem; }
   #site-header .navbar-brand { font-size: 1.125rem; }
 }
+
+/* Native disclosures keep Teaching usable by touch and keyboard, including More. */
+#site-header .nav-section { position: relative; }
+#site-header .nav-section > summary {
+  display: flex; align-items: center; gap: .25rem; cursor: pointer;
+  list-style: none; border-radius: 6px;
+}
+#site-header .nav-section > summary::-webkit-details-marker { display: none; }
+#site-header .nav-section[open] > summary { background: var(--site-accent-soft); }
+#site-header .nav-section:not([open]) > .nav-dropdown-list { display: none; }
+#site-header .nav-section[open] > .nav-dropdown-list {
+  display: block; visibility: visible; opacity: 1; position: absolute;
+  top: 100%; left: 0; z-index: 1011; min-width: 13rem; width: max-content;
+  max-width: calc(100vw - 2.5rem); padding: .4rem; margin: .4rem 0 0;
+  background: var(--site-bg); border: 1px solid var(--site-border-strong);
+  border-radius: 8px; box-shadow: 0 12px 28px rgb(0 0 0 / .25);
+}
+#site-header .nav-dropdown-link { display: block; padding: .65rem .85rem; border-radius: 4px; white-space: nowrap; }
+#site-header .nav-overflow-list .nav-section[open] > .nav-dropdown-list {
+  position: static; width: 100%; min-width: 0; margin: 0; padding: .2rem 0 .2rem .65rem;
+  border: 0; box-shadow: none;
+}
+#site-header .nav-section > summary:focus-visible,
+#site-header .nav-dropdown-link:focus-visible { outline: 2px solid var(--site-accent); outline-offset: 2px; }
+#site-header .site-navigation:not(.navigation-ready) .nav-section[open] > .nav-dropdown-list { position: static; }

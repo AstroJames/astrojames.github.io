@@ -6,6 +6,7 @@ if (nav) {
   const summary = disclosure.querySelector('summary');
   const label = summary.querySelector('span');
   const list = overflow.querySelector('ul');
+  const sections = [...row.querySelectorAll('.nav-section')];
   const items = [...row.children].filter(item => item !== overflow);
   let pending = 0;
   let lastWidth = -1;
@@ -53,7 +54,15 @@ if (nav) {
   scheduleFit();
   document.addEventListener('click', event => {
     if (!overflow.contains(event.target) || event.target.closest('a')) disclosure.open = false;
+    sections.forEach(section => {
+      if (!section.contains(event.target) || event.target.closest('a')) section.open = false;
+    });
   });
+  sections.forEach(section => section.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      section.open = false; section.querySelector('summary').focus(); event.stopPropagation();
+    }
+  }));
   disclosure.addEventListener('keydown', event => {
     if (event.key === 'Escape') { disclosure.open = false; summary.focus(); }
   });
