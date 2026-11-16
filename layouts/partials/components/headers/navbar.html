@@ -39,7 +39,7 @@
       {{ $pageURL:= $currentPage.Permalink | absLangURL }}
       {{ $active := eq $menuURL $pageURL }}
       {{ if .HasChildren }}
-      <li class="nav-item nav-dropdown relative">
+      <li class="nav-item nav-section-item">
         <details class="nav-section">
             <summary
               class="nav-link {{ range .Children }}
@@ -53,7 +53,7 @@
                   d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
               </svg>
             </summary>
-        <ul class="nav-dropdown-list">
+        <ul class="nav-section-list">
           {{ range .Children }}
           {{ $childURL := .URL | absLangURL }}
           {{ $active := eq $childURL $pageURL }}
@@ -66,9 +66,9 @@
           {{- else -}}
             {{- $url = .URL | relLangURL -}}
           {{- end -}}
-          <li class="nav-dropdown-item">
+          <li class="nav-section-entry">
             <a
-              class="nav-dropdown-link {{ if $active }}active{{- end -}}"
+              class="nav-section-link {{ if $active }}active{{- end -}}"
               {{ if findRE `^http` .URL }}
               target="_blank" rel="noopener"
               {{ end }}
