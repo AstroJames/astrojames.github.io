@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-15T06:01:44.364297+00:00",
+  "last_updated": "2026-11-16T06:03:34.755097+00:00",
   "total_publications": 36,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -104,7 +104,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1004L...9B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/ae6eed",
       "citation_count": 6,
-      "read_count": 398,
+      "read_count": 409,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -190,7 +190,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
       "citation_count": 8,
-      "read_count": 278,
+      "read_count": 284,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -218,7 +218,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 21,
-      "read_count": 333,
+      "read_count": 334,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -276,7 +276,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 16,
-      "read_count": 254,
+      "read_count": 253,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -479,7 +479,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 283,
+      "read_count": 282,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
@@ -534,7 +534,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
       "citation_count": 62,
-      "read_count": 205,
+      "read_count": 207,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -623,7 +623,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 7,
-      "read_count": 135,
+      "read_count": 134,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -673,7 +673,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
       "citation_count": 29,
-      "read_count": 677,
+      "read_count": 678,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -790,7 +790,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
       "citation_count": 42,
-      "read_count": 200,
+      "read_count": 201,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -924,7 +924,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 6,
-      "read_count": 405,
+      "read_count": 404,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -994,7 +994,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 7,
-      "read_count": 408,
+      "read_count": 406,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
