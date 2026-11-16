@@ -2,6 +2,104 @@
 
 Personal website for James Beattie built with [Hugo Blox Builder](https://hugoblox.com/) on top of Hugo. The repo hosts profile material (news, projects, publications, talks) plus richer assets such as movies and 3D point-cloud viewers.
 
+## Live finite-volume walkthrough
+
+`static/outreach/riemann-lab/` is a single-page, guided numerical experiment.
+Example, reconstruction, RK method and grid controls sit together above the live
+solution and four keyboard-operable steps: averages → reconstruction → face flux
+→ update. One operation and one selected face are shown at a time. The same blue
+cell and gold/purple faces link the diagrams. Detailed equations, live weight
+tables, comparison controls and diagnostics open on demand.
+
+Examples include periodic scalar advection (smooth/sine/square pulses) and the
+Sod/Lax Euler shock tubes. Grids offer powers of two from 16 through 4,096 cells. The
+reconstructions are piecewise constant, PLM minmod/MC, monotone PPM, unlimited
+fifth order, MP5, WENO-JS5/7/9, WENO-Z5, CWENO5, and fixed-cutoff TENO5/6. Both face states have explicit stencil maps. WENO/TENO plots
+show every candidate across its full support, including the cubic in TENO6
+and the five quartics in WENO-JS9, with
+candidate face dots and a separate weighted-value diamond. Rejected TENO curves
+remain inspectable. Ghost labels identify wrapped/clamped samples. An optional
+unlimited quartic reference is available for five-cell schemes. The separate
+Unlimited 5 method uses that polynomial in the scalar solver. CWENO5 displays
+its combined polynomial inside the donor cell; MP5 displays the unlimited
+quartic, limiter bounds, and final face value.
+
+WENO-Z5 uses power 2 and epsilon 1e-40. TENO5 uses C=1, power 6, cutoff 1e-5
+and the same epsilon. TENO6 uses cutoff 1e-7 and weights (0.05, 0.45, 0.3, 0.2)
+on left/central/right/wide-right candidates. WENO-JS5/7/9 use power 2 and
+epsilon 1e-6. CWENO5 uses epsilon=Δx² and weights (3/4, 1/16, 1/8, 1/16). The exact
+reconstruction and RK equations use LaTeX rendered by locally hosted KaTeX
+0.19.1, with accessible MathML. Math assets, fonts and licenses live in `vendor/`.
+No CDN, npm install or build step is required to run the lab.
+
+Forward Euler, SSPRK2, SSPRK3 and classical RK4 switch live without resetting
+conserved states or time. Both solves use the same integrator and CFL≤0.35
+(reduced to 0.2 if either uses MP5, with α=4).
+Playback schedules complete CFL steps and cannot change their numerical result.
+Run has no fixed end time. Pause, restart, or switching tabs stops playback.
+Periodic advection keeps circulating; shock tubes continue through outflow
+boundaries. Exact-reference diagnostics are hidden after a shock-tube wave
+reaches a boundary.
+Boundary fluxes use the selected RK weights. The update preview shows the full
+Euler step, first SSP predictor or first RK4 midpoint, with the matching formula.
+
+First-order flux correction (FOFC) is an optional live switch for both gas
+solves. It tests predicted RK states, replaces both faces of troubled cells
+with donor-cell LLF fluxes, and rechecks. A separate guard handles nonphysical
+reconstructed face inputs. The lab uses zero positivity thresholds without
+floors, and replays contributing RK stages consistently. It is an adaptation
+of AthenaK’s stage-local algorithm, including iterative rechecking. Scalar
+advection is unchanged. Step 3 shows the actual flux inputs, LLF equations and
+correction reason; amber markers and counters report the last accepted step.
+The Sod/TENO6/Forward Euler preset demonstrates the correction.
+
+The main plot marks and reports excursions beyond the exact instantaneous
+signal/density range. Physical shock compression is included in that range.
+Candidate-curve excursions beyond input means are a separate reconstruction
+diagnostic. The 16-cell square-pulse preset makes TENO ringing visible.
+Inspect overshoot pauses at the main solution’s largest excursion and shows
+16 nearby cells. Cell arrows pan the view; Full domain restores the overview.
+Larger grids do not necessarily produce larger overshoots.
+
+The [solver audit](docs/riemann-lab-audit.md) records 55 automated tests, exact
+SymPy identities, browser checks, and the original six-method 720-preset sweep through 512 cells.
+The three finer grids have additional short-run conservation and browser checks;
+they have not undergone the full-time sweep. With FOFC off, 714 presets
+complete with conservation residuals below 2e-14. Six Forward-Euler/TENO5
+shock-tube configurations lose positive reconstructed pressure and stop. This
+limitation is labeled in the UI when correction is off. A separate 264-case check covers the seven
+new methods at 16/64 cells with all RK choices: 263 complete and one
+TENO6/Forward-Euler/Sod/64 case stops on a nonpositive reconstructed face.
+The maximum normalized conserved-component residual in that FOFC-off audit is 5.47e-13. Face states are checked before HLLE; no floors
+or clipping are added. A numerical stop preserves the last physical solution.
+Changing reconstruction, RK method or FOFC after a stop clearly restarts the experiment.
+
+With FOFC on, all 204 tested gas cases complete with positive stored states
+and normalized conserved-component residuals below 1.86e-14. This covers all
+gas methods and RK choices at 16/64 cells, plus TENO5/6 with Forward Euler
+at 128/256/512 cells.
+
+Method order refers to smooth scalar reconstruction, not the full RK time
+discretization or primitive-variable Euler extension. CWENO5 is accurate
+throughout its donor cell; WENO/TENO target face values. Unlimited 5 is an
+advection-only ringing diagnostic. The high-order Euler flux is HLLE; corrected faces use donor-cell LLF. See the
+audit for the exact scope and stability limits.
+
+Preview with `python -m http.server 8765 --directory static`, then open
+`http://localhost:8765/outreach/riemann-lab/`. Run:
+
+```sh
+node --test test/riemann-lab.test.mjs test/riemann-lab-audit.test.mjs test/riemann-higher-order.test.mjs test/riemann-fofc.test.mjs
+python test/riemann-reconstruction-symbolic.py  # optional, requires SymPy
+node scripts/audit-riemann-lab.mjs             # original six-method 720-preset sweep
+node scripts/audit-riemann-new-methods.mjs     # 264-case new-method audit
+node scripts/audit-riemann-fofc.mjs            # 204 FOFC-on gas cases
+python scripts/generate-reconstruction-tables.py # exact SymPy table generation/checks
+```
+
+The page is unlisted (`noindex`, excluded from Pagefind, no menu link). Hugo
+copies the page modules and vendored assets verbatim on deployment.
+
 ## Structure & Customizations
 
 - `content/` – Markdown source for pages, posts, and collections (e.g., `projects/`, `notes/`, `publication/`).

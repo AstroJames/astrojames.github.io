@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Explore a live finite-volume solver, from cell averages through reconstruction and Riemann fluxes to Runge–Kutta integration.">
+  <title>Inside a finite-volume solver · James R. Beattie</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="lab.css">
+  <script type="module" src="main.mjs"></script>
+</head>
+<body data-pagefind-ignore="all">
+  <a class="skip" href="#experiment">Skip to the live solver</a>
+  <div class="shell">
+    <header class="masthead"><a href="/">James R. Beattie</a><a href="/lecture-notes/">Lecture notes ↗</a></header>
+    <header class="hero"><div><p class="eyebrow">Numerical methods / Interactive lab</p><h1>Inside a finite-volume solver</h1></div><p>Run an experiment. Select a cell.<br>Follow how its average changes.</p></header>
+    <main id="experiment">
+      <section class="setup" aria-label="Experiment settings">
+        <label for="example">Example<select id="example"><optgroup label="Advection"><option value="gaussian">Smooth pulse</option><option value="sine">Sine wave</option><option value="square">Square pulse</option></optgroup><optgroup label="Gas dynamics"><option value="sod">Sod shock tube</option><option value="lax">Lax shock tube</option></optgroup></select></label>
+        <label for="method-a">Reconstruction<select id="method-a"><option value="pcm">Piecewise constant</option><option value="minmod">Linear · minmod</option><option value="mc">Linear · MC</option><option value="ppm">Parabolic · PPM</option><option value="wenoz">WENO-Z5 · p = 2</option><option value="teno5">TENO5</option></select></label>
+        <label for="integrator">Time integrator<select id="integrator"><option value="euler">Forward Euler · order 1</option><option value="ssprk2">SSPRK2 · order 2</option><option value="ssprk3" selected>SSPRK3 · order 3</option><option value="rk4">Classical RK4 · order 4</option></select></label>
+        <label for="resolution">Grid<select id="resolution" aria-label="Cells"><option value="16">16 cells</option><option value="32">32 cells</option><option value="64" selected>64 cells</option><option value="128">128 cells</option><option value="256">256 cells</option><option value="512">512 cells</option><option value="1024">1,024 cells</option><option value="2048">2,048 cells</option><option value="4096">4,096 cells</option></select></label>
+      </section>
+      <p id="method-note" class="method-note" hidden>Forward Euler + TENO5 loses positive face pressure in some shock-tube runs. The solver stops if this occurs. SSPRK3 is the default for these examples.</p>
+      <div class="correction-controls">
+        <label class="check"><input type="checkbox" id="fofc"> First-order flux correction</label>
+        <span id="fofc-scope">Gas dynamics only · checks density and pressure</span>
+        <button type="button" id="fofc-demo">Try FOFC on Sod</button>
+      </div>
+      <div class="laboratory">
+        <section class="live" aria-label="Live solution and controls">
+          <div class="live-header"><h2>The live solution</h2><span class="status"><i id="status-dot"></i><span id="status">Preparing</span></span></div>
+          <div class="equation" id="equation"></div>
+          <div class="transport-controls"><button type="button" id="run" class="primary" disabled>▶ Run</button><button type="button" id="step" disabled>Advance one step</button><button type="button" id="reset">Restart</button></div>
+          <div class="time-row"><span>t = <b id="time">0.0000</b></span><span id="step-count">0 steps</span><span class="cfl-tag">CFL ≤ 0.35</span></div>
+          <div id="solution-plot" class="plot solution-plot" tabindex="0" aria-label="Solution. Click a cell, or use left and right arrow keys to select one."></div>
+          <div class="range-readout"><div><span>Overshoot</span><strong id="overshoot">0</strong></div><div><span>Undershoot</span><strong id="undershoot">0</strong></div></div>
+          <div class="plot-view-controls"><button type="button" id="inspect-overshoot" disabled>Inspect overshoot</button><button type="button" id="full-domain" hidden>Full domain</button><span id="plot-view-note"></span></div>
+          <p class="range-note" id="range-note"></p>
+          <div class="direction-row" id="direction-row"><span>Advection</span><div class="segmented" role="group" aria-label="Transport speed"><button type="button" data-speed="-1" aria-pressed="false">← Left</button><button type="button" data-speed="0" aria-pressed="false">Still</button><button type="button" data-speed="1" aria-pressed="true">Right →</button></div></div>
+          <p id="fofc-readout" class="fofc-readout" hidden></p>
+          <p class="plot-hint">The blue cell is followed in the walkthrough.</p>
+          <p id="feedback" class="feedback" role="status" aria-live="polite">Press Run, or advance one step at a time.</p>
+          <div class="try-example"><span>Explore ringing near a jump</span><button type="button" id="overshoot-demo">Try a 16-cell square pulse</button></div>
+          <details class="options"><summary>Comparison &amp; diagnostics</summary><div class="options-body">
+            <div class="option-pair"><label for="playback">Playback<select id="playback"><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label class="check"><input type="checkbox" id="show-exact" checked> Exact solution</label></div>
+            <label class="check"><input type="checkbox" id="compare"> Compare a second reconstruction</label>
+            <div id="comparison-controls" hidden><label for="method-b">Comparison method<select id="method-b"><option value="pcm">Piecewise constant</option><option value="minmod">Linear · minmod</option><option value="mc" selected>Linear · MC</option><option value="ppm">Parabolic · PPM</option><option value="wenoz">WENO-Z5 · p = 2</option><option value="teno5">TENO5</option></select></label><button type="button" id="fork">Copy the main solution into the comparison</button></div>
+            <div class="diagnostics"><span id="error-label">Mean absolute error in q</span><b id="error-a">0.00</b><b id="error-b" hidden>0.00</b><span>Mass balance error</span><b id="mass-error">0.00</b></div>
+            <p class="small">Example and grid changes restart the solve. Reconstruction, time integration, and direction changes keep the current state. Playback changes only how quickly time passes on screen. Run continues without a fixed end time. Switching tabs pauses the solve.</p>
+            <ol id="history" class="history"></ol>
+          </div></details>
+        </section>
+        <section class="walkthrough" aria-label="Four operations in the solver">
+          <div class="trace-header"><div><p class="eyebrow">Follow the data</p><h2 id="selected-cell">Following cell 21</h2></div><div class="cell-navigation"><button type="button" id="cell-back" aria-label="Select previous cell">←</button><button type="button" id="cell-next" aria-label="Select next cell">→</button><button type="button" id="freeze">Pause to inspect</button></div></div>
+          <nav class="step-nav" role="tablist" aria-label="Solver operation">
+            <button type="button" id="tab-storage" role="tab" data-step="0" aria-controls="storage-operation" aria-selected="true"><span>1</span>Averages</button>
+            <button type="button" id="tab-reconstruction" role="tab" data-step="1" aria-controls="reconstruction-operation" aria-selected="false" tabindex="-1"><span>2</span>Reconstruct</button>
+            <button type="button" id="tab-riemann" role="tab" data-step="2" aria-controls="riemann-operation" aria-selected="false" tabindex="-1"><span>3</span>Face flux</button>
+            <button type="button" id="tab-update" role="tab" data-step="3" aria-controls="update-operation" aria-selected="false" tabindex="-1"><span>4</span>Update</button>
+          </nav>
+          <div class="trace-context"><span><i class="key-cell"></i> Selected cell</span><div class="face-picker" role="group" aria-label="Face to inspect"><button type="button" id="face-left" aria-pressed="false">Left face</button><button type="button" id="face-right" aria-pressed="true">Right face</button></div></div>
+          <p id="inspection-error" class="inspection-error" role="alert" hidden></p>
+          <article class="operation" id="storage-operation" role="tabpanel" aria-labelledby="tab-storage">
+            <header><p class="step-counter">Step 1 / 4</p><h3>Store a cell average</h3><p>A finite-volume cell stores the amount per cell width. The blue bar is the mean carried into reconstruction.</p></header>
+            <div id="average-definition" class="equation-block"></div>
+            <div id="averages-plot" class="plot local-plot" data-local-plot="averages"></div>
+            <div class="readout"><span id="stored-label">Stored mean</span><strong id="stored-value">—</strong><span id="cell-width" class="small"></span></div>
+            <p class="takeaway">The mean fixes the area under a profile, but it does not fix the profile’s shape.</p>
+          </article>
+          <article class="operation" id="reconstruction-operation" role="tabpanel" aria-labelledby="tab-reconstruction" hidden>
+            <header><p class="step-counter">Step 2 / 4</p><h3>From averages to face values</h3><p id="reconstruction-explanation"></p></header>
+            <div id="reconstruction-plot" class="plot local-plot" data-local-plot="reconstruction"></div>
+            <div id="face-stencils" aria-label="Explicit stencils for both faces of the selected cell"></div>
+            <label class="check stencil-reference" id="quartic-control" hidden><input type="checkbox" id="show-quartic"> Unlimited five-cell quartic reference</label>
+            <p class="row-note" id="profile-note"></p>
+            <details class="reconstruction-math" id="reconstruction-math"><summary>Reconstruction equations &amp; live weights</summary><div id="math-body"></div></details>
+          </article>
+          <article class="operation" id="riemann-operation" role="tabpanel" aria-labelledby="tab-riemann" hidden>
+            <header><p class="step-counter">Step 3 / 4</p><h3>Choose the flux at a face</h3><p id="riemann-explanation"></p></header>
+            <div id="flux-plot" class="plot flux-plot" data-local-plot="flux"></div>
+            <div class="face-states"><div><span>Arriving from the left</span><strong id="left-state">—</strong></div><div><span>Arriving from the right</span><strong id="right-state">—</strong></div></div>
+            <div class="flux-formula equation-block" id="flux-formula"></div>
+            <p id="fofc-face-note" class="fofc-face-note" hidden></p>
+            <details class="time-math" id="fofc-math"><summary>How first-order flux correction works</summary>
+              <p>Predict the RK stage with the chosen reconstruction. If a cell has nonpositive density or pressure, replace the fluxes at both of its faces with donor-cell LLF fluxes and repeat the trial. The neighboring cell uses the same replacement flux.</p>
+              <div id="fofc-formula"></div>
+              <p>Only flagged faces change. Each unmodified face keeps the chosen reconstruction and HLLE flux. No cell averages are clipped and no density or pressure floors are added.</p>
+              <p>This lab uses zero as the positivity threshold. AthenaK tests against configured EOS floors. A separate face guard also replaces a flux when its reconstructed input is already nonphysical. Corrections are repeated for up to eight passes; a failed attempt retries a smaller common time step.</p>
+              <p>For the general RK tableaus here, a failed trial flags both faces in every contributing flux evaluation, then replays the stages. This is a conservative adaptation of AthenaK’s stage-local algorithm. Classical RK4 still has no SSP guarantee.</p>
+            </details>
+            <p class="takeaway">One shared flux crosses the face: it leaves one cell and enters its neighbor.</p>
+          </article>
+          <article class="operation" id="update-operation" role="tabpanel" aria-labelledby="tab-update" hidden>
+            <header><p class="step-counter">Step 4 / 4</p><h3>Change the cell average</h3><p id="balance-explanation"></p></header>
+            <div class="balance-equation"><span class="left-color" id="flux-left"></span><span>−</span><span class="right-color" id="flux-right"></span><span id="net-flux"></span></div>
+            <div class="update-rule equation-block" id="update-rule"></div>
+            <div id="update-plot" class="plot local-plot" data-local-plot="update"></div>
+            <div id="update-formula" class="update-formula equation-block"></div>
+            <p class="row-note" id="time-stage-note"></p>
+            <details class="time-math"><summary>Runge–Kutta stage equations</summary><div id="time-formula"></div></details>
+            <button type="button" id="apply-step" class="apply-step" disabled>Advance the full time step</button>
+          </article>
+          <div class="step-pagination"><button type="button" id="previous-operation" disabled>← Previous</button><span id="step-progress">1 of 4</span><button type="button" id="next-operation">Next: reconstruction →</button></div>
+        </section>
+      </div>
+    </main>
+    <noscript><p>This lab requires JavaScript to solve the equations in your browser.</p></noscript>
+    <details class="methods"><summary>About the equations &amp; numerical methods</summary><div>
+      <p>Advection uses periodic boundaries on 0 ≤ x ≤ 1. Its exact signal follows the accumulated displacement when the flow direction changes. The Sod and Lax shock tubes solve the conservative ideal-gas Euler equations with γ = 1.4, an initial jump at x = 0.5, and constant-extension outflow ghosts. The walkthrough traces density and mass flux for Euler.</p>
+      <p>WENO-Z5 (p = 2) and fixed-cutoff TENO5 use three cell-average quadratic candidates, regularization ε = 10⁻⁴⁰, and optimal weights (0.1, 0.6, 0.3). TENO5 uses C = 1, exponent 6, and cutoff 10⁻⁵. Their full equations and live weights are in step 2. The optional quartic is a reference only. PPM applies classical monotonicity constraints without contact steepening, shock flattening, or characteristic tracing.</p>
+      <p>Method order describes smooth scalar reconstruction. CWENO5 constructs a fifth-order polynomial throughout the donor cell; WENO and TENO target face values. Euler reconstruction acts componentwise on primitive values derived from conserved means, so these labels do not claim the same order for the full Euler discretization. The scalar flux is exact upwinding. The Euler flux is HLLE with endpoint and Roe acoustic bounds.</p>
+      <p>All integrators use CFL ≤ 0.35, reduced to 0.2 when either solve uses MP5. Playback schedules complete CFL steps and does not change the numerical time step. Forward Euler can amplify oscillations with high-order spatial reconstruction. Classical RK4 is not SSP. No density or pressure floors are applied. With first-order flux correction off, a nonpositive intermediate Euler stage triggers a smaller common time step; a nonpositive initial reconstructed face stops the solve. With correction on, troubled faces use donor-cell LLF fluxes before time-step retries. See step 3 for the trial, correction and recheck procedure. Scalar advection is unaffected; this is not an overshoot limiter.</p>
+      <p>Solid curves connect numerical cell averages. The dashed curve is the pointwise exact solution. Overshoot and undershoot compare the averages with the exact instantaneous range, including physical shock compression. Candidate-curve excursions compare with stencil means, which are not physical bounds on a subcell profile. Errors use exact cell averages. Live method switches retain earlier errors. Restart to compare methods from the initial data.</p>
+      <p>References: <a href="https://ias-astrophysics.github.io/athenak-docs/hydro.html">AthenaK hydrodynamics and FOFC</a>; Clawpack’s <a href="https://www.clawpack.org/riemann_book/html/Advection.html">advection</a>, <a href="https://www.clawpack.org/riemann_book/html/Approximate_solvers.html">finite-volume methods</a>, and <a href="https://www.clawpack.org/riemann_book/html/Euler.html">Euler Riemann problem</a>. This page typesets LaTeX using <a href="https://katex.org/">KaTeX</a>, served locally.</p>
+    </div></details>
+    <footer><a href="/">James R. Beattie</a><span>One dimension · Solved live in your browser</span></footer>
+  </div>
+</body>
+</html>
