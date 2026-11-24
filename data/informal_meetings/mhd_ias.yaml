@@ -73,7 +73,8 @@ sessions:
     speaker: Abhishek Hegade
     speaker_url: https://abhihegade.github.io/
     affiliation: Princeton University
-    title: CGL magnetohydrodynamics
+    title: Kinetic Physics of Black Hole Accretion with Landau-Fluid Closures
+    abstract: Traditionally, general relativistic magnetohydrodynamics (GRMHD) is used to model accretion around supermassive black holes (SMBHs). However, accretion flows in low-luminosity sources such as M87 and Sgr A* can be extremely hot and diffuse, leading to the formal breakdown of the collisional GRMHD approximation. In this talk, I will motivate the Chew–Goldberger–Low (CGL) equations as a simple fluid model for describing weakly collisional plasmas and discuss the physical assumptions underlying these equations. I will then discuss some of the subtleties that arise when extending these equations to relativity and incorporating kinetic effects such as Landau damping. Finally, I will present results from our recent numerical work and discuss applications of these models to studying accretion flows around black holes.
     format: Research talk and discussion
     status: confirmed
     materials: []
