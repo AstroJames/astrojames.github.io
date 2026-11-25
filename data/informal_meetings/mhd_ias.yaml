@@ -24,7 +24,7 @@ event_types:
   - Coding tools, development environments, and scientific workflows
   - Discussions led by local researchers working on MHD
 format_note: Meetings are primarily in person. Occasional invited Zoom talks are welcome for special sessions, rather than as the regular format.
-schedule_note: Meetings are spaced every two weeks through December 2026; remaining speakers and holiday arrangements are to be confirmed.
+schedule_note: Meetings are normally spaced every two weeks through December 2026. Abhishek Hegade’s talk has moved from November 25 to December 2; remaining speakers and holiday arrangements are to be confirmed.
 sessions:
   - id: week-01
     slot: Session 1
@@ -69,7 +69,7 @@ sessions:
     holiday: Veterans Day
     holiday_url: https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/#url=2026
   - id: week-07
-    date: "2026-11-25"
+    date: "2026-12-02"
     speaker: Abhishek Hegade
     speaker_url: https://abhihegade.github.io/
     affiliation: Princeton University

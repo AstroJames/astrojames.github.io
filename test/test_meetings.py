@@ -61,9 +61,9 @@ class MeetingTemplateTests(unittest.TestCase):
         self.assertIn('datetime="2026-12-23"', html)
         dates = [date.fromisoformat(session['date']) for session in self.original['sessions']]
         self.assertTrue(all(day.weekday() == 2 for day in dates))
-        self.assertTrue(all((later - earlier).days == 14 for earlier, later in zip(dates, dates[1:])))
+        self.assertEqual([day.isoformat() for day in dates], ['2026-09-30', '2026-10-14', '2026-10-28', '2026-11-11', '2026-12-02', '2026-12-09', '2026-12-23'])
         abhishek = next(session for session in self.original['sessions'] if session.get('speaker') == 'Abhishek Hegade')
-        self.assertEqual(abhishek['date'], '2026-11-25')
+        self.assertEqual(abhishek['date'], '2026-12-02')
         self.assertIn('US federal holiday:', html)
         self.assertEqual(html.count('Veterans Day'), 1)
         self.assertNotIn('Not shared yet', html)
