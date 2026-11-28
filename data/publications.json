@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T06:01:59.313378+00:00",
+  "last_updated": "2026-11-28T06:01:49.153850+00:00",
   "total_publications": 36,
   "orcid": "0000-0001-9199-7771",
   "publications": [
@@ -46,7 +46,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvR...8c3383B/abstract",
       "doi_url": "https://doi.org/10.1103/6gnr-vkx3",
       "citation_count": 1,
-      "read_count": 435,
+      "read_count": 426,
       "is_refereed": true,
       "arxiv_class": [
         "physics.flu-dyn",
@@ -75,7 +75,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026A&A...713A...7S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202558554",
       "citation_count": 1,
-      "read_count": 251,
+      "read_count": 248,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -104,41 +104,13 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1004L...9B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/ae6eed",
       "citation_count": 6,
-      "read_count": 405,
+      "read_count": 397,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
         "astro-ph.HE",
         "astro-ph.SR",
         "physics.flu-dyn"
-      ]
-    },
-    {
-      "title": "Cosmic-Ray and Plasma Coupling for Isothermal Supersonic Turbulence in the Magnetized Interstellar Medium",
-      "authors": "Sampson, Matt L.; Beattie, James R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
-      "authors_highlighted": "Sampson, Matt L.; <strong>Beattie, James</strong> R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
-      "authorship_position": "second",
-      "beattie_position": 2,
-      "journal": "The Astrophysical Journal",
-      "year": "2026",
-      "pubdate": "2026-04-00",
-      "abstract": "Cosmic rays (CRs) are an integral part of the nonthermal pressure budget in the interstellar medium (ISM) and are the leading-order ionization mechanism in cold molecular clouds. We study the impacts that different microphysical CR diffusion coefficients and streaming speeds have on the evolution of isothermal, magnetized, turbulent plasmas, relevant to the cold ISM. We utilized a two-moment CR magnetohydrodynamic model, allowing us to dynamically evolve both CR energy and flux densities with contributions from Alfvénic streaming and anisotropic diffusion. We identify coupled and decoupled regimes, and define dimensionless Prandtl numbers Pm<SUB>c</SUB> and Pm<SUB>s</SUB>, which quantify whether the plasma falls within these two regimes. In the coupled regime—characteristic of slow streaming (Pm<SUB>s</SUB> &lt; 1) and low diffusion (Pm<SUB>c</SUB> &lt; 1)—the CR fluid imprints upon the plasma a mixed equation of state between P<SUB>c</SUB> ∝ ρ<SUP>4/3</SUP> (relativistic fluid) and P<SUB>c</SUB> ∝ ρ<SUP>2/3</SUP> (streaming), where P<SUB>c</SUB> is the CR pressure and ρ is the plasma density. By modifying the sound speed, the coupling reduces the turbulent Mach number, and hence the amplitude of the density fluctuations, while supporting secular heating of the CR fluid. In contrast, in the decoupled regime (Pm<SUB>s</SUB> &gt; 1 or Pm<SUB>c</SUB> &gt; 1) the CR fluid and the plasma have negligible interactions. We further show that CR heating is enabled by coherent structures within the compressible velocity field, with no impact on the turbulence spectrum of incompressible modes.",
-      "bibcode": "2026ApJ..1001...99S",
-      "identifiers": [
-        "2025arXiv250603768S",
-        "2026ApJ..1001...99S",
-        "10.48550/arXiv.2506.03768",
-        "10.3847/1538-4357/ae4edc",
-        "arXiv:2506.03768"
-      ],
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1001...99S/abstract",
-      "doi_url": "https://doi.org/10.3847/1538-4357/ae4edc",
-      "citation_count": 9,
-      "read_count": 208,
-      "is_refereed": true,
-      "arxiv_class": [
-        "astro-ph.GA",
-        "astro-ph.HE"
       ]
     },
     {
@@ -162,11 +134,39 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026PhRvE.113d5208K/abstract",
       "doi_url": "https://doi.org/10.1103/8qjf-8gg4",
       "citation_count": 7,
-      "read_count": 240,
+      "read_count": 229,
       "is_refereed": true,
       "arxiv_class": [
         "physics.plasm-ph",
         "physics.comp-ph"
+      ]
+    },
+    {
+      "title": "Cosmic-Ray and Plasma Coupling for Isothermal Supersonic Turbulence in the Magnetized Interstellar Medium",
+      "authors": "Sampson, Matt L.; Beattie, James R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
+      "authors_highlighted": "Sampson, Matt L.; <strong>Beattie, James</strong> R.; Teyssier, Romain; Kempski, Philipp; Moseley, Eric R.; Commerçon, Benoit; Dubois, Yohan; Rosdahl, Joakim",
+      "authorship_position": "second",
+      "beattie_position": 2,
+      "journal": "The Astrophysical Journal",
+      "year": "2026",
+      "pubdate": "2026-04-00",
+      "abstract": "Cosmic rays (CRs) are an integral part of the nonthermal pressure budget in the interstellar medium (ISM) and are the leading-order ionization mechanism in cold molecular clouds. We study the impacts that different microphysical CR diffusion coefficients and streaming speeds have on the evolution of isothermal, magnetized, turbulent plasmas, relevant to the cold ISM. We utilized a two-moment CR magnetohydrodynamic model, allowing us to dynamically evolve both CR energy and flux densities with contributions from Alfvénic streaming and anisotropic diffusion. We identify coupled and decoupled regimes, and define dimensionless Prandtl numbers Pm<SUB>c</SUB> and Pm<SUB>s</SUB>, which quantify whether the plasma falls within these two regimes. In the coupled regime—characteristic of slow streaming (Pm<SUB>s</SUB> &lt; 1) and low diffusion (Pm<SUB>c</SUB> &lt; 1)—the CR fluid imprints upon the plasma a mixed equation of state between P<SUB>c</SUB> ∝ ρ<SUP>4/3</SUP> (relativistic fluid) and P<SUB>c</SUB> ∝ ρ<SUP>2/3</SUP> (streaming), where P<SUB>c</SUB> is the CR pressure and ρ is the plasma density. By modifying the sound speed, the coupling reduces the turbulent Mach number, and hence the amplitude of the density fluctuations, while supporting secular heating of the CR fluid. In contrast, in the decoupled regime (Pm<SUB>s</SUB> &gt; 1 or Pm<SUB>c</SUB> &gt; 1) the CR fluid and the plasma have negligible interactions. We further show that CR heating is enabled by coherent structures within the compressible velocity field, with no impact on the turbulence spectrum of incompressible modes.",
+      "bibcode": "2026ApJ..1001...99S",
+      "identifiers": [
+        "2025arXiv250603768S",
+        "2026ApJ..1001...99S",
+        "10.48550/arXiv.2506.03768",
+        "10.3847/1538-4357/ae4edc",
+        "arXiv:2506.03768"
+      ],
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1001...99S/abstract",
+      "doi_url": "https://doi.org/10.3847/1538-4357/ae4edc",
+      "citation_count": 9,
+      "read_count": 216,
+      "is_refereed": true,
+      "arxiv_class": [
+        "astro-ph.GA",
+        "astro-ph.HE"
       ]
     },
     {
@@ -190,7 +190,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026ApJ...997...33C/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae17b1",
       "citation_count": 8,
-      "read_count": 278,
+      "read_count": 277,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -218,7 +218,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994..193B/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ae07cd",
       "citation_count": 22,
-      "read_count": 337,
+      "read_count": 336,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -247,7 +247,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.542.2669B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf1318",
       "citation_count": 18,
-      "read_count": 257,
+      "read_count": 263,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -276,7 +276,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025PhRvD.112f3046G/abstract",
       "doi_url": "https://doi.org/10.1103/8xf2-x2nq",
       "citation_count": 16,
-      "read_count": 245,
+      "read_count": 253,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.HE"
@@ -303,8 +303,8 @@
       ],
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025NatAs...9.1195B/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-025-02551-5",
-      "citation_count": 39,
-      "read_count": 421,
+      "citation_count": 40,
+      "read_count": 368,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -334,7 +334,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..45B/abstract",
       "doi_url": "https://doi.org/10.3847/2041-8213/adbe3b",
       "citation_count": 7,
-      "read_count": 200,
+      "read_count": 202,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -365,7 +365,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.537.2602K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staf188",
       "citation_count": 27,
-      "read_count": 298,
+      "read_count": 305,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -396,7 +396,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.3201B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stad1863",
       "citation_count": 21,
-      "read_count": 135,
+      "read_count": 136,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -424,7 +424,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.519.1503S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3207",
       "citation_count": 42,
-      "read_count": 194,
+      "read_count": 186,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -453,7 +453,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.517.5003B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac3005",
       "citation_count": 34,
-      "read_count": 150,
+      "read_count": 160,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -479,7 +479,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022arXiv221109248B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2211.09248",
       "citation_count": 0,
-      "read_count": 285,
+      "read_count": 303,
       "is_refereed": false,
       "arxiv_class": [
         "eess.SP"
@@ -506,7 +506,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A&A...666A.165S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202039610",
       "citation_count": 63,
-      "read_count": 177,
+      "read_count": 189,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -533,7 +533,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022FrASS...9.0900B/abstract",
       "doi_url": "https://doi.org/10.3389/fspas.2022.900900",
       "citation_count": 21,
-      "read_count": 166,
+      "read_count": 162,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -562,7 +562,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.5267B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac2099",
       "citation_count": 24,
-      "read_count": 192,
+      "read_count": 190,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -592,7 +592,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.2457K/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stac969",
       "citation_count": 43,
-      "read_count": 246,
+      "read_count": 245,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR",
@@ -623,7 +623,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...929...54S/abstract",
       "doi_url": "https://doi.org/10.3847/1538-4357/ac5b69",
       "citation_count": 7,
-      "read_count": 137,
+      "read_count": 133,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.SR"
@@ -673,7 +673,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.509.2180S/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab3048",
       "citation_count": 29,
-      "read_count": 696,
+      "read_count": 695,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -701,7 +701,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021A&A...656A.118S/abstract",
       "doi_url": "https://doi.org/10.1051/0004-6361/202142045",
       "citation_count": 62,
-      "read_count": 119,
+      "read_count": 122,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -729,7 +729,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504.4354B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stab1037",
       "citation_count": 30,
-      "read_count": 163,
+      "read_count": 164,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -759,7 +759,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2021NatAs...5..365F/abstract",
       "doi_url": "https://doi.org/10.1038/s41550-020-01282-z",
       "citation_count": 176,
-      "read_count": 195,
+      "read_count": 204,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -790,7 +790,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.498.1593B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/staa2257",
       "citation_count": 42,
-      "read_count": 184,
+      "read_count": 174,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -820,7 +820,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..668B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz3377",
       "citation_count": 32,
-      "read_count": 92,
+      "read_count": 85,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA"
@@ -870,7 +870,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.2493B/abstract",
       "doi_url": "https://doi.org/10.1093/mnras/stz1853",
       "citation_count": 25,
-      "read_count": 142,
+      "read_count": 132,
       "is_refereed": true,
       "arxiv_class": [
         "astro-ph.GA",
@@ -924,7 +924,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2019arXiv190203381B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.1902.03381",
       "citation_count": 6,
-      "read_count": 395,
+      "read_count": 364,
       "is_refereed": false,
       "arxiv_class": [
         "physics.pop-ph",
@@ -994,7 +994,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025arXiv250415538B/abstract",
       "doi_url": "https://doi.org/10.48550/arXiv.2504.15538",
       "citation_count": 7,
-      "read_count": 423,
+      "read_count": 466,
       "is_refereed": false,
       "arxiv_class": [
         "physics.plasm-ph",
